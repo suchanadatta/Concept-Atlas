@@ -1,0 +1,175 @@
+43 Test Queries for Concept Map Optimization
+=============================================
+Each query has query_id, query_text, and narration. Agents: tag each concept with relevant query_text values.
+
+1. query_id: self-love
+   query_text: self-love
+   narration: The user seeks information on which terms authors in the corpus typically associate with self-love
+
+2. query_id: education and friendship
+   query_text: education and friendship
+   narration: The user seeks information on what role friendship plays in writings on education; this means the user is interested in identifying works on education and then seeks to identify relevant passages from these texts on friendship
+
+3. query_id: marriage and slavery
+   query_text: marriage and slavery
+   narration: The user seeks information which authors in the corpus associate marriage with slavery
+
+4. query_id: marriage and friendship
+   query_text: marriage and friendship
+   narration: The user seeks information which authors in the corpus associate marriage with friendship
+
+5. query_id: Cockburn and self-love
+   query_text: Cockburn and self-love
+   narration: The user seeks information on how Catharine Trotter Cockburn understands self-love and what terms she commonly associates with self-love.
+
+6. query_id: Cockburn and human nature
+   query_text: Cockburn and human nature
+   narration: The user seeks information on Cockburn's understanding of human nature, especially what the core features of human nature are for Cockburn.
+
+7. query_id: Locke and Masham on education
+   query_text: Locke and Masham on education
+   narration: The user seeks information on the core similarities and differences between Locke's and Masham's works on education; the main text relevant for this query as Locke's Some Thoughts concerning Education and Masham's Occasional Thoughts.
+
+8. query_id: Debates on whether humans are by nature self-interested or benevolent in 18th-century British moral philosophy
+   query_text: Debates on whether humans are by nature self-interested or benevolent in 18th-century British moral philosophy
+   narration: Documents should focus on the question whether humans are by natures self-interested or benevolent beings. Documents should include relevant texts by Anthony Ashley Cooper, the Third Earl of Shaftesbury, Bernard Mandeville, Francis Hutcheson, Josephy Butler, Catharine Trotter Cockburn, and others.
+
+9. query_id: Moral Motivation in Warburton and Cockburn
+   query_text: Moral Motivation in Warburton and Cockburn
+   narration: Documents should analyse William Warbuton and Catharine Trotter Cockburn's views on moral motivation.
+
+10. query_id: Sentiments/passions and reason in moral judgement
+    query_text: Sentiments/passions and reason in moral judgement
+    narration: Relevant documents should focus on philosophical debates concerning the role of sentiments or passions, on the one hand, and reason, on the other hand in moral judgement.
+
+11. query_id: Sentiments/passions as superior to reason in moral judgement
+    query_text: Sentiments/passions as superior to reason in moral judgement
+    narration: Additionally, they should select those moral views that regard sentiments or passions as superior to reason in moral judgement than reason. Relevant documents should include texts by David Hume and other philosophers that regarded sentiments or passions superior.
+
+12. query_id: Reason as superior to sentiments/passions in moral judgement
+    query_text: Reason as superior to sentiments/passions in moral judgement
+    narration: Additionally, they should select those moral views that regard reason as superior to sentiments or passions in moral judgement than reason.
+
+13. query_id: The role of sympathy in moral interaction
+    query_text: The role of sympathy in moral interaction
+    narration: Relevant documents should focus on philosophical accounts of sympathy and analyse what role sympathy plays in moral interaction. Documents should include relevant texts by David Hume and Adam Smith.
+
+14. query_id: Character development in Shaftesbury's moral philosophy
+    query_text: Character development in Shaftesbury's moral philosophy
+    narration: Relevant documents should focus on Shaftesbury's views concerning character development and analyse why and how Shaftesbury regards character development as important for reaching happiness.
+
+15. query_id: Shaftesbury's influence on British moral philosophy
+    query_text: Shaftesbury's influence on British moral philosophy
+    narration: Relevant documents should focus on discussions of Shaftesbury's moral philosophy by eighteenth-century British philosophers.
+
+16. query_id: Virtue and atheism
+    query_text: Virtue and atheism
+    narration: Relevant documents should focus on the question of whether atheists can be virtuous.
+
+17. query_id: Moral fitnesses in Samuel Clarke and Catharine Trotter Cockburn
+    query_text: Moral fitnesses in Samuel Clarke and Catharine Trotter Cockburn
+    narration: Relevant documents should focus on philosophical debates concerning moral fitnesses and include texts by Samuel Clarke and Catharine Trotter Cockburn.
+
+18. query_id: Liberty in women's philosophical writings
+    query_text: Liberty in women's philosophical writings
+    narration: Relevant document should be texts written by female philosophers and analyse how these women account for liberty or freedom.
+
+19. query_id: Liberty and necessity
+    query_text: Liberty and necessity
+    narration: Relevant documents should focus on philosophical debates concerning liberty and necessity in eighteenth-century British philosophy.
+
+20. query_id: Origin of evil
+    query_text: Origin of evil
+    narration: Relevant documents should focus on the origin of evil and include texts by William King as well as by other British moral philosophers who responded to King's views.
+
+21. query_id: Moral relations to ourselves, to others, and to God
+    query_text: Moral relations to ourselves, to others, and to God
+    narration: Relevant documents should discuss moral relations to ourselves, to others or to our neighbour, and to God.
+
+22. query_id: Friendship in the context of British moral philosophy
+    query_text: Friendship in the context of British moral philosophy
+    narration: Relevant documents should focus on friendship and should be written by eighteenth-century British moral philosophers.
+
+23. query_id: Divine law and the foundation of morality
+    query_text: Divine law and the foundation of morality
+    narration: The document should include texts by John Locke and other British philosophers that believe that morality is grounded on divine law.
+
+24. query_id: Reward and punishment as necessary for moral motivation
+    query_text: Reward and punishment as necessary for moral motivation
+    narration: Relevant documents should focus on texts by eighteenth-century British moral philosophers that regard reward and punishment as necessary for moral motivation.
+
+25. query_id: Conscience
+    query_text: Conscience
+    narration: Relevant documents are meant to focus on the role of conscience in moral deliberations. The documents should include relevant texts by Joseph Butler, Catharine Trotter Cockburn, William Warburton, Adam Smith.
+
+26. query_id: Self-government, self-improvement, or self-mastery
+    query_text: Self-government, self-improvement, or self-mastery
+    narration: Relevant documents should focus on views concerning self-government, self-improvement, or self-mastery and how these are relevant for personal and moral development.
+
+27. query_id: Mastery or government of the passions
+    query_text: Mastery or government of the passions
+    narration: Relevant documents should focus on philosophical views concerning the government of the passions.
+
+28. query_id: Cultivation of habits and moral development
+    query_text: Cultivation of habits and moral development
+    narration: Relevant documents should focus on text by eighteenth-century British philosophers that argue for the importance of the cultivation of habits and how this is relevant for moral development.
+
+29. query_id: Religious practices and moral development
+    query_text: Religious practices and moral development
+    narration: Relevant documents should focus on text by eighteenth-century British philosophers that consider religious practices such as prayer or reading of the Bible as relevant for moral development.
+
+30. query_id: Moral sense in Hutcheson's moral philosophy
+    query_text: Moral sense in Hutcheson's moral philosophy
+    narration: Relevant documents should analyse Hutcheson's views concerning the moral sense and reactions by other British moral philosophers to Hutcheson's moral sense theory.
+
+31. query_id: Morality and beauty
+    query_text: Morality and beauty
+    narration: Relevant documents should focus on texts that regard morality as similar or analogous to beauty and should include texts by Shaftesbury, Hutcheson.
+
+32. query_id: Astell Stoicism references
+    query_text: Astell Stoicism references
+    narration: The user seeks passages in which Mary Astell cites the Stoics or Stoicism. Passages should include explicit discussion of "preferred indifferents", claims that virtue is the sole/ultimate good, or claims that freedom consists in power to give consent to only what reason judges to be right.
+
+33. query_id: Norris longest refernces to Plato
+    query_text: Norris longest refernces to Plato
+    narration: The user seeks passages in which John Norris provides a reference or citation to Plato along with some substantial explanation of this reference. Seeking references especially to phrases such as "degrees of reality" or "chain of being".
+
+34. query_id: Hutcheson intellect and moral sense
+    query_text: Hutcheson intellect and moral sense
+    narration: The user seeks passages in which Francis Hutcheson discusses the intellect and the moral sense in close conjunction OR passages in which Hutcheson describes the relationship between the intellect and the moral sense.
+
+35. query_id: Chudleigh degrees of reality or being
+    query_text: Chudleigh degrees of reality or being
+    narration: The user seeks passages in which Mary Lee Chudleigh talks about degrees of being or degrees of reality, preferably the most detailed descriptions.
+
+36. query_id: Providence and moral attitude of acceptance
+    query_text: Providence and moral attitude of acceptance
+    narration: The user seeks passages in which any authors in the corpus describe a theory of providence as the doctrine that we must accept what happens to us in our live as part of the divine plan.
+
+37. query_id: Masham and Astell contrast intellect's function in moral life
+    query_text: Masham and Astell contrast intellect's function in moral life
+    narration: The user seeks contrasting passages from Damaris Masham and Mary Astell that discuss the functioning of the intellect, in particular with respect to the function of the intellect in moral life.
+
+38. query_id: Moral duty of character development and rational knowledge
+    query_text: Moral duty of character development and rational knowledge
+    narration: The user seeks passages from any author which describe a moral duty to develop our character. Character here is understood as the set of desires, habits, and dispositions that inform the way we act.
+
+39. query_id: Virtue as self-sufficient
+    query_text: Virtue as self-sufficient
+    narration: The user seeks passages which describe virtue as the sole good or the only object worth pursuing, but specifically authors who say virtue is completely self-sufficient for human happiness.
+
+40. query_id: Will and intellect hybrid relationship in moral life
+    query_text: Will and intellect hybrid relationship in moral life
+    narration: The user seeks passages in which authors stress the dual/hybrid roles of the intellect and the will in the pursuit of a moral life.
+
+41. query_id: Contrast morality as internal vs external struggle
+    query_text: Contrast morality as internal vs external struggle
+    narration: The user seeks contrasting passages between authors who view the pursuit of a moral life as an internal struggle between states of the mind and between authors who view the pursuit of moral life as a struggle against external oppositions.
+
+42. query_id: Citations or references to Lipsius's work
+    query_text: Citations or references to Lipsius's work
+    narration: The user seeks any and all references to the work of Justus Lipsius in the corpus.
+
+43. query_id: education and friendship (variant)
+    query_text: education and friendship
+    narration: Duplicate of query 2 for coverage - same as education and friendship above

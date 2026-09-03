@@ -1,0 +1,9911 @@
+[
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        77,
+        50,
+        786,
+        102
+      ],
+      "polygon": [
+        [
+          77,
+          50
+        ],
+        [
+          77,
+          102
+        ],
+        [
+          429,
+          102
+        ],
+        [
+          465,
+          102
+        ],
+        [
+          784,
+          102
+        ],
+        [
+          784,
+          50
+        ]
+      ],
+      "content": "# THOUGHTS",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        382,
+        137,
+        486,
+        167
+      ],
+      "polygon": [
+        [
+          382,
+          137
+        ],
+        [
+          382,
+          162
+        ],
+        [
+          387,
+          167
+        ],
+        [
+          485,
+          167
+        ],
+        [
+          485,
+          137
+        ]
+      ],
+      "content": "ON",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        50,
+        197,
+        820,
+        254
+      ],
+      "polygon": [
+        [
+          50,
+          197
+        ],
+        [
+          56,
+          253
+        ],
+        [
+          819,
+          253
+        ],
+        [
+          814,
+          197
+        ]
+      ],
+      "content": "FRIENDSHIP.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        216,
+        284,
+        644,
+        318
+      ],
+      "polygon": [
+        [
+          216,
+          284
+        ],
+        [
+          216,
+          317
+        ],
+        [
+          643,
+          317
+        ],
+        [
+          643,
+          284
+        ]
+      ],
+      "content": "By way of ESSAY;",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        50,
+        333,
+        823,
+        406
+      ],
+      "polygon": [
+        [
+          50,
+          333
+        ],
+        [
+          56,
+          406
+        ],
+        [
+          822,
+          406
+        ],
+        [
+          822,
+          339
+        ],
+        [
+          758,
+          333
+        ],
+        [
+          718,
+          333
+        ]
+      ],
+      "content": "For the USE and IMPROVEMENT of the LADIES.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        130,
+        452,
+        743,
+        487
+      ],
+      "polygon": [
+        [
+          130,
+          452
+        ],
+        [
+          130,
+          486
+        ],
+        [
+          742,
+          486
+        ],
+        [
+          742,
+          452
+        ]
+      ],
+      "content": "By a Well-Wisher to her SEX.",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        118,
+        522,
+        750,
+        663
+      ],
+      "polygon": [
+        [
+          118,
+          522
+        ],
+        [
+          124,
+          663
+        ],
+        [
+          749,
+          658
+        ],
+        [
+          749,
+          654
+        ],
+        [
+          749,
+          648
+        ],
+        [
+          749,
+          522
+        ]
+      ],
+      "content": "SHE has the Substance of all Blifs, To whom a virtuous FRIEND is giv'n; So sweet harmonious FRIENDSHIP is, Add but Eternity, you make it Heav'n. NORRIS.",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        108,
+        710,
+        637,
+        742
+      ],
+      "polygon": [
+        [
+          108,
+          710
+        ],
+        [
+          108,
+          741
+        ],
+        [
+          636,
+          741
+        ],
+        [
+          636,
+          710
+        ]
+      ],
+      "content": "## L O N D O N :",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        50,
+        755,
+        827,
+        856
+      ],
+      "polygon": [
+        [
+          50,
+          755
+        ],
+        [
+          60,
+          856
+        ],
+        [
+          826,
+          856
+        ],
+        [
+          826,
+          755
+        ]
+      ],
+      "content": "Printed for J. ROBERTS, near the Oxford- Arms in Warwick-Lane. M DCC XXV.\n\nPrice One Shilling.",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        313,
+        142,
+        487,
+        176
+      ],
+      "polygon": [
+        [
+          313,
+          142
+        ],
+        [
+          313,
+          175
+        ],
+        [
+          486,
+          175
+        ],
+        [
+          486,
+          142
+        ],
+        [
+          462,
+          142
+        ],
+        [
+          456,
+          142
+        ],
+        [
+          451,
+          142
+        ],
+        [
+          446,
+          142
+        ]
+      ],
+      "content": "## THE",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        36,
+        220,
+        760,
+        281
+      ],
+      "polygon": [
+        [
+          36,
+          225
+        ],
+        [
+          42,
+          280
+        ],
+        [
+          759,
+          280
+        ],
+        [
+          759,
+          220
+        ],
+        [
+          477,
+          220
+        ],
+        [
+          450,
+          220
+        ],
+        [
+          425,
+          220
+        ],
+        [
+          42,
+          220
+        ]
+      ],
+      "content": "## PREFACE.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        35,
+        342,
+        783,
+        883
+      ],
+      "polygon": [
+        [
+          35,
+          342
+        ],
+        [
+          56,
+          883
+        ],
+        [
+          782,
+          883
+        ],
+        [
+          778,
+          347
+        ]
+      ],
+      "content": "THE only Apology I shall make, for presenting the World with the following Essay, is the great necessity there appears to be for an Attempt of this kind. And though a late AUTHOR has called FRIENDSHIP, an exhausted Subject; yet, from the Effects that have been produced from former Labours, it may very justly be concluded, there still remains sufficient Occasion for a further prosecution of it. For which, one reason may be, that most Writers who have at all consider'd it, have only introduce'd it among other Subjects, in the Body of their Works; which being frequently pretty Voluminous, are therefore not so likely to be perused by the greatest part of our Sex; who may perhaps at a vacant hour have Curiosity enough to peruse",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        126,
+        34,
+        162,
+        62
+      ],
+      "polygon": [
+        [
+          126,
+          34
+        ],
+        [
+          126,
+          61
+        ],
+        [
+          160,
+          61
+        ],
+        [
+          160,
+          34
+        ]
+      ],
+      "content": "ii",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        270,
+        32,
+        792,
+        64
+      ],
+      "polygon": [
+        [
+          270,
+          32
+        ],
+        [
+          270,
+          63
+        ],
+        [
+          790,
+          63
+        ],
+        [
+          786,
+          32
+        ],
+        [
+          741,
+          32
+        ],
+        [
+          727,
+          32
+        ],
+        [
+          675,
+          32
+        ]
+      ],
+      "content": "The P R E F A C E.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        171,
+        77,
+        935,
+        401
+      ],
+      "polygon": [
+        [
+          186,
+          77
+        ],
+        [
+          171,
+          400
+        ],
+        [
+          929,
+          400
+        ],
+        [
+          934,
+          77
+        ]
+      ],
+      "content": "this short Trait, so suitable in Size to some of their favourite Novels. Besides, as every thing of this nature has been hitherto calculated, (as what, indeed, has not?) for the Use of the OTHER Sex, it may be the more difficult to apply those Rules to Ours: Who yet certainly deserve Assistance upon this Head as much as THEY do; and I doubt not, will make as good Improvements from it as THEY have ever done, and no great Compliment to them neither.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        157,
+        421,
+        925,
+        890
+      ],
+      "polygon": [
+        [
+          172,
+          421
+        ],
+        [
+          163,
+          889
+        ],
+        [
+          915,
+          885
+        ],
+        [
+          924,
+          421
+        ]
+      ],
+      "content": "SOME, who have been so generous to bestow their Time and Pains in our Service, (a Favour which we gratefully acknowledge,) have yet very slightly touch'd on FRIENDSHIP, which is certainly a very important Article in all Systems of Morality, and even then, it has been more by way of discouragement, and obviating the Misfortunes of an ill-chosen ONE, than any Endeavours to rectify THAT, by Directions suitable to the occasion. This defect I have endeavour'd to supply: And though I am very sensible much more might have been said; yet I am not conscious of the omission of any ONE ESSENTIAL: And dare affirm, would the LADIES conduct their Contracts",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        864,
+        889,
+        911,
+        918
+      ],
+      "polygon": [
+        [
+          864,
+          889
+        ],
+        [
+          864,
+          917
+        ],
+        [
+          905,
+          917
+        ],
+        [
+          910,
+          913
+        ],
+        [
+          910,
+          889
+        ]
+      ],
+      "content": "of",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        188,
+        29,
+        729,
+        61
+      ],
+      "polygon": [
+        [
+          188,
+          29
+        ],
+        [
+          188,
+          60
+        ],
+        [
+          728,
+          60
+        ],
+        [
+          728,
+          29
+        ]
+      ],
+      "content": "The P R E F A C E:",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        830,
+        32,
+        885,
+        61
+      ],
+      "polygon": [
+        [
+          830,
+          32
+        ],
+        [
+          830,
+          60
+        ],
+        [
+          884,
+          60
+        ],
+        [
+          884,
+          32
+        ]
+      ],
+      "content": "111",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        45,
+        74,
+        823,
+        457
+      ],
+      "polygon": [
+        [
+          51,
+          74
+        ],
+        [
+          51,
+          456
+        ],
+        [
+          822,
+          456
+        ],
+        [
+          817,
+          74
+        ]
+      ],
+      "content": "of FRIENDSHIP by the following Rules, all occasion of complaint from disappointments IN THEM, would effectually be removed. It can therefore be thought no unreasonable Request, when I intreat Them to be so much their OWN FRIENDS, as to make the Experiment; and to allow it as fair a tryal, as they would a Proposal for Diversion only; and they will THEN have but little reason to regret the pains they may perhaps take in THIS Pursuit : An Advantage, that does not always attend the present FASHIONABLE Amusements.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        50,
+        475,
+        828,
+        862
+      ],
+      "polygon": [
+        [
+          56,
+          475
+        ],
+        [
+          56,
+          857
+        ],
+        [
+          827,
+          862
+        ],
+        [
+          817,
+          475
+        ]
+      ],
+      "content": "As every new Production, especially one that aims at being really useful, is liable, in this refin'd and witty Age, to the Cavils and Railery of ingenious CRITICISM; So, it is probable, THIS may have the honour to supply a dull Feast, when more Sacred and valuable Subjects are exhausted, or forgot. But I shall be so far from Anxiety on this Account, that I should esteem it the noblest Panegyrick that could be below'd on any Performance of MINE; should it be thought worthy to suffer, by the SAME HANDS, and in such EXCELLENT",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "footer",
+      "bbox_2d": [
+        713,
+        860,
+        824,
+        882
+      ],
+      "polygon": [
+        [
+          713,
+          860
+        ],
+        [
+          713,
+          882
+        ],
+        [
+          823,
+          882
+        ],
+        [
+          823,
+          865
+        ],
+        [
+          818,
+          860
+        ]
+      ],
+      "content": "COM-",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        100,
+        21,
+        776,
+        56
+      ],
+      "polygon": [
+        [
+          100,
+          26
+        ],
+        [
+          100,
+          55
+        ],
+        [
+          775,
+          55
+        ],
+        [
+          775,
+          21
+        ],
+        [
+          171,
+          21
+        ]
+      ],
+      "content": "# v The P R E F A C E.",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        135,
+        71,
+        925,
+        132
+      ],
+      "polygon": [
+        [
+          135,
+          76
+        ],
+        [
+          135,
+          132
+        ],
+        [
+          924,
+          132
+        ],
+        [
+          924,
+          71
+        ]
+      ],
+      "content": "COMPANY, as RELIGION, and all the SACRED ORDINANCES of it.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        130,
+        157,
+        941,
+        878
+      ],
+      "polygon": [
+        [
+          136,
+          162
+        ],
+        [
+          146,
+          877
+        ],
+        [
+          935,
+          873
+        ],
+        [
+          935,
+          157
+        ]
+      ],
+      "content": "But if the want of Elegance, in the STILE; or Artless Connection of ARGUMENT, be objected by Those who are JUDGES of either; I can make no other Defence, but, That a Sincere desire to Serve the LADIES, was the sole Inducement to this Undertaking; which, sure, may plead some Excuse for the Errors in Both. And that WE are in general so defective in THEM, is more THEIR faults who are the Teachers, than OURS who are the Learners. And would THEY be so obliging to qualify us for better, it would be a prudent as well as generous Method, to secure themselves against mean Performances of this kind. And on the other hand, it may be a sure Stratagem, to present the World sometimes with an ILL-WROUGHT Piece, to procure Instructions towards a GOOD one. And till such Assistance is afforded us, we must make our utmost advantage of that NATURAL LOGICK and RHETORICK, Heaven has bestow'd upon us. And as the AUTHOR",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        894,
+        875,
+        946,
+        904
+      ],
+      "polygon": [
+        [
+          894,
+          875
+        ],
+        [
+          894,
+          904
+        ],
+        [
+          945,
+          904
+        ],
+        [
+          945,
+          875
+        ]
+      ],
+      "content": "of",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        164,
+        22,
+        665,
+        53
+      ],
+      "polygon": [
+        [
+          164,
+          22
+        ],
+        [
+          164,
+          52
+        ],
+        [
+          364,
+          52
+        ],
+        [
+          371,
+          52
+        ],
+        [
+          664,
+          52
+        ],
+        [
+          664,
+          26
+        ],
+        [
+          619,
+          22
+        ]
+      ],
+      "content": "The PREFACE.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        36,
+        66,
+        772,
+        855
+      ],
+      "polygon": [
+        [
+          36,
+          71
+        ],
+        [
+          56,
+          840
+        ],
+        [
+          771,
+          854
+        ],
+        [
+          756,
+          71
+        ]
+      ],
+      "content": "of the following Pages is wholly destitute of any Rules, but what they supplied her with; She here enters a Caveat against being Try'd by any OTHER; and hopes then to come off, without a very severe Sentence. But, after all, it may be truly said of THIS, as well as some OTHER Subjects, That it is PRACTICE WHICH BEGETS THEORY; and if I have justly explain'd the LATTER, it is solely owing to a happy Exercise of the FORMER. Which is not mention'd with any View to PRIVATE Advantage; but out of a sincere Respect and Value to some Generous FRIENDS; who are each a Living Demonstration, that all those VIRTUES hereafter mention'd, and a thousand nameless GRACES, may be found in OUR Sex: And that the short Sketch, drawn in the 45th and following Pages, is no Chimerical, but Real Character. That ALL who read it, may transcribe it in their Practice, and follow such bright Examples: That THEY may be wise like THEM:",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        771,
+        30,
+        820,
+        56
+      ],
+      "polygon": [
+        [
+          771,
+          30
+        ],
+        [
+          771,
+          55
+        ],
+        [
+          819,
+          55
+        ],
+        [
+          819,
+          30
+        ]
+      ],
+      "content": "V",
+      "native_label": "number"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        636,
+        834,
+        775,
+        862
+      ],
+      "polygon": [
+        [
+          636,
+          834
+        ],
+        [
+          636,
+          857
+        ],
+        [
+          642,
+          862
+        ],
+        [
+          774,
+          862
+        ],
+        [
+          774,
+          834
+        ]
+      ],
+      "content": "THEM;",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        101,
+        25,
+        155,
+        56
+      ],
+      "polygon": [
+        [
+          101,
+          25
+        ],
+        [
+          101,
+          45
+        ],
+        [
+          106,
+          55
+        ],
+        [
+          153,
+          55
+        ],
+        [
+          153,
+          25
+        ]
+      ],
+      "content": "vi",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        243,
+        20,
+        764,
+        53
+      ],
+      "polygon": [
+        [
+          243,
+          20
+        ],
+        [
+          243,
+          52
+        ],
+        [
+          754,
+          52
+        ],
+        [
+          750,
+          35
+        ],
+        [
+          763,
+          20
+        ]
+      ],
+      "content": "The PREFACE.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        179,
+        71,
+        937,
+        235
+      ],
+      "polygon": [
+        [
+          179,
+          76
+        ],
+        [
+          179,
+          235
+        ],
+        [
+          931,
+          235
+        ],
+        [
+          936,
+          71
+        ]
+      ],
+      "content": "THEM; and happier in THEIR Choice of FRIENDS, than THEY have been, by honouring ONE with that Character, who is conscious of her demerits for so high an Office ; is the sincere Desire of",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "image",
+      "bbox_2d": [
+        423,
+        224,
+        609,
+        317
+      ],
+      "polygon": [
+        [
+          428,
+          224
+        ],
+        [
+          423,
+          229
+        ],
+        [
+          423,
+          316
+        ],
+        [
+          608,
+          316
+        ],
+        [
+          608,
+          224
+        ]
+      ],
+      "content": null,
+      "native_label": "image",
+      "image_path": "imgs/cropped_page6_idx0.jpg"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        404,
+        323,
+        930,
+        360
+      ],
+      "polygon": [
+        [
+          404,
+          323
+        ],
+        [
+          404,
+          359
+        ],
+        [
+          929,
+          359
+        ],
+        [
+          929,
+          323
+        ]
+      ],
+      "content": "Their Humble FRIEND,",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        596,
+        404,
+        721,
+        430
+      ],
+      "polygon": [
+        [
+          596,
+          404
+        ],
+        [
+          596,
+          429
+        ],
+        [
+          720,
+          429
+        ],
+        [
+          720,
+          404
+        ]
+      ],
+      "content": "A N D",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        480,
+        473,
+        815,
+        511
+      ],
+      "polygon": [
+        [
+          480,
+          473
+        ],
+        [
+          480,
+          495
+        ],
+        [
+          486,
+          511
+        ],
+        [
+          814,
+          511
+        ],
+        [
+          814,
+          479
+        ],
+        [
+          789,
+          473
+        ]
+      ],
+      "content": "Well-wisher to",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        454,
+        541,
+        850,
+        582
+      ],
+      "polygon": [
+        [
+          454,
+          541
+        ],
+        [
+          454,
+          582
+        ],
+        [
+          584,
+          582
+        ],
+        [
+          695,
+          582
+        ],
+        [
+          820,
+          582
+        ],
+        [
+          830,
+          582
+        ],
+        [
+          849,
+          582
+        ],
+        [
+          849,
+          546
+        ],
+        [
+          844,
+          541
+        ]
+      ],
+      "content": "Her Whole S E X.",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "footer",
+      "bbox_2d": [
+        614,
+        836,
+        933,
+        871
+      ],
+      "polygon": [
+        [
+          614,
+          836
+        ],
+        [
+          614,
+          870
+        ],
+        [
+          931,
+          870
+        ],
+        [
+          931,
+          836
+        ]
+      ],
+      "content": "THOUGHTS",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        69,
+        310,
+        679,
+        354
+      ],
+      "polygon": [
+        [
+          69,
+          310
+        ],
+        [
+          69,
+          353
+        ],
+        [
+          678,
+          353
+        ],
+        [
+          678,
+          310
+        ]
+      ],
+      "content": "# THOUGHTS",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        327,
+        383,
+        422,
+        409
+      ],
+      "polygon": [
+        [
+          327,
+          383
+        ],
+        [
+          327,
+          409
+        ],
+        [
+          421,
+          409
+        ],
+        [
+          421,
+          383
+        ]
+      ],
+      "content": "ON",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        114,
+        434,
+        648,
+        486
+      ],
+      "polygon": [
+        [
+          114,
+          434
+        ],
+        [
+          114,
+          485
+        ],
+        [
+          647,
+          485
+        ],
+        [
+          647,
+          434
+        ]
+      ],
+      "content": "Friendship, &c.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "image",
+      "bbox_2d": [
+        60,
+        531,
+        208,
+        626
+      ],
+      "polygon": [
+        [
+          66,
+          531
+        ],
+        [
+          60,
+          536
+        ],
+        [
+          60,
+          606
+        ],
+        [
+          60,
+          621
+        ],
+        [
+          60,
+          626
+        ],
+        [
+          207,
+          626
+        ],
+        [
+          207,
+          531
+        ]
+      ],
+      "content": null,
+      "native_label": "image",
+      "image_path": "imgs/cropped_page7_idx1.jpg"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        212,
+        529,
+        721,
+        653
+      ],
+      "polygon": [
+        [
+          212,
+          529
+        ],
+        [
+          223,
+          652
+        ],
+        [
+          720,
+          652
+        ],
+        [
+          720,
+          529
+        ]
+      ],
+      "content": "T is a Maxim too often verified, That the best Things, when corrupted, become the worst; and are capable of",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        56,
+        659,
+        731,
+        881
+      ],
+      "polygon": [
+        [
+          56,
+          659
+        ],
+        [
+          61,
+          880
+        ],
+        [
+          729,
+          880
+        ],
+        [
+          725,
+          659
+        ]
+      ],
+      "content": "doing the most Mischief, when ill-applied, or in unskilful Hands. And I believe every one, who thinks at all, will agree with me, that there is not a more flagrant Instance of it, than in the wretched Profanation of that Sa B. cred",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        162,
+        21,
+        196,
+        44
+      ],
+      "polygon": [
+        [
+          168,
+          21
+        ],
+        [
+          162,
+          26
+        ],
+        [
+          162,
+          35
+        ],
+        [
+          168,
+          44
+        ],
+        [
+          195,
+          44
+        ],
+        [
+          195,
+          21
+        ]
+      ],
+      "content": "2",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        408,
+        13,
+        767,
+        43
+      ],
+      "polygon": [
+        [
+          408,
+          13
+        ],
+        [
+          408,
+          42
+        ],
+        [
+          766,
+          42
+        ],
+        [
+          766,
+          13
+        ]
+      ],
+      "content": "An E S S A Y",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        225,
+        58,
+        925,
+        618
+      ],
+      "polygon": [
+        [
+          240,
+          58
+        ],
+        [
+          225,
+          617
+        ],
+        [
+          910,
+          617
+        ],
+        [
+          924,
+          58
+        ]
+      ],
+      "content": "cred Compact, Friendship. We often hear it talk'd of by those, who have either no Meaning when they profess it, or perhaps a very base one. Some have such extensive Souls, that whoever will purchase the Title, by saying a civil Thing to them, immediately are call'd Friends; while others, never bestow nor assume that Epithet, but with a Resolution to betray, whenever their Power is equal to their Malice and Treachery. But as it is a more friendly Office to correct Errors, than expose them; I shall endeavour to prosecute this Work so, as may best answer that End; the only one I have in undertaking it.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        217,
+        620,
+        907,
+        849
+      ],
+      "polygon": [
+        [
+          223,
+          620
+        ],
+        [
+          217,
+          849
+        ],
+        [
+          901,
+          849
+        ],
+        [
+          905,
+          620
+        ]
+      ],
+      "content": "But before I proceed any further, it is necessary to declare, I do not in the least design to dictate to the Masculine Part of the World. I will not suppose they either want, or will accept, Advice from a despicable Woman. They are form'd too perfect, sure, to err; or",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        351,
+        859,
+        383,
+        877
+      ],
+      "polygon": [
+        [
+          351,
+          859
+        ],
+        [
+          351,
+          877
+        ],
+        [
+          381,
+          877
+        ],
+        [
+          381,
+          859
+        ]
+      ],
+      "content": "2",
+      "native_label": "number"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        857,
+        851,
+        898,
+        877
+      ],
+      "polygon": [
+        [
+          857,
+          851
+        ],
+        [
+          857,
+          877
+        ],
+        [
+          897,
+          877
+        ],
+        [
+          897,
+          851
+        ]
+      ],
+      "content": "if",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        129,
+        27,
+        647,
+        58
+      ],
+      "polygon": [
+        [
+          129,
+          27
+        ],
+        [
+          129,
+          57
+        ],
+        [
+          646,
+          57
+        ],
+        [
+          646,
+          27
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        26,
+        69,
+        733,
+        500
+      ],
+      "polygon": [
+        [
+          26,
+          69
+        ],
+        [
+          32,
+          500
+        ],
+        [
+          727,
+          500
+        ],
+        [
+          727,
+          69
+        ]
+      ],
+      "content": "if by Miracle they ever do, we are too short-sighted to discern an accidental Slip. To the Instruction and Improvement therefore of them, who ingeniously own themselves the weaker Sex, my Endeavours, faint and imperfect as they are, shall always be directed. And since those Lords of the Creation think us below their Care and Notice; it is but reasonable we should assist each other, and employ all the little Art we have, to our own Advantage.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        30,
+        503,
+        735,
+        898
+      ],
+      "polygon": [
+        [
+          30,
+          503
+        ],
+        [
+          41,
+          883
+        ],
+        [
+          100,
+          897
+        ],
+        [
+          154,
+          897
+        ],
+        [
+          246,
+          897
+        ],
+        [
+          734,
+          897
+        ],
+        [
+          734,
+          503
+        ]
+      ],
+      "content": "For that End, we will first consider Friendship in its utmost Latitude, as necessary to the Happiness of Mankind in general. And if we take a Prospect of the Original State of Human Nature, we shall find it, of all created Beings, most truly wretched and forlorn, if destitute of a friendly Support. For, as Man brings nothing into this World with him but Wants and Necessities, and being wholly incapable to supply B2 them",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        778,
+        1,
+        822,
+        65
+      ],
+      "polygon": [
+        [
+          785,
+          1
+        ],
+        [
+          778,
+          6
+        ],
+        [
+          778,
+          64
+        ],
+        [
+          821,
+          64
+        ],
+        [
+          821,
+          1
+        ]
+      ],
+      "content": "3",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        387,
+        13,
+        775,
+        47
+      ],
+      "polygon": [
+        [
+          387,
+          13
+        ],
+        [
+          387,
+          47
+        ],
+        [
+          773,
+          47
+        ],
+        [
+          773,
+          13
+        ]
+      ],
+      "content": "## An E S S A Y",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        200,
+        55,
+        947,
+        877
+      ],
+      "polygon": [
+        [
+          221,
+          55
+        ],
+        [
+          200,
+          851
+        ],
+        [
+          573,
+          876
+        ],
+        [
+          936,
+          876
+        ],
+        [
+          941,
+          60
+        ]
+      ],
+      "content": "them by his own Power; he must instantly end his feeble Life, unless assisted by those who are possess'd of the necessary Means of preserving it. And could we form an Idea of a general Independence, we should find the Condition of Mankind worse than even that of the fierceest Beasts of Prey, by how much our Capacities of Possession exceed theirs. And it was doubtless from a full Conviction of this, that they first form'd themselves into Societies, and bound themselves by mutual Contracts to assist each other, with the Necessaries and Conveniences of Life; and against the Attempts of those who would wrest these Things to their own use, without complying with the stated Rules of Purchase. And as the Indigence of every particular Man, as such, is naturally equal; so their Obligations to assist every Member of the Community is also equal. And as the original State of Nature does necessarily",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        170,
+        33,
+        643,
+        62
+      ],
+      "polygon": [
+        [
+          170,
+          33
+        ],
+        [
+          170,
+          61
+        ],
+        [
+          642,
+          61
+        ],
+        [
+          642,
+          33
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        76,
+        71,
+        739,
+        658
+      ],
+      "polygon": [
+        [
+          82,
+          77
+        ],
+        [
+          86,
+          658
+        ],
+        [
+          738,
+          658
+        ],
+        [
+          723,
+          71
+        ]
+      ],
+      "content": "rily require the uniting of several Individuals, into one Community, or Body Politick; so we find this, and no other, was the Foundation of all Contracts of Friendship, that we have an account of, from the earliest Periods of Time. Particularly, the Covenants that we read of between Abimelech and Abraham, and afterwards with Isaac, seem to owe their Rise to the necessity each Side lay under to enjoy the uninterrupted use of the common Element of Water; which, however common, yet could not be possess'd without the formality of a Treaty and Covenant: If that therefore could be come at no other way, we may well suppose nothing else could.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        85,
+        681,
+        742,
+        847
+      ],
+      "polygon": [
+        [
+          85,
+          681
+        ],
+        [
+          91,
+          846
+        ],
+        [
+          741,
+          846
+        ],
+        [
+          741,
+          686
+        ]
+      ],
+      "content": "And if we consider Man with regard to the inward State of his Mind, as well as the outward Condition of his Body; we shall find that as much form'd for the Pleasures of Society,",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        765,
+        34,
+        804,
+        68
+      ],
+      "polygon": [
+        [
+          765,
+          34
+        ],
+        [
+          765,
+          67
+        ],
+        [
+          799,
+          67
+        ],
+        [
+          803,
+          63
+        ],
+        [
+          803,
+          34
+        ]
+      ],
+      "content": "5",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        729,
+        264,
+        853,
+        322
+      ],
+      "polygon": [
+        [
+          729,
+          264
+        ],
+        [
+          729,
+          322
+        ],
+        [
+          852,
+          322
+        ],
+        [
+          852,
+          264
+        ]
+      ],
+      "content": "Gen. xxi.\n22. &z\nxxvi. 26.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 5,
+      "label": "number",
+      "bbox_2d": [
+        697,
+        856,
+        739,
+        876
+      ],
+      "polygon": [
+        [
+          697,
+          856
+        ],
+        [
+          697,
+          876
+        ],
+        [
+          738,
+          876
+        ],
+        [
+          738,
+          856
+        ]
+      ],
+      "content": "as",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        117,
+        29,
+        163,
+        58
+      ],
+      "polygon": [
+        [
+          117,
+          29
+        ],
+        [
+          117,
+          53
+        ],
+        [
+          121,
+          57
+        ],
+        [
+          161,
+          57
+        ],
+        [
+          161,
+          29
+        ]
+      ],
+      "content": "6",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        317,
+        27,
+        731,
+        60
+      ],
+      "polygon": [
+        [
+          317,
+          27
+        ],
+        [
+          317,
+          60
+        ],
+        [
+          730,
+          60
+        ],
+        [
+          730,
+          27
+        ]
+      ],
+      "content": "An E S S A Υ",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        178,
+        75,
+        897,
+        570
+      ],
+      "polygon": [
+        [
+          199,
+          75
+        ],
+        [
+          184,
+          569
+        ],
+        [
+          896,
+          569
+        ],
+        [
+          891,
+          75
+        ]
+      ],
+      "content": "as his Body for the Necessities of it. Nay, so strong is this Propensity, and so interwoven with the very Nature of his Being, that it is coeval with it. For, even in Paradise, God, who made Man, and therefore certainly best knew the Inclinations with which he was endued, declared, It is not good for Man to be alone; and therefore, to compleat his Happiness, made him an Help mete for him: One endued with the same rational Faculties with Himself, and therefore capable, by an endearing Conversation, to render even Eden more Bless'd.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        188,
+        575,
+        897,
+        898
+      ],
+      "polygon": [
+        [
+          188,
+          575
+        ],
+        [
+          188,
+          868
+        ],
+        [
+          536,
+          893
+        ],
+        [
+          896,
+          897
+        ],
+        [
+          896,
+          575
+        ]
+      ],
+      "content": "And though it may be objected, that this Partner of his Solitude was the immediate Cause of Man's Fall, whereby he lost his Innocence, and consequently what gave the highest Relish to all his Social Pleasures: Yet this cannot be admitted as a reasonable Plea against the necessity of Society; unless it can first be proved, that Man could",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        158,
+        17,
+        648,
+        47
+      ],
+      "polygon": [
+        [
+          158,
+          17
+        ],
+        [
+          158,
+          46
+        ],
+        [
+          647,
+          46
+        ],
+        [
+          647,
+          22
+        ],
+        [
+          327,
+          17
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        44,
+        53,
+        740,
+        844
+      ],
+      "polygon": [
+        [
+          59,
+          53
+        ],
+        [
+          44,
+          828
+        ],
+        [
+          525,
+          843
+        ],
+        [
+          645,
+          843
+        ],
+        [
+          729,
+          843
+        ],
+        [
+          734,
+          53
+        ]
+      ],
+      "content": "could have fell by no other means. But as He was created a free Agent, and consequently capable of Disobedience without the interposition of the Woman, therefore She must not stand solely chargeable with the guilt of the whole Crime. And it's very observable from the History of this first and fatal Sin, that the Prohibition of the Tree of Knowledge was pronounced singly to Adam: And though in several places in the Holy Scripture, Order of Time is not necessary, and therefore not observed; yet as this first Command is recorded to be given before Adam had named the Animal Creation, which certainly preceded the Formation of the Woman; and as it is deliver'd in the Singular number, THOU; it is at least probable, that He only received it immediately from God himself. Which, I think, is a very great Aggravation of his Fault; for though her disobeying a Command",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        777,
+        24,
+        819,
+        54
+      ],
+      "polygon": [
+        [
+          777,
+          24
+        ],
+        [
+          777,
+          54
+        ],
+        [
+          817,
+          54
+        ],
+        [
+          817,
+          24
+        ]
+      ],
+      "content": "7",
+      "native_label": "number"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        737,
+        79,
+        867,
+        618
+      ],
+      "polygon": [
+        [
+          835,
+          189
+        ],
+        [
+          800,
+          194
+        ],
+        [
+          789,
+          229
+        ],
+        [
+          754,
+          254
+        ],
+        [
+          743,
+          289
+        ],
+        [
+          737,
+          388
+        ],
+        [
+          737,
+          473
+        ],
+        [
+          737,
+          608
+        ],
+        [
+          866,
+          608
+        ],
+        [
+          866,
+          404
+        ],
+        [
+          856,
+          284
+        ]
+      ],
+      "content": "Gen. ii.\n\nver. 17.\n\n&r 19, 20,\n21, 22.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        118,
+        14,
+        155,
+        46
+      ],
+      "polygon": [
+        [
+          118,
+          14
+        ],
+        [
+          118,
+          45
+        ],
+        [
+          154,
+          45
+        ],
+        [
+          154,
+          14
+        ]
+      ],
+      "content": "8",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        300,
+        13,
+        731,
+        45
+      ],
+      "polygon": [
+        [
+          300,
+          13
+        ],
+        [
+          300,
+          45
+        ],
+        [
+          730,
+          45
+        ],
+        [
+          730,
+          13
+        ]
+      ],
+      "content": "## An ESS AY",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        198,
+        58,
+        903,
+        347
+      ],
+      "polygon": [
+        [
+          198,
+          58
+        ],
+        [
+          204,
+          347
+        ],
+        [
+          897,
+          347
+        ],
+        [
+          897,
+          58
+        ]
+      ],
+      "content": "convey'd by Him can admit no Excuse; it seems not to have so many Circumstances of daring Impiety in it as his, which was an Affront to the immediate Authority of God himself. And it must be acknowledged, that all Laws receive an additional San- tion, proportionate to the Power and Majesty of the Law-giver.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        207,
+        354,
+        920,
+        770
+      ],
+      "polygon": [
+        [
+          207,
+          354
+        ],
+        [
+          207,
+          769
+        ],
+        [
+          919,
+          769
+        ],
+        [
+          909,
+          354
+        ]
+      ],
+      "content": "But, not to insist longer upon an Argument, which, if it should be overrul'd, our Proposition will nevertheless hold good; viz. That Man was liable to Sin in the greatest Solitude; and consequently, That his Fall is no substantial Objection against Society: We will proceed to reflect a little upon those Qualities of a rational Being, which would have been wholly useless, had he been doom'd to linger out his Life, in the silent manner of his Fellow-Brutes.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "footer",
+      "bbox_2d": [
+        827,
+        796,
+        921,
+        826
+      ],
+      "polygon": [
+        [
+          833,
+          796
+        ],
+        [
+          827,
+          801
+        ],
+        [
+          827,
+          826
+        ],
+        [
+          920,
+          826
+        ],
+        [
+          920,
+          796
+        ]
+      ],
+      "content": "And",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        170,
+        23,
+        647,
+        55
+      ],
+      "polygon": [
+        [
+          170,
+          23
+        ],
+        [
+          170,
+          55
+        ],
+        [
+          646,
+          55
+        ],
+        [
+          646,
+          29
+        ],
+        [
+          567,
+          23
+        ],
+        [
+          549,
+          23
+        ],
+        [
+          533,
+          23
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        61,
+        66,
+        743,
+        872
+      ],
+      "polygon": [
+        [
+          67,
+          66
+        ],
+        [
+          67,
+          866
+        ],
+        [
+          737,
+          871
+        ],
+        [
+          733,
+          71
+        ]
+      ],
+      "content": "And to what Purpose can we imagine, that the noble Faculties of Thinking, Observing, Arguing and drawing Consequences, could be given us; unless to communicate our Observations and Discoveries to the rest of our Species? To which end, the Organs of Speech, added to those other Endowments, plainly point out to us the proper use which should be made of them. And whoever takes but a transient view of the admirable Mechanism of the articulate Organs in a Human Body, must be naturally led to imagine, that God, who never made any Thing in vain, would not have bestowed so much glorious Work to no end or purpose. And as the Glory of God, and our own Salvation, is the ultimate End of our Creation; I question whether that End can be so well answer'd any other way, as by employing the fore-mention'd Faculties",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "aside_text",
+      "bbox_2d": [
+        766,
+        31,
+        814,
+        60
+      ],
+      "polygon": [
+        [
+          772,
+          31
+        ],
+        [
+          766,
+          36
+        ],
+        [
+          766,
+          60
+        ],
+        [
+          813,
+          60
+        ],
+        [
+          813,
+          31
+        ]
+      ],
+      "content": "9",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        835,
+        175,
+        870,
+        269
+      ],
+      "polygon": [
+        [
+          869,
+          175
+        ],
+        [
+          851,
+          175
+        ],
+        [
+          845,
+          181
+        ],
+        [
+          840,
+          210
+        ],
+        [
+          835,
+          225
+        ],
+        [
+          835,
+          263
+        ],
+        [
+          840,
+          268
+        ],
+        [
+          854,
+          268
+        ],
+        [
+          864,
+          263
+        ],
+        [
+          869,
+          249
+        ]
+      ],
+      "content": "```markdown\n\n```",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        109,
+        25,
+        170,
+        50
+      ],
+      "polygon": [
+        [
+          109,
+          25
+        ],
+        [
+          109,
+          49
+        ],
+        [
+          168,
+          49
+        ],
+        [
+          168,
+          25
+        ]
+      ],
+      "content": "10",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        322,
+        16,
+        804,
+        49
+      ],
+      "polygon": [
+        [
+          322,
+          16
+        ],
+        [
+          322,
+          44
+        ],
+        [
+          334,
+          49
+        ],
+        [
+          803,
+          49
+        ],
+        [
+          803,
+          21
+        ],
+        [
+          739,
+          16
+        ],
+        [
+          474,
+          16
+        ],
+        [
+          458,
+          16
+        ]
+      ],
+      "content": "An E S S A T .",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        201,
+        64,
+        937,
+        193
+      ],
+      "polygon": [
+        [
+          201,
+          64
+        ],
+        [
+          201,
+          192
+        ],
+        [
+          300,
+          192
+        ],
+        [
+          936,
+          192
+        ],
+        [
+          936,
+          64
+        ],
+        [
+          873,
+          64
+        ],
+        [
+          867,
+          64
+        ]
+      ],
+      "content": "culties and Powers, as Means to excite each other to the Practice of the necessary Duties of our several Relations.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        183,
+        200,
+        932,
+        742
+      ],
+      "polygon": [
+        [
+          200,
+          200
+        ],
+        [
+          183,
+          741
+        ],
+        [
+          926,
+          741
+        ],
+        [
+          931,
+          200
+        ]
+      ],
+      "content": "But, certainly, there is no need of further Arguments to prove the Necessity and Pleasure of Society. The Practice of all Mankind is a sufficient Testimony on our Side; Excepting only some Few, who, out of a pretence to Heroick Sanctity, abandon the Conversation, together with the Vices and Follies of the World. Happy is it for them, if they carry none of these into their Privacy! But such a Retreat looks more like a fullen Pride, or base Desertion of their Post, than an exalted Virtue, and abhorrence of Vice. But as it is my present business to apply my self to the active Part of the World;",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        170,
+        742,
+        919,
+        840
+      ],
+      "polygon": [
+        [
+          170,
+          742
+        ],
+        [
+          176,
+          840
+        ],
+        [
+          918,
+          840
+        ],
+        [
+          918,
+          742
+        ]
+      ],
+      "content": "I shall leave them in their beloved Obscurity, and hasten to what remains, without further Digression.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        803,
+        843,
+        916,
+        872
+      ],
+      "polygon": [
+        [
+          803,
+          843
+        ],
+        [
+          803,
+          872
+        ],
+        [
+          915,
+          872
+        ],
+        [
+          915,
+          843
+        ]
+      ],
+      "content": "Since",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        128,
+        15,
+        616,
+        50
+      ],
+      "polygon": [
+        [
+          128,
+          15
+        ],
+        [
+          128,
+          49
+        ],
+        [
+          615,
+          49
+        ],
+        [
+          615,
+          15
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        22,
+        91,
+        726,
+        848
+      ],
+      "polygon": [
+        [
+          37,
+          91
+        ],
+        [
+          32,
+          837
+        ],
+        [
+          715,
+          847
+        ],
+        [
+          725,
+          91
+        ]
+      ],
+      "content": "Since then a State of Friendship and Amity is absolutely necessary to the well-being of Societies in general; and since all Communities are made up of several Particulars; It follows, that what constitutes the Happiness of the Whole, must be necessary to every Individual. Which is so true in this Case, that we look upon it to be a Compendium of the Miseries of any one, to say, He is Friendless. And certainly, no one Expression can fully comprize all the unhappiness that a human Creature is subject to. But this, like many other Phrases, is not always properly applied: And we are never more beside the truth in guessing at the Circumstances of our Neighbours, than in this particular. For though the Rich and Great have many that are called Friends, yet it may with good reason be doubted, whether one among their numerous Followers",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        755,
+        24,
+        831,
+        49
+      ],
+      "polygon": [
+        [
+          755,
+          24
+        ],
+        [
+          755,
+          48
+        ],
+        [
+          830,
+          48
+        ],
+        [
+          830,
+          24
+        ]
+      ],
+      "content": "112",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        84,
+        23,
+        147,
+        45
+      ],
+      "polygon": [
+        [
+          84,
+          23
+        ],
+        [
+          84,
+          45
+        ],
+        [
+          146,
+          45
+        ],
+        [
+          146,
+          23
+        ]
+      ],
+      "content": "12",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        360,
+        14,
+        734,
+        47
+      ],
+      "polygon": [
+        [
+          360,
+          14
+        ],
+        [
+          360,
+          46
+        ],
+        [
+          732,
+          46
+        ],
+        [
+          732,
+          14
+        ]
+      ],
+      "content": "An E S S A Y",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        193,
+        60,
+        932,
+        847
+      ],
+      "polygon": [
+        [
+          193,
+          60
+        ],
+        [
+          204,
+          841
+        ],
+        [
+          931,
+          841
+        ],
+        [
+          916,
+          60
+        ]
+      ],
+      "content": "lowers deserves that Character. What I mean, when I speak of FRIENDSHIP in this restrain'd Notion of it, in contra-distinction to the Friendship of Communities, cannot possibly be applied to a general Acquaintance; but must be confin'd to the particular and amiable Conversation of One or Two, who by a likeness of Disposition, and other correspondent Qualities, are entitled to the glorious Epithet of Friends. But it is only necessary here, just to mention the difference between an Acquaintance and a Friend: We shall have occasion to describe it more particularly hereafter. All I shall at present insist on, is, that it is only these peculiar Correspondencies and strict Unions, that are able to give the true relish to Conversation, and indeed to make Life it self supportable. Which is so universally acknowledged, that all Mankind either have, or fancy they have, some such bosom Friend: And",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        470,
+        847,
+        500,
+        867
+      ],
+      "polygon": [
+        [
+          470,
+          847
+        ],
+        [
+          470,
+          866
+        ],
+        [
+          499,
+          866
+        ],
+        [
+          499,
+          847
+        ],
+        [
+          490,
+          847
+        ],
+        [
+          479,
+          847
+        ]
+      ],
+      "content": "2",
+      "native_label": "number"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        870,
+        839,
+        932,
+        867
+      ],
+      "polygon": [
+        [
+          875,
+          839
+        ],
+        [
+          870,
+          845
+        ],
+        [
+          870,
+          866
+        ],
+        [
+          931,
+          866
+        ],
+        [
+          931,
+          839
+        ]
+      ],
+      "content": "all",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        131,
+        30,
+        602,
+        62
+      ],
+      "polygon": [
+        [
+          131,
+          36
+        ],
+        [
+          131,
+          61
+        ],
+        [
+          600,
+          61
+        ],
+        [
+          600,
+          30
+        ],
+        [
+          137,
+          30
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        45,
+        72,
+        692,
+        201
+      ],
+      "polygon": [
+        [
+          691,
+          72
+        ],
+        [
+          45,
+          77
+        ],
+        [
+          51,
+          200
+        ],
+        [
+          691,
+          200
+        ]
+      ],
+      "content": "all equally pretend to be qualified for this sublime Character; which surely must be an amiable one, since thus universally assumed.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        53,
+        201,
+        722,
+        780
+      ],
+      "polygon": [
+        [
+          53,
+          206
+        ],
+        [
+          74,
+          780
+        ],
+        [
+          721,
+          780
+        ],
+        [
+          701,
+          201
+        ]
+      ],
+      "content": "And if it be granted, (as surely it must,) That these peculiar Friendships are necessary to the Happiness of every Person, who has any Idea of Social Pleasure; Then, Women sure may very justly put in their Claim to it; since they may be supposed to make up one half of those who call themselves Rational. But notwithstanding that, me-thinks I see a contemptuous Smile arise in the Face of a Masculine Reader, (if any of that Sex should vouchsafe to prove so,) at the mention of Female Friendship: But neither their Smiles or Frowns shall ever check my Proceeding, in vindication of our Pretenensions to Virtue, and Happiness, the Reward of it.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        725,
+        29,
+        794,
+        63
+      ],
+      "polygon": [
+        [
+          725,
+          29
+        ],
+        [
+          725,
+          63
+        ],
+        [
+          793,
+          63
+        ],
+        [
+          793,
+          29
+        ]
+      ],
+      "content": "13.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 4,
+      "label": "footer",
+      "bbox_2d": [
+        638,
+        802,
+        725,
+        831
+      ],
+      "polygon": [
+        [
+          638,
+          807
+        ],
+        [
+          638,
+          830
+        ],
+        [
+          724,
+          830
+        ],
+        [
+          724,
+          802
+        ],
+        [
+          670,
+          802
+        ],
+        [
+          658,
+          802
+        ],
+        [
+          644,
+          802
+        ]
+      ],
+      "content": "And",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        96,
+        26,
+        171,
+        58
+      ],
+      "polygon": [
+        [
+          96,
+          26
+        ],
+        [
+          96,
+          57
+        ],
+        [
+          170,
+          57
+        ],
+        [
+          170,
+          26
+        ]
+      ],
+      "content": "14",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        316,
+        18,
+        755,
+        52
+      ],
+      "polygon": [
+        [
+          316,
+          18
+        ],
+        [
+          316,
+          52
+        ],
+        [
+          719,
+          52
+        ],
+        [
+          749,
+          52
+        ],
+        [
+          754,
+          47
+        ],
+        [
+          754,
+          18
+        ]
+      ],
+      "content": "## An E S S A Y",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        192,
+        63,
+        931,
+        840
+      ],
+      "polygon": [
+        [
+          203,
+          63
+        ],
+        [
+          192,
+          829
+        ],
+        [
+          920,
+          839
+        ],
+        [
+          930,
+          63
+        ]
+      ],
+      "content": "And before Friendship be quite exploded, and laugh'd out of the Female World; it is but reasonable they should prove, we are unworthy of it. This indeed they pretend to do, by asserting that We are so. But, with all due Submission to their masculine Logick; Assertions only, will never go for Proofs. But some are so condescending as to give us this good-natur'd reason, why we should not aspire to the Pleasures of Friendship: Because we, poor Souls! are by Nature form'd too weak, to support so lofty a Character. This likewise is an Assertion that has never yet been proved even to a Probability; and therefore cannot possibly be argued from, fairly. But if Women be such weak despicable Creatures, and unfit to contract a bond of Friendship with one equally mean and contemptible with themselves; how unqualify'd are they to enter into the strict",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        90,
+        960,
+        111,
+        985
+      ],
+      "polygon": [
+        [
+          90,
+          960
+        ],
+        [
+          90,
+          985
+        ],
+        [
+          110,
+          985
+        ],
+        [
+          110,
+          960
+        ]
+      ],
+      "content": "```markdown\n\n```",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        155,
+        24,
+        629,
+        57
+      ],
+      "polygon": [
+        [
+          155,
+          24
+        ],
+        [
+          155,
+          56
+        ],
+        [
+          628,
+          56
+        ],
+        [
+          628,
+          24
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        52,
+        69,
+        733,
+        751
+      ],
+      "polygon": [
+        [
+          52,
+          69
+        ],
+        [
+          58,
+          750
+        ],
+        [
+          727,
+          750
+        ],
+        [
+          727,
+          69
+        ]
+      ],
+      "content": "strict Union of Marriage, with one of a native Superiority of Soul? But this is a Consequence they never avowedly own, whatever their secret Sentiments may be; because it is not for their Interest. Perhaps Friendship does not come into their account of Marriage; but according to my distinct Notion of that State, I always thought a perfect Friendship fundamentally necessary to the Happiness of it. And that Opinion is the more confirm'd, because the great * Mr. Norris has prov'd it possible, beyond Contradiction, for the Wife to be capable of a perfect Friendship. (And if it be possible, it is certainly expedient.) This is a generous Concecision, which we must not expect from any of less Candour than that Author: But this one is sufficient for our Purpose, and has prov'd as much",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "footnote",
+      "bbox_2d": [
+        98,
+        787,
+        556,
+        816
+      ],
+      "polygon": [
+        [
+          98,
+          787
+        ],
+        [
+          98,
+          816
+        ],
+        [
+          554,
+          816
+        ],
+        [
+          554,
+          787
+        ]
+      ],
+      "content": "* Letter of the Idea of Friendship.",
+      "native_label": "footnote"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        757,
+        29,
+        822,
+        63
+      ],
+      "polygon": [
+        [
+          763,
+          29
+        ],
+        [
+          757,
+          44
+        ],
+        [
+          757,
+          48
+        ],
+        [
+          763,
+          62
+        ],
+        [
+          821,
+          62
+        ],
+        [
+          821,
+          29
+        ]
+      ],
+      "content": "15",
+      "native_label": "number"
+    },
+    {
+      "index": 4,
+      "label": "footer",
+      "bbox_2d": [
+        667,
+        828,
+        726,
+        852
+      ],
+      "polygon": [
+        [
+          667,
+          828
+        ],
+        [
+          667,
+          851
+        ],
+        [
+          725,
+          851
+        ],
+        [
+          725,
+          828
+        ]
+      ],
+      "content": "for",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        120,
+        21,
+        191,
+        51
+      ],
+      "polygon": [
+        [
+          120,
+          26
+        ],
+        [
+          120,
+          50
+        ],
+        [
+          190,
+          50
+        ],
+        [
+          190,
+          21
+        ],
+        [
+          151,
+          21
+        ]
+      ],
+      "content": "16.",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        327,
+        17,
+        775,
+        49
+      ],
+      "polygon": [
+        [
+          327,
+          22
+        ],
+        [
+          327,
+          49
+        ],
+        [
+          773,
+          49
+        ],
+        [
+          773,
+          17
+        ],
+        [
+          479,
+          17
+        ]
+      ],
+      "content": "An ES S A Y",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        78,
+        63,
+        957,
+        846
+      ],
+      "polygon": [
+        [
+          119,
+          73
+        ],
+        [
+          84,
+          224
+        ],
+        [
+          78,
+          816
+        ],
+        [
+          398,
+          845
+        ],
+        [
+          951,
+          845
+        ],
+        [
+          951,
+          63
+        ]
+      ],
+      "content": "for us, as we can desire. For, if any one Woman be capable of it, then all may; and it can be from no inherent Defect in them, as they are Women, that all are not. But we need not take up with a speculative Proof alone; we have an Example of a very extraordinary Nature, in the Holy Scripture, of the force of Friendship in a female Soul: For, sure the Affection of Ruth to her Mother-in-Law, can be accounted nothing less. The Terms of Expression, which she uses to prevail to attend Naomi's Fortune, are exceeding strong, and agreeable to the generous Sentiments of her Mind. She resolves that no Accidents or Inconveniencies in Life, nor even Death it self, shall ever separate them. A Resolution truly worthy of the noble Principle from whence it sprung! And Sacred History affords us various other Instances, that Women were endued with Faculties,",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        159,
+        18,
+        653,
+        47
+      ],
+      "polygon": [
+        [
+          159,
+          18
+        ],
+        [
+          159,
+          46
+        ],
+        [
+          652,
+          46
+        ],
+        [
+          652,
+          18
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        47,
+        55,
+        741,
+        791
+      ],
+      "polygon": [
+        [
+          735,
+          55
+        ],
+        [
+          52,
+          61
+        ],
+        [
+          52,
+          791
+        ],
+        [
+          735,
+          791
+        ]
+      ],
+      "content": "culties, which they are now denied to possess; and yet they are not mention'd as Prodigies, or presaging any. But these have been already enumerated by an *ingenious Advocate of our own Sex, with so much advantage, that I need not insist further on them. Only thus much I will venture to assert; that our Adversaries cannot bring one Precedent from those Divine Records, for that contemptuous Treatment they generally bestow upon us, as poor, weak, trifling Creatures! hardly actuated by immortal Souls, and little better than mere Machines! But if they are so generous to allow us any Souls, yet that they are of a lower Class, and vastly inferior to their own: And consequently, that we are incapable of Reasoning and Judging, and know no more than is just before us, and perhaps not that, without their Direction.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        788,
+        22,
+        850,
+        52
+      ],
+      "polygon": [
+        [
+          788,
+          22
+        ],
+        [
+          788,
+          47
+        ],
+        [
+          794,
+          52
+        ],
+        [
+          849,
+          52
+        ],
+        [
+          849,
+          22
+        ]
+      ],
+      "content": "17",
+      "native_label": "number"
+    },
+    {
+      "index": 3,
+      "label": "footnote",
+      "bbox_2d": [
+        74,
+        817,
+        734,
+        878
+      ],
+      "polygon": [
+        [
+          74,
+          822
+        ],
+        [
+          79,
+          877
+        ],
+        [
+          175,
+          877
+        ],
+        [
+          733,
+          877
+        ],
+        [
+          733,
+          822
+        ],
+        [
+          608,
+          817
+        ],
+        [
+          79,
+          817
+        ]
+      ],
+      "content": "* See the Preface to Reflections on Marriage. D But",
+      "native_label": "footnote"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        120,
+        11,
+        183,
+        41
+      ],
+      "polygon": [
+        [
+          120,
+          11
+        ],
+        [
+          120,
+          40
+        ],
+        [
+          182,
+          40
+        ],
+        [
+          182,
+          11
+        ]
+      ],
+      "content": "18",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        390,
+        8,
+        762,
+        42
+      ],
+      "polygon": [
+        [
+          390,
+          8
+        ],
+        [
+          390,
+          41
+        ],
+        [
+          760,
+          41
+        ],
+        [
+          760,
+          8
+        ]
+      ],
+      "content": "## An E S S A Y",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        223,
+        55,
+        934,
+        649
+      ],
+      "polygon": [
+        [
+          229,
+          55
+        ],
+        [
+          223,
+          648
+        ],
+        [
+          933,
+          648
+        ],
+        [
+          928,
+          55
+        ]
+      ],
+      "content": "But if this be really the Cafe; how came it to pass, that the Method which our Saviour made use of, to convince the World of the Truth of his Gospel, was the same both for Men and Women? In all his Discourses, he apply'd himself to the Reason of his Hearers: Now, had Women been so destitute of this Faculty, they could not have been converted by the Conviction of it. And though the Preaching of the Gospel was accompany'd with many Miracles; yet we never find this was one, that our Lord created new Capacities in his Audience; only made use of those they had before. And as the manner of Address to both Sexes was equal; so likewise are the Duties enjoin'd, and the",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        85,
+        654,
+        932,
+        813
+      ],
+      "polygon": [
+        [
+          85,
+          659
+        ],
+        [
+          85,
+          793
+        ],
+        [
+          96,
+          813
+        ],
+        [
+          931,
+          813
+        ],
+        [
+          931,
+          654
+        ],
+        [
+          157,
+          654
+        ]
+      ],
+      "content": "Gal. iii. 28. Vices prohibited. And St. Paul affures us, that there is neither Male nor Female; but we are all one in Christ Jesus. From all which, it is very plain, We are capable of the best",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        770,
+        813,
+        931,
+        847
+      ],
+      "polygon": [
+        [
+          770,
+          813
+        ],
+        [
+          770,
+          846
+        ],
+        [
+          929,
+          846
+        ],
+        [
+          929,
+          813
+        ]
+      ],
+      "content": "Things ;",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        133,
+        34,
+        622,
+        63
+      ],
+      "polygon": [
+        [
+          133,
+          34
+        ],
+        [
+          133,
+          62
+        ],
+        [
+          621,
+          62
+        ],
+        [
+          616,
+          34
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        763,
+        37,
+        824,
+        68
+      ],
+      "polygon": [
+        [
+          763,
+          37
+        ],
+        [
+          763,
+          67
+        ],
+        [
+          823,
+          67
+        ],
+        [
+          823,
+          37
+        ]
+      ],
+      "content": "19",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        34,
+        77,
+        720,
+        408
+      ],
+      "polygon": [
+        [
+          34,
+          77
+        ],
+        [
+          39,
+          407
+        ],
+        [
+          714,
+          407
+        ],
+        [
+          714,
+          77
+        ]
+      ],
+      "content": "Things; and if they deny us to be qualified for meaner, we will not contend about that, but leave them in quiet Possession, without once repining at their Injustice. But, after all, 'tis more than probable, that when the Men so strenuously insist on the weakness of our Minds; they express their Wishes that they were so, rather than their Conviction that they are so.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        41,
+        415,
+        743,
+        872
+      ],
+      "polygon": [
+        [
+          41,
+          415
+        ],
+        [
+          66,
+          872
+        ],
+        [
+          733,
+          872
+        ],
+        [
+          728,
+          415
+        ]
+      ],
+      "content": "However, all our Pretenensions to Reasoning Faculties will avail us little, unless we can be prevail'd with to exercise them. And nothing sure can be a more useful Employment for them, than the Study of Friendship; to which, all the Qualifications that are Essential, are also necessary to the making us good Christians: Which, I think, has been fully proved to come within the verge of our Understandings. But as an Error in it may be of fatal Consequence; and as we are very",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        117,
+        21,
+        191,
+        46
+      ],
+      "polygon": [
+        [
+          117,
+          21
+        ],
+        [
+          117,
+          45
+        ],
+        [
+          190,
+          45
+        ],
+        [
+          190,
+          21
+        ]
+      ],
+      "content": "20",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        404,
+        8,
+        797,
+        44
+      ],
+      "polygon": [
+        [
+          404,
+          8
+        ],
+        [
+          404,
+          43
+        ],
+        [
+          792,
+          43
+        ],
+        [
+          796,
+          38
+        ],
+        [
+          796,
+          8
+        ]
+      ],
+      "content": "## An E S S A Y",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        236,
+        56,
+        993,
+        387
+      ],
+      "polygon": [
+        [
+          236,
+          61
+        ],
+        [
+          246,
+          386
+        ],
+        [
+          992,
+          382
+        ],
+        [
+          988,
+          56
+        ]
+      ],
+      "content": "ry liable to Imposition in this Cafe ; (which proceeds from our native tendency to contract these tender Intimacies ; and from the undisguised Honesty of those Hearts where this Inclination is most predominant , which prompts them to believe others as sincere as themselves :) Therefore we ought to be well versed in the Theory, before we venture upon the Practic part.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        240,
+        396,
+        998,
+        847
+      ],
+      "polygon": [
+        [
+          240,
+          396
+        ],
+        [
+          250,
+          842
+        ],
+        [
+          929,
+          842
+        ],
+        [
+          997,
+          846
+        ],
+        [
+          993,
+          396
+        ]
+      ],
+      "content": "The Misfortunes that many have been betray'd into, by false pretences of Friendship, are so numerous, that from thence some have prohibited the very Attempt of succeeding better. But certainly nothing is more absurd, than a Resolution to abolish whatever, by the wickedness of the World, may be abused. And because a Thing has been subservient to vile purposes, therefore to deny the use of it in the most laudable manner, would be to Reform quite away, every Thing valuable a-",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "footer",
+      "bbox_2d": [
+        852,
+        836,
+        998,
+        865
+      ],
+      "polygon": [
+        [
+          852,
+          841
+        ],
+        [
+          852,
+          864
+        ],
+        [
+          997,
+          864
+        ],
+        [
+          997,
+          836
+        ],
+        [
+          919,
+          836
+        ]
+      ],
+      "content": "mongft",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        159,
+        19,
+        640,
+        47
+      ],
+      "polygon": [
+        [
+          159,
+          19
+        ],
+        [
+          159,
+          46
+        ],
+        [
+          639,
+          46
+        ],
+        [
+          639,
+          19
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        67,
+        58,
+        740,
+        483
+      ],
+      "polygon": [
+        [
+          67,
+          58
+        ],
+        [
+          73,
+          483
+        ],
+        [
+          739,
+          483
+        ],
+        [
+          729,
+          58
+        ]
+      ],
+      "content": "mongst us. At this rate of Arguing, all Religion ought to be destroy'd; because Pretences to it have frequently been made by those, who only did so for a Mask to those Designs, as could not be carried on avowedly. And because some specious Friendships have prov'd bonds of Iniquity; from thence to infer that all are so; is just as reasonable, as it would be to assert, that because there have been numerous false Religions, therefore there is no one true.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        77,
+        493,
+        758,
+        855
+      ],
+      "polygon": [
+        [
+          77,
+          493
+        ],
+        [
+          93,
+          835
+        ],
+        [
+          294,
+          855
+        ],
+        [
+          757,
+          855
+        ],
+        [
+          748,
+          493
+        ]
+      ],
+      "content": "Instead therefore of affenting to these false Conclusions, I carneftly intreat every Woman to stand upon her Guard with the utmost Watchfulness, when she meets with any extraordinary Protestations of Affection and Fidelity: For, generally none are so defective of either, as those who profess it most. Especially, if she be a Young Lady of Fortune, she cannot be too cautious in this",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        765,
+        21,
+        827,
+        50
+      ],
+      "polygon": [
+        [
+          765,
+          21
+        ],
+        [
+          765,
+          50
+        ],
+        [
+          826,
+          50
+        ],
+        [
+          826,
+          21
+        ]
+      ],
+      "content": "21",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        72,
+        24,
+        141,
+        50
+      ],
+      "polygon": [
+        [
+          77,
+          24
+        ],
+        [
+          77,
+          50
+        ],
+        [
+          140,
+          50
+        ],
+        [
+          140,
+          24
+        ]
+      ],
+      "content": "2 2",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        355,
+        18,
+        732,
+        49
+      ],
+      "polygon": [
+        [
+          355,
+          18
+        ],
+        [
+          355,
+          49
+        ],
+        [
+          731,
+          49
+        ],
+        [
+          731,
+          18
+        ]
+      ],
+      "content": "An E S S A Y",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        161,
+        65,
+        920,
+        842
+      ],
+      "polygon": [
+        [
+          182,
+          71
+        ],
+        [
+          161,
+          121
+        ],
+        [
+          172,
+          821
+        ],
+        [
+          422,
+          841
+        ],
+        [
+          800,
+          841
+        ],
+        [
+          816,
+          841
+        ],
+        [
+          919,
+          841
+        ],
+        [
+          904,
+          65
+        ]
+      ],
+      "content": "this Affair; for then she is liable to ten thousand Misfortunes of this kind, which Persons in a lower Station are in no danger of. And the younger She is, the more likely is She to be attack'd by, and the less able to discover the fallacy of such Pretences. There are never wanting Numbers of fawning Sycophants, who will be always endeavouring to introduce themselves into her good Opinion, by flattering her Vices, and feeding her Vanity. And if it be her unhappiness not to enjoy a free Conversation, and open Deportment with her Mother; at that Age when she may reasonably expect to be admitted into a Share of her Confidence and Familiarity; She will then almost unavoidably fall a Prey to those with whom she may use those Liberties, she is unjustly denied in Her Company; and may, with good appearance of Reason, think them much better Friends,",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        149,
+        36,
+        587,
+        65
+      ],
+      "polygon": [
+        [
+          149,
+          41
+        ],
+        [
+          149,
+          64
+        ],
+        [
+          586,
+          64
+        ],
+        [
+          586,
+          36
+        ],
+        [
+          200,
+          36
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        65,
+        74,
+        718,
+        836
+      ],
+      "polygon": [
+        [
+          65,
+          80
+        ],
+        [
+          106,
+          831
+        ],
+        [
+          717,
+          836
+        ],
+        [
+          678,
+          80
+        ]
+      ],
+      "content": "before whom she may express her Sentiments, and be applauded for all she says and does; than her Mother, who perhaps never found any fault with her till she was past her Infancy, and after that will suffer no single Word or Attion to pass uncondemned in her Presence. Indeed, oftentimes they are both very justly exceptionable; but that ought, generally speaking, to be charg'd more as the Mother's fault than her own. And considering what miserable Educations most Daughters have bestow'd upon them, the only wonder is, they ever do well, instead of sometimes erring. Most Mothers make Play-Things of their Children at that Age, when they are fittest to receive Instruction and Correction: And when they are arrived at, what one would wish might prove, Years of Discretion, those Vices and Follies which were look'd upon with connivance or approbation before,",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        708,
+        39,
+        769,
+        70
+      ],
+      "polygon": [
+        [
+          708,
+          39
+        ],
+        [
+          708,
+          69
+        ],
+        [
+          768,
+          69
+        ],
+        [
+          768,
+          39
+        ]
+      ],
+      "content": "23",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        120,
+        36,
+        189,
+        63
+      ],
+      "polygon": [
+        [
+          120,
+          36
+        ],
+        [
+          120,
+          58
+        ],
+        [
+          126,
+          62
+        ],
+        [
+          188,
+          62
+        ],
+        [
+          188,
+          36
+        ]
+      ],
+      "content": "24",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        326,
+        27,
+        763,
+        57
+      ],
+      "polygon": [
+        [
+          326,
+          27
+        ],
+        [
+          326,
+          57
+        ],
+        [
+          762,
+          57
+        ],
+        [
+          762,
+          27
+        ]
+      ],
+      "content": "An ESSATY",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        195,
+        72,
+        932,
+        724
+      ],
+      "polygon": [
+        [
+          225,
+          72
+        ],
+        [
+          195,
+          293
+        ],
+        [
+          195,
+          719
+        ],
+        [
+          926,
+          724
+        ],
+        [
+          931,
+          72
+        ]
+      ],
+      "content": "before, are then grown too predominant, not to give horror to the mistaken Parent. But I shall not take upon me to treat of Education, further than as it falls in with my present Subject. I have not vanity enough to think I could use any Arguments, or offer any Instructions, that would be prevalent; when those excellent Treatises, that are already written for that Purpose, have hitherto been so wretchedly ineffectual. But I cannot forbear recommending the Archbishop of Cambray's Education of a Daughter, to the Study of all who have that important Trust committed to their charge: For which they must, doubtless, give a strict Account; therefore they ought to be very diligent, that they may do it with Joy, and not with Grief.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        216,
+        744,
+        920,
+        840
+      ],
+      "polygon": [
+        [
+          216,
+          744
+        ],
+        [
+          222,
+          840
+        ],
+        [
+          919,
+          840
+        ],
+        [
+          919,
+          744
+        ]
+      ],
+      "content": "But to return. There is no Caution more necessary for a young Person, than that she should by no means",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        324,
+        847,
+        358,
+        868
+      ],
+      "polygon": [
+        [
+          324,
+          847
+        ],
+        [
+          324,
+          867
+        ],
+        [
+          357,
+          867
+        ],
+        [
+          357,
+          847
+        ]
+      ],
+      "content": "2",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        140,
+        22,
+        610,
+        52
+      ],
+      "polygon": [
+        [
+          140,
+          27
+        ],
+        [
+          140,
+          51
+        ],
+        [
+          609,
+          51
+        ],
+        [
+          609,
+          27
+        ],
+        [
+          339,
+          22
+        ],
+        [
+          146,
+          22
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        737,
+        22,
+        804,
+        57
+      ],
+      "polygon": [
+        [
+          737,
+          22
+        ],
+        [
+          737,
+          56
+        ],
+        [
+          803,
+          56
+        ],
+        [
+          803,
+          22
+        ]
+      ],
+      "content": "25",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        29,
+        65,
+        701,
+        529
+      ],
+      "polygon": [
+        [
+          35,
+          65
+        ],
+        [
+          35,
+          523
+        ],
+        [
+          700,
+          528
+        ],
+        [
+          695,
+          65
+        ]
+      ],
+      "content": "listen to them as her Friends, who are ready upon all occasions to hear, and join in, with her Complaints of her Parents. For, by that means they get an interest in her Heart, before She her self knows it: Neither are such Repositors to be trusted on any account; for it is odds but they betray her Secrets to those, whose Conduct is the Subject of them. And besides, having thus put her self in their Power, she is obliged to perform whatever they dictate; be it ever so absurd or disagreeable.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        41,
+        537,
+        711,
+        836
+      ],
+      "polygon": [
+        [
+          41,
+          542
+        ],
+        [
+          46,
+          836
+        ],
+        [
+          710,
+          836
+        ],
+        [
+          710,
+          542
+        ],
+        [
+          495,
+          537
+        ]
+      ],
+      "content": "And in order effectually to prevent all these Inconveniences, let her never contract a fondness for mean Persons and Servants especially. For though it is a just Apothegm, That a faithful Servant is an humble Friend; yet it is so difficult to find one who delerves the former Epithet, that a Lady ought to be very cautious how She bestows",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        345,
+        836,
+        381,
+        859
+      ],
+      "polygon": [
+        [
+          345,
+          836
+        ],
+        [
+          345,
+          858
+        ],
+        [
+          379,
+          858
+        ],
+        [
+          379,
+          836
+        ]
+      ],
+      "content": "E",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        129,
+        28,
+        191,
+        58
+      ],
+      "polygon": [
+        [
+          129,
+          33
+        ],
+        [
+          129,
+          57
+        ],
+        [
+          165,
+          57
+        ],
+        [
+          190,
+          52
+        ],
+        [
+          190,
+          28
+        ],
+        [
+          145,
+          28
+        ]
+      ],
+      "content": "26",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        411,
+        23,
+        783,
+        54
+      ],
+      "polygon": [
+        [
+          411,
+          23
+        ],
+        [
+          411,
+          54
+        ],
+        [
+          782,
+          54
+        ],
+        [
+          782,
+          23
+        ]
+      ],
+      "content": "An E S S A Y",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        226,
+        69,
+        960,
+        363
+      ],
+      "polygon": [
+        [
+          232,
+          69
+        ],
+        [
+          232,
+          362
+        ],
+        [
+          959,
+          362
+        ],
+        [
+          954,
+          69
+        ]
+      ],
+      "content": "the latter. For which reason, it is much the safest way, never to make Companions of them; and then there will be no danger She should be betray'd by them to Ruin and Infamy: A Calamity that has often happen'd to the greatest Families; and the greater they are, they may be perhaps the more exposed to such a Misfortune.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        226,
+        378,
+        961,
+        854
+      ],
+      "polygon": [
+        [
+          232,
+          378
+        ],
+        [
+          237,
+          829
+        ],
+        [
+          316,
+          844
+        ],
+        [
+          380,
+          844
+        ],
+        [
+          437,
+          849
+        ],
+        [
+          960,
+          854
+        ],
+        [
+          960,
+          378
+        ]
+      ],
+      "content": "But, of all Things, our Sex in general ought to guard affiduously against the Addresses of those, who approach them with Applause and Commendation. For, they may very certainly conclude such to have some mischievous Design; to serve their own Interest is the least; but very likely, to undermine theirs, who are so weak to listen to their Syren Song. Just Praise is certainly desirable, or else Flattery would not be so successful: But even that ought never to be given before their Faces who deserve it; for the greater",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        135,
+        16,
+        628,
+        43
+      ],
+      "polygon": [
+        [
+          135,
+          16
+        ],
+        [
+          135,
+          42
+        ],
+        [
+          627,
+          42
+        ],
+        [
+          622,
+          16
+        ],
+        [
+          609,
+          16
+        ],
+        [
+          582,
+          16
+        ],
+        [
+          569,
+          16
+        ],
+        [
+          553,
+          16
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        37,
+        57,
+        720,
+        293
+      ],
+      "polygon": [
+        [
+          37,
+          62
+        ],
+        [
+          37,
+          293
+        ],
+        [
+          719,
+          288
+        ],
+        [
+          714,
+          57
+        ]
+      ],
+      "content": "greater the Merit, the less agreeable it will be to hear it. And if they do not deserve it, they who dare to offer it, ought to meet with something else instead of Reward, for thus openly affronting their Judgment and Conscience.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        42,
+        305,
+        735,
+        842
+      ],
+      "polygon": [
+        [
+          48,
+          305
+        ],
+        [
+          57,
+          841
+        ],
+        [
+          734,
+          841
+        ],
+        [
+          720,
+          305
+        ]
+      ],
+      "content": "To all which may be added, as an unexceptionable Rule; that, if duly attended to, will effectually prevent Imposition in this Affair; That all Professions of Friendship are to be totally rejected from those, who can possibly be interested in the Case. Therefore every young Lady (for to such I chiefly dictate, as needing Assistance most,) ought to consider, in what Particulars the Person applying to her is indigent; and if it be at all probable, that the bettering her outward Condition can be her aim; She ought by no means to comply with the Proposal, but fly\n\nE 2 the",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        761,
+        19,
+        827,
+        49
+      ],
+      "polygon": [
+        [
+          761,
+          19
+        ],
+        [
+          761,
+          23
+        ],
+        [
+          761,
+          29
+        ],
+        [
+          761,
+          43
+        ],
+        [
+          767,
+          48
+        ],
+        [
+          826,
+          48
+        ],
+        [
+          826,
+          19
+        ]
+      ],
+      "content": "27",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        90,
+        16,
+        160,
+        53
+      ],
+      "polygon": [
+        [
+          159,
+          16
+        ],
+        [
+          145,
+          16
+        ],
+        [
+          95,
+          21
+        ],
+        [
+          90,
+          26
+        ],
+        [
+          90,
+          39
+        ],
+        [
+          95,
+          52
+        ],
+        [
+          124,
+          52
+        ],
+        [
+          159,
+          48
+        ]
+      ],
+      "content": "28",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        371,
+        16,
+        747,
+        49
+      ],
+      "polygon": [
+        [
+          371,
+          16
+        ],
+        [
+          371,
+          48
+        ],
+        [
+          746,
+          48
+        ],
+        [
+          746,
+          16
+        ]
+      ],
+      "content": "An E S S A Y",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        200,
+        60,
+        931,
+        834
+      ],
+      "polygon": [
+        [
+          211,
+          60
+        ],
+        [
+          200,
+          813
+        ],
+        [
+          930,
+          833
+        ],
+        [
+          925,
+          60
+        ]
+      ],
+      "content": "the Author of it, as one who is not only incapable of Friendship, but destitute of Honesty. I do not mean by this, that those are to be shunn'd, who apply in a just and open manner for relief of their Necessities, to them who are able to supply them. No; so far from that, I know no Disposition so well prepar'd for discharging the Offices of Friendship, as that of a charitable Person: Friendship being often defin'd to be intense, mutual Charity. But those I am now speaking of, cannot plead either Necessity or Merit, to render them fit Objects of Benefolence, in any Sense of the word; and Self-preservation ought effectually to prevent their becoming so. Those who are base enough to prostitute the Sacred Name of Friend to their own by-ends, deserve to be treated as the vilest of Impostors. And as our Saviour has always",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        484,
+        895,
+        506,
+        909
+      ],
+      "polygon": [
+        [
+          484,
+          895
+        ],
+        [
+          484,
+          909
+        ],
+        [
+          505,
+          909
+        ],
+        [
+          505,
+          895
+        ]
+      ],
+      "content": "i",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        139,
+        37,
+        606,
+        70
+      ],
+      "polygon": [
+        [
+          139,
+          37
+        ],
+        [
+          139,
+          69
+        ],
+        [
+          605,
+          69
+        ],
+        [
+          605,
+          37
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        49,
+        75,
+        715,
+        839
+      ],
+      "polygon": [
+        [
+          49,
+          75
+        ],
+        [
+          69,
+          819
+        ],
+        [
+          149,
+          838
+        ],
+        [
+          714,
+          838
+        ],
+        [
+          695,
+          81
+        ]
+      ],
+      "content": "always express'd the utmost abhorrence of Hypocrisy; we may, without forfeiting our Christianity, very justly avoid the Conversation of those, whose Self-interest is the only Foundation of their amity. Indeed, in the unequal distribution of the Possessions of this World, it does too often happen, that People of very great Merit are not so plentifully provided for, as those who less deserve it. And in this Case, the narrowness of their Fortune is, perhaps, a greater misfortune to others than themselves: Because their Modesty makes them shy of accepting Offers of Friendship; and effectually prevents their making Advances that way, to those whom they esteem their Superiors; though oftentimes a little paltry Money is the only pretence they have to that Distinction. What I have here said, cannot affect these; but is only design'd",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        725,
+        41,
+        790,
+        71
+      ],
+      "polygon": [
+        [
+          725,
+          41
+        ],
+        [
+          725,
+          71
+        ],
+        [
+          789,
+          71
+        ],
+        [
+          789,
+          41
+        ]
+      ],
+      "content": "29",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        133,
+        34,
+        199,
+        63
+      ],
+      "polygon": [
+        [
+          133,
+          34
+        ],
+        [
+          133,
+          63
+        ],
+        [
+          169,
+          63
+        ],
+        [
+          198,
+          58
+        ],
+        [
+          198,
+          34
+        ]
+      ],
+      "content": "30",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        399,
+        27,
+        753,
+        59
+      ],
+      "polygon": [
+        [
+          399,
+          27
+        ],
+        [
+          399,
+          58
+        ],
+        [
+          752,
+          58
+        ],
+        [
+          752,
+          27
+        ]
+      ],
+      "content": "An E S S A Y",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        230,
+        75,
+        910,
+        238
+      ],
+      "polygon": [
+        [
+          236,
+          75
+        ],
+        [
+          230,
+          238
+        ],
+        [
+          909,
+          238
+        ],
+        [
+          909,
+          75
+        ]
+      ],
+      "content": "design'd against such, who sollicitously personate a generous Friend,' when their Circumstances make it reasonable to believe, nothing is farther from their Intention.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        223,
+        262,
+        910,
+        830
+      ],
+      "polygon": [
+        [
+          229,
+          267
+        ],
+        [
+          223,
+          829
+        ],
+        [
+          900,
+          829
+        ],
+        [
+          904,
+          262
+        ]
+      ],
+      "content": "But it may be thought, that all the Impediments hitherto enumerated, will entirely vanish, if we change the Scene from Inferiors to those in a higher Rank. But if we consider, that the outward Acquisitions of Wealth or Quality, alone constitute Superiors; and not innate Virtue, and real Merit; we may conclude, that we are like to meet with Obstructions to Friendship among these, as well as those below us. Besides, in this profuse Age, they are not always possess'd of large Fortunes, who appear to be so. And although it may be imagin'd a Baseness none could be guilty of; yet there have been undoubted Instances of some, whose Extravagancies have made them prey up-",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        839,
+        835,
+        894,
+        858
+      ],
+      "polygon": [
+        [
+          839,
+          835
+        ],
+        [
+          839,
+          857
+        ],
+        [
+          893,
+          857
+        ],
+        [
+          893,
+          835
+        ]
+      ],
+      "content": "on",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        153,
+        28,
+        639,
+        58
+      ],
+      "polygon": [
+        [
+          153,
+          28
+        ],
+        [
+          153,
+          57
+        ],
+        [
+          418,
+          57
+        ],
+        [
+          439,
+          57
+        ],
+        [
+          459,
+          57
+        ],
+        [
+          468,
+          57
+        ],
+        [
+          638,
+          52
+        ],
+        [
+          638,
+          28
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        55,
+        69,
+        740,
+        237
+      ],
+      "polygon": [
+        [
+          55,
+          74
+        ],
+        [
+          61,
+          237
+        ],
+        [
+          179,
+          237
+        ],
+        [
+          739,
+          237
+        ],
+        [
+          734,
+          69
+        ],
+        [
+          61,
+          69
+        ]
+      ],
+      "content": "on others, and those their Inferiors too under the specious Pretext of Friendship. So that we have no more Security against the Dictates of Self-Interest in this, than in the lower Clafs.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        55,
+        251,
+        748,
+        843
+      ],
+      "polygon": [
+        [
+          65,
+          251
+        ],
+        [
+          55,
+          842
+        ],
+        [
+          742,
+          837
+        ],
+        [
+          747,
+          257
+        ]
+      ],
+      "content": "But there are others, who make warm Professions of Affection and Sincerity, to Her whom they find susceptible of them; for no other reason, than to dive into the secret Receives of her Soul, in order to make them the Subject of their perfidious Wit and Railery, the next Opportunity they have of laying aside the Mask, without being discover'd by the deceiv'd Author of their barbarous Entertainment. Such Persons scatter Firebrands, Arrows and Death; and say, Am I not in Sport? So that there is in both Stations, we find, great Caution and Prudence necessary, to discover whether those who profess it, are not incapable of Friendship.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        775,
+        31,
+        834,
+        60
+      ],
+      "polygon": [
+        [
+          775,
+          31
+        ],
+        [
+          775,
+          60
+        ],
+        [
+          833,
+          60
+        ],
+        [
+          833,
+          31
+        ]
+      ],
+      "content": "3.1",
+      "native_label": "number"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        613,
+        836,
+        745,
+        863
+      ],
+      "polygon": [
+        [
+          613,
+          836
+        ],
+        [
+          613,
+          862
+        ],
+        [
+          743,
+          862
+        ],
+        [
+          743,
+          836
+        ]
+      ],
+      "content": "Hither-",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 5,
+      "label": "aside_text",
+      "bbox_2d": [
+        747,
+        608,
+        868,
+        668
+      ],
+      "polygon": [
+        [
+          753,
+          608
+        ],
+        [
+          747,
+          644
+        ],
+        [
+          747,
+          668
+        ],
+        [
+          862,
+          668
+        ],
+        [
+          867,
+          663
+        ],
+        [
+          867,
+          608
+        ]
+      ],
+      "content": "Prov.\nxxvi. 18,\n19.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        86,
+        20,
+        153,
+        51
+      ],
+      "polygon": [
+        [
+          86,
+          20
+        ],
+        [
+          86,
+          40
+        ],
+        [
+          92,
+          50
+        ],
+        [
+          152,
+          50
+        ],
+        [
+          152,
+          20
+        ]
+      ],
+      "content": "32",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        369,
+        13,
+        760,
+        45
+      ],
+      "polygon": [
+        [
+          369,
+          13
+        ],
+        [
+          369,
+          45
+        ],
+        [
+          759,
+          45
+        ],
+        [
+          759,
+          13
+        ]
+      ],
+      "content": "An E S S A Y",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        193,
+        86,
+        938,
+        255
+      ],
+      "polygon": [
+        [
+          193,
+          86
+        ],
+        [
+          193,
+          254
+        ],
+        [
+          847,
+          254
+        ],
+        [
+          933,
+          254
+        ],
+        [
+          937,
+          86
+        ]
+      ],
+      "content": "Hitherto we have treated our Subject negatively; we come now to consider positively, the Qualities and Dispositions absolutely necessary to the Forming a Friend.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        190,
+        269,
+        942,
+        843
+      ],
+      "polygon": [
+        [
+          205,
+          269
+        ],
+        [
+          195,
+          843
+        ],
+        [
+          941,
+          843
+        ],
+        [
+          941,
+          274
+        ]
+      ],
+      "content": "The first Essential then, and that which is productive of almost all the other, is Strict Virtue. By which I mean, a native good disposition of the Will, determin'd to perform whatever a well-inform'd Understanding shall dictate to be Just and Reasonable. And as it is absolutely necessary to the Relatitude of the Will, that there be a Sound Judgment; so, in order to acquire that, one inspir'd with the love of Virtue, will not fail to use all methods of Instruction. In which enquiry, they will find no System so capable to direct them, as that of the Gospel; whose Precepts are back'd with such powerful Sanctions to enforce the Pra-",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        345,
+        848,
+        379,
+        867
+      ],
+      "polygon": [
+        [
+          345,
+          848
+        ],
+        [
+          345,
+          866
+        ],
+        [
+          378,
+          866
+        ],
+        [
+          378,
+          848
+        ]
+      ],
+      "content": "2",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        124,
+        17,
+        619,
+        51
+      ],
+      "polygon": [
+        [
+          124,
+          17
+        ],
+        [
+          124,
+          50
+        ],
+        [
+          618,
+          50
+        ],
+        [
+          618,
+          17
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        13,
+        57,
+        725,
+        797
+      ],
+      "polygon": [
+        [
+          13,
+          57
+        ],
+        [
+          24,
+          796
+        ],
+        [
+          724,
+          796
+        ],
+        [
+          710,
+          57
+        ]
+      ],
+      "content": "office of them : And therefore they will immediately embrace it, and never after wilfully depart from that perfect Rule of Life. It may perhaps be said, that we (living in a Christian Country) are all admitted into the Pale of Christ's Church, and therefore obliged to perform the Duties of Christianity; almost involuntarily : Baptism being administered to Infants incapable of chusing for themselves. But notwithstanding this early Pre-engagement, it is most certain, that embracing Christianity to any good Purpose, must be an Act of Deliberation and Choice ; when the Reasoning Faculties are strong enough for such a Scrutiny. And it is owing alone to the want of a wellinclin'd Will, that so many who name the Name of Christ, are so far from departing from all iniquity, that they are only titularly his Disciples.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        30,
+        798,
+        734,
+        897
+      ],
+      "polygon": [
+        [
+          30,
+          798
+        ],
+        [
+          36,
+          896
+        ],
+        [
+          339,
+          896
+        ],
+        [
+          345,
+          896
+        ],
+        [
+          713,
+          896
+        ],
+        [
+          728,
+          896
+        ],
+        [
+          733,
+          798
+        ]
+      ],
+      "content": "But as Virtue, both in the utmost Latitude, and most restrain'd Sense of F itg",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        754,
+        18,
+        821,
+        57
+      ],
+      "polygon": [
+        [
+          754,
+          18
+        ],
+        [
+          754,
+          56
+        ],
+        [
+          820,
+          56
+        ],
+        [
+          820,
+          18
+        ]
+      ],
+      "content": "33",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        724,
+        655,
+        862,
+        706
+      ],
+      "polygon": [
+        [
+          730,
+          655
+        ],
+        [
+          724,
+          661
+        ],
+        [
+          724,
+          706
+        ],
+        [
+          861,
+          706
+        ],
+        [
+          861,
+          655
+        ],
+        [
+          760,
+          655
+        ],
+        [
+          743,
+          655
+        ]
+      ],
+      "content": "2 Tīn, ii.\n19.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        124,
+        29,
+        187,
+        61
+      ],
+      "polygon": [
+        [
+          124,
+          29
+        ],
+        [
+          124,
+          60
+        ],
+        [
+          186,
+          60
+        ],
+        [
+          186,
+          29
+        ]
+      ],
+      "content": "34",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        406,
+        20,
+        778,
+        52
+      ],
+      "polygon": [
+        [
+          406,
+          26
+        ],
+        [
+          406,
+          51
+        ],
+        [
+          777,
+          51
+        ],
+        [
+          777,
+          20
+        ],
+        [
+          416,
+          20
+        ]
+      ],
+      "content": "An E S S A Y",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        227,
+        68,
+        965,
+        865
+      ],
+      "polygon": [
+        [
+          233,
+          68
+        ],
+        [
+          227,
+          850
+        ],
+        [
+          963,
+          865
+        ],
+        [
+          954,
+          68
+        ]
+      ],
+      "content": "it, is absolutely necessary to the existence of Friendship; Therefore we ought to have all the assurance possible to be had from a Mortal, that is, a fallible Creature, that their Virtue is immoveable. And the greatest Probability of that, is where the Practice of Religion proceeds from a strong Conviction of the Understanding, procur'd by a well-dispos'd Inclination. That Virtue, under this compound Idea, is essential to Friendship, will readily appear; if we consider, that no one can be a Friend to another, who is not their own; which no vicious Person can be: For Friendship, as well as all other branches of Charity, must begin at home. Besides, a strong Affection either proceeds from a likeness of Disposition; or necessarily tends to it. Therefore we ought not to risque our own Integrity, by fondness for those who are destitute of it; for either our Esteem of them will soon vanish, and so no Friendship can com-",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "footer",
+      "bbox_2d": [
+        803,
+        857,
+        961,
+        880
+      ],
+      "polygon": [
+        [
+          803,
+          862
+        ],
+        [
+          803,
+          880
+        ],
+        [
+          960,
+          880
+        ],
+        [
+          960,
+          857
+        ],
+        [
+          809,
+          857
+        ]
+      ],
+      "content": "mence",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        129,
+        14,
+        626,
+        44
+      ],
+      "polygon": [
+        [
+          129,
+          14
+        ],
+        [
+          129,
+          43
+        ],
+        [
+          625,
+          43
+        ],
+        [
+          625,
+          14
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        14,
+        54,
+        712,
+        160
+      ],
+      "polygon": [
+        [
+          14,
+          54
+        ],
+        [
+          14,
+          159
+        ],
+        [
+          706,
+          159
+        ],
+        [
+          711,
+          155
+        ],
+        [
+          706,
+          54
+        ]
+      ],
+      "content": "mence ; or else we must apostatize from our Virtue, from whence Leagues of Sin may arise, but no bond of Friendship.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        15,
+        176,
+        730,
+        884
+      ],
+      "polygon": [
+        [
+          15,
+          181
+        ],
+        [
+          36,
+          864
+        ],
+        [
+          141,
+          879
+        ],
+        [
+          265,
+          879
+        ],
+        [
+          321,
+          884
+        ],
+        [
+          729,
+          884
+        ],
+        [
+          714,
+          181
+        ]
+      ],
+      "content": "The next Thing we should look for, is good Sense. Indeed, but small Time is requir'd for this Examination; a much less acquaintance will inform us what Share any Person possesses of this Essential, than can possibly convince us they are not defective in the foregoing. And we are seldom longer in Suspence, whether any one is Ingenious or not, than till they have an opportunity of speaking; though a very short Sentence; the manner and air of doing which, generally gives an unalterable Bias to our opinion of them ever after. However, I cannot think this hafty method of Judging, altogether equitable. Some being very entertaining, and apparently endued with a good Understanding, at our first Acquaintance with them; who afterwards discover their real Ignorance, when their Knowledge regarding only one single\n\nF 2 Thing,",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        760,
+        15,
+        829,
+        54
+      ],
+      "polygon": [
+        [
+          760,
+          20
+        ],
+        [
+          760,
+          53
+        ],
+        [
+          828,
+          53
+        ],
+        [
+          828,
+          15
+        ],
+        [
+          786,
+          15
+        ]
+      ],
+      "content": "35",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        111,
+        12,
+        191,
+        52
+      ],
+      "polygon": [
+        [
+          190,
+          12
+        ],
+        [
+          181,
+          12
+        ],
+        [
+          131,
+          17
+        ],
+        [
+          111,
+          22
+        ],
+        [
+          111,
+          41
+        ],
+        [
+          116,
+          51
+        ],
+        [
+          190,
+          51
+        ]
+      ],
+      "content": "36",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        339,
+        11,
+        827,
+        45
+      ],
+      "polygon": [
+        [
+          339,
+          11
+        ],
+        [
+          339,
+          44
+        ],
+        [
+          826,
+          44
+        ],
+        [
+          826,
+          11
+        ]
+      ],
+      "content": "## An E S S A T",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        226,
+        55,
+        961,
+        860
+      ],
+      "polygon": [
+        [
+          232,
+          55
+        ],
+        [
+          226,
+          835
+        ],
+        [
+          422,
+          855
+        ],
+        [
+          546,
+          860
+        ],
+        [
+          960,
+          860
+        ],
+        [
+          950,
+          55
+        ]
+      ],
+      "content": "Thing, is quite exhausted. In others, again, the Rational Faculties lie latent and conceal'd; to which a reserv'd Temper may much contribute: Of these it is impossible soon to pass a true Judgment. They, like the Flint, requiring Motion to make them shine; we must try them by close Application; and force their Sentiments from them, almost whether they will or no. This is unavoidably the Case, where profound Modesty is join'd to a shy Disposition. And such a one bids very fair for our Esteem in this particular, who, upon repeated tryals, mends upon our hands; and the less such a Person speaks, they may reasonably be supposed to exercise their thinking Faculty the more. But so hard is it to lay down Rules in this affair, without numerous Exceptions, that even here we may be mistaken: Reserve, in some, concealing defective Sense; as well as ceiling bright Parts in others. Since then the uncertainty is so great, it appears",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        141,
+        20,
+        623,
+        50
+      ],
+      "polygon": [
+        [
+          141,
+          25
+        ],
+        [
+          141,
+          49
+        ],
+        [
+          622,
+          49
+        ],
+        [
+          622,
+          20
+        ],
+        [
+          147,
+          20
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        45,
+        60,
+        729,
+        865
+      ],
+      "polygon": [
+        [
+          45,
+          65
+        ],
+        [
+          66,
+          845
+        ],
+        [
+          669,
+          865
+        ],
+        [
+          728,
+          850
+        ],
+        [
+          713,
+          60
+        ]
+      ],
+      "content": "pears necessary to add a Definition of the Phrase, good Sense, in its true and genuine meaning. But to do that accurately, seems to require a larger Share of it, than I have the vanity to think I possess: And I believe it is much easier to determine what it is not, than what it is. However, without running any great Risque, I think I may assert, Good Sense, to consist, in a full and free Exercise of the Thinking Power in the Soul: Presupposing that Faculty to be entire, and not under the misfortune of any Natural defect; which I conceive to be defin'd by the Term, good natural Parts. Which, with the external helps of Reading and Conversation, will soon arise to good Sense, in the full and most extensive Notion of it. This is so necessary to render even common Conversation agreeable; that I need not be at the pains to prove, how highly requisite it is to procure and maintain the intimate Correspondence we are now treating",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        748,
+        14,
+        812,
+        54
+      ],
+      "polygon": [
+        [
+          748,
+          14
+        ],
+        [
+          748,
+          53
+        ],
+        [
+          811,
+          53
+        ],
+        [
+          811,
+          14
+        ]
+      ],
+      "content": "37",
+      "native_label": "number"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        665,
+        847,
+        731,
+        875
+      ],
+      "polygon": [
+        [
+          671,
+          847
+        ],
+        [
+          665,
+          852
+        ],
+        [
+          665,
+          875
+        ],
+        [
+          729,
+          875
+        ],
+        [
+          729,
+          852
+        ],
+        [
+          695,
+          847
+        ]
+      ],
+      "content": "ing",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        97,
+        10,
+        163,
+        48
+      ],
+      "polygon": [
+        [
+          162,
+          10
+        ],
+        [
+          126,
+          10
+        ],
+        [
+          97,
+          15
+        ],
+        [
+          97,
+          38
+        ],
+        [
+          102,
+          47
+        ],
+        [
+          120,
+          47
+        ],
+        [
+          148,
+          43
+        ],
+        [
+          162,
+          38
+        ]
+      ],
+      "content": "38",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "aside_text",
+      "bbox_2d": [
+        61,
+        687,
+        187,
+        732
+      ],
+      "polygon": [
+        [
+          66,
+          687
+        ],
+        [
+          61,
+          692
+        ],
+        [
+          61,
+          731
+        ],
+        [
+          182,
+          731
+        ],
+        [
+          186,
+          727
+        ],
+        [
+          186,
+          692
+        ],
+        [
+          182,
+          687
+        ]
+      ],
+      "content": "Psal. xv.\n5.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        482,
+        868,
+        510,
+        884
+      ],
+      "polygon": [
+        [
+          487,
+          868
+        ],
+        [
+          487,
+          884
+        ],
+        [
+          508,
+          884
+        ],
+        [
+          508,
+          868
+        ]
+      ],
+      "content": "2",
+      "native_label": "number"
+    },
+    {
+      "index": 3,
+      "label": "header",
+      "bbox_2d": [
+        295,
+        10,
+        769,
+        43
+      ],
+      "polygon": [
+        [
+          295,
+          15
+        ],
+        [
+          295,
+          42
+        ],
+        [
+          768,
+          42
+        ],
+        [
+          764,
+          10
+        ],
+        [
+          326,
+          10
+        ]
+      ],
+      "content": "An E S S A Y",
+      "native_label": "header"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        202,
+        58,
+        934,
+        122
+      ],
+      "polygon": [
+        [
+          202,
+          58
+        ],
+        [
+          207,
+          121
+        ],
+        [
+          933,
+          121
+        ],
+        [
+          933,
+          58
+        ]
+      ],
+      "content": "ing of : Therefore will go on in the third place, to shew the necessity of,",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        199,
+        132,
+        947,
+        861
+      ],
+      "polygon": [
+        [
+          199,
+          132
+        ],
+        [
+          199,
+          856
+        ],
+        [
+          946,
+          860
+        ],
+        [
+          942,
+          132
+        ]
+      ],
+      "content": "Fidelity and Faithfulness; in regard of Secrets and Promises. And first, we must be convinc'd of a Person's Fidelity in keeping all Promises, before we venture any Secrets to their Trust. And although some who are scrupulously Just, are exceeding cautious of making Promises, whereby to discover their exact Performance of them; yet such conscientious Assertors of Truth may be depended on safely, without this particular demonstration. But in this Age, few will give us the trouble to look for any further Proof of their Veracity, than the performance of those Agreements they are very ready to make. When therefore, by long Experience, we find one who may be depended on, in this Branch, even where it is to their own disadvantage; we may pretty safely repose Secrets in that Breast so tenacious of Justice. But as a mistaken Trust may be of most pernicious Consequence, it will be much the wisest way to prove the safe-",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "footer",
+      "bbox_2d": [
+        896,
+        867,
+        945,
+        892
+      ],
+      "polygon": [
+        [
+          901,
+          867
+        ],
+        [
+          896,
+          871
+        ],
+        [
+          896,
+          888
+        ],
+        [
+          901,
+          892
+        ],
+        [
+          943,
+          892
+        ],
+        [
+          943,
+          871
+        ],
+        [
+          934,
+          867
+        ]
+      ],
+      "content": "ty",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        148,
+        29,
+        618,
+        60
+      ],
+      "polygon": [
+        [
+          148,
+          29
+        ],
+        [
+          148,
+          60
+        ],
+        [
+          617,
+          60
+        ],
+        [
+          617,
+          29
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        45,
+        72,
+        721,
+        672
+      ],
+      "polygon": [
+        [
+          45,
+          77
+        ],
+        [
+          56,
+          671
+        ],
+        [
+          720,
+          671
+        ],
+        [
+          711,
+          72
+        ]
+      ],
+      "content": "ty of it by small, inconsiderable tryals: Small, I mean, as to the mischief a discovery of them might do; but large, in regard of the assurance we might thence have, of Faithfulness, where we pleas'd our selves with the hopes of it. For one of the great Ends of Friendship, being to divide Grief, and double Joy to each Party; therefore there must be a free unreserv'd communication of each other's affairs: In which, it is certain, there must be many Things necessarily conceal'd from the general Knowledge of the World. If therefore we have not well secur'd this Point, instead of friendly Advice and Assistance, equal to our many Exigencies, we shall fall unpitied, by numberless vexations and disappointments, a Victim to our own fond Credulity.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        53,
+        681,
+        728,
+        895
+      ],
+      "polygon": [
+        [
+          53,
+          854
+        ],
+        [
+          64,
+          874
+        ],
+        [
+          93,
+          889
+        ],
+        [
+          124,
+          894
+        ],
+        [
+          723,
+          894
+        ],
+        [
+          718,
+          681
+        ],
+        [
+          109,
+          681
+        ],
+        [
+          59,
+          681
+        ]
+      ],
+      "content": "To all these Qualifications, must be added a Generous, Grateful, Sweet Temper : It being impossible Friendship should subsist with a contrary Disposition. For, Love and Tenderness of Affection being the only Cement in this Union;",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        749,
+        34,
+        811,
+        66
+      ],
+      "polygon": [
+        [
+          749,
+          34
+        ],
+        [
+          749,
+          65
+        ],
+        [
+          810,
+          65
+        ],
+        [
+          810,
+          34
+        ]
+      ],
+      "content": "39",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        86,
+        30,
+        162,
+        59
+      ],
+      "polygon": [
+        [
+          91,
+          30
+        ],
+        [
+          86,
+          35
+        ],
+        [
+          86,
+          39
+        ],
+        [
+          91,
+          59
+        ],
+        [
+          161,
+          59
+        ],
+        [
+          161,
+          30
+        ]
+      ],
+      "content": "40",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "aside_text",
+      "bbox_2d": [
+        65,
+        276,
+        202,
+        335
+      ],
+      "polygon": [
+        [
+          65,
+          276
+        ],
+        [
+          65,
+          334
+        ],
+        [
+          201,
+          334
+        ],
+        [
+          201,
+          276
+        ]
+      ],
+      "content": "Of Wif-\ndom, L. 3.\nc. 7.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 2,
+      "label": "header",
+      "bbox_2d": [
+        370,
+        18,
+        750,
+        50
+      ],
+      "polygon": [
+        [
+          370,
+          18
+        ],
+        [
+          370,
+          49
+        ],
+        [
+          749,
+          49
+        ],
+        [
+          749,
+          18
+        ]
+      ],
+      "content": "An E S S A T",
+      "native_label": "header"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        193,
+        65,
+        936,
+        752
+      ],
+      "polygon": [
+        [
+          200,
+          65
+        ],
+        [
+          193,
+          746
+        ],
+        [
+          935,
+          751
+        ],
+        [
+          925,
+          65
+        ]
+      ],
+      "content": "Union; that can never be intense, but towards a Soul thus adorn'd and refined. Besides, as such a Temper only can at first introduce this delightful Commerce; so is it always improving it, by magnifying the Favours it receives, and overlooking those it confers. Indeed, according to the Sièur de Charron's Idea of Friendship, there can be no such thing as Favours and Obligations in a perfect one: But as they must all, in their first commencement, be what he calls Common, before they arrive at Perfection; so there must be mutual Obligations and Acknowledgments, before the Union can be so entire, that their Souls are (as the same Author elegantly expresses it) absorb'd and mingled with each other. And although all Separate Property then ceases; yet that Benignity of Disposition is still absolutely necessary, to preserve, what it has so happily begun.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        216,
+        762,
+        942,
+        858
+      ],
+      "polygon": [
+        [
+          216,
+          762
+        ],
+        [
+          216,
+          852
+        ],
+        [
+          227,
+          857
+        ],
+        [
+          262,
+          857
+        ],
+        [
+          941,
+          857
+        ],
+        [
+          941,
+          762
+        ]
+      ],
+      "content": "Thus much then shall suffice for the Essentials of Friendship : More there need not be ; but these must be, in as",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        855,
+        850,
+        945,
+        885
+      ],
+      "polygon": [
+        [
+          860,
+          850
+        ],
+        [
+          855,
+          855
+        ],
+        [
+          855,
+          884
+        ],
+        [
+          939,
+          884
+        ],
+        [
+          944,
+          879
+        ],
+        [
+          944,
+          850
+        ]
+      ],
+      "content": "full",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        136,
+        22,
+        618,
+        57
+      ],
+      "polygon": [
+        [
+          136,
+          22
+        ],
+        [
+          136,
+          57
+        ],
+        [
+          393,
+          57
+        ],
+        [
+          400,
+          57
+        ],
+        [
+          410,
+          57
+        ],
+        [
+          468,
+          57
+        ],
+        [
+          484,
+          57
+        ],
+        [
+          558,
+          57
+        ],
+        [
+          564,
+          57
+        ],
+        [
+          582,
+          57
+        ],
+        [
+          593,
+          57
+        ],
+        [
+          602,
+          57
+        ],
+        [
+          616,
+          52
+        ],
+        [
+          616,
+          22
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        25,
+        66,
+        723,
+        760
+      ],
+      "polygon": [
+        [
+          708,
+          66
+        ],
+        [
+          25,
+          72
+        ],
+        [
+          36,
+          759
+        ],
+        [
+          722,
+          759
+        ]
+      ],
+      "content": "full an extent as possible. And here I cannot forbear asking those, who would debar our Sex of the Pleasures and Advantages of Friendship; Which of these Qualifications Women must necessarily want? But if they may all be found in a female Soul; then we cannot with any Justice be excluded from this application of them, where concurrent Circumstances make it practicable. And pray, where is the Absurdity of supposing a Woman endued with Moral and Religious Virtue, with good Sense, Veracity, Gratitude and Generosity? So far is it from being one, that if we examine them severally, I doubt not, we shall find as many Votaries at least, among our Sex, as the other can boast of: Especially considering the vast Advantages they enjoy as to outward Helps, exclusive of native Superior Genius, which, as Men, they arrogate to themselves.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        45,
+        769,
+        732,
+        882
+      ],
+      "polygon": [
+        [
+          45,
+          774
+        ],
+        [
+          51,
+          877
+        ],
+        [
+          96,
+          881
+        ],
+        [
+          330,
+          881
+        ],
+        [
+          337,
+          881
+        ],
+        [
+          377,
+          881
+        ],
+        [
+          686,
+          881
+        ],
+        [
+          692,
+          872
+        ],
+        [
+          730,
+          872
+        ],
+        [
+          730,
+          769
+        ],
+        [
+          51,
+          769
+        ]
+      ],
+      "content": "And first ; So far are even the other Sex from denying Religion to be part of a female Character, that they allow G ix",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        746,
+        26,
+        813,
+        61
+      ],
+      "polygon": [
+        [
+          746,
+          26
+        ],
+        [
+          746,
+          60
+        ],
+        [
+          811,
+          60
+        ],
+        [
+          811,
+          26
+        ]
+      ],
+      "content": "4. 直",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        108,
+        21,
+        177,
+        51
+      ],
+      "polygon": [
+        [
+          108,
+          21
+        ],
+        [
+          108,
+          50
+        ],
+        [
+          171,
+          50
+        ],
+        [
+          171,
+          21
+        ],
+        [
+          134,
+          21
+        ],
+        [
+          123,
+          21
+        ]
+      ],
+      "content": "42",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        386,
+        10,
+        758,
+        44
+      ],
+      "polygon": [
+        [
+          386,
+          15
+        ],
+        [
+          386,
+          43
+        ],
+        [
+          752,
+          43
+        ],
+        [
+          757,
+          39
+        ],
+        [
+          757,
+          10
+        ],
+        [
+          392,
+          10
+        ]
+      ],
+      "content": "## An E S S A Y",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        40,
+        925,
+        883
+      ],
+      "polygon": [
+        [
+          126,
+          51
+        ],
+        [
+          126,
+          544
+        ],
+        [
+          207,
+          858
+        ],
+        [
+          271,
+          878
+        ],
+        [
+          914,
+          883
+        ],
+        [
+          923,
+          61
+        ],
+        [
+          286,
+          40
+        ]
+      ],
+      "content": "it us, even to the degree of Superstition. But though they are often mistaken, in laying this to the charge of those, who are as free from it, as many of them are from the profession of any Religion; Yet their Supposition that it proceeds from a wrong Principle, at the same time necessarily supposes it to exist. And indeed, both Moral and Religious Virtue seems more and more to become the peculiar Characteristick of our Sex: This being the only Possession the other are contented we should engross to our selves; but here, they are as humble and passive, in their desire of Acquisition, as in all other Cases they would be glad if We were. And it is very remarkable for our Honour, that when any one among us lays aside her Virtue and Modefty, and commences a Prodigy of Vice and Wickedness; She is known by no other Epithet, than that of a MASCULINE Woman, and immediately avoided by all who would preserve their Innocency, as a Monster in Nature. Our Claim to this Particular,",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        158,
+        24,
+        643,
+        52
+      ],
+      "polygon": [
+        [
+          158,
+          24
+        ],
+        [
+          158,
+          52
+        ],
+        [
+          642,
+          52
+        ],
+        [
+          642,
+          24
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        43,
+        66,
+        723,
+        128
+      ],
+      "polygon": [
+        [
+          43,
+          66
+        ],
+        [
+          43,
+          127
+        ],
+        [
+          682,
+          127
+        ],
+        [
+          722,
+          123
+        ],
+        [
+          717,
+          66
+        ],
+        [
+          89,
+          66
+        ]
+      ],
+      "content": "cular, being thus indisputable; let us fee whether we can make it out to",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        39,
+        139,
+        732,
+        885
+      ],
+      "polygon": [
+        [
+          45,
+          139
+        ],
+        [
+          50,
+          874
+        ],
+        [
+          75,
+          884
+        ],
+        [
+          661,
+          884
+        ],
+        [
+          730,
+          869
+        ],
+        [
+          730,
+          139
+        ]
+      ],
+      "content": "The Second, which is, good Sense. And considering the disadvantages and hardships, most of us are under, from the little Improvement that is allow'd us; it is no wonder to find many, whose Understandings are poor and fallow: The necessary consequence of Neglect. But notwithstanding this partial and unjust dealing, there are many who give daily Evidence of an extensive Capacity, by acting prudently and unblamably in the most difficult Stations of Life, to which Providence allots them. But if it should be thought no great difficulty, to act with applause in private Life; (which yet may be a mistake, if we reflect what capricious Dispositions Women are many times bound to Please and Obey;) there are not wanting Instances of the most consummate Wisdom, in Some of our Sex who have been plac'd in the most conspicuous and exalted Sphere of Action; to wit, Regal Power and Authority: Of which our own Coun-",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        773,
+        24,
+        843,
+        60
+      ],
+      "polygon": [
+        [
+          773,
+          24
+        ],
+        [
+          773,
+          59
+        ],
+        [
+          842,
+          59
+        ],
+        [
+          842,
+          24
+        ]
+      ],
+      "content": "43",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        350,
+        9,
+        710,
+        44
+      ],
+      "polygon": [
+        [
+          350,
+          9
+        ],
+        [
+          350,
+          43
+        ],
+        [
+          709,
+          43
+        ],
+        [
+          709,
+          9
+        ]
+      ],
+      "content": "## An E S S A Υ",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        193,
+        52,
+        901,
+        649
+      ],
+      "polygon": [
+        [
+          199,
+          52
+        ],
+        [
+          193,
+          643
+        ],
+        [
+          900,
+          648
+        ],
+        [
+          890,
+          57
+        ]
+      ],
+      "content": "try has more than once enjoy'd the happy and extensive Influence. Indeed, those Illustrious Princesses had all the Advantages of Art, as well as Nature on their Side: And methinks the shining and useful Effects they produc'd in them, should be an Encouragement sufficient to procure us those Advantages, which are generally barbarously with-held from us. But if we reflect what despicable Figures Men make without a Liberal Education, it would tempt one to think, our Natural Title to good Sense was even Superior to theirs. For, Men are obliged to take great Pains, and be at a large Expence of Time and Money too, to become wife and ingenious; and Women, without any such assistance, give manifest proofs that they are so, by the single Force of Native Genius.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        220,
+        660,
+        907,
+        846
+      ],
+      "polygon": [
+        [
+          220,
+          660
+        ],
+        [
+          220,
+          845
+        ],
+        [
+          905,
+          845
+        ],
+        [
+          901,
+          660
+        ]
+      ],
+      "content": "But perhaps it may be more difficult to prove, Thirdly, that Women are able to keep a Secret entrusted to their Care. Indeed, our Weakness in this particular has been a heavy Charge against us for many Ages : Infomuch that Portia was",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        132,
+        36,
+        603,
+        63
+      ],
+      "polygon": [
+        [
+          132,
+          36
+        ],
+        [
+          132,
+          62
+        ],
+        [
+          602,
+          62
+        ],
+        [
+          597,
+          36
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        724,
+        37,
+        789,
+        69
+      ],
+      "polygon": [
+        [
+          724,
+          42
+        ],
+        [
+          724,
+          68
+        ],
+        [
+          788,
+          68
+        ],
+        [
+          788,
+          37
+        ],
+        [
+          750,
+          37
+        ]
+      ],
+      "content": "45.",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        39,
+        76,
+        701,
+        461
+      ],
+      "polygon": [
+        [
+          39,
+          82
+        ],
+        [
+          49,
+          461
+        ],
+        [
+          700,
+          461
+        ],
+        [
+          700,
+          241
+        ],
+        [
+          680,
+          76
+        ]
+      ],
+      "content": "obliged to prove by a tormenting Experiment, that she was exempt from this feminine Frailty. But if She, by the bare Strength of a Roman Resolution, inspir'd by an Education worthy of Cato's Daughter, could resist the potent Impulses of pungent Pain, to disclose the Secret that caused it : Why should it be thought impossible, or at all improbable for a modern Female, assisted by the far nobler Principles of Christian Fortitude, to be faithful to the greatest Trust that can be committed to her care?",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        57,
+        466,
+        715,
+        734
+      ],
+      "polygon": [
+        [
+          57,
+          466
+        ],
+        [
+          63,
+          734
+        ],
+        [
+          714,
+          734
+        ],
+        [
+          710,
+          472
+        ]
+      ],
+      "content": "Lastly, Generosity, Gratitude, and Good-Nature, are so apparently the peculiar Properties of the female Sex, that there is no occasion to enter upon a particular Demonstration of what, I believe, was never controverted : They being oftener tax'd with too large a Share of these Qualifications, than with a total failure of them.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        72,
+        742,
+        722,
+        893
+      ],
+      "polygon": [
+        [
+          72,
+          747
+        ],
+        [
+          78,
+          868
+        ],
+        [
+          152,
+          883
+        ],
+        [
+          168,
+          888
+        ],
+        [
+          721,
+          892
+        ],
+        [
+          716,
+          742
+        ],
+        [
+          122,
+          742
+        ],
+        [
+          78,
+          742
+        ]
+      ],
+      "content": "If then it is possible for our Sex to be adorn'd with all these Virtues and Graces; and if some possess them in an eminent Degree; as I dare aver many do: What",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        114,
+        28,
+        182,
+        65
+      ],
+      "polygon": [
+        [
+          181,
+          28
+        ],
+        [
+          149,
+          28
+        ],
+        [
+          114,
+          34
+        ],
+        [
+          114,
+          64
+        ],
+        [
+          152,
+          64
+        ],
+        [
+          181,
+          59
+        ]
+      ],
+      "content": "46",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        395,
+        27,
+        770,
+        59
+      ],
+      "polygon": [
+        [
+          395,
+          27
+        ],
+        [
+          395,
+          58
+        ],
+        [
+          768,
+          58
+        ],
+        [
+          768,
+          27
+        ]
+      ],
+      "content": "An E S S A Υ",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        216,
+        76,
+        942,
+        865
+      ],
+      "polygon": [
+        [
+          216,
+          76
+        ],
+        [
+          222,
+          865
+        ],
+        [
+          941,
+          865
+        ],
+        [
+          941,
+          81
+        ]
+      ],
+      "content": "What pity is it, that others, charm'd by their lovely and attractive Example, do not strive to emulate, and at least equal them in the possession of so real a Good? Can we form an Idea of any thing more amiable on this side Heaven, than a Woman govern'd and actuated in all her Thoughts, Words and Actions, by a strong conviction of Religion? Such a one loves Virtue, and practises it, not so much out of a fordid Fear, and dread of Punishment; as from a full assurance that it is most suitable to the Dignity of a Rational Creature: And, inspir'd with a laudable Ambition, endeavours to acquire all the imitable Perfections of her great Creator; whom she loves and adores, as the only Supreme Satisfying Good! And will therefore arduously endeavour after an Union with that Gracious Being, who hath promised to be the Reward of all, who humbly and diligently seek Him. But as She must wait for this perfection of Happiness till the next Life; She will, during her Stay in this, chuse to associate and converse with",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        503,
+        873,
+        535,
+        889
+      ],
+      "polygon": [
+        [
+          503,
+          873
+        ],
+        [
+          503,
+          888
+        ],
+        [
+          534,
+          888
+        ],
+        [
+          534,
+          873
+        ]
+      ],
+      "content": "2",
+      "native_label": "number"
+    },
+    {
+      "index": 4,
+      "label": "footer",
+      "bbox_2d": [
+        826,
+        865,
+        939,
+        895
+      ],
+      "polygon": [
+        [
+          826,
+          865
+        ],
+        [
+          826,
+          895
+        ],
+        [
+          937,
+          895
+        ],
+        [
+          937,
+          865
+        ]
+      ],
+      "content": "those,",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        144,
+        29,
+        604,
+        56
+      ],
+      "polygon": [
+        [
+          144,
+          29
+        ],
+        [
+          144,
+          56
+        ],
+        [
+          603,
+          56
+        ],
+        [
+          603,
+          29
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        52,
+        66,
+        711,
+        747
+      ],
+      "polygon": [
+        [
+          695,
+          66
+        ],
+        [
+          52,
+          72
+        ],
+        [
+          68,
+          746
+        ],
+        [
+          710,
+          746
+        ]
+      ],
+      "content": "those, who come the nearest to the Divine Nature in purity and holiness. With these, she will contract a close and intimate Friendship; with them she will repose the Arcana's of her Soul; and from them will receive wholsome and useful Advice; which she will cheerfully return with a generous Sincerity, whenever their Exigencies shall require it. Thus reciprocally receiving and repaying good Offices, with a calm unruffled Mind, amidst the Sun-shine of Prosperity, and the rough Blasts of Adversity; will she innocently glide through this mortal State: And at length arrive at that blissful Region, where Friendship in the most exalted degree, is the Business of Eternity. Where no Separate Interests can interfere, to the detiment of the whole; but where All love, and are belov'd with an Ardency of Affection, pure and inextinguishable!",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        65,
+        756,
+        715,
+        875
+      ],
+      "polygon": [
+        [
+          65,
+          761
+        ],
+        [
+          65,
+          850
+        ],
+        [
+          71,
+          855
+        ],
+        [
+          101,
+          870
+        ],
+        [
+          121,
+          875
+        ],
+        [
+          220,
+          875
+        ],
+        [
+          246,
+          875
+        ],
+        [
+          714,
+          875
+        ],
+        [
+          710,
+          756
+        ],
+        [
+          141,
+          756
+        ]
+      ],
+      "content": "How Bleist! how desirable a State is this! There are none so totally abandon'd sure, but would wish, Thus to die the",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        732,
+        34,
+        794,
+        63
+      ],
+      "polygon": [
+        [
+          738,
+          34
+        ],
+        [
+          738,
+          63
+        ],
+        [
+          793,
+          63
+        ],
+        [
+          793,
+          34
+        ]
+      ],
+      "content": "47.",
+      "native_label": "number"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        716,
+        760,
+        835,
+        858
+      ],
+      "polygon": [
+        [
+          722,
+          760
+        ],
+        [
+          716,
+          829
+        ],
+        [
+          716,
+          853
+        ],
+        [
+          722,
+          857
+        ],
+        [
+          731,
+          857
+        ],
+        [
+          771,
+          857
+        ],
+        [
+          784,
+          857
+        ],
+        [
+          795,
+          857
+        ],
+        [
+          804,
+          857
+        ],
+        [
+          833,
+          853
+        ],
+        [
+          833,
+          760
+        ]
+      ],
+      "content": "Numb.\nxxiii. 10.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        93,
+        16,
+        162,
+        57
+      ],
+      "polygon": [
+        [
+          156,
+          16
+        ],
+        [
+          142,
+          16
+        ],
+        [
+          103,
+          21
+        ],
+        [
+          93,
+          26
+        ],
+        [
+          93,
+          56
+        ],
+        [
+          141,
+          56
+        ],
+        [
+          161,
+          51
+        ],
+        [
+          161,
+          21
+        ]
+      ],
+      "content": "48",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        372,
+        16,
+        754,
+        49
+      ],
+      "polygon": [
+        [
+          372,
+          21
+        ],
+        [
+          372,
+          49
+        ],
+        [
+          752,
+          49
+        ],
+        [
+          752,
+          16
+        ],
+        [
+          378,
+          16
+        ]
+      ],
+      "content": "$A_{n}$ E S S A $\\Upsilon$",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        197,
+        64,
+        930,
+        861
+      ],
+      "polygon": [
+        [
+          197,
+          64
+        ],
+        [
+          197,
+          855
+        ],
+        [
+          924,
+          860
+        ],
+        [
+          929,
+          64
+        ]
+      ],
+      "content": "the death of the Righteous! But the only sure Introduction, is a Life so spent; and to do that. is not so easy as by many is imagin'd. No one who ever thinks, but must confess it much more eligible to practise all the fore-mention'd Virtues, than to live in open Neglect and Contempt of them. But it is not barely affenting to, and approving what is excellent, that will work a change: This, indeed, is a necessary Prelude; but whoever stops here, will be miserably disappointed. From Assent we must proceed to Practice; and never let the beautiful Idea of Virtue slip out of our Minds; but with an indesatigable Industry still conform our selves to the Rules and Precepts that sets us. But alas! how difficult, and (almost) impossible is this, to one whose Thoughts and Inclinations have always been busied about the Pleasures of Sense! Such a one can have no adequate Notion of Friendship; but miscals Associates in Diversion, and giddy thoughtless Companions, by the Name of Friends. It",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        135,
+        29,
+        619,
+        59
+      ],
+      "polygon": [
+        [
+          135,
+          29
+        ],
+        [
+          135,
+          58
+        ],
+        [
+          618,
+          58
+        ],
+        [
+          618,
+          29
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        30,
+        71,
+        715,
+        527
+      ],
+      "polygon": [
+        [
+          30,
+          71
+        ],
+        [
+          41,
+          527
+        ],
+        [
+          714,
+          527
+        ],
+        [
+          705,
+          71
+        ]
+      ],
+      "content": "is speaking an unknown Language, to talk to such a Person, of the sublime and rapturous Enjoyments of a virtuous and disinterested Friendship. And it is well if we meet with no worse Return, for thus wafting our time, than to be thought enthusiastick Visionaries, who are possess'd with some airy Imaginations, that never had Being, but in our fantastick Brain. These are too far immersed in wilful Ignorance, and chosen Folly, to receive any impression from a Discourse of this nature; but what will evaporate in their keenest Railery, and most poignant Wit.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        34,
+        535,
+        726,
+        884
+      ],
+      "polygon": [
+        [
+          34,
+          535
+        ],
+        [
+          49,
+          883
+        ],
+        [
+          69,
+          883
+        ],
+        [
+          169,
+          883
+        ],
+        [
+          380,
+          883
+        ],
+        [
+          396,
+          883
+        ],
+        [
+          580,
+          883
+        ],
+        [
+          591,
+          883
+        ],
+        [
+          725,
+          883
+        ],
+        [
+          715,
+          535
+        ]
+      ],
+      "content": "But there are others, from whom we hope better Things : Who are really reasonable Creatures ; and, conscious that they are 10, are willing to improve the Talents committed to them to the best advantage. It is to these only I expect to do any Service by the fore-going Rules : And I earnestly intreat them never to assume the Name or Character of a Friend, till they have contracted a Habit of all those necessary Qualifica-",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "header",
+      "bbox_2d": [
+        749,
+        30,
+        817,
+        64
+      ],
+      "polygon": [
+        [
+          749,
+          30
+        ],
+        [
+          749,
+          63
+        ],
+        [
+          816,
+          63
+        ],
+        [
+          816,
+          30
+        ]
+      ],
+      "content": "49",
+      "native_label": "header"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        344,
+        871,
+        383,
+        893
+      ],
+      "polygon": [
+        [
+          344,
+          871
+        ],
+        [
+          344,
+          893
+        ],
+        [
+          381,
+          893
+        ],
+        [
+          381,
+          871
+        ]
+      ],
+      "content": "H",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        130,
+        31,
+        190,
+        62
+      ],
+      "polygon": [
+        [
+          136,
+          31
+        ],
+        [
+          130,
+          37
+        ],
+        [
+          130,
+          61
+        ],
+        [
+          189,
+          61
+        ],
+        [
+          189,
+          31
+        ]
+      ],
+      "content": "50",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "aside_text",
+      "bbox_2d": [
+        101,
+        661,
+        234,
+        718
+      ],
+      "polygon": [
+        [
+          107,
+          661
+        ],
+        [
+          101,
+          666
+        ],
+        [
+          101,
+          717
+        ],
+        [
+          228,
+          717
+        ],
+        [
+          233,
+          713
+        ],
+        [
+          233,
+          671
+        ],
+        [
+          228,
+          666
+        ],
+        [
+          223,
+          661
+        ]
+      ],
+      "content": "1 Sam.\nxviii. 19,\n20, &c.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 2,
+      "label": "header",
+      "bbox_2d": [
+        399,
+        22,
+        763,
+        53
+      ],
+      "polygon": [
+        [
+          399,
+          22
+        ],
+        [
+          399,
+          52
+        ],
+        [
+          762,
+          52
+        ],
+        [
+          762,
+          22
+        ]
+      ],
+      "content": "An E S S A T",
+      "native_label": "header"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        223,
+        69,
+        944,
+        818
+      ],
+      "polygon": [
+        [
+          234,
+          69
+        ],
+        [
+          223,
+          818
+        ],
+        [
+          943,
+          818
+        ],
+        [
+          933,
+          69
+        ]
+      ],
+      "content": "tions already specified. And when they have thus secur'd one Side, let them be sure not to engage themselves in a Bond of Friendship, but with those equally possess'd of these Essentials, which only can render it happy or permanent. Of this they can have no Proof, but by long Acquaintance, and repeated Tryals; and if upon the Scrutiny, they are convinc'd all is right; the Association cannot then too soon be engaged in, nor too closely adhered to; which will secure to them the greatest Peace and Tranquility, Satisfaction and Pleasure, they can possibly enjoy in this World. And this happy State is the more desirable, because those who have been the most eminent Examples of Virtue, have given the most conspicuous Instances of heroick Friendship: Of which, the moving History of Jonathan and David is a glorious and convincing Proof. Nay, our blessed Lord himself was pleased to honour this Character, by assuming it in a very peculiar manner, as we read in",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        100,
+        824,
+        939,
+        867
+      ],
+      "polygon": [
+        [
+          100,
+          824
+        ],
+        [
+          100,
+          867
+        ],
+        [
+          489,
+          862
+        ],
+        [
+          544,
+          857
+        ],
+        [
+          555,
+          857
+        ],
+        [
+          570,
+          857
+        ],
+        [
+          599,
+          857
+        ],
+        [
+          815,
+          867
+        ],
+        [
+          938,
+          867
+        ],
+        [
+          938,
+          824
+        ]
+      ],
+      "content": "Ver. 3.5. the eleventh Chapter of the Gospel re 11.35,36.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        816,
+        856,
+        939,
+        880
+      ],
+      "polygon": [
+        [
+          816,
+          861
+        ],
+        [
+          816,
+          880
+        ],
+        [
+          938,
+          880
+        ],
+        [
+          938,
+          856
+        ],
+        [
+          841,
+          856
+        ]
+      ],
+      "content": "corded",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        138,
+        29,
+        623,
+        56
+      ],
+      "polygon": [
+        [
+          138,
+          29
+        ],
+        [
+          138,
+          55
+        ],
+        [
+          622,
+          55
+        ],
+        [
+          622,
+          29
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        24,
+        69,
+        714,
+        875
+      ],
+      "polygon": [
+        [
+          30,
+          69
+        ],
+        [
+          30,
+          859
+        ],
+        [
+          45,
+          874
+        ],
+        [
+          514,
+          874
+        ],
+        [
+          708,
+          864
+        ],
+        [
+          703,
+          69
+        ]
+      ],
+      "content": "corded by the beloved Disciple. Since then Friendship both in its own Nature, and in those amiable Patterns which it proposes for our Imitation, is thus excellent and delightful; it is much to be lamented there are so few modern Instances of it. But this is more owing to Incapacity, than Ignorance of the Advantage of it. And this Impediment can only be removed effectually, by those who are employed in the Education of our Female Youth. That being the proper Time to instil Habits of Virtue; to improve the Understanding, to inculcate Justice and Veracity, and to imprint Gratitude and Generosity; when the Mind, as well as Body, is ductile and flexible. Were this Attempt made early enough, before any vicious Customs had taken place, there is good Reason to believe the Success would abundantly repay their Pains, who should think it a necessary Part of their Business to watch the first Dawn of Reason; and present nothing to its View, but what were agreeable to it,",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        330,
+        861,
+        419,
+        887
+      ],
+      "polygon": [
+        [
+          330,
+          861
+        ],
+        [
+          330,
+          886
+        ],
+        [
+          418,
+          886
+        ],
+        [
+          418,
+          865
+        ],
+        [
+          413,
+          861
+        ]
+      ],
+      "content": "H 2",
+      "native_label": "number"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        756,
+        31,
+        819,
+        62
+      ],
+      "polygon": [
+        [
+          756,
+          31
+        ],
+        [
+          756,
+          49
+        ],
+        [
+          762,
+          62
+        ],
+        [
+          789,
+          62
+        ],
+        [
+          809,
+          62
+        ],
+        [
+          813,
+          62
+        ],
+        [
+          817,
+          57
+        ],
+        [
+          817,
+          31
+        ]
+      ],
+      "content": "51",
+      "native_label": "number"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        909,
+        939,
+        925,
+        952
+      ],
+      "polygon": [
+        [
+          909,
+          939
+        ],
+        [
+          909,
+          951
+        ],
+        [
+          924,
+          951
+        ],
+        [
+          924,
+          939
+        ]
+      ],
+      "content": "1",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "aside_text",
+      "bbox_2d": [
+        88,
+        20,
+        150,
+        56
+      ],
+      "polygon": [
+        [
+          88,
+          20
+        ],
+        [
+          88,
+          55
+        ],
+        [
+          134,
+          55
+        ],
+        [
+          149,
+          50
+        ],
+        [
+          149,
+          20
+        ]
+      ],
+      "content": "52",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        366,
+        14,
+        740,
+        46
+      ],
+      "polygon": [
+        [
+          366,
+          14
+        ],
+        [
+          366,
+          45
+        ],
+        [
+          739,
+          45
+        ],
+        [
+          739,
+          14
+        ]
+      ],
+      "content": "Aₙ E S S A Υ",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        201,
+        59,
+        931,
+        382
+      ],
+      "polygon": [
+        [
+          201,
+          59
+        ],
+        [
+          201,
+          377
+        ],
+        [
+          930,
+          381
+        ],
+        [
+          925,
+          59
+        ]
+      ],
+      "content": "in its native Purity. Would Mothers once be convinced of the Importance of their Charge; and were they capable of performing their Duty in this Point as they ought, we should soon see the happy Effects of it. I will not say none would miscarry, who were well educated, but it is probable very few would; especially if the Work were begun, (as I before hinted) time enough: For it is the Maxim of inspired Wisdom,",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        70,
+        380,
+        941,
+        860
+      ],
+      "polygon": [
+        [
+          940,
+          386
+        ],
+        [
+          161,
+          386
+        ],
+        [
+          91,
+          411
+        ],
+        [
+          70,
+          426
+        ],
+        [
+          70,
+          665
+        ],
+        [
+          101,
+          834
+        ],
+        [
+          131,
+          844
+        ],
+        [
+          447,
+          859
+        ],
+        [
+          940,
+          859
+        ]
+      ],
+      "content": "Train up a Child in the way he should go, and when he is old, he will not depart from it. Virtue is so convincingly attractive, that one would think it almost impossible ever to be deserted by one, who from her very Infancy had been reasonably taught to approve and practise it. And when the succeeding Superstructure answers this good Foundation, what can be more reasonable, or natural, than for the happy Parent to lay aside the Austerity of a Governers, and admit her, whom she has amply qualified for it, into an entire Friendship and Familiarity with her? By this means",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        141,
+        21,
+        633,
+        50
+      ],
+      "polygon": [
+        [
+          141,
+          26
+        ],
+        [
+          141,
+          49
+        ],
+        [
+          632,
+          49
+        ],
+        [
+          627,
+          21
+        ],
+        [
+          553,
+          21
+        ],
+        [
+          146,
+          21
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        39,
+        62,
+        734,
+        549
+      ],
+      "polygon": [
+        [
+          39,
+          67
+        ],
+        [
+          50,
+          549
+        ],
+        [
+          733,
+          549
+        ],
+        [
+          713,
+          62
+        ]
+      ],
+      "content": "means still continuing her watchful Guardian in the most effectual manner; and therefore securing her against those Evils, that necessarily attend an estrangement between these Relations. And when she is thus instructed, both by Precept, and the more powerful Oratory of Example, in the Theory and Practice of Friendship: She will, when her acquaintance with others, who have been bless'd with the same Improvements, give her opportunity; soon be possess'd with a sympathetic Affection for them. And an Approbation thus justly begun, will in due time arise to the full height of a generous and tender Friendship.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        55,
+        550,
+        748,
+        856
+      ],
+      "polygon": [
+        [
+          55,
+          550
+        ],
+        [
+          65,
+          855
+        ],
+        [
+          747,
+          855
+        ],
+        [
+          737,
+          550
+        ]
+      ],
+      "content": "Most Writers confine this Union within the narrow bounds of two, or at most three. But I am of opinion, the necessity of thus contracting the Number, is more owing to the general corruption and depravity of Human Nature, than to any defect in the Essence of Friendship. And were it otherways, it would be an Objection, even against the Happiness of Heaven it self, and tempt one",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        763,
+        24,
+        831,
+        58
+      ],
+      "polygon": [
+        [
+          763,
+          24
+        ],
+        [
+          763,
+          57
+        ],
+        [
+          830,
+          57
+        ],
+        [
+          830,
+          24
+        ]
+      ],
+      "content": "53.",
+      "native_label": "number"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        702,
+        855,
+        748,
+        875
+      ],
+      "polygon": [
+        [
+          702,
+          855
+        ],
+        [
+          702,
+          874
+        ],
+        [
+          747,
+          874
+        ],
+        [
+          747,
+          855
+        ]
+      ],
+      "content": "to",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        95,
+        21,
+        160,
+        50
+      ],
+      "polygon": [
+        [
+          95,
+          21
+        ],
+        [
+          95,
+          50
+        ],
+        [
+          159,
+          50
+        ],
+        [
+          159,
+          21
+        ]
+      ],
+      "content": "54",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        363,
+        14,
+        750,
+        45
+      ],
+      "polygon": [
+        [
+          363,
+          14
+        ],
+        [
+          363,
+          44
+        ],
+        [
+          749,
+          44
+        ],
+        [
+          749,
+          14
+        ]
+      ],
+      "content": "An E S S A Y",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        191,
+        62,
+        924,
+        672
+      ],
+      "polygon": [
+        [
+          202,
+          62
+        ],
+        [
+          191,
+          671
+        ],
+        [
+          918,
+          671
+        ],
+        [
+          922,
+          62
+        ]
+      ],
+      "content": "to believe, the Felicity of that blessed Place would be more extensive, were the Numbers who partake of it, fewer. But as this Notion (which I take to be a necessary consequence of such a contracted Idea of Friendship,) can never be admitted by those who are at all acquainted with the Revelations we have of that State: So I think it very reasonable, and what may be done not only with safety, but advantage; That all who are really worthy of it, be admitted into this Society; Supposing they are equally known to, and approv'd by each other. And considering the prevalence of Vice, in general, and the negligence of Parents, in particular; there is no danger so many should be qualified, as to produce any inconvenience, could that possibly attend it.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        191,
+        680,
+        916,
+        860
+      ],
+      "polygon": [
+        [
+          191,
+          686
+        ],
+        [
+          197,
+          860
+        ],
+        [
+          915,
+          860
+        ],
+        [
+          915,
+          680
+        ],
+        [
+          197,
+          680
+        ]
+      ],
+      "content": "And now, methinks; there needs not many Words to persuade any rational Person, earnestly to endeavour after all those Endowments, which will render them belov'd and admir'd by all, whose approbation and esteem is a real Honour:",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        495,
+        863,
+        524,
+        881
+      ],
+      "polygon": [
+        [
+          495,
+          863
+        ],
+        [
+          495,
+          880
+        ],
+        [
+          522,
+          880
+        ],
+        [
+          522,
+          863
+        ]
+      ],
+      "content": "2",
+      "native_label": "number"
+    },
+    {
+      "index": 5,
+      "label": "footer",
+      "bbox_2d": [
+        812,
+        858,
+        911,
+        886
+      ],
+      "polygon": [
+        [
+          817,
+          858
+        ],
+        [
+          812,
+          881
+        ],
+        [
+          812,
+          886
+        ],
+        [
+          910,
+          886
+        ],
+        [
+          910,
+          858
+        ]
+      ],
+      "content": "Nay,",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        151,
+        33,
+        637,
+        63
+      ],
+      "polygon": [
+        [
+          151,
+          33
+        ],
+        [
+          151,
+          62
+        ],
+        [
+          636,
+          62
+        ],
+        [
+          636,
+          33
+        ]
+      ],
+      "content": "on FRIENDSHIP.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        773,
+        36,
+        830,
+        69
+      ],
+      "polygon": [
+        [
+          773,
+          36
+        ],
+        [
+          773,
+          68
+        ],
+        [
+          829,
+          68
+        ],
+        [
+          829,
+          36
+        ]
+      ],
+      "content": "55",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        67,
+        74,
+        855,
+        932
+      ],
+      "polygon": [
+        [
+          67,
+          74
+        ],
+        [
+          83,
+          927
+        ],
+        [
+          795,
+          932
+        ],
+        [
+          854,
+          712
+        ],
+        [
+          854,
+          334
+        ],
+        [
+          770,
+          74
+        ]
+      ],
+      "content": "Nay, which will endear them to the Divine Almighty Being, and consequently procure them certain happiness here, and in Eternity. Who would not endeavour to resemble those happy Souls, with whom we all hope to enjoy never-ceasing Bliss; in those Inclinations and Dispositions, which qualified them for the extatick happiness they are already possess'd of! But who, that is incapable of Friendship here, can be happy in the enjoyment of it in Heaven? And doubtless, it must be in the highest degree among those blessed Spirits, whose Charity is so extensive and universal, as to raise Joy in them, for the Conversion of one repenting Sinner. And we have reason to believe, that many of the Angelic Host are constantly employ'd in offices of kindness and beneficence, to the Good and Pious, even in this Life. And can we think this pure and refin'd Affection ceases, upon our Arrival in the other World? No, certainly; there it is in the highest perfection, and only there can be compleat. If then we have any desire after true substantial Happiness, (and who that has a Soul, has not?) we must be prepar'd and train'd up for it, by a due disposition of Mind here. And sure this Argument is sufficient, without any other, to enforce what I have been all along endeavouring to inculcate. And",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        786,
+        672,
+        874,
+        710
+      ],
+      "polygon": [
+        [
+          791,
+          672
+        ],
+        [
+          786,
+          687
+        ],
+        [
+          786,
+          710
+        ],
+        [
+          872,
+          710
+        ],
+        [
+          872,
+          677
+        ],
+        [
+          868,
+          672
+        ]
+      ],
+      "content": "1 Cor.\nxiii. 8.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        93,
+        16,
+        166,
+        56
+      ],
+      "polygon": [
+        [
+          165,
+          16
+        ],
+        [
+          130,
+          16
+        ],
+        [
+          93,
+          21
+        ],
+        [
+          93,
+          55
+        ],
+        [
+          145,
+          55
+        ],
+        [
+          165,
+          50
+        ]
+      ],
+      "content": "56",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        298,
+        15,
+        809,
+        50
+      ],
+      "polygon": [
+        [
+          298,
+          15
+        ],
+        [
+          298,
+          50
+        ],
+        [
+          808,
+          50
+        ],
+        [
+          808,
+          15
+        ]
+      ],
+      "content": "An E S S A $\\Upsilon$",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        145,
+        60,
+        946,
+        858
+      ],
+      "polygon": [
+        [
+          171,
+          66
+        ],
+        [
+          145,
+          215
+        ],
+        [
+          145,
+          852
+        ],
+        [
+          940,
+          857
+        ],
+        [
+          930,
+          60
+        ]
+      ],
+      "content": "And if it were once applied seriously to our Hearts, as it certainly deserves to be what a delightful Reformation should we see in all People of Reason and Reflection! Society would then be as pleasing and delightful, as it now is generally disagreeable and trifling to a serious thinking Person! No one, who really deserv'd it, would then have cause to complain, they were destitute of that Comfort in Adversity, that Partner in Prosperity, and that faithful Monitor in all States, a disinterested Friend! Virtue would then be recommended in the most moving manner, and justly venerated in all Stations: A mean Fortune could then no longer eclipse Substantial Merit; But Vice alone would be discountenanc'd, and fore'd, if possible, to blush at being singular! And, in one word, this Sublunary Region would be as happy, as the short Period of its Duration would permit it to be: And we should pass serenely from a State of Probation and Tryal here, to the possession of endless and inconceivable Reward in Heaven: To the bless'd Society of Saints and Angels, and the glorified Spirits of just Men made perfect: And to the Enjoyment of God, our Creator, Redeemer, and Sanctifier, to all Eternity!",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "image",
+      "bbox_2d": [
+        381,
+        859,
+        731,
+        975
+      ],
+      "polygon": [
+        [
+          381,
+          864
+        ],
+        [
+          381,
+          875
+        ],
+        [
+          381,
+          889
+        ],
+        [
+          381,
+          894
+        ],
+        [
+          381,
+          975
+        ],
+        [
+          670,
+          975
+        ],
+        [
+          681,
+          965
+        ],
+        [
+          720,
+          950
+        ],
+        [
+          730,
+          934
+        ],
+        [
+          730,
+          859
+        ],
+        [
+          387,
+          859
+        ]
+      ],
+      "content": null,
+      "native_label": "image",
+      "image_path": "imgs/cropped_page62_idx2.jpg"
+    }
+  ]
+]

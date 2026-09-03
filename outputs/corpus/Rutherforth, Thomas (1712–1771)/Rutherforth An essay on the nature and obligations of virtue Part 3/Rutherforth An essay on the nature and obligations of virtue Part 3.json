@@ -1,0 +1,5251 @@
+[
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        361,
+        56,
+        556,
+        81
+      ],
+      "polygon": [
+        [
+          361,
+          56
+        ],
+        [
+          361,
+          80
+        ],
+        [
+          556,
+          80
+        ],
+        [
+          556,
+          56
+        ]
+      ],
+      "content": "INDEX.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "reference",
+      "bbox_2d": [
+        125,
+        106,
+        789,
+        798
+      ],
+      "polygon": [
+        [
+          125,
+          106
+        ],
+        [
+          125,
+          793
+        ],
+        [
+          789,
+          793
+        ],
+        [
+          789,
+          106
+        ]
+      ],
+      "content": "Death, may change our relish for good 216\n\nDefining words differently from their common use dangerous; instance, moral good 63.64.\n\nDesertion of virtue in some cases right and reasonable upon supposition there was no motive to it but present happiness 236.\n\nDefire, of the agent's happiness not the mark of his behaviour being morally good 64.\n\nDifference of behaviour, one sort of it fit to express certain relations another unfit. (See fitness of action.)\n\nDifferences, of things granted 120. equally oblige to vice and virtue ibid. an essential one between virtue, and vice 37. 38. &c.\n\nDiogenes, the Stoic, his definition of good 173.\n\nDisinterestedness, instance of it 109. accounted for 110.\n\nDisputes, about some of our actions, whether they are to be called virtues or no, will show us what virtue consists in 6.\n\nDuties, all are not virtues 20.21. which we owe to ourselves, why called virtues 22. not universally allowed so. 7. who they are that dispute this 8. and why? 22.23. moral and positive 20. how distinguished 68.\n\nDuty, what it means 239.240. it and virtue different from each other, every virtue a duty, not every duty a virtue 20. division of duties and virtues not the same 21.\n\nEnd ultimate, how defined 204. not virtue ibid. 206.209. what it is 207. virtue cannot be so consistently with the Mosaic history 281.285. happiness equally such before and after the fall 283.\n\nEnemy, gallant, why praised, and even loved 82.\n\nEnjoyment, of virtue, desired in consequence of loving it: we enjoy it not by practising it 93.\n\nENOCH, was aware of another life, where the virtuous will be rewarded 297. his example proved a future state to his contemporaries ibid. his story not purposely obscure in the Mosaic history 202.",
+      "native_label": "reference"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        106,
+        599,
+        130
+      ],
+      "polygon": [
+        [
+          126,
+          106
+        ],
+        [
+          126,
+          130
+        ],
+        [
+          599,
+          130
+        ],
+        [
+          599,
+          111
+        ],
+        [
+          265,
+          106
+        ]
+      ],
+      "content": "Death, may change our relish for good 216",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        128,
+        787,
+        168
+      ],
+      "polygon": [
+        [
+          126,
+          128
+        ],
+        [
+          131,
+          168
+        ],
+        [
+          156,
+          168
+        ],
+        [
+          176,
+          168
+        ],
+        [
+          787,
+          168
+        ],
+        [
+          787,
+          128
+        ]
+      ],
+      "content": "Defining words differently from their common use dangerous; instance, moral good 63.64.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        167,
+        785,
+        209
+      ],
+      "polygon": [
+        [
+          126,
+          167
+        ],
+        [
+          131,
+          209
+        ],
+        [
+          226,
+          209
+        ],
+        [
+          785,
+          209
+        ],
+        [
+          785,
+          172
+        ],
+        [
+          260,
+          167
+        ],
+        [
+          206,
+          167
+        ],
+        [
+          191,
+          167
+        ]
+      ],
+      "content": "Defertion of virtue in some cases right and reasonable upon supposition there was no motive to it but present happiness 236.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        127,
+        206,
+        786,
+        246
+      ],
+      "polygon": [
+        [
+          127,
+          216
+        ],
+        [
+          132,
+          245
+        ],
+        [
+          786,
+          245
+        ],
+        [
+          786,
+          212
+        ],
+        [
+          132,
+          206
+        ]
+      ],
+      "content": "Defire, of the agent's happiness not the mark of his behaviour being morally good 64.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        244,
+        786,
+        285
+      ],
+      "polygon": [
+        [
+          126,
+          265
+        ],
+        [
+          131,
+          285
+        ],
+        [
+          786,
+          285
+        ],
+        [
+          786,
+          250
+        ],
+        [
+          701,
+          244
+        ],
+        [
+          131,
+          244
+        ]
+      ],
+      "content": "Difference of behaviour, one sort of it fit to express certain relations another unfit. (See fitness of action.)",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        284,
+        788,
+        344
+      ],
+      "polygon": [
+        [
+          126,
+          284
+        ],
+        [
+          131,
+          344
+        ],
+        [
+          783,
+          344
+        ],
+        [
+          787,
+          284
+        ]
+      ],
+      "content": "Differences, of things granted 120. equally oblige to vice and virtue ibid. an essential one between virtue, and vice 37. 38. &c.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        343,
+        642,
+        367
+      ],
+      "polygon": [
+        [
+          126,
+          343
+        ],
+        [
+          126,
+          362
+        ],
+        [
+          488,
+          367
+        ],
+        [
+          627,
+          367
+        ],
+        [
+          642,
+          362
+        ],
+        [
+          642,
+          343
+        ]
+      ],
+      "content": "Diogenes, the Stoic, his definition of good 173.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        363,
+        749,
+        385
+      ],
+      "polygon": [
+        [
+          126,
+          363
+        ],
+        [
+          126,
+          379
+        ],
+        [
+          181,
+          384
+        ],
+        [
+          749,
+          384
+        ],
+        [
+          749,
+          363
+        ]
+      ],
+      "content": "Difinterestedness, instance of it 109. accounted for 110.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        382,
+        786,
+        422
+      ],
+      "polygon": [
+        [
+          125,
+          382
+        ],
+        [
+          125,
+          417
+        ],
+        [
+          785,
+          422
+        ],
+        [
+          785,
+          382
+        ]
+      ],
+      "content": "Disputes, about some of our actions, whether they are to be called virtues or no, will shew us what virtue consists in 6.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        422,
+        788,
+        501
+      ],
+      "polygon": [
+        [
+          125,
+          422
+        ],
+        [
+          125,
+          500
+        ],
+        [
+          788,
+          500
+        ],
+        [
+          788,
+          427
+        ]
+      ],
+      "content": "Duties, all are not virtues 20.21. which we owe to ourselves, why called virtues 22. not universally allowed so.7. who they are that dispute this 8. and why? 22.23. moral and positive 20. how distinguished 68.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        124,
+        500,
+        787,
+        562
+      ],
+      "polygon": [
+        [
+          124,
+          500
+        ],
+        [
+          124,
+          562
+        ],
+        [
+          787,
+          562
+        ],
+        [
+          787,
+          500
+        ]
+      ],
+      "content": "Duty, what it means 239.240. it and virtue different from each other, every virtue a duty, not every duty a virtue 20. division of duties and virtues not the same 21.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        127,
+        577,
+        786,
+        657
+      ],
+      "polygon": [
+        [
+          127,
+          577
+        ],
+        [
+          127,
+          657
+        ],
+        [
+          786,
+          657
+        ],
+        [
+          786,
+          582
+        ]
+      ],
+      "content": "End ultimate, how defined 204. not virtue ibid. 206. 209. what it is 207. virtue cannot be so consistently with the Mosaic history 281. 285. happiness equally such before and after the fall 283.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        656,
+        663,
+        678
+      ],
+      "polygon": [
+        [
+          125,
+          656
+        ],
+        [
+          125,
+          673
+        ],
+        [
+          160,
+          677
+        ],
+        [
+          663,
+          677
+        ],
+        [
+          663,
+          656
+        ],
+        [
+          379,
+          656
+        ],
+        [
+          369,
+          656
+        ]
+      ],
+      "content": "Enemy, gallant, why praised, and even loved 82.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        677,
+        787,
+        717
+      ],
+      "polygon": [
+        [
+          126,
+          677
+        ],
+        [
+          126,
+          716
+        ],
+        [
+          787,
+          716
+        ],
+        [
+          787,
+          677
+        ],
+        [
+          658,
+          677
+        ],
+        [
+          653,
+          677
+        ],
+        [
+          613,
+          677
+        ]
+      ],
+      "content": "Enjoyment, of virtue, desired in consequence of loving it : we enjoy it not by practising it 93.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        715,
+        787,
+        797
+      ],
+      "polygon": [
+        [
+          126,
+          715
+        ],
+        [
+          126,
+          796
+        ],
+        [
+          787,
+          796
+        ],
+        [
+          787,
+          715
+        ],
+        [
+          280,
+          715
+        ]
+      ],
+      "content": "ENOCH, was aware of another life, where the virtuous will be rewarded 297. his example proved a future state to his contemporaries ibid. his story not purposely obscure in the Mosaic history 202.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 17,
+      "label": "number",
+      "bbox_2d": [
+        446,
+        796,
+        519,
+        818
+      ],
+      "polygon": [
+        [
+          446,
+          800
+        ],
+        [
+          446,
+          817
+        ],
+        [
+          475,
+          817
+        ],
+        [
+          518,
+          813
+        ],
+        [
+          518,
+          796
+        ],
+        [
+          470,
+          796
+        ]
+      ],
+      "content": "3 C2",
+      "native_label": "number"
+    },
+    {
+      "index": 18,
+      "label": "footer",
+      "bbox_2d": [
+        726,
+        793,
+        787,
+        812
+      ],
+      "polygon": [
+        [
+          726,
+          793
+        ],
+        [
+          726,
+          812
+        ],
+        [
+          787,
+          812
+        ],
+        [
+          787,
+          793
+        ]
+      ],
+      "content": "EPI-",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        400,
+        67,
+        593,
+        90
+      ],
+      "polygon": [
+        [
+          400,
+          72
+        ],
+        [
+          400,
+          90
+        ],
+        [
+          593,
+          90
+        ],
+        [
+          593,
+          67
+        ],
+        [
+          490,
+          67
+        ],
+        [
+          465,
+          67
+        ],
+        [
+          440,
+          67
+        ]
+      ],
+      "content": "INDEX.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "reference",
+      "bbox_2d": [
+        162,
+        100,
+        834,
+        808
+      ],
+      "polygon": [
+        [
+          162,
+          100
+        ],
+        [
+          168,
+          798
+        ],
+        [
+          834,
+          808
+        ],
+        [
+          829,
+          100
+        ]
+      ],
+      "content": "EPICURUS, his definition of good 173.181.\nExperience, of other men, what use to be made of it in our pursuit of happiness 215.\nExtraordinary, providence. (see Providence.)\n\nFable of the bees, title page contradicts the author's definition of virtue 41. reconcileable by supposing him to mean that virtue is notional 42.43. one instance mentioned in it to prove private vices publick benefits, if it proves any thing, would only show that they are private benefits 57.\n\nFall, misfortunes arising from it made virtue a precarious means of obtaining happiness 280.281. the difference made by it in the condition of man 280.\n\nFatalist, knows not the true cause of moral obligation 238.\n\nField, fruitful, why not approved of in the same manner with a generous friend 85.\n\nFit, a term ambiguously used 141.\n\nFitness, (see Rectitude.)\n\nFitness of application, what? 12. does not constitute virtue 13. obliges not more to virtue than vice, if it signifies using as nature has fitted to be used 124. cannot oblige us to virtue where interest interferes, if it signifies using as one would like to be used 125.126.127. no motive at all to virtue ibid. 128. would oblige us not to kill brutes, if it obliged us not to kill men 129.\n\nFitness of action, what? 12. does not constitute virtue 15. not the cause of obligation to virtue 132. &c. 136. arising from unfit application granted by the defenders of it not to oblige, when a stronger reason intervenes 133. sometimes means that our actions are expressive of our relations 140. 141. such fitness cannot be the cause of obligation to virtue ibid.\n\nFortitude, what the ancients meant by it 162. Not. $^a$.\n\nFuture life, though promised, might not be attended to by the Israelites 356. &c. known to David 359. and to Solomon 362.",
+      "native_label": "reference"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        161,
+        98,
+        653,
+        121
+      ],
+      "polygon": [
+        [
+          161,
+          98
+        ],
+        [
+          161,
+          121
+        ],
+        [
+          652,
+          121
+        ],
+        [
+          652,
+          98
+        ]
+      ],
+      "content": "EPICURUS, his definition of good 173.181.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        164,
+        119,
+        825,
+        161
+      ],
+      "polygon": [
+        [
+          164,
+          119
+        ],
+        [
+          164,
+          161
+        ],
+        [
+          569,
+          161
+        ],
+        [
+          575,
+          161
+        ],
+        [
+          825,
+          161
+        ],
+        [
+          825,
+          119
+        ]
+      ],
+      "content": "Experience, of other men, what use to be made of it in our pursuit of happiness 215.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        166,
+        158,
+        656,
+        181
+      ],
+      "polygon": [
+        [
+          166,
+          158
+        ],
+        [
+          166,
+          181
+        ],
+        [
+          656,
+          181
+        ],
+        [
+          656,
+          158
+        ]
+      ],
+      "content": "Extraordinary, providence. (see Providence.)",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        166,
+        205,
+        830,
+        304
+      ],
+      "polygon": [
+        [
+          166,
+          205
+        ],
+        [
+          166,
+          303
+        ],
+        [
+          829,
+          303
+        ],
+        [
+          829,
+          205
+        ]
+      ],
+      "content": "Fable of the bees, title page contradicts the author's definition of virtue 41. reconcileable by supposing him to mean that virtue is notional 42.43. one instance mentioned in it to prove private vices publick benefits, if it proves any thing, would only shew that they are private benefits 57.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        166,
+        303,
+        828,
+        362
+      ],
+      "polygon": [
+        [
+          166,
+          303
+        ],
+        [
+          166,
+          361
+        ],
+        [
+          828,
+          361
+        ],
+        [
+          828,
+          303
+        ]
+      ],
+      "content": "Fall, misfortunes arising from it made virtue a precarious means of obtaining happiness 280.281. the difference made by it in the condition of man 280.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        165,
+        362,
+        830,
+        421
+      ],
+      "polygon": [
+        [
+          830,
+          367
+        ],
+        [
+          815,
+          362
+        ],
+        [
+          765,
+          362
+        ],
+        [
+          685,
+          362
+        ],
+        [
+          625,
+          362
+        ],
+        [
+          555,
+          362
+        ],
+        [
+          165,
+          367
+        ],
+        [
+          165,
+          421
+        ],
+        [
+          830,
+          421
+        ]
+      ],
+      "content": "Fatalist, knows not the true cause of moral obligation 238. Field, fruitful, why not approved of in the same manner with a generous friend 85.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        166,
+        421,
+        547,
+        442
+      ],
+      "polygon": [
+        [
+          166,
+          421
+        ],
+        [
+          166,
+          441
+        ],
+        [
+          547,
+          441
+        ],
+        [
+          547,
+          426
+        ],
+        [
+          542,
+          421
+        ],
+        [
+          290,
+          421
+        ],
+        [
+          205,
+          421
+        ]
+      ],
+      "content": "Fit, a term ambiguously used 141.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        166,
+        441,
+        439,
+        460
+      ],
+      "polygon": [
+        [
+          166,
+          441
+        ],
+        [
+          166,
+          460
+        ],
+        [
+          439,
+          460
+        ],
+        [
+          439,
+          441
+        ]
+      ],
+      "content": "Fitness, (see Rectitude.)",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        166,
+        460,
+        832,
+        596
+      ],
+      "polygon": [
+        [
+          166,
+          460
+        ],
+        [
+          171,
+          596
+        ],
+        [
+          832,
+          596
+        ],
+        [
+          827,
+          460
+        ]
+      ],
+      "content": "Fitness of application, what? 12. does not constitute virtue 13. obliges not more to virtue than vice, if it signifies using as nature has fitted to be used 124. cannot oblige us to virtue where interest interferes, if it signifies using as one would like to be used 125. 126. 127. no motive at all to virtue ibid. 128. would oblige us not to kill brutes, if it obliged us not to kill men 129.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        169,
+        596,
+        832,
+        731
+      ],
+      "polygon": [
+        [
+          169,
+          596
+        ],
+        [
+          169,
+          731
+        ],
+        [
+          831,
+          731
+        ],
+        [
+          831,
+          601
+        ]
+      ],
+      "content": "Fitness of action, what? 12. does not constitute virtue 15. not the cause of obligation to virtue 132. &c. 136. arising from unfit application granted by the defenders of it not to oblige, when a stronger reason intervenes. 133. sometimes means that our actions are expressive of our relations 140. 141. such fitness cannot be the cause of obligation to virtue ibid.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        166,
+        732,
+        772,
+        754
+      ],
+      "polygon": [
+        [
+          171,
+          732
+        ],
+        [
+          171,
+          753
+        ],
+        [
+          772,
+          753
+        ],
+        [
+          772,
+          732
+        ]
+      ],
+      "content": "Fortitude, what the ancients meant by it 162. Not. $^{a}$ .",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        169,
+        754,
+        832,
+        798
+      ],
+      "polygon": [
+        [
+          169,
+          754
+        ],
+        [
+          169,
+          798
+        ],
+        [
+          198,
+          798
+        ],
+        [
+          498,
+          798
+        ],
+        [
+          782,
+          798
+        ],
+        [
+          812,
+          798
+        ],
+        [
+          832,
+          798
+        ],
+        [
+          832,
+          754
+        ]
+      ],
+      "content": "Future life, though promised, might not be attended to by the Israelites 356. &c. known to David 359. and to Solomon. 362.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "bbox_2d": [
+        750,
+        794,
+        832,
+        811
+      ],
+      "polygon": [
+        [
+          750,
+          794
+        ],
+        [
+          750,
+          811
+        ],
+        [
+          832,
+          811
+        ],
+        [
+          832,
+          794
+        ]
+      ],
+      "content": "Future",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        354,
+        74,
+        543,
+        99
+      ],
+      "polygon": [
+        [
+          354,
+          74
+        ],
+        [
+          354,
+          99
+        ],
+        [
+          542,
+          99
+        ],
+        [
+          542,
+          74
+        ]
+      ],
+      "content": "## INDEX.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        106,
+        779,
+        230
+      ],
+      "polygon": [
+        [
+          126,
+          121
+        ],
+        [
+          132,
+          230
+        ],
+        [
+          778,
+          225
+        ],
+        [
+          778,
+          106
+        ],
+        [
+          664,
+          106
+        ],
+        [
+          132,
+          106
+        ]
+      ],
+      "content": "Future state of reward for virtue, argument to prove it leads us round in a circle 267. not proved from the necessary misery of some in this life 268. nor from the natural immortality of the soul 270. included in what was promised immediately after the fall 287. hopes of it. renewed in the days of Enos 295.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "reference",
+      "bbox_2d": [
+        128,
+        256,
+        783,
+        800
+      ],
+      "polygon": [
+        [
+          128,
+          256
+        ],
+        [
+          128,
+          800
+        ],
+        [
+          778,
+          800
+        ],
+        [
+          783,
+          256
+        ]
+      ],
+      "content": "God, virtue does not consist in imitating him 27.28.29.30. the excellence of his nature above ours, not the cause of our obligation to worship him 145.146.147. has made us happy, but not independent 237. requires us to be virtuous only as far as it will make us happy 258.259. has kept the government of the moral world in his own hands 237.\n\nGood, what? 61. natural 62. moral, has two senses ibid. a definition of it examined 63. moral not what makes the agent happy 66. moral distinct from natural 83.85. moral makes us love a man, natural does not produce the same effect 84.\n\nGood, sovereign, philosophers divided in their enquiries after its nature 169. all agree that it is the last end of action ibid. what they meant by it 170. not defined by philosophers 210.211.\n\nGood to be done, and reasonable to be done, equivocal expressions 121.\n\nGood to be done, means either good for him who does it, or good for others 121. want of distinction occasion of a fallacy ibid. 122.\n\nGood and bad, must frequently suffer alike in this life, under the Mosaic law 330.\n\nGoodness of God, what? 67. fallacy in the demonstration of it a priori 150. proved 241.242.243.244.245. extends to brutes 247.\n\nGospel, promises temporal blessings, as well as eternal 336. preached to Abraham 376. expectation of it kept up under the law of Moses 379. &c.",
+      "native_label": "reference"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        130,
+        252,
+        779,
+        370
+      ],
+      "polygon": [
+        [
+          130,
+          257
+        ],
+        [
+          130,
+          370
+        ],
+        [
+          778,
+          370
+        ],
+        [
+          778,
+          257
+        ],
+        [
+          683,
+          252
+        ],
+        [
+          638,
+          252
+        ]
+      ],
+      "content": "God, virtue does not consist in imitating him 27.28.29.3a. the excellence of his nature above ours, not the cause of our obligation to worship him 145.146.147. has made us happy, but not independent 237. requires us to be virtuous only as far as it will make us happy 258.259. has kept the government of the moral world in his own hands 237.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        130,
+        370,
+        782,
+        469
+      ],
+      "polygon": [
+        [
+          130,
+          370
+        ],
+        [
+          130,
+          468
+        ],
+        [
+          782,
+          464
+        ],
+        [
+          782,
+          370
+        ]
+      ],
+      "content": "Good, what? 61. natural 62. moral, has two senses ibid. a definition of it examined 63. moral not what makes the agent happy 66. moral distinct from natural 83.85. moral makes us love a man; natural does not produce the same effect 84.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        131,
+        466,
+        781,
+        547
+      ],
+      "polygon": [
+        [
+          131,
+          471
+        ],
+        [
+          131,
+          546
+        ],
+        [
+          671,
+          546
+        ],
+        [
+          781,
+          546
+        ],
+        [
+          781,
+          466
+        ]
+      ],
+      "content": "Good, sovereign, philosophers divided in their enquiries after it's nature 169. all agree that it is the last end of action ibid. what they meant by it 170. not defined by philosophers 210.211.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        133,
+        544,
+        778,
+        588
+      ],
+      "polygon": [
+        [
+          133,
+          544
+        ],
+        [
+          133,
+          587
+        ],
+        [
+          778,
+          583
+        ],
+        [
+          778,
+          544
+        ]
+      ],
+      "content": "Good to be done, and reasonable to be done, equivocal ex- pressions 121.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        134,
+        584,
+        780,
+        642
+      ],
+      "polygon": [
+        [
+          134,
+          584
+        ],
+        [
+          134,
+          642
+        ],
+        [
+          780,
+          637
+        ],
+        [
+          780,
+          584
+        ]
+      ],
+      "content": "Good to be done, means either good for him who does it, or good for others 121. want of distinction occasion of a fallacy ibid. 122.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        132,
+        642,
+        777,
+        683
+      ],
+      "polygon": [
+        [
+          132,
+          642
+        ],
+        [
+          132,
+          682
+        ],
+        [
+          492,
+          682
+        ],
+        [
+          512,
+          682
+        ],
+        [
+          532,
+          682
+        ],
+        [
+          747,
+          682
+        ],
+        [
+          777,
+          678
+        ],
+        [
+          777,
+          642
+        ]
+      ],
+      "content": "Good and bad, must frequently suffer alike in this life, under the Mosaic law 330.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        134,
+        681,
+        778,
+        740
+      ],
+      "polygon": [
+        [
+          134,
+          686
+        ],
+        [
+          134,
+          740
+        ],
+        [
+          778,
+          740
+        ],
+        [
+          778,
+          681
+        ],
+        [
+          354,
+          681
+        ],
+        [
+          224,
+          681
+        ]
+      ],
+      "content": "Goodness of God, what? 67. fallacy in the demonstration of it a priori 150. proved 241.242.243.244.245. extends to brutes 247.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        134,
+        739,
+        777,
+        802
+      ],
+      "polygon": [
+        [
+          134,
+          739
+        ],
+        [
+          134,
+          802
+        ],
+        [
+          777,
+          802
+        ],
+        [
+          777,
+          739
+        ]
+      ],
+      "content": "Gospel, promises temporal blessings, as well as eternal 336. preached to Abraham 376. expectation of it kept up under the law of Moses 379. &c.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 11,
+      "label": "footer",
+      "bbox_2d": [
+        707,
+        810,
+        778,
+        830
+      ],
+      "polygon": [
+        [
+          707,
+          810
+        ],
+        [
+          707,
+          829
+        ],
+        [
+          778,
+          829
+        ],
+        [
+          778,
+          810
+        ]
+      ],
+      "content": "Grati-",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        414,
+        63,
+        617,
+        87
+      ],
+      "polygon": [
+        [
+          414,
+          63
+        ],
+        [
+          414,
+          86
+        ],
+        [
+          617,
+          86
+        ],
+        [
+          617,
+          63
+        ]
+      ],
+      "content": "INDEX.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        165,
+        96,
+        859,
+        239
+      ],
+      "polygon": [
+        [
+          165,
+          96
+        ],
+        [
+          165,
+          239
+        ],
+        [
+          859,
+          239
+        ],
+        [
+          859,
+          96
+        ]
+      ],
+      "content": "Gratitude, why approved in others 100. in ourselves does not mean a disinterested affection 101. what it is 102. other benevolent and christian affections mistaken for it 104. who the objects of it 103. to those who are absent explained 107. towards those who have not fortunes, or power to be serviceable, why it continues 106. to God, an affection interested in it's object 108.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        165,
+        256,
+        858,
+        638
+      ],
+      "polygon": [
+        [
+          165,
+          256
+        ],
+        [
+          170,
+          638
+        ],
+        [
+          858,
+          638
+        ],
+        [
+          858,
+          256
+        ]
+      ],
+      "content": "Happiness, virtue does not consist in the promoting our own in this life 11.12.15. nor in a life to come 19. making others happy does not constitute the happiness of the agent 122. the pursuit of it disowned, and why 154.155. the ultimate end, according to nature, proved from the practice of mankind 156. from universal consent 163. no otherwise pursued by all, than as all endeavour to be happy 164. whence our disappointments in pursuing it ibid. change in our plan proves what is our end 165. the ultimate end, according to reason 168. not defined by the philosophers; see Good. what it is, not to be learned from our own experience 211. nor from that of others 214. not to be determined by reason, without experience 217. after death, not to be known 216. does not consist in obeying true propositions 219. nor in the mere act of virtue 223. desire of it a first principle 261. a sanction of virtue before the fall 282.283. &c. not the same thing as virtue before the fall 284. in possession, lost at the fall 280. temporal, why promised by the law of Moses 376.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        166,
+        636,
+        856,
+        696
+      ],
+      "polygon": [
+        [
+          166,
+          656
+        ],
+        [
+          172,
+          695
+        ],
+        [
+          856,
+          695
+        ],
+        [
+          856,
+          641
+        ],
+        [
+          791,
+          636
+        ],
+        [
+          172,
+          636
+        ]
+      ],
+      "content": "Happiness of a future life, not likely to consist in the free exercise of virtue 223. in the present life, annexed to virtue, but not always 230.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        166,
+        695,
+        855,
+        739
+      ],
+      "polygon": [
+        [
+          166,
+          695
+        ],
+        [
+          172,
+          734
+        ],
+        [
+          855,
+          738
+        ],
+        [
+          855,
+          700
+        ],
+        [
+          845,
+          695
+        ]
+      ],
+      "content": "Highwayman, what good he is supposed to do his country, by the author of The Fable of the Bees 55.56.57.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        167,
+        737,
+        856,
+        796
+      ],
+      "polygon": [
+        [
+          167,
+          737
+        ],
+        [
+          167,
+          795
+        ],
+        [
+          856,
+          795
+        ],
+        [
+          856,
+          742
+        ]
+      ],
+      "content": "Hospitality, and magnificence are not luxury; instance, proper behaviour for a gentleman of fortune 45. when it becomes lavishness 51.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        166,
+        796,
+        851,
+        820
+      ],
+      "polygon": [
+        [
+          166,
+          796
+        ],
+        [
+          166,
+          820
+        ],
+        [
+          851,
+          820
+        ],
+        [
+          846,
+          796
+        ]
+      ],
+      "content": "Hope of immortality suggested immediately upon the fall 287.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 7,
+      "label": "footer",
+      "bbox_2d": [
+        781,
+        820,
+        853,
+        838
+      ],
+      "polygon": [
+        [
+          781,
+          820
+        ],
+        [
+          781,
+          837
+        ],
+        [
+          853,
+          837
+        ],
+        [
+          853,
+          820
+        ]
+      ],
+      "content": "Idola-",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        376,
+        54,
+        574,
+        79
+      ],
+      "polygon": [
+        [
+          376,
+          54
+        ],
+        [
+          376,
+          79
+        ],
+        [
+          574,
+          79
+        ],
+        [
+          574,
+          54
+        ]
+      ],
+      "content": "## INDEX.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        135,
+        87,
+        541,
+        110
+      ],
+      "polygon": [
+        [
+          135,
+          87
+        ],
+        [
+          135,
+          110
+        ],
+        [
+          541,
+          110
+        ],
+        [
+          541,
+          92
+        ],
+        [
+          480,
+          87
+        ],
+        [
+          356,
+          87
+        ],
+        [
+          325,
+          87
+        ],
+        [
+          295,
+          87
+        ],
+        [
+          290,
+          87
+        ],
+        [
+          245,
+          87
+        ],
+        [
+          240,
+          87
+        ],
+        [
+          225,
+          87
+        ],
+        [
+          220,
+          87
+        ]
+      ],
+      "content": "Idolatry, whence it might arise 89.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        136,
+        109,
+        677,
+        130
+      ],
+      "polygon": [
+        [
+          136,
+          125
+        ],
+        [
+          136,
+          130
+        ],
+        [
+          676,
+          130
+        ],
+        [
+          676,
+          109
+        ],
+        [
+          141,
+          109
+        ]
+      ],
+      "content": "Indolence, mistaken for content 158.159.160.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        136,
+        128,
+        816,
+        168
+      ],
+      "polygon": [
+        [
+          136,
+          128
+        ],
+        [
+          136,
+          168
+        ],
+        [
+          816,
+          168
+        ],
+        [
+          816,
+          128
+        ]
+      ],
+      "content": "Injustice, single act of it makes a man vicious, only a habit of intemperance will make him so 26.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        136,
+        168,
+        809,
+        209
+      ],
+      "polygon": [
+        [
+          136,
+          168
+        ],
+        [
+          141,
+          208
+        ],
+        [
+          809,
+          208
+        ],
+        [
+          809,
+          168
+        ]
+      ],
+      "content": "Intemperance, ill effects of it 18. it's ill effects on the intemperate do not make it a vice 17. why vicious 18.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        137,
+        208,
+        812,
+        310
+      ],
+      "polygon": [
+        [
+          137,
+          213
+        ],
+        [
+          142,
+          309
+        ],
+        [
+          812,
+          304
+        ],
+        [
+          812,
+          208
+        ],
+        [
+          142,
+          208
+        ]
+      ],
+      "content": "Justice, what? 24. not a virtue from the happiness of the just man, either here or hereafter, nor from the will of God, nor from a moral sense 25.26. this and benevolence always allowed to be virtues, because the notion of virtue is contained in the definition of them 24.",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        137,
+        326,
+        669,
+        351
+      ],
+      "polygon": [
+        [
+          137,
+          326
+        ],
+        [
+          137,
+          350
+        ],
+        [
+          668,
+          350
+        ],
+        [
+          664,
+          326
+        ],
+        [
+          351,
+          326
+        ],
+        [
+          341,
+          326
+        ],
+        [
+          331,
+          326
+        ],
+        [
+          271,
+          326
+        ]
+      ],
+      "content": "Knowledge, tree of, why so called 273. Not. $^{a}$ .",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        138,
+        366,
+        818,
+        687
+      ],
+      "polygon": [
+        [
+          148,
+          371
+        ],
+        [
+          138,
+          386
+        ],
+        [
+          138,
+          686
+        ],
+        [
+          817,
+          682
+        ],
+        [
+          817,
+          371
+        ]
+      ],
+      "content": "Law, that which God works by, whence to be collected 240. Law of Moses, did not abrogate the religion of the patriarchs: 319. included the promises of the patriarchal covenant 320. 321. temporal rewards and punishments only, not it’s sanction 329.347. nor length of days 324.325.327. for this would be sometimes a punishment 331. nor national blessings only 334.342. but also future rewards and punishments 351. &c. it’s sanctions inconsistent with each other, unless they related to a future life 347. it’s sanctions interpreted from Solomon’s prayer 360. &c. obligation of it continued after the captivity 329. promised happiness to individuals 341.343. holy, just, and good in it’s precepts 378. ordained to life, and therefore perfect in it’s sanctions ibid. weakness and unprofitableness of it, to what causes owing ibid. 379. how it led men to Christ, and introduced a better hope 379.380.",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        140,
+        685,
+        813,
+        726
+      ],
+      "polygon": [
+        [
+          140,
+          685
+        ],
+        [
+          140,
+          726
+        ],
+        [
+          813,
+          726
+        ],
+        [
+          813,
+          685
+        ],
+        [
+          230,
+          685
+        ]
+      ],
+      "content": "Legislator's address and management, is not what makes our actions beneficial 58.",
+      "native_label": "text"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        139,
+        724,
+        817,
+        807
+      ],
+      "polygon": [
+        [
+          139,
+          724
+        ],
+        [
+          139,
+          807
+        ],
+        [
+          816,
+          807
+        ],
+        [
+          816,
+          724
+        ]
+      ],
+      "content": "Life, lost by eating the forbidden fruit, means eternal life 273. promised in the Mosaic law, was not length of days in this world 323. but that forfeited at the fall 323.324. (see Future.)",
+      "native_label": "text"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        742,
+        804,
+        815,
+        824
+      ],
+      "polygon": [
+        [
+          742,
+          804
+        ],
+        [
+          742,
+          824
+        ],
+        [
+          815,
+          824
+        ],
+        [
+          815,
+          804
+        ]
+      ],
+      "content": "Love",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        401,
+        56,
+        602,
+        79
+      ],
+      "polygon": [
+        [
+          401,
+          56
+        ],
+        [
+          401,
+          79
+        ],
+        [
+          601,
+          79
+        ],
+        [
+          601,
+          56
+        ]
+      ],
+      "content": "INDEX.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "reference",
+      "bbox_2d": [
+        153,
+        87,
+        848,
+        814
+      ],
+      "polygon": [
+        [
+          158,
+          87
+        ],
+        [
+          153,
+          809
+        ],
+        [
+          843,
+          804
+        ],
+        [
+          843,
+          87
+        ]
+      ],
+      "content": "Love, what? 75. of money how occasioned 87. of the sexes, sometimes disinterested; enthusiasm when it is so 109.110. no proof of innate disinterested affections 111.\n\nLove of God, not a first principle 261.262. raised in us by the goodness of God 264. bad effects of it, when it begins on a wrong foundation, or is carried beyond it’s rational cause 264. no principle of virtue, till we know that virtue will make us happy 265.\n\nLove of virtue, in persons who lived some ages ago, what? 77. 78. appears most, where virtue does those who love it most good 76. in whom virtue is beloved 75.91. raised by what? 74.94.\n\nLuxury, what? 45. wrongly defined by the author of The Fable of the Bees 44.45. as he has defined it, not a vice ibid. his definition liable to some variety in the particular application of it 50. some little uncertainty in the application of the common notion of it to particular instances, no reason for going out of the way 48.49.50. no benefit to the public, when rightly defined; no vice according to that definition which makes it beneficial 50.51.52.53. what harm it does the publick ibid. when a man may be said to be guilty of it 51.\n\nMagistrate, how a just sentence from him is approved, even by the criminal, whom he condemns 79.80.\n\nMagnificence, when it becomes luxury 51.\n\nManners, good, what? 66.\n\nMen, in one regard natural agents 243.244. required to work toward the general good only as far as this pursuit will make them happy 258. often in the proper pursuit of their own happiness promote that of others 244. by some actions, promote the happiness of creatures below them 249.\n\nMerchant, and usurer, their characters compared 32. why one of them vicious, the other not so 33.\n\nMetaphysics, less intelligible and less convincing than facts and appeals to the sense of mankind 3.",
+      "native_label": "reference"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        158,
+        89,
+        842,
+        150
+      ],
+      "polygon": [
+        [
+          158,
+          89
+        ],
+        [
+          158,
+          150
+        ],
+        [
+          842,
+          150
+        ],
+        [
+          842,
+          89
+        ]
+      ],
+      "content": "Love, what? 75. of money how occasioned 87. of the sexes, sometimes disinterested; enthusiasm when it is so 109.110. no proof of innate disinterested affections 111.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        156,
+        149,
+        844,
+        248
+      ],
+      "polygon": [
+        [
+          156,
+          247
+        ],
+        [
+          844,
+          242
+        ],
+        [
+          844,
+          149
+        ],
+        [
+          161,
+          149
+        ]
+      ],
+      "content": "Love of God, not a first principle 261.262. raised in us by the goodness of God 264. bad effects of it, when it begins on a wrong foundation, or is carried beyond it's rational cause 264. no principle of virtue, till we know that virtue will make us happy 265.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        157,
+        248,
+        843,
+        330
+      ],
+      "polygon": [
+        [
+          157,
+          248
+        ],
+        [
+          157,
+          330
+        ],
+        [
+          843,
+          325
+        ],
+        [
+          843,
+          248
+        ]
+      ],
+      "content": "Love of virtue, in persons who lived some ages ago, what? 77. 78. appears most, where virtue does those who love it most good 76. in whom virtue is beloved 75.91. raised by what? 74.94.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        157,
+        329,
+        845,
+        529
+      ],
+      "polygon": [
+        [
+          157,
+          329
+        ],
+        [
+          157,
+          529
+        ],
+        [
+          844,
+          529
+        ],
+        [
+          844,
+          329
+        ]
+      ],
+      "content": "Luxury, what? 45. wrongly defined by the author of The Fable of the Bees 44.45. as he has defined it, not a vice ibid. his definition liable to some variety in the particular application of it 50. some little uncertainty in the application of the common notion of it to particular instances, no reason for going out of the way 48.49.50. no benefit to the public, when rightly defined; no vice according to that definition which makes it beneficial 50.51.52.53. what harm it does the publick ibid. when a man may be said to be guilty of it 51.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        156,
+        544,
+        844,
+        586
+      ],
+      "polygon": [
+        [
+          156,
+          544
+        ],
+        [
+          156,
+          586
+        ],
+        [
+          843,
+          586
+        ],
+        [
+          843,
+          544
+        ]
+      ],
+      "content": "Magiftrate, how a just sentence from him is approved, even by the criminal, whom he condemns 79.80.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        157,
+        585,
+        641,
+        607
+      ],
+      "polygon": [
+        [
+          157,
+          585
+        ],
+        [
+          157,
+          603
+        ],
+        [
+          197,
+          607
+        ],
+        [
+          291,
+          607
+        ],
+        [
+          307,
+          607
+        ],
+        [
+          331,
+          607
+        ],
+        [
+          566,
+          607
+        ],
+        [
+          641,
+          607
+        ],
+        [
+          641,
+          590
+        ],
+        [
+          621,
+          585
+        ]
+      ],
+      "content": "Magnificence, when it becomes luxury 51.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        157,
+        605,
+        471,
+        626
+      ],
+      "polygon": [
+        [
+          157,
+          605
+        ],
+        [
+          157,
+          625
+        ],
+        [
+          471,
+          625
+        ],
+        [
+          471,
+          605
+        ]
+      ],
+      "content": "Manners, good, what? 66.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        157,
+        625,
+        843,
+        724
+      ],
+      "polygon": [
+        [
+          157,
+          625
+        ],
+        [
+          162,
+          724
+        ],
+        [
+          843,
+          724
+        ],
+        [
+          843,
+          625
+        ]
+      ],
+      "content": "Men, in one regard natural agents 243.244. required to work toward the general good only as far as this pursuit will make them happy 258. often in the proper pursuit of their own happiness promote that of others 244. by some actions, promote the happiness of creatures below them 249.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        157,
+        724,
+        842,
+        764
+      ],
+      "polygon": [
+        [
+          157,
+          724
+        ],
+        [
+          157,
+          763
+        ],
+        [
+          842,
+          763
+        ],
+        [
+          842,
+          724
+        ]
+      ],
+      "content": "Merchant, and usurer, their characters compared 32. why one of them vicious, the other not so 33.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        156,
+        764,
+        843,
+        807
+      ],
+      "polygon": [
+        [
+          156,
+          764
+        ],
+        [
+          156,
+          806
+        ],
+        [
+          842,
+          806
+        ],
+        [
+          842,
+          764
+        ]
+      ],
+      "content": "Metaphysics, less intelligible and less convincing than facts and appeals to the sense of mankind 3.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        783,
+        803,
+        842,
+        823
+      ],
+      "polygon": [
+        [
+          783,
+          803
+        ],
+        [
+          783,
+          822
+        ],
+        [
+          842,
+          822
+        ],
+        [
+          842,
+          803
+        ]
+      ],
+      "content": "Mo-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        374,
+        73,
+        562,
+        96
+      ],
+      "polygon": [
+        [
+          374,
+          73
+        ],
+        [
+          374,
+          96
+        ],
+        [
+          561,
+          96
+        ],
+        [
+          561,
+          73
+        ]
+      ],
+      "content": "INDEX.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "reference",
+      "bbox_2d": [
+        141,
+        101,
+        798,
+        797
+      ],
+      "polygon": [
+        [
+          147,
+          101
+        ],
+        [
+          151,
+          792
+        ],
+        [
+          792,
+          797
+        ],
+        [
+          792,
+          111
+        ]
+      ],
+      "content": "Modern, (see Philofophers.)\n\nMoney, advantage arising from it’s circulation not owing to those who squander it away in luxury, but to those who gather it up 54.55.\n\nMoral, the meaning of the word, has in all it’s senses a reference to the Latin word mores 61. (see Duties, Good, Obligation, World, Truth, Science, Sense.) Evidence, why probable evidence, so called 61.\n\nMoralists, when they encroach on the province of the casuist 143.144. Some of them destroy the distinction between moral and natural good 62.\n\nMoses, had no design of concealing a future state, when he mentions the serpent as agent in the fall, instead of the devil 293.\n\nNatural agents, shew us in their manner of working, what is the will of their maker 240.\n\nNecromancy, prevalence of it, shews that the Israelites knew of a future state 358.\n\nObligation, moral, what it is 70.71. cause of it should be level to every man’s capacity 2. true cause of it to be looked for in the revealed will of God 271. does not arise from any instinctive approbation 91. &c. 114. 116. 117. nor from any eternal relations of things 120. &c. true cause of it unknown, both to the Atheist and the Fatalist\n\nPatriot, (see Tyrant.)\n\nPeripatetics, their notion of the ultimate end. (see Stoics.) define good as the Stoics do 175. count pain, and misfortunes evils 186.\n\nPerfection of nature, signifies perfect rule of action, or perfect condition of being 221.\n\nPhilofophers, ancient, seem in their notions of virtue to have had no consideration of another life 19. what they called",
+      "native_label": "reference"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        147,
+        104,
+        460,
+        127
+      ],
+      "polygon": [
+        [
+          147,
+          104
+        ],
+        [
+          147,
+          110
+        ],
+        [
+          147,
+          116
+        ],
+        [
+          147,
+          127
+        ],
+        [
+          460,
+          127
+        ],
+        [
+          460,
+          104
+        ]
+      ],
+      "content": "Modern, (see Philofophers.)",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        145,
+        115,
+        791,
+        181
+      ],
+      "polygon": [
+        [
+          145,
+          125
+        ],
+        [
+          145,
+          181
+        ],
+        [
+          790,
+          181
+        ],
+        [
+          790,
+          120
+        ],
+        [
+          675,
+          115
+        ],
+        [
+          305,
+          115
+        ],
+        [
+          290,
+          115
+        ],
+        [
+          175,
+          115
+        ],
+        [
+          165,
+          115
+        ],
+        [
+          155,
+          120
+        ]
+      ],
+      "content": "Money, advantage arising from it's circulation not owing to those who squander it away in luxury, but to those who gather it up 54.55.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        145,
+        182,
+        789,
+        260
+      ],
+      "polygon": [
+        [
+          145,
+          182
+        ],
+        [
+          151,
+          259
+        ],
+        [
+          789,
+          259
+        ],
+        [
+          789,
+          182
+        ]
+      ],
+      "content": "Moral, the meaning of the word, has in all it's senses a reference to the latin word mores 61. (see Duties, Good, Obligation, World, Truth, Science, Sense.) Evidence, why probable evidence, so called 61.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        148,
+        259,
+        791,
+        317
+      ],
+      "polygon": [
+        [
+          148,
+          259
+        ],
+        [
+          148,
+          317
+        ],
+        [
+          790,
+          317
+        ],
+        [
+          790,
+          259
+        ]
+      ],
+      "content": "Moralists, when they encroach on the province of the casuist 143.144. some of them destroy the distinction between moral and natural good 62.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        146,
+        317,
+        793,
+        380
+      ],
+      "polygon": [
+        [
+          146,
+          322
+        ],
+        [
+          151,
+          379
+        ],
+        [
+          793,
+          379
+        ],
+        [
+          793,
+          317
+        ]
+      ],
+      "content": "Moses, had no design of concealing a future state, when he mentions the serpent as agent in the fall, instead of the devil 293.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        149,
+        393,
+        793,
+        433
+      ],
+      "polygon": [
+        [
+          149,
+          393
+        ],
+        [
+          149,
+          433
+        ],
+        [
+          767,
+          433
+        ],
+        [
+          787,
+          433
+        ],
+        [
+          792,
+          428
+        ],
+        [
+          792,
+          393
+        ]
+      ],
+      "content": "Natural agents, shew us in their manner of working, what is the will of their maker 240.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        149,
+        433,
+        792,
+        477
+      ],
+      "polygon": [
+        [
+          149,
+          433
+        ],
+        [
+          149,
+          477
+        ],
+        [
+          792,
+          477
+        ],
+        [
+          792,
+          433
+        ]
+      ],
+      "content": "Necromancy, prevalence of it, shews that the Israelites knew of a future state 358.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        145,
+        489,
+        795,
+        609
+      ],
+      "polygon": [
+        [
+          150,
+          489
+        ],
+        [
+          145,
+          609
+        ],
+        [
+          794,
+          609
+        ],
+        [
+          794,
+          489
+        ]
+      ],
+      "content": "Obligation, moral, what it is 70.71. cause of it should be level to every man's capacity 2. true cause of it to be look- ed for in the revealed will of God 271. does not arise from any instinctive approbation 91. &c. 114. 116. 117. nor from any eternal relations of things 120. &c. true cause of it unknown, both to the Atheist and the Fatalist",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        150,
+        625,
+        392,
+        647
+      ],
+      "polygon": [
+        [
+          150,
+          625
+        ],
+        [
+          150,
+          647
+        ],
+        [
+          392,
+          647
+        ],
+        [
+          392,
+          625
+        ]
+      ],
+      "content": "Patriot, (see Tyrant.)",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        150,
+        643,
+        792,
+        702
+      ],
+      "polygon": [
+        [
+          150,
+          643
+        ],
+        [
+          150,
+          702
+        ],
+        [
+          787,
+          702
+        ],
+        [
+          792,
+          697
+        ],
+        [
+          792,
+          643
+        ]
+      ],
+      "content": "Peripatetics, their notion of the ultimate end. (see Stoics.) define good as the Stoics do 175. count pain, and misfortunes evils 186.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        150,
+        702,
+        793,
+        742
+      ],
+      "polygon": [
+        [
+          150,
+          707
+        ],
+        [
+          150,
+          741
+        ],
+        [
+          792,
+          741
+        ],
+        [
+          792,
+          702
+        ]
+      ],
+      "content": "Perfection of nature, signifies perfect rule of action, or perfect condition of being 221.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        151,
+        741,
+        796,
+        796
+      ],
+      "polygon": [
+        [
+          151,
+          741
+        ],
+        [
+          151,
+          796
+        ],
+        [
+          431,
+          796
+        ],
+        [
+          456,
+          791
+        ],
+        [
+          486,
+          796
+        ],
+        [
+          501,
+          796
+        ],
+        [
+          521,
+          796
+        ],
+        [
+          796,
+          796
+        ],
+        [
+          796,
+          741
+        ],
+        [
+          371,
+          741
+        ],
+        [
+          351,
+          741
+        ],
+        [
+          321,
+          741
+        ]
+      ],
+      "content": "Philofathers, ancient, seem in their notions of virtue to have had no consideration of another life 19. what they called 3 D for-",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 14,
+      "label": "number",
+      "bbox_2d": [
+        462,
+        782,
+        510,
+        802
+      ],
+      "polygon": [
+        [
+          462,
+          787
+        ],
+        [
+          462,
+          802
+        ],
+        [
+          509,
+          802
+        ],
+        [
+          509,
+          782
+        ],
+        [
+          473,
+          782
+        ]
+      ],
+      "content": "3D",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        396,
+        69,
+        590,
+        92
+      ],
+      "polygon": [
+        [
+          396,
+          69
+        ],
+        [
+          396,
+          92
+        ],
+        [
+          589,
+          92
+        ],
+        [
+          589,
+          69
+        ]
+      ],
+      "content": "INDEX.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "reference",
+      "bbox_2d": [
+        158,
+        86,
+        833,
+        826
+      ],
+      "polygon": [
+        [
+          169,
+          91
+        ],
+        [
+          158,
+          826
+        ],
+        [
+          832,
+          826
+        ],
+        [
+          827,
+          91
+        ]
+      ],
+      "content": "fortitude 162. Not. a. utility, what they mean by it 190.\nmodern, all agree that happiness is the ultimate end 195.\n\nPleasure, why we dislike those who are fond of it 11.16.\n\nPLUTARCH, emended 174. Not. 180. Not. n.\n\nPoliticians, if they would make a nation happy, should encourage virtue and suppress vice 59.60. in how many senses the author of The Fable of the Bees may call virtue their contrivance 40.\n\nPositive Duties, (see Duties.)\n\nPride, what? 48.87.\n\nProbable motives, are what men act upon 235.\n\nProjector, not disliked for hurting his fortunes 12.\n\nPromise, to Abraham, did not consist in temporal felicity only, nor in the grant of the land of Canaan 307. how understood by the Apostles 308. how by the Patriarch himself 309.\n\nProphets, their office 374.\n\nProvidence, extraordinary promise of it, no more excludes future rewards and punishments from the Mosaic, than from the Christian dispensation 336.337.338.340. administered under the Gospel 338.339.\n\nPunishment, of children for the crimes of parents how to be defended 348. &c. of cutting off a man from among his people, must relate to a future life 354.\n\nReason, which may excuse from observing fitness of action, if from interest of the agent, makes such fitness an insufficient support of virtue 133. insufficient for this purpose if this reason arises from any other cause 134.\n\nRectitude, what the ancients meant by it 193.194.\n\nRelations, may be expressed by actions 138. of things, a precarious cause of obligation, proved from their authority who undertake the defence of them 118.119.\n\nRelation between creature and creator cannot be expressed by the same conduct, as that between beings of the same species 149.\n\nReligion, the only tye upon them who are above the reach of the law 234.",
+      "native_label": "reference"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        186,
+        100,
+        824,
+        143
+      ],
+      "polygon": [
+        [
+          186,
+          105
+        ],
+        [
+          191,
+          143
+        ],
+        [
+          366,
+          143
+        ],
+        [
+          823,
+          143
+        ],
+        [
+          823,
+          100
+        ],
+        [
+          191,
+          100
+        ]
+      ],
+      "content": "fortitude 162. Not. $^{a}$ . utility, what they mean by it 190. modern, all agree that happiness is the ultimate end 195.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        159,
+        141,
+        779,
+        162
+      ],
+      "polygon": [
+        [
+          159,
+          141
+        ],
+        [
+          159,
+          158
+        ],
+        [
+          179,
+          162
+        ],
+        [
+          744,
+          162
+        ],
+        [
+          768,
+          162
+        ],
+        [
+          778,
+          158
+        ],
+        [
+          778,
+          145
+        ],
+        [
+          768,
+          141
+        ]
+      ],
+      "content": "Pleasure, why we dislike those who are fond of it 11.16.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        161,
+        162,
+        676,
+        180
+      ],
+      "polygon": [
+        [
+          161,
+          162
+        ],
+        [
+          161,
+          180
+        ],
+        [
+          676,
+          180
+        ],
+        [
+          676,
+          162
+        ]
+      ],
+      "content": "PLUTARCH, emended 174. Not. 180. Not. $^{n}$ .",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        161,
+        181,
+        822,
+        257
+      ],
+      "polygon": [
+        [
+          161,
+          181
+        ],
+        [
+          161,
+          257
+        ],
+        [
+          821,
+          257
+        ],
+        [
+          821,
+          181
+        ]
+      ],
+      "content": "Politicians, if they would make a nation happy, should encourage virtue and suppress vice 59.60. in how many senses the author of The Fable of the Bees may call virtue their contrivance 40.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        162,
+        258,
+        495,
+        279
+      ],
+      "polygon": [
+        [
+          162,
+          258
+        ],
+        [
+          162,
+          279
+        ],
+        [
+          495,
+          279
+        ],
+        [
+          495,
+          258
+        ]
+      ],
+      "content": "Pofitive Duties, ( see Duties. )",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        162,
+        278,
+        408,
+        299
+      ],
+      "polygon": [
+        [
+          162,
+          278
+        ],
+        [
+          162,
+          298
+        ],
+        [
+          407,
+          298
+        ],
+        [
+          407,
+          278
+        ]
+      ],
+      "content": "Pride, what? 48.87.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        162,
+        298,
+        688,
+        318
+      ],
+      "polygon": [
+        [
+          162,
+          298
+        ],
+        [
+          167,
+          318
+        ],
+        [
+          330,
+          318
+        ],
+        [
+          346,
+          318
+        ],
+        [
+          370,
+          318
+        ],
+        [
+          385,
+          318
+        ],
+        [
+          405,
+          318
+        ],
+        [
+          410,
+          318
+        ],
+        [
+          687,
+          318
+        ],
+        [
+          687,
+          298
+        ]
+      ],
+      "content": "Probable motives, are what men aet upon 235.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        162,
+        318,
+        716,
+        338
+      ],
+      "polygon": [
+        [
+          162,
+          318
+        ],
+        [
+          162,
+          337
+        ],
+        [
+          716,
+          337
+        ],
+        [
+          716,
+          318
+        ]
+      ],
+      "content": "Projector, not disliked for hurting his fortunes 12.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        162,
+        337,
+        824,
+        398
+      ],
+      "polygon": [
+        [
+          162,
+          337
+        ],
+        [
+          162,
+          393
+        ],
+        [
+          823,
+          398
+        ],
+        [
+          823,
+          337
+        ],
+        [
+          608,
+          337
+        ]
+      ],
+      "content": "Promise, to Abraham, did not consist in temporal felicity only, nor in the grant of the land of Canaan 307. how understood by the Apostles 308. how by the Patriarch himself 309.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        163,
+        395,
+        467,
+        416
+      ],
+      "polygon": [
+        [
+          163,
+          395
+        ],
+        [
+          163,
+          416
+        ],
+        [
+          467,
+          416
+        ],
+        [
+          467,
+          401
+        ],
+        [
+          417,
+          395
+        ],
+        [
+          412,
+          395
+        ],
+        [
+          392,
+          395
+        ]
+      ],
+      "content": "Prophets, their office 374.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        163,
+        414,
+        825,
+        492
+      ],
+      "polygon": [
+        [
+          163,
+          414
+        ],
+        [
+          163,
+          492
+        ],
+        [
+          824,
+          492
+        ],
+        [
+          824,
+          414
+        ]
+      ],
+      "content": "Providence, extraordinary promise of it, no more excludes future rewards and punishments from the Mosaic, than from the Christian dispensation 336.337.338.340. administered under the Gospel 338.339.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        161,
+        492,
+        826,
+        555
+      ],
+      "polygon": [
+        [
+          161,
+          497
+        ],
+        [
+          167,
+          555
+        ],
+        [
+          826,
+          555
+        ],
+        [
+          826,
+          492
+        ],
+        [
+          167,
+          492
+        ]
+      ],
+      "content": "Punishment, of children for the crimes of parents how to be defended 348. &c. of cutting off a man from among his people, must relate to a future life 354.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "bbox_2d": [
+        164,
+        569,
+        828,
+        649
+      ],
+      "polygon": [
+        [
+          164,
+          569
+        ],
+        [
+          164,
+          649
+        ],
+        [
+          823,
+          649
+        ],
+        [
+          828,
+          644
+        ],
+        [
+          828,
+          569
+        ]
+      ],
+      "content": "Reason, which may excuse from observing fitness of action, if from interest of the agent, makes such fitness an insufficient support of virtue 133. insufficient for this purpose if this reason arises from any other cause 134.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "bbox_2d": [
+        161,
+        648,
+        760,
+        669
+      ],
+      "polygon": [
+        [
+          166,
+          668
+        ],
+        [
+          735,
+          668
+        ],
+        [
+          745,
+          658
+        ],
+        [
+          745,
+          653
+        ],
+        [
+          735,
+          648
+        ],
+        [
+          166,
+          648
+        ]
+      ],
+      "content": "Rectitude, what the ancients meant by it 193.194.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "bbox_2d": [
+        164,
+        668,
+        827,
+        726
+      ],
+      "polygon": [
+        [
+          164,
+          668
+        ],
+        [
+          164,
+          726
+        ],
+        [
+          827,
+          726
+        ],
+        [
+          822,
+          668
+        ]
+      ],
+      "content": "Relations, may be expressed by actions 138. of things, a precarious cause of obligation, proved from their authority who undertake the defence of them 118.119.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "bbox_2d": [
+        164,
+        725,
+        826,
+        781
+      ],
+      "polygon": [
+        [
+          164,
+          725
+        ],
+        [
+          164,
+          781
+        ],
+        [
+          826,
+          781
+        ],
+        [
+          826,
+          725
+        ],
+        [
+          626,
+          725
+        ],
+        [
+          620,
+          725
+        ],
+        [
+          600,
+          725
+        ],
+        [
+          581,
+          725
+        ],
+        [
+          575,
+          725
+        ],
+        [
+          560,
+          725
+        ],
+        [
+          420,
+          725
+        ],
+        [
+          410,
+          725
+        ],
+        [
+          345,
+          725
+        ],
+        [
+          334,
+          725
+        ]
+      ],
+      "content": "Relation between creature and creator cannot be expressed by the same conduct, as that between beings of the same species.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "bbox_2d": [
+        164,
+        783,
+        828,
+        826
+      ],
+      "polygon": [
+        [
+          164,
+          783
+        ],
+        [
+          164,
+          826
+        ],
+        [
+          828,
+          826
+        ],
+        [
+          828,
+          783
+        ]
+      ],
+      "content": "Religion, the only tye upon them who are above the reach of the law 234.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 19,
+      "label": "number",
+      "bbox_2d": [
+        778,
+        824,
+        826,
+        843
+      ],
+      "polygon": [
+        [
+          778,
+          824
+        ],
+        [
+          778,
+          843
+        ],
+        [
+          826,
+          843
+        ],
+        [
+          826,
+          824
+        ]
+      ],
+      "content": "Re-",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        357,
+        51,
+        552,
+        78
+      ],
+      "polygon": [
+        [
+          357,
+          51
+        ],
+        [
+          357,
+          78
+        ],
+        [
+          552,
+          78
+        ],
+        [
+          552,
+          56
+        ],
+        [
+          547,
+          51
+        ],
+        [
+          537,
+          51
+        ],
+        [
+          518,
+          51
+        ],
+        [
+          499,
+          51
+        ],
+        [
+          488,
+          51
+        ]
+      ],
+      "content": "# I N D E X.",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 1,
+      "label": "reference",
+      "bbox_2d": [
+        126,
+        81,
+        791,
+        250
+      ],
+      "polygon": [
+        [
+          126,
+          81
+        ],
+        [
+          126,
+          250
+        ],
+        [
+          791,
+          250
+        ],
+        [
+          791,
+          81
+        ]
+      ],
+      "content": "Reluctance, in doing a vicious action, whence it arises 96. 97. 98. 99. 115. (see Vicious.)\nRevelation, divided into three periods 273.\nRighteous man, what he had to expect under the Mosaic law when he suffered with the public 332.\nRobber, why he makes a conscience of letting his partners have a share in the booty 97. 98. not from an affection for virtue ibid.",
+      "native_label": "reference"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        122,
+        85,
+        789,
+        129
+      ],
+      "polygon": [
+        [
+          122,
+          85
+        ],
+        [
+          122,
+          129
+        ],
+        [
+          418,
+          129
+        ],
+        [
+          424,
+          129
+        ],
+        [
+          789,
+          129
+        ],
+        [
+          789,
+          85
+        ]
+      ],
+      "content": "Reluctance, in doing a vicious action, whence it arises 96. 97. 98. 99. 115. (see Vicious.)",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        126,
+        605,
+        147
+      ],
+      "polygon": [
+        [
+          125,
+          126
+        ],
+        [
+          125,
+          146
+        ],
+        [
+          605,
+          146
+        ],
+        [
+          605,
+          132
+        ],
+        [
+          540,
+          126
+        ],
+        [
+          530,
+          126
+        ],
+        [
+          185,
+          126
+        ]
+      ],
+      "content": "Revelation, divided into three periods 273.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        144,
+        790,
+        185
+      ],
+      "polygon": [
+        [
+          126,
+          144
+        ],
+        [
+          126,
+          185
+        ],
+        [
+          790,
+          185
+        ],
+        [
+          790,
+          144
+        ]
+      ],
+      "content": "Righteous man, what he had to expect under the Mosaic law when he suffered with the public 332.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        184,
+        790,
+        246
+      ],
+      "polygon": [
+        [
+          126,
+          184
+        ],
+        [
+          126,
+          246
+        ],
+        [
+          790,
+          246
+        ],
+        [
+          790,
+          184
+        ]
+      ],
+      "content": "Robber, why he makes a conscience of letting his partners have a share in the booty 97.98. not from an affection for virtue ibid.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        261,
+        346,
+        282
+      ],
+      "polygon": [
+        [
+          125,
+          261
+        ],
+        [
+          125,
+          282
+        ],
+        [
+          345,
+          282
+        ],
+        [
+          345,
+          261
+        ]
+      ],
+      "content": "Science, moral 61.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        282,
+        396,
+        303
+      ],
+      "polygon": [
+        [
+          125,
+          282
+        ],
+        [
+          125,
+          298
+        ],
+        [
+          210,
+          303
+        ],
+        [
+          220,
+          303
+        ],
+        [
+          235,
+          303
+        ],
+        [
+          255,
+          303
+        ],
+        [
+          280,
+          303
+        ],
+        [
+          396,
+          303
+        ],
+        [
+          396,
+          282
+        ]
+      ],
+      "content": "Selfishness, what? 199.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        301,
+        789,
+        341
+      ],
+      "polygon": [
+        [
+          125,
+          301
+        ],
+        [
+          125,
+          341
+        ],
+        [
+          788,
+          341
+        ],
+        [
+          788,
+          301
+        ],
+        [
+          400,
+          301
+        ],
+        [
+          379,
+          301
+        ],
+        [
+          354,
+          301
+        ],
+        [
+          315,
+          301
+        ]
+      ],
+      "content": "Senfe, moral, not the uppermost in our constitution 73. has two meanings 21.22. no idea of virtue from it 22.26.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        341,
+        791,
+        380
+      ],
+      "polygon": [
+        [
+          125,
+          341
+        ],
+        [
+          125,
+          380
+        ],
+        [
+          790,
+          380
+        ],
+        [
+          790,
+          341
+        ]
+      ],
+      "content": "Senses, all of them perceive virtue; no occasion for a moral one to give us a relish of it 92.93.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        379,
+        790,
+        438
+      ],
+      "polygon": [
+        [
+          125,
+          379
+        ],
+        [
+          125,
+          438
+        ],
+        [
+          490,
+          438
+        ],
+        [
+          789,
+          438
+        ],
+        [
+          789,
+          379
+        ]
+      ],
+      "content": "Senfualist, why disliked 8.9.16.17. not merely for impairing his health and fortunes 11. nor for acting contrary to the relations of things 12.16.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        124,
+        437,
+        682,
+        459
+      ],
+      "polygon": [
+        [
+          124,
+          437
+        ],
+        [
+          124,
+          459
+        ],
+        [
+          681,
+          459
+        ],
+        [
+          681,
+          441
+        ],
+        [
+          661,
+          437
+        ],
+        [
+          335,
+          437
+        ],
+        [
+          305,
+          437
+        ],
+        [
+          255,
+          437
+        ],
+        [
+          249,
+          437
+        ],
+        [
+          239,
+          437
+        ]
+      ],
+      "content": "SOCRATES, his opinion of virtue and utility 189.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        124,
+        458,
+        541,
+        478
+      ],
+      "polygon": [
+        [
+          124,
+          458
+        ],
+        [
+          124,
+          478
+        ],
+        [
+          540,
+          478
+        ],
+        [
+          540,
+          458
+        ]
+      ],
+      "content": "Sobriety; a virtue, why? 17.18.19.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        477,
+        452,
+        497
+      ],
+      "polygon": [
+        [
+          125,
+          477
+        ],
+        [
+          125,
+          497
+        ],
+        [
+          451,
+          497
+        ],
+        [
+          451,
+          477
+        ]
+      ],
+      "content": "Sovereign Good, (see Good.)",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "bbox_2d": [
+        124,
+        496,
+        792,
+        517
+      ],
+      "polygon": [
+        [
+          124,
+          496
+        ],
+        [
+          124,
+          517
+        ],
+        [
+          787,
+          517
+        ],
+        [
+          782,
+          496
+        ]
+      ],
+      "content": "SPANIARDS, not punished for their injustice to the Indians 232.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "bbox_2d": [
+        124,
+        518,
+        795,
+        596
+      ],
+      "polygon": [
+        [
+          124,
+          518
+        ],
+        [
+          124,
+          596
+        ],
+        [
+          795,
+          596
+        ],
+        [
+          795,
+          518
+        ]
+      ],
+      "content": "Stoics, make virtue and happiness the same 184. make virtue the only good 170. and by it mean self-good, or happiness 170.182.195. their definition of good 172. their opinion inconsistent with the Mosaic history of the fall 281.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "bbox_2d": [
+        123,
+        593,
+        645,
+        619
+      ],
+      "polygon": [
+        [
+          123,
+          593
+        ],
+        [
+          123,
+          619
+        ],
+        [
+          244,
+          619
+        ],
+        [
+          274,
+          619
+        ],
+        [
+          299,
+          619
+        ],
+        [
+          325,
+          619
+        ],
+        [
+          490,
+          619
+        ],
+        [
+          495,
+          619
+        ],
+        [
+          565,
+          619
+        ],
+        [
+          570,
+          619
+        ],
+        [
+          580,
+          619
+        ],
+        [
+          585,
+          619
+        ],
+        [
+          630,
+          619
+        ],
+        [
+          645,
+          614
+        ],
+        [
+          645,
+          593
+        ]
+      ],
+      "content": "Student, not disliked for hurting his health 11.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        631,
+        797,
+        672
+      ],
+      "polygon": [
+        [
+          125,
+          631
+        ],
+        [
+          125,
+          668
+        ],
+        [
+          156,
+          672
+        ],
+        [
+          191,
+          672
+        ],
+        [
+          791,
+          672
+        ],
+        [
+          796,
+          668
+        ],
+        [
+          796,
+          636
+        ],
+        [
+          781,
+          631
+        ]
+      ],
+      "content": "Temperance, a virtue in a man imprisoned for life, or living alone upon a desolate island 25.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        671,
+        792,
+        712
+      ],
+      "polygon": [
+        [
+          125,
+          671
+        ],
+        [
+          125,
+          707
+        ],
+        [
+          190,
+          712
+        ],
+        [
+          250,
+          712
+        ],
+        [
+          792,
+          712
+        ],
+        [
+          792,
+          671
+        ],
+        [
+          531,
+          671
+        ],
+        [
+          521,
+          671
+        ],
+        [
+          481,
+          671
+        ],
+        [
+          476,
+          671
+        ]
+      ],
+      "content": "Temporal Rewards, annexed to the law of Moses, no argument to prove that it did not promise eternal life 335.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        712,
+        793,
+        770
+      ],
+      "polygon": [
+        [
+          125,
+          712
+        ],
+        [
+          125,
+          769
+        ],
+        [
+          793,
+          769
+        ],
+        [
+          793,
+          717
+        ],
+        [
+          783,
+          712
+        ]
+      ],
+      "content": "Test of our approbation of virtue, whether disinterested or not , is our practising it or not, upon disinterested motives 90. 91.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "bbox_2d": [
+        123,
+        769,
+        793,
+        811
+      ],
+      "polygon": [
+        [
+          123,
+          769
+        ],
+        [
+          123,
+          811
+        ],
+        [
+          793,
+          811
+        ],
+        [
+          793,
+          769
+        ]
+      ],
+      "content": "Treafon, loved whilst the traitor is hated, not to be accounted for, but upon interested motives 81.",
+      "native_label": "reference_content"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        422,
+        57,
+        625,
+        84
+      ],
+      "polygon": [
+        [
+          422,
+          57
+        ],
+        [
+          422,
+          84
+        ],
+        [
+          625,
+          84
+        ],
+        [
+          625,
+          57
+        ]
+      ],
+      "content": "INDEX.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "reference",
+      "bbox_2d": [
+        176,
+        90,
+        869,
+        725
+      ],
+      "polygon": [
+        [
+          181,
+          90
+        ],
+        [
+          181,
+          724
+        ],
+        [
+          864,
+          724
+        ],
+        [
+          868,
+          90
+        ]
+      ],
+      "content": "Truth, moral, what? 61. not the same either with piety, or virtue 112.113. acting agreeably to it not the standard of virtue and vice 13.\n\nTyrant, and patriot, their characters compared 33. why one virtuous, the other vicious ibid.\n\nVariety, of pursuits, all tend to the same purpose 156.\n\nVice, hated most where it does those that hate it most harm 76.\n\nVicious, feel reluctance when they neglect virtue 94. their evidence not sincere ibid. 95. their reluctance accounted for ibid. 96.\n\nVirtue, a definition of it 6. consists in doing good, or preventing harm 10.14.17.23.24.32.33. whence the obligation to it 261.271.\n\nUltimate end, (see End, Happiness.) two questions concerning it 166.\n\nUfurer, his character, why vicious 32.33. (see Merchant.)\n\nUtility, or interest, used by the ancients in two different senses 190.191.\n\nWill of God, not the standard of virtue 19.20.21. will that directs his conduct not necessarily what he expects us to imitate 248—253. to make us happy for our virtue, the cause of obligation 261. in what sense acting virtuously is acting agreeably to it 247.\n\nWorld, moral, what? 245. virtue the law for it's government 246.271. natural, some inconvenience necessarily arises from the laws by which it is governed 242. the design of the Deity apparent from those laws 246.\n\nZENO, differs from Polemo, not in sentiment, but in affixing a name 179. his notion of a happy life 182.",
+      "native_label": "reference"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        180,
+        91,
+        866,
+        151
+      ],
+      "polygon": [
+        [
+          180,
+          91
+        ],
+        [
+          180,
+          150
+        ],
+        [
+          866,
+          150
+        ],
+        [
+          866,
+          96
+        ],
+        [
+          851,
+          91
+        ]
+      ],
+      "content": "Truth, moral, what? 61. not the same either with piety, or virtue 112. 113. acting agreeably to it not the standard of virtue and vice. 13.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        181,
+        152,
+        865,
+        193
+      ],
+      "polygon": [
+        [
+          181,
+          156
+        ],
+        [
+          186,
+          193
+        ],
+        [
+          865,
+          193
+        ],
+        [
+          865,
+          156
+        ],
+        [
+          840,
+          152
+        ],
+        [
+          271,
+          152
+        ],
+        [
+          261,
+          152
+        ],
+        [
+          197,
+          152
+        ],
+        [
+          186,
+          152
+        ]
+      ],
+      "content": "Tyrant, and patriot, their characters compared 33. why one virtuous, the other vicious ibid.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        179,
+        210,
+        788,
+        232
+      ],
+      "polygon": [
+        [
+          179,
+          210
+        ],
+        [
+          179,
+          228
+        ],
+        [
+          210,
+          232
+        ],
+        [
+          438,
+          232
+        ],
+        [
+          454,
+          232
+        ],
+        [
+          479,
+          232
+        ],
+        [
+          523,
+          232
+        ],
+        [
+          534,
+          232
+        ],
+        [
+          733,
+          232
+        ],
+        [
+          763,
+          232
+        ],
+        [
+          788,
+          232
+        ],
+        [
+          788,
+          210
+        ]
+      ],
+      "content": "Variety, of pursuits, all tend to the same purpose 156.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        180,
+        231,
+        858,
+        251
+      ],
+      "polygon": [
+        [
+          180,
+          231
+        ],
+        [
+          180,
+          251
+        ],
+        [
+          857,
+          251
+        ],
+        [
+          857,
+          231
+        ],
+        [
+          813,
+          231
+        ],
+        [
+          788,
+          231
+        ]
+      ],
+      "content": "Vice, hated most where it does those that hate it most harm 76.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        181,
+        251,
+        863,
+        308
+      ],
+      "polygon": [
+        [
+          181,
+          251
+        ],
+        [
+          186,
+          308
+        ],
+        [
+          862,
+          308
+        ],
+        [
+          862,
+          251
+        ],
+        [
+          739,
+          251
+        ],
+        [
+          733,
+          251
+        ]
+      ],
+      "content": "Vicious, feel reluctance when they neglect virtue 94. their evidence not sincere ibid. 95. their reluctance accounted for ibid. 96.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        181,
+        310,
+        863,
+        369
+      ],
+      "polygon": [
+        [
+          181,
+          310
+        ],
+        [
+          181,
+          369
+        ],
+        [
+          862,
+          369
+        ],
+        [
+          862,
+          310
+        ]
+      ],
+      "content": "Virtue, a definition of it 6. consists in doing good, or preventing harm 10.14.17.23.24.32.33. whence the obligation to it 261.271.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        180,
+        368,
+        863,
+        409
+      ],
+      "polygon": [
+        [
+          180,
+          368
+        ],
+        [
+          180,
+          408
+        ],
+        [
+          862,
+          408
+        ],
+        [
+          862,
+          368
+        ]
+      ],
+      "content": "Ultimate end, (see End, Happiness.) two questions concerning it 166.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        181,
+        408,
+        862,
+        470
+      ],
+      "polygon": [
+        [
+          181,
+          408
+        ],
+        [
+          181,
+          470
+        ],
+        [
+          861,
+          470
+        ],
+        [
+          861,
+          408
+        ]
+      ],
+      "content": "Ufurer, his character, why vicious 32.33. (see Merchant.) Utility, or interest, used by the ancients in two different senses 190.191.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        182,
+        486,
+        864,
+        585
+      ],
+      "polygon": [
+        [
+          182,
+          486
+        ],
+        [
+          182,
+          585
+        ],
+        [
+          864,
+          585
+        ],
+        [
+          864,
+          486
+        ],
+        [
+          815,
+          486
+        ]
+      ],
+      "content": "Will of God, not the standard of virtue 19.20.21. will that directs his conduct not necessarily what he expects us to imitate 248-253. to make us happy for our virtue, the cause of obligation 261. in what sense acting virtuously is acting agreeably to it 247.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        182,
+        585,
+        863,
+        668
+      ],
+      "polygon": [
+        [
+          182,
+          585
+        ],
+        [
+          182,
+          668
+        ],
+        [
+          858,
+          668
+        ],
+        [
+          862,
+          590
+        ],
+        [
+          838,
+          585
+        ],
+        [
+          523,
+          585
+        ],
+        [
+          512,
+          585
+        ]
+      ],
+      "content": "World, moral, what? 245. virtue the law for it's govern ment 246.271. natural, some inconvenience necessarily arises from the laws by which it is governed 242. the design of the Deity apparent from those laws 246.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        181,
+        682,
+        863,
+        726
+      ],
+      "polygon": [
+        [
+          181,
+          726
+        ],
+        [
+          858,
+          726
+        ],
+        [
+          862,
+          687
+        ],
+        [
+          858,
+          682
+        ],
+        [
+          186,
+          682
+        ]
+      ],
+      "content": "ZENO, differs from Polemo, not in sentiment, but in affixing a name 179. his notion of a happy life 182.",
+      "native_label": "reference_content"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        469,
+        728,
+        709,
+        840
+      ],
+      "polygon": [
+        [
+          469,
+          728
+        ],
+        [
+          469,
+          840
+        ],
+        [
+          709,
+          840
+        ],
+        [
+          709,
+          728
+        ]
+      ],
+      "content": "MVSEVM\n\nBRITAN\n\nNICVM",
+      "native_label": "seal"
+    }
+  ],
+  []
+]

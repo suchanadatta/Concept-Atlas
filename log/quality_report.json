@@ -1,0 +1,57 @@
+[
+  {
+    "check": "Q1 page-completeness",
+    "passed": true,
+    "detail": "all match"
+  },
+  {
+    "check": "Q2 no-silent-loss",
+    "passed": true,
+    "detail": "clean"
+  },
+  {
+    "check": "Q3 truncation",
+    "passed": true,
+    "detail": "0 near-cap truncated blocks"
+  },
+  {
+    "check": "Q4 garbage-ratio",
+    "passed": true,
+    "detail": "0/11064 pages flagged"
+  },
+  {
+    "check": "Q5 word-tiling",
+    "passed": true,
+    "detail": "600948 words: perfect tiling"
+  },
+  {
+    "check": "Q6 word-geometry",
+    "passed": true,
+    "detail": "600948 word boxes: all inside page+block"
+  },
+  {
+    "check": "Q7 word-order",
+    "passed": false,
+    "detail": "909 order issues"
+  },
+  {
+    "check": "Q8 word-coverage",
+    "passed": false,
+    "detail": "coverage 17.1% | worst: Law Considertions on the State of the World with regard to the Theory of Religion (part 1).pdf 0%, Mandeville A Treatise on the Hypochondriack and the Hysterick Passions (part 1).pdf 0%, Mandeville Fable of the Bees 1714 (part 1).pdf 0%"
+  },
+  {
+    "check": "Q9 page-numbering",
+    "passed": true,
+    "detail": "all monotone"
+  },
+  {
+    "check": "Q10 zone-sanity",
+    "passed": false,
+    "detail": "1 zone issues"
+  },
+  {
+    "check": "Q11 cross-engine",
+    "passed": false,
+    "detail": "122 pages compared | sim p50=0.36 | len-ratio p50=1.01 | 1 content-mismatch"
+  }
+]

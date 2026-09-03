@@ -1,0 +1,8509 @@
+[
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "THE",
+      "bbox_2d": [
+        415,
+        80,
+        626,
+        126
+      ],
+      "polygon": [
+        [
+          415,
+          85
+        ],
+        [
+          415,
+          121
+        ],
+        [
+          420,
+          125
+        ],
+        [
+          626,
+          125
+        ],
+        [
+          626,
+          80
+        ],
+        [
+          420,
+          80
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Grumbling Hive:",
+      "bbox_2d": [
+        95,
+        161,
+        959,
+        243
+      ],
+      "polygon": [
+        [
+          95,
+          166
+        ],
+        [
+          100,
+          242
+        ],
+        [
+          769,
+          242
+        ],
+        [
+          939,
+          238
+        ],
+        [
+          959,
+          228
+        ],
+        [
+          959,
+          171
+        ],
+        [
+          939,
+          161
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "O R,",
+      "bbox_2d": [
+        439,
+        294,
+        598,
+        341
+      ],
+      "polygon": [
+        [
+          439,
+          294
+        ],
+        [
+          439,
+          340
+        ],
+        [
+          597,
+          340
+        ],
+        [
+          597,
+          294
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        681,
+        233,
+        888,
+        359
+      ],
+      "polygon": [
+        [
+          681,
+          233
+        ],
+        [
+          681,
+          354
+        ],
+        [
+          686,
+          359
+        ],
+        [
+          887,
+          359
+        ],
+        [
+          887,
+          258
+        ],
+        [
+          887,
+          253
+        ],
+        [
+          887,
+          238
+        ],
+        [
+          883,
+          233
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "KNAVES",
+      "bbox_2d": [
+        68,
+        379,
+        945,
+        485
+      ],
+      "polygon": [
+        [
+          68,
+          379
+        ],
+        [
+          68,
+          484
+        ],
+        [
+          944,
+          479
+        ],
+        [
+          944,
+          379
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "TURN'D",
+      "bbox_2d": [
+        312,
+        524,
+        713,
+        570
+      ],
+      "polygon": [
+        [
+          312,
+          524
+        ],
+        [
+          312,
+          560
+        ],
+        [
+          317,
+          570
+        ],
+        [
+          713,
+          570
+        ],
+        [
+          713,
+          524
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "HONEST.",
+      "bbox_2d": [
+        132,
+        602,
+        905,
+        677
+      ],
+      "polygon": [
+        [
+          132,
+          608
+        ],
+        [
+          137,
+          677
+        ],
+        [
+          904,
+          677
+        ],
+        [
+          904,
+          602
+        ],
+        [
+          137,
+          602
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "paragraph_title",
+      "content": "L O N D O N :",
+      "bbox_2d": [
+        343,
+        803,
+        685,
+        839
+      ],
+      "polygon": [
+        [
+          343,
+          803
+        ],
+        [
+          343,
+          838
+        ],
+        [
+          685,
+          838
+        ],
+        [
+          685,
+          803
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Printed for Sam. Ballard, at the Blue-Ball, in Little-Britain : And Sold by A. Baldwin, in Warwick-Lane. 1705.",
+      "bbox_2d": [
+        53,
+        841,
+        981,
+        900
+      ],
+      "polygon": [
+        [
+          53,
+          841
+        ],
+        [
+          53,
+          899
+        ],
+        [
+          980,
+          894
+        ],
+        [
+          980,
+          841
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "content": "[ i ]",
+      "bbox_2d": [
+        411,
+        0,
+        583,
+        47
+      ],
+      "polygon": [
+        [
+          411,
+          0
+        ],
+        [
+          411,
+          46
+        ],
+        [
+          583,
+          46
+        ],
+        [
+          583,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "doc_title",
+      "content": "THE",
+      "bbox_2d": [
+        404,
+        137,
+        572,
+        176
+      ],
+      "polygon": [
+        [
+          404,
+          137
+        ],
+        [
+          404,
+          176
+        ],
+        [
+          572,
+          176
+        ],
+        [
+          572,
+          137
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "paragraph_title",
+      "content": "Grumbling Hive.",
+      "bbox_2d": [
+        60,
+        196,
+        918,
+        290
+      ],
+      "polygon": [
+        [
+          60,
+          201
+        ],
+        [
+          60,
+          280
+        ],
+        [
+          90,
+          289
+        ],
+        [
+          918,
+          289
+        ],
+        [
+          913,
+          196
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        42,
+        330,
+        163,
+        423
+      ],
+      "polygon": [
+        [
+          42,
+          330
+        ],
+        [
+          42,
+          422
+        ],
+        [
+          158,
+          422
+        ],
+        [
+          163,
+          418
+        ],
+        [
+          163,
+          330
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Spacious Hive well stock'd with Bees,",
+      "bbox_2d": [
+        157,
+        328,
+        843,
+        371
+      ],
+      "polygon": [
+        [
+          157,
+          328
+        ],
+        [
+          157,
+          370
+        ],
+        [
+          838,
+          370
+        ],
+        [
+          838,
+          328
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "That lived in Luxury and Ease ;",
+      "bbox_2d": [
+        168,
+        377,
+        775,
+        422
+      ],
+      "polygon": [
+        [
+          168,
+          377
+        ],
+        [
+          173,
+          421
+        ],
+        [
+          774,
+          421
+        ],
+        [
+          774,
+          377
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "And yet as fam'd for Laws and Arms,",
+      "bbox_2d": [
+        39,
+        430,
+        732,
+        472
+      ],
+      "polygon": [
+        [
+          39,
+          430
+        ],
+        [
+          39,
+          471
+        ],
+        [
+          732,
+          471
+        ],
+        [
+          727,
+          430
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "As yielding large and early Swarms;",
+      "bbox_2d": [
+        39,
+        481,
+        707,
+        524
+      ],
+      "polygon": [
+        [
+          39,
+          481
+        ],
+        [
+          39,
+          523
+        ],
+        [
+          706,
+          523
+        ],
+        [
+          702,
+          481
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Was counted the great Nurfery",
+      "bbox_2d": [
+        39,
+        531,
+        630,
+        574
+      ],
+      "polygon": [
+        [
+          39,
+          531
+        ],
+        [
+          39,
+          569
+        ],
+        [
+          69,
+          573
+        ],
+        [
+          629,
+          573
+        ],
+        [
+          625,
+          531
+        ],
+        [
+          595,
+          531
+        ],
+        [
+          590,
+          531
+        ],
+        [
+          510,
+          531
+        ],
+        [
+          489,
+          531
+        ],
+        [
+          294,
+          531
+        ],
+        [
+          289,
+          531
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Of Sciences and Industry.",
+      "bbox_2d": [
+        39,
+        581,
+        522,
+        623
+      ],
+      "polygon": [
+        [
+          39,
+          581
+        ],
+        [
+          39,
+          618
+        ],
+        [
+          66,
+          618
+        ],
+        [
+          185,
+          623
+        ],
+        [
+          521,
+          623
+        ],
+        [
+          521,
+          586
+        ],
+        [
+          486,
+          581
+        ],
+        [
+          472,
+          581
+        ],
+        [
+          456,
+          581
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "No Bees had better Government,",
+      "bbox_2d": [
+        38,
+        632,
+        628,
+        672
+      ],
+      "polygon": [
+        [
+          38,
+          632
+        ],
+        [
+          38,
+          672
+        ],
+        [
+          627,
+          672
+        ],
+        [
+          627,
+          636
+        ],
+        [
+          543,
+          632
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "More Ficklenefs, or lefs Content.",
+      "bbox_2d": [
+        39,
+        682,
+        638,
+        723
+      ],
+      "polygon": [
+        [
+          39,
+          682
+        ],
+        [
+          44,
+          722
+        ],
+        [
+          638,
+          722
+        ],
+        [
+          633,
+          682
+        ],
+        [
+          504,
+          682
+        ],
+        [
+          429,
+          682
+        ],
+        [
+          289,
+          682
+        ],
+        [
+          278,
+          682
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "They were not Slaves to Tyranny,",
+      "bbox_2d": [
+        39,
+        731,
+        671,
+        776
+      ],
+      "polygon": [
+        [
+          39,
+          731
+        ],
+        [
+          39,
+          775
+        ],
+        [
+          670,
+          775
+        ],
+        [
+          670,
+          736
+        ],
+        [
+          645,
+          731
+        ],
+        [
+          415,
+          731
+        ],
+        [
+          409,
+          731
+        ],
+        [
+          390,
+          731
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "Nor ruled by wild Democracy;",
+      "bbox_2d": [
+        41,
+        783,
+        609,
+        825
+      ],
+      "polygon": [
+        [
+          41,
+          783
+        ],
+        [
+          46,
+          824
+        ],
+        [
+          609,
+          824
+        ],
+        [
+          609,
+          783
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "But Kings, that could not wrong, because",
+      "bbox_2d": [
+        41,
+        833,
+        792,
+        875
+      ],
+      "polygon": [
+        [
+          41,
+          833
+        ],
+        [
+          46,
+          874
+        ],
+        [
+          791,
+          874
+        ],
+        [
+          791,
+          833
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "Their Power was circumfcrib'd by Laws.",
+      "bbox_2d": [
+        41,
+        883,
+        787,
+        924
+      ],
+      "polygon": [
+        [
+          41,
+          883
+        ],
+        [
+          46,
+          923
+        ],
+        [
+          787,
+          923
+        ],
+        [
+          787,
+          883
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "These",
+      "bbox_2d": [
+        825,
+        937,
+        945,
+        972
+      ],
+      "polygon": [
+        [
+          825,
+          937
+        ],
+        [
+          825,
+          972
+        ],
+        [
+          945,
+          972
+        ],
+        [
+          945,
+          937
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "content": "[ 2 ]",
+      "bbox_2d": [
+        402,
+        0,
+        569,
+        43
+      ],
+      "polygon": [
+        [
+          402,
+          0
+        ],
+        [
+          402,
+          43
+        ],
+        [
+          569,
+          43
+        ],
+        [
+          569,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "These Infects lived like Men, and all",
+      "bbox_2d": [
+        52,
+        84,
+        749,
+        121
+      ],
+      "polygon": [
+        [
+          52,
+          84
+        ],
+        [
+          52,
+          120
+        ],
+        [
+          748,
+          120
+        ],
+        [
+          748,
+          84
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Our Actionsthey perform'd in small:",
+      "bbox_2d": [
+        21,
+        135,
+        702,
+        172
+      ],
+      "polygon": [
+        [
+          21,
+          140
+        ],
+        [
+          21,
+          171
+        ],
+        [
+          701,
+          171
+        ],
+        [
+          701,
+          135
+        ],
+        [
+          86,
+          135
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "They did whatever's done in Town,",
+      "bbox_2d": [
+        22,
+        185,
+        686,
+        222
+      ],
+      "polygon": [
+        [
+          22,
+          190
+        ],
+        [
+          27,
+          222
+        ],
+        [
+          261,
+          222
+        ],
+        [
+          685,
+          222
+        ],
+        [
+          685,
+          185
+        ],
+        [
+          27,
+          185
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "And what belongs to Sword, or Gown :",
+      "bbox_2d": [
+        26,
+        233,
+        738,
+        272
+      ],
+      "polygon": [
+        [
+          26,
+          233
+        ],
+        [
+          26,
+          271
+        ],
+        [
+          737,
+          271
+        ],
+        [
+          737,
+          233
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Tho' th'Artful Works, by nimble Slight ;",
+      "bbox_2d": [
+        29,
+        285,
+        790,
+        323
+      ],
+      "polygon": [
+        [
+          29,
+          285
+        ],
+        [
+          29,
+          322
+        ],
+        [
+          789,
+          322
+        ],
+        [
+          789,
+          285
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "Of minute Limbs, 'fcaped Human Sight",
+      "bbox_2d": [
+        30,
+        334,
+        755,
+        373
+      ],
+      "polygon": [
+        [
+          30,
+          339
+        ],
+        [
+          30,
+          372
+        ],
+        [
+          754,
+          372
+        ],
+        [
+          754,
+          334
+        ],
+        [
+          35,
+          334
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Yet we've no Engines, Labourers,",
+      "bbox_2d": [
+        33,
+        385,
+        660,
+        423
+      ],
+      "polygon": [
+        [
+          33,
+          385
+        ],
+        [
+          33,
+          423
+        ],
+        [
+          659,
+          423
+        ],
+        [
+          659,
+          385
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Ships, Caftles, Arms, Artificers,",
+      "bbox_2d": [
+        33,
+        437,
+        623,
+        475
+      ],
+      "polygon": [
+        [
+          33,
+          437
+        ],
+        [
+          33,
+          474
+        ],
+        [
+          622,
+          474
+        ],
+        [
+          618,
+          437
+        ],
+        [
+          333,
+          437
+        ],
+        [
+          297,
+          437
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Craft, Science, Shop, or Instrument;",
+      "bbox_2d": [
+        35,
+        487,
+        719,
+        526
+      ],
+      "polygon": [
+        [
+          35,
+          492
+        ],
+        [
+          35,
+          525
+        ],
+        [
+          719,
+          525
+        ],
+        [
+          719,
+          492
+        ],
+        [
+          704,
+          487
+        ],
+        [
+          200,
+          487
+        ],
+        [
+          75,
+          487
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "But they had an Equivalent :",
+      "bbox_2d": [
+        0,
+        538,
+        568,
+        575
+      ],
+      "polygon": [
+        [
+          0,
+          538
+        ],
+        [
+          0,
+          574
+        ],
+        [
+          563,
+          574
+        ],
+        [
+          567,
+          569
+        ],
+        [
+          567,
+          538
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "Which, since their Language is unknown,",
+      "bbox_2d": [
+        40,
+        587,
+        805,
+        626
+      ],
+      "polygon": [
+        [
+          40,
+          587
+        ],
+        [
+          40,
+          626
+        ],
+        [
+          805,
+          626
+        ],
+        [
+          805,
+          587
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Must be call'd, as we do our own.",
+      "bbox_2d": [
+        40,
+        638,
+        631,
+        675
+      ],
+      "polygon": [
+        [
+          40,
+          638
+        ],
+        [
+          40,
+          674
+        ],
+        [
+          630,
+          674
+        ],
+        [
+          630,
+          638
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "As grant, that among other Things",
+      "bbox_2d": [
+        44,
+        689,
+        678,
+        728
+      ],
+      "polygon": [
+        [
+          44,
+          689
+        ],
+        [
+          49,
+          728
+        ],
+        [
+          678,
+          728
+        ],
+        [
+          678,
+          689
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "They wanted Dice, yet they had Kings;",
+      "bbox_2d": [
+        44,
+        739,
+        785,
+        780
+      ],
+      "polygon": [
+        [
+          44,
+          739
+        ],
+        [
+          44,
+          779
+        ],
+        [
+          785,
+          779
+        ],
+        [
+          785,
+          739
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "And those had Guards; from whence we may",
+      "bbox_2d": [
+        46,
+        790,
+        850,
+        830
+      ],
+      "polygon": [
+        [
+          46,
+          790
+        ],
+        [
+          46,
+          825
+        ],
+        [
+          849,
+          829
+        ],
+        [
+          849,
+          795
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "Justly conclude, they had some Play ;",
+      "bbox_2d": [
+        46,
+        840,
+        713,
+        880
+      ],
+      "polygon": [
+        [
+          46,
+          840
+        ],
+        [
+          46,
+          880
+        ],
+        [
+          712,
+          880
+        ],
+        [
+          712,
+          840
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "footer",
+      "content": "Un-",
+      "bbox_2d": [
+        874,
+        907,
+        959,
+        939
+      ],
+      "polygon": [
+        [
+          874,
+          907
+        ],
+        [
+          874,
+          938
+        ],
+        [
+          958,
+          938
+        ],
+        [
+          958,
+          907
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "display_formula",
+      "content": "$$\n[ 3 ]\n$$",
+      "bbox_2d": [
+        451,
+        0,
+        601,
+        42
+      ],
+      "polygon": [
+        [
+          451,
+          0
+        ],
+        [
+          451,
+          41
+        ],
+        [
+          601,
+          41
+        ],
+        [
+          601,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Unlefs a Regiment be shewn Of Soldiers, that make ufe of none.",
+      "bbox_2d": [
+        75,
+        51,
+        712,
+        143
+      ],
+      "polygon": [
+        [
+          75,
+          51
+        ],
+        [
+          80,
+          143
+        ],
+        [
+          711,
+          143
+        ],
+        [
+          711,
+          56
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Vaft Numbers thronged the fruitful Hive ;",
+      "bbox_2d": [
+        121,
+        162,
+        875,
+        204
+      ],
+      "polygon": [
+        [
+          121,
+          203
+        ],
+        [
+          875,
+          203
+        ],
+        [
+          875,
+          167
+        ],
+        [
+          521,
+          162
+        ],
+        [
+          505,
+          162
+        ],
+        [
+          401,
+          162
+        ],
+        [
+          395,
+          162
+        ],
+        [
+          126,
+          162
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Yet those vast Numbers made 'em thrive;",
+      "bbox_2d": [
+        80,
+        213,
+        796,
+        254
+      ],
+      "polygon": [
+        [
+          80,
+          213
+        ],
+        [
+          85,
+          253
+        ],
+        [
+          795,
+          253
+        ],
+        [
+          795,
+          213
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Millions endeavouring to supply",
+      "bbox_2d": [
+        81,
+        263,
+        652,
+        306
+      ],
+      "polygon": [
+        [
+          81,
+          263
+        ],
+        [
+          81,
+          305
+        ],
+        [
+          651,
+          305
+        ],
+        [
+          651,
+          263
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Each other's Luft and Vanity;",
+      "bbox_2d": [
+        80,
+        314,
+        633,
+        355
+      ],
+      "polygon": [
+        [
+          80,
+          314
+        ],
+        [
+          80,
+          354
+        ],
+        [
+          633,
+          354
+        ],
+        [
+          628,
+          314
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "Whilst other Millions were employ'd,",
+      "bbox_2d": [
+        81,
+        364,
+        761,
+        406
+      ],
+      "polygon": [
+        [
+          86,
+          364
+        ],
+        [
+          86,
+          405
+        ],
+        [
+          760,
+          405
+        ],
+        [
+          760,
+          364
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "To see their Handy-works destroy'd;",
+      "bbox_2d": [
+        78,
+        415,
+        747,
+        456
+      ],
+      "polygon": [
+        [
+          78,
+          415
+        ],
+        [
+          78,
+          456
+        ],
+        [
+          746,
+          456
+        ],
+        [
+          746,
+          415
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "They furnish'd half the Universe;",
+      "bbox_2d": [
+        81,
+        465,
+        948,
+        506
+      ],
+      "polygon": [
+        [
+          81,
+          465
+        ],
+        [
+          81,
+          506
+        ],
+        [
+          947,
+          506
+        ],
+        [
+          947,
+          476
+        ],
+        [
+          933,
+          471
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Yet had more Work than Labourers.",
+      "bbox_2d": [
+        80,
+        516,
+        751,
+        555
+      ],
+      "polygon": [
+        [
+          80,
+          516
+        ],
+        [
+          80,
+          555
+        ],
+        [
+          751,
+          555
+        ],
+        [
+          746,
+          516
+        ],
+        [
+          616,
+          516
+        ],
+        [
+          611,
+          516
+        ],
+        [
+          576,
+          516
+        ],
+        [
+          560,
+          516
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Some with vaft Stocks, and little Pains",
+      "bbox_2d": [
+        80,
+        566,
+        767,
+        606
+      ],
+      "polygon": [
+        [
+          80,
+          566
+        ],
+        [
+          80,
+          606
+        ],
+        [
+          766,
+          606
+        ],
+        [
+          762,
+          566
+        ],
+        [
+          692,
+          566
+        ],
+        [
+          671,
+          566
+        ],
+        [
+          587,
+          566
+        ],
+        [
+          551,
+          566
+        ],
+        [
+          516,
+          566
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "Jump'd into Business of great Gains;",
+      "bbox_2d": [
+        80,
+        616,
+        737,
+        659
+      ],
+      "polygon": [
+        [
+          80,
+          616
+        ],
+        [
+          80,
+          658
+        ],
+        [
+          309,
+          658
+        ],
+        [
+          315,
+          658
+        ],
+        [
+          737,
+          658
+        ],
+        [
+          737,
+          621
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "And some were damn'd to Sythes and Spades,",
+      "bbox_2d": [
+        80,
+        667,
+        887,
+        710
+      ],
+      "polygon": [
+        [
+          80,
+          667
+        ],
+        [
+          80,
+          705
+        ],
+        [
+          135,
+          710
+        ],
+        [
+          887,
+          710
+        ],
+        [
+          887,
+          672
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "And all those hard laborious Trades ;",
+      "bbox_2d": [
+        80,
+        717,
+        750,
+        759
+      ],
+      "polygon": [
+        [
+          80,
+          717
+        ],
+        [
+          80,
+          754
+        ],
+        [
+          749,
+          759
+        ],
+        [
+          749,
+          722
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Where willing Wretches daily sweat,",
+      "bbox_2d": [
+        80,
+        766,
+        737,
+        811
+      ],
+      "polygon": [
+        [
+          80,
+          766
+        ],
+        [
+          80,
+          806
+        ],
+        [
+          110,
+          811
+        ],
+        [
+          737,
+          811
+        ],
+        [
+          737,
+          771
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "And wear out Strength and Limbs to eat :",
+      "bbox_2d": [
+        81,
+        818,
+        823,
+        859
+      ],
+      "polygon": [
+        [
+          81,
+          818
+        ],
+        [
+          81,
+          854
+        ],
+        [
+          116,
+          859
+        ],
+        [
+          126,
+          859
+        ],
+        [
+          822,
+          859
+        ],
+        [
+          822,
+          823
+        ],
+        [
+          798,
+          818
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "footer",
+      "content": "Whilft",
+      "bbox_2d": [
+        853,
+        885,
+        977,
+        919
+      ],
+      "polygon": [
+        [
+          853,
+          885
+        ],
+        [
+          853,
+          919
+        ],
+        [
+          977,
+          919
+        ],
+        [
+          977,
+          885
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "[4]",
+      "bbox_2d": [
+        406,
+        0,
+        556,
+        45
+      ],
+      "polygon": [
+        [
+          406,
+          0
+        ],
+        [
+          406,
+          45
+        ],
+        [
+          555,
+          45
+        ],
+        [
+          555,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Whilst others follow'd Myfteries,",
+      "bbox_2d": [
+        34,
+        59,
+        613,
+        97
+      ],
+      "polygon": [
+        [
+          34,
+          59
+        ],
+        [
+          34,
+          97
+        ],
+        [
+          329,
+          97
+        ],
+        [
+          369,
+          97
+        ],
+        [
+          403,
+          97
+        ],
+        [
+          409,
+          97
+        ],
+        [
+          419,
+          97
+        ],
+        [
+          613,
+          97
+        ],
+        [
+          613,
+          59
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "To which few Folks bind Prentices;",
+      "bbox_2d": [
+        31,
+        112,
+        676,
+        147
+      ],
+      "polygon": [
+        [
+          31,
+          112
+        ],
+        [
+          36,
+          147
+        ],
+        [
+          451,
+          147
+        ],
+        [
+          456,
+          147
+        ],
+        [
+          467,
+          147
+        ],
+        [
+          481,
+          147
+        ],
+        [
+          676,
+          147
+        ],
+        [
+          676,
+          112
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "That want no Stock, but that of Brafs.",
+      "bbox_2d": [
+        29,
+        163,
+        726,
+        198
+      ],
+      "polygon": [
+        [
+          29,
+          163
+        ],
+        [
+          29,
+          198
+        ],
+        [
+          726,
+          198
+        ],
+        [
+          726,
+          163
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "And may set up without a Crofs ;",
+      "bbox_2d": [
+        33,
+        215,
+        658,
+        249
+      ],
+      "polygon": [
+        [
+          33,
+          215
+        ],
+        [
+          33,
+          249
+        ],
+        [
+          658,
+          249
+        ],
+        [
+          658,
+          215
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "As Sharpers, Parafites, Pimps, Players,",
+      "bbox_2d": [
+        30,
+        265,
+        744,
+        301
+      ],
+      "polygon": [
+        [
+          30,
+          265
+        ],
+        [
+          30,
+          301
+        ],
+        [
+          743,
+          301
+        ],
+        [
+          743,
+          265
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "Pick-Pockets, Coiners, Quacks, Sooth-Sayers,",
+      "bbox_2d": [
+        29,
+        315,
+        849,
+        352
+      ],
+      "polygon": [
+        [
+          29,
+          315
+        ],
+        [
+          29,
+          351
+        ],
+        [
+          848,
+          351
+        ],
+        [
+          848,
+          315
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "With down-right Working, cunningly",
+      "bbox_2d": [
+        31,
+        416,
+        729,
+        453
+      ],
+      "polygon": [
+        [
+          31,
+          416
+        ],
+        [
+          31,
+          448
+        ],
+        [
+          100,
+          452
+        ],
+        [
+          121,
+          452
+        ],
+        [
+          156,
+          452
+        ],
+        [
+          175,
+          452
+        ],
+        [
+          728,
+          452
+        ],
+        [
+          728,
+          416
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "And all those, that, in Enmity",
+      "bbox_2d": [
+        31,
+        366,
+        594,
+        401
+      ],
+      "polygon": [
+        [
+          31,
+          366
+        ],
+        [
+          31,
+          401
+        ],
+        [
+          593,
+          401
+        ],
+        [
+          593,
+          366
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Convert to their own life the Labour",
+      "bbox_2d": [
+        29,
+        467,
+        752,
+        501
+      ],
+      "polygon": [
+        [
+          29,
+          467
+        ],
+        [
+          29,
+          500
+        ],
+        [
+          752,
+          500
+        ],
+        [
+          752,
+          472
+        ],
+        [
+          672,
+          467
+        ],
+        [
+          662,
+          467
+        ],
+        [
+          299,
+          467
+        ],
+        [
+          293,
+          467
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Of their good-natur'd heedlefs Neighbour.",
+      "bbox_2d": [
+        30,
+        517,
+        788,
+        553
+      ],
+      "polygon": [
+        [
+          30,
+          517
+        ],
+        [
+          35,
+          553
+        ],
+        [
+          787,
+          553
+        ],
+        [
+          783,
+          517
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "These were called Knaves; but, bar the Name,",
+      "bbox_2d": [
+        31,
+        568,
+        868,
+        604
+      ],
+      "polygon": [
+        [
+          31,
+          568
+        ],
+        [
+          31,
+          604
+        ],
+        [
+          867,
+          604
+        ],
+        [
+          867,
+          568
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "The grave Industrious were the Same.",
+      "bbox_2d": [
+        31,
+        618,
+        704,
+        655
+      ],
+      "polygon": [
+        [
+          31,
+          618
+        ],
+        [
+          36,
+          654
+        ],
+        [
+          704,
+          654
+        ],
+        [
+          704,
+          618
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "All Trades and Places knew some Cheat, No Calling was without Deceit.",
+      "bbox_2d": [
+        19,
+        669,
+        760,
+        759
+      ],
+      "polygon": [
+        [
+          29,
+          669
+        ],
+        [
+          35,
+          758
+        ],
+        [
+          759,
+          758
+        ],
+        [
+          759,
+          669
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "The Lawyers, of whose Art the Basis Was raising Feuds and splitting Cases,",
+      "bbox_2d": [
+        34,
+        794,
+        759,
+        885
+      ],
+      "polygon": [
+        [
+          34,
+          794
+        ],
+        [
+          39,
+          885
+        ],
+        [
+          69,
+          885
+        ],
+        [
+          759,
+          885
+        ],
+        [
+          759,
+          794
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "aside_text",
+      "content": "3",
+      "bbox_2d": [
+        916,
+        122,
+        941,
+        136
+      ],
+      "polygon": [
+        [
+          916,
+          122
+        ],
+        [
+          916,
+          135
+        ],
+        [
+          940,
+          135
+        ],
+        [
+          940,
+          122
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "number",
+      "content": "Op.",
+      "bbox_2d": [
+        867,
+        906,
+        937,
+        942
+      ],
+      "polygon": [
+        [
+          867,
+          906
+        ],
+        [
+          867,
+          941
+        ],
+        [
+          937,
+          941
+        ],
+        [
+          937,
+          921
+        ],
+        [
+          932,
+          911
+        ],
+        [
+          927,
+          906
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "Opposed all Registers, that Cheats Might make more Work with dipt Estates; As were't unlawful, that one's own, Without a Law-Suit, should be known. They kept off Hearings wilfully, To finger the retaining Fee; And to defend a wicked Cause, Examin'd and survey'd the Laws; As Burglars Shops and Houses do; To find out where they'd best break through.",
+      "bbox_2d": [
+        53,
+        48,
+        831,
+        550
+      ],
+      "polygon": [
+        [
+          63,
+          48
+        ],
+        [
+          53,
+          549
+        ],
+        [
+          831,
+          549
+        ],
+        [
+          831,
+          48
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Physicians valued Fame and Wealth Above the drooping Patient's Health, Or their own Skill: The greatest Part Study'd, instead of Rules of Art, Grave pensive Looks, and dull Behaviour; To gain th' Apothecary's Favour,",
+      "bbox_2d": [
+        40,
+        586,
+        800,
+        877
+      ],
+      "polygon": [
+        [
+          45,
+          586
+        ],
+        [
+          45,
+          872
+        ],
+        [
+          799,
+          877
+        ],
+        [
+          799,
+          591
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "content": "2",
+      "bbox_2d": [
+        32,
+        930,
+        45,
+        947
+      ],
+      "polygon": [
+        [
+          32,
+          930
+        ],
+        [
+          32,
+          946
+        ],
+        [
+          44,
+          946
+        ],
+        [
+          44,
+          930
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "doc_title",
+      "content": "[5]",
+      "bbox_2d": [
+        448,
+        0,
+        594,
+        40
+      ],
+      "polygon": [
+        [
+          448,
+          0
+        ],
+        [
+          448,
+          40
+        ],
+        [
+          593,
+          40
+        ],
+        [
+          593,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "The",
+      "bbox_2d": [
+        853,
+        908,
+        938,
+        942
+      ],
+      "polygon": [
+        [
+          853,
+          908
+        ],
+        [
+          853,
+          942
+        ],
+        [
+          938,
+          942
+        ],
+        [
+          938,
+          908
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "[6]",
+      "bbox_2d": [
+        417,
+        0,
+        563,
+        45
+      ],
+      "polygon": [
+        [
+          417,
+          0
+        ],
+        [
+          417,
+          45
+        ],
+        [
+          563,
+          45
+        ],
+        [
+          563,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "The Praise of Mid-wives, Priests and all, That served at Birth, or Funeral ; To bear with th'ever-talking Tribe, And hear my Lady's Aunt prescribe; With formal Smile, and kind How d'ye, To fawn on all the Family ; And, which of all the greatest Curse is, T'endure th'Impertinence of Nurses.",
+      "bbox_2d": [
+        31,
+        59,
+        792,
+        451
+      ],
+      "polygon": [
+        [
+          31,
+          59
+        ],
+        [
+          31,
+          451
+        ],
+        [
+          791,
+          451
+        ],
+        [
+          781,
+          59
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Among the many Priests of Jove, Hir'd to draw Blessings from Above, Some few were learn'd and eloquent, But Thoufands hot and ignorant: Yet all past Muster, that could hide Their Sloth, Lust, Avarice and Pride; For which they were as famed, as Taylors For Cabbage; or for Brandy, Sailors:",
+      "bbox_2d": [
+        30,
+        485,
+        805,
+        878
+      ],
+      "polygon": [
+        [
+          35,
+          485
+        ],
+        [
+          46,
+          878
+        ],
+        [
+          805,
+          878
+        ],
+        [
+          805,
+          650
+        ],
+        [
+          805,
+          609
+        ],
+        [
+          805,
+          505
+        ],
+        [
+          790,
+          485
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "footer",
+      "content": "Some",
+      "bbox_2d": [
+        849,
+        913,
+        954,
+        946
+      ],
+      "polygon": [
+        [
+          849,
+          913
+        ],
+        [
+          849,
+          945
+        ],
+        [
+          953,
+          945
+        ],
+        [
+          953,
+          913
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "Some meagre look'd, and meanly elad Would mystically pray for Bread, Meaning by that an ample Store, Yet lit'rally receiv'd no more; And, whilst these holy Drudges starv'd, Some lazy Ones, for which they serv'd, Indulg'd their Ease, with all the Graces Of Health and Plenty in their Faces.",
+      "bbox_2d": [
+        57,
+        45,
+        964,
+        447
+      ],
+      "polygon": [
+        [
+          57,
+          45
+        ],
+        [
+          63,
+          446
+        ],
+        [
+          964,
+          446
+        ],
+        [
+          964,
+          45
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "The Soldiers, that were forced to fight, If they survived, got Honour by't; Tho' some, that shunn'd the bloody Fray, Had Limbs shot off, that ran away: Some valiant Gen'rals fought the Foe; Others took Bribes to let them go: Some ventur'd always, where 'twas warm; Loft now a Leg, and then an Arm;",
+      "bbox_2d": [
+        62,
+        470,
+        839,
+        865
+      ],
+      "polygon": [
+        [
+          72,
+          480
+        ],
+        [
+          62,
+          630
+        ],
+        [
+          77,
+          865
+        ],
+        [
+          789,
+          865
+        ],
+        [
+          839,
+          855
+        ],
+        [
+          824,
+          470
+        ],
+        [
+          122,
+          470
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "content": "B",
+      "bbox_2d": [
+        549,
+        880,
+        582,
+        909
+      ],
+      "polygon": [
+        [
+          549,
+          880
+        ],
+        [
+          549,
+          909
+        ],
+        [
+          582,
+          909
+        ],
+        [
+          582,
+          880
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "footer",
+      "content": "Till",
+      "bbox_2d": [
+        891,
+        880,
+        967,
+        914
+      ],
+      "polygon": [
+        [
+          891,
+          880
+        ],
+        [
+          891,
+          913
+        ],
+        [
+          967,
+          913
+        ],
+        [
+          967,
+          880
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        410,
+        0,
+        560,
+        40
+      ],
+      "polygon": [
+        [
+          410,
+          0
+        ],
+        [
+          410,
+          40
+        ],
+        [
+          559,
+          40
+        ],
+        [
+          559,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Till quite disabled, and put by; They lived on half their Salary; Whilst others never came in Play, And itaid at Home for Double Pay.",
+      "bbox_2d": [
+        26,
+        48,
+        656,
+        244
+      ],
+      "polygon": [
+        [
+          26,
+          48
+        ],
+        [
+          31,
+          243
+        ],
+        [
+          656,
+          243
+        ],
+        [
+          656,
+          103
+        ],
+        [
+          636,
+          48
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Their Kings were serv'd; but Knavishly Cheated by their own Ministry;\nMany, that for their Welfare slaved,\nRobbing the very Crown they saved:\nPensions were small, and they lived high,\nYet boasted of their Honesty.\nCalling, whene'er they strain'd their Right,\nThe slipp'ry Trick a Perquisite;\nAnd, when Folks understood their Cant,\nThey chang'd that for Emolument;\nUnwilling to be short, or plain,\nIn any thing concerning Gain:",
+      "bbox_2d": [
+        21,
+        276,
+        800,
+        879
+      ],
+      "polygon": [
+        [
+          31,
+          276
+        ],
+        [
+          26,
+          879
+        ],
+        [
+          795,
+          879
+        ],
+        [
+          800,
+          276
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "content": "For",
+      "bbox_2d": [
+        862,
+        904,
+        935,
+        938
+      ],
+      "polygon": [
+        [
+          862,
+          904
+        ],
+        [
+          862,
+          909
+        ],
+        [
+          862,
+          914
+        ],
+        [
+          862,
+          937
+        ],
+        [
+          934,
+          937
+        ],
+        [
+          934,
+          904
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "For there was not a Bee, but would Get more, I won't say, than he should; But than he dared to let them know, That pay'd for't; as your Gamefsters do, That, tho' at fair Play, ne'er will own Before the Lofers what they've won.",
+      "bbox_2d": [
+        46,
+        63,
+        752,
+        353
+      ],
+      "polygon": [
+        [
+          46,
+          68
+        ],
+        [
+          51,
+          353
+        ],
+        [
+          752,
+          348
+        ],
+        [
+          752,
+          63
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "But who can all their Frauds repeat! The very Stuff, which in the Street They sold for Dirt t'enrich the Ground, Was often by the Buyers found Sophisticated with a Quarter Of Good-for-nothing, Stones and Mortar; Tho' Flail had little Cause to mutter, Who fold the other Salt for Butter.",
+      "bbox_2d": [
+        51,
+        387,
+        805,
+        776
+      ],
+      "polygon": [
+        [
+          56,
+          387
+        ],
+        [
+          66,
+          775
+        ],
+        [
+          804,
+          775
+        ],
+        [
+          804,
+          529
+        ],
+        [
+          795,
+          408
+        ],
+        [
+          775,
+          387
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Justice her self, famed for fair Dealing,\nBy Blindness had not loft her Feeling;\nB 2 He",
+      "bbox_2d": [
+        70,
+        803,
+        945,
+        946
+      ],
+      "polygon": [
+        [
+          70,
+          803
+        ],
+        [
+          70,
+          905
+        ],
+        [
+          75,
+          920
+        ],
+        [
+          165,
+          940
+        ],
+        [
+          945,
+          945
+        ],
+        [
+          945,
+          839
+        ],
+        [
+          915,
+          824
+        ],
+        [
+          885,
+          814
+        ],
+        [
+          865,
+          814
+        ],
+        [
+          816,
+          809
+        ],
+        [
+          805,
+          803
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "[ IO ]",
+      "bbox_2d": [
+        378,
+        1,
+        555,
+        48
+      ],
+      "polygon": [
+        [
+          378,
+          1
+        ],
+        [
+          378,
+          47
+        ],
+        [
+          554,
+          47
+        ],
+        [
+          554,
+          1
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Her Left Hand, which the Scales should hold,\nHad often dropt 'em, bribed with Gold;\nAnd, tho' she seem'd impartial,\nWhere Punishment was corporal,\nPretended to a regular Course,\nIn Murther, and all Crimes of Force;\nTho' some, first Pillory'd for Cheating,\nWere hang'd in Hemp of their own beating;\nYet, it was thought, the Sword she bore\nCheck'd but the Desp'rate and the Poor;\nThat, urged by mere Necessity,\nWere tied up to the wretched Tree\nFor Crimes, which not' deserv'd that Fate,\nBut to secure the Rich, and Great.",
+      "bbox_2d": [
+        12,
+        60,
+        844,
+        767
+      ],
+      "polygon": [
+        [
+          12,
+          60
+        ],
+        [
+          27,
+          766
+        ],
+        [
+          833,
+          762
+        ],
+        [
+          843,
+          60
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Thus every Part was full of Vice, Yet the whole Mafs a Paradice;",
+      "bbox_2d": [
+        31,
+        795,
+        660,
+        887
+      ],
+      "polygon": [
+        [
+          31,
+          795
+        ],
+        [
+          31,
+          886
+        ],
+        [
+          659,
+          886
+        ],
+        [
+          659,
+          795
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "content": "11",
+      "bbox_2d": [
+        79,
+        934,
+        120,
+        965
+      ],
+      "polygon": [
+        [
+          79,
+          934
+        ],
+        [
+          79,
+          965
+        ],
+        [
+          119,
+          965
+        ],
+        [
+          119,
+          934
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "footer",
+      "content": "Flat-",
+      "bbox_2d": [
+        849,
+        913,
+        944,
+        945
+      ],
+      "polygon": [
+        [
+          849,
+          913
+        ],
+        [
+          849,
+          945
+        ],
+        [
+          943,
+          945
+        ],
+        [
+          943,
+          913
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "display_formula",
+      "content": "$$\n[ \\cdot 1 1 ]\n$$",
+      "bbox_2d": [
+        419,
+        9,
+        608,
+        55
+      ],
+      "polygon": [
+        [
+          419,
+          9
+        ],
+        [
+          419,
+          54
+        ],
+        [
+          608,
+          54
+        ],
+        [
+          608,
+          9
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Flatter'd in Peace, and fear'd in Wars.",
+      "bbox_2d": [
+        70,
+        67,
+        762,
+        106
+      ],
+      "polygon": [
+        [
+          70,
+          67
+        ],
+        [
+          70,
+          105
+        ],
+        [
+          761,
+          105
+        ],
+        [
+          761,
+          67
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "They were th' Esfeem of Foreigners,",
+      "bbox_2d": [
+        69,
+        118,
+        727,
+        156
+      ],
+      "polygon": [
+        [
+          69,
+          118
+        ],
+        [
+          69,
+          155
+        ],
+        [
+          727,
+          155
+        ],
+        [
+          727,
+          118
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "And lavish of their Wealth and Lives,",
+      "bbox_2d": [
+        74,
+        167,
+        770,
+        203
+      ],
+      "polygon": [
+        [
+          74,
+          167
+        ],
+        [
+          74,
+          203
+        ],
+        [
+          769,
+          203
+        ],
+        [
+          769,
+          172
+        ],
+        [
+          689,
+          167
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "The Ballance of all other Hives.",
+      "bbox_2d": [
+        71,
+        216,
+        642,
+        251
+      ],
+      "polygon": [
+        [
+          71,
+          216
+        ],
+        [
+          71,
+          251
+        ],
+        [
+          641,
+          251
+        ],
+        [
+          641,
+          216
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Such were the Blessings of that State ;",
+      "bbox_2d": [
+        71,
+        266,
+        762,
+        301
+      ],
+      "polygon": [
+        [
+          71,
+          266
+        ],
+        [
+          71,
+          301
+        ],
+        [
+          761,
+          301
+        ],
+        [
+          761,
+          266
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "Their Crimes confpired to make 'em Great;",
+      "bbox_2d": [
+        70,
+        314,
+        863,
+        351
+      ],
+      "polygon": [
+        [
+          70,
+          314
+        ],
+        [
+          70,
+          351
+        ],
+        [
+          862,
+          351
+        ],
+        [
+          862,
+          314
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "And Vertue, who from Politicks",
+      "bbox_2d": [
+        73,
+        364,
+        665,
+        399
+      ],
+      "polygon": [
+        [
+          73,
+          364
+        ],
+        [
+          73,
+          399
+        ],
+        [
+          664,
+          399
+        ],
+        [
+          664,
+          364
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Had learn'd a Thousand cunning Tricks,",
+      "bbox_2d": [
+        73,
+        412,
+        801,
+        451
+      ],
+      "polygon": [
+        [
+          73,
+          412
+        ],
+        [
+          73,
+          451
+        ],
+        [
+          800,
+          451
+        ],
+        [
+          800,
+          417
+        ],
+        [
+          735,
+          412
+        ],
+        [
+          520,
+          412
+        ],
+        [
+          444,
+          412
+        ],
+        [
+          139,
+          412
+        ],
+        [
+          133,
+          412
+        ],
+        [
+          93,
+          412
+        ],
+        [
+          88,
+          412
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Was, by their happy Influence,",
+      "bbox_2d": [
+        73,
+        462,
+        632,
+        501
+      ],
+      "polygon": [
+        [
+          73,
+          462
+        ],
+        [
+          73,
+          501
+        ],
+        [
+          631,
+          501
+        ],
+        [
+          631,
+          462
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Made Friends with Vice: And ever since",
+      "bbox_2d": [
+        74,
+        510,
+        800,
+        548
+      ],
+      "polygon": [
+        [
+          74,
+          510
+        ],
+        [
+          74,
+          548
+        ],
+        [
+          800,
+          548
+        ],
+        [
+          800,
+          510
+        ],
+        [
+          395,
+          510
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "The Worst of all the Multitude",
+      "bbox_2d": [
+        71,
+        561,
+        637,
+        597
+      ],
+      "polygon": [
+        [
+          71,
+          561
+        ],
+        [
+          76,
+          597
+        ],
+        [
+          636,
+          597
+        ],
+        [
+          636,
+          561
+        ],
+        [
+          607,
+          561
+        ],
+        [
+          591,
+          561
+        ],
+        [
+          567,
+          561
+        ],
+        [
+          541,
+          561
+        ],
+        [
+          496,
+          561
+        ],
+        [
+          487,
+          561
+        ],
+        [
+          481,
+          561
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Did something for the common Good.",
+      "bbox_2d": [
+        70,
+        610,
+        748,
+        648
+      ],
+      "polygon": [
+        [
+          70,
+          610
+        ],
+        [
+          70,
+          648
+        ],
+        [
+          747,
+          648
+        ],
+        [
+          747,
+          610
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "This was the State's Craft, that maintain'd:",
+      "bbox_2d": [
+        113,
+        685,
+        876,
+        723
+      ],
+      "polygon": [
+        [
+          113,
+          685
+        ],
+        [
+          113,
+          722
+        ],
+        [
+          875,
+          722
+        ],
+        [
+          875,
+          685
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "The Whole, of which each Part complain'd.",
+      "bbox_2d": [
+        69,
+        735,
+        863,
+        773
+      ],
+      "polygon": [
+        [
+          69,
+          735
+        ],
+        [
+          69,
+          768
+        ],
+        [
+          80,
+          773
+        ],
+        [
+          863,
+          768
+        ],
+        [
+          863,
+          735
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "This, as in Mufick Harmony,",
+      "bbox_2d": [
+        69,
+        784,
+        603,
+        824
+      ],
+      "polygon": [
+        [
+          69,
+          784
+        ],
+        [
+          69,
+          818
+        ],
+        [
+          85,
+          823
+        ],
+        [
+          293,
+          823
+        ],
+        [
+          354,
+          823
+        ],
+        [
+          602,
+          823
+        ],
+        [
+          597,
+          784
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "Made Jarrings in the Main agree ;.",
+      "bbox_2d": [
+        74,
+        833,
+        681,
+        873
+      ],
+      "polygon": [
+        [
+          74,
+          833
+        ],
+        [
+          74,
+          867
+        ],
+        [
+          104,
+          872
+        ],
+        [
+          129,
+          872
+        ],
+        [
+          681,
+          872
+        ],
+        [
+          681,
+          833
+        ],
+        [
+          667,
+          833
+        ],
+        [
+          661,
+          833
+        ],
+        [
+          651,
+          833
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "number",
+      "content": "Par.",
+      "bbox_2d": [
+        890,
+        890,
+        959,
+        920
+      ],
+      "polygon": [
+        [
+          890,
+          890
+        ],
+        [
+          890,
+          920
+        ],
+        [
+          958,
+          920
+        ],
+        [
+          958,
+          890
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "Parties directly opposite Assist each oth'r, as 'twere for Spight; And Temp'rance with Sobriety Serve Drunkenness and Gluttony.",
+      "bbox_2d": [
+        66,
+        76,
+        759,
+        270
+      ],
+      "polygon": [
+        [
+          66,
+          81
+        ],
+        [
+          66,
+          269
+        ],
+        [
+          759,
+          269
+        ],
+        [
+          759,
+          76
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "The Root of evil Avarice, That damn'd ill-natur'd baneful Vice, Was Slave to Prodigality, That Noble Sin ; whilst Luxury Employ'd a Million of the Poor, And odious Pride a Million more. Envy it self, and Vanity Were Ministers of Industry; Their darling Folly, Fickleness In Diet, Furniture, and Dress, That strange ridic'lous Vice, was made The very Wheel, that turn'd the Trade",
+      "bbox_2d": [
+        59,
+        305,
+        796,
+        905
+      ],
+      "polygon": [
+        [
+          64,
+          305
+        ],
+        [
+          64,
+          900
+        ],
+        [
+          796,
+          904
+        ],
+        [
+          796,
+          545
+        ],
+        [
+          766,
+          305
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "paragraph_title",
+      "content": "[12]",
+      "bbox_2d": [
+        438,
+        15,
+        610,
+        62
+      ],
+      "polygon": [
+        [
+          438,
+          15
+        ],
+        [
+          438,
+          61
+        ],
+        [
+          609,
+          61
+        ],
+        [
+          609,
+          15
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Their",
+      "bbox_2d": [
+        867,
+        922,
+        979,
+        958
+      ],
+      "polygon": [
+        [
+          867,
+          922
+        ],
+        [
+          867,
+          957
+        ],
+        [
+          979,
+          957
+        ],
+        [
+          979,
+          922
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "Their Laws and Cloaths were equally Objects of Mutability;\n\nFor, what was well done for a Time,\n\nIn half a Year became a Crime;\n\nYet whilst they alter'd thus their Laws,\n\nStill finding and correcting Flaws,\n\nThey mended by Inconstancy\n\nFaults, which no Prudence could foresee.",
+      "bbox_2d": [
+        13,
+        53,
+        742,
+        440
+      ],
+      "polygon": [
+        [
+          13,
+          53
+        ],
+        [
+          13,
+          439
+        ],
+        [
+          742,
+          439
+        ],
+        [
+          742,
+          134
+        ],
+        [
+          727,
+          53
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Thus Vice nursed Ingenuity, Which join'd with Time, and Industry Had carry'd Life's Conveniencies, It's real Pleasures, Comforts, Ease, To such a Height, the very Poor Lived better than the Rich before; And nothing could be added more :",
+      "bbox_2d": [
+        5,
+        473,
+        711,
+        810
+      ],
+      "polygon": [
+        [
+          15,
+          473
+        ],
+        [
+          5,
+          810
+        ],
+        [
+          710,
+          805
+        ],
+        [
+          710,
+          473
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "How",
+      "bbox_2d": [
+        821,
+        844,
+        919,
+        881
+      ],
+      "polygon": [
+        [
+          821,
+          844
+        ],
+        [
+          821,
+          881
+        ],
+        [
+          919,
+          881
+        ],
+        [
+          919,
+          844
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "doc_title",
+      "content": "[ 14 ] ;",
+      "bbox_2d": [
+        391,
+        0,
+        582,
+        39
+      ],
+      "polygon": [
+        [
+          391,
+          0
+        ],
+        [
+          391,
+          38
+        ],
+        [
+          581,
+          38
+        ],
+        [
+          581,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "How vain is Mortal Happiness!\n\nHad they but known the Bounds of Bliss;\nAnd, that Perfection here below\nIs more, than Gods can well bestow,\nThe grumbling Brutes had been content\nWith Ministers and Government.\nBut they, at every ill Success,\nLike Creatures lost without Redress,\nCursed Politicians, Armies, Fleets;\nWhilst every one cry'd, Damn the Cheats,\nAnd would, tho' Conscious of his own,\nIn Others barb'rouslly bear none.",
+      "bbox_2d": [
+        11,
+        65,
+        791,
+        674
+      ],
+      "polygon": [
+        [
+          41,
+          75
+        ],
+        [
+          41,
+          105
+        ],
+        [
+          11,
+          125
+        ],
+        [
+          26,
+          674
+        ],
+        [
+          785,
+          674
+        ],
+        [
+          790,
+          70
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "One, that had got a Princely Store, By cheating Master, King, and Poor, Dared cry aloud; The Land must sink For all it's Fraud; And whom d'ye think",
+      "bbox_2d": [
+        31,
+        709,
+        772,
+        907
+      ],
+      "polygon": [
+        [
+          31,
+          714
+        ],
+        [
+          36,
+          907
+        ],
+        [
+          772,
+          907
+        ],
+        [
+          767,
+          709
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "footer",
+      "content": "The",
+      "bbox_2d": [
+        861,
+        919,
+        948,
+        951
+      ],
+      "polygon": [
+        [
+          861,
+          919
+        ],
+        [
+          861,
+          924
+        ],
+        [
+          861,
+          930
+        ],
+        [
+          861,
+          935
+        ],
+        [
+          866,
+          951
+        ],
+        [
+          948,
+          951
+        ],
+        [
+          948,
+          919
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "display_formula",
+      "content": "$$\n[ \\cdot 1 5 ]\n$$",
+      "bbox_2d": [
+        388,
+        0,
+        579,
+        38
+      ],
+      "polygon": [
+        [
+          388,
+          0
+        ],
+        [
+          388,
+          37
+        ],
+        [
+          578,
+          37
+        ],
+        [
+          578,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "The Sermonizing Rafcal chid?",
+      "bbox_2d": [
+        30,
+        50,
+        586,
+        92
+      ],
+      "polygon": [
+        [
+          30,
+          55
+        ],
+        [
+          30,
+          91
+        ],
+        [
+          585,
+          91
+        ],
+        [
+          585,
+          50
+        ],
+        [
+          126,
+          50
+        ],
+        [
+          120,
+          50
+        ],
+        [
+          101,
+          50
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "A Glover that fold Lamb for Kid.",
+      "bbox_2d": [
+        34,
+        101,
+        622,
+        140
+      ],
+      "polygon": [
+        [
+          34,
+          140
+        ],
+        [
+          617,
+          140
+        ],
+        [
+          621,
+          106
+        ],
+        [
+          617,
+          101
+        ],
+        [
+          114,
+          101
+        ],
+        [
+          34,
+          106
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "The leaft Thing was not done amifs,",
+      "bbox_2d": [
+        76,
+        169,
+        732,
+        207
+      ],
+      "polygon": [
+        [
+          76,
+          169
+        ],
+        [
+          81,
+          207
+        ],
+        [
+          727,
+          207
+        ],
+        [
+          727,
+          169
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Or cross'd the Publick Bufinefs ;",
+      "bbox_2d": [
+        32,
+        219,
+        606,
+        257
+      ],
+      "polygon": [
+        [
+          32,
+          219
+        ],
+        [
+          32,
+          256
+        ],
+        [
+          606,
+          256
+        ],
+        [
+          606,
+          219
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "But all the Rogues cry'd brazenly,",
+      "bbox_2d": [
+        37,
+        268,
+        624,
+        308
+      ],
+      "polygon": [
+        [
+          37,
+          268
+        ],
+        [
+          42,
+          307
+        ],
+        [
+          116,
+          307
+        ],
+        [
+          122,
+          307
+        ],
+        [
+          136,
+          307
+        ],
+        [
+          146,
+          307
+        ],
+        [
+          250,
+          307
+        ],
+        [
+          266,
+          307
+        ],
+        [
+          623,
+          307
+        ],
+        [
+          623,
+          268
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "Good Gods, had we but Honefty!",
+      "bbox_2d": [
+        37,
+        318,
+        638,
+        356
+      ],
+      "polygon": [
+        [
+          37,
+          318
+        ],
+        [
+          42,
+          355
+        ],
+        [
+          638,
+          355
+        ],
+        [
+          638,
+          318
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Merc'ry smiled at th'Impudence ;",
+      "bbox_2d": [
+        41,
+        367,
+        633,
+        406
+      ],
+      "polygon": [
+        [
+          41,
+          367
+        ],
+        [
+          41,
+          405
+        ],
+        [
+          632,
+          405
+        ],
+        [
+          632,
+          367
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "And Others call'd it want of Sence,",
+      "bbox_2d": [
+        44,
+        417,
+        652,
+        454
+      ],
+      "polygon": [
+        [
+          44,
+          422
+        ],
+        [
+          44,
+          454
+        ],
+        [
+          652,
+          454
+        ],
+        [
+          647,
+          417
+        ],
+        [
+          597,
+          417
+        ],
+        [
+          592,
+          417
+        ],
+        [
+          543,
+          417
+        ],
+        [
+          482,
+          417
+        ],
+        [
+          178,
+          417
+        ],
+        [
+          163,
+          417
+        ],
+        [
+          104,
+          417
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Always to rail at what they loved :",
+      "bbox_2d": [
+        44,
+        466,
+        654,
+        503
+      ],
+      "polygon": [
+        [
+          44,
+          471
+        ],
+        [
+          44,
+          503
+        ],
+        [
+          309,
+          503
+        ],
+        [
+          315,
+          503
+        ],
+        [
+          649,
+          503
+        ],
+        [
+          653,
+          498
+        ],
+        [
+          653,
+          466
+        ],
+        [
+          389,
+          466
+        ],
+        [
+          383,
+          466
+        ],
+        [
+          95,
+          466
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "But Jove, with Indignation moved,",
+      "bbox_2d": [
+        44,
+        515,
+        670,
+        554
+      ],
+      "polygon": [
+        [
+          44,
+          515
+        ],
+        [
+          44,
+          553
+        ],
+        [
+          669,
+          553
+        ],
+        [
+          669,
+          515
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "At laft in Anger fwore, he'd rid",
+      "bbox_2d": [
+        47,
+        565,
+        620,
+        602
+      ],
+      "polygon": [
+        [
+          47,
+          571
+        ],
+        [
+          47,
+          601
+        ],
+        [
+          619,
+          601
+        ],
+        [
+          619,
+          565
+        ],
+        [
+          52,
+          565
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "The bawling Hive of Fraud, and did.",
+      "bbox_2d": [
+        45,
+        614,
+        717,
+        652
+      ],
+      "polygon": [
+        [
+          45,
+          614
+        ],
+        [
+          45,
+          652
+        ],
+        [
+          716,
+          652
+        ],
+        [
+          716,
+          614
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "The very Moment it departs,",
+      "bbox_2d": [
+        45,
+        664,
+        575,
+        703
+      ],
+      "polygon": [
+        [
+          45,
+          664
+        ],
+        [
+          51,
+          698
+        ],
+        [
+          91,
+          702
+        ],
+        [
+          215,
+          702
+        ],
+        [
+          221,
+          702
+        ],
+        [
+          575,
+          702
+        ],
+        [
+          570,
+          664
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "And Honefty fills all their Hearts;",
+      "bbox_2d": [
+        50,
+        713,
+        662,
+        750
+      ],
+      "polygon": [
+        [
+          50,
+          713
+        ],
+        [
+          50,
+          750
+        ],
+        [
+          662,
+          750
+        ],
+        [
+          657,
+          713
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "There shews'em, like th' Instructive Tree,",
+      "bbox_2d": [
+        48,
+        762,
+        808,
+        799
+      ],
+      "polygon": [
+        [
+          48,
+          762
+        ],
+        [
+          48,
+          799
+        ],
+        [
+          807,
+          799
+        ],
+        [
+          807,
+          766
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "Those Crimes, which they're ashamed to see;",
+      "bbox_2d": [
+        52,
+        811,
+        850,
+        849
+      ],
+      "polygon": [
+        [
+          52,
+          811
+        ],
+        [
+          62,
+          849
+        ],
+        [
+          849,
+          849
+        ],
+        [
+          844,
+          811
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "Which now in Silence they confess,",
+      "bbox_2d": [
+        55,
+        860,
+        673,
+        900
+      ],
+      "polygon": [
+        [
+          55,
+          860
+        ],
+        [
+          55,
+          895
+        ],
+        [
+          70,
+          900
+        ],
+        [
+          672,
+          900
+        ],
+        [
+          672,
+          860
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "By Blushing at their Uglynefs;",
+      "bbox_2d": [
+        56,
+        909,
+        611,
+        950
+      ],
+      "polygon": [
+        [
+          56,
+          909
+        ],
+        [
+          56,
+          950
+        ],
+        [
+          611,
+          950
+        ],
+        [
+          611,
+          909
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "Which",
+      "bbox_2d": [
+        827,
+        939,
+        955,
+        974
+      ],
+      "polygon": [
+        [
+          827,
+          939
+        ],
+        [
+          827,
+          974
+        ],
+        [
+          954,
+          974
+        ],
+        [
+          954,
+          939
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "Like Children, that would hide their Faults, And by their Colour own their Thoughts; Imag'ning, when they're look'd upon, That Others see, what they have done.",
+      "bbox_2d": [
+        61,
+        61,
+        894,
+        249
+      ],
+      "polygon": [
+        [
+          66,
+          61
+        ],
+        [
+          66,
+          249
+        ],
+        [
+          894,
+          244
+        ],
+        [
+          894,
+          61
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "But, Oh ye Gods! What Confernation, How vast and sudden was th' Alteration!",
+      "bbox_2d": [
+        64,
+        280,
+        837,
+        365
+      ],
+      "polygon": [
+        [
+          64,
+          280
+        ],
+        [
+          64,
+          365
+        ],
+        [
+          837,
+          360
+        ],
+        [
+          837,
+          280
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "In half an Hour, the Nation round,",
+      "bbox_2d": [
+        62,
+        380,
+        717,
+        416
+      ],
+      "polygon": [
+        [
+          62,
+          416
+        ],
+        [
+          716,
+          416
+        ],
+        [
+          716,
+          380
+        ],
+        [
+          67,
+          380
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Meat fell a Penny in the Pound.",
+      "bbox_2d": [
+        61,
+        430,
+        646,
+        465
+      ],
+      "polygon": [
+        [
+          61,
+          464
+        ],
+        [
+          646,
+          464
+        ],
+        [
+          646,
+          430
+        ],
+        [
+          66,
+          430
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "The Mask Hypocrisie's flung down,",
+      "bbox_2d": [
+        60,
+        480,
+        721,
+        517
+      ],
+      "polygon": [
+        [
+          60,
+          480
+        ],
+        [
+          60,
+          513
+        ],
+        [
+          720,
+          517
+        ],
+        [
+          720,
+          480
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "From the great Statesman to the Clown ;",
+      "bbox_2d": [
+        60,
+        530,
+        813,
+        565
+      ],
+      "polygon": [
+        [
+          60,
+          530
+        ],
+        [
+          60,
+          565
+        ],
+        [
+          813,
+          565
+        ],
+        [
+          808,
+          530
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "And some, in borrow'd Looks well known,",
+      "bbox_2d": [
+        60,
+        580,
+        840,
+        617
+      ],
+      "polygon": [
+        [
+          60,
+          580
+        ],
+        [
+          60,
+          616
+        ],
+        [
+          839,
+          616
+        ],
+        [
+          839,
+          586
+        ],
+        [
+          789,
+          580
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Appear'd like Strangers in their own.",
+      "bbox_2d": [
+        60,
+        630,
+        735,
+        666
+      ],
+      "polygon": [
+        [
+          60,
+          630
+        ],
+        [
+          60,
+          665
+        ],
+        [
+          735,
+          665
+        ],
+        [
+          735,
+          630
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "The Bar was filent from that Day;",
+      "bbox_2d": [
+        56,
+        679,
+        699,
+        716
+      ],
+      "polygon": [
+        [
+          56,
+          679
+        ],
+        [
+          56,
+          715
+        ],
+        [
+          698,
+          715
+        ],
+        [
+          698,
+          679
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "For now the willing Debtors pay,",
+      "bbox_2d": [
+        55,
+        729,
+        667,
+        767
+      ],
+      "polygon": [
+        [
+          55,
+          729
+        ],
+        [
+          60,
+          762
+        ],
+        [
+          666,
+          767
+        ],
+        [
+          666,
+          734
+        ],
+        [
+          596,
+          729
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Ev'n what's by Creditors forgot ;",
+      "bbox_2d": [
+        55,
+        778,
+        658,
+        816
+      ],
+      "polygon": [
+        [
+          55,
+          778
+        ],
+        [
+          60,
+          815
+        ],
+        [
+          657,
+          815
+        ],
+        [
+          652,
+          778
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "Who quitted them, that had it not.",
+      "bbox_2d": [
+        57,
+        828,
+        696,
+        864
+      ],
+      "polygon": [
+        [
+          57,
+          828
+        ],
+        [
+          62,
+          863
+        ],
+        [
+          695,
+          863
+        ],
+        [
+          695,
+          828
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Those, that were in the Wrong, stood mute,",
+      "bbox_2d": [
+        54,
+        878,
+        858,
+        915
+      ],
+      "polygon": [
+        [
+          54,
+          878
+        ],
+        [
+          54,
+          914
+        ],
+        [
+          857,
+          914
+        ],
+        [
+          857,
+          878
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "And dropt the patch'd vexatious Suit.",
+      "bbox_2d": [
+        59,
+        926,
+        733,
+        962
+      ],
+      "polygon": [
+        [
+          59,
+          926
+        ],
+        [
+          59,
+          962
+        ],
+        [
+          707,
+          962
+        ],
+        [
+          728,
+          962
+        ],
+        [
+          732,
+          957
+        ],
+        [
+          728,
+          926
+        ],
+        [
+          598,
+          926
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "number",
+      "content": "On",
+      "bbox_2d": [
+        898,
+        960,
+        963,
+        990
+      ],
+      "polygon": [
+        [
+          898,
+          960
+        ],
+        [
+          898,
+          990
+        ],
+        [
+          963,
+          990
+        ],
+        [
+          963,
+          960
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "[17]",
+      "bbox_2d": [
+        374,
+        1,
+        549,
+        47
+      ],
+      "polygon": [
+        [
+          374,
+          1
+        ],
+        [
+          374,
+          47
+        ],
+        [
+          548,
+          47
+        ],
+        [
+          548,
+          1
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "On which, since nothing less can thrive,",
+      "bbox_2d": [
+        15,
+        61,
+        737,
+        101
+      ],
+      "polygon": [
+        [
+          15,
+          66
+        ],
+        [
+          15,
+          100
+        ],
+        [
+          737,
+          100
+        ],
+        [
+          737,
+          61
+        ],
+        [
+          80,
+          61
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Than Lawyers in an honeft Hive,",
+      "bbox_2d": [
+        15,
+        112,
+        624,
+        149
+      ],
+      "polygon": [
+        [
+          15,
+          116
+        ],
+        [
+          20,
+          148
+        ],
+        [
+          454,
+          148
+        ],
+        [
+          475,
+          148
+        ],
+        [
+          623,
+          148
+        ],
+        [
+          623,
+          112
+        ],
+        [
+          125,
+          112
+        ],
+        [
+          114,
+          112
+        ],
+        [
+          75,
+          112
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "All, except those, that got enough,",
+      "bbox_2d": [
+        19,
+        161,
+        658,
+        200
+      ],
+      "polygon": [
+        [
+          19,
+          161
+        ],
+        [
+          19,
+          199
+        ],
+        [
+          657,
+          199
+        ],
+        [
+          657,
+          161
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "With Ink-horns by their Sides troop'd off.",
+      "bbox_2d": [
+        19,
+        211,
+        760,
+        250
+      ],
+      "polygon": [
+        [
+          19,
+          211
+        ],
+        [
+          19,
+          249
+        ],
+        [
+          759,
+          249
+        ],
+        [
+          759,
+          211
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Justice hang'd some, fet others free;",
+      "bbox_2d": [
+        64,
+        278,
+        708,
+        317
+      ],
+      "polygon": [
+        [
+          64,
+          278
+        ],
+        [
+          64,
+          316
+        ],
+        [
+          707,
+          316
+        ],
+        [
+          707,
+          278
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "And, after Goal-delivery,",
+      "bbox_2d": [
+        25,
+        328,
+        487,
+        365
+      ],
+      "polygon": [
+        [
+          25,
+          328
+        ],
+        [
+          25,
+          364
+        ],
+        [
+          486,
+          364
+        ],
+        [
+          486,
+          328
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Her Prefence be'ng no more requir'd,",
+      "bbox_2d": [
+        24,
+        377,
+        689,
+        414
+      ],
+      "polygon": [
+        [
+          24,
+          382
+        ],
+        [
+          24,
+          413
+        ],
+        [
+          688,
+          413
+        ],
+        [
+          688,
+          382
+        ],
+        [
+          674,
+          377
+        ],
+        [
+          623,
+          377
+        ],
+        [
+          189,
+          377
+        ],
+        [
+          173,
+          377
+        ],
+        [
+          139,
+          377
+        ],
+        [
+          54,
+          377
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "With all her Train, and Pomp retir'd.",
+      "bbox_2d": [
+        26,
+        425,
+        715,
+        462
+      ],
+      "polygon": [
+        [
+          26,
+          425
+        ],
+        [
+          26,
+          461
+        ],
+        [
+          715,
+          461
+        ],
+        [
+          715,
+          425
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "First march'd some Smiths, with Locks and Grates,",
+      "bbox_2d": [
+        28,
+        474,
+        912,
+        510
+      ],
+      "polygon": [
+        [
+          28,
+          474
+        ],
+        [
+          28,
+          510
+        ],
+        [
+          911,
+          510
+        ],
+        [
+          911,
+          474
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Fetters, and Doors with Iron-Plates;",
+      "bbox_2d": [
+        28,
+        524,
+        695,
+        560
+      ],
+      "polygon": [
+        [
+          28,
+          524
+        ],
+        [
+          28,
+          559
+        ],
+        [
+          695,
+          559
+        ],
+        [
+          695,
+          524
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "Next Goalers, Turnkeys, and Affistants :",
+      "bbox_2d": [
+        30,
+        573,
+        773,
+        609
+      ],
+      "polygon": [
+        [
+          30,
+          573
+        ],
+        [
+          30,
+          608
+        ],
+        [
+          50,
+          608
+        ],
+        [
+          85,
+          608
+        ],
+        [
+          120,
+          608
+        ],
+        [
+          773,
+          608
+        ],
+        [
+          773,
+          573
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Before the Goddefs, at some distance,",
+      "bbox_2d": [
+        30,
+        622,
+        705,
+        659
+      ],
+      "polygon": [
+        [
+          30,
+          622
+        ],
+        [
+          30,
+          654
+        ],
+        [
+          705,
+          659
+        ],
+        [
+          705,
+          626
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "Her chief and faithful Minister",
+      "bbox_2d": [
+        31,
+        675,
+        589,
+        710
+      ],
+      "polygon": [
+        [
+          31,
+          675
+        ],
+        [
+          31,
+          709
+        ],
+        [
+          588,
+          709
+        ],
+        [
+          584,
+          675
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Squire Catch, the Laws great Finisher,",
+      "bbox_2d": [
+        29,
+        724,
+        744,
+        763
+      ],
+      "polygon": [
+        [
+          29,
+          724
+        ],
+        [
+          29,
+          757
+        ],
+        [
+          744,
+          762
+        ],
+        [
+          744,
+          729
+        ],
+        [
+          714,
+          724
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "Bore not th' imaginary Sword,",
+      "bbox_2d": [
+        35,
+        773,
+        579,
+        810
+      ],
+      "polygon": [
+        [
+          35,
+          773
+        ],
+        [
+          35,
+          804
+        ],
+        [
+          150,
+          810
+        ],
+        [
+          180,
+          810
+        ],
+        [
+          185,
+          810
+        ],
+        [
+          204,
+          810
+        ],
+        [
+          210,
+          810
+        ],
+        [
+          578,
+          810
+        ],
+        [
+          578,
+          773
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "But his own Tools, an Ax and Cord :",
+      "bbox_2d": [
+        36,
+        821,
+        733,
+        857
+      ],
+      "polygon": [
+        [
+          36,
+          821
+        ],
+        [
+          36,
+          852
+        ],
+        [
+          732,
+          857
+        ],
+        [
+          732,
+          826
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "Then on a Cloud the Hood-wink'd fair",
+      "bbox_2d": [
+        36,
+        869,
+        739,
+        906
+      ],
+      "polygon": [
+        [
+          36,
+          869
+        ],
+        [
+          41,
+          905
+        ],
+        [
+          739,
+          905
+        ],
+        [
+          739,
+          869
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "Justice herself was push'd by Air :",
+      "bbox_2d": [
+        40,
+        918,
+        659,
+        955
+      ],
+      "polygon": [
+        [
+          40,
+          918
+        ],
+        [
+          40,
+          954
+        ],
+        [
+          659,
+          954
+        ],
+        [
+          659,
+          918
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "number",
+      "content": "C 2",
+      "bbox_2d": [
+        456,
+        956,
+        541,
+        984
+      ],
+      "polygon": [
+        [
+          456,
+          956
+        ],
+        [
+          456,
+          984
+        ],
+        [
+          541,
+          984
+        ],
+        [
+          541,
+          960
+        ],
+        [
+          521,
+          956
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "About",
+      "bbox_2d": [
+        819,
+        953,
+        936,
+        987
+      ],
+      "polygon": [
+        [
+          819,
+          953
+        ],
+        [
+          819,
+          986
+        ],
+        [
+          935,
+          986
+        ],
+        [
+          935,
+          953
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "[18]",
+      "bbox_2d": [
+        414,
+        15,
+        591,
+        61
+      ],
+      "polygon": [
+        [
+          414,
+          15
+        ],
+        [
+          414,
+          61
+        ],
+        [
+          590,
+          61
+        ],
+        [
+          590,
+          15
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "About her Chariot, and behind, Were Sergeants, Bums of every kind, Tip-staffs, and all those Officers, That squeeze a Living out of Tears.",
+      "bbox_2d": [
+        49,
+        73,
+        739,
+        265
+      ],
+      "polygon": [
+        [
+          49,
+          73
+        ],
+        [
+          49,
+          265
+        ],
+        [
+          738,
+          265
+        ],
+        [
+          738,
+          73
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Tho' Physick lived, whilst Folks were ill, None would prescribe, but Bees of Skill; Which, through the Hive dispers'd so wide, That none of 'em had need to ride, Waved vain Disputes; and strove to free The Patients of their Misery; Left Drugs in cheating Countries grown, And used the Product of their own, Knowing the Gods sent no Disease To Nations without Remedies.",
+      "bbox_2d": [
+        51,
+        297,
+        859,
+        786
+      ],
+      "polygon": [
+        [
+          57,
+          297
+        ],
+        [
+          57,
+          785
+        ],
+        [
+          859,
+          785
+        ],
+        [
+          859,
+          297
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Their Clergy rouz'd from Lazinefs, Laid not their Charge on Journey-Bees;",
+      "bbox_2d": [
+        60,
+        815,
+        799,
+        904
+      ],
+      "polygon": [
+        [
+          60,
+          815
+        ],
+        [
+          60,
+          903
+        ],
+        [
+          798,
+          903
+        ],
+        [
+          798,
+          815
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "But",
+      "bbox_2d": [
+        900,
+        921,
+        972,
+        953
+      ],
+      "polygon": [
+        [
+          900,
+          921
+        ],
+        [
+          900,
+          952
+        ],
+        [
+          971,
+          952
+        ],
+        [
+          971,
+          921
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "[19]",
+      "bbox_2d": [
+        486,
+        10,
+        650,
+        55
+      ],
+      "polygon": [
+        [
+          486,
+          10
+        ],
+        [
+          486,
+          55
+        ],
+        [
+          650,
+          55
+        ],
+        [
+          650,
+          10
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "But serv'd themselves, exempt from Vice,",
+      "bbox_2d": [
+        127,
+        72,
+        857,
+        110
+      ],
+      "polygon": [
+        [
+          127,
+          72
+        ],
+        [
+          127,
+          109
+        ],
+        [
+          856,
+          109
+        ],
+        [
+          856,
+          72
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "The Gods with Pray'r and Sacrifice ;",
+      "bbox_2d": [
+        126,
+        120,
+        775,
+        158
+      ],
+      "polygon": [
+        [
+          126,
+          125
+        ],
+        [
+          132,
+          157
+        ],
+        [
+          775,
+          157
+        ],
+        [
+          775,
+          120
+        ],
+        [
+          132,
+          120
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "All those, that were unfit, or knew,",
+      "bbox_2d": [
+        129,
+        171,
+        756,
+        207
+      ],
+      "polygon": [
+        [
+          129,
+          171
+        ],
+        [
+          129,
+          207
+        ],
+        [
+          420,
+          207
+        ],
+        [
+          755,
+          207
+        ],
+        [
+          755,
+          171
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Their Service might be fpared, withdrew :",
+      "bbox_2d": [
+        128,
+        219,
+        868,
+        255
+      ],
+      "polygon": [
+        [
+          128,
+          219
+        ],
+        [
+          128,
+          254
+        ],
+        [
+          853,
+          254
+        ],
+        [
+          868,
+          250
+        ],
+        [
+          868,
+          219
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Nor was there Bufinefs for so many,",
+      "bbox_2d": [
+        129,
+        268,
+        748,
+        304
+      ],
+      "polygon": [
+        [
+          129,
+          268
+        ],
+        [
+          129,
+          303
+        ],
+        [
+          747,
+          303
+        ],
+        [
+          742,
+          268
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "(If th' Honeft stand in need of any.)",
+      "bbox_2d": [
+        131,
+        316,
+        751,
+        352
+      ],
+      "polygon": [
+        [
+          131,
+          316
+        ],
+        [
+          131,
+          352
+        ],
+        [
+          751,
+          352
+        ],
+        [
+          751,
+          316
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Few only with the High-Priest ftaid,",
+      "bbox_2d": [
+        131,
+        365,
+        774,
+        402
+      ],
+      "polygon": [
+        [
+          131,
+          370
+        ],
+        [
+          131,
+          401
+        ],
+        [
+          773,
+          401
+        ],
+        [
+          773,
+          365
+        ],
+        [
+          136,
+          365
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "To whom the reft Obedience paid :",
+      "bbox_2d": [
+        131,
+        414,
+        747,
+        449
+      ],
+      "polygon": [
+        [
+          131,
+          414
+        ],
+        [
+          131,
+          449
+        ],
+        [
+          747,
+          449
+        ],
+        [
+          747,
+          414
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Himself, employ'd in holy Cares,",
+      "bbox_2d": [
+        131,
+        463,
+        725,
+        500
+      ],
+      "polygon": [
+        [
+          131,
+          463
+        ],
+        [
+          131,
+          484
+        ],
+        [
+          131,
+          500
+        ],
+        [
+          725,
+          500
+        ],
+        [
+          725,
+          463
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Refign'd to others State-Affairs :",
+      "bbox_2d": [
+        133,
+        512,
+        693,
+        547
+      ],
+      "polygon": [
+        [
+          133,
+          517
+        ],
+        [
+          133,
+          547
+        ],
+        [
+          692,
+          543
+        ],
+        [
+          687,
+          512
+        ],
+        [
+          403,
+          512
+        ],
+        [
+          248,
+          512
+        ],
+        [
+          193,
+          512
+        ],
+        [
+          187,
+          512
+        ],
+        [
+          178,
+          512
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "He chafed no Starv'ling from his Door,",
+      "bbox_2d": [
+        134,
+        561,
+        823,
+        596
+      ],
+      "polygon": [
+        [
+          134,
+          561
+        ],
+        [
+          134,
+          595
+        ],
+        [
+          817,
+          595
+        ],
+        [
+          822,
+          586
+        ],
+        [
+          817,
+          561
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Nor pinch'd the Wages of the Poor;",
+      "bbox_2d": [
+        133,
+        608,
+        778,
+        646
+      ],
+      "polygon": [
+        [
+          133,
+          608
+        ],
+        [
+          133,
+          645
+        ],
+        [
+          777,
+          645
+        ],
+        [
+          772,
+          608
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "But at his House the Hungry's fed,",
+      "bbox_2d": [
+        134,
+        657,
+        748,
+        695
+      ],
+      "polygon": [
+        [
+          134,
+          657
+        ],
+        [
+          134,
+          694
+        ],
+        [
+          748,
+          694
+        ],
+        [
+          748,
+          657
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "The Hireling finds unmeafur'd Bread,",
+      "bbox_2d": [
+        131,
+        706,
+        788,
+        743
+      ],
+      "polygon": [
+        [
+          131,
+          706
+        ],
+        [
+          137,
+          742
+        ],
+        [
+          788,
+          742
+        ],
+        [
+          783,
+          706
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "The needy Trav'ler Board and Bed.",
+      "bbox_2d": [
+        134,
+        754,
+        763,
+        790
+      ],
+      "polygon": [
+        [
+          134,
+          754
+        ],
+        [
+          134,
+          790
+        ],
+        [
+          762,
+          790
+        ],
+        [
+          757,
+          754
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "Among the King's great Minifsters, And all th' inferiour Officers",
+      "bbox_2d": [
+        137,
+        822,
+        779,
+        906
+      ],
+      "polygon": [
+        [
+          137,
+          827
+        ],
+        [
+          137,
+          905
+        ],
+        [
+          778,
+          905
+        ],
+        [
+          778,
+          822
+        ],
+        [
+          143,
+          822
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "number",
+      "content": "T1",
+      "bbox_2d": [
+        928,
+        920,
+        978,
+        949
+      ],
+      "polygon": [
+        [
+          928,
+          920
+        ],
+        [
+          928,
+          949
+        ],
+        [
+          977,
+          949
+        ],
+        [
+          977,
+          920
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "[ 20 ]",
+      "bbox_2d": [
+        383,
+        0,
+        563,
+        47
+      ],
+      "polygon": [
+        [
+          383,
+          0
+        ],
+        [
+          383,
+          46
+        ],
+        [
+          562,
+          46
+        ],
+        [
+          562,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "The Change was great; for frugally They now lived on their Salary. That a poor Bee should Ten times come, To ask his Due, a trifling Sum, And by some well-hir'd Clerk be made, To give a Crown, or ne'er be paid; Would now be call'd a down-right Cheat, Tho' formerly a Perquifite. All Places; managed first by Three, Who watch'd each other's Knavery, And often for a Fellow-feeling, Promoted one another's Stealing; Are happily supply'd by one; By which some Thousands more are gone.",
+      "bbox_2d": [
+        16,
+        57,
+        813,
+        752
+      ],
+      "polygon": [
+        [
+          21,
+          57
+        ],
+        [
+          31,
+          747
+        ],
+        [
+          802,
+          752
+        ],
+        [
+          812,
+          92
+        ],
+        [
+          782,
+          57
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "No Honour now could be content, To live, and owe for what was spent. Liv'ries in Brokers Shops are hung, They part with Coaches for a Song;",
+      "bbox_2d": [
+        32,
+        781,
+        727,
+        970
+      ],
+      "polygon": [
+        [
+          37,
+          781
+        ],
+        [
+          32,
+          960
+        ],
+        [
+          52,
+          970
+        ],
+        [
+          726,
+          970
+        ],
+        [
+          726,
+          786
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "content": "Sell",
+      "bbox_2d": [
+        876,
+        963,
+        949,
+        995
+      ],
+      "polygon": [
+        [
+          876,
+          963
+        ],
+        [
+          876,
+          994
+        ],
+        [
+          948,
+          994
+        ],
+        [
+          948,
+          963
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "display_formula",
+      "content": "$$\n[ 2 1 ]\n$$",
+      "bbox_2d": [
+        431,
+        0,
+        618,
+        42
+      ],
+      "polygon": [
+        [
+          431,
+          0
+        ],
+        [
+          431,
+          42
+        ],
+        [
+          613,
+          42
+        ],
+        [
+          618,
+          37
+        ],
+        [
+          618,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Sell stately Horses by whole Sets; And Country-Houses to pay Debts.",
+      "bbox_2d": [
+        65,
+        54,
+        701,
+        144
+      ],
+      "polygon": [
+        [
+          65,
+          54
+        ],
+        [
+          70,
+          144
+        ],
+        [
+          701,
+          144
+        ],
+        [
+          701,
+          54
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Vain Cost is shunn'd as much as Fraud ; They have no Forces kept Abroad ; Laugh at th' Esteem of Foreigners, And empty Glory got by Wars ; They fight but for their Country's Sake, When Right or Liberty's at Stake.",
+      "bbox_2d": [
+        68,
+        174,
+        833,
+        456
+      ],
+      "polygon": [
+        [
+          68,
+          174
+        ],
+        [
+          68,
+          455
+        ],
+        [
+          833,
+          450
+        ],
+        [
+          833,
+          174
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Now mind the glorious Hive, and see, How Honesty and Trade agree : The Shew is gone, it thins apace ; And looks with quite another Face, For 'twas not only that they went, By whom vast Sums were Yearly spent ; But Multitudes, that lived on them, Were daily forc'd to do the Same.",
+      "bbox_2d": [
+        57,
+        483,
+        801,
+        858
+      ],
+      "polygon": [
+        [
+          63,
+          483
+        ],
+        [
+          57,
+          858
+        ],
+        [
+          800,
+          858
+        ],
+        [
+          800,
+          483
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "content": "In.",
+      "bbox_2d": [
+        918,
+        886,
+        969,
+        918
+      ],
+      "polygon": [
+        [
+          918,
+          886
+        ],
+        [
+          918,
+          917
+        ],
+        [
+          969,
+          917
+        ],
+        [
+          969,
+          891
+        ],
+        [
+          964,
+          886
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "In vain to other Trades they'd fly; All were o're-stock'd accordingly.",
+      "bbox_2d": [
+        3,
+        0,
+        702,
+        149
+      ],
+      "polygon": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          139
+        ],
+        [
+          13,
+          149
+        ],
+        [
+          701,
+          149
+        ],
+        [
+          701,
+          54
+        ],
+        [
+          701,
+          14
+        ],
+        [
+          676,
+          4
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "The Price of Land, and Houses falls; Mirac'lous Palaces, whose Walls,\n\nLike those of Thebes, were raised by Play,\nAre to be lett; whilst the once gay,\nWell-seated Household Gods would be\nMore pleased t'expire in Flames, than see;\nThe mean Inscription on the Door\nSmile at the lofty Ones they bore.\n\nThe Building Trade is quite destroy'd,\nArtificers are not employ'd;\n\nNo Limner for his Art is famed;\n\nStone-cutters, Carvers are not named.",
+      "bbox_2d": [
+        16,
+        179,
+        835,
+        768
+      ],
+      "polygon": [
+        [
+          22,
+          179
+        ],
+        [
+          16,
+          763
+        ],
+        [
+          834,
+          763
+        ],
+        [
+          829,
+          179
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Those, that remain'd, grown temp'rate, strive, Not how to spend; but how to live;",
+      "bbox_2d": [
+        42,
+        795,
+        937,
+        885
+      ],
+      "polygon": [
+        [
+          42,
+          801
+        ],
+        [
+          42,
+          885
+        ],
+        [
+          937,
+          885
+        ],
+        [
+          937,
+          795
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "content": "4.",
+      "bbox_2d": [
+        64,
+        919,
+        83,
+        933
+      ],
+      "polygon": [
+        [
+          64,
+          919
+        ],
+        [
+          64,
+          933
+        ],
+        [
+          83,
+          933
+        ],
+        [
+          83,
+          919
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "And,",
+      "bbox_2d": [
+        859,
+        905,
+        958,
+        942
+      ],
+      "polygon": [
+        [
+          859,
+          905
+        ],
+        [
+          859,
+          942
+        ],
+        [
+          957,
+          942
+        ],
+        [
+          957,
+          905
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "[23]",
+      "bbox_2d": [
+        408,
+        0,
+        589,
+        50
+      ],
+      "polygon": [
+        [
+          408,
+          0
+        ],
+        [
+          408,
+          50
+        ],
+        [
+          589,
+          50
+        ],
+        [
+          589,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "And, when they paid their Tavern Score, Resolv'd to enter it no more:\n\nNo Vintners Jilt in all the Hive\n\nCould wear now Cloth of Gold and thrive;\n\nNor Torcol such vast Sums advance,\n\nFor Burgundy and Ortelans;\n\nThe Courtier's gone, that with his Mifs Supp'd at his House on Christmass Peas;\n\nSpending as much in Two Hours stay,\n\nAs keeps a Troop of Horse a Day.",
+      "bbox_2d": [
+        27,
+        63,
+        958,
+        547
+      ],
+      "polygon": [
+        [
+          27,
+          63
+        ],
+        [
+          47,
+          547
+        ],
+        [
+          942,
+          542
+        ],
+        [
+          957,
+          517
+        ],
+        [
+          953,
+          63
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "The haughty Chloe, to live Great,\nHad made her Husband rob the State:\nBut now she sells her Furniture,\nWhich th' Indies had been ransack'd for;\nContracts th' expensive Bill of Fare,\nAnd wears her strong Suit a whole Year:\nThe flight and fickle Age is past;\nAnd Cloaths, as well as Fashions last.",
+      "bbox_2d": [
+        40,
+        577,
+        973,
+        970
+      ],
+      "polygon": [
+        [
+          46,
+          577
+        ],
+        [
+          51,
+          969
+        ],
+        [
+          554,
+          969
+        ],
+        [
+          589,
+          969
+        ],
+        [
+          948,
+          969
+        ],
+        [
+          972,
+          954
+        ],
+        [
+          972,
+          673
+        ],
+        [
+          957,
+          618
+        ],
+        [
+          948,
+          577
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "paragraph_title",
+      "content": "D",
+      "bbox_2d": [
+        549,
+        955,
+        592,
+        984
+      ],
+      "polygon": [
+        [
+          549,
+          955
+        ],
+        [
+          549,
+          983
+        ],
+        [
+          591,
+          983
+        ],
+        [
+          591,
+          955
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "[24]",
+      "bbox_2d": [
+        421,
+        1,
+        600,
+        46
+      ],
+      "polygon": [
+        [
+          421,
+          1
+        ],
+        [
+          421,
+          46
+        ],
+        [
+          599,
+          46
+        ],
+        [
+          599,
+          1
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Weavers that join'd rich Silk with Plate, And all the Trades subordinate, Are gone. Still Peace and Plenty reign, And every Thing is cheap, tho' plain : Kind Nature, free from Gard'ners Force, Allows all Fruits in her own Course; But Rarities cannot be had, Where Pains to get 'em are not paid.",
+      "bbox_2d": [
+        52,
+        58,
+        815,
+        453
+      ],
+      "polygon": [
+        [
+          52,
+          58
+        ],
+        [
+          52,
+          453
+        ],
+        [
+          809,
+          453
+        ],
+        [
+          814,
+          58
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "As Pride and Luxury decrease,\nSo by degrees they leave the Seas.\nNot Merchants now; but Companies\nRemove whole Manufactures.\nAll Arts and Crafts neglected lie;\nContent the Bane of Industry,\nMakes 'em admire their homely Store,\nAnd neither seek, nor covet more.",
+      "bbox_2d": [
+        48,
+        484,
+        840,
+        870
+      ],
+      "polygon": [
+        [
+          53,
+          484
+        ],
+        [
+          53,
+          870
+        ],
+        [
+          774,
+          870
+        ],
+        [
+          789,
+          855
+        ],
+        [
+          839,
+          790
+        ],
+        [
+          839,
+          570
+        ],
+        [
+          839,
+          559
+        ],
+        [
+          829,
+          484
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "content": "So",
+      "bbox_2d": [
+        919,
+        910,
+        972,
+        939
+      ],
+      "polygon": [
+        [
+          919,
+          910
+        ],
+        [
+          919,
+          939
+        ],
+        [
+          971,
+          939
+        ],
+        [
+          971,
+          910
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "So few in the vaft Hive remain;",
+      "bbox_2d": [
+        94,
+        49,
+        695,
+        89
+      ],
+      "polygon": [
+        [
+          94,
+          54
+        ],
+        [
+          94,
+          88
+        ],
+        [
+          695,
+          88
+        ],
+        [
+          695,
+          49
+        ],
+        [
+          105,
+          49
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "The Hundredth part they can't maintain",
+      "bbox_2d": [
+        49,
+        98,
+        819,
+        139
+      ],
+      "polygon": [
+        [
+          49,
+          98
+        ],
+        [
+          49,
+          139
+        ],
+        [
+          818,
+          139
+        ],
+        [
+          818,
+          98
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Against th' Infults of numerous Foes ;",
+      "bbox_2d": [
+        51,
+        147,
+        765,
+        188
+      ],
+      "polygon": [
+        [
+          51,
+          151
+        ],
+        [
+          51,
+          187
+        ],
+        [
+          595,
+          187
+        ],
+        [
+          760,
+          187
+        ],
+        [
+          765,
+          147
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Whom yet they valiantly oppose :",
+      "bbox_2d": [
+        49,
+        196,
+        693,
+        238
+      ],
+      "polygon": [
+        [
+          49,
+          196
+        ],
+        [
+          49,
+          234
+        ],
+        [
+          84,
+          238
+        ],
+        [
+          693,
+          238
+        ],
+        [
+          688,
+          196
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Till some well-fenced Retreat is found;",
+      "bbox_2d": [
+        48,
+        243,
+        787,
+        284
+      ],
+      "polygon": [
+        [
+          48,
+          243
+        ],
+        [
+          48,
+          283
+        ],
+        [
+          782,
+          283
+        ],
+        [
+          787,
+          243
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "And here they die, or ftand their Ground.",
+      "bbox_2d": [
+        51,
+        292,
+        839,
+        333
+      ],
+      "polygon": [
+        [
+          51,
+          297
+        ],
+        [
+          57,
+          332
+        ],
+        [
+          838,
+          328
+        ],
+        [
+          838,
+          292
+        ],
+        [
+          540,
+          292
+        ],
+        [
+          57,
+          292
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "No Hireling in their Armies known ;",
+      "bbox_2d": [
+        49,
+        340,
+        768,
+        382
+      ],
+      "polygon": [
+        [
+          49,
+          340
+        ],
+        [
+          55,
+          382
+        ],
+        [
+          613,
+          382
+        ],
+        [
+          763,
+          382
+        ],
+        [
+          767,
+          340
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "But bravely fighting for their own,",
+      "bbox_2d": [
+        49,
+        390,
+        701,
+        431
+      ],
+      "polygon": [
+        [
+          49,
+          390
+        ],
+        [
+          49,
+          431
+        ],
+        [
+          700,
+          431
+        ],
+        [
+          700,
+          395
+        ],
+        [
+          685,
+          390
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Their Courage and Integrity",
+      "bbox_2d": [
+        46,
+        438,
+        591,
+        481
+      ],
+      "polygon": [
+        [
+          46,
+          449
+        ],
+        [
+          51,
+          481
+        ],
+        [
+          591,
+          481
+        ],
+        [
+          591,
+          438
+        ],
+        [
+          51,
+          438
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "At last were crown'd with Victory.",
+      "bbox_2d": [
+        49,
+        488,
+        963,
+        528
+      ],
+      "polygon": [
+        [
+          49,
+          488
+        ],
+        [
+          54,
+          528
+        ],
+        [
+          962,
+          523
+        ],
+        [
+          962,
+          488
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "They triumph'd not without their Coft ;",
+      "bbox_2d": [
+        44,
+        536,
+        806,
+        578
+      ],
+      "polygon": [
+        [
+          44,
+          536
+        ],
+        [
+          44,
+          573
+        ],
+        [
+          59,
+          578
+        ],
+        [
+          805,
+          573
+        ],
+        [
+          805,
+          541
+        ],
+        [
+          766,
+          536
+        ],
+        [
+          601,
+          536
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "For many Thousand Bees were loft.",
+      "bbox_2d": [
+        46,
+        583,
+        979,
+        626
+      ],
+      "polygon": [
+        [
+          46,
+          583
+        ],
+        [
+          46,
+          625
+        ],
+        [
+          978,
+          625
+        ],
+        [
+          978,
+          589
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Hard'ned with Toils, and Exercise",
+      "bbox_2d": [
+        48,
+        632,
+        937,
+        675
+      ],
+      "polygon": [
+        [
+          48,
+          632
+        ],
+        [
+          48,
+          675
+        ],
+        [
+          937,
+          675
+        ],
+        [
+          937,
+          632
+        ],
+        [
+          792,
+          632
+        ],
+        [
+          782,
+          632
+        ],
+        [
+          747,
+          632
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "They counted Ease it self a Vice ;",
+      "bbox_2d": [
+        42,
+        681,
+        687,
+        723
+      ],
+      "polygon": [
+        [
+          42,
+          681
+        ],
+        [
+          42,
+          718
+        ],
+        [
+          53,
+          722
+        ],
+        [
+          284,
+          722
+        ],
+        [
+          294,
+          722
+        ],
+        [
+          314,
+          722
+        ],
+        [
+          686,
+          722
+        ],
+        [
+          686,
+          686
+        ],
+        [
+          621,
+          681
+        ],
+        [
+          586,
+          681
+        ],
+        [
+          571,
+          681
+        ],
+        [
+          365,
+          681
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Which so improved their Temperance ;",
+      "bbox_2d": [
+        46,
+        729,
+        789,
+        772
+      ],
+      "polygon": [
+        [
+          46,
+          729
+        ],
+        [
+          46,
+          767
+        ],
+        [
+          111,
+          772
+        ],
+        [
+          146,
+          772
+        ],
+        [
+          186,
+          772
+        ],
+        [
+          789,
+          772
+        ],
+        [
+          784,
+          729
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "That, to avoid Extravagance,",
+      "bbox_2d": [
+        41,
+        778,
+        602,
+        821
+      ],
+      "polygon": [
+        [
+          41,
+          778
+        ],
+        [
+          46,
+          820
+        ],
+        [
+          602,
+          820
+        ],
+        [
+          602,
+          778
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "They flew into a hollow Tree,",
+      "bbox_2d": [
+        40,
+        827,
+        613,
+        869
+      ],
+      "polygon": [
+        [
+          40,
+          827
+        ],
+        [
+          45,
+          868
+        ],
+        [
+          612,
+          868
+        ],
+        [
+          612,
+          832
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "Bleft with Content and Honefty.",
+      "bbox_2d": [
+        44,
+        875,
+        658,
+        916
+      ],
+      "polygon": [
+        [
+          44,
+          875
+        ],
+        [
+          44,
+          916
+        ],
+        [
+          658,
+          916
+        ],
+        [
+          658,
+          875
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "The",
+      "bbox_2d": [
+        887,
+        908,
+        978,
+        940
+      ],
+      "polygon": [
+        [
+          892,
+          908
+        ],
+        [
+          887,
+          935
+        ],
+        [
+          887,
+          939
+        ],
+        [
+          977,
+          939
+        ],
+        [
+          977,
+          908
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "doc_title",
+      "content": "[ 56 ]",
+      "bbox_2d": [
+        373,
+        0,
+        554,
+        43
+      ],
+      "polygon": [
+        [
+          373,
+          0
+        ],
+        [
+          373,
+          42
+        ],
+        [
+          553,
+          42
+        ],
+        [
+          553,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "doc_title",
+      "content": "The Moral.",
+      "bbox_2d": [
+        170,
+        88,
+        920,
+        131
+      ],
+      "polygon": [
+        [
+          170,
+          88
+        ],
+        [
+          170,
+          131
+        ],
+        [
+          919,
+          131
+        ],
+        [
+          914,
+          88
+        ],
+        [
+          894,
+          88
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Hen leave Complaints : Fools only strive",
+      "bbox_2d": [
+        18,
+        147,
+        673,
+        180
+      ],
+      "polygon": [
+        [
+          18,
+          147
+        ],
+        [
+          18,
+          180
+        ],
+        [
+          38,
+          180
+        ],
+        [
+          49,
+          180
+        ],
+        [
+          672,
+          180
+        ],
+        [
+          672,
+          147
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Then leave Complaints: Fools only for To make a Great an honest Hive.\n\nT enjoy the World's Conveniencies,\nBe famed in War, yet live in Ease\nWithout great Vices, is a vain\nEutopia seated in the Brain.\nFraud, Luxury, and Pride must live\nWhilst we the Benefits receive.\nHunger's a dreadful Plague, no doubt,\nYet who digests or thrives without?\nDo we not owe the Growth of Wine\nTo the dry, crooked, shabby Vine?\nWhich, whilst its Shutes neglected stood,\nChoak'd other Plants, and ran to Wood;\nBut bleft us with its Noble Fruit;\nAs soon as it was tied, and cut:\nSo Vice is beneficial found,\nWhen it's by Justice lopt, and bound;\nNay, where the People would be great,\nAs necessary to the State;\nAs Hunger is to make them eat.\nBare Vertue can't make Nations live\nIn Splendour; they, that would revive\nA Golden Age, must be as free,\nEar Acorns, as for Honesty.",
+      "bbox_2d": [
+        18,
+        153,
+        604,
+        947
+      ],
+      "polygon": [
+        [
+          23,
+          153
+        ],
+        [
+          33,
+          942
+        ],
+        [
+          584,
+          942
+        ],
+        [
+          603,
+          153
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "footer",
+      "content": "F I N . I S.",
+      "bbox_2d": [
+        357,
+        951,
+        623,
+        979
+      ],
+      "polygon": [
+        [
+          357,
+          956
+        ],
+        [
+          357,
+          978
+        ],
+        [
+          622,
+          978
+        ],
+        [
+          622,
+          951
+        ],
+        [
+          402,
+          951
+        ]
+      ]
+    }
+  ]
+]

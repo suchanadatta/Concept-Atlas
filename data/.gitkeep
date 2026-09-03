@@ -1,0 +1,28 @@
+# This folder holds the corpus source documents.
+
+Place your PDFs here before running the OCR pipeline:
+
+```
+data/BMoral_pdf_collection/<Author>/<Book>.pdf   # main corpus (61 books)
+data/full_set_pdfs/pdf/<BOOK_ID>.pdf             # full set (68 books)
+data/txt_books/<BOOK_ID>.txt                     # plain-text books (68)
+```
+
+PDFs and scans are NOT committed to git (see .gitignore) — re-supply them
+on a new machine, then run:
+
+```bash
+# 1) OCR: parse PDFs -> JSONL v3 (blocks + words + paragraphs + page numbers)
+bash log/run_full_68.sh          # or: glmocr parse data/full_set_pdfs/pdf --output outputs/full_set
+
+# 2) Semantic index: embed all paragraphs with Jasper
+python tools/build_jasper_index.py --device cuda
+python tools/build_concept_vectors.py cuda
+
+# 3) Serve
+python tools/jasper_search_server.py --port 8790 --device cuda
+cd "Concept Maps/graph-ui" && ./start.sh   # UI on :8788
+```
+
+The extracted OCR text (JSONL/JSON/MD per book) IS committed under
+`outputs/` — that is the retrieval substrate, so it belongs in the repo.

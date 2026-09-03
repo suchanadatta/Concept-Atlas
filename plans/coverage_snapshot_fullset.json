@@ -1,0 +1,410 @@
+{
+ "ANON_1725_Thoughts_on_Friendship": {
+  "tok": 10102,
+  "words": 5099,
+  "cov": 0.5048,
+  "mtime": "08-25 05:35"
+ },
+ "ASTELL-and-NORRIS_1695_1695_Letters-concerning-the_Love-of-God-2nd-ed-with-additions": {
+  "tok": 51762,
+  "words": 25177,
+  "cov": 0.4864,
+  "mtime": "08-25 05:47"
+ },
+ "ASTELL_1704_Moderation_truly_Stated": {
+  "tok": 86468,
+  "words": 32780,
+  "cov": 0.3791,
+  "mtime": "08-25 06:05"
+ },
+ "ASTELL_1705_The_Christian_Religion": {
+  "tok": 106419,
+  "words": 51911,
+  "cov": 0.4878,
+  "mtime": "08-23 01:57"
+ },
+ "ASTELL_1709_BARTLEMY_FAIR": {
+  "tok": 43984,
+  "words": 19863,
+  "cov": 0.4516,
+  "mtime": "08-23 02:08"
+ },
+ "BALFOUR_1753_A_Delineation_of_the_Nature_and_Obligation_of_Morality": {
+  "tok": 45559,
+  "words": 15190,
+  "cov": 0.3334,
+  "mtime": "08-23 02:22"
+ },
+ "BURNET-and-LOCKE_1696-1702_2019_Selected Correspondence": {
+  "tok": 17845,
+  "words": 6591,
+  "cov": 0.3693,
+  "mtime": "08-23 02:29"
+ },
+ "BURNET_1708_A_Method_of_Devotion": {
+  "tok": 99740,
+  "words": 41344,
+  "cov": 0.4145,
+  "mtime": "08-23 02:42"
+ },
+ "CAMPBELL_1730_A_Discourse_Proving_that_the_Apostles_were_no_Enthusiasts": {
+  "tok": 22460,
+  "words": 10349,
+  "cov": 0.4608,
+  "mtime": "08-23 02:47"
+ },
+ "CHAPONE_1735_The_Hardships_of_the_English_Laws_in_relation_to_Wives": {
+  "tok": 16133,
+  "words": 6037,
+  "cov": 0.3742,
+  "mtime": "08-23 02:49"
+ },
+ "CHUDLEIGH_1701_1993_The_Ladies_Defence": {
+  "tok": 12421,
+  "words": 6458,
+  "cov": 0.5199,
+  "mtime": "08-23 02:53"
+ },
+ "CHUDLEIGH_1703_1709_Poems-on-Several-Occasions": {
+  "tok": 52823,
+  "words": 28479,
+  "cov": 0.5391,
+  "mtime": "08-23 03:00"
+ },
+ "CLARKE_1705_1706_A-Demonstration-of-the-Being-and-Attributes-of-God": {
+  "tok": 43156,
+  "words": 21698,
+  "cov": 0.5028,
+  "mtime": "08-23 03:09"
+ },
+ "CLARKE_1706_0_A-Letter-to-Mr-Dodwel": {
+  "tok": 23367,
+  "words": 11362,
+  "cov": 0.4862,
+  "mtime": "08-23 03:13"
+ },
+ "CLARKE_1706_1708_A-Discourse-concerning-the-unchangeable-Obligations-of-Natural-Religion": {
+  "tok": 100300,
+  "words": 45717,
+  "cov": 0.4558,
+  "mtime": "08-23 03:32"
+ },
+ "CLARKE_1707_0_A-Defense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel": {
+  "tok": 4799,
+  "words": 2379,
+  "cov": 0.4957,
+  "mtime": "08-23 03:33"
+ },
+ "CLARKE_1707_0_A-Second-Defense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel": {
+  "tok": 12053,
+  "words": 5326,
+  "cov": 0.4419,
+  "mtime": "08-23 03:36"
+ },
+ "CLARKE_1708_0_A-Fourth-Denfense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel": {
+  "tok": 17691,
+  "words": 8052,
+  "cov": 0.4551,
+  "mtime": "08-23 03:39"
+ },
+ "CLARKE_1708_0_A-Third-Defense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel": {
+  "tok": 21754,
+  "words": 9857,
+  "cov": 0.4531,
+  "mtime": "08-23 03:43"
+ },
+ "CLARKE_1712_0_The-Scripture-Doctrine-of-the-Trinity": {
+  "tok": 134793,
+  "words": 45270,
+  "cov": 0.3358,
+  "mtime": "08-23 03:57"
+ },
+ "CLARKE_1714_0_A-Reply-to-the-Objections-of-Robert-Nelson-Esq-and_of_an-anonymous-Author-against-Dr-Clarkes-Scripture-Doctrine-of-the-Trinity": {
+  "tok": 77147,
+  "words": 34197,
+  "cov": 0.4433,
+  "mtime": "08-23 04:10"
+ },
+ "CLARKE_1717_0_Remarks-upon-a-Book-entituled-A-Philosophical-Enquiry-concerning-Human-Liberty": {
+  "tok": 10699,
+  "words": 5084,
+  "cov": 0.4752,
+  "mtime": "08-23 04:12"
+ },
+ "COCKBURN_1706_Revolution_of_Sweden": {
+  "tok": 24015,
+  "words": 10801,
+  "cov": 0.4498,
+  "mtime": "08-23 04:17"
+ },
+ "COCKBURN_1751_0_The-Works-of-Mrs-Catharine-Cockburn": {
+  "tok": 182571,
+  "words": 61058,
+  "cov": 0.3344,
+  "mtime": "08-23 04:58"
+ },
+ "COCKBURN_1751_0_The-Works-of-Mrs-Cockburn": {
+  "tok": 169314,
+  "words": 55585,
+  "cov": 0.3283,
+  "mtime": "08-23 05:37"
+ },
+ "DRAKE_1721_An_Essay_in_Defence_of_the_Female_Sex": {
+  "tok": 32401,
+  "words": 16442,
+  "cov": 0.5075,
+  "mtime": "08-23 05:45"
+ },
+ "FORDYCE_1754_0_The-Elements-of-Moral-Philosophy": {
+  "tok": 58048,
+  "words": 28663,
+  "cov": 0.4938,
+  "mtime": "08-23 05:57"
+ },
+ "GWINNETT-and-THOMAS_1731_0_Pylades-and-Corinna": {
+  "tok": 76408,
+  "words": 35590,
+  "cov": 0.4658,
+  "mtime": "08-23 06:13"
+ },
+ "GWINNETT_and_THOMAS_1732_The_Honourable_Lovers": {
+  "tok": 73199,
+  "words": 33233,
+  "cov": 0.454,
+  "mtime": "08-23 06:25"
+ },
+ "HUTCHESON_1725_1726_An-Inquiry-into-the-Original-of-our-Ideas-of-Beauty-and-Virtue": {
+  "tok": 70171,
+  "words": 34603,
+  "cov": 0.4931,
+  "mtime": "08-23 06:39"
+ },
+ "HUTCHESON_1728_0_An-Essay-on-the-Nature-and-Conduct-of-the-Passions-and-Affections-with-Illustrations-on-the-Moral-Sense": {
+  "tok": 74458,
+  "words": 36532,
+  "cov": 0.4906,
+  "mtime": "08-23 06:52"
+ },
+ "JOHNSON_1731_An_Essay_On_Moral_Obligation": {
+  "tok": 20059,
+  "words": 9098,
+  "cov": 0.4536,
+  "mtime": "08-23 06:57"
+ },
+ "KING_1731_1732_An-Essay-on-the-Origin-of-Evil": {
+  "tok": 162711,
+  "words": 55669,
+  "cov": 0.3421,
+  "mtime": "08-23 07:31"
+ },
+ "KING_1731_1732_An-Essay-on-the-Origin-of-Evil_1": {
+  "tok": 112473,
+  "words": 37228,
+  "cov": 0.331,
+  "mtime": "08-23 07:55"
+ },
+ "LAW_1745_0_Considerations-on-the-State-of-the-World-with-regard-to-the-Theory-of-Religion": {
+  "tok": 65820,
+  "words": 29515,
+  "cov": 0.4484,
+  "mtime": "08-23 08:07"
+ },
+ "LAW_1749_0_A-Discourse-upon-the-Life-and-Character-of-Christ": {
+  "tok": 20315,
+  "words": 8649,
+  "cov": 0.4257,
+  "mtime": "08-23 08:11"
+ },
+ "MANDEVILLE_1705_0_The-Grumbling-Hive": {
+  "tok": 2820,
+  "words": 1577,
+  "cov": 0.5592,
+  "mtime": "08-23 08:12"
+ },
+ "MANDEVILLE_1709_0_The-Virgin-Unmaskd": {
+  "tok": 60444,
+  "words": 27457,
+  "cov": 0.4543,
+  "mtime": "08-23 08:25"
+ },
+ "MANDEVILLE_1711_0_A-Treatise-on-the-Hypochondriack-and-the-Hysterick-Passions": {
+  "tok": 67147,
+  "words": 31113,
+  "cov": 0.4634,
+  "mtime": "08-23 08:37"
+ },
+ "MANDEVILLE_1714_0_The-Fable-of-the-Bees": {
+  "tok": 51570,
+  "words": 24483,
+  "cov": 0.4748,
+  "mtime": "08-23 08:48"
+ },
+ "MANDEVILLE_1714_0_The-Mysteries-of-Virginity": {
+  "tok": 59993,
+  "words": 23851,
+  "cov": 0.3976,
+  "mtime": "08-23 09:01"
+ },
+ "MASHAM_1696_0-A-Discourse-concerning-the-Love-of-God": {
+  "tok": 22856,
+  "words": 10210,
+  "cov": 0.4467,
+  "mtime": "08-23 09:06"
+ },
+ "MASHAM_1705_0_Occasional-Thoughts_0 searchable": {
+  "tok": 36023,
+  "words": 18901,
+  "cov": 0.5247,
+  "mtime": "08-23 09:12"
+ },
+ "NEWCOME_1728_0_An-Enquiry-into-the-Evidence-of-the-Christian-Religion": {
+  "tok": 33815,
+  "words": 16296,
+  "cov": 0.4819,
+  "mtime": "08-23 09:17"
+ },
+ "NEWCOME_1737_0_The-Plain-Account-of-the-Sacrament-PartI": {
+  "tok": 23366,
+  "words": 10493,
+  "cov": 0.4491,
+  "mtime": "08-23 09:20"
+ },
+ "NEWCOME_1738_0_The-Plain-Account-of-the-Nature-and-End-of-the-Sacrament-PartII": {
+  "tok": 16570,
+  "words": 7115,
+  "cov": 0.4294,
+  "mtime": "08-23 09:21"
+ },
+ "NORRIS_1688_0_The-Theory-and-Regulation-of-Love": {
+  "tok": 40985,
+  "words": 19958,
+  "cov": 0.487,
+  "mtime": "08-23 09:28"
+ },
+ "NORRIS_1689_0_Reason-and-Religion": {
+  "tok": 45498,
+  "words": 14704,
+  "cov": 0.3232,
+  "mtime": "08-23 09:35"
+ },
+ "NORRIS_1707_0_A-Practical-Treatise-concerning-Humility": {
+  "tok": 102476,
+  "words": 45822,
+  "cov": 0.4471,
+  "mtime": "08-23 09:58"
+ },
+ "Norris_1727_Letters-from-Norris-to-Corinna": {
+  "tok": 4782,
+  "words": 2260,
+  "cov": 0.4726,
+  "mtime": "08-23 09:59"
+ },
+ "POPE_1733_0_An-Essay-on-Man-Epistle-I": {
+  "tok": 3197,
+  "words": 1541,
+  "cov": 0.482,
+  "mtime": "08-23 09:59"
+ },
+ "POPE_1733_0_An-Essay-on-Man-Epistle-II": {
+  "tok": 2458,
+  "words": 1109,
+  "cov": 0.4512,
+  "mtime": "08-23 09:59"
+ },
+ "POPE_1733_0_An-Essay-on-Man-Epistle-III": {
+  "tok": 2693,
+  "words": 1138,
+  "cov": 0.4226,
+  "mtime": "08-23 10:00"
+ },
+ "POPE_1734_0_An-Essay-on-Man-Epistle-IV": {
+  "tok": 3571,
+  "words": 1635,
+  "cov": 0.4579,
+  "mtime": "08-23 10:00"
+ },
+ "RUTHERFORTH_1744_0_An-Essay-on-the-Nature-and-Obligations-of-Virtue": {
+  "tok": 111960,
+  "words": 48888,
+  "cov": 0.4367,
+  "mtime": "08-23 10:26"
+ },
+ "RUTHERFORTH_1754_0_Institutes-of-Natural-Law": {
+  "tok": 160084,
+  "words": 71186,
+  "cov": 0.4447,
+  "mtime": "08-23 11:04"
+ },
+ "RUTHERFORTH_1754_0_Institutes-of-Natural-Law_2": {
+  "tok": 235067,
+  "words": 100825,
+  "cov": 0.4289,
+  "mtime": "08-23 12:18"
+ },
+ "SHAFTESBURY_1716_Several-Letters": {
+  "tok": 9457,
+  "words": 4345,
+  "cov": 0.4594,
+  "mtime": "08-23 12:21"
+ },
+ "THOMAS_1722_0_Miscellany-Poems-on-Several-Subjects": {
+  "tok": 24799,
+  "words": 13203,
+  "cov": 0.5324,
+  "mtime": "08-23 12:23"
+ },
+ "TURNBULL_1740_0_The-Principles-of-Moral-Philoosophy": {
+  "tok": 210805,
+  "words": 57201,
+  "cov": 0.2713,
+  "mtime": "08-23 13:14"
+ },
+ "TURNBULL_1740_0_The-Principles-of-Moral-and-Christian-Philosophy": {
+  "tok": 187375,
+  "words": 57650,
+  "cov": 0.3077,
+  "mtime": "08-23 14:27"
+ },
+ "WARBURTON_1740_0_A-Vindication-of-Mr-Pope_s-Essay-on-Man": {
+  "tok": 39664,
+  "words": 17540,
+  "cov": 0.4422,
+  "mtime": "08-23 14:33"
+ },
+ "WARBURTON_1742_0_A-Critical-and-Philosophical-Commentary-on-Mr-Pope_s-Essay-on-Man": {
+  "tok": 47690,
+  "words": 23731,
+  "cov": 0.4976,
+  "mtime": "08-23 14:41"
+ },
+ "WARBURTON_A-Vindication-of-the-Author-of-the-Divine-Legation-of-Moses": {
+  "tok": 4476,
+  "words": 2408,
+  "cov": 0.538,
+  "mtime": "08-23 14:42"
+ },
+ "WARBURTON_Divine-legation-of-moses": {
+  "tok": 162734,
+  "words": 68211,
+  "cov": 0.4192,
+  "mtime": "08-23 15:21"
+ },
+ "WATTS_1724_1726_Logick-or-the-Right-Use-of-Reason": {
+  "tok": 107469,
+  "words": 45191,
+  "cov": 0.4205,
+  "mtime": "08-23 15:41"
+ },
+ "WATTS_1733_Philosophical-essays": {
+  "tok": 101784,
+  "words": 49597,
+  "cov": 0.4873,
+  "mtime": "08-23 16:00"
+ },
+ "WATTS_1741_0_The-Improvement-of-the-Mind": {
+  "tok": 86420,
+  "words": 43990,
+  "cov": 0.509,
+  "mtime": "08-23 16:14"
+ }
+}

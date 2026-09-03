@@ -1,0 +1,11842 @@
+[
+  [
+    {
+      "index": 0,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        201,
+        0,
+        967,
+        126
+      ],
+      "polygon": [
+        [
+          201,
+          126
+        ],
+        [
+          933,
+          126
+        ],
+        [
+          962,
+          116
+        ],
+        [
+          962,
+          0
+        ],
+        [
+          211,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "---",
+      "bbox_2d": [
+        42,
+        125,
+        905,
+        158
+      ],
+      "polygon": [
+        [
+          42,
+          125
+        ],
+        [
+          42,
+          157
+        ],
+        [
+          739,
+          157
+        ],
+        [
+          760,
+          157
+        ],
+        [
+          904,
+          157
+        ],
+        [
+          904,
+          125
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "AN ESSAY ON MAN.\n\nIn EPISTLES to a Friend.",
+      "bbox_2d": [
+        14,
+        214,
+        920,
+        635
+      ],
+      "polygon": [
+        [
+          14,
+          214
+        ],
+        [
+          14,
+          494
+        ],
+        [
+          54,
+          634
+        ],
+        [
+          915,
+          634
+        ],
+        [
+          915,
+          214
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "E P I S T L E III.",
+      "bbox_2d": [
+        170,
+        686,
+        808,
+        729
+      ],
+      "polygon": [
+        [
+          170,
+          690
+        ],
+        [
+          170,
+          729
+        ],
+        [
+          802,
+          729
+        ],
+        [
+          807,
+          724
+        ],
+        [
+          802,
+          686
+        ],
+        [
+          175,
+          686
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "footer",
+      "content": "```markdown\n\n```",
+      "bbox_2d": [
+        65,
+        867,
+        935,
+        898
+      ],
+      "polygon": [
+        [
+          65,
+          867
+        ],
+        [
+          65,
+          898
+        ],
+        [
+          935,
+          898
+        ],
+        [
+          935,
+          867
+        ],
+        [
+          596,
+          867
+        ],
+        [
+          530,
+          867
+        ],
+        [
+          451,
+          867
+        ],
+        [
+          445,
+          867
+        ],
+        [
+          435,
+          867
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "A N",
+      "bbox_2d": [
+        399,
+        18,
+        531,
+        53
+      ],
+      "polygon": [
+        [
+          399,
+          18
+        ],
+        [
+          399,
+          52
+        ],
+        [
+          530,
+          52
+        ],
+        [
+          530,
+          18
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "doc_title",
+      "content": "ESSAY",
+      "bbox_2d": [
+        19,
+        78,
+        885,
+        155
+      ],
+      "polygon": [
+        [
+          19,
+          78
+        ],
+        [
+          19,
+          155
+        ],
+        [
+          884,
+          155
+        ],
+        [
+          884,
+          78
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "ON",
+      "bbox_2d": [
+        385,
+        176,
+        506,
+        205
+      ],
+      "polygon": [
+        [
+          385,
+          176
+        ],
+        [
+          385,
+          205
+        ],
+        [
+          506,
+          205
+        ],
+        [
+          506,
+          176
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "M A N.",
+      "bbox_2d": [
+        131,
+        232,
+        790,
+        310
+      ],
+      "polygon": [
+        [
+          137,
+          232
+        ],
+        [
+          137,
+          310
+        ],
+        [
+          790,
+          310
+        ],
+        [
+          790,
+          232
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "In EPISTLES to a Friend.",
+      "bbox_2d": [
+        28,
+        330,
+        900,
+        372
+      ],
+      "polygon": [
+        [
+          28,
+          330
+        ],
+        [
+          28,
+          372
+        ],
+        [
+          899,
+          372
+        ],
+        [
+          899,
+          330
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "E P I S T L E III.",
+      "bbox_2d": [
+        156,
+        442,
+        791,
+        483
+      ],
+      "polygon": [
+        [
+          156,
+          442
+        ],
+        [
+          162,
+          482
+        ],
+        [
+          791,
+          482
+        ],
+        [
+          791,
+          442
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        217,
+        571,
+        752,
+        749
+      ],
+      "polygon": [
+        [
+          223,
+          571
+        ],
+        [
+          223,
+          748
+        ],
+        [
+          751,
+          748
+        ],
+        [
+          751,
+          571
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "DUBLIN:",
+      "bbox_2d": [
+        322,
+        791,
+        680,
+        820
+      ],
+      "polygon": [
+        [
+          322,
+          791
+        ],
+        [
+          322,
+          820
+        ],
+        [
+          680,
+          820
+        ],
+        [
+          680,
+          791
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Printed by S. Powell,",
+      "bbox_2d": [
+        272,
+        837,
+        698,
+        864
+      ],
+      "polygon": [
+        [
+          272,
+          837
+        ],
+        [
+          272,
+          859
+        ],
+        [
+          277,
+          864
+        ],
+        [
+          698,
+          864
+        ],
+        [
+          693,
+          837
+        ],
+        [
+          664,
+          837
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "For GEORGE RISK, at the Shakespeare's-Head, GEORGE EWING, at the Angel and Bible, and WILLIAM SMITH, at the Hercules, Bookfellers in Dame's-street. MDCC XXXIII.",
+      "bbox_2d": [
+        65,
+        872,
+        949,
+        966
+      ],
+      "polygon": [
+        [
+          65,
+          872
+        ],
+        [
+          65,
+          966
+        ],
+        [
+          949,
+          966
+        ],
+        [
+          949,
+          872
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        28,
+        56,
+        889,
+        225
+      ],
+      "polygon": [
+        [
+          28,
+          62
+        ],
+        [
+          28,
+          225
+        ],
+        [
+          889,
+          225
+        ],
+        [
+          889,
+          56
+        ],
+        [
+          58,
+          56
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "AN",
+      "bbox_2d": [
+        394,
+        273,
+        510,
+        304
+      ],
+      "polygon": [
+        [
+          394,
+          273
+        ],
+        [
+          394,
+          303
+        ],
+        [
+          510,
+          303
+        ],
+        [
+          510,
+          273
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "doc_title",
+      "content": "ESSAY on MAN.",
+      "bbox_2d": [
+        30,
+        345,
+        888,
+        396
+      ],
+      "polygon": [
+        [
+          30,
+          350
+        ],
+        [
+          35,
+          395
+        ],
+        [
+          888,
+          395
+        ],
+        [
+          888,
+          345
+        ],
+        [
+          579,
+          345
+        ],
+        [
+          529,
+          345
+        ],
+        [
+          105,
+          345
+        ],
+        [
+          50,
+          345
+        ],
+        [
+          35,
+          345
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "doc_title",
+      "content": "EPISTLE III.",
+      "bbox_2d": [
+        173,
+        483,
+        752,
+        522
+      ],
+      "polygon": [
+        [
+          173,
+          483
+        ],
+        [
+          173,
+          522
+        ],
+        [
+          223,
+          522
+        ],
+        [
+          234,
+          522
+        ],
+        [
+          751,
+          522
+        ],
+        [
+          751,
+          483
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        56,
+        614,
+        252,
+        718
+      ],
+      "polygon": [
+        [
+          56,
+          614
+        ],
+        [
+          61,
+          718
+        ],
+        [
+          251,
+          718
+        ],
+        [
+          251,
+          624
+        ],
+        [
+          246,
+          614
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "EARN Dulness, learn! \"The Universal Cause",
+      "bbox_2d": [
+        247,
+        608,
+        910,
+        673
+      ],
+      "polygon": [
+        [
+          252,
+          608
+        ],
+        [
+          262,
+          668
+        ],
+        [
+          357,
+          673
+        ],
+        [
+          909,
+          673
+        ],
+        [
+          909,
+          608
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "\" Acts to one End, but acts by various Laws.\"",
+      "bbox_2d": [
+        263,
+        680,
+        914,
+        742
+      ],
+      "polygon": [
+        [
+          263,
+          680
+        ],
+        [
+          263,
+          733
+        ],
+        [
+          284,
+          742
+        ],
+        [
+          529,
+          742
+        ],
+        [
+          674,
+          742
+        ],
+        [
+          744,
+          742
+        ],
+        [
+          914,
+          738
+        ],
+        [
+          914,
+          680
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "In all the Madness of superfluous Health,",
+      "bbox_2d": [
+        59,
+        751,
+        717,
+        777
+      ],
+      "polygon": [
+        [
+          59,
+          751
+        ],
+        [
+          59,
+          777
+        ],
+        [
+          298,
+          777
+        ],
+        [
+          314,
+          777
+        ],
+        [
+          712,
+          777
+        ],
+        [
+          717,
+          773
+        ],
+        [
+          717,
+          751
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "The Trim of Pride, and Impudence of Wealth,",
+      "bbox_2d": [
+        60,
+        786,
+        821,
+        813
+      ],
+      "polygon": [
+        [
+          60,
+          786
+        ],
+        [
+          60,
+          812
+        ],
+        [
+          821,
+          812
+        ],
+        [
+          821,
+          786
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Let that great Truth be present Night and Day; But most be present, if thou preach, or pray.",
+      "bbox_2d": [
+        60,
+        821,
+        923,
+        888
+      ],
+      "polygon": [
+        [
+          60,
+          826
+        ],
+        [
+          65,
+          888
+        ],
+        [
+          913,
+          883
+        ],
+        [
+          923,
+          878
+        ],
+        [
+          923,
+          826
+        ],
+        [
+          853,
+          821
+        ],
+        [
+          65,
+          821
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "View",
+      "bbox_2d": [
+        833,
+        890,
+        929,
+        917
+      ],
+      "polygon": [
+        [
+          833,
+          890
+        ],
+        [
+          833,
+          916
+        ],
+        [
+          928,
+          916
+        ],
+        [
+          928,
+          890
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "(6)",
+      "bbox_2d": [
+        407,
+        12,
+        557,
+        52
+      ],
+      "polygon": [
+        [
+          407,
+          12
+        ],
+        [
+          407,
+          51
+        ],
+        [
+          556,
+          51
+        ],
+        [
+          556,
+          12
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "View thy own World : Behold the Chain of Love",
+      "bbox_2d": [
+        54,
+        66,
+        903,
+        98
+      ],
+      "polygon": [
+        [
+          54,
+          66
+        ],
+        [
+          54,
+          93
+        ],
+        [
+          69,
+          97
+        ],
+        [
+          378,
+          97
+        ],
+        [
+          898,
+          97
+        ],
+        [
+          902,
+          93
+        ],
+        [
+          898,
+          71
+        ],
+        [
+          768,
+          66
+        ],
+        [
+          733,
+          66
+        ],
+        [
+          713,
+          66
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Combining all below, and all above.",
+      "bbox_2d": [
+        23,
+        105,
+        675,
+        136
+      ],
+      "polygon": [
+        [
+          23,
+          126
+        ],
+        [
+          28,
+          136
+        ],
+        [
+          674,
+          136
+        ],
+        [
+          670,
+          105
+        ],
+        [
+          43,
+          105
+        ],
+        [
+          28,
+          110
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "See, lifelefs Matter moving to one End,",
+      "bbox_2d": [
+        26,
+        145,
+        708,
+        174
+      ],
+      "polygon": [
+        [
+          26,
+          174
+        ],
+        [
+          240,
+          174
+        ],
+        [
+          370,
+          174
+        ],
+        [
+          708,
+          174
+        ],
+        [
+          708,
+          145
+        ],
+        [
+          31,
+          145
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "The fingle Atoms each to other tend,",
+      "bbox_2d": [
+        28,
+        184,
+        644,
+        212
+      ],
+      "polygon": [
+        [
+          28,
+          184
+        ],
+        [
+          33,
+          212
+        ],
+        [
+          269,
+          212
+        ],
+        [
+          639,
+          212
+        ],
+        [
+          644,
+          184
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "By Nature form'd its Neighbour to embrace.",
+      "bbox_2d": [
+        31,
+        262,
+        761,
+        290
+      ],
+      "polygon": [
+        [
+          31,
+          262
+        ],
+        [
+          31,
+          289
+        ],
+        [
+          760,
+          289
+        ],
+        [
+          760,
+          262
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "Attract, attracted to, the next in place,",
+      "bbox_2d": [
+        26,
+        223,
+        697,
+        251
+      ],
+      "polygon": [
+        [
+          26,
+          251
+        ],
+        [
+          696,
+          251
+        ],
+        [
+          696,
+          223
+        ],
+        [
+          31,
+          223
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Behold it next, with various Life endu'd,",
+      "bbox_2d": [
+        33,
+        301,
+        720,
+        327
+      ],
+      "polygon": [
+        [
+          33,
+          301
+        ],
+        [
+          33,
+          327
+        ],
+        [
+          720,
+          327
+        ],
+        [
+          720,
+          306
+        ],
+        [
+          710,
+          301
+        ],
+        [
+          79,
+          301
+        ],
+        [
+          73,
+          301
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "10",
+      "bbox_2d": [
+        893,
+        190,
+        948,
+        212
+      ],
+      "polygon": [
+        [
+          893,
+          190
+        ],
+        [
+          893,
+          212
+        ],
+        [
+          943,
+          212
+        ],
+        [
+          948,
+          208
+        ],
+        [
+          948,
+          190
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Prefs to one Centre still, the General Good.",
+      "bbox_2d": [
+        34,
+        338,
+        758,
+        364
+      ],
+      "polygon": [
+        [
+          34,
+          338
+        ],
+        [
+          34,
+          364
+        ],
+        [
+          758,
+          364
+        ],
+        [
+          758,
+          338
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "See dying Vegetables Life sustain,",
+      "bbox_2d": [
+        34,
+        376,
+        634,
+        405
+      ],
+      "polygon": [
+        [
+          34,
+          376
+        ],
+        [
+          34,
+          405
+        ],
+        [
+          633,
+          405
+        ],
+        [
+          633,
+          381
+        ],
+        [
+          603,
+          376
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "See Life dissolving vegetate again.",
+      "bbox_2d": [
+        34,
+        415,
+        606,
+        443
+      ],
+      "polygon": [
+        [
+          34,
+          415
+        ],
+        [
+          34,
+          443
+        ],
+        [
+          150,
+          443
+        ],
+        [
+          240,
+          443
+        ],
+        [
+          605,
+          443
+        ],
+        [
+          601,
+          415
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "All Forms that perish other Forms supply,",
+      "bbox_2d": [
+        36,
+        454,
+        755,
+        484
+      ],
+      "polygon": [
+        [
+          36,
+          454
+        ],
+        [
+          41,
+          484
+        ],
+        [
+          116,
+          484
+        ],
+        [
+          121,
+          484
+        ],
+        [
+          211,
+          484
+        ],
+        [
+          415,
+          484
+        ],
+        [
+          421,
+          484
+        ],
+        [
+          431,
+          484
+        ],
+        [
+          470,
+          484
+        ],
+        [
+          516,
+          484
+        ],
+        [
+          755,
+          484
+        ],
+        [
+          755,
+          454
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "By turns they catch the vital Breath, and die;",
+      "bbox_2d": [
+        36,
+        493,
+        789,
+        520
+      ],
+      "polygon": [
+        [
+          36,
+          493
+        ],
+        [
+          36,
+          520
+        ],
+        [
+          400,
+          520
+        ],
+        [
+          406,
+          520
+        ],
+        [
+          445,
+          520
+        ],
+        [
+          451,
+          520
+        ],
+        [
+          485,
+          520
+        ],
+        [
+          496,
+          520
+        ],
+        [
+          520,
+          520
+        ],
+        [
+          525,
+          520
+        ],
+        [
+          789,
+          520
+        ],
+        [
+          789,
+          493
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Like Bubbles on the Sea of Matter born,",
+      "bbox_2d": [
+        37,
+        527,
+        723,
+        555
+      ],
+      "polygon": [
+        [
+          37,
+          527
+        ],
+        [
+          37,
+          555
+        ],
+        [
+          723,
+          555
+        ],
+        [
+          723,
+          527
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "They rife, they break, and to that Sea return. 20",
+      "bbox_2d": [
+        39,
+        566,
+        953,
+        595
+      ],
+      "polygon": [
+        [
+          39,
+          566
+        ],
+        [
+          39,
+          594
+        ],
+        [
+          893,
+          594
+        ],
+        [
+          899,
+          594
+        ],
+        [
+          953,
+          594
+        ],
+        [
+          953,
+          571
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "Nothing is foreign : Parts relate to Whole :",
+      "bbox_2d": [
+        40,
+        603,
+        778,
+        631
+      ],
+      "polygon": [
+        [
+          40,
+          603
+        ],
+        [
+          40,
+          631
+        ],
+        [
+          777,
+          631
+        ],
+        [
+          777,
+          603
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "One All-extending, All-preferving Soul",
+      "bbox_2d": [
+        42,
+        640,
+        723,
+        668
+      ],
+      "polygon": [
+        [
+          47,
+          640
+        ],
+        [
+          47,
+          668
+        ],
+        [
+          210,
+          668
+        ],
+        [
+          226,
+          668
+        ],
+        [
+          717,
+          668
+        ],
+        [
+          717,
+          640
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "Connects all Being, greatest with the least;",
+      "bbox_2d": [
+        46,
+        678,
+        782,
+        706
+      ],
+      "polygon": [
+        [
+          46,
+          678
+        ],
+        [
+          46,
+          706
+        ],
+        [
+          777,
+          706
+        ],
+        [
+          782,
+          695
+        ],
+        [
+          777,
+          678
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "Made Beast in Aid of Man, and Man of Beast:",
+      "bbox_2d": [
+        49,
+        716,
+        839,
+        744
+      ],
+      "polygon": [
+        [
+          49,
+          716
+        ],
+        [
+          49,
+          743
+        ],
+        [
+          839,
+          743
+        ],
+        [
+          839,
+          716
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "Each serv'd, and serving; nothing stands alone; 25",
+      "bbox_2d": [
+        50,
+        752,
+        963,
+        784
+      ],
+      "polygon": [
+        [
+          50,
+          752
+        ],
+        [
+          50,
+          778
+        ],
+        [
+          962,
+          784
+        ],
+        [
+          958,
+          758
+        ],
+        [
+          893,
+          752
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "content": "The Chain holds on, and where it ends, unknown!",
+      "bbox_2d": [
+        51,
+        788,
+        920,
+        818
+      ],
+      "polygon": [
+        [
+          51,
+          788
+        ],
+        [
+          56,
+          813
+        ],
+        [
+          101,
+          818
+        ],
+        [
+          380,
+          818
+        ],
+        [
+          396,
+          818
+        ],
+        [
+          500,
+          818
+        ],
+        [
+          506,
+          818
+        ],
+        [
+          520,
+          818
+        ],
+        [
+          526,
+          818
+        ],
+        [
+          920,
+          818
+        ],
+        [
+          915,
+          788
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "content": "Has God, thou Fool! work'd solely for thy Good,",
+      "bbox_2d": [
+        87,
+        825,
+        923,
+        857
+      ],
+      "polygon": [
+        [
+          87,
+          825
+        ],
+        [
+          87,
+          852
+        ],
+        [
+          917,
+          857
+        ],
+        [
+          922,
+          830
+        ],
+        [
+          887,
+          825
+        ],
+        [
+          838,
+          825
+        ],
+        [
+          832,
+          825
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "label": "text",
+      "content": "Thy Joy, thy Paitime, thy Attire, thy Food?",
+      "bbox_2d": [
+        55,
+        862,
+        818,
+        892
+      ],
+      "polygon": [
+        [
+          55,
+          862
+        ],
+        [
+          55,
+          892
+        ],
+        [
+          817,
+          892
+        ],
+        [
+          817,
+          862
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "label": "text",
+      "content": "Who",
+      "bbox_2d": [
+        871,
+        904,
+        967,
+        930
+      ],
+      "polygon": [
+        [
+          871,
+          904
+        ],
+        [
+          871,
+          929
+        ],
+        [
+          966,
+          929
+        ],
+        [
+          966,
+          904
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "( 7 )",
+      "bbox_2d": [
+        368,
+        4,
+        512,
+        43
+      ],
+      "polygon": [
+        [
+          368,
+          4
+        ],
+        [
+          368,
+          43
+        ],
+        [
+          511,
+          43
+        ],
+        [
+          511,
+          4
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Who for thy Table feeds the wanton Fawn,\nFor him, as kindly, spreads the flow'ry Lawn.\nIs it for thee the Lark ascends and sings?\nJoy tunes his Voice, Joy elevates his Wings:\nIs it for thee the Linnet pours his Throat?\nLoves of his own, and Raptures, swell the Note.\nThe bounding Steed you pompously bestride,\nShares with his Lord the Pleasure and the Pride.\nIs thine alone the Seed that strows the Plain?\nThe Birds of Heav'n shall vindicate their Grain.\nThine the full Harvest of the Golden Year?\nPart pays, and justly, the deserving Steer.\nThe Hog that plows not, nor obeys thy Call,\nLives on the Labours of this Lord of All.",
+      "bbox_2d": [
+        8,
+        62,
+        834,
+        578
+      ],
+      "polygon": [
+        [
+          8,
+          62
+        ],
+        [
+          23,
+          578
+        ],
+        [
+          814,
+          578
+        ],
+        [
+          834,
+          439
+        ],
+        [
+          824,
+          67
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Know, Nature's Children all divide her Care; The Furr that warms a Monarch, warm'd a Bear. While Man exclaims, see all Things for my Use! See Man for mine, replies a pamper'd Goose: What care to tend, to lodge, to cram, to treat him, All this he knew; but not that'twas to eat him.",
+      "bbox_2d": [
+        23,
+        592,
+        884,
+        814
+      ],
+      "polygon": [
+        [
+          29,
+          602
+        ],
+        [
+          34,
+          814
+        ],
+        [
+          859,
+          814
+        ],
+        [
+          873,
+          804
+        ],
+        [
+          883,
+          656
+        ],
+        [
+          864,
+          636
+        ],
+        [
+          828,
+          602
+        ],
+        [
+          753,
+          592
+        ],
+        [
+          54,
+          592
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(8)",
+      "bbox_2d": [
+        409,
+        14,
+        550,
+        52
+      ],
+      "polygon": [
+        [
+          409,
+          14
+        ],
+        [
+          409,
+          52
+        ],
+        [
+          419,
+          52
+        ],
+        [
+          464,
+          52
+        ],
+        [
+          549,
+          52
+        ],
+        [
+          549,
+          14
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "And just as short of Reason, Man will fall,\nWho thinks All made for One, not One for All.\nGrant, that the Pow’rful still the Weak controul,\nBe Man the Wit and Tyrant of the Whole.\n\nNATURE that Tyrant checks; He only knows 55\nAnd feels, another Creature’s Wants and Woes.\nSay, will the Falcon stooping from above,\nSmit with her varying Plumage, spare the Dove?\nAdmires the Jay the Insect’s gilded Wings,\nOr hears the Hawk, when Philomela sings? 60\nMan cares for All: To Birds he gives his Woods,\nTo Beasts his Pastures, and to Fish his Floods,\nFor some, his Int’rest prompts him to provide,\nFor more, his Pleasure, yet for more his Pride:\nAll feed on one vain Patron, and enjoy 65\nTh’ extensive Blessing of his Luxury.\nThat very Life his learned Hunger craves\nHe saves from Famine, from the Savage Saves:\nNay, feasts the Animal he dooms his Feast,\nAnd ’till he ends the Being, makes it blest. 70\nThe favour’d Man, by Touch Ætherial flain,\nNot less foresees the Stroke, or feels the Pain.",
+      "bbox_2d": [
+        45,
+        62,
+        937,
+        888
+      ],
+      "polygon": [
+        [
+          56,
+          62
+        ],
+        [
+          45,
+          868
+        ],
+        [
+          76,
+          887
+        ],
+        [
+          936,
+          887
+        ],
+        [
+          936,
+          62
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "The",
+      "bbox_2d": [
+        871,
+        898,
+        948,
+        922
+      ],
+      "polygon": [
+        [
+          871,
+          898
+        ],
+        [
+          871,
+          917
+        ],
+        [
+          876,
+          922
+        ],
+        [
+          948,
+          922
+        ],
+        [
+          948,
+          898
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "(9)",
+      "bbox_2d": [
+        364,
+        1,
+        497,
+        40
+      ],
+      "polygon": [
+        [
+          364,
+          1
+        ],
+        [
+          364,
+          39
+        ],
+        [
+          496,
+          39
+        ],
+        [
+          496,
+          1
+        ],
+        [
+          482,
+          1
+        ],
+        [
+          476,
+          1
+        ],
+        [
+          466,
+          1
+        ],
+        [
+          461,
+          1
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "The Creature had his Feaft of Life before;",
+      "bbox_2d": [
+        0,
+        52,
+        685,
+        88
+      ],
+      "polygon": [
+        [
+          0,
+          56
+        ],
+        [
+          5,
+          83
+        ],
+        [
+          570,
+          87
+        ],
+        [
+          685,
+          87
+        ],
+        [
+          680,
+          56
+        ],
+        [
+          390,
+          52
+        ],
+        [
+          245,
+          52
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Thou too must perish, when thy Feast is o'er!",
+      "bbox_2d": [
+        2,
+        92,
+        745,
+        129
+      ],
+      "polygon": [
+        [
+          2,
+          92
+        ],
+        [
+          2,
+          129
+        ],
+        [
+          22,
+          129
+        ],
+        [
+          33,
+          129
+        ],
+        [
+          744,
+          129
+        ],
+        [
+          744,
+          96
+        ],
+        [
+          594,
+          92
+        ],
+        [
+          73,
+          92
+        ],
+        [
+          47,
+          92
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "To each unthinking Being Heav'n a Friend,",
+      "bbox_2d": [
+        28,
+        130,
+        748,
+        168
+      ],
+      "polygon": [
+        [
+          28,
+          158
+        ],
+        [
+          49,
+          163
+        ],
+        [
+          643,
+          168
+        ],
+        [
+          742,
+          168
+        ],
+        [
+          747,
+          140
+        ],
+        [
+          742,
+          135
+        ],
+        [
+          408,
+          130
+        ],
+        [
+          398,
+          130
+        ],
+        [
+          74,
+          130
+        ],
+        [
+          49,
+          135
+        ],
+        [
+          39,
+          135
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Gives not the uselefs Knowledge of its End;",
+      "bbox_2d": [
+        2,
+        171,
+        716,
+        209
+      ],
+      "polygon": [
+        [
+          2,
+          171
+        ],
+        [
+          2,
+          199
+        ],
+        [
+          58,
+          204
+        ],
+        [
+          128,
+          204
+        ],
+        [
+          485,
+          208
+        ],
+        [
+          576,
+          208
+        ],
+        [
+          716,
+          208
+        ],
+        [
+          716,
+          176
+        ],
+        [
+          193,
+          171
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "To Man imparts it; but with such a View,",
+      "bbox_2d": [
+        1,
+        211,
+        686,
+        244
+      ],
+      "polygon": [
+        [
+          1,
+          216
+        ],
+        [
+          1,
+          240
+        ],
+        [
+          181,
+          244
+        ],
+        [
+          686,
+          244
+        ],
+        [
+          681,
+          216
+        ],
+        [
+          396,
+          211
+        ],
+        [
+          361,
+          211
+        ],
+        [
+          300,
+          211
+        ],
+        [
+          6,
+          211
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "As while he dreads it, makes him hope it too.",
+      "bbox_2d": [
+        1,
+        249,
+        729,
+        283
+      ],
+      "polygon": [
+        [
+          1,
+          249
+        ],
+        [
+          1,
+          278
+        ],
+        [
+          729,
+          283
+        ],
+        [
+          724,
+          254
+        ],
+        [
+          584,
+          249
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "The Hour conceal'd, and so remote the Fear,",
+      "bbox_2d": [
+        0,
+        288,
+        735,
+        321
+      ],
+      "polygon": [
+        [
+          0,
+          288
+        ],
+        [
+          5,
+          321
+        ],
+        [
+          735,
+          321
+        ],
+        [
+          735,
+          293
+        ],
+        [
+          720,
+          288
+        ],
+        [
+          711,
+          288
+        ],
+        [
+          580,
+          288
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Death still draws nearer, never seeming near.",
+      "bbox_2d": [
+        0,
+        323,
+        731,
+        358
+      ],
+      "polygon": [
+        [
+          0,
+          323
+        ],
+        [
+          5,
+          353
+        ],
+        [
+          730,
+          358
+        ],
+        [
+          730,
+          323
+        ],
+        [
+          591,
+          323
+        ],
+        [
+          585,
+          323
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Great standing Miracle ! that Heav'n assign'd",
+      "bbox_2d": [
+        4,
+        361,
+        725,
+        395
+      ],
+      "polygon": [
+        [
+          4,
+          361
+        ],
+        [
+          4,
+          390
+        ],
+        [
+          70,
+          395
+        ],
+        [
+          94,
+          395
+        ],
+        [
+          99,
+          395
+        ],
+        [
+          725,
+          395
+        ],
+        [
+          725,
+          366
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Its only Thinking Thing, this Turn of Mind.",
+      "bbox_2d": [
+        3,
+        400,
+        725,
+        434
+      ],
+      "polygon": [
+        [
+          3,
+          400
+        ],
+        [
+          9,
+          434
+        ],
+        [
+          43,
+          434
+        ],
+        [
+          68,
+          434
+        ],
+        [
+          724,
+          434
+        ],
+        [
+          724,
+          405
+        ],
+        [
+          549,
+          400
+        ],
+        [
+          419,
+          400
+        ],
+        [
+          349,
+          400
+        ],
+        [
+          344,
+          400
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "To Blifs, alike, by that Direction tend,",
+      "bbox_2d": [
+        2,
+        509,
+        646,
+        543
+      ],
+      "polygon": [
+        [
+          7,
+          509
+        ],
+        [
+          7,
+          538
+        ],
+        [
+          446,
+          542
+        ],
+        [
+          636,
+          542
+        ],
+        [
+          640,
+          514
+        ],
+        [
+          566,
+          509
+        ],
+        [
+          501,
+          509
+        ],
+        [
+          466,
+          509
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Know, all enjoy that Pow'r which suits'em best,",
+      "bbox_2d": [
+        4,
+        473,
+        768,
+        509
+      ],
+      "polygon": [
+        [
+          4,
+          473
+        ],
+        [
+          4,
+          504
+        ],
+        [
+          762,
+          509
+        ],
+        [
+          762,
+          473
+        ],
+        [
+          723,
+          473
+        ],
+        [
+          717,
+          473
+        ],
+        [
+          693,
+          473
+        ],
+        [
+          687,
+          473
+        ],
+        [
+          677,
+          473
+        ],
+        [
+          638,
+          473
+        ],
+        [
+          623,
+          473
+        ],
+        [
+          393,
+          473
+        ],
+        [
+          388,
+          473
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "And find the Means proportion'd to their End.",
+      "bbox_2d": [
+        5,
+        545,
+        754,
+        579
+      ],
+      "polygon": [
+        [
+          5,
+          545
+        ],
+        [
+          5,
+          574
+        ],
+        [
+          754,
+          578
+        ],
+        [
+          754,
+          550
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Say, where full Instinct is th' unerring Guide,",
+      "bbox_2d": [
+        0,
+        584,
+        723,
+        619
+      ],
+      "polygon": [
+        [
+          0,
+          584
+        ],
+        [
+          5,
+          618
+        ],
+        [
+          723,
+          618
+        ],
+        [
+          723,
+          589
+        ],
+        [
+          708,
+          584
+        ],
+        [
+          693,
+          584
+        ],
+        [
+          654,
+          584
+        ],
+        [
+          588,
+          584
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "What Pope or Council can they need beside?",
+      "bbox_2d": [
+        3,
+        624,
+        695,
+        657
+      ],
+      "polygon": [
+        [
+          3,
+          624
+        ],
+        [
+          3,
+          656
+        ],
+        [
+          695,
+          656
+        ],
+        [
+          695,
+          624
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "Reason, however able, cool at best,",
+      "bbox_2d": [
+        3,
+        665,
+        603,
+        697
+      ],
+      "polygon": [
+        [
+          3,
+          697
+        ],
+        [
+          598,
+          697
+        ],
+        [
+          602,
+          665
+        ],
+        [
+          3,
+          665
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "Cares not for Service, or but serves when preft;",
+      "bbox_2d": [
+        5,
+        702,
+        779,
+        737
+      ],
+      "polygon": [
+        [
+          5,
+          702
+        ],
+        [
+          11,
+          736
+        ],
+        [
+          779,
+          736
+        ],
+        [
+          779,
+          707
+        ],
+        [
+          400,
+          702
+        ],
+        [
+          171,
+          702
+        ],
+        [
+          155,
+          702
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "Stays till we call, and then not often near;",
+      "bbox_2d": [
+        5,
+        742,
+        684,
+        776
+      ],
+      "polygon": [
+        [
+          5,
+          742
+        ],
+        [
+          5,
+          776
+        ],
+        [
+          679,
+          776
+        ],
+        [
+          684,
+          770
+        ],
+        [
+          679,
+          742
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "But honeft Instinct comes a Volunteer.",
+      "bbox_2d": [
+        5,
+        781,
+        614,
+        813
+      ],
+      "polygon": [
+        [
+          5,
+          781
+        ],
+        [
+          5,
+          808
+        ],
+        [
+          200,
+          813
+        ],
+        [
+          235,
+          813
+        ],
+        [
+          240,
+          813
+        ],
+        [
+          613,
+          813
+        ],
+        [
+          608,
+          786
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "This too serves always, Reason never long;",
+      "bbox_2d": [
+        6,
+        819,
+        710,
+        853
+      ],
+      "polygon": [
+        [
+          6,
+          819
+        ],
+        [
+          12,
+          848
+        ],
+        [
+          709,
+          853
+        ],
+        [
+          704,
+          819
+        ],
+        [
+          685,
+          819
+        ],
+        [
+          640,
+          819
+        ],
+        [
+          625,
+          819
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "content": "One must go right, the other may go wrong.",
+      "bbox_2d": [
+        8,
+        860,
+        720,
+        895
+      ],
+      "polygon": [
+        [
+          8,
+          860
+        ],
+        [
+          8,
+          890
+        ],
+        [
+          63,
+          895
+        ],
+        [
+          719,
+          895
+        ],
+        [
+          719,
+          865
+        ],
+        [
+          559,
+          860
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "label": "aside_text",
+      "content": "75",
+      "bbox_2d": [
+        846,
+        145,
+        892,
+        171
+      ],
+      "polygon": [
+        [
+          846,
+          145
+        ],
+        [
+          846,
+          170
+        ],
+        [
+          891,
+          170
+        ],
+        [
+          891,
+          145
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "label": "aside_text",
+      "content": "so",
+      "bbox_2d": [
+        845,
+        330,
+        889,
+        358
+      ],
+      "polygon": [
+        [
+          845,
+          330
+        ],
+        [
+          845,
+          358
+        ],
+        [
+          889,
+          358
+        ],
+        [
+          889,
+          330
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "label": "aside_text",
+      "content": "85",
+      "bbox_2d": [
+        841,
+        514,
+        893,
+        546
+      ],
+      "polygon": [
+        [
+          841,
+          514
+        ],
+        [
+          841,
+          545
+        ],
+        [
+          892,
+          545
+        ],
+        [
+          892,
+          514
+        ]
+      ]
+    },
+    {
+      "index": 25,
+      "label": "aside_text",
+      "content": "90",
+      "bbox_2d": [
+        844,
+        711,
+        893,
+        738
+      ],
+      "polygon": [
+        [
+          844,
+          711
+        ],
+        [
+          844,
+          737
+        ],
+        [
+          873,
+          737
+        ],
+        [
+          892,
+          733
+        ],
+        [
+          892,
+          711
+        ]
+      ]
+    },
+    {
+      "index": 26,
+      "label": "number",
+      "content": "B",
+      "bbox_2d": [
+        395,
+        909,
+        427,
+        932
+      ],
+      "polygon": [
+        [
+          395,
+          909
+        ],
+        [
+          395,
+          931
+        ],
+        [
+          427,
+          931
+        ],
+        [
+          427,
+          909
+        ]
+      ]
+    },
+    {
+      "index": 27,
+      "label": "aside_text",
+      "content": "See",
+      "bbox_2d": [
+        831,
+        910,
+        895,
+        935
+      ],
+      "polygon": [
+        [
+          831,
+          910
+        ],
+        [
+          831,
+          934
+        ],
+        [
+          894,
+          934
+        ],
+        [
+          894,
+          910
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "( 10 )",
+      "bbox_2d": [
+        384,
+        16,
+        541,
+        52
+      ],
+      "polygon": [
+        [
+          384,
+          16
+        ],
+        [
+          384,
+          52
+        ],
+        [
+          541,
+          52
+        ],
+        [
+          541,
+          16
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "See then the acting and comparing Pow'rs,",
+      "bbox_2d": [
+        67,
+        67,
+        686,
+        100
+      ],
+      "polygon": [
+        [
+          67,
+          73
+        ],
+        [
+          67,
+          100
+        ],
+        [
+          414,
+          100
+        ],
+        [
+          686,
+          94
+        ],
+        [
+          686,
+          67
+        ],
+        [
+          183,
+          67
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "95",
+      "bbox_2d": [
+        849,
+        70,
+        899,
+        93
+      ],
+      "polygon": [
+        [
+          849,
+          70
+        ],
+        [
+          849,
+          93
+        ],
+        [
+          899,
+          93
+        ],
+        [
+          899,
+          70
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "One in their Nature, which are two in ours;",
+      "bbox_2d": [
+        65,
+        106,
+        733,
+        136
+      ],
+      "polygon": [
+        [
+          728,
+          106
+        ],
+        [
+          71,
+          111
+        ],
+        [
+          65,
+          136
+        ],
+        [
+          529,
+          136
+        ],
+        [
+          539,
+          136
+        ],
+        [
+          732,
+          131
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "And Reason raiife o'er Intinct, as you can;",
+      "bbox_2d": [
+        67,
+        145,
+        728,
+        172
+      ],
+      "polygon": [
+        [
+          67,
+          149
+        ],
+        [
+          67,
+          172
+        ],
+        [
+          728,
+          167
+        ],
+        [
+          728,
+          145
+        ],
+        [
+          153,
+          145
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "In this, 'tis God directs, in that, 'tis Man.",
+      "bbox_2d": [
+        69,
+        180,
+        694,
+        210
+      ],
+      "polygon": [
+        [
+          69,
+          186
+        ],
+        [
+          69,
+          210
+        ],
+        [
+          554,
+          210
+        ],
+        [
+          574,
+          210
+        ],
+        [
+          694,
+          205
+        ],
+        [
+          694,
+          180
+        ],
+        [
+          354,
+          180
+        ],
+        [
+          348,
+          180
+        ],
+        [
+          309,
+          180
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "Who taught the Nations of the Field and Wood,",
+      "bbox_2d": [
+        98,
+        214,
+        835,
+        247
+      ],
+      "polygon": [
+        [
+          835,
+          214
+        ],
+        [
+          98,
+          220
+        ],
+        [
+          98,
+          247
+        ],
+        [
+          559,
+          247
+        ],
+        [
+          590,
+          247
+        ],
+        [
+          605,
+          247
+        ],
+        [
+          835,
+          241
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "To shun their Poison, and to chuse their Food? 100",
+      "bbox_2d": [
+        69,
+        253,
+        901,
+        284
+      ],
+      "polygon": [
+        [
+          69,
+          258
+        ],
+        [
+          69,
+          284
+        ],
+        [
+          480,
+          284
+        ],
+        [
+          775,
+          278
+        ],
+        [
+          835,
+          273
+        ],
+        [
+          835,
+          253
+        ],
+        [
+          821,
+          253
+        ],
+        [
+          780,
+          253
+        ],
+        [
+          240,
+          253
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Prefcient, the Tydes or Tempefts to withstand,",
+      "bbox_2d": [
+        67,
+        290,
+        781,
+        322
+      ],
+      "polygon": [
+        [
+          781,
+          290
+        ],
+        [
+          67,
+          296
+        ],
+        [
+          67,
+          321
+        ],
+        [
+          605,
+          321
+        ],
+        [
+          781,
+          316
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Build on the Wave, or Arch beneath the Sand?",
+      "bbox_2d": [
+        70,
+        326,
+        775,
+        358
+      ],
+      "polygon": [
+        [
+          775,
+          326
+        ],
+        [
+          210,
+          330
+        ],
+        [
+          194,
+          330
+        ],
+        [
+          170,
+          330
+        ],
+        [
+          70,
+          335
+        ],
+        [
+          70,
+          358
+        ],
+        [
+          210,
+          358
+        ],
+        [
+          700,
+          353
+        ],
+        [
+          775,
+          348
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Who made the Spider Parallels defign,",
+      "bbox_2d": [
+        70,
+        366,
+        652,
+        396
+      ],
+      "polygon": [
+        [
+          651,
+          366
+        ],
+        [
+          411,
+          366
+        ],
+        [
+          406,
+          366
+        ],
+        [
+          395,
+          366
+        ],
+        [
+          70,
+          371
+        ],
+        [
+          70,
+          395
+        ],
+        [
+          651,
+          395
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "Sure as De-Moiure, without Rule or Line?",
+      "bbox_2d": [
+        70,
+        402,
+        709,
+        431
+      ],
+      "polygon": [
+        [
+          70,
+          408
+        ],
+        [
+          70,
+          431
+        ],
+        [
+          673,
+          431
+        ],
+        [
+          679,
+          431
+        ],
+        [
+          703,
+          431
+        ],
+        [
+          708,
+          402
+        ],
+        [
+          245,
+          402
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Who bid the Stork, Columbus-like, explore",
+      "bbox_2d": [
+        67,
+        439,
+        726,
+        467
+      ],
+      "polygon": [
+        [
+          67,
+          444
+        ],
+        [
+          67,
+          467
+        ],
+        [
+          725,
+          467
+        ],
+        [
+          725,
+          439
+        ],
+        [
+          213,
+          439
+        ],
+        [
+          198,
+          439
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "105",
+      "bbox_2d": [
+        845,
+        438,
+        906,
+        460
+      ],
+      "polygon": [
+        [
+          845,
+          438
+        ],
+        [
+          845,
+          459
+        ],
+        [
+          906,
+          459
+        ],
+        [
+          906,
+          438
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Heav'ns not his own, and Worlds unknown before?",
+      "bbox_2d": [
+        70,
+        473,
+        859,
+        505
+      ],
+      "polygon": [
+        [
+          70,
+          479
+        ],
+        [
+          70,
+          504
+        ],
+        [
+          699,
+          504
+        ],
+        [
+          859,
+          499
+        ],
+        [
+          859,
+          473
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "Who calls the Council, states the certain Day,",
+      "bbox_2d": [
+        71,
+        514,
+        768,
+        542
+      ],
+      "polygon": [
+        [
+          71,
+          520
+        ],
+        [
+          71,
+          542
+        ],
+        [
+          762,
+          542
+        ],
+        [
+          762,
+          514
+        ],
+        [
+          101,
+          514
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "Who forms the Phalanx, and who points the Way?",
+      "bbox_2d": [
+        70,
+        550,
+        834,
+        581
+      ],
+      "polygon": [
+        [
+          70,
+          556
+        ],
+        [
+          70,
+          581
+        ],
+        [
+          833,
+          581
+        ],
+        [
+          833,
+          550
+        ],
+        [
+          644,
+          550
+        ],
+        [
+          639,
+          550
+        ],
+        [
+          599,
+          550
+        ],
+        [
+          584,
+          550
+        ],
+        [
+          520,
+          550
+        ],
+        [
+          494,
+          550
+        ],
+        [
+          439,
+          550
+        ],
+        [
+          415,
+          550
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "GOD, in the Nature of each Being, founds",
+      "bbox_2d": [
+        103,
+        592,
+        773,
+        621
+      ],
+      "polygon": [
+        [
+          103,
+          592
+        ],
+        [
+          103,
+          621
+        ],
+        [
+          772,
+          621
+        ],
+        [
+          772,
+          592
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "Its proper Blifs, and lets its proper Bounds :",
+      "bbox_2d": [
+        74,
+        629,
+        724,
+        658
+      ],
+      "polygon": [
+        [
+          74,
+          629
+        ],
+        [
+          74,
+          658
+        ],
+        [
+          299,
+          658
+        ],
+        [
+          305,
+          658
+        ],
+        [
+          450,
+          658
+        ],
+        [
+          464,
+          658
+        ],
+        [
+          480,
+          658
+        ],
+        [
+          535,
+          658
+        ],
+        [
+          549,
+          658
+        ],
+        [
+          724,
+          653
+        ],
+        [
+          724,
+          629
+        ],
+        [
+          130,
+          629
+        ],
+        [
+          114,
+          629
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "110",
+      "bbox_2d": [
+        847,
+        631,
+        910,
+        648
+      ],
+      "polygon": [
+        [
+          847,
+          636
+        ],
+        [
+          847,
+          648
+        ],
+        [
+          909,
+          648
+        ],
+        [
+          909,
+          631
+        ],
+        [
+          852,
+          631
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "But as he fram'd a Whole, the Whole to blefs",
+      "bbox_2d": [
+        77,
+        664,
+        737,
+        692
+      ],
+      "polygon": [
+        [
+          77,
+          669
+        ],
+        [
+          77,
+          692
+        ],
+        [
+          736,
+          687
+        ],
+        [
+          736,
+          664
+        ],
+        [
+          302,
+          664
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "content": "On mutual Wants built mutual Happiness:",
+      "bbox_2d": [
+        76,
+        701,
+        691,
+        729
+      ],
+      "polygon": [
+        [
+          76,
+          706
+        ],
+        [
+          76,
+          728
+        ],
+        [
+          690,
+          728
+        ],
+        [
+          690,
+          701
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "content": "So from the first, Eternal ORDER ran,",
+      "bbox_2d": [
+        77,
+        740,
+        658,
+        765
+      ],
+      "polygon": [
+        [
+          77,
+          740
+        ],
+        [
+          77,
+          764
+        ],
+        [
+          657,
+          764
+        ],
+        [
+          657,
+          740
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "label": "text",
+      "content": "And Creature link'd to Creature, Man to Man.",
+      "bbox_2d": [
+        80,
+        776,
+        776,
+        802
+      ],
+      "polygon": [
+        [
+          80,
+          776
+        ],
+        [
+          80,
+          801
+        ],
+        [
+          776,
+          801
+        ],
+        [
+          776,
+          776
+        ],
+        [
+          471,
+          776
+        ],
+        [
+          450,
+          776
+        ],
+        [
+          441,
+          776
+        ],
+        [
+          436,
+          776
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "label": "text",
+      "content": "What'ere of Life all-quickening Ether keeps, . 115",
+      "bbox_2d": [
+        79,
+        812,
+        911,
+        839
+      ],
+      "polygon": [
+        [
+          79,
+          812
+        ],
+        [
+          79,
+          839
+        ],
+        [
+          910,
+          839
+        ],
+        [
+          910,
+          816
+        ],
+        [
+          770,
+          812
+        ],
+        [
+          735,
+          812
+        ],
+        [
+          590,
+          812
+        ]
+      ]
+    },
+    {
+      "index": 25,
+      "label": "text",
+      "content": "Or breathes thro' Air, or shoots beneath the Deeps,",
+      "bbox_2d": [
+        81,
+        848,
+        853,
+        876
+      ],
+      "polygon": [
+        [
+          81,
+          848
+        ],
+        [
+          81,
+          876
+        ],
+        [
+          852,
+          876
+        ],
+        [
+          852,
+          848
+        ]
+      ]
+    },
+    {
+      "index": 26,
+      "label": "text",
+      "content": "Or",
+      "bbox_2d": [
+        861,
+        888,
+        912,
+        910
+      ],
+      "polygon": [
+        [
+          861,
+          888
+        ],
+        [
+          861,
+          909
+        ],
+        [
+          911,
+          909
+        ],
+        [
+          911,
+          888
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(11)",
+      "bbox_2d": [
+        375,
+        9,
+        532,
+        46
+      ],
+      "polygon": [
+        [
+          375,
+          9
+        ],
+        [
+          375,
+          46
+        ],
+        [
+          531,
+          46
+        ],
+        [
+          531,
+          9
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Or pours profuse on Earth; one Nature feeds",
+      "bbox_2d": [
+        17,
+        61,
+        729,
+        98
+      ],
+      "polygon": [
+        [
+          728,
+          61
+        ],
+        [
+          78,
+          66
+        ],
+        [
+          17,
+          70
+        ],
+        [
+          17,
+          97
+        ],
+        [
+          628,
+          93
+        ],
+        [
+          634,
+          93
+        ],
+        [
+          648,
+          93
+        ],
+        [
+          728,
+          93
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "The vital Flame, and fwells the genial Seeds.",
+      "bbox_2d": [
+        20,
+        102,
+        701,
+        133
+      ],
+      "polygon": [
+        [
+          20,
+          108
+        ],
+        [
+          20,
+          133
+        ],
+        [
+          531,
+          133
+        ],
+        [
+          701,
+          128
+        ],
+        [
+          701,
+          102
+        ],
+        [
+          25,
+          102
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Not Man alone, but all that roam the Wood,",
+      "bbox_2d": [
+        22,
+        142,
+        729,
+        172
+      ],
+      "polygon": [
+        [
+          728,
+          142
+        ],
+        [
+          27,
+          147
+        ],
+        [
+          22,
+          171
+        ],
+        [
+          728,
+          171
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Or wing the Sky, or roll along the Flood,",
+      "bbox_2d": [
+        18,
+        180,
+        668,
+        212
+      ],
+      "polygon": [
+        [
+          18,
+          186
+        ],
+        [
+          18,
+          211
+        ],
+        [
+          668,
+          211
+        ],
+        [
+          668,
+          180
+        ],
+        [
+          264,
+          180
+        ],
+        [
+          224,
+          180
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Each loves Itself, but not itself alone,",
+      "bbox_2d": [
+        20,
+        220,
+        591,
+        248
+      ],
+      "polygon": [
+        [
+          20,
+          224
+        ],
+        [
+          20,
+          248
+        ],
+        [
+          486,
+          248
+        ],
+        [
+          491,
+          248
+        ],
+        [
+          507,
+          248
+        ],
+        [
+          561,
+          248
+        ],
+        [
+          591,
+          244
+        ],
+        [
+          591,
+          220
+        ],
+        [
+          91,
+          220
+        ],
+        [
+          85,
+          220
+        ],
+        [
+          51,
+          220
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "Each Sex defires alike, till two are one:",
+      "bbox_2d": [
+        20,
+        259,
+        627,
+        286
+      ],
+      "polygon": [
+        [
+          20,
+          259
+        ],
+        [
+          20,
+          286
+        ],
+        [
+          622,
+          286
+        ],
+        [
+          622,
+          259
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Nor ends the Pleasure with the fierce Embrace;",
+      "bbox_2d": [
+        20,
+        297,
+        755,
+        325
+      ],
+      "polygon": [
+        [
+          750,
+          297
+        ],
+        [
+          20,
+          302
+        ],
+        [
+          20,
+          325
+        ],
+        [
+          755,
+          325
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "All love themselves, a third time, in their Race.",
+      "bbox_2d": [
+        25,
+        338,
+        764,
+        367
+      ],
+      "polygon": [
+        [
+          25,
+          338
+        ],
+        [
+          25,
+          366
+        ],
+        [
+          763,
+          366
+        ],
+        [
+          763,
+          338
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "The Beast, the Bird,their common Charge attend, 125",
+      "bbox_2d": [
+        24,
+        376,
+        889,
+        406
+      ],
+      "polygon": [
+        [
+          24,
+          381
+        ],
+        [
+          24,
+          405
+        ],
+        [
+          888,
+          405
+        ],
+        [
+          888,
+          376
+        ],
+        [
+          394,
+          376
+        ],
+        [
+          379,
+          376
+        ],
+        [
+          344,
+          376
+        ],
+        [
+          314,
+          376
+        ],
+        [
+          304,
+          376
+        ],
+        [
+          250,
+          376
+        ],
+        [
+          239,
+          376
+        ],
+        [
+          220,
+          376
+        ],
+        [
+          40,
+          376
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "The Mothers nurfe it, and the Sires defend;",
+      "bbox_2d": [
+        24,
+        415,
+        715,
+        445
+      ],
+      "polygon": [
+        [
+          24,
+          420
+        ],
+        [
+          24,
+          444
+        ],
+        [
+          715,
+          444
+        ],
+        [
+          715,
+          415
+        ],
+        [
+          184,
+          415
+        ],
+        [
+          84,
+          415
+        ],
+        [
+          59,
+          415
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "The young dismiss'd to wander Earth or Air,",
+      "bbox_2d": [
+        22,
+        456,
+        725,
+        487
+      ],
+      "polygon": [
+        [
+          22,
+          456
+        ],
+        [
+          22,
+          486
+        ],
+        [
+          725,
+          486
+        ],
+        [
+          720,
+          456
+        ],
+        [
+          509,
+          456
+        ],
+        [
+          433,
+          456
+        ],
+        [
+          424,
+          456
+        ],
+        [
+          152,
+          456
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "There stops the Instinct, and there ends the Care,",
+      "bbox_2d": [
+        24,
+        496,
+        778,
+        525
+      ],
+      "polygon": [
+        [
+          24,
+          501
+        ],
+        [
+          24,
+          525
+        ],
+        [
+          778,
+          525
+        ],
+        [
+          773,
+          496
+        ],
+        [
+          314,
+          496
+        ],
+        [
+          289,
+          496
+        ],
+        [
+          89,
+          496
+        ],
+        [
+          70,
+          496
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "The Link diffolves, each seeks a fresh Embrace, 130",
+      "bbox_2d": [
+        26,
+        536,
+        887,
+        564
+      ],
+      "polygon": [
+        [
+          26,
+          564
+        ],
+        [
+          623,
+          564
+        ],
+        [
+          644,
+          564
+        ],
+        [
+          654,
+          564
+        ],
+        [
+          713,
+          564
+        ],
+        [
+          718,
+          564
+        ],
+        [
+          882,
+          564
+        ],
+        [
+          887,
+          541
+        ],
+        [
+          797,
+          536
+        ],
+        [
+          290,
+          536
+        ],
+        [
+          274,
+          536
+        ],
+        [
+          31,
+          536
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Another Love succeeds, another Race.",
+      "bbox_2d": [
+        25,
+        574,
+        634,
+        603
+      ],
+      "polygon": [
+        [
+          25,
+          574
+        ],
+        [
+          25,
+          602
+        ],
+        [
+          409,
+          602
+        ],
+        [
+          634,
+          598
+        ],
+        [
+          634,
+          574
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "A longer Care Man's helpless Kind demands;",
+      "bbox_2d": [
+        26,
+        611,
+        711,
+        643
+      ],
+      "polygon": [
+        [
+          26,
+          616
+        ],
+        [
+          26,
+          642
+        ],
+        [
+          710,
+          638
+        ],
+        [
+          710,
+          611
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "That longer Care contracts more lasting Bands :",
+      "bbox_2d": [
+        25,
+        650,
+        769,
+        682
+      ],
+      "polygon": [
+        [
+          25,
+          650
+        ],
+        [
+          25,
+          681
+        ],
+        [
+          768,
+          681
+        ],
+        [
+          768,
+          650
+        ],
+        [
+          290,
+          650
+        ],
+        [
+          64,
+          650
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "Reflection, Reason, still the Ties improve,",
+      "bbox_2d": [
+        29,
+        691,
+        657,
+        722
+      ],
+      "polygon": [
+        [
+          29,
+          696
+        ],
+        [
+          29,
+          722
+        ],
+        [
+          656,
+          718
+        ],
+        [
+          656,
+          691
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "At once extend the Int'reft, and the Love:",
+      "bbox_2d": [
+        29,
+        730,
+        689,
+        759
+      ],
+      "polygon": [
+        [
+          29,
+          735
+        ],
+        [
+          29,
+          759
+        ],
+        [
+          504,
+          759
+        ],
+        [
+          689,
+          754
+        ],
+        [
+          689,
+          730
+        ],
+        [
+          99,
+          730
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "With Choice we fix, with Sympathy we burn,",
+      "bbox_2d": [
+        30,
+        768,
+        698,
+        799
+      ],
+      "polygon": [
+        [
+          30,
+          768
+        ],
+        [
+          30,
+          798
+        ],
+        [
+          668,
+          798
+        ],
+        [
+          697,
+          794
+        ],
+        [
+          697,
+          768
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "Each Virtue in each Passion takes its Turn;",
+      "bbox_2d": [
+        30,
+        808,
+        661,
+        837
+      ],
+      "polygon": [
+        [
+          30,
+          808
+        ],
+        [
+          30,
+          837
+        ],
+        [
+          660,
+          837
+        ],
+        [
+          660,
+          808
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "content": "135",
+      "bbox_2d": [
+        821,
+        735,
+        888,
+        761
+      ],
+      "polygon": [
+        [
+          821,
+          735
+        ],
+        [
+          821,
+          761
+        ],
+        [
+          887,
+          761
+        ],
+        [
+          887,
+          735
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "content": "And still new Needs, new Helps, new Habits rife,",
+      "bbox_2d": [
+        30,
+        846,
+        783,
+        876
+      ],
+      "polygon": [
+        [
+          30,
+          846
+        ],
+        [
+          30,
+          876
+        ],
+        [
+          783,
+          876
+        ],
+        [
+          783,
+          846
+        ],
+        [
+          314,
+          846
+        ],
+        [
+          239,
+          846
+        ],
+        [
+          224,
+          846
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "label": "text",
+      "content": "That graft Benevolence on Charities,",
+      "bbox_2d": [
+        28,
+        886,
+        607,
+        915
+      ],
+      "polygon": [
+        [
+          28,
+          886
+        ],
+        [
+          28,
+          915
+        ],
+        [
+          602,
+          915
+        ],
+        [
+          607,
+          910
+        ],
+        [
+          607,
+          886
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "label": "text",
+      "content": "B 2 From",
+      "bbox_2d": [
+        400,
+        926,
+        886,
+        952
+      ],
+      "polygon": [
+        [
+          400,
+          926
+        ],
+        [
+          400,
+          952
+        ],
+        [
+          410,
+          952
+        ],
+        [
+          430,
+          952
+        ],
+        [
+          885,
+          952
+        ],
+        [
+          885,
+          926
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "(12)",
+      "bbox_2d": [
+        419,
+        8,
+        572,
+        43
+      ],
+      "polygon": [
+        [
+          419,
+          8
+        ],
+        [
+          419,
+          43
+        ],
+        [
+          572,
+          43
+        ],
+        [
+          572,
+          23
+        ],
+        [
+          572,
+          18
+        ],
+        [
+          572,
+          8
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "From private Sparkles raise the gen'ral Flame,",
+      "bbox_2d": [
+        73,
+        61,
+        782,
+        90
+      ],
+      "polygon": [
+        [
+          73,
+          66
+        ],
+        [
+          73,
+          90
+        ],
+        [
+          782,
+          90
+        ],
+        [
+          777,
+          61
+        ],
+        [
+          103,
+          61
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "140",
+      "bbox_2d": [
+        865,
+        69,
+        930,
+        93
+      ],
+      "polygon": [
+        [
+          865,
+          69
+        ],
+        [
+          865,
+          88
+        ],
+        [
+          870,
+          92
+        ],
+        [
+          929,
+          92
+        ],
+        [
+          929,
+          69
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "And bid Self-Love and Social be the fame.",
+      "bbox_2d": [
+        74,
+        99,
+        729,
+        127
+      ],
+      "polygon": [
+        [
+          74,
+          99
+        ],
+        [
+          74,
+          127
+        ],
+        [
+          139,
+          127
+        ],
+        [
+          149,
+          127
+        ],
+        [
+          589,
+          127
+        ],
+        [
+          728,
+          127
+        ],
+        [
+          728,
+          99
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Thus as one Brood, and as another rofe,",
+      "bbox_2d": [
+        75,
+        137,
+        682,
+        164
+      ],
+      "polygon": [
+        [
+          75,
+          141
+        ],
+        [
+          75,
+          164
+        ],
+        [
+          681,
+          164
+        ],
+        [
+          681,
+          137
+        ],
+        [
+          80,
+          137
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "These nat'ral Love maintain'd, habitual those;",
+      "bbox_2d": [
+        71,
+        175,
+        799,
+        203
+      ],
+      "polygon": [
+        [
+          71,
+          175
+        ],
+        [
+          71,
+          202
+        ],
+        [
+          798,
+          202
+        ],
+        [
+          798,
+          175
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "The laft, scarce ripen'd into perfect Man,",
+      "bbox_2d": [
+        71,
+        212,
+        709,
+        242
+      ],
+      "polygon": [
+        [
+          71,
+          212
+        ],
+        [
+          71,
+          241
+        ],
+        [
+          709,
+          241
+        ],
+        [
+          709,
+          212
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Saw helplefs Him from whom their Life began: 145",
+      "bbox_2d": [
+        72,
+        251,
+        929,
+        280
+      ],
+      "polygon": [
+        [
+          72,
+          251
+        ],
+        [
+          72,
+          280
+        ],
+        [
+          928,
+          280
+        ],
+        [
+          928,
+          256
+        ],
+        [
+          803,
+          251
+        ],
+        [
+          778,
+          251
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Mem'ry and Forecast just Returns engage,",
+      "bbox_2d": [
+        72,
+        289,
+        709,
+        318
+      ],
+      "polygon": [
+        [
+          72,
+          289
+        ],
+        [
+          72,
+          313
+        ],
+        [
+          98,
+          318
+        ],
+        [
+          107,
+          318
+        ],
+        [
+          549,
+          318
+        ],
+        [
+          708,
+          318
+        ],
+        [
+          703,
+          289
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "That pointed back to Youth, this on to Age;",
+      "bbox_2d": [
+        69,
+        326,
+        740,
+        356
+      ],
+      "polygon": [
+        [
+          69,
+          326
+        ],
+        [
+          69,
+          355
+        ],
+        [
+          739,
+          355
+        ],
+        [
+          739,
+          331
+        ],
+        [
+          610,
+          326
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "While Pleasure, Gratitude and Hope, combin'd,",
+      "bbox_2d": [
+        70,
+        362,
+        781,
+        392
+      ],
+      "polygon": [
+        [
+          70,
+          362
+        ],
+        [
+          70,
+          392
+        ],
+        [
+          780,
+          392
+        ],
+        [
+          780,
+          362
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "Still spread the Int'reft, and preserv'd the Kind.",
+      "bbox_2d": [
+        68,
+        400,
+        799,
+        429
+      ],
+      "polygon": [
+        [
+          68,
+          400
+        ],
+        [
+          68,
+          424
+        ],
+        [
+          88,
+          428
+        ],
+        [
+          103,
+          428
+        ],
+        [
+          108,
+          428
+        ],
+        [
+          798,
+          428
+        ],
+        [
+          798,
+          400
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Nor think in Nature's State they blindly trod; 150",
+      "bbox_2d": [
+        103,
+        437,
+        930,
+        468
+      ],
+      "polygon": [
+        [
+          103,
+          464
+        ],
+        [
+          299,
+          468
+        ],
+        [
+          865,
+          468
+        ],
+        [
+          895,
+          468
+        ],
+        [
+          925,
+          464
+        ],
+        [
+          930,
+          446
+        ],
+        [
+          855,
+          441
+        ],
+        [
+          378,
+          437
+        ],
+        [
+          168,
+          437
+        ],
+        [
+          153,
+          437
+        ],
+        [
+          143,
+          437
+        ],
+        [
+          103,
+          446
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "The State of NATURE was the Reign of God :",
+      "bbox_2d": [
+        68,
+        476,
+        753,
+        506
+      ],
+      "polygon": [
+        [
+          68,
+          476
+        ],
+        [
+          68,
+          506
+        ],
+        [
+          753,
+          506
+        ],
+        [
+          753,
+          482
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Self-Love and Social at her Birth began,",
+      "bbox_2d": [
+        68,
+        517,
+        656,
+        545
+      ],
+      "polygon": [
+        [
+          68,
+          517
+        ],
+        [
+          68,
+          545
+        ],
+        [
+          655,
+          545
+        ],
+        [
+          655,
+          522
+        ],
+        [
+          490,
+          517
+        ],
+        [
+          454,
+          517
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "UNION, the Bond of all Things, and of Man.",
+      "bbox_2d": [
+        69,
+        554,
+        764,
+        582
+      ],
+      "polygon": [
+        [
+          69,
+          554
+        ],
+        [
+          69,
+          577
+        ],
+        [
+          764,
+          582
+        ],
+        [
+          764,
+          554
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "Pride then was not; nor Arts, that Pride to aid;",
+      "bbox_2d": [
+        71,
+        592,
+        808,
+        620
+      ],
+      "polygon": [
+        [
+          71,
+          592
+        ],
+        [
+          71,
+          620
+        ],
+        [
+          808,
+          620
+        ],
+        [
+          808,
+          592
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "Man walk'd with Beast, joint Tenant of the Shade; 155",
+      "bbox_2d": [
+        69,
+        628,
+        928,
+        659
+      ],
+      "polygon": [
+        [
+          69,
+          628
+        ],
+        [
+          69,
+          654
+        ],
+        [
+          334,
+          658
+        ],
+        [
+          923,
+          658
+        ],
+        [
+          928,
+          654
+        ],
+        [
+          923,
+          628
+        ],
+        [
+          899,
+          628
+        ],
+        [
+          893,
+          628
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "The same his Table, and the same his Bed,",
+      "bbox_2d": [
+        68,
+        666,
+        726,
+        695
+      ],
+      "polygon": [
+        [
+          68,
+          666
+        ],
+        [
+          68,
+          695
+        ],
+        [
+          726,
+          695
+        ],
+        [
+          726,
+          671
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "No Murder cloath'd him, and no Murder fed.",
+      "bbox_2d": [
+        67,
+        706,
+        767,
+        735
+      ],
+      "polygon": [
+        [
+          67,
+          706
+        ],
+        [
+          67,
+          734
+        ],
+        [
+          766,
+          734
+        ],
+        [
+          766,
+          711
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "In the same Temple, the refounding Wood,",
+      "bbox_2d": [
+        67,
+        745,
+        753,
+        776
+      ],
+      "polygon": [
+        [
+          67,
+          745
+        ],
+        [
+          72,
+          776
+        ],
+        [
+          107,
+          776
+        ],
+        [
+          132,
+          776
+        ],
+        [
+          753,
+          776
+        ],
+        [
+          753,
+          750
+        ],
+        [
+          499,
+          745
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "content": "All Vocal Beings hymn'd their equal God:",
+      "bbox_2d": [
+        67,
+        779,
+        704,
+        810
+      ],
+      "polygon": [
+        [
+          67,
+          779
+        ],
+        [
+          67,
+          804
+        ],
+        [
+          207,
+          809
+        ],
+        [
+          703,
+          809
+        ],
+        [
+          703,
+          784
+        ],
+        [
+          579,
+          779
+        ],
+        [
+          530,
+          779
+        ],
+        [
+          505,
+          779
+        ],
+        [
+          420,
+          779
+        ],
+        [
+          395,
+          779
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "content": "The Shrine with Gore unstain'd,with Gold undreft,160",
+      "bbox_2d": [
+        64,
+        814,
+        918,
+        845
+      ],
+      "polygon": [
+        [
+          64,
+          814
+        ],
+        [
+          64,
+          840
+        ],
+        [
+          918,
+          844
+        ],
+        [
+          918,
+          819
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "label": "text",
+      "content": "Unbrib'd, unbloody, stood the blamefs Priest:",
+      "bbox_2d": [
+        64,
+        849,
+        823,
+        880
+      ],
+      "polygon": [
+        [
+          64,
+          849
+        ],
+        [
+          64,
+          880
+        ],
+        [
+          822,
+          880
+        ],
+        [
+          822,
+          854
+        ],
+        [
+          673,
+          849
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "label": "text",
+      "content": "Heay'ns",
+      "bbox_2d": [
+        781,
+        891,
+        919,
+        917
+      ],
+      "polygon": [
+        [
+          781,
+          891
+        ],
+        [
+          781,
+          916
+        ],
+        [
+          918,
+          916
+        ],
+        [
+          918,
+          891
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(13)",
+      "bbox_2d": [
+        374,
+        6,
+        534,
+        43
+      ],
+      "polygon": [
+        [
+          374,
+          6
+        ],
+        [
+          374,
+          43
+        ],
+        [
+          533,
+          43
+        ],
+        [
+          533,
+          6
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Heav'ns Attribute was Universal Care,",
+      "bbox_2d": [
+        13,
+        62,
+        641,
+        91
+      ],
+      "polygon": [
+        [
+          13,
+          67
+        ],
+        [
+          13,
+          91
+        ],
+        [
+          641,
+          91
+        ],
+        [
+          641,
+          62
+        ],
+        [
+          99,
+          62
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "And Man's Prerogative to rule, but spare.",
+      "bbox_2d": [
+        14,
+        101,
+        691,
+        131
+      ],
+      "polygon": [
+        [
+          14,
+          106
+        ],
+        [
+          14,
+          131
+        ],
+        [
+          690,
+          131
+        ],
+        [
+          690,
+          101
+        ],
+        [
+          20,
+          101
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Ah how unlike the Man of Times to come!",
+      "bbox_2d": [
+        14,
+        140,
+        718,
+        169
+      ],
+      "polygon": [
+        [
+          14,
+          145
+        ],
+        [
+          14,
+          168
+        ],
+        [
+          717,
+          168
+        ],
+        [
+          717,
+          140
+        ],
+        [
+          20,
+          140
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Of half that live, the Butcher, and the Tomb; 165",
+      "bbox_2d": [
+        10,
+        178,
+        906,
+        208
+      ],
+      "polygon": [
+        [
+          10,
+          178
+        ],
+        [
+          10,
+          207
+        ],
+        [
+          750,
+          207
+        ],
+        [
+          901,
+          207
+        ],
+        [
+          905,
+          178
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Who, Foe to Nature, hears the gen'ral Groan,",
+      "bbox_2d": [
+        19,
+        216,
+        769,
+        246
+      ],
+      "polygon": [
+        [
+          19,
+          216
+        ],
+        [
+          19,
+          246
+        ],
+        [
+          768,
+          246
+        ],
+        [
+          768,
+          216
+        ],
+        [
+          139,
+          216
+        ],
+        [
+          128,
+          216
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "Murders their Species, and betrays his own.",
+      "bbox_2d": [
+        20,
+        256,
+        731,
+        284
+      ],
+      "polygon": [
+        [
+          20,
+          256
+        ],
+        [
+          20,
+          284
+        ],
+        [
+          730,
+          284
+        ],
+        [
+          730,
+          256
+        ],
+        [
+          336,
+          256
+        ],
+        [
+          310,
+          256
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "But just Dilease to Luxury succeeds,",
+      "bbox_2d": [
+        19,
+        292,
+        594,
+        321
+      ],
+      "polygon": [
+        [
+          19,
+          292
+        ],
+        [
+          19,
+          321
+        ],
+        [
+          593,
+          321
+        ],
+        [
+          593,
+          292
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "And ev'ry Death its own Avenger breeds;",
+      "bbox_2d": [
+        20,
+        330,
+        686,
+        360
+      ],
+      "polygon": [
+        [
+          20,
+          330
+        ],
+        [
+          20,
+          360
+        ],
+        [
+          686,
+          360
+        ],
+        [
+          686,
+          330
+        ],
+        [
+          206,
+          330
+        ],
+        [
+          155,
+          330
+        ],
+        [
+          105,
+          330
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "The Fury-Paffions from that Blood began, 170",
+      "bbox_2d": [
+        20,
+        370,
+        907,
+        398
+      ],
+      "polygon": [
+        [
+          20,
+          370
+        ],
+        [
+          20,
+          398
+        ],
+        [
+          510,
+          398
+        ],
+        [
+          526,
+          398
+        ],
+        [
+          731,
+          398
+        ],
+        [
+          831,
+          398
+        ],
+        [
+          906,
+          394
+        ],
+        [
+          906,
+          370
+        ],
+        [
+          896,
+          370
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "And turn'd on Man a fiercer Savage, Man. See him from Nature rising flow to Art!",
+      "bbox_2d": [
+        27,
+        409,
+        716,
+        479
+      ],
+      "polygon": [
+        [
+          27,
+          409
+        ],
+        [
+          27,
+          479
+        ],
+        [
+          715,
+          479
+        ],
+        [
+          715,
+          444
+        ],
+        [
+          484,
+          444
+        ],
+        [
+          700,
+          439
+        ],
+        [
+          706,
+          409
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "To copy Instinct, then, was Reason's Part;",
+      "bbox_2d": [
+        28,
+        488,
+        706,
+        518
+      ],
+      "polygon": [
+        [
+          28,
+          488
+        ],
+        [
+          28,
+          513
+        ],
+        [
+          39,
+          518
+        ],
+        [
+          103,
+          518
+        ],
+        [
+          119,
+          518
+        ],
+        [
+          630,
+          518
+        ],
+        [
+          705,
+          513
+        ],
+        [
+          705,
+          488
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Thus then to Man the Voice of Nature spake ____",
+      "bbox_2d": [
+        29,
+        527,
+        829,
+        556
+      ],
+      "polygon": [
+        [
+          29,
+          532
+        ],
+        [
+          29,
+          555
+        ],
+        [
+          828,
+          555
+        ],
+        [
+          824,
+          527
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "\" Go! from the Creatures thy Instructions take; 175",
+      "bbox_2d": [
+        30,
+        565,
+        914,
+        595
+      ],
+      "polygon": [
+        [
+          30,
+          565
+        ],
+        [
+          30,
+          594
+        ],
+        [
+          913,
+          594
+        ],
+        [
+          913,
+          565
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "\" Learn from the Birds what Food the Thickets yield;",
+      "bbox_2d": [
+        31,
+        604,
+        843,
+        633
+      ],
+      "polygon": [
+        [
+          31,
+          604
+        ],
+        [
+          36,
+          633
+        ],
+        [
+          843,
+          633
+        ],
+        [
+          843,
+          604
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "\" Learn from the Bealts the Physick of the Field :",
+      "bbox_2d": [
+        32,
+        643,
+        779,
+        673
+      ],
+      "polygon": [
+        [
+          32,
+          643
+        ],
+        [
+          37,
+          673
+        ],
+        [
+          699,
+          673
+        ],
+        [
+          735,
+          673
+        ],
+        [
+          764,
+          673
+        ],
+        [
+          774,
+          673
+        ],
+        [
+          779,
+          643
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "\" Thy Arts of Building from the Bee receive;",
+      "bbox_2d": [
+        34,
+        681,
+        734,
+        711
+      ],
+      "polygon": [
+        [
+          34,
+          686
+        ],
+        [
+          34,
+          711
+        ],
+        [
+          734,
+          711
+        ],
+        [
+          734,
+          681
+        ],
+        [
+          220,
+          681
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "\" Learn of the Mole to plow, the Worm to weave;",
+      "bbox_2d": [
+        35,
+        720,
+        839,
+        750
+      ],
+      "polygon": [
+        [
+          35,
+          725
+        ],
+        [
+          41,
+          749
+        ],
+        [
+          819,
+          749
+        ],
+        [
+          839,
+          744
+        ],
+        [
+          839,
+          725
+        ],
+        [
+          824,
+          720
+        ],
+        [
+          171,
+          720
+        ],
+        [
+          165,
+          720
+        ],
+        [
+          150,
+          720
+        ],
+        [
+          96,
+          720
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "\" Learn of the little $ \\star $ Nautilus to fail,",
+      "bbox_2d": [
+        35,
+        760,
+        641,
+        790
+      ],
+      "polygon": [
+        [
+          35,
+          765
+        ],
+        [
+          35,
+          784
+        ],
+        [
+          51,
+          789
+        ],
+        [
+          641,
+          789
+        ],
+        [
+          641,
+          760
+        ],
+        [
+          101,
+          760
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "\" Spread the thin Oar, and catch the driving Gale.",
+      "bbox_2d": [
+        39,
+        797,
+        799,
+        830
+      ],
+      "polygon": [
+        [
+          39,
+          802
+        ],
+        [
+          39,
+          830
+        ],
+        [
+          799,
+          830
+        ],
+        [
+          799,
+          797
+        ],
+        [
+          639,
+          797
+        ],
+        [
+          629,
+          797
+        ],
+        [
+          489,
+          797
+        ],
+        [
+          459,
+          797
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "\" Here",
+      "bbox_2d": [
+        803,
+        841,
+        928,
+        866
+      ],
+      "polygon": [
+        [
+          803,
+          841
+        ],
+        [
+          803,
+          865
+        ],
+        [
+          927,
+          865
+        ],
+        [
+          927,
+          846
+        ],
+        [
+          873,
+          841
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "footnote",
+      "content": "* Vide Oppian Halieut. Lib. I.",
+      "bbox_2d": [
+        80,
+        934,
+        574,
+        966
+      ],
+      "polygon": [
+        [
+          80,
+          934
+        ],
+        [
+          80,
+          966
+        ],
+        [
+          573,
+          966
+        ],
+        [
+          573,
+          934
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(14)",
+      "bbox_2d": [
+        400,
+        10,
+        583,
+        49
+      ],
+      "polygon": [
+        [
+          400,
+          10
+        ],
+        [
+          400,
+          49
+        ],
+        [
+          583,
+          49
+        ],
+        [
+          583,
+          10
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "\" Here too all Forms of social Union find;",
+      "bbox_2d": [
+        37,
+        65,
+        732,
+        97
+      ],
+      "polygon": [
+        [
+          37,
+          97
+        ],
+        [
+          731,
+          97
+        ],
+        [
+          731,
+          65
+        ],
+        [
+          302,
+          65
+        ],
+        [
+          296,
+          65
+        ],
+        [
+          282,
+          65
+        ],
+        [
+          272,
+          65
+        ],
+        [
+          266,
+          65
+        ],
+        [
+          227,
+          65
+        ],
+        [
+          42,
+          70
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "\" And hence let Reason, late, instruct Mankind :",
+      "bbox_2d": [
+        38,
+        102,
+        808,
+        133
+      ],
+      "polygon": [
+        [
+          38,
+          108
+        ],
+        [
+          38,
+          133
+        ],
+        [
+          807,
+          128
+        ],
+        [
+          807,
+          102
+        ],
+        [
+          153,
+          102
+        ],
+        [
+          113,
+          102
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "\" Here Subterranean Works and Cities fee,",
+      "bbox_2d": [
+        35,
+        139,
+        731,
+        170
+      ],
+      "polygon": [
+        [
+          35,
+          144
+        ],
+        [
+          35,
+          169
+        ],
+        [
+          390,
+          169
+        ],
+        [
+          646,
+          169
+        ],
+        [
+          656,
+          169
+        ],
+        [
+          730,
+          169
+        ],
+        [
+          730,
+          139
+        ],
+        [
+          241,
+          139
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "\" There Towns Aerial on the waving Tree.",
+      "bbox_2d": [
+        35,
+        176,
+        721,
+        204
+      ],
+      "polygon": [
+        [
+          35,
+          180
+        ],
+        [
+          35,
+          204
+        ],
+        [
+          720,
+          204
+        ],
+        [
+          720,
+          176
+        ],
+        [
+          266,
+          176
+        ],
+        [
+          226,
+          176
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "\" Learn each small People's Genius, Policies;",
+      "bbox_2d": [
+        37,
+        212,
+        792,
+        243
+      ],
+      "polygon": [
+        [
+          42,
+          242
+        ],
+        [
+          474,
+          242
+        ],
+        [
+          787,
+          242
+        ],
+        [
+          792,
+          216
+        ],
+        [
+          787,
+          212
+        ],
+        [
+          92,
+          216
+        ],
+        [
+          37,
+          221
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "185",
+      "bbox_2d": [
+        880,
+        174,
+        953,
+        204
+      ],
+      "polygon": [
+        [
+          880,
+          174
+        ],
+        [
+          880,
+          203
+        ],
+        [
+          952,
+          203
+        ],
+        [
+          952,
+          174
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "\"The Ants Republic, and the Realm of Bees;",
+      "bbox_2d": [
+        38,
+        252,
+        789,
+        280
+      ],
+      "polygon": [
+        [
+          38,
+          256
+        ],
+        [
+          38,
+          280
+        ],
+        [
+          788,
+          280
+        ],
+        [
+          788,
+          256
+        ],
+        [
+          769,
+          252
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "\" How those in common all their Stores bestow,",
+      "bbox_2d": [
+        38,
+        289,
+        771,
+        318
+      ],
+      "polygon": [
+        [
+          38,
+          294
+        ],
+        [
+          38,
+          313
+        ],
+        [
+          53,
+          318
+        ],
+        [
+          450,
+          318
+        ],
+        [
+          706,
+          318
+        ],
+        [
+          726,
+          318
+        ],
+        [
+          771,
+          313
+        ],
+        [
+          771,
+          289
+        ],
+        [
+          138,
+          289
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "\" And Anarchy without Confusion know,",
+      "bbox_2d": [
+        36,
+        326,
+        733,
+        353
+      ],
+      "polygon": [
+        [
+          36,
+          331
+        ],
+        [
+          36,
+          348
+        ],
+        [
+          46,
+          352
+        ],
+        [
+          588,
+          352
+        ],
+        [
+          594,
+          352
+        ],
+        [
+          604,
+          352
+        ],
+        [
+          679,
+          352
+        ],
+        [
+          693,
+          352
+        ],
+        [
+          733,
+          348
+        ],
+        [
+          728,
+          326
+        ],
+        [
+          225,
+          326
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "\" And these for ever, tho' a Monarch reign,",
+      "bbox_2d": [
+        34,
+        362,
+        753,
+        390
+      ],
+      "polygon": [
+        [
+          34,
+          362
+        ],
+        [
+          34,
+          390
+        ],
+        [
+          753,
+          390
+        ],
+        [
+          753,
+          362
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "\" Their separate Cells and Properties maintain.",
+      "bbox_2d": [
+        35,
+        399,
+        781,
+        428
+      ],
+      "polygon": [
+        [
+          35,
+          399
+        ],
+        [
+          35,
+          427
+        ],
+        [
+          625,
+          427
+        ],
+        [
+          780,
+          423
+        ],
+        [
+          780,
+          399
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "190",
+      "bbox_2d": [
+        879,
+        364,
+        951,
+        387
+      ],
+      "polygon": [
+        [
+          879,
+          364
+        ],
+        [
+          879,
+          387
+        ],
+        [
+          950,
+          387
+        ],
+        [
+          950,
+          364
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "\" Mark what unvary'd Laws preserve their State,",
+      "bbox_2d": [
+        34,
+        437,
+        828,
+        464
+      ],
+      "polygon": [
+        [
+          34,
+          437
+        ],
+        [
+          34,
+          464
+        ],
+        [
+          823,
+          464
+        ],
+        [
+          827,
+          437
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "\" Laws wife as Nature, and as fix'd as Fate.",
+      "bbox_2d": [
+        35,
+        474,
+        747,
+        500
+      ],
+      "polygon": [
+        [
+          35,
+          474
+        ],
+        [
+          35,
+          500
+        ],
+        [
+          746,
+          500
+        ],
+        [
+          746,
+          474
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "\" In vain thy Reason finer Webs shall draw,",
+      "bbox_2d": [
+        34,
+        513,
+        758,
+        541
+      ],
+      "polygon": [
+        [
+          34,
+          513
+        ],
+        [
+          34,
+          540
+        ],
+        [
+          757,
+          540
+        ],
+        [
+          757,
+          513
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "\" Entangle Justice in her Net of Law,",
+      "bbox_2d": [
+        32,
+        553,
+        650,
+        582
+      ],
+      "polygon": [
+        [
+          32,
+          553
+        ],
+        [
+          37,
+          582
+        ],
+        [
+          650,
+          582
+        ],
+        [
+          650,
+          553
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "195",
+      "bbox_2d": [
+        877,
+        556,
+        952,
+        581
+      ],
+      "polygon": [
+        [
+          877,
+          556
+        ],
+        [
+          877,
+          581
+        ],
+        [
+          951,
+          581
+        ],
+        [
+          951,
+          556
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "\" And Right too rigid harden into Wrong,",
+      "bbox_2d": [
+        35,
+        593,
+        686,
+        622
+      ],
+      "polygon": [
+        [
+          35,
+          593
+        ],
+        [
+          35,
+          621
+        ],
+        [
+          685,
+          621
+        ],
+        [
+          685,
+          593
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "\" Still for the Strong too weak, the Weak too strong.",
+      "bbox_2d": [
+        38,
+        631,
+        851,
+        661
+      ],
+      "polygon": [
+        [
+          38,
+          631
+        ],
+        [
+          38,
+          661
+        ],
+        [
+          850,
+          661
+        ],
+        [
+          850,
+          631
+        ],
+        [
+          660,
+          631
+        ],
+        [
+          620,
+          631
+        ],
+        [
+          470,
+          631
+        ],
+        [
+          464,
+          631
+        ],
+        [
+          429,
+          631
+        ],
+        [
+          400,
+          631
+        ],
+        [
+          338,
+          631
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "\" Yet Go! and thus o'er all the Creatures sway,",
+      "bbox_2d": [
+        37,
+        669,
+        790,
+        698
+      ],
+      "polygon": [
+        [
+          37,
+          669
+        ],
+        [
+          37,
+          693
+        ],
+        [
+          47,
+          698
+        ],
+        [
+          223,
+          698
+        ],
+        [
+          789,
+          698
+        ],
+        [
+          789,
+          669
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "content": "\" Thus let the Wiser make the rest obey,",
+      "bbox_2d": [
+        39,
+        707,
+        640,
+        738
+      ],
+      "polygon": [
+        [
+          39,
+          707
+        ],
+        [
+          39,
+          733
+        ],
+        [
+          639,
+          737
+        ],
+        [
+          639,
+          711
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "content": "\" As Kings shall crown them, or as Gods adore.\"",
+      "bbox_2d": [
+        39,
+        782,
+        830,
+        812
+      ],
+      "polygon": [
+        [
+          39,
+          782
+        ],
+        [
+          39,
+          812
+        ],
+        [
+          829,
+          812
+        ],
+        [
+          829,
+          782
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "label": "text",
+      "content": "\" Who for those Arts they learn'd of Brutes before, 200",
+      "bbox_2d": [
+        41,
+        745,
+        952,
+        775
+      ],
+      "polygon": [
+        [
+          41,
+          745
+        ],
+        [
+          46,
+          775
+        ],
+        [
+          947,
+          775
+        ],
+        [
+          947,
+          750
+        ],
+        [
+          922,
+          750
+        ],
+        [
+          912,
+          750
+        ],
+        [
+          873,
+          750
+        ],
+        [
+          862,
+          750
+        ],
+        [
+          833,
+          745
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "label": "text",
+      "content": "Great Nature spoke; observant Men obey'd;",
+      "bbox_2d": [
+        76,
+        822,
+        826,
+        852
+      ],
+      "polygon": [
+        [
+          76,
+          822
+        ],
+        [
+          76,
+          847
+        ],
+        [
+          825,
+          852
+        ],
+        [
+          825,
+          822
+        ]
+      ]
+    },
+    {
+      "index": 25,
+      "label": "text",
+      "content": "Cities were built, Societies were made:",
+      "bbox_2d": [
+        38,
+        857,
+        690,
+        888
+      ],
+      "polygon": [
+        [
+          38,
+          857
+        ],
+        [
+          38,
+          883
+        ],
+        [
+          689,
+          887
+        ],
+        [
+          689,
+          862
+        ],
+        [
+          218,
+          857
+        ]
+      ]
+    },
+    {
+      "index": 26,
+      "label": "text",
+      "content": "Here",
+      "bbox_2d": [
+        853,
+        909,
+        950,
+        935
+      ],
+      "polygon": [
+        [
+          853,
+          909
+        ],
+        [
+          853,
+          935
+        ],
+        [
+          949,
+          935
+        ],
+        [
+          949,
+          909
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "doc_title",
+      "content": "(15)",
+      "bbox_2d": [
+        355,
+        2,
+        535,
+        40
+      ],
+      "polygon": [
+        [
+          355,
+          2
+        ],
+        [
+          355,
+          39
+        ],
+        [
+          535,
+          39
+        ],
+        [
+          535,
+          2
+        ],
+        [
+          491,
+          2
+        ],
+        [
+          450,
+          2
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Here rofe one little State; Another near",
+      "bbox_2d": [
+        0,
+        57,
+        654,
+        86
+      ],
+      "polygon": [
+        [
+          0,
+          67
+        ],
+        [
+          0,
+          86
+        ],
+        [
+          654,
+          86
+        ],
+        [
+          654,
+          57
+        ],
+        [
+          165,
+          57
+        ],
+        [
+          5,
+          62
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Grew by like means, and join'd, thro' Love or Fear. 205",
+      "bbox_2d": [
+        0,
+        95,
+        901,
+        124
+      ],
+      "polygon": [
+        [
+          0,
+          124
+        ],
+        [
+          510,
+          124
+        ],
+        [
+          516,
+          124
+        ],
+        [
+          900,
+          124
+        ],
+        [
+          895,
+          95
+        ],
+        [
+          870,
+          95
+        ],
+        [
+          5,
+          95
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Did here the Trees with ruddier Burdens bend,",
+      "bbox_2d": [
+        3,
+        131,
+        750,
+        159
+      ],
+      "polygon": [
+        [
+          3,
+          136
+        ],
+        [
+          3,
+          159
+        ],
+        [
+          749,
+          159
+        ],
+        [
+          749,
+          131
+        ],
+        [
+          164,
+          131
+        ],
+        [
+          158,
+          131
+        ],
+        [
+          88,
+          131
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "And there the Streams in purer Rills descend?",
+      "bbox_2d": [
+        4,
+        167,
+        739,
+        196
+      ],
+      "polygon": [
+        [
+          4,
+          167
+        ],
+        [
+          4,
+          195
+        ],
+        [
+          738,
+          195
+        ],
+        [
+          738,
+          167
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "What War could ravish, Commerce could bestow,",
+      "bbox_2d": [
+        6,
+        204,
+        783,
+        232
+      ],
+      "polygon": [
+        [
+          6,
+          204
+        ],
+        [
+          6,
+          231
+        ],
+        [
+          782,
+          231
+        ],
+        [
+          782,
+          204
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "And he return'd a Friend, who came a Foe.",
+      "bbox_2d": [
+        6,
+        241,
+        708,
+        270
+      ],
+      "polygon": [
+        [
+          6,
+          246
+        ],
+        [
+          6,
+          270
+        ],
+        [
+          703,
+          270
+        ],
+        [
+          703,
+          241
+        ],
+        [
+          136,
+          241
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Thus States were form'd; the Name of King unknown,",
+      "bbox_2d": [
+        6,
+        282,
+        892,
+        310
+      ],
+      "polygon": [
+        [
+          6,
+          282
+        ],
+        [
+          11,
+          310
+        ],
+        [
+          571,
+          310
+        ],
+        [
+          587,
+          310
+        ],
+        [
+          891,
+          310
+        ],
+        [
+          891,
+          282
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "'Till common Int'reft plac'd the Sway in One. 211",
+      "bbox_2d": [
+        9,
+        321,
+        893,
+        348
+      ],
+      "polygon": [
+        [
+          9,
+          321
+        ],
+        [
+          9,
+          348
+        ],
+        [
+          893,
+          343
+        ],
+        [
+          893,
+          321
+        ],
+        [
+          878,
+          321
+        ],
+        [
+          109,
+          321
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "Then VIRTUE ONLY (or in Arts, or Arms,",
+      "bbox_2d": [
+        9,
+        358,
+        663,
+        385
+      ],
+      "polygon": [
+        [
+          9,
+          358
+        ],
+        [
+          9,
+          384
+        ],
+        [
+          663,
+          384
+        ],
+        [
+          663,
+          358
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Diffusing Blessings, or averting Harms)",
+      "bbox_2d": [
+        10,
+        396,
+        657,
+        425
+      ],
+      "polygon": [
+        [
+          10,
+          396
+        ],
+        [
+          10,
+          424
+        ],
+        [
+          652,
+          424
+        ],
+        [
+          657,
+          420
+        ],
+        [
+          657,
+          396
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "The same which in a Sire the Sons obey'd,",
+      "bbox_2d": [
+        10,
+        432,
+        663,
+        462
+      ],
+      "polygon": [
+        [
+          10,
+          437
+        ],
+        [
+          10,
+          462
+        ],
+        [
+          663,
+          462
+        ],
+        [
+          663,
+          432
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "A Prince the Father of a People made.",
+      "bbox_2d": [
+        15,
+        472,
+        614,
+        501
+      ],
+      "polygon": [
+        [
+          15,
+          477
+        ],
+        [
+          15,
+          501
+        ],
+        [
+          613,
+          501
+        ],
+        [
+          609,
+          472
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "'Till then, by Nature crown'd, each Patriarch fate,",
+      "bbox_2d": [
+        51,
+        510,
+        889,
+        540
+      ],
+      "polygon": [
+        [
+          51,
+          510
+        ],
+        [
+          51,
+          540
+        ],
+        [
+          764,
+          540
+        ],
+        [
+          769,
+          540
+        ],
+        [
+          878,
+          540
+        ],
+        [
+          883,
+          510
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "King, Priest, and Parent of his growing State:",
+      "bbox_2d": [
+        18,
+        548,
+        752,
+        580
+      ],
+      "polygon": [
+        [
+          18,
+          548
+        ],
+        [
+          18,
+          580
+        ],
+        [
+          357,
+          580
+        ],
+        [
+          363,
+          580
+        ],
+        [
+          632,
+          580
+        ],
+        [
+          752,
+          574
+        ],
+        [
+          752,
+          548
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "On him, their second Providence, they hung,",
+      "bbox_2d": [
+        15,
+        586,
+        747,
+        616
+      ],
+      "polygon": [
+        [
+          15,
+          592
+        ],
+        [
+          15,
+          616
+        ],
+        [
+          747,
+          616
+        ],
+        [
+          742,
+          586
+        ],
+        [
+          234,
+          586
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "Their Law, his Eye; their Oracle, his Tongue.",
+      "bbox_2d": [
+        17,
+        626,
+        776,
+        655
+      ],
+      "polygon": [
+        [
+          17,
+          631
+        ],
+        [
+          17,
+          655
+        ],
+        [
+          775,
+          655
+        ],
+        [
+          775,
+          626
+        ],
+        [
+          143,
+          626
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "He, from the wond'ring Furrow call'd their Food, 220",
+      "bbox_2d": [
+        20,
+        662,
+        911,
+        692
+      ],
+      "polygon": [
+        [
+          20,
+          662
+        ],
+        [
+          20,
+          692
+        ],
+        [
+          910,
+          687
+        ],
+        [
+          910,
+          662
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "Taught to command the Fire, controul the Flood,",
+      "bbox_2d": [
+        21,
+        701,
+        811,
+        731
+      ],
+      "polygon": [
+        [
+          21,
+          706
+        ],
+        [
+          21,
+          731
+        ],
+        [
+          796,
+          731
+        ],
+        [
+          811,
+          731
+        ],
+        [
+          811,
+          701
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "Draw forth the Monsters of th' Abyfs profound,",
+      "bbox_2d": [
+        25,
+        740,
+        799,
+        771
+      ],
+      "polygon": [
+        [
+          25,
+          746
+        ],
+        [
+          25,
+          770
+        ],
+        [
+          799,
+          770
+        ],
+        [
+          799,
+          740
+        ],
+        [
+          365,
+          740
+        ],
+        [
+          250,
+          740
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "Or fetch th' Aerial Eagle to the Ground.",
+      "bbox_2d": [
+        28,
+        779,
+        675,
+        808
+      ],
+      "polygon": [
+        [
+          28,
+          784
+        ],
+        [
+          28,
+          808
+        ],
+        [
+          494,
+          808
+        ],
+        [
+          674,
+          803
+        ],
+        [
+          674,
+          779
+        ],
+        [
+          53,
+          779
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "content": "'Till drooping, fick'ning, dying, they began",
+      "bbox_2d": [
+        26,
+        816,
+        755,
+        848
+      ],
+      "polygon": [
+        [
+          32,
+          821
+        ],
+        [
+          32,
+          848
+        ],
+        [
+          754,
+          844
+        ],
+        [
+          754,
+          816
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "content": "Whom they rever'd as God, to mourn as Man.",
+      "bbox_2d": [
+        29,
+        854,
+        765,
+        885
+      ],
+      "polygon": [
+        [
+          29,
+          854
+        ],
+        [
+          29,
+          885
+        ],
+        [
+          524,
+          885
+        ],
+        [
+          764,
+          880
+        ],
+        [
+          764,
+          854
+        ],
+        [
+          185,
+          854
+        ],
+        [
+          164,
+          854
+        ],
+        [
+          100,
+          854
+        ],
+        [
+          89,
+          854
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "label": "text",
+      "content": "225",
+      "bbox_2d": [
+        845,
+        854,
+        916,
+        876
+      ],
+      "polygon": [
+        [
+          845,
+          854
+        ],
+        [
+          845,
+          875
+        ],
+        [
+          915,
+          875
+        ],
+        [
+          915,
+          854
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "label": "text",
+      "content": "Then",
+      "bbox_2d": [
+        819,
+        895,
+        920,
+        920
+      ],
+      "polygon": [
+        [
+          819,
+          895
+        ],
+        [
+          819,
+          920
+        ],
+        [
+          920,
+          920
+        ],
+        [
+          920,
+          895
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "( 16 )",
+      "bbox_2d": [
+        392,
+        3,
+        555,
+        34
+      ],
+      "polygon": [
+        [
+          392,
+          3
+        ],
+        [
+          392,
+          34
+        ],
+        [
+          554,
+          34
+        ],
+        [
+          554,
+          3
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Then, looking up from Sire to Sire, explor'd",
+      "bbox_2d": [
+        44,
+        51,
+        750,
+        79
+      ],
+      "polygon": [
+        [
+          44,
+          56
+        ],
+        [
+          44,
+          79
+        ],
+        [
+          750,
+          79
+        ],
+        [
+          750,
+          51
+        ],
+        [
+          179,
+          51
+        ],
+        [
+          169,
+          51
+        ],
+        [
+          145,
+          51
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "One Great, First Father, and that first Ador'd.",
+      "bbox_2d": [
+        46,
+        86,
+        763,
+        115
+      ],
+      "polygon": [
+        [
+          46,
+          91
+        ],
+        [
+          46,
+          114
+        ],
+        [
+          762,
+          114
+        ],
+        [
+          757,
+          86
+        ],
+        [
+          275,
+          86
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Or plain Tradition that this All begun,",
+      "bbox_2d": [
+        44,
+        125,
+        627,
+        152
+      ],
+      "polygon": [
+        [
+          44,
+          130
+        ],
+        [
+          44,
+          152
+        ],
+        [
+          235,
+          152
+        ],
+        [
+          241,
+          152
+        ],
+        [
+          280,
+          152
+        ],
+        [
+          301,
+          152
+        ],
+        [
+          311,
+          152
+        ],
+        [
+          321,
+          152
+        ],
+        [
+          547,
+          152
+        ],
+        [
+          561,
+          152
+        ],
+        [
+          571,
+          152
+        ],
+        [
+          582,
+          152
+        ],
+        [
+          626,
+          152
+        ],
+        [
+          626,
+          125
+        ],
+        [
+          60,
+          125
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Convey'd unbroken Faith from Sire to Son,",
+      "bbox_2d": [
+        46,
+        162,
+        720,
+        187
+      ],
+      "polygon": [
+        [
+          46,
+          166
+        ],
+        [
+          46,
+          187
+        ],
+        [
+          430,
+          187
+        ],
+        [
+          660,
+          187
+        ],
+        [
+          680,
+          187
+        ],
+        [
+          700,
+          187
+        ],
+        [
+          719,
+          187
+        ],
+        [
+          719,
+          162
+        ],
+        [
+          221,
+          162
+        ],
+        [
+          190,
+          162
+        ],
+        [
+          81,
+          162
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "The Workman from the Work distinct was known, 230",
+      "bbox_2d": [
+        49,
+        200,
+        908,
+        225
+      ],
+      "polygon": [
+        [
+          49,
+          200
+        ],
+        [
+          49,
+          224
+        ],
+        [
+          907,
+          224
+        ],
+        [
+          907,
+          200
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "And simple Reason never fought but One :",
+      "bbox_2d": [
+        51,
+        235,
+        686,
+        263
+      ],
+      "polygon": [
+        [
+          51,
+          235
+        ],
+        [
+          51,
+          262
+        ],
+        [
+          540,
+          262
+        ],
+        [
+          685,
+          258
+        ],
+        [
+          685,
+          235
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "E're Wit oblique had broke that steady Light,",
+      "bbox_2d": [
+        49,
+        272,
+        728,
+        300
+      ],
+      "polygon": [
+        [
+          49,
+          272
+        ],
+        [
+          49,
+          300
+        ],
+        [
+          727,
+          300
+        ],
+        [
+          727,
+          272
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Man, like his Maker, saw, that all was right,",
+      "bbox_2d": [
+        54,
+        310,
+        761,
+        337
+      ],
+      "polygon": [
+        [
+          54,
+          310
+        ],
+        [
+          54,
+          336
+        ],
+        [
+          761,
+          336
+        ],
+        [
+          761,
+          310
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "To Virtue in the Paths of Pleasure trod,",
+      "bbox_2d": [
+        53,
+        347,
+        672,
+        372
+      ],
+      "polygon": [
+        [
+          53,
+          351
+        ],
+        [
+          53,
+          372
+        ],
+        [
+          671,
+          372
+        ],
+        [
+          671,
+          347
+        ],
+        [
+          154,
+          347
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "And own'd a Father when he own'd a God.",
+      "bbox_2d": [
+        57,
+        385,
+        721,
+        409
+      ],
+      "polygon": [
+        [
+          57,
+          385
+        ],
+        [
+          57,
+          409
+        ],
+        [
+          720,
+          409
+        ],
+        [
+          720,
+          385
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "LOVE all the Faith, and all th' Allegiance then;",
+      "bbox_2d": [
+        56,
+        422,
+        772,
+        448
+      ],
+      "polygon": [
+        [
+          56,
+          448
+        ],
+        [
+          176,
+          448
+        ],
+        [
+          207,
+          448
+        ],
+        [
+          226,
+          448
+        ],
+        [
+          231,
+          448
+        ],
+        [
+          771,
+          448
+        ],
+        [
+          771,
+          426
+        ],
+        [
+          747,
+          422
+        ],
+        [
+          712,
+          422
+        ],
+        [
+          707,
+          422
+        ],
+        [
+          692,
+          422
+        ],
+        [
+          81,
+          422
+        ],
+        [
+          62,
+          422
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "235",
+      "bbox_2d": [
+        844,
+        389,
+        914,
+        413
+      ],
+      "polygon": [
+        [
+          844,
+          389
+        ],
+        [
+          844,
+          413
+        ],
+        [
+          914,
+          413
+        ],
+        [
+          914,
+          389
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "For Nature knew no Right Divine in Men,",
+      "bbox_2d": [
+        56,
+        459,
+        703,
+        485
+      ],
+      "polygon": [
+        [
+          56,
+          459
+        ],
+        [
+          56,
+          485
+        ],
+        [
+          702,
+          485
+        ],
+        [
+          702,
+          459
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "No Ill could fear in God; and understood",
+      "bbox_2d": [
+        59,
+        496,
+        701,
+        521
+      ],
+      "polygon": [
+        [
+          59,
+          496
+        ],
+        [
+          59,
+          521
+        ],
+        [
+          700,
+          521
+        ],
+        [
+          700,
+          496
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "A Sovereign Being but a Sovereign Good.",
+      "bbox_2d": [
+        59,
+        532,
+        644,
+        560
+      ],
+      "polygon": [
+        [
+          59,
+          532
+        ],
+        [
+          59,
+          560
+        ],
+        [
+          643,
+          560
+        ],
+        [
+          643,
+          532
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "True Faith, true Policy, united ran,",
+      "bbox_2d": [
+        59,
+        570,
+        630,
+        598
+      ],
+      "polygon": [
+        [
+          59,
+          570
+        ],
+        [
+          59,
+          593
+        ],
+        [
+          629,
+          597
+        ],
+        [
+          629,
+          575
+        ],
+        [
+          560,
+          570
+        ],
+        [
+          525,
+          570
+        ],
+        [
+          509,
+          570
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "240",
+      "bbox_2d": [
+        852,
+        578,
+        919,
+        599
+      ],
+      "polygon": [
+        [
+          852,
+          578
+        ],
+        [
+          852,
+          583
+        ],
+        [
+          852,
+          588
+        ],
+        [
+          852,
+          598
+        ],
+        [
+          919,
+          598
+        ],
+        [
+          919,
+          578
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "That was but Love of God, and this of Man.",
+      "bbox_2d": [
+        62,
+        607,
+        765,
+        634
+      ],
+      "polygon": [
+        [
+          67,
+          607
+        ],
+        [
+          67,
+          634
+        ],
+        [
+          76,
+          634
+        ],
+        [
+          82,
+          634
+        ],
+        [
+          91,
+          634
+        ],
+        [
+          112,
+          634
+        ],
+        [
+          764,
+          634
+        ],
+        [
+          764,
+          613
+        ],
+        [
+          725,
+          607
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "Who first taught Souls enflav'd, and Realms undone",
+      "bbox_2d": [
+        107,
+        643,
+        923,
+        671
+      ],
+      "polygon": [
+        [
+          107,
+          643
+        ],
+        [
+          107,
+          671
+        ],
+        [
+          918,
+          671
+        ],
+        [
+          918,
+          643
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "Th'enormous Faith of Many made for One?",
+      "bbox_2d": [
+        68,
+        680,
+        771,
+        707
+      ],
+      "polygon": [
+        [
+          68,
+          680
+        ],
+        [
+          68,
+          703
+        ],
+        [
+          771,
+          707
+        ],
+        [
+          771,
+          680
+        ],
+        [
+          752,
+          680
+        ],
+        [
+          736,
+          680
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "content": "That proud Exception to all Nature's Laws,",
+      "bbox_2d": [
+        69,
+        716,
+        737,
+        745
+      ],
+      "polygon": [
+        [
+          69,
+          716
+        ],
+        [
+          69,
+          745
+        ],
+        [
+          737,
+          745
+        ],
+        [
+          737,
+          716
+        ],
+        [
+          622,
+          716
+        ],
+        [
+          567,
+          716
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "content": "T'invert the World, and counter-work its Cause? 245",
+      "bbox_2d": [
+        70,
+        753,
+        925,
+        785
+      ],
+      "polygon": [
+        [
+          70,
+          753
+        ],
+        [
+          76,
+          785
+        ],
+        [
+          170,
+          785
+        ],
+        [
+          175,
+          785
+        ],
+        [
+          220,
+          785
+        ],
+        [
+          226,
+          785
+        ],
+        [
+          250,
+          785
+        ],
+        [
+          925,
+          785
+        ],
+        [
+          925,
+          753
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "label": "text",
+      "content": "Force first made Conquest, and that Conquest Law;",
+      "bbox_2d": [
+        71,
+        791,
+        881,
+        822
+      ],
+      "polygon": [
+        [
+          71,
+          796
+        ],
+        [
+          77,
+          821
+        ],
+        [
+          881,
+          821
+        ],
+        [
+          881,
+          796
+        ],
+        [
+          751,
+          791
+        ],
+        [
+          716,
+          791
+        ],
+        [
+          681,
+          791
+        ],
+        [
+          671,
+          791
+        ],
+        [
+          601,
+          791
+        ],
+        [
+          581,
+          791
+        ],
+        [
+          476,
+          791
+        ],
+        [
+          446,
+          791
+        ],
+        [
+          416,
+          791
+        ],
+        [
+          377,
+          791
+        ],
+        [
+          341,
+          791
+        ],
+        [
+          77,
+          791
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "label": "text",
+      "content": "\"Till Superlition taught the Tyrant Awe,",
+      "bbox_2d": [
+        74,
+        827,
+        684,
+        858
+      ],
+      "polygon": [
+        [
+          74,
+          827
+        ],
+        [
+          74,
+          853
+        ],
+        [
+          174,
+          858
+        ],
+        [
+          683,
+          858
+        ],
+        [
+          683,
+          827
+        ]
+      ]
+    },
+    {
+      "index": 25,
+      "label": "text",
+      "content": "Then",
+      "bbox_2d": [
+        829,
+        870,
+        928,
+        900
+      ],
+      "polygon": [
+        [
+          829,
+          870
+        ],
+        [
+          829,
+          900
+        ],
+        [
+          927,
+          900
+        ],
+        [
+          927,
+          870
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "(17)",
+      "bbox_2d": [
+        396,
+        2,
+        559,
+        38
+      ],
+      "polygon": [
+        [
+          396,
+          2
+        ],
+        [
+          396,
+          38
+        ],
+        [
+          558,
+          38
+        ],
+        [
+          558,
+          2
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Then shar'd the Tyranny, and lent it Aid,\nAnd Gods of Conqu'rors, Slaves of Subjects made:\nShe, midst the Lightning's Blaze and Thunder's Sound, 250\nWhen rock'd the Mountains, and when groan'd the Ground,\n\nShe taught the Weak to bend, the Proud to pray,\nTo Pow'r unseen, and mightier far than they.\nShe, from the rending Earth and bursting Skies,\nSaw Gods descend, and Fiends infernal rise,\nHere fix'd the dreadful, there the bleist Abodes;\nFear made her Devils, and weak Hope her Gods:\nGods partial, changeful, passionate, unjust,\nWhose Attributes were Rage, Revenge, or Lust:\nSuch as the Souls of Cowards might conceive,\nAnd form'd like Tyrants, Tyrants would believe.\nZeal then, not Charity, became the Guide,\nAnd Hell was built on Spite; and Heav'n on Pride.\nThen sacred seem'd th' Etherial Vault no more;\nAltars grew Marble then, and reek'd with Gore:\nThen first the Flamen tasted living Food;\nNext his grim Idol smear'd with human Blood;",
+      "bbox_2d": [
+        15,
+        51,
+        934,
+        801
+      ],
+      "polygon": [
+        [
+          15,
+          56
+        ],
+        [
+          35,
+          800
+        ],
+        [
+          934,
+          800
+        ],
+        [
+          929,
+          51
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "paragraph_title",
+      "content": "C",
+      "bbox_2d": [
+        446,
+        800,
+        483,
+        822
+      ],
+      "polygon": [
+        [
+          446,
+          800
+        ],
+        [
+          446,
+          822
+        ],
+        [
+          482,
+          822
+        ],
+        [
+          482,
+          800
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "With",
+      "bbox_2d": [
+        837,
+        795,
+        932,
+        822
+      ],
+      "polygon": [
+        [
+          842,
+          795
+        ],
+        [
+          842,
+          822
+        ],
+        [
+          931,
+          822
+        ],
+        [
+          931,
+          795
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(18)",
+      "bbox_2d": [
+        405,
+        14,
+        577,
+        54
+      ],
+      "polygon": [
+        [
+          405,
+          14
+        ],
+        [
+          405,
+          54
+        ],
+        [
+          572,
+          54
+        ],
+        [
+          576,
+          49
+        ],
+        [
+          576,
+          14
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "With Heav'ns own Thunders shook the World below,",
+      "bbox_2d": [
+        25,
+        66,
+        943,
+        103
+      ],
+      "polygon": [
+        [
+          943,
+          66
+        ],
+        [
+          509,
+          66
+        ],
+        [
+          25,
+          75
+        ],
+        [
+          25,
+          103
+        ],
+        [
+          334,
+          103
+        ],
+        [
+          344,
+          103
+        ],
+        [
+          589,
+          98
+        ],
+        [
+          604,
+          98
+        ],
+        [
+          653,
+          98
+        ],
+        [
+          664,
+          98
+        ],
+        [
+          719,
+          98
+        ],
+        [
+          943,
+          98
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "And play'd the God an Engine on his Foe.",
+      "bbox_2d": [
+        24,
+        103,
+        718,
+        136
+      ],
+      "polygon": [
+        [
+          24,
+          108
+        ],
+        [
+          24,
+          136
+        ],
+        [
+          473,
+          136
+        ],
+        [
+          717,
+          130
+        ],
+        [
+          713,
+          103
+        ],
+        [
+          219,
+          103
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "So drives Self-Love, thro' Juft, and thro' Unjuft, 270 To One man's Pow'r, Ambition, Lucre, Luft:",
+      "bbox_2d": [
+        30,
+        135,
+        947,
+        200
+      ],
+      "polygon": [
+        [
+          30,
+          150
+        ],
+        [
+          30,
+          200
+        ],
+        [
+          391,
+          200
+        ],
+        [
+          421,
+          200
+        ],
+        [
+          721,
+          195
+        ],
+        [
+          732,
+          195
+        ],
+        [
+          946,
+          195
+        ],
+        [
+          946,
+          135
+        ],
+        [
+          271,
+          135
+        ],
+        [
+          156,
+          135
+        ],
+        [
+          61,
+          140
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Tue lame Self-Love, in All, becomes the Cause",
+      "bbox_2d": [
+        31,
+        199,
+        843,
+        235
+      ],
+      "polygon": [
+        [
+          843,
+          199
+        ],
+        [
+          211,
+          204
+        ],
+        [
+          56,
+          209
+        ],
+        [
+          31,
+          209
+        ],
+        [
+          31,
+          235
+        ],
+        [
+          733,
+          230
+        ],
+        [
+          739,
+          230
+        ],
+        [
+          803,
+          230
+        ],
+        [
+          838,
+          230
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Of what restrains him, Government and Laws.",
+      "bbox_2d": [
+        32,
+        235,
+        829,
+        267
+      ],
+      "polygon": [
+        [
+          829,
+          235
+        ],
+        [
+          111,
+          240
+        ],
+        [
+          32,
+          246
+        ],
+        [
+          32,
+          266
+        ],
+        [
+          634,
+          266
+        ],
+        [
+          829,
+          261
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "For what one likes, if others like as well,",
+      "bbox_2d": [
+        32,
+        269,
+        733,
+        301
+      ],
+      "polygon": [
+        [
+          32,
+          301
+        ],
+        [
+          543,
+          301
+        ],
+        [
+          732,
+          296
+        ],
+        [
+          732,
+          269
+        ],
+        [
+          305,
+          269
+        ],
+        [
+          76,
+          274
+        ],
+        [
+          71,
+          274
+        ],
+        [
+          37,
+          274
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "What ferves one Will when many Wills rebel? 275",
+      "bbox_2d": [
+        41,
+        305,
+        947,
+        335
+      ],
+      "polygon": [
+        [
+          71,
+          330
+        ],
+        [
+          71,
+          335
+        ],
+        [
+          663,
+          335
+        ],
+        [
+          947,
+          335
+        ],
+        [
+          947,
+          310
+        ],
+        [
+          907,
+          305
+        ],
+        [
+          265,
+          305
+        ],
+        [
+          76,
+          310
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "How shall he keep, what sleeping or awake",
+      "bbox_2d": [
+        31,
+        339,
+        766,
+        372
+      ],
+      "polygon": [
+        [
+          36,
+          345
+        ],
+        [
+          36,
+          355
+        ],
+        [
+          51,
+          356
+        ],
+        [
+          36,
+          361
+        ],
+        [
+          36,
+          372
+        ],
+        [
+          661,
+          372
+        ],
+        [
+          765,
+          366
+        ],
+        [
+          765,
+          339
+        ],
+        [
+          346,
+          339
+        ],
+        [
+          266,
+          339
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "A weaker may furprize, a stronger take?",
+      "bbox_2d": [
+        34,
+        375,
+        726,
+        405
+      ],
+      "polygon": [
+        [
+          34,
+          380
+        ],
+        [
+          34,
+          405
+        ],
+        [
+          685,
+          405
+        ],
+        [
+          725,
+          400
+        ],
+        [
+          725,
+          375
+        ],
+        [
+          180,
+          375
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "His Safety must his Liberty reftrain ;",
+      "bbox_2d": [
+        35,
+        410,
+        610,
+        440
+      ],
+      "polygon": [
+        [
+          35,
+          415
+        ],
+        [
+          35,
+          440
+        ],
+        [
+          495,
+          440
+        ],
+        [
+          520,
+          440
+        ],
+        [
+          530,
+          440
+        ],
+        [
+          610,
+          435
+        ],
+        [
+          610,
+          410
+        ],
+        [
+          175,
+          410
+        ],
+        [
+          170,
+          410
+        ],
+        [
+          155,
+          410
+        ],
+        [
+          115,
+          410
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "All join to guard what each desires to gain.",
+      "bbox_2d": [
+        36,
+        444,
+        734,
+        474
+      ],
+      "polygon": [
+        [
+          36,
+          473
+        ],
+        [
+          375,
+          473
+        ],
+        [
+          699,
+          473
+        ],
+        [
+          729,
+          473
+        ],
+        [
+          733,
+          444
+        ],
+        [
+          41,
+          444
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Forc'd into Virtue thus by Self-Defence,",
+      "bbox_2d": [
+        35,
+        479,
+        711,
+        507
+      ],
+      "polygon": [
+        [
+          35,
+          479
+        ],
+        [
+          35,
+          507
+        ],
+        [
+          505,
+          507
+        ],
+        [
+          710,
+          502
+        ],
+        [
+          710,
+          479
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "280",
+      "bbox_2d": [
+        884,
+        483,
+        958,
+        505
+      ],
+      "polygon": [
+        [
+          884,
+          483
+        ],
+        [
+          884,
+          505
+        ],
+        [
+          957,
+          505
+        ],
+        [
+          957,
+          483
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Ev'n Kings learn'd Justice and Benevolence:",
+      "bbox_2d": [
+        37,
+        514,
+        784,
+        543
+      ],
+      "polygon": [
+        [
+          37,
+          514
+        ],
+        [
+          37,
+          543
+        ],
+        [
+          460,
+          543
+        ],
+        [
+          784,
+          543
+        ],
+        [
+          784,
+          514
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "Self-Love for look the Path it first purfu'd,",
+      "bbox_2d": [
+        38,
+        549,
+        750,
+        578
+      ],
+      "polygon": [
+        [
+          38,
+          549
+        ],
+        [
+          38,
+          577
+        ],
+        [
+          323,
+          577
+        ],
+        [
+          329,
+          577
+        ],
+        [
+          339,
+          577
+        ],
+        [
+          384,
+          577
+        ],
+        [
+          429,
+          577
+        ],
+        [
+          605,
+          577
+        ],
+        [
+          629,
+          577
+        ],
+        [
+          650,
+          577
+        ],
+        [
+          715,
+          577
+        ],
+        [
+          735,
+          577
+        ],
+        [
+          750,
+          577
+        ],
+        [
+          750,
+          549
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "And found the private in the publick Good.",
+      "bbox_2d": [
+        41,
+        583,
+        733,
+        613
+      ],
+      "polygon": [
+        [
+          41,
+          583
+        ],
+        [
+          41,
+          612
+        ],
+        [
+          524,
+          612
+        ],
+        [
+          529,
+          612
+        ],
+        [
+          553,
+          612
+        ],
+        [
+          733,
+          608
+        ],
+        [
+          733,
+          583
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "'Twas then, the studious Head or gen'rous Mind,",
+      "bbox_2d": [
+        78,
+        620,
+        883,
+        650
+      ],
+      "polygon": [
+        [
+          78,
+          625
+        ],
+        [
+          78,
+          650
+        ],
+        [
+          882,
+          650
+        ],
+        [
+          882,
+          620
+        ],
+        [
+          333,
+          620
+        ],
+        [
+          257,
+          620
+        ],
+        [
+          243,
+          620
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "Follow'r of God, or Friend of Humankind, 285",
+      "bbox_2d": [
+        42,
+        656,
+        956,
+        686
+      ],
+      "polygon": [
+        [
+          42,
+          661
+        ],
+        [
+          42,
+          686
+        ],
+        [
+          956,
+          686
+        ],
+        [
+          956,
+          656
+        ],
+        [
+          307,
+          656
+        ],
+        [
+          176,
+          656
+        ],
+        [
+          162,
+          656
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "Poet or Patriot, rose, but to restore",
+      "bbox_2d": [
+        42,
+        693,
+        658,
+        723
+      ],
+      "polygon": [
+        [
+          42,
+          713
+        ],
+        [
+          47,
+          722
+        ],
+        [
+          454,
+          722
+        ],
+        [
+          657,
+          718
+        ],
+        [
+          657,
+          693
+        ],
+        [
+          47,
+          693
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "The Faith and Moral, Nature gave before;",
+      "bbox_2d": [
+        43,
+        728,
+        756,
+        757
+      ],
+      "polygon": [
+        [
+          43,
+          728
+        ],
+        [
+          43,
+          756
+        ],
+        [
+          755,
+          756
+        ],
+        [
+          755,
+          728
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "content": "Re-lum'd her ancient Light, not kindled new;",
+      "bbox_2d": [
+        46,
+        760,
+        785,
+        789
+      ],
+      "polygon": [
+        [
+          46,
+          760
+        ],
+        [
+          51,
+          788
+        ],
+        [
+          646,
+          788
+        ],
+        [
+          651,
+          788
+        ],
+        [
+          661,
+          788
+        ],
+        [
+          700,
+          788
+        ],
+        [
+          706,
+          788
+        ],
+        [
+          785,
+          788
+        ],
+        [
+          785,
+          760
+        ],
+        [
+          376,
+          760
+        ],
+        [
+          370,
+          760
+        ],
+        [
+          201,
+          760
+        ],
+        [
+          196,
+          760
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "content": "If not God's Image, yet his Shadow drew;",
+      "bbox_2d": [
+        50,
+        795,
+        745,
+        825
+      ],
+      "polygon": [
+        [
+          50,
+          795
+        ],
+        [
+          50,
+          825
+        ],
+        [
+          744,
+          825
+        ],
+        [
+          744,
+          795
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "label": "text",
+      "content": "Taught",
+      "bbox_2d": [
+        830,
+        828,
+        965,
+        858
+      ],
+      "polygon": [
+        [
+          830,
+          828
+        ],
+        [
+          830,
+          858
+        ],
+        [
+          964,
+          858
+        ],
+        [
+          964,
+          828
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "( 19 )",
+      "bbox_2d": [
+        418,
+        17,
+        562,
+        57
+      ],
+      "polygon": [
+        [
+          418,
+          17
+        ],
+        [
+          418,
+          56
+        ],
+        [
+          561,
+          56
+        ],
+        [
+          561,
+          17
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Taught Pow'rs due Use to People and to Kings, 290",
+      "bbox_2d": [
+        74,
+        72,
+        884,
+        105
+      ],
+      "polygon": [
+        [
+          74,
+          72
+        ],
+        [
+          74,
+          105
+        ],
+        [
+          884,
+          105
+        ],
+        [
+          884,
+          82
+        ],
+        [
+          809,
+          77
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Taught, not to flack, nor strain, its tender strings;",
+      "bbox_2d": [
+        70,
+        108,
+        825,
+        140
+      ],
+      "polygon": [
+        [
+          70,
+          108
+        ],
+        [
+          70,
+          140
+        ],
+        [
+          824,
+          140
+        ],
+        [
+          824,
+          108
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "The Less, and Greater, set so justly true,",
+      "bbox_2d": [
+        69,
+        144,
+        658,
+        175
+      ],
+      "polygon": [
+        [
+          69,
+          144
+        ],
+        [
+          69,
+          175
+        ],
+        [
+          658,
+          175
+        ],
+        [
+          658,
+          144
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "That touching one, must strike the other too,",
+      "bbox_2d": [
+        68,
+        180,
+        711,
+        209
+      ],
+      "polygon": [
+        [
+          68,
+          180
+        ],
+        [
+          68,
+          208
+        ],
+        [
+          711,
+          208
+        ],
+        [
+          711,
+          180
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "And jaffing Int'rests of themselves-create",
+      "bbox_2d": [
+        69,
+        213,
+        678,
+        242
+      ],
+      "polygon": [
+        [
+          69,
+          213
+        ],
+        [
+          69,
+          242
+        ],
+        [
+          329,
+          242
+        ],
+        [
+          678,
+          242
+        ],
+        [
+          678,
+          213
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "The according Mufick of a well-mix'd State.",
+      "bbox_2d": [
+        67,
+        250,
+        708,
+        279
+      ],
+      "polygon": [
+        [
+          67,
+          250
+        ],
+        [
+          67,
+          278
+        ],
+        [
+          707,
+          278
+        ],
+        [
+          703,
+          250
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "295",
+      "bbox_2d": [
+        816,
+        256,
+        876,
+        280
+      ],
+      "polygon": [
+        [
+          816,
+          256
+        ],
+        [
+          816,
+          280
+        ],
+        [
+          875,
+          280
+        ],
+        [
+          875,
+          256
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Such is the World's great Harmony, that springs",
+      "bbox_2d": [
+        69,
+        284,
+        789,
+        315
+      ],
+      "polygon": [
+        [
+          69,
+          284
+        ],
+        [
+          69,
+          314
+        ],
+        [
+          99,
+          314
+        ],
+        [
+          229,
+          314
+        ],
+        [
+          788,
+          314
+        ],
+        [
+          788,
+          284
+        ],
+        [
+          639,
+          284
+        ],
+        [
+          623,
+          284
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "From Union, Order, full Confent of Things!",
+      "bbox_2d": [
+        66,
+        318,
+        714,
+        348
+      ],
+      "polygon": [
+        [
+          66,
+          318
+        ],
+        [
+          66,
+          343
+        ],
+        [
+          96,
+          348
+        ],
+        [
+          141,
+          348
+        ],
+        [
+          180,
+          348
+        ],
+        [
+          236,
+          348
+        ],
+        [
+          713,
+          348
+        ],
+        [
+          709,
+          318
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "Where Small and Great,where Weak and Mighty,made",
+      "bbox_2d": [
+        65,
+        354,
+        876,
+        385
+      ],
+      "polygon": [
+        [
+          65,
+          354
+        ],
+        [
+          65,
+          385
+        ],
+        [
+          876,
+          385
+        ],
+        [
+          876,
+          360
+        ],
+        [
+          826,
+          354
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "To serve, not suffer, strengthen, not invade,",
+      "bbox_2d": [
+        64,
+        386,
+        731,
+        416
+      ],
+      "polygon": [
+        [
+          64,
+          386
+        ],
+        [
+          64,
+          416
+        ],
+        [
+          730,
+          416
+        ],
+        [
+          730,
+          392
+        ],
+        [
+          440,
+          386
+        ],
+        [
+          260,
+          386
+        ],
+        [
+          244,
+          386
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "More pow'rful each, as needful to the reft.",
+      "bbox_2d": [
+        64,
+        419,
+        664,
+        449
+      ],
+      "polygon": [
+        [
+          64,
+          419
+        ],
+        [
+          64,
+          444
+        ],
+        [
+          94,
+          449
+        ],
+        [
+          663,
+          449
+        ],
+        [
+          659,
+          419
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "And in Proportion as it blesses, bleft,",
+      "bbox_2d": [
+        64,
+        453,
+        614,
+        481
+      ],
+      "polygon": [
+        [
+          64,
+          453
+        ],
+        [
+          64,
+          481
+        ],
+        [
+          614,
+          481
+        ],
+        [
+          609,
+          453
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Draw to one Point, and to one Centre bring",
+      "bbox_2d": [
+        63,
+        487,
+        722,
+        514
+      ],
+      "polygon": [
+        [
+          63,
+          487
+        ],
+        [
+          63,
+          514
+        ],
+        [
+          717,
+          514
+        ],
+        [
+          717,
+          492
+        ],
+        [
+          647,
+          487
+        ],
+        [
+          588,
+          487
+        ],
+        [
+          422,
+          487
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "300",
+      "bbox_2d": [
+        813,
+        431,
+        873,
+        452
+      ],
+      "polygon": [
+        [
+          813,
+          431
+        ],
+        [
+          813,
+          452
+        ],
+        [
+          872,
+          452
+        ],
+        [
+          872,
+          431
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "Beast, Man, or Angel, Servant, Lord, or King. For Forms of Government let Fools coneft;",
+      "bbox_2d": [
+        60,
+        521,
+        761,
+        582
+      ],
+      "polygon": [
+        [
+          60,
+          521
+        ],
+        [
+          60,
+          581
+        ],
+        [
+          741,
+          581
+        ],
+        [
+          752,
+          566
+        ],
+        [
+          761,
+          561
+        ],
+        [
+          761,
+          521
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "What'ere is best administred, is best : \"",
+      "bbox_2d": [
+        58,
+        588,
+        632,
+        616
+      ],
+      "polygon": [
+        [
+          58,
+          615
+        ],
+        [
+          592,
+          615
+        ],
+        [
+          602,
+          604
+        ],
+        [
+          612,
+          594
+        ],
+        [
+          612,
+          588
+        ],
+        [
+          58,
+          588
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "305",
+      "bbox_2d": [
+        806,
+        595,
+        867,
+        618
+      ],
+      "polygon": [
+        [
+          806,
+          595
+        ],
+        [
+          806,
+          617
+        ],
+        [
+          867,
+          617
+        ],
+        [
+          867,
+          595
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "For Modes of Faith let gracelefs Zealots fight;",
+      "bbox_2d": [
+        57,
+        624,
+        728,
+        652
+      ],
+      "polygon": [
+        [
+          57,
+          624
+        ],
+        [
+          57,
+          652
+        ],
+        [
+          237,
+          652
+        ],
+        [
+          243,
+          652
+        ],
+        [
+          492,
+          652
+        ],
+        [
+          723,
+          652
+        ],
+        [
+          727,
+          624
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "His can't be wrong whose Life is in the right.",
+      "bbox_2d": [
+        57,
+        660,
+        719,
+        689
+      ],
+      "polygon": [
+        [
+          57,
+          660
+        ],
+        [
+          57,
+          688
+        ],
+        [
+          718,
+          688
+        ],
+        [
+          718,
+          660
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "content": "All must be false, that thwart this One Great End,",
+      "bbox_2d": [
+        59,
+        693,
+        752,
+        721
+      ],
+      "polygon": [
+        [
+          59,
+          693
+        ],
+        [
+          59,
+          721
+        ],
+        [
+          751,
+          721
+        ],
+        [
+          751,
+          693
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "content": "And all of God, that bless Mankind, or mend. 310",
+      "bbox_2d": [
+        60,
+        728,
+        862,
+        757
+      ],
+      "polygon": [
+        [
+          60,
+          728
+        ],
+        [
+          60,
+          752
+        ],
+        [
+          85,
+          757
+        ],
+        [
+          100,
+          757
+        ],
+        [
+          105,
+          757
+        ],
+        [
+          521,
+          757
+        ],
+        [
+          536,
+          757
+        ],
+        [
+          561,
+          757
+        ],
+        [
+          852,
+          757
+        ],
+        [
+          861,
+          752
+        ],
+        [
+          861,
+          728
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "label": "text",
+      "content": "Man, like the gen'rous Vine, supported lives,",
+      "bbox_2d": [
+        87,
+        762,
+        758,
+        791
+      ],
+      "polygon": [
+        [
+          87,
+          767
+        ],
+        [
+          87,
+          791
+        ],
+        [
+          758,
+          791
+        ],
+        [
+          753,
+          762
+        ],
+        [
+          733,
+          762
+        ],
+        [
+          728,
+          762
+        ],
+        [
+          714,
+          762
+        ],
+        [
+          698,
+          762
+        ],
+        [
+          649,
+          762
+        ],
+        [
+          644,
+          762
+        ],
+        [
+          355,
+          762
+        ],
+        [
+          330,
+          762
+        ],
+        [
+          97,
+          762
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "label": "text",
+      "content": "The Strength he gains is from th' Embrace he gives.",
+      "bbox_2d": [
+        54,
+        797,
+        791,
+        827
+      ],
+      "polygon": [
+        [
+          54,
+          797
+        ],
+        [
+          59,
+          827
+        ],
+        [
+          515,
+          827
+        ],
+        [
+          790,
+          827
+        ],
+        [
+          790,
+          797
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "( 20 )",
+      "bbox_2d": [
+        429,
+        6,
+        606,
+        42
+      ],
+      "polygon": [
+        [
+          429,
+          6
+        ],
+        [
+          429,
+          42
+        ],
+        [
+          449,
+          42
+        ],
+        [
+          605,
+          37
+        ],
+        [
+          605,
+          6
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "On their own Axis as the Planets run,\nYet make at once their Circle round the Sun:\nSo two consistent Motions act the Soul,\nAnd one regards Itself, and one the Whole.\nThus God and Nature link'd the general Frame.\nAnd bade Self-Love and Social be the same.",
+      "bbox_2d": [
+        54,
+        57,
+        925,
+        273
+      ],
+      "polygon": [
+        [
+          54,
+          67
+        ],
+        [
+          59,
+          273
+        ],
+        [
+          924,
+          273
+        ],
+        [
+          924,
+          62
+        ],
+        [
+          444,
+          57
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "paragraph_title",
+      "content": "FINIS.",
+      "bbox_2d": [
+        339,
+        377,
+        714,
+        411
+      ],
+      "polygon": [
+        [
+          339,
+          382
+        ],
+        [
+          339,
+          411
+        ],
+        [
+          713,
+          411
+        ],
+        [
+          713,
+          377
+        ],
+        [
+          619,
+          377
+        ],
+        [
+          603,
+          377
+        ],
+        [
+          549,
+          377
+        ],
+        [
+          514,
+          377
+        ],
+        [
+          500,
+          377
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        178,
+        510,
+        856,
+        846
+      ],
+      "polygon": [
+        [
+          178,
+          510
+        ],
+        [
+          178,
+          846
+        ],
+        [
+          856,
+          846
+        ],
+        [
+          856,
+          510
+        ]
+      ]
+    }
+  ],
+  []
+]

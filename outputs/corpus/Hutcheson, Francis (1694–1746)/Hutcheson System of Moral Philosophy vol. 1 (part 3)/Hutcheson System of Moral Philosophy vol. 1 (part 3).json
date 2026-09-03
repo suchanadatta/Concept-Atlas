@@ -1,0 +1,6150 @@
+[
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        239,
+        50,
+        590,
+        74
+      ],
+      "polygon": [
+        [
+          239,
+          50
+        ],
+        [
+          239,
+          74
+        ],
+        [
+          590,
+          74
+        ],
+        [
+          590,
+          50
+        ]
+      ],
+      "content": "How PROPERTY is acquired.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        766,
+        56,
+        815,
+        76
+      ],
+      "polygon": [
+        [
+          766,
+          56
+        ],
+        [
+          766,
+          76
+        ],
+        [
+          815,
+          76
+        ],
+        [
+          815,
+          56
+        ]
+      ],
+      "content": "329",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        108,
+        81,
+        725,
+        214
+      ],
+      "polygon": [
+        [
+          108,
+          81
+        ],
+        [
+          108,
+          214
+        ],
+        [
+          725,
+          214
+        ],
+        [
+          725,
+          81
+        ]
+      ],
+      "content": "we may employ the furplus as matter of beneficence, or of barter for goods of different kinds which we may need. Otherways each one would be obliged to practise all forts of mechanick arts by turns, without attaining dexterity in any; which would be a public detriment.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        111,
+        215,
+        723,
+        328
+      ],
+      "polygon": [
+        [
+          111,
+          215
+        ],
+        [
+          111,
+          328
+        ],
+        [
+          723,
+          328
+        ],
+        [
+          723,
+          215
+        ]
+      ],
+      "content": "The several rules of property as they obtain in natural liberty, like all other special laws of nature, not only admit exceptions in cases of great necessity, but may justly be altered and limited under civil polity, as the good of the state requires.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        113,
+        328,
+        727,
+        710
+      ],
+      "polygon": [
+        [
+          113,
+          328
+        ],
+        [
+          118,
+          710
+        ],
+        [
+          727,
+          710
+        ],
+        [
+          722,
+          328
+        ]
+      ],
+      "content": "V. The origin of property above explained, shews the reason why such things as are inexhaustible and answer the purposes of all, and need no labour to make them useful, should remain in common to all, as the air, the water of rivers, and the ocean, and even strait seas, which can give passage to all ships without being made worse. Where the use is inexhaustible, but some expence is requisite to secure it, this may be a just reason for obliging all who share in it to contribute in an equitable manner to the necessary expence, such as that of light-houses, or ships of force to secure the seas from pyrates. But the property in the shores on both sides of such straits can give no right to exclude any who are ready to make such equitable contribution, from passing such straits, or carrying on any innocent commerce with the nations who live within them.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        120,
+        709,
+        726,
+        777
+      ],
+      "polygon": [
+        [
+          120,
+          709
+        ],
+        [
+          120,
+          766
+        ],
+        [
+          140,
+          771
+        ],
+        [
+          150,
+          776
+        ],
+        [
+          726,
+          776
+        ],
+        [
+          726,
+          709
+        ]
+      ],
+      "content": "Where indeed the use of any adjacent parts of the sea or shore allowed to foreigners, may endanger our Vol. I. T t",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "aside_text",
+      "bbox_2d": [
+        722,
+        330,
+        821,
+        358
+      ],
+      "polygon": [
+        [
+          722,
+          335
+        ],
+        [
+          722,
+          357
+        ],
+        [
+          821,
+          357
+        ],
+        [
+          821,
+          330
+        ],
+        [
+          728,
+          330
+        ]
+      ],
+      "content": "What things are still common.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        170,
+        54,
+        221,
+        76
+      ],
+      "polygon": [
+        [
+          170,
+          54
+        ],
+        [
+          170,
+          76
+        ],
+        [
+          220,
+          76
+        ],
+        [
+          220,
+          54
+        ]
+      ],
+      "content": "330",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "aside_text",
+      "bbox_2d": [
+        176,
+        628,
+        280,
+        684
+      ],
+      "polygon": [
+        [
+          176,
+          628
+        ],
+        [
+          176,
+          683
+        ],
+        [
+          270,
+          683
+        ],
+        [
+          275,
+          678
+        ],
+        [
+          280,
+          673
+        ],
+        [
+          280,
+          628
+        ]
+      ],
+      "content": "Things left by God in negative community, not positive.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 2,
+      "label": "header",
+      "bbox_2d": [
+        397,
+        48,
+        751,
+        72
+      ],
+      "polygon": [
+        [
+          397,
+          48
+        ],
+        [
+          397,
+          71
+        ],
+        [
+          750,
+          71
+        ],
+        [
+          750,
+          48
+        ]
+      ],
+      "content": "How PROPERTY is acquired.",
+      "native_label": "header"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        166,
+        77,
+        893,
+        305
+      ],
+      "polygon": [
+        [
+          171,
+          87
+        ],
+        [
+          171,
+          300
+        ],
+        [
+          893,
+          305
+        ],
+        [
+          883,
+          77
+        ],
+        [
+          326,
+          77
+        ]
+      ],
+      "content": "poissessions, such as mooring of ships of force in those bays which run up into the heart of a country; we may justly refuse it, unless sufficient security is given against danger. We may likeways refuse to others, or exclude them from such use of things naturally common and inexhaustible, as would occasion some uneasy servitude upon our lands; such as fishing in rivers, or drawing water from them through our ground, tho' the river were not at all appropriated by us, and the fishing were inexhaustible.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        164,
+        305,
+        893,
+        624
+      ],
+      "polygon": [
+        [
+          169,
+          305
+        ],
+        [
+          184,
+          604
+        ],
+        [
+          244,
+          609
+        ],
+        [
+          253,
+          579
+        ],
+        [
+          264,
+          624
+        ],
+        [
+          892,
+          624
+        ],
+        [
+          887,
+          305
+        ]
+      ],
+      "content": "'Tis scarce conceivable upon what other foundation than compact, or consent of neighbouring states, any one can claim any property in the sea, or any right in it superior to that of other nations. Each nation indeed for its own defence, seems to have a right to prevent any ships of force of other nations to fail so near its coast that they could annoy any of its subjects in their possessions. But this property can extend no further than a gun-shot. Hovering indeed without necessity upon our coasts, tho' at a greater distance, may give just suspicion of some hostile design, and may be a just reason for expostulation and demanding security, or obliging them by force to withdraw to a greater distance.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        272,
+        624,
+        895,
+        764
+      ],
+      "polygon": [
+        [
+          272,
+          629
+        ],
+        [
+          277,
+          759
+        ],
+        [
+          287,
+          764
+        ],
+        [
+          895,
+          764
+        ],
+        [
+          895,
+          624
+        ]
+      ],
+      "content": "From what is said we see abundantly, that this earth, and all it contains, was placed by God in that state the moralists call negative community, and not positive. The negative is \"the state of things not yet in property, but lying open to the occupation of any one.\" Positive community is the \"state of things",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        231,
+        47,
+        589,
+        72
+      ],
+      "polygon": [
+        [
+          231,
+          47
+        ],
+        [
+          231,
+          67
+        ],
+        [
+          445,
+          72
+        ],
+        [
+          589,
+          72
+        ],
+        [
+          589,
+          47
+        ]
+      ],
+      "content": "How PROPERTY is acquired.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        776,
+        53,
+        824,
+        75
+      ],
+      "polygon": [
+        [
+          776,
+          53
+        ],
+        [
+          776,
+          75
+        ],
+        [
+          823,
+          75
+        ],
+        [
+          823,
+          53
+        ]
+      ],
+      "content": "331",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        101,
+        76,
+        735,
+        398
+      ],
+      "polygon": [
+        [
+          101,
+          82
+        ],
+        [
+          106,
+          398
+        ],
+        [
+          735,
+          393
+        ],
+        [
+          735,
+          82
+        ]
+      ],
+      "content": "in which not any individual but a whole society have an undivided property.\" Goods in this positive community neither any individual member of the society, nor any other, can occupy or dispose of without consent of the whole society, or those who govern it. Now from the preceding reasons 'tis plain, that any man could acquire property, and see his right to acquire any thing he first occupied, without consulting the rest of mankind; and it would be injurious in any other person to hinder him. Thus we need not have recourse to any old conventions or compacts, with Grotius and Puffendorf, in explaining the original of property: nor to any decree or grant of our first parents, with Filmer.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        107,
+        397,
+        740,
+        697
+      ],
+      "polygon": [
+        [
+          107,
+          397
+        ],
+        [
+          107,
+          696
+        ],
+        [
+          740,
+          696
+        ],
+        [
+          735,
+          397
+        ]
+      ],
+      "content": "VI. All things fit for human use either yet remain in this negative community, or are in the property of individual men, or of societies. Bona universitatum, or the goods of corporations are in the property of societies; the res nullius of the Civilians, viz. things sacred as temples and their utensils, and lands for the support of religious orders, and the defraying any expences of worship; burial-places and what things are employed in funeral-rites; and places railed in or secured from promiscuous use, such as the walls of cities; are all in property either of some larger society, or some family; tho' some superstitious laws may restrain the proprietors from a free and full use of",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "footnote",
+      "bbox_2d": [
+        116,
+        715,
+        740,
+        762
+      ],
+      "polygon": [
+        [
+          116,
+          715
+        ],
+        [
+          116,
+          762
+        ],
+        [
+          739,
+          762
+        ],
+        [
+          739,
+          715
+        ]
+      ],
+      "content": "+ Nullius sunt res sacrae, religiofae, et sanctae. Quod enim divini juris est, id nullius in bonis est. Instit. l. ii. tit. i. sect 7. &c. where these three forts of goods are explained according to the notions then prevailing.",
+      "native_label": "footnote"
+    },
+    {
+      "index": 5,
+      "label": "aside_text",
+      "bbox_2d": [
+        734,
+        395,
+        833,
+        423
+      ],
+      "polygon": [
+        [
+          734,
+          400
+        ],
+        [
+          734,
+          422
+        ],
+        [
+          833,
+          422
+        ],
+        [
+          833,
+          395
+        ],
+        [
+          739,
+          395
+        ]
+      ],
+      "content": "Mislakes about the res nullius.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 6,
+      "label": "number",
+      "bbox_2d": [
+        389,
+        762,
+        472,
+        781
+      ],
+      "polygon": [
+        [
+          389,
+          762
+        ],
+        [
+          389,
+          781
+        ],
+        [
+          471,
+          781
+        ],
+        [
+          471,
+          762
+        ]
+      ],
+      "content": "Tt2",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        180,
+        63,
+        228,
+        85
+      ],
+      "polygon": [
+        [
+          180,
+          63
+        ],
+        [
+          180,
+          85
+        ],
+        [
+          227,
+          85
+        ],
+        [
+          227,
+          63
+        ]
+      ],
+      "content": "332",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        401,
+        58,
+        743,
+        81
+      ],
+      "polygon": [
+        [
+          401,
+          58
+        ],
+        [
+          401,
+          81
+        ],
+        [
+          742,
+          81
+        ],
+        [
+          742,
+          58
+        ]
+      ],
+      "content": "How PROPERTY is acquired.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        177,
+        87,
+        882,
+        608
+      ],
+      "polygon": [
+        [
+          187,
+          87
+        ],
+        [
+          177,
+          533
+        ],
+        [
+          197,
+          603
+        ],
+        [
+          881,
+          608
+        ],
+        [
+          881,
+          87
+        ]
+      ],
+      "content": "them, or from converting them to other uses than what they were first destined to. These laws are often very foolish, and founded upon some confused inexplicable notions. All such goods are truly designed for the use of men alone. The old proprietors, who gave them for these purposes, may have been moved by devotion toward God to make such donations for the use of certain orders employed in religious offices, or of societies, to accommodate such as inclined to worship in these places; or for the burial of their dead; or for defence of societies by fortifications. But none of these lands or goods can yield any use to God, nor can his rights receive any increase or diminution by any deeds of men. Such donations are acceptable to him as far as they do good to his creatures, by promoting their piety, virtue, and happiness. Devotion to God may as justly move men to make donations for civil uses to their country, or friends; and these may be as wise and acceptable to God, as any donations to uses commonly called pious. But none thence imagine that there is some mystical quality infused into such goods that they cannot be applied upon wise occasions to other purposes.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        280,
+        605,
+        882,
+        766
+      ],
+      "polygon": [
+        [
+          280,
+          605
+        ],
+        [
+          280,
+          766
+        ],
+        [
+          882,
+          766
+        ],
+        [
+          877,
+          605
+        ]
+      ],
+      "content": "\"Tis a natural evidence of piety in any person or society to provide whatever is requisite to accommodate men in publick worship, in proportion to the wealth of a country. It would evidence avarice, and want of piety, if men would not spare from their private use what is requisite to make places of publick worship safe, convenient, and agreeable. When they",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        235,
+        47,
+        588,
+        72
+      ],
+      "polygon": [
+        [
+          235,
+          52
+        ],
+        [
+          235,
+          72
+        ],
+        [
+          587,
+          72
+        ],
+        [
+          587,
+          47
+        ],
+        [
+          434,
+          47
+        ],
+        [
+          424,
+          47
+        ],
+        [
+          344,
+          47
+        ],
+        [
+          299,
+          47
+        ],
+        [
+          240,
+          47
+        ]
+      ],
+      "content": "How PROPERTY is acquired.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        105,
+        76,
+        721,
+        434
+      ],
+      "polygon": [
+        [
+          105,
+          82
+        ],
+        [
+          105,
+          434
+        ],
+        [
+          721,
+          434
+        ],
+        [
+          721,
+          82
+        ]
+      ],
+      "content": "are mean and despicable in proportion to private buildings, the attending there may be disagreeable. 'Tis yet worse if those whose office it is to preside in public worship, and instruct men in the duties of life, are not so supported as may enable them to attain knowledge themselves, and discharge their useful office. But when sufficient provision is made for all these purposes, 'tis folly and superstition to employ that wealth which might do more good in trade or other civil purposes, either on expensive ornaments of churches, or on their furniture, or in so enriching the instructors of the people as to give them avocations from their business, or temptations to luxury, ambition, and avarice; or to maintain more of them than are requisite. 'Tis still more foolish to maintain men in floth, or useless ways of life.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        109,
+        434,
+        723,
+        749
+      ],
+      "polygon": [
+        [
+          109,
+          434
+        ],
+        [
+          109,
+          748
+        ],
+        [
+          723,
+          748
+        ],
+        [
+          718,
+          434
+        ]
+      ],
+      "content": "A beautiful metonymy has been artfully abused by some orders commonly called religious, with the best selfish purposes. Donations to them have been called gifts to God, as all wise liberality and charity may justly be called. But these donations alone which are made to their orders, or where they are the trustees, are called consecrations. God is proprietor of all things alike, and can receive no gifts from men. Donations can be made to men only. As far as they contribute to the general happiness of men, so far they are acceptable to God, and no further. When they are pernicious to a country in its trade, or liberty, when they corrupt the clergy, as they are called, by opportunities and temptations to luxury, tyranny,",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        761,
+        53,
+        811,
+        75
+      ],
+      "polygon": [
+        [
+          761,
+          53
+        ],
+        [
+          761,
+          75
+        ],
+        [
+          810,
+          75
+        ],
+        [
+          810,
+          53
+        ]
+      ],
+      "content": "333",
+      "native_label": "number"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        718,
+        81,
+        811,
+        118
+      ],
+      "polygon": [
+        [
+          718,
+          81
+        ],
+        [
+          718,
+          118
+        ],
+        [
+          811,
+          118
+        ],
+        [
+          811,
+          86
+        ],
+        [
+          806,
+          81
+        ]
+      ],
+      "content": "CHAP. 7",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 5,
+      "label": "aside_text",
+      "bbox_2d": [
+        726,
+        439,
+        812,
+        466
+      ],
+      "polygon": [
+        [
+          726,
+          439
+        ],
+        [
+          726,
+          461
+        ],
+        [
+          731,
+          466
+        ],
+        [
+          811,
+          466
+        ],
+        [
+          811,
+          439
+        ]
+      ],
+      "content": "The causes of mistakes.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        176,
+        51,
+        230,
+        74
+      ],
+      "polygon": [
+        [
+          176,
+          51
+        ],
+        [
+          176,
+          74
+        ],
+        [
+          229,
+          74
+        ],
+        [
+          229,
+          51
+        ]
+      ],
+      "content": "334",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        405,
+        44,
+        766,
+        68
+      ],
+      "polygon": [
+        [
+          405,
+          44
+        ],
+        [
+          405,
+          68
+        ],
+        [
+          766,
+          68
+        ],
+        [
+          766,
+          44
+        ]
+      ],
+      "content": "How PROPERTY is acquired.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        174,
+        75,
+        904,
+        352
+      ],
+      "polygon": [
+        [
+          174,
+          80
+        ],
+        [
+          184,
+          351
+        ],
+        [
+          904,
+          351
+        ],
+        [
+          904,
+          75
+        ]
+      ],
+      "content": "or avarice, they are as offensive to God as any fins of ignorance can be. \"Tis wife and just in any state, when sufficient provision is made for the purposes of religion, to restrain or make void all further donations; to refume any useless grants that have been obtained by fraud and imposture, whether from the publick, or private persons; to free the publick from the charge of supporting useless structures, or idle hands, by converting the structures to other purposes, or demolishing them; and by obliging the idle hands to pursue some useful occupation. This must be acceptable service to God.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        275,
+        353,
+        910,
+        791
+      ],
+      "polygon": [
+        [
+          275,
+          353
+        ],
+        [
+          285,
+          791
+        ],
+        [
+          910,
+          791
+        ],
+        [
+          910,
+          353
+        ]
+      ],
+      "content": "Some wild notion of consecration or sanctity infused into stones, timber, metals, lands, has made men imagine it impious to convert these things to other uses than what they once were destined to. And yet 'tis obvious that no religion or sanctity can inhere in such materials. We formerly used them when our minds were employed in devotion: but what then? so we did our bodies, our cloaths, our organs of speech: must they never be used to other purposes? The superstitious donors perhaps ordered \"that such houses should only be used for accommodating men in worship, and such lands for the maintenance of such as officiated in it.\" But is it not folly to confine that to one purpose only, which can answer other purposes, and be no less fit for the purpose chiefly intended? The state has a just right to annul superstitious restrictions in any conveyances, and to make void all such conveyances as prove foolish or hurtful to society.",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        229,
+        50,
+        588,
+        75
+      ],
+      "polygon": [
+        [
+          229,
+          50
+        ],
+        [
+          229,
+          74
+        ],
+        [
+          588,
+          74
+        ],
+        [
+          588,
+          50
+        ]
+      ],
+      "content": "How PROPERTY is acquired.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        100,
+        81,
+        727,
+        510
+      ],
+      "polygon": [
+        [
+          100,
+          81
+        ],
+        [
+          105,
+          509
+        ],
+        [
+          727,
+          509
+        ],
+        [
+          722,
+          81
+        ]
+      ],
+      "content": "Grant that in the confused imaginations of the vulgar, the devotion in churches would be abated, if they were used for other purposes in the intervals of worship. Should this weakness be encouraged? And then it requires no more but that such edifices while they are used for worship should not in the intervals be used for other purposes. If the worshippers are as well provided with other structures or utensils, and the instructors provided with other sufficient salaries; nothing hinders the state to apply the former structures, utensils, or lands, to any other wise purposes. But in the Popish religion the mystery of consecration is so deeply inculcated that all this appears impious. In that whole institution the chief part God is introduced as acting, is that of a sharping purveyor, or agent for the religious orders, grasping at and defending whatever they have obtained by any fraud or artifice from the weakest and most superstitious of mankind, for the most foolish or pernicious purposes.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        106,
+        510,
+        735,
+        758
+      ],
+      "polygon": [
+        [
+          106,
+          510
+        ],
+        [
+          111,
+          758
+        ],
+        [
+          734,
+          758
+        ],
+        [
+          730,
+          515
+        ],
+        [
+          720,
+          510
+        ]
+      ],
+      "content": "VII. Things once in property may return again into a state of community if the proprietor quits his property by throwing them away, or designatedly neglecting them: and then the next occupier may acquire them. If the proprietor lost any goods unwillingly, but being again otherways provided, neglects what he lost, and puts in no claim tho' he knows who has found them; a long neglect of this kind may sufficiently declare that he quitted the property, and so preclude his future claim against the present possefor. This seems the only prescription valid against",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        768,
+        56,
+        822,
+        78
+      ],
+      "polygon": [
+        [
+          768,
+          56
+        ],
+        [
+          768,
+          78
+        ],
+        [
+          822,
+          78
+        ],
+        [
+          822,
+          56
+        ]
+      ],
+      "content": "335",
+      "native_label": "number"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        722,
+        515,
+        747,
+        532
+      ],
+      "polygon": [
+        [
+          722,
+          515
+        ],
+        [
+          722,
+          531
+        ],
+        [
+          747,
+          531
+        ],
+        [
+          747,
+          515
+        ]
+      ],
+      "content": "The",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 5,
+      "label": "aside_text",
+      "bbox_2d": [
+        732,
+        516,
+        822,
+        544
+      ],
+      "polygon": [
+        [
+          732,
+          516
+        ],
+        [
+          732,
+          540
+        ],
+        [
+          738,
+          544
+        ],
+        [
+          822,
+          544
+        ],
+        [
+          822,
+          516
+        ]
+      ],
+      "content": "the right of transcription.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        192,
+        55,
+        242,
+        82
+      ],
+      "polygon": [
+        [
+          192,
+          60
+        ],
+        [
+          192,
+          82
+        ],
+        [
+          210,
+          82
+        ],
+        [
+          242,
+          78
+        ],
+        [
+          242,
+          55
+        ],
+        [
+          210,
+          55
+        ]
+      ],
+      "content": "336",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        411,
+        54,
+        755,
+        78
+      ],
+      "polygon": [
+        [
+          411,
+          54
+        ],
+        [
+          411,
+          78
+        ],
+        [
+          754,
+          78
+        ],
+        [
+          754,
+          54
+        ]
+      ],
+      "content": "How PROPERTY is acquired.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        191,
+        83,
+        892,
+        423
+      ],
+      "polygon": [
+        [
+          191,
+          88
+        ],
+        [
+          201,
+          338
+        ],
+        [
+          221,
+          423
+        ],
+        [
+          892,
+          423
+        ],
+        [
+          892,
+          83
+        ]
+      ],
+      "content": "the old proprietor, before civil laws. There are just reasons why civil laws should introduce other rules of prescription, partly to engage the subjects to proper care about their goods and claims in due time while they can be ascertained; partly because in a long tract of undisturbed possession against some latent titles, goods may be transferred upon valuable considerations to fair purchasers, or be for like considerations subjected to settlements and entails and mortgages, which cannot be set aside without great injuries to innocent persons; and partly to exclude artful and undiscoverable frauds, which could not be prevented, if any deeds pretended to be very old, the witnesses of which must be dead, should be sustained as valid to overturn a long undisturbed possession.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        287,
+        422,
+        895,
+        763
+      ],
+      "polygon": [
+        [
+          287,
+          422
+        ],
+        [
+          292,
+          763
+        ],
+        [
+          894,
+          763
+        ],
+        [
+          894,
+          422
+        ]
+      ],
+      "content": "The civil law makes a presumptive title, or the bona fides, upon which the possessor may probably have believed the goods to be his own, a necessary beginning to prescription; so that no length of possession, begun without a plausible title, can give a right. But the case of a fair purchaser from an old possessor, without any intimation made to the purchaser of a latent title of another, is so favourable, and his plea so equitable, when he cannot recover his price from the seller, that tho' the seller had begun possession without this just presumption, it would be very hard to set aside all claim of the fair purchaser, at least to recover the price he paid. Some of the reasons for prescription may hold even where the possession was not begun upon a presumptive title.",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        226,
+        46,
+        569,
+        69
+      ],
+      "polygon": [
+        [
+          226,
+          46
+        ],
+        [
+          226,
+          69
+        ],
+        [
+          569,
+          69
+        ],
+        [
+          569,
+          46
+        ],
+        [
+          440,
+          46
+        ],
+        [
+          415,
+          46
+        ]
+      ],
+      "content": "How PROPERTY is acquired.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        102,
+        75,
+        701,
+        708
+      ],
+      "polygon": [
+        [
+          102,
+          75
+        ],
+        [
+          102,
+          703
+        ],
+        [
+          701,
+          703
+        ],
+        [
+          701,
+          75
+        ]
+      ],
+      "content": "VIII. As to accession or any additional profits of goods in property, these rules are obvious. 1. \"All fruits, increase, or improvements happening to the goods in a man's property, to which neither the goods or labours of others contributed, belong to the proprietor, except where another by contract, or civil law, acquires some right in them.\" But, 2. \"Where the goods or labours of other persons have contributed to any increase or improvement, without the fraud or culpable negligence of any concerned, all those who have contributed by their labours or goods have a joint property in the compound, or in the fruits and improvements, each in proportion to the value of what he contributed.\"\n\nIf the goods or the fruits can admit of division without loss upon the whole, they should be divided in this proportion among those who contributed to them. If the subject will not admit of division without loss upon the whole, it should be used alternately for times proportioned to the values each one contributed, or be used in common continually if it can admit of such use. If the subject neither admits of common or alternate use, it should fall to that partner to whom it is of the greatest value or importance, in this manner: first, let the proportion of each one's right to those of the other partners be determined, and that partner who bids most for it should have it, upon making compensation to the rest for their shares.*",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "footnote",
+      "bbox_2d": [
+        112,
+        716,
+        702,
+        767
+      ],
+      "polygon": [
+        [
+          112,
+          716
+        ],
+        [
+          112,
+          762
+        ],
+        [
+          143,
+          767
+        ],
+        [
+          661,
+          767
+        ],
+        [
+          701,
+          767
+        ],
+        [
+          701,
+          716
+        ],
+        [
+          127,
+          716
+        ]
+      ],
+      "content": "* See cafes of this kind in Cicero de offic. l. ii. c. 23. and the judgment of Aratus upon them.\n\nVOL. I. U u",
+      "native_label": "footnote"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        738,
+        50,
+        787,
+        72
+      ],
+      "polygon": [
+        [
+          738,
+          50
+        ],
+        [
+          738,
+          72
+        ],
+        [
+          786,
+          72
+        ],
+        [
+          786,
+          50
+        ]
+      ],
+      "content": "337",
+      "native_label": "number"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        695,
+        77,
+        785,
+        139
+      ],
+      "polygon": [
+        [
+          700,
+          82
+        ],
+        [
+          695,
+          91
+        ],
+        [
+          695,
+          124
+        ],
+        [
+          700,
+          138
+        ],
+        [
+          784,
+          138
+        ],
+        [
+          784,
+          82
+        ]
+      ],
+      "content": "CHAP. 7.\n\nThe rights to accessions.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 5,
+      "label": "aside_text",
+      "bbox_2d": [
+        969,
+        35,
+        985,
+        124
+      ],
+      "polygon": [
+        [
+          974,
+          35
+        ],
+        [
+          969,
+          50
+        ],
+        [
+          969,
+          54
+        ],
+        [
+          969,
+          65
+        ],
+        [
+          969,
+          74
+        ],
+        [
+          969,
+          109
+        ],
+        [
+          969,
+          124
+        ],
+        [
+          985,
+          124
+        ],
+        [
+          985,
+          35
+        ]
+      ],
+      "content": "---",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        182,
+        52,
+        230,
+        77
+      ],
+      "polygon": [
+        [
+          230,
+          52
+        ],
+        [
+          211,
+          52
+        ],
+        [
+          182,
+          57
+        ],
+        [
+          182,
+          76
+        ],
+        [
+          230,
+          76
+        ]
+      ],
+      "content": "338",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        403,
+        47,
+        758,
+        72
+      ],
+      "polygon": [
+        [
+          403,
+          52
+        ],
+        [
+          403,
+          71
+        ],
+        [
+          758,
+          71
+        ],
+        [
+          758,
+          47
+        ],
+        [
+          538,
+          47
+        ]
+      ],
+      "content": "How PROPERTY is acquired.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        176,
+        76,
+        889,
+        215
+      ],
+      "polygon": [
+        [
+          181,
+          82
+        ],
+        [
+          176,
+          140
+        ],
+        [
+          186,
+          214
+        ],
+        [
+          888,
+          214
+        ],
+        [
+          884,
+          76
+        ]
+      ],
+      "content": "Book II. Thus he obtains the goods who values them most, and the compensation to the rest is the greater.* Where any debate arises about the values of the several shares contributed, there is no other remedy, previous to civil polity, but the arbitration of wife neighbours who understand the goods.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        189,
+        653,
+        288,
+        696
+      ],
+      "polygon": [
+        [
+          194,
+          653
+        ],
+        [
+          189,
+          664
+        ],
+        [
+          189,
+          695
+        ],
+        [
+          283,
+          695
+        ],
+        [
+          288,
+          680
+        ],
+        [
+          288,
+          653
+        ]
+      ],
+      "content": "nature rights in\nvalue in pro-\nperty.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        243,
+        214,
+        890,
+        645
+      ],
+      "polygon": [
+        [
+          273,
+          214
+        ],
+        [
+          243,
+          305
+        ],
+        [
+          243,
+          525
+        ],
+        [
+          278,
+          645
+        ],
+        [
+          890,
+          645
+        ],
+        [
+          890,
+          214
+        ]
+      ],
+      "content": "Where by the fraud or blameable negligence of one, his labours or goods are blended with the goods of others, so that the compound or the new form ceases to be desirable to the other innocent proprietor, this proprietor has a right to full compensation for the value of his goods now made unfit for his use, and for whatever clear profits he could have made by his goods had they been let alone to him. If my goods are improved for my use by another's goods or labour, without commission from me; I am only to pay the value of the improvement to my purposes, and not the value it may be of to the purposes of the culpable intermedler with my goods. There is no reason that through his fault I should either lose my goods, or be obliged to pay for more expensive improvements than were convenient for my affairs. The proper punishment for this fraudulent or culpable intermedling with the goods of others, is a subject of inquiry quite distinct from this of property.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        292,
+        645,
+        896,
+        693
+      ],
+      "polygon": [
+        [
+          292,
+          650
+        ],
+        [
+          292,
+          693
+        ],
+        [
+          896,
+          693
+        ],
+        [
+          896,
+          645
+        ],
+        [
+          297,
+          645
+        ]
+      ],
+      "content": "IX. The right of property, when it is entire and unlimited as it is first acquired, contains these three",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "footnote",
+      "bbox_2d": [
+        285,
+        712,
+        890,
+        759
+      ],
+      "polygon": [
+        [
+          285,
+          712
+        ],
+        [
+          285,
+          758
+        ],
+        [
+          825,
+          758
+        ],
+        [
+          890,
+          753
+        ],
+        [
+          890,
+          712
+        ]
+      ],
+      "content": "* This section may determine in a natural manner most of the questions of the civilians about the accession, viz. the nativitas, alluvio, specificatio, commistio, confusio, edificatio, etc.",
+      "native_label": "footnote"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        233,
+        59,
+        575,
+        84
+      ],
+      "polygon": [
+        [
+          233,
+          59
+        ],
+        [
+          233,
+          84
+        ],
+        [
+          574,
+          84
+        ],
+        [
+          574,
+          59
+        ]
+      ],
+      "content": "How PROPERTY is acquired.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        108,
+        90,
+        705,
+        340
+      ],
+      "polygon": [
+        [
+          108,
+          95
+        ],
+        [
+          108,
+          340
+        ],
+        [
+          705,
+          340
+        ],
+        [
+          700,
+          90
+        ]
+      ],
+      "content": "parts. 1. A right to the fullest use. 2. A right to exclude others from any use of the goods in property. and 3. A right of alienating and transferring to others either in part or in whole; absolutely, or upon any condition or contingency; gratuitously, or for valuable consideration. Civil laws may sometimes justly limit men in the exercise of these rights; and some potent reasons of general utility may even in natural liberty require some limitations, and justify some extraordinary steps contrary to the rules which ordinarily oblige us.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        114,
+        338,
+        708,
+        681
+      ],
+      "polygon": [
+        [
+          114,
+          338
+        ],
+        [
+          114,
+          681
+        ],
+        [
+          708,
+          681
+        ],
+        [
+          708,
+          338
+        ]
+      ],
+      "content": "To this right of property corresponds a general indefinite obligation upon all not to violate this right or obstruct others in the enjoyment of it. The sacredness of this obligation, we all may find by considering the keen resentment we should feel upon such violation of our rights by others; and by the strong disapprobation we must have of such avarice or selfishness as breaks through all regards to the peace and safety of society, and all humanity to our fellows, for the sake of a little private gain; in those matters too which we look upon it as honourable and the evidence of a great soul to despiise. This disapprobation we must feel toward such acts of injustice as affect the property of others, even tho' we ourselves suffer nothing by it.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        391,
+        696,
+        464,
+        719
+      ],
+      "polygon": [
+        [
+          391,
+          696
+        ],
+        [
+          391,
+          719
+        ],
+        [
+          464,
+          719
+        ],
+        [
+          464,
+          696
+        ]
+      ],
+      "content": "Uu2",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        747,
+        65,
+        794,
+        86
+      ],
+      "polygon": [
+        [
+          747,
+          65
+        ],
+        [
+          747,
+          85
+        ],
+        [
+          794,
+          85
+        ],
+        [
+          794,
+          65
+        ]
+      ],
+      "content": "339",
+      "native_label": "number"
+    },
+    {
+      "index": 5,
+      "label": "aside_text",
+      "bbox_2d": [
+        700,
+        93,
+        793,
+        130
+      ],
+      "polygon": [
+        [
+          700,
+          93
+        ],
+        [
+          700,
+          130
+        ],
+        [
+          793,
+          130
+        ],
+        [
+          793,
+          93
+        ]
+      ],
+      "content": "CHAP. 7.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        169,
+        66,
+        268,
+        129
+      ],
+      "polygon": [
+        [
+          169,
+          66
+        ],
+        [
+          169,
+          128
+        ],
+        [
+          268,
+          128
+        ],
+        [
+          268,
+          66
+        ]
+      ],
+      "content": "340 BOOK II.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        451,
+        110,
+        673,
+        133
+      ],
+      "polygon": [
+        [
+          451,
+          110
+        ],
+        [
+          451,
+          133
+        ],
+        [
+          672,
+          133
+        ],
+        [
+          672,
+          110
+        ]
+      ],
+      "content": "CHAP. VIII.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        266,
+        139,
+        869,
+        189
+      ],
+      "polygon": [
+        [
+          266,
+          139
+        ],
+        [
+          266,
+          189
+        ],
+        [
+          868,
+          189
+        ],
+        [
+          868,
+          139
+        ]
+      ],
+      "content": "## Concerning DERIVED PROPERTY, and the ways of alienating or transferring it.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        175,
+        201,
+        869,
+        404
+      ],
+      "polygon": [
+        [
+          175,
+          206
+        ],
+        [
+          180,
+          384
+        ],
+        [
+          205,
+          399
+        ],
+        [
+          250,
+          399
+        ],
+        [
+          265,
+          404
+        ],
+        [
+          869,
+          404
+        ],
+        [
+          864,
+          201
+        ]
+      ],
+      "content": "I. A Dventitious rights are either real, or personal. All adventitious real rights arise from a translation of some of the original rights of property from one to another. And all personal adventitious rights are constituted by transferring to others some parts of our natural liberty, or of our right of acting as we please, and of obliging ourselves to certain performances in behalf of others. The real rights terminate on some definite goods. The personal do not.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        267,
+        404,
+        868,
+        538
+      ],
+      "polygon": [
+        [
+          267,
+          404
+        ],
+        [
+          267,
+          538
+        ],
+        [
+          868,
+          538
+        ],
+        [
+          868,
+          404
+        ]
+      ],
+      "content": "The necessity and use of frequent contracts and translations of property is in a good measure manifest from what is said above, $^{*}$ and will still more fully appear hereafter. The difference between real and personal rights must here be explained, and the foundation too for this distinction, previous to any civil laws.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "aside_text",
+      "bbox_2d": [
+        175,
+        545,
+        277,
+        576
+      ],
+      "polygon": [
+        [
+          175,
+          550
+        ],
+        [
+          175,
+          575
+        ],
+        [
+          271,
+          575
+        ],
+        [
+          276,
+          565
+        ],
+        [
+          276,
+          545
+        ],
+        [
+          181,
+          545
+        ]
+      ],
+      "content": "The ground of the definition.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        270,
+        540,
+        871,
+        737
+      ],
+      "polygon": [
+        [
+          270,
+          540
+        ],
+        [
+          275,
+          737
+        ],
+        [
+          790,
+          737
+        ],
+        [
+          715,
+          719
+        ],
+        [
+          745,
+          717
+        ],
+        [
+          745,
+          708
+        ],
+        [
+          841,
+          708
+        ],
+        [
+          841,
+          717
+        ],
+        [
+          870,
+          712
+        ],
+        [
+          870,
+          540
+        ]
+      ],
+      "content": "One may often incline to incur an obligation to another to a certain value, and have all moral certainty and an honest purpose of discharging it faithfully, while yet he is unwilling to put any one part of his goods more than another in the power of his creditor, and keeps it in his own election what part of them he will alienate for discharging this obligation. And a creditor may often be satisfied with such engagements from the debtor, if he is assured of his",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "footer",
+      "bbox_2d": [
+        449,
+        745,
+        599,
+        762
+      ],
+      "polygon": [
+        [
+          449,
+          745
+        ],
+        [
+          449,
+          761
+        ],
+        [
+          599,
+          761
+        ],
+        [
+          599,
+          745
+        ]
+      ],
+      "content": "* Chap. vi. and vii.",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        278,
+        58,
+        531,
+        80
+      ],
+      "polygon": [
+        [
+          278,
+          58
+        ],
+        [
+          278,
+          80
+        ],
+        [
+          530,
+          80
+        ],
+        [
+          530,
+          58
+        ]
+      ],
+      "content": "Derived PROPERTY.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        745,
+        64,
+        791,
+        85
+      ],
+      "polygon": [
+        [
+          745,
+          64
+        ],
+        [
+          745,
+          85
+        ],
+        [
+          791,
+          85
+        ],
+        [
+          791,
+          64
+        ]
+      ],
+      "content": "34 I",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        104,
+        86,
+        703,
+        496
+      ],
+      "polygon": [
+        [
+          104,
+          91
+        ],
+        [
+          104,
+          496
+        ],
+        [
+          702,
+          496
+        ],
+        [
+          702,
+          91
+        ]
+      ],
+      "content": "wealth and integrity, without any specific goods being subjected to the claim. Such an agreement constitutes a personal, and not a real right. The creditor no doubt in such a case has a general security from all the debtor's goods, since upon the debtor's default, he may in natural liberty seize any part of them for discharge of the debt, if no other creditor has obtained a real right in them. But the advantage of the personal obligation to the debtor is this, that he is still master of all his goods, and retains it still in his own election, within the time limited, to discharge the claims upon him in the manner he likes best. And the advantage of the real right to the creditor consists in this, that from the goods specially subjected to his claim he may be secure, notwithstanding of any subsequent debts incurred to others, or even prior personal debts which his debtor may be incapable of discharging.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        106,
+        495,
+        701,
+        697
+      ],
+      "polygon": [
+        [
+          106,
+          495
+        ],
+        [
+          106,
+          696
+        ],
+        [
+          701,
+          696
+        ],
+        [
+          701,
+          495
+        ]
+      ],
+      "content": "If one has done any damage to another, he becomes indebted to the person who suffered this damage in the full value of it. And yet the sufferer has only a personal right, not preferable to any claims of a third person, nor affecting one part of the goods of him who did the damage, more than another. If full compensation is made, he cannot limit the debtor as to the goods out of which this compensation is to be made.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        108,
+        696,
+        698,
+        769
+      ],
+      "polygon": [
+        [
+          108,
+          696
+        ],
+        [
+          108,
+          769
+        ],
+        [
+          483,
+          769
+        ],
+        [
+          488,
+          769
+        ],
+        [
+          698,
+          769
+        ],
+        [
+          698,
+          696
+        ]
+      ],
+      "content": "When the lender insists on more security than the faith of the borrower, or suspects his ability, and gets a pledge or a mortgage, this constitutes a real right,",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        185,
+        71,
+        235,
+        94
+      ],
+      "polygon": [
+        [
+          185,
+          71
+        ],
+        [
+          185,
+          94
+        ],
+        [
+          234,
+          94
+        ],
+        [
+          234,
+          71
+        ]
+      ],
+      "content": "342",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "aside_text",
+      "bbox_2d": [
+        185,
+        148,
+        284,
+        180
+      ],
+      "polygon": [
+        [
+          185,
+          148
+        ],
+        [
+          185,
+          179
+        ],
+        [
+          279,
+          179
+        ],
+        [
+          283,
+          174
+        ],
+        [
+          283,
+          148
+        ]
+      ],
+      "content": "Real preferable to personal,",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 2,
+      "label": "aside_text",
+      "bbox_2d": [
+        186,
+        378,
+        288,
+        407
+      ],
+      "polygon": [
+        [
+          186,
+          407
+        ],
+        [
+          210,
+          407
+        ],
+        [
+          220,
+          407
+        ],
+        [
+          225,
+          407
+        ],
+        [
+          230,
+          407
+        ],
+        [
+          244,
+          407
+        ],
+        [
+          259,
+          407
+        ],
+        [
+          278,
+          407
+        ],
+        [
+          283,
+          397
+        ],
+        [
+          287,
+          392
+        ],
+        [
+          287,
+          378
+        ],
+        [
+          191,
+          378
+        ],
+        [
+          186,
+          398
+        ]
+      ],
+      "content": "For what reasons.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 3,
+      "label": "header",
+      "bbox_2d": [
+        445,
+        65,
+        696,
+        88
+      ],
+      "polygon": [
+        [
+          445,
+          65
+        ],
+        [
+          445,
+          88
+        ],
+        [
+          695,
+          88
+        ],
+        [
+          695,
+          65
+        ]
+      ],
+      "content": "Derived PROPERTY.",
+      "native_label": "header"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        180,
+        94,
+        868,
+        140
+      ],
+      "polygon": [
+        [
+          180,
+          104
+        ],
+        [
+          180,
+          140
+        ],
+        [
+          868,
+          140
+        ],
+        [
+          868,
+          94
+        ],
+        [
+          290,
+          94
+        ],
+        [
+          186,
+          99
+        ]
+      ],
+      "content": "Book II. as certain goods are assigned and specially subjected to this claim.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        274,
+        142,
+        871,
+        366
+      ],
+      "polygon": [
+        [
+          285,
+          147
+        ],
+        [
+          274,
+          365
+        ],
+        [
+          871,
+          365
+        ],
+        [
+          871,
+          142
+        ]
+      ],
+      "content": "A just man no doubt will observe and fulfil the personal rights of others, as well as the real, to the utmost of his power; but the security is not the same in both, as'tis abundantly known, where different claims occur against a person who has not effects to answer them. The real rights must take place of the personal. He who consented to accept of a less security, must not expect to be equally safe with one who insisted upon and obtained a greater, nor would have contracted or lent upon other terms.",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        283,
+        364,
+        879,
+        744
+      ],
+      "polygon": [
+        [
+          283,
+          370
+        ],
+        [
+          283,
+          744
+        ],
+        [
+          879,
+          744
+        ],
+        [
+          874,
+          364
+        ]
+      ],
+      "content": "The preservation of the necessary faith in commerce requires this preference of real rights, to personal. In the full translation of property, and even in assigning goods as real securities by pledge or mortgage, there must be such publick forms as will secure the purchaser or lender against all prior secret contracts with others, tho' these private contracts gave personal rights. But no man would buy goods, if he could not be secured in the possession of what he purchased against former private contracts of sale. Nor could he be secured if prior secret contracts did not yield to such publick ones with the usual forms instituted for conveying real rights. Nor would men lend upon any pledge or mortgage, were there not some publick forms appointed to transfer a real right preferable to any prior personal rights constituted to others by a latent contract.",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        321,
+        744,
+        880,
+        770
+      ],
+      "polygon": [
+        [
+          321,
+          744
+        ],
+        [
+          321,
+          770
+        ],
+        [
+          879,
+          770
+        ],
+        [
+          879,
+          744
+        ]
+      ],
+      "content": "All nations agree in having some publick formali-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        279,
+        51,
+        533,
+        74
+      ],
+      "polygon": [
+        [
+          279,
+          51
+        ],
+        [
+          279,
+          74
+        ],
+        [
+          533,
+          74
+        ],
+        [
+          533,
+          56
+        ],
+        [
+          433,
+          51
+        ]
+      ],
+      "content": "Derived PROPERTY.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        750,
+        56,
+        799,
+        78
+      ],
+      "polygon": [
+        [
+          750,
+          56
+        ],
+        [
+          750,
+          78
+        ],
+        [
+          798,
+          78
+        ],
+        [
+          798,
+          56
+        ]
+      ],
+      "content": "343",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        104,
+        80,
+        713,
+        489
+      ],
+      "polygon": [
+        [
+          104,
+          80
+        ],
+        [
+          104,
+          489
+        ],
+        [
+          713,
+          489
+        ],
+        [
+          713,
+          86
+        ]
+      ],
+      "content": "ties for transferring full property or real rights, not to be defeated by prior latent personal rights. These formalities should intimate the transaction publickly, or some way prevent the person who transfers to impose afterwards upon others. Delivery answers this end in moveables; and some publick symbolical deeds giving possession, in such as are immoveable; or some publick registration of the conveyance. Where these confirm a contract, a real right is constituted, which no personal one should defeat. And yet the person thus defrauded of his personal right by means of the subsequent real one transferring the property, has a just claim upon the seller who defrauded him not only for compensation of all the damage $^{*}$ he sustains, but for the $\\dagger$ full value of all the profit he could have made had he not been deceived: But without this preference of real rights to personal, there could be no commerce.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        109,
+        489,
+        809,
+        579
+      ],
+      "polygon": [
+        [
+          109,
+          489
+        ],
+        [
+          109,
+          579
+        ],
+        [
+          713,
+          579
+        ],
+        [
+          724,
+          574
+        ],
+        [
+          808,
+          559
+        ],
+        [
+          808,
+          494
+        ]
+      ],
+      "content": "II. Derived real rights are either some parts of the right of property transferred to another, and separated from the rest, or compleat property derived from the original proprietor.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        110,
+        578,
+        712,
+        740
+      ],
+      "polygon": [
+        [
+          110,
+          578
+        ],
+        [
+          116,
+          740
+        ],
+        [
+          712,
+          740
+        ],
+        [
+          712,
+          578
+        ]
+      ],
+      "content": "The parts of property frequently transferred separately from the rest of it are chiefly of these four clauses. 1. Right of possession, thus one may have a right to possess the goods he knows belong to others, until the true proprietor shews his title. This right is valid against all others, and often may be turned into complete property. 2. The right of succession, which one",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "footnote",
+      "bbox_2d": [
+        172,
+        742,
+        488,
+        760
+      ],
+      "polygon": [
+        [
+          172,
+          742
+        ],
+        [
+          172,
+          760
+        ],
+        [
+          487,
+          760
+        ],
+        [
+          487,
+          742
+        ]
+      ],
+      "content": "* Penfatio damni. † Penfare quod interest.",
+      "native_label": "footnote"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        192,
+        66,
+        242,
+        90
+      ],
+      "polygon": [
+        [
+          192,
+          66
+        ],
+        [
+          192,
+          90
+        ],
+        [
+          242,
+          90
+        ],
+        [
+          242,
+          66
+        ]
+      ],
+      "content": "344",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        450,
+        62,
+        703,
+        84
+      ],
+      "polygon": [
+        [
+          450,
+          62
+        ],
+        [
+          450,
+          84
+        ],
+        [
+          702,
+          84
+        ],
+        [
+          702,
+          66
+        ],
+        [
+          569,
+          62
+        ]
+      ],
+      "content": "Derived PROPERTY.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        192,
+        91,
+        878,
+        180
+      ],
+      "polygon": [
+        [
+          192,
+          96
+        ],
+        [
+          192,
+          160
+        ],
+        [
+          228,
+          179
+        ],
+        [
+          877,
+          179
+        ],
+        [
+          877,
+          91
+        ]
+      ],
+      "content": "Book II. may have to goods, while another retains all the other parts of property except that of alienating. 3. The rights of a mortgage or pledge. 4. Rights to some small uses of the goods of others, called servitudes.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        257,
+        181,
+        883,
+        538
+      ],
+      "polygon": [
+        [
+          282,
+          181
+        ],
+        [
+          257,
+          251
+        ],
+        [
+          257,
+          513
+        ],
+        [
+          272,
+          533
+        ],
+        [
+          882,
+          538
+        ],
+        [
+          877,
+          181
+        ]
+      ],
+      "content": "As to the right of possession. The possessor by fraud or unjust violence has no right: any one who inclines to recover the goods to the owner may justly dispossess him. But he who possesses without fraud or unjust violence the goods he knows belong to others, has a right valid against all except the proprietor, or such as claim under him. If none such can be found, or if the proprietor quits his claim, the possessor becomes proprietor by occupation. The possessor is always obliged to make publick intimation that he has such goods, and to use all reasonable means to make it known to the proprietor. Designed concealment of them is no better than theft. When the possessor restores, he may justly demand to be repaid all prudent expences made upon the goods, or upon giving publick intimation about them.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        194,
+        540,
+        296,
+        580
+      ],
+      "polygon": [
+        [
+          194,
+          540
+        ],
+        [
+          194,
+          580
+        ],
+        [
+          291,
+          580
+        ],
+        [
+          296,
+          575
+        ],
+        [
+          296,
+          540
+        ]
+      ],
+      "content": "Rights of the presumptive possefor.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        288,
+        537,
+        888,
+        719
+      ],
+      "polygon": [
+        [
+          288,
+          542
+        ],
+        [
+          288,
+          719
+        ],
+        [
+          888,
+          719
+        ],
+        [
+          888,
+          542
+        ]
+      ],
+      "content": "III. In instances where one possesses goods belonging to others which yet he obtained upon some plausible title, such as donation, legacy, succession, or purchase, and believes them to be his own ; the following rules seem equitable. 1. If the goods have perished by any accident without any fault of the possessor, he is not obliged to any compensation. 2. If he has consumed them he is obliged to restore as far as he",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "footnote",
+      "bbox_2d": [
+        289,
+        730,
+        887,
+        763
+      ],
+      "polygon": [
+        [
+          289,
+          730
+        ],
+        [
+          289,
+          762
+        ],
+        [
+          886,
+          762
+        ],
+        [
+          886,
+          730
+        ]
+      ],
+      "content": "+ This is the bonae fidei possessor of the Civilians, not importing that all other possessors are fraudulent.",
+      "native_label": "footnote"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        288,
+        44,
+        536,
+        68
+      ],
+      "polygon": [
+        [
+          288,
+          44
+        ],
+        [
+          288,
+          67
+        ],
+        [
+          535,
+          67
+        ],
+        [
+          535,
+          44
+        ]
+      ],
+      "content": "Derived PROPERTY.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        750,
+        50,
+        799,
+        72
+      ],
+      "polygon": [
+        [
+          750,
+          50
+        ],
+        [
+          750,
+          71
+        ],
+        [
+          799,
+          71
+        ],
+        [
+          799,
+          50
+        ]
+      ],
+      "content": "345",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        121,
+        75,
+        710,
+        554
+      ],
+      "polygon": [
+        [
+          121,
+          75
+        ],
+        [
+          126,
+          553
+        ],
+        [
+          710,
+          553
+        ],
+        [
+          710,
+          75
+        ]
+      ],
+      "content": "was profited by them, or in proportion to the advantage or pleasure he obtained by them, which other ways would have consumed like goods of his own: for he is so far enriched as he spared his own goods. But as to pleasure enjoyed and not necessary maintenance, if the possessor enjoyed it only because he believed these goods to be his own, and otherways would not have been at such expence in matters of pleasure, one cannot pronounce universally that he is obliged to compensate the value. 'Tis the honourable part to do it whenever the proprietor is indigent, and the possessor wealthy; or if they are in equal circumstances; or if the compensating would not distress the possessor in his affairs. But if compensating would distress him, if he obtained the goods by an onerous title, such as by paying a price for them which he cannot now recover he would at least in most cases seem to be under no other obligation than that of humanity, which might perhaps direct to sharing the loss, where it would be too sensibly felt were it to fall singly on the original possessor.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        127,
+        552,
+        713,
+        666
+      ],
+      "polygon": [
+        [
+          127,
+          552
+        ],
+        [
+          127,
+          666
+        ],
+        [
+          713,
+          666
+        ],
+        [
+          713,
+          552
+        ]
+      ],
+      "content": "3. When the goods yet remain, the possessor is obliged to restore them with all their accessions after deducting all prudent expences he has made about them. If he purchased them, he has recourse for the price upon the seller.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        130,
+        665,
+        712,
+        756
+      ],
+      "polygon": [
+        [
+          130,
+          670
+        ],
+        [
+          130,
+          756
+        ],
+        [
+          712,
+          756
+        ],
+        [
+          712,
+          665
+        ],
+        [
+          150,
+          665
+        ]
+      ],
+      "content": "4. If the seller is not to be found, or is infolvent, the case is more difficult. Here a certain loss must be sustained either by the proprietor, or the presumptive possessor: both are supposed alike innocent: which",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        161,
+        755,
+        498,
+        778
+      ],
+      "polygon": [
+        [
+          161,
+          755
+        ],
+        [
+          161,
+          778
+        ],
+        [
+          399,
+          778
+        ],
+        [
+          419,
+          778
+        ],
+        [
+          493,
+          778
+        ],
+        [
+          498,
+          773
+        ],
+        [
+          498,
+          755
+        ]
+      ],
+      "content": "VOL. I. X x",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        173,
+        53,
+        221,
+        78
+      ],
+      "polygon": [
+        [
+          173,
+          53
+        ],
+        [
+          173,
+          78
+        ],
+        [
+          221,
+          78
+        ],
+        [
+          221,
+          53
+        ]
+      ],
+      "content": "346",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "aside_text",
+      "bbox_2d": [
+        171,
+        404,
+        271,
+        457
+      ],
+      "polygon": [
+        [
+          171,
+          404
+        ],
+        [
+          171,
+          457
+        ],
+        [
+          270,
+          457
+        ],
+        [
+          270,
+          404
+        ]
+      ],
+      "content": "A confined intention to be considered in this matter .",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 2,
+      "label": "header",
+      "bbox_2d": [
+        443,
+        49,
+        702,
+        72
+      ],
+      "polygon": [
+        [
+          443,
+          49
+        ],
+        [
+          443,
+          72
+        ],
+        [
+          447,
+          72
+        ],
+        [
+          463,
+          72
+        ],
+        [
+          597,
+          72
+        ],
+        [
+          603,
+          72
+        ],
+        [
+          697,
+          72
+        ],
+        [
+          702,
+          67
+        ],
+        [
+          702,
+          49
+        ]
+      ],
+      "content": "Derived PROPERTY.",
+      "native_label": "header"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        170,
+        80,
+        883,
+        397
+      ],
+      "polygon": [
+        [
+          170,
+          85
+        ],
+        [
+          175,
+          382
+        ],
+        [
+          185,
+          392
+        ],
+        [
+          883,
+          397
+        ],
+        [
+          878,
+          80
+        ]
+      ],
+      "content": "of them must bear it? The case of both is equally favourable, and no publick advantage requires the casting the whole loss on one rather than the other. If freeing the proprietor from it will make purchasers more cautious and inquisitive about the titles of those they deal with, and thus thefts may be detected; the subjecting the proprietors to the loss, will make men more vigilant to prevent thefts, and prevent their goods thus becoming a snare to honest purchasers. In strict justice one would think the loss should be divided equally among all those through whose hands the goods passed without fraud, along with the proprietor, until they can recover the whole from the author of the fraud.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        267,
+        398,
+        884,
+        648
+      ],
+      "polygon": [
+        [
+          267,
+          398
+        ],
+        [
+          267,
+          648
+        ],
+        [
+          884,
+          648
+        ],
+        [
+          884,
+          398
+        ]
+      ],
+      "content": "In these questions our reason is disturbed by some confused imagination of property as some physical quality or chain between the goods, and the proprietor, conceived to found a more sacred right than many other most equitable claims. And yet it cannot be of a more sacred kind than the rights arising from contracts and fair purchases; since 'tis by contracts and purchases that property is most frequently acquired: and there is no reason that an innocent man should suffer because of any vice of another in which he had no hand.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        271,
+        648,
+        886,
+        765
+      ],
+      "polygon": [
+        [
+          271,
+          648
+        ],
+        [
+          277,
+          764
+        ],
+        [
+          885,
+          764
+        ],
+        [
+          885,
+          648
+        ]
+      ],
+      "content": "Abstracting from such imaginations; property is thus determined by the law of nature; in certain circumstances we see at once that it would be cruel and inhuman toward an individual, to deprive him of the full use of certain goods; as when they were acqui-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        282,
+        52,
+        539,
+        75
+      ],
+      "polygon": [
+        [
+          282,
+          52
+        ],
+        [
+          282,
+          75
+        ],
+        [
+          538,
+          75
+        ],
+        [
+          538,
+          56
+        ],
+        [
+          425,
+          52
+        ]
+      ],
+      "content": "Derived PROPERTY.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        107,
+        81,
+        716,
+        498
+      ],
+      "polygon": [
+        [
+          107,
+          81
+        ],
+        [
+          107,
+          498
+        ],
+        [
+          716,
+          498
+        ],
+        [
+          716,
+          86
+        ]
+      ],
+      "content": "red by his own innocent labour, or by any fair contract; and we see also that like practices generally prevailing would be detrimental to society. In these circumstances we pronounce that the man has the right of property. When equal circumstances of particular humanity plead for two persons in opposition to each other; we then consider any circumstance on one side which some remote interest of society may require to be regarded; and we deem the right to go along with that circumstance: or at least, when a law or custom is once received on account of this remote utility, we deem the property to be on that side, and do not regard the weaker claim of the other: tho' a humane man would not disregard it altogether. Other cases happen where the pleas from remote utilities of society are also equal: and in them, there is no other remedy but dividing the loss among all concerned, in some proportion or other.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        118,
+        497,
+        724,
+        778
+      ],
+      "polygon": [
+        [
+          118,
+          497
+        ],
+        [
+          118,
+          778
+        ],
+        [
+          724,
+          778
+        ],
+        [
+          724,
+          497
+        ]
+      ],
+      "content": "One sells me an horse this hour, in discharge of an old debt he owed me: and next hour, upon a price paid down, sells and delivers him to another who knew nothing of my bargain. If the seller can be found, and is solvent, there is less difficulty: but if he is not; on whom shall the lofs be cast? The contract and price paid, the grand foundations of the titles and pleas of humanity, are the same on both sides. 'Tis equally hard that either of the innocent men should suffer. Custom and civil laws regarding a remote interest of afcertainting commerce, and preventing frauds, make the delivery a most important circumstance for the",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        755,
+        58,
+        803,
+        80
+      ],
+      "polygon": [
+        [
+          755,
+          58
+        ],
+        [
+          755,
+          80
+        ],
+        [
+          803,
+          80
+        ],
+        [
+          803,
+          58
+        ]
+      ],
+      "content": "347",
+      "native_label": "number"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        716,
+        502,
+        812,
+        519
+      ],
+      "polygon": [
+        [
+          716,
+          502
+        ],
+        [
+          716,
+          519
+        ],
+        [
+          812,
+          519
+        ],
+        [
+          812,
+          502
+        ]
+      ],
+      "content": "Some Examples.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        184,
+        66,
+        234,
+        93
+      ],
+      "polygon": [
+        [
+          184,
+          70
+        ],
+        [
+          184,
+          92
+        ],
+        [
+          224,
+          92
+        ],
+        [
+          229,
+          92
+        ],
+        [
+          234,
+          92
+        ],
+        [
+          234,
+          66
+        ],
+        [
+          194,
+          66
+        ]
+      ],
+      "content": "348",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        449,
+        65,
+        699,
+        88
+      ],
+      "polygon": [
+        [
+          449,
+          65
+        ],
+        [
+          449,
+          88
+        ],
+        [
+          698,
+          88
+        ],
+        [
+          698,
+          70
+        ],
+        [
+          658,
+          65
+        ],
+        [
+          649,
+          65
+        ],
+        [
+          643,
+          65
+        ]
+      ],
+      "content": "Derived PROPERTY.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        188,
+        94,
+        875,
+        497
+      ],
+      "polygon": [
+        [
+          188,
+          100
+        ],
+        [
+          188,
+          114
+        ],
+        [
+          188,
+          477
+        ],
+        [
+          203,
+          492
+        ],
+        [
+          874,
+          497
+        ],
+        [
+          874,
+          94
+        ]
+      ],
+      "content": "But were it not for this remote interest, the priority in time would plead for the former. Suppose that the horse had also been delivered to the former, but the seller allowed to keep him some hours in his stables. When other circumstances are now equal, priority of time is of great importance, and is much regarded in all contracts; as there can be no suspicion of fraud in the first purchaser; and as a regard to this circumstance too is of great necessity to ascertain commerce. In our present question about the claim of the fair purchaser to obtain the price he paid from the proprietor, when he can have no recovery from the seller, all pleas, both of a private and publick nature; are pretty near equal on both sides. And the same general observation about the original notions of property will be of considerable use in other questions, particularly these concerning the rights by testament; and by succession to the intestate.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        281,
+        497,
+        878,
+        766
+      ],
+      "polygon": [
+        [
+          281,
+          502
+        ],
+        [
+          281,
+          766
+        ],
+        [
+          878,
+          766
+        ],
+        [
+          878,
+          502
+        ],
+        [
+          868,
+          497
+        ]
+      ],
+      "content": "In this and many like cases there are obvious reasons of humanity and mercy to shew a good man what is the lovely and honourable part. If the poisseffor be poor, and the proprietor rich, it would be barbarous if the proprietor did not indemnify the honest poisseffor as to the price he paid. If the poisseffor is wealthy, and the proprietor poor, it would be inhuman in the poisseffor to insist on the price paid, when it bore no such proportion to his wealth that the want of it could distress him. If their fortunes are nearly equal they should divide the loss, whatever civil laws may determine; or should bear it in proportion to their wealth, when",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        285,
+        51,
+        535,
+        74
+      ],
+      "polygon": [
+        [
+          285,
+          51
+        ],
+        [
+          285,
+          74
+        ],
+        [
+          535,
+          74
+        ],
+        [
+          535,
+          56
+        ],
+        [
+          435,
+          51
+        ]
+      ],
+      "content": "Derived PROPERTY.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        122,
+        80,
+        776,
+        239
+      ],
+      "polygon": [
+        [
+          122,
+          238
+        ],
+        [
+          705,
+          238
+        ],
+        [
+          751,
+          154
+        ],
+        [
+          771,
+          154
+        ],
+        [
+          775,
+          85
+        ],
+        [
+          122,
+          80
+        ]
+      ],
+      "content": "their wealth is unequal, but neither in distress. The CHAP. 8 want of obvious reasons for casting all the loss on one side in this and some other cases, will be little regre ted by any but such selfish wretches as are grasping at every advantage they can obtain without incurring the infamy of direct injustice, and have no humanity to others.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        124,
+        240,
+        704,
+        487
+      ],
+      "polygon": [
+        [
+          124,
+          240
+        ],
+        [
+          124,
+          486
+        ],
+        [
+          704,
+          486
+        ],
+        [
+          704,
+          240
+        ]
+      ],
+      "content": "In general, as far as such possessors are enriched or profited by means of the goods of others, so far they are obliged to restore; but they are enriched only by what remains after all expences they made in preserving, improving, or cultivating are deducted; and these expences the proprietor is obliged to restore when he obtains his goods. Goods obtained by donation, succession, or any gratuitous title, should plainly be restored without any other compensation from the proprietor than that of those expences for preservation and improvement.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        127,
+        485,
+        705,
+        758
+      ],
+      "polygon": [
+        [
+          127,
+          485
+        ],
+        [
+          132,
+          757
+        ],
+        [
+          704,
+          757
+        ],
+        [
+          699,
+          485
+        ]
+      ],
+      "content": "IV. The next class of real rights often separated from property is that of successions in entails. When one who has unlimited property conveys a right of succession to several persons, in a certain series, upon certain contingencies, these persons have a right to this succession just as valid as men acquire by any donation; as unlimited property includes a right of disposing upon any contingency or condition, as well as absolutely. Such entails may be made imprudently, or contrary to reasons of humanity, and so may donations. When they are so, the present tenant for life who has all the other rights of property except",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        746,
+        59,
+        795,
+        80
+      ],
+      "polygon": [
+        [
+          746,
+          59
+        ],
+        [
+          746,
+          80
+        ],
+        [
+          795,
+          80
+        ],
+        [
+          795,
+          59
+        ]
+      ],
+      "content": "349",
+      "native_label": "number"
+    },
+    {
+      "index": 5,
+      "label": "aside_text",
+      "bbox_2d": [
+        704,
+        495,
+        795,
+        523
+      ],
+      "polygon": [
+        [
+          704,
+          500
+        ],
+        [
+          704,
+          522
+        ],
+        [
+          795,
+          522
+        ],
+        [
+          795,
+          495
+        ],
+        [
+          709,
+          495
+        ]
+      ],
+      "content": "Right of succession in entails.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        166,
+        52,
+        218,
+        75
+      ],
+      "polygon": [
+        [
+          166,
+          52
+        ],
+        [
+          166,
+          74
+        ],
+        [
+          218,
+          74
+        ],
+        [
+          218,
+          52
+        ]
+      ],
+      "content": "350",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        369,
+        47,
+        762,
+        70
+      ],
+      "polygon": [
+        [
+          369,
+          52
+        ],
+        [
+          369,
+          70
+        ],
+        [
+          762,
+          70
+        ],
+        [
+          762,
+          47
+        ],
+        [
+          534,
+          47
+        ],
+        [
+          478,
+          47
+        ],
+        [
+          459,
+          47
+        ]
+      ],
+      "content": "PROPERTY and other RIGHTS.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        162,
+        77,
+        886,
+        445
+      ],
+      "polygon": [
+        [
+          167,
+          82
+        ],
+        [
+          182,
+          444
+        ],
+        [
+          886,
+          444
+        ],
+        [
+          881,
+          77
+        ],
+        [
+          427,
+          77
+        ],
+        [
+          346,
+          82
+        ]
+      ],
+      "content": "that of alienating, is not culpable in taking all methods consistent with the peace and order of society, to break the entail: as a man would not be culpable who used such peaceful methods to prevent imprudent or inhuman donations, or to get them revoked. But where there is nothing imprudent or inhuman in the entail, the tenant in reversion has as good a right to succeed as the present possessor has to enjoy for life; and it would be criminal to defraud him of it. And the peace of society often requires the confirmation even of imprudent and inhuman conveyances, of which hereafter; tho' the person to whom they are made cannot with a good conscience insist on them. Civil laws however may justly limit this power of entail as the interest of the state, or the necessity of encouraging industry may require.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        172,
+        453,
+        272,
+        485
+      ],
+      "polygon": [
+        [
+          172,
+          464
+        ],
+        [
+          172,
+          485
+        ],
+        [
+          267,
+          485
+        ],
+        [
+          272,
+          474
+        ],
+        [
+          272,
+          453
+        ],
+        [
+          177,
+          453
+        ]
+      ],
+      "content": "Rights by mortgage or pledge.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        269,
+        444,
+        890,
+        724
+      ],
+      "polygon": [
+        [
+          269,
+          450
+        ],
+        [
+          269,
+          723
+        ],
+        [
+          889,
+          723
+        ],
+        [
+          889,
+          444
+        ]
+      ],
+      "content": "V. The third fort of real rights separable from the rest of the property are those of the mortgagee, and of the person to whom moveable goods are pledged, and delivered for security of some debt. By either of these a right is given to the creditor, in case the debt is not duly discharged, to appropriate to himself the lands mortgaged, or the goods pledged $^ { * }$, notwithstanding any prior personal rights of others against the debtor. The assuming a property in the lands mortgaged, or the moveables pledged, upon non-payment, has no iniquity in it if the pledger or mortgager obtain all surplus of the value of the lands or goods",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "footnote",
+      "bbox_2d": [
+        338,
+        741,
+        568,
+        761
+      ],
+      "polygon": [
+        [
+          338,
+          741
+        ],
+        [
+          338,
+          761
+        ],
+        [
+          568,
+          761
+        ],
+        [
+          568,
+          741
+        ]
+      ],
+      "content": "* Lex commissoria in pignoribus.",
+      "native_label": "footnote"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        265,
+        49,
+        535,
+        73
+      ],
+      "polygon": [
+        [
+          265,
+          49
+        ],
+        [
+          265,
+          72
+        ],
+        [
+          535,
+          72
+        ],
+        [
+          535,
+          49
+        ]
+      ],
+      "content": "Derived real RIGHTS.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        100,
+        78,
+        791,
+        125
+      ],
+      "polygon": [
+        [
+          100,
+          78
+        ],
+        [
+          100,
+          124
+        ],
+        [
+          790,
+          119
+        ],
+        [
+          790,
+          84
+        ],
+        [
+          765,
+          78
+        ]
+      ],
+      "content": "above what discharges the principal debt with all in- CHAP. 8. tereft and expences.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        101,
+        126,
+        704,
+        748
+      ],
+      "polygon": [
+        [
+          101,
+          126
+        ],
+        [
+          106,
+          742
+        ],
+        [
+          704,
+          747
+        ],
+        [
+          694,
+          131
+        ]
+      ],
+      "content": "VI. The fourth class of real rights separable from the rest of the property are servitudes, when one has a right to some small use of the goods of another. All servitudes are real rights terminating on some definite lands or tenements, or goods. But some are constituted in favour of a person and only for his behoof; and others for the advantage of some adjacent farm or tenement be the proprietor who he will. The former, from the subjects of these rights, and not from the object on which they terminate, are called personal servitudes, expiring with the person; the later for the like reason are called real servitudes, and may be perpetual. Thus the use of an house or a farm granted to a friend for his life-time when the property is in another, is a personal servitude, which cannot be conveyed by him to another: but when a farm is subjected to a road for the convenience of the possessors of an adjacent farm, or the possessors of one tenement in a town have a right to put in beams into the gables of the contiguous house for supporting the floors or roof, these are real servitudes, which may be constituted for the convenience of lands or tenements, and may be perpetual. The nature of the contracts or deeds by which such servitudes are constituted shews the rights, and obligations of the parties, which too depend much upon the customs of the places where they are received.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        151,
+        750,
+        362,
+        770
+      ],
+      "polygon": [
+        [
+          151,
+          750
+        ],
+        [
+          151,
+          770
+        ],
+        [
+          361,
+          770
+        ],
+        [
+          361,
+          750
+        ]
+      ],
+      "content": "+ See Instit. l. ii. tit. 3, 4, 5.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        694,
+        57,
+        792,
+        121
+      ],
+      "polygon": [
+        [
+          787,
+          57
+        ],
+        [
+          778,
+          57
+        ],
+        [
+          772,
+          57
+        ],
+        [
+          758,
+          57
+        ],
+        [
+          748,
+          62
+        ],
+        [
+          743,
+          62
+        ],
+        [
+          728,
+          62
+        ],
+        [
+          718,
+          62
+        ],
+        [
+          713,
+          77
+        ],
+        [
+          694,
+          82
+        ],
+        [
+          694,
+          121
+        ],
+        [
+          792,
+          121
+        ],
+        [
+          792,
+          87
+        ]
+      ],
+      "content": "351\nCHAP. 8.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 5,
+      "label": "aside_text",
+      "bbox_2d": [
+        706,
+        136,
+        778,
+        150
+      ],
+      "polygon": [
+        [
+          706,
+          136
+        ],
+        [
+          706,
+          150
+        ],
+        [
+          777,
+          150
+        ],
+        [
+          777,
+          136
+        ]
+      ],
+      "content": "Servitudes.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        189,
+        65,
+        236,
+        86
+      ],
+      "polygon": [
+        [
+          189,
+          65
+        ],
+        [
+          189,
+          86
+        ],
+        [
+          236,
+          86
+        ],
+        [
+          236,
+          65
+        ]
+      ],
+      "content": "352",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "aside_text",
+      "bbox_2d": [
+        186,
+        94,
+        285,
+        171
+      ],
+      "polygon": [
+        [
+          191,
+          94
+        ],
+        [
+          186,
+          109
+        ],
+        [
+          186,
+          170
+        ],
+        [
+          284,
+          170
+        ],
+        [
+          284,
+          109
+        ],
+        [
+          284,
+          104
+        ],
+        [
+          284,
+          99
+        ],
+        [
+          280,
+          94
+        ]
+      ],
+      "content": "Book II.\n\nTranslation of compleat property several ways.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 2,
+      "label": "aside_text",
+      "bbox_2d": [
+        193,
+        295,
+        281,
+        322
+      ],
+      "polygon": [
+        [
+          193,
+          295
+        ],
+        [
+          193,
+          322
+        ],
+        [
+          281,
+          322
+        ],
+        [
+          281,
+          295
+        ]
+      ],
+      "content": "Voluntary deed during life.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        197,
+        385,
+        276,
+        400
+      ],
+      "polygon": [
+        [
+          197,
+          385
+        ],
+        [
+          197,
+          400
+        ],
+        [
+          276,
+          400
+        ],
+        [
+          276,
+          385
+        ]
+      ],
+      "content": "By testament.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 4,
+      "label": "header",
+      "bbox_2d": [
+        444,
+        60,
+        712,
+        83
+      ],
+      "polygon": [
+        [
+          444,
+          60
+        ],
+        [
+          444,
+          78
+        ],
+        [
+          450,
+          83
+        ],
+        [
+          711,
+          83
+        ],
+        [
+          711,
+          60
+        ]
+      ],
+      "content": "Derived real RIGHTS.",
+      "native_label": "header"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        282,
+        90,
+        877,
+        292
+      ],
+      "polygon": [
+        [
+          287,
+          90
+        ],
+        [
+          282,
+          292
+        ],
+        [
+          877,
+          292
+        ],
+        [
+          877,
+          90
+        ]
+      ],
+      "content": "VII. The complete property may be transferred either by the voluntary deed of the proprietor, or by the disposition of the law of nature, without his consent, for the interest of others. By deed of the proprietor it may be transferred either during his life, or upon the event of his death. And by disposition of the law of nature, without his consent, property may be transferred either during the proprietor's life, or on the event of his death. Of these four in order.",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        282,
+        293,
+        882,
+        383
+      ],
+      "polygon": [
+        [
+          287,
+          293
+        ],
+        [
+          287,
+          383
+        ],
+        [
+          881,
+          383
+        ],
+        [
+          881,
+          293
+        ]
+      ],
+      "content": "1. By voluntary deed of the proprietor during his life, either gratuitously by donation, or for a certain price or valuable consideration; of this we treat in the following chapter about contracts.",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        282,
+        382,
+        881,
+        767
+      ],
+      "polygon": [
+        [
+          282,
+          382
+        ],
+        [
+          287,
+          767
+        ],
+        [
+          881,
+          767
+        ],
+        [
+          881,
+          382
+        ]
+      ],
+      "content": "2. Property is conveyed by the voluntary act of the proprietor upon the event of his death by last will or testament. This right of devising by will is naturally included in the property, which contains a right of disposing upon any condition or contingency. Take away this right and industry shall be much discouraged after men are tolerably provided with necessaries for themselves and their families during life; or men must be forced into a pretty hazardous conduct by actually giving away during life whatever they acquire beyond their own probable consumption in their lifetime. Not to mention that they must give away as soon as they acquire any surplusses, since the suddenness of death, or a delirium, may make them incapable of donations upon the approach of death. This right therefore of devising by will seems manifestly founded in the law of nature, tho' civil laws may li-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        287,
+        60,
+        548,
+        84
+      ],
+      "polygon": [
+        [
+          287,
+          60
+        ],
+        [
+          287,
+          84
+        ],
+        [
+          548,
+          84
+        ],
+        [
+          548,
+          60
+        ]
+      ],
+      "content": "Derived real RIGHTS.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        89,
+        708,
+        362
+      ],
+      "polygon": [
+        [
+          126,
+          94
+        ],
+        [
+          132,
+          362
+        ],
+        [
+          708,
+          362
+        ],
+        [
+          703,
+          89
+        ]
+      ],
+      "content": "mit the exercise of it in common with all other rights respecting property, such as the disinheriting or passing by a child without any fault of his, or the conveying almost all a man's wealth to one of his numerous posterity from a foolish desire of raising one great family. Civil laws also justly oblige men to such forms as shall best prevent forgeries. By the law of nature every declaration of a man's will of which credible evidence can be given, is valid and obligatory on those concerned: but that all men may be engaged to use the most convenient forms, civil laws may confirm no testaments made without them.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        129,
+        360,
+        710,
+        774
+      ],
+      "polygon": [
+        [
+          129,
+          360
+        ],
+        [
+          134,
+          773
+        ],
+        [
+          164,
+          773
+        ],
+        [
+          710,
+          773
+        ],
+        [
+          705,
+          360
+        ]
+      ],
+      "content": "That the law of nature and the interest of society establish this right of devising by will is as plain as that they establish other rights of the proprietor. The natural design of mankind in any acquisitions beyond their own consumption is to promote by them the happiness of those they love; this happiness one desires they may obtain not only during his life, but after his decease. These kind affections and suitable offices to make others happy, whether we are to live with them or not, are the natural, joyful, and honourable exercises of the human soul while we live. And 'tis cruel and unjust to hinder a man either from such good offices while he lives, or to deprive him of the joyful hope that his surviving friends shall be profited by the fruits of his labours. \"Tis cruel to these friends to intercept the benefit designed them by their friend now deceased. There is no method so convenient for individuals, or for the society, by which goods can be",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        165,
+        764,
+        475,
+        788
+      ],
+      "polygon": [
+        [
+          165,
+          764
+        ],
+        [
+          165,
+          788
+        ],
+        [
+          475,
+          788
+        ],
+        [
+          475,
+          764
+        ]
+      ],
+      "content": "VOL.I. Y y",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        750,
+        66,
+        796,
+        89
+      ],
+      "polygon": [
+        [
+          750,
+          66
+        ],
+        [
+          750,
+          89
+        ],
+        [
+          796,
+          89
+        ],
+        [
+          796,
+          66
+        ]
+      ],
+      "content": "353",
+      "native_label": "number"
+    },
+    {
+      "index": 5,
+      "label": "aside_text",
+      "bbox_2d": [
+        707,
+        95,
+        793,
+        129
+      ],
+      "polygon": [
+        [
+          711,
+          95
+        ],
+        [
+          707,
+          110
+        ],
+        [
+          707,
+          129
+        ],
+        [
+          793,
+          129
+        ],
+        [
+          793,
+          95
+        ]
+      ],
+      "content": "CHAP. 8.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 6,
+      "label": "aside_text",
+      "bbox_2d": [
+        705,
+        360,
+        802,
+        401
+      ],
+      "polygon": [
+        [
+          710,
+          360
+        ],
+        [
+          705,
+          370
+        ],
+        [
+          705,
+          401
+        ],
+        [
+          802,
+          401
+        ],
+        [
+          802,
+          360
+        ]
+      ],
+      "content": "The foundation of this right of testaments.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        164,
+        67,
+        217,
+        89
+      ],
+      "polygon": [
+        [
+          164,
+          67
+        ],
+        [
+          164,
+          89
+        ],
+        [
+          216,
+          89
+        ],
+        [
+          216,
+          67
+        ],
+        [
+          212,
+          67
+        ],
+        [
+          206,
+          67
+        ]
+      ],
+      "content": "354",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "aside_text",
+      "bbox_2d": [
+        174,
+        467,
+        279,
+        523
+      ],
+      "polygon": [
+        [
+          174,
+          472
+        ],
+        [
+          174,
+          522
+        ],
+        [
+          274,
+          522
+        ],
+        [
+          278,
+          513
+        ],
+        [
+          278,
+          467
+        ],
+        [
+          204,
+          467
+        ]
+      ],
+      "content": "Translation by the law of nature during the life of the proprietor.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 2,
+      "label": "footnote",
+      "bbox_2d": [
+        281,
+        665,
+        583,
+        784
+      ],
+      "polygon": [
+        [
+          281,
+          665
+        ],
+        [
+          286,
+          783
+        ],
+        [
+          583,
+          783
+        ],
+        [
+          578,
+          665
+        ]
+      ],
+      "content": "Some improper use of metaphysicks in this subject has raised great controversies to little purpose, as if the validity of wills imported some physical action done when the agent was dead; some trifling objections are raised too from the nature of other transactions. The question is truly this, whether it is not requisite for",
+      "native_label": "footnote"
+    },
+    {
+      "index": 3,
+      "label": "header",
+      "bbox_2d": [
+        433,
+        58,
+        716,
+        81
+      ],
+      "polygon": [
+        [
+          433,
+          58
+        ],
+        [
+          433,
+          80
+        ],
+        [
+          715,
+          80
+        ],
+        [
+          715,
+          58
+        ]
+      ],
+      "content": "Derived real RIGHTS.",
+      "native_label": "header"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        161,
+        88,
+        890,
+        457
+      ],
+      "polygon": [
+        [
+          166,
+          93
+        ],
+        [
+          176,
+          422
+        ],
+        [
+          196,
+          447
+        ],
+        [
+          221,
+          457
+        ],
+        [
+          890,
+          457
+        ],
+        [
+          885,
+          88
+        ],
+        [
+          181,
+          93
+        ]
+      ],
+      "content": "transferred to survivors as that by testament, or a declaration of the will of the proprietor revocable, and not to take effect till after his death.\" To leave the goods of the deceased in common open to occupation must occasion the most odious contentions and mischiefs. To all these reasons we may add that a wisely contrived will is generally in consequence of moral obligation, and a fulfilling of the rights or claims either of a perfect or imperfect kind which the survivors had upon the goods of the deceased. All which proves abundantly the right of devising, and the obligation upon all to observe and maintain the will of the testator, where it is tolerably prudent, and not contrary to some strong principles of humanity. Where it is contrary, there may be no injustice in an- nulling it.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        275,
+        456,
+        897,
+        646
+      ],
+      "polygon": [
+        [
+          275,
+          466
+        ],
+        [
+          275,
+          646
+        ],
+        [
+          897,
+          646
+        ],
+        [
+          892,
+          456
+        ],
+        [
+          290,
+          456
+        ]
+      ],
+      "content": "VIII. The third manner of transferring property is by the plain law of nature, without consent of the proprietor, during his life, whenever it is requisite to satisfy any just claim another had against him which he declines to comply with. This will be considered hereafter among the rights arising from the injuries done by others. Thus for compensation of damage, or discharging a just debt, a man's goods are justly seized,",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "footnote",
+      "bbox_2d": [
+        596,
+        664,
+        899,
+        768
+      ],
+      "polygon": [
+        [
+          596,
+          664
+        ],
+        [
+          601,
+          767
+        ],
+        [
+          899,
+          767
+        ],
+        [
+          899,
+          664
+        ]
+      ],
+      "content": "an innocent satisfaction of men that their testaments be observed after their death ? and whether the interest of society does not require it? which are obvious. See Barbeyraque's notes on Puffend. de jure nat. et gent. lib. iv. c. 10. and authors there cited.",
+      "native_label": "footnote"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        275,
+        55,
+        534,
+        80
+      ],
+      "polygon": [
+        [
+          275,
+          55
+        ],
+        [
+          275,
+          80
+        ],
+        [
+          534,
+          80
+        ],
+        [
+          534,
+          55
+        ]
+      ],
+      "content": "Derived real RIGHTS.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        740,
+        62,
+        788,
+        85
+      ],
+      "polygon": [
+        [
+          740,
+          62
+        ],
+        [
+          740,
+          84
+        ],
+        [
+          788,
+          84
+        ],
+        [
+          788,
+          62
+        ],
+        [
+          779,
+          62
+        ],
+        [
+          774,
+          62
+        ],
+        [
+          769,
+          62
+        ],
+        [
+          764,
+          62
+        ],
+        [
+          755,
+          62
+        ],
+        [
+          750,
+          62
+        ]
+      ],
+      "content": "355",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        115,
+        86,
+        788,
+        132
+      ],
+      "polygon": [
+        [
+          115,
+          86
+        ],
+        [
+          115,
+          131
+        ],
+        [
+          787,
+          131
+        ],
+        [
+          787,
+          91
+        ],
+        [
+          753,
+          86
+        ]
+      ],
+      "content": "and the property of them acquired by the perfons who CHAP.8. had such claims.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        117,
+        131,
+        704,
+        723
+      ],
+      "polygon": [
+        [
+          117,
+          131
+        ],
+        [
+          117,
+          722
+        ],
+        [
+          699,
+          722
+        ],
+        [
+          703,
+          136
+        ]
+      ],
+      "content": "The fourth manner of translation is by the law of nature, without the deed of the proprietor, upon the event of his death, in the successions to the intestate. The grounds of it are these. The intention of the deceased in all his acquisitions beyond his own use, was contributing to the happiness of such as were dear to him, as 'tis abundantly known to all. We see that one's posterity, and failing those his kinsmen, are dearer to men universally than others, tho' they may happen to have conversed more with others, in matters of business or pleasure. When men declare their wills, we see the general inclination to improve the fortunes of their posterity and kinsmen, and justly presume the same where it is not expressly declared. \"Tis cruel, without some publick interest requiring it, to defeat this natural hope of succession founded by the tyes of blood. Our children, and failing these our kinsmen have plainly a right where some undutiful conduct has not forfeited it, not only to support from us in their indigent state, but to have their condition improved by any surplus of goods we have beyond our own consumption. \"Tis contrary to nature, as well as humanity, to defeat this claim when no publick interest requires it. \"Tis plain also that leaving the goods of the intestate in common to be occupied would cause the greatest confusion.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        161,
+        722,
+        701,
+        769
+      ],
+      "polygon": [
+        [
+          161,
+          727
+        ],
+        [
+          161,
+          769
+        ],
+        [
+          416,
+          769
+        ],
+        [
+          421,
+          769
+        ],
+        [
+          701,
+          769
+        ],
+        [
+          701,
+          722
+        ],
+        [
+          351,
+          722
+        ],
+        [
+          341,
+          722
+        ],
+        [
+          166,
+          722
+        ]
+      ],
+      "content": "If friends were admitted along with kindred, it Y y 2",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        178,
+        64,
+        229,
+        91
+      ],
+      "polygon": [
+        [
+          178,
+          64
+        ],
+        [
+          178,
+          90
+        ],
+        [
+          229,
+          90
+        ],
+        [
+          229,
+          64
+        ]
+      ],
+      "content": "356.",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        431,
+        63,
+        701,
+        86
+      ],
+      "polygon": [
+        [
+          431,
+          63
+        ],
+        [
+          431,
+          86
+        ],
+        [
+          700,
+          86
+        ],
+        [
+          700,
+          63
+        ]
+      ],
+      "content": "Derived real RIGHTS.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "aside_text",
+      "bbox_2d": [
+        192,
+        661,
+        281,
+        688
+      ],
+      "polygon": [
+        [
+          192,
+          661
+        ],
+        [
+          192,
+          688
+        ],
+        [
+          281,
+          688
+        ],
+        [
+          281,
+          661
+        ]
+      ],
+      "content": "Unnatural customs.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        172,
+        93,
+        865,
+        317
+      ],
+      "polygon": [
+        [
+          177,
+          114
+        ],
+        [
+          182,
+          306
+        ],
+        [
+          197,
+          316
+        ],
+        [
+          865,
+          316
+        ],
+        [
+          865,
+          93
+        ],
+        [
+          242,
+          93
+        ],
+        [
+          197,
+          98
+        ]
+      ],
+      "content": "must be in some proportion to the degrees of friendship; but these cannot now be determined; and much less could they be determined if the hopes of succession invited all flatterers. We justly too presume upon the will of the intestate from this, that since the custom has universally obtained, in all nations almost, to admit only kinsmen to succession, had the deceased intended that others should be admitted, he would have expressly declared this peculiar and less usual desire.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        181,
+        322,
+        280,
+        350
+      ],
+      "polygon": [
+        [
+          181,
+          322
+        ],
+        [
+          181,
+          350
+        ],
+        [
+          279,
+          350
+        ],
+        [
+          279,
+          322
+        ],
+        [
+          240,
+          322
+        ],
+        [
+          186,
+          322
+        ]
+      ],
+      "content": "The natural way of succession.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        233,
+        318,
+        870,
+        655
+      ],
+      "polygon": [
+        [
+          233,
+          348
+        ],
+        [
+          233,
+          524
+        ],
+        [
+          278,
+          654
+        ],
+        [
+          870,
+          654
+        ],
+        [
+          870,
+          318
+        ],
+        [
+          268,
+          318
+        ]
+      ],
+      "content": "The natural affections of men shew that their posterity should be admitted in the first place, viz. children and grandchildren; grandchildren at least admitted to their parents share among them, where a deceased child has left more than one: and along with posterity parents should be admitted, if they are in straits. In default of both, brothers and sisters, and along with them the children of a brother or sister deceased, at least to the share their parent would have got had the parent been alive. Reasons of humanity would recommend other proportions sometimes, but they would occasion great controversies. In default of such relations all kindred of equal degrees should generally come in equally, and exclude the more remote.",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        281,
+        654,
+        877,
+        747
+      ],
+      "polygon": [
+        [
+          281,
+          660
+        ],
+        [
+          287,
+          747
+        ],
+        [
+          877,
+          747
+        ],
+        [
+          872,
+          654
+        ],
+        [
+          287,
+          654
+        ]
+      ],
+      "content": "The notion of having some one representative of the person deceased, succeeding to all his rights, and subjected to all his obligations, as the Roman heir was, has no foundation in nature; nor is there any rea-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        342,
+        51,
+        602,
+        76
+      ],
+      "polygon": [
+        [
+          342,
+          51
+        ],
+        [
+          342,
+          75
+        ],
+        [
+          602,
+          75
+        ],
+        [
+          602,
+          56
+        ],
+        [
+          547,
+          51
+        ]
+      ],
+      "content": "Derived real RIGHTS.",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        802,
+        58,
+        850,
+        80
+      ],
+      "polygon": [
+        [
+          802,
+          58
+        ],
+        [
+          802,
+          80
+        ],
+        [
+          850,
+          80
+        ],
+        [
+          850,
+          58
+        ]
+      ],
+      "content": "357",
+      "native_label": "number"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        185,
+        81,
+        762,
+        556
+      ],
+      "polygon": [
+        [
+          185,
+          81
+        ],
+        [
+          185,
+          555
+        ],
+        [
+          757,
+          555
+        ],
+        [
+          762,
+          86
+        ]
+      ],
+      "content": "son why a far greater part of the inheritance should go universally to one of many children, or one of many in the same degree; nor why seniority among children, or kinsmen of the same degree, should have such preference; nor why the distinction of sex should in the first degree of children take place of all other considerations, and yet be quite neglected in the degree of grandchildren, or be postponed to that of seniority of the parent, so that an infant grand-daughter of an elder son deceased, should take before an adult grand-son by a second son, nay before the second son himself. A niece by an elder brother deceased, nay her daughter, take place of even a younger brother himself, as well as the male descendants of younger brothers. All these things are founded only in civil laws. In the succession to private fortunes there is seldom any reason for having one heir rather than many equally related to the deceased. Customs of many nations and their civil laws about these matters are very foolish, and have some pernicious effects upon society.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        187,
+        554,
+        761,
+        738
+      ],
+      "polygon": [
+        [
+          187,
+          554
+        ],
+        [
+          192,
+          737
+        ],
+        [
+          761,
+          737
+        ],
+        [
+          761,
+          554
+        ]
+      ],
+      "content": "IX. Personal rights are constituted against a man when he has limited some part of his natural liberty, or his power of disposing of his actions and goods, and transferred it to another, who thence acquires the personal right. And when this right or claim of another is fulfilled, or abolished, the natural liberty of the person obliged becomes again in this respect entire, or the personal right is consolidated with it, as",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "aside_text",
+      "bbox_2d": [
+        755,
+        556,
+        848,
+        584
+      ],
+      "polygon": [
+        [
+          755,
+          561
+        ],
+        [
+          755,
+          584
+        ],
+        [
+          848,
+          584
+        ],
+        [
+          848,
+          556
+        ],
+        [
+          760,
+          556
+        ]
+      ],
+      "content": "Personal rights how acquired.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        92,
+        47,
+        142,
+        75
+      ],
+      "polygon": [
+        [
+          142,
+          47
+        ],
+        [
+          127,
+          47
+        ],
+        [
+          92,
+          52
+        ],
+        [
+          92,
+          75
+        ],
+        [
+          137,
+          75
+        ],
+        [
+          142,
+          70
+        ]
+      ],
+      "content": "358",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "bbox_2d": [
+        349,
+        44,
+        622,
+        68
+      ],
+      "polygon": [
+        [
+          349,
+          44
+        ],
+        [
+          349,
+          68
+        ],
+        [
+          622,
+          68
+        ],
+        [
+          622,
+          44
+        ]
+      ],
+      "content": "Derived real RIGHTS.",
+      "native_label": "header"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        89,
+        75,
+        794,
+        198
+      ],
+      "polygon": [
+        [
+          89,
+          85
+        ],
+        [
+          89,
+          197
+        ],
+        [
+          794,
+          197
+        ],
+        [
+          794,
+          75
+        ],
+        [
+          189,
+          75
+        ]
+      ],
+      "content": "Book II. it was before the right subfisted. Such rights arise either from some contract, or some deed of the person obliged; and the consideration of them leads to the subject of contracts or covenants, the main engine of constituting either personal rights or real.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        407,
+        227,
+        613,
+        335
+      ],
+      "polygon": [
+        [
+          407,
+          227
+        ],
+        [
+          407,
+          284
+        ],
+        [
+          407,
+          315
+        ],
+        [
+          407,
+          335
+        ],
+        [
+          613,
+          335
+        ],
+        [
+          613,
+          227
+        ]
+      ],
+      "content": "MVSEVM\n\nBRITAN\n\nNICVM",
+      "native_label": "seal"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        298,
+        362,
+        685,
+        382
+      ],
+      "polygon": [
+        [
+          298,
+          367
+        ],
+        [
+          298,
+          382
+        ],
+        [
+          685,
+          382
+        ],
+        [
+          685,
+          362
+        ],
+        [
+          469,
+          362
+        ]
+      ],
+      "content": "THE END OF THE FIRST VOLUME.",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        93,
+        102,
+        900,
+        207
+      ],
+      "polygon": [
+        [
+          93,
+          102
+        ],
+        [
+          93,
+          206
+        ],
+        [
+          900,
+          206
+        ],
+        [
+          900,
+          102
+        ]
+      ],
+      "content": "Hutcheson, Francis. A system of moral philosophy, in three books; written by the late Francis Hutcheson, L. L. D. Professor of Philosophy in the University of Glasgow. Published from the Original Manuscript, by his Son Francis Hutcheson, M. D. To which is prefixed some account of the life, writings, and character of the author, by the Reverend William Leechman, D. D. Professor of Divinity in the Same University. ... Vol. 1, printed and sold by R. and A. Foulis Printers to the University. London, sold by A. Millar Over-Against Katharine-Street in the Strand, and by T. Longman in Pater-Noster Row, M.DCC.LV. [1755]. Eighteenth Century Collections Online, link.gale.com/apps/doc/CW0121267416/ECCO?u=dublin&sid=bookmark- ECCO&xid=54d809b4&pg=1. Accessed 8 Dec. 2021.",
+      "native_label": "text"
+    }
+  ]
+]

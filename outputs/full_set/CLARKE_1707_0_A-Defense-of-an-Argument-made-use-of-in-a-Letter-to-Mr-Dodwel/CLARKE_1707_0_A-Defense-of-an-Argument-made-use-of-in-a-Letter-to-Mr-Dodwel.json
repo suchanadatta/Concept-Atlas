@@ -1,0 +1,7975 @@
+[
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        90,
+        131,
+        913,
+        206
+      ],
+      "polygon": [
+        [
+          90,
+          151
+        ],
+        [
+          90,
+          206
+        ],
+        [
+          911,
+          206
+        ],
+        [
+          911,
+          131
+        ],
+        [
+          459,
+          131
+        ],
+        [
+          215,
+          136
+        ],
+        [
+          205,
+          136
+        ],
+        [
+          125,
+          141
+        ]
+      ],
+      "content": "## DEFENSE",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        253,
+        877,
+        306
+      ],
+      "polygon": [
+        [
+          125,
+          259
+        ],
+        [
+          125,
+          306
+        ],
+        [
+          871,
+          306
+        ],
+        [
+          876,
+          253
+        ],
+        [
+          195,
+          253
+        ],
+        [
+          189,
+          253
+        ],
+        [
+          141,
+          253
+        ]
+      ],
+      "content": "ARGUMENT",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        320,
+        314,
+        677,
+        349
+      ],
+      "polygon": [
+        [
+          320,
+          314
+        ],
+        [
+          320,
+          349
+        ],
+        [
+          676,
+          349
+        ],
+        [
+          676,
+          314
+        ]
+      ],
+      "content": "Made ufe of in a",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        100,
+        359,
+        913,
+        472
+      ],
+      "polygon": [
+        [
+          100,
+          472
+        ],
+        [
+          911,
+          467
+        ],
+        [
+          907,
+          359
+        ],
+        [
+          106,
+          359
+        ]
+      ],
+      "content": "LETTER To Mr D O D W E L,",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        409,
+        487,
+        598,
+        518
+      ],
+      "polygon": [
+        [
+          409,
+          487
+        ],
+        [
+          409,
+          517
+        ],
+        [
+          597,
+          517
+        ],
+        [
+          597,
+          492
+        ],
+        [
+          592,
+          487
+        ],
+        [
+          509,
+          487
+        ],
+        [
+          483,
+          487
+        ]
+      ],
+      "content": "To Prove",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        220,
+        527,
+        788,
+        574
+      ],
+      "polygon": [
+        [
+          220,
+          532
+        ],
+        [
+          226,
+          573
+        ],
+        [
+          782,
+          573
+        ],
+        [
+          787,
+          545
+        ],
+        [
+          782,
+          527
+        ]
+      ],
+      "content": "The Immateriality",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        173,
+        588,
+        838,
+        635
+      ],
+      "polygon": [
+        [
+          173,
+          588
+        ],
+        [
+          173,
+          635
+        ],
+        [
+          832,
+          635
+        ],
+        [
+          837,
+          588
+        ]
+      ],
+      "content": "And Natural Immortality",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        403,
+        650,
+        616,
+        677
+      ],
+      "polygon": [
+        [
+          403,
+          650
+        ],
+        [
+          403,
+          676
+        ],
+        [
+          615,
+          676
+        ],
+        [
+          615,
+          650
+        ]
+      ],
+      "content": "O F T H E",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "image",
+      "bbox_2d": [
+        146,
+        689,
+        237,
+        762
+      ],
+      "polygon": [
+        [
+          146,
+          689
+        ],
+        [
+          146,
+          757
+        ],
+        [
+          152,
+          762
+        ],
+        [
+          236,
+          762
+        ],
+        [
+          236,
+          689
+        ]
+      ],
+      "content": null,
+      "native_label": "image",
+      "image_path": "imgs/cropped_page0_idx0.jpg"
+    },
+    {
+      "index": 9,
+      "label": "image",
+      "bbox_2d": [
+        306,
+        691,
+        442,
+        760
+      ],
+      "polygon": [
+        [
+          312,
+          691
+        ],
+        [
+          306,
+          701
+        ],
+        [
+          306,
+          735
+        ],
+        [
+          312,
+          760
+        ],
+        [
+          441,
+          760
+        ],
+        [
+          441,
+          691
+        ]
+      ],
+      "content": null,
+      "native_label": "image",
+      "image_path": "imgs/cropped_page0_idx1.jpg"
+    },
+    {
+      "index": 10,
+      "label": "image",
+      "bbox_2d": [
+        508,
+        687,
+        669,
+        762
+      ],
+      "polygon": [
+        [
+          508,
+          687
+        ],
+        [
+          508,
+          762
+        ],
+        [
+          668,
+          762
+        ],
+        [
+          668,
+          687
+        ]
+      ],
+      "content": null,
+      "native_label": "image",
+      "image_path": "imgs/cropped_page0_idx2.jpg"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        328,
+        802,
+        692,
+        835
+      ],
+      "polygon": [
+        [
+          328,
+          807
+        ],
+        [
+          328,
+          835
+        ],
+        [
+          691,
+          835
+        ],
+        [
+          691,
+          802
+        ],
+        [
+          390,
+          802
+        ]
+      ],
+      "content": "L O N D O $\\bigcap$ N,",
+      "native_label": "text"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        109,
+        835,
+        917,
+        889
+      ],
+      "polygon": [
+        [
+          109,
+          835
+        ],
+        [
+          109,
+          888
+        ],
+        [
+          911,
+          888
+        ],
+        [
+          916,
+          869
+        ],
+        [
+          911,
+          835
+        ],
+        [
+          663,
+          835
+        ],
+        [
+          657,
+          835
+        ]
+      ],
+      "content": "Printed by W. B. for James Knapton, at the Crown in St. Paul's Church-Yard. 1707.",
+      "native_label": "text"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        386,
+        905,
+        646,
+        925
+      ],
+      "polygon": [
+        [
+          386,
+          905
+        ],
+        [
+          386,
+          924
+        ],
+        [
+          645,
+          924
+        ],
+        [
+          645,
+          905
+        ]
+      ],
+      "content": "Price Three Pence",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        324,
+        21,
+        483,
+        70
+      ],
+      "polygon": [
+        [
+          324,
+          21
+        ],
+        [
+          324,
+          69
+        ],
+        [
+          482,
+          69
+        ],
+        [
+          482,
+          21
+        ]
+      ],
+      "content": "[1]",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        386,
+        177,
+        433,
+        208
+      ],
+      "polygon": [
+        [
+          428,
+          177
+        ],
+        [
+          420,
+          177
+        ],
+        [
+          386,
+          182
+        ],
+        [
+          386,
+          207
+        ],
+        [
+          432,
+          207
+        ],
+        [
+          432,
+          182
+        ]
+      ],
+      "content": "## A",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        79,
+        229,
+        753,
+        284
+      ],
+      "polygon": [
+        [
+          79,
+          234
+        ],
+        [
+          79,
+          283
+        ],
+        [
+          748,
+          283
+        ],
+        [
+          752,
+          229
+        ],
+        [
+          84,
+          229
+        ]
+      ],
+      "content": "# DEFENSE",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        299,
+        299,
+        519,
+        331
+      ],
+      "polygon": [
+        [
+          299,
+          299
+        ],
+        [
+          299,
+          331
+        ],
+        [
+          518,
+          331
+        ],
+        [
+          518,
+          299
+        ]
+      ],
+      "content": "O F A N",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        50,
+        347,
+        780,
+        398
+      ],
+      "polygon": [
+        [
+          50,
+          347
+        ],
+        [
+          50,
+          398
+        ],
+        [
+          779,
+          398
+        ],
+        [
+          779,
+          347
+        ]
+      ],
+      "content": "## ARGUMENT, &c.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        51,
+        421,
+        787,
+        619
+      ],
+      "polygon": [
+        [
+          56,
+          427
+        ],
+        [
+          56,
+          619
+        ],
+        [
+          785,
+          614
+        ],
+        [
+          785,
+          421
+        ]
+      ],
+      "content": "IN a Letter to Mr. Dodwel, upon occasion of his late Discourse concerning the Nature of the Soul, the following Argument was among others particularly made use of, to prove the Immateriality and natural Immortality of the Soul.",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        109,
+        636,
+        886,
+        668
+      ],
+      "polygon": [
+        [
+          109,
+          668
+        ],
+        [
+          810,
+          668
+        ],
+        [
+          836,
+          654
+        ],
+        [
+          840,
+          645
+        ],
+        [
+          730,
+          636
+        ],
+        [
+          656,
+          636
+        ],
+        [
+          589,
+          636
+        ],
+        [
+          109,
+          636
+        ]
+      ],
+      "content": "' The fame thing, viz. that the Letter t",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        60,
+        666,
+        779,
+        696
+      ],
+      "polygon": [
+        [
+          60,
+          666
+        ],
+        [
+          65,
+          695
+        ],
+        [
+          778,
+          695
+        ],
+        [
+          778,
+          672
+        ],
+        [
+          759,
+          666
+        ],
+        [
+          709,
+          666
+        ],
+        [
+          694,
+          666
+        ],
+        [
+          654,
+          666
+        ],
+        [
+          510,
+          666
+        ],
+        [
+          439,
+          666
+        ],
+        [
+          385,
+          666
+        ],
+        [
+          374,
+          666
+        ],
+        [
+          340,
+          666
+        ]
+      ],
+      "content": "Soul cannot possibly be Material,",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        63,
+        694,
+        787,
+        721
+      ],
+      "polygon": [
+        [
+          63,
+          694
+        ],
+        [
+          63,
+          721
+        ],
+        [
+          785,
+          721
+        ],
+        [
+          785,
+          694
+        ]
+      ],
+      "content": "' is moreover demonstrable from the",
+      "native_label": "text"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        66,
+        721,
+        790,
+        748
+      ],
+      "polygon": [
+        [
+          66,
+          721
+        ],
+        [
+          72,
+          748
+        ],
+        [
+          789,
+          748
+        ],
+        [
+          784,
+          721
+        ],
+        [
+          691,
+          721
+        ],
+        [
+          685,
+          721
+        ]
+      ],
+      "content": "- fingle confideration even of bare",
+      "native_label": "text"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        66,
+        748,
+        793,
+        776
+      ],
+      "polygon": [
+        [
+          66,
+          748
+        ],
+        [
+          72,
+          775
+        ],
+        [
+          82,
+          775
+        ],
+        [
+          792,
+          775
+        ],
+        [
+          788,
+          748
+        ]
+      ],
+      "content": "- Sense and Conscioufness itself. For,",
+      "native_label": "text"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        71,
+        803,
+        793,
+        830
+      ],
+      "polygon": [
+        [
+          71,
+          803
+        ],
+        [
+          76,
+          830
+        ],
+        [
+          792,
+          830
+        ],
+        [
+          788,
+          803
+        ]
+      ],
+      "content": "confisting always of separable, nay",
+      "native_label": "text"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        74,
+        830,
+        793,
+        886
+      ],
+      "polygon": [
+        [
+          74,
+          830
+        ],
+        [
+          74,
+          886
+        ],
+        [
+          792,
+          886
+        ],
+        [
+          792,
+          830
+        ],
+        [
+          649,
+          830
+        ],
+        [
+          598,
+          830
+        ],
+        [
+          569,
+          830
+        ],
+        [
+          544,
+          830
+        ],
+        [
+          503,
+          830
+        ],
+        [
+          479,
+          830
+        ],
+        [
+          473,
+          830
+        ]
+      ],
+      "content": "of actually Separate and Dist A2 ftinct",
+      "native_label": "text"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        70,
+        775,
+        791,
+        804
+      ],
+      "polygon": [
+        [
+          70,
+          775
+        ],
+        [
+          70,
+          799
+        ],
+        [
+          95,
+          804
+        ],
+        [
+          790,
+          804
+        ],
+        [
+          785,
+          780
+        ],
+        [
+          665,
+          775
+        ]
+      ],
+      "content": "Matter being a divisible Substance,",
+      "native_label": "text"
+    },
+    {
+      "index": 14,
+      "label": "aside_text",
+      "bbox_2d": [
+        783,
+        647,
+        923,
+        731
+      ],
+      "polygon": [
+        [
+          789,
+          647
+        ],
+        [
+          783,
+          657
+        ],
+        [
+          783,
+          711
+        ],
+        [
+          789,
+          730
+        ],
+        [
+          917,
+          730
+        ],
+        [
+          921,
+          716
+        ],
+        [
+          921,
+          652
+        ],
+        [
+          917,
+          647
+        ]
+      ],
+      "content": "Letter to Mr. Dodwel. pag. 33-",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        413,
+        21,
+        591,
+        64
+      ],
+      "polygon": [
+        [
+          413,
+          21
+        ],
+        [
+          413,
+          63
+        ],
+        [
+          590,
+          63
+        ],
+        [
+          590,
+          21
+        ]
+      ],
+      "content": "# [2]",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        100,
+        63,
+        898,
+        96
+      ],
+      "polygon": [
+        [
+          100,
+          63
+        ],
+        [
+          106,
+          95
+        ],
+        [
+          897,
+          95
+        ],
+        [
+          897,
+          63
+        ]
+      ],
+      "content": "' finct Parts ; 'tis plain, unlefs it",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        105,
+        94,
+        898,
+        123
+      ],
+      "polygon": [
+        [
+          105,
+          94
+        ],
+        [
+          111,
+          122
+        ],
+        [
+          149,
+          122
+        ],
+        [
+          155,
+          122
+        ],
+        [
+          897,
+          122
+        ],
+        [
+          897,
+          99
+        ],
+        [
+          887,
+          94
+        ]
+      ],
+      "content": "were essentially conscious, in which",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        107,
+        122,
+        899,
+        151
+      ],
+      "polygon": [
+        [
+          113,
+          122
+        ],
+        [
+          113,
+          150
+        ],
+        [
+          898,
+          150
+        ],
+        [
+          898,
+          122
+        ]
+      ],
+      "content": "cafe every Particle of Matter must",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        109,
+        151,
+        899,
+        178
+      ],
+      "polygon": [
+        [
+          109,
+          156
+        ],
+        [
+          109,
+          178
+        ],
+        [
+          898,
+          178
+        ],
+        [
+          898,
+          151
+        ],
+        [
+          120,
+          151
+        ]
+      ],
+      "content": "' confit of innumerable separate and",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        114,
+        178,
+        902,
+        207
+      ],
+      "polygon": [
+        [
+          114,
+          178
+        ],
+        [
+          114,
+          206
+        ],
+        [
+          900,
+          206
+        ],
+        [
+          900,
+          178
+        ]
+      ],
+      "content": "distinct Confcioufnesses, no System",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        114,
+        206,
+        903,
+        235
+      ],
+      "polygon": [
+        [
+          114,
+          206
+        ],
+        [
+          114,
+          234
+        ],
+        [
+          902,
+          234
+        ],
+        [
+          902,
+          206
+        ]
+      ],
+      "content": "of it in any possible Composition or",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        114,
+        234,
+        905,
+        262
+      ],
+      "polygon": [
+        [
+          114,
+          234
+        ],
+        [
+          114,
+          261
+        ],
+        [
+          904,
+          261
+        ],
+        [
+          904,
+          240
+        ],
+        [
+          875,
+          234
+        ]
+      ],
+      "content": "Division can be an Individual conthree hundred, Particles of Matter,",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        115,
+        262,
+        904,
+        291
+      ],
+      "polygon": [
+        [
+          115,
+          267
+        ],
+        [
+          121,
+          290
+        ],
+        [
+          903,
+          290
+        ],
+        [
+          903,
+          267
+        ],
+        [
+          778,
+          262
+        ],
+        [
+          759,
+          262
+        ],
+        [
+          748,
+          262
+        ],
+        [
+          440,
+          262
+        ],
+        [
+          420,
+          262
+        ],
+        [
+          121,
+          262
+        ]
+      ],
+      "content": "' fcious Being. For suppose three, or",
+      "native_label": "text"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        119,
+        319,
+        909,
+        347
+      ],
+      "polygon": [
+        [
+          119,
+          319
+        ],
+        [
+          119,
+          346
+        ],
+        [
+          908,
+          346
+        ],
+        [
+          908,
+          319
+        ]
+      ],
+      "content": "at a Mile, or any given distance,",
+      "native_label": "text"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        117,
+        347,
+        909,
+        374
+      ],
+      "polygon": [
+        [
+          117,
+          361
+        ],
+        [
+          123,
+          374
+        ],
+        [
+          908,
+          374
+        ],
+        [
+          908,
+          347
+        ],
+        [
+          879,
+          347
+        ],
+        [
+          641,
+          347
+        ],
+        [
+          635,
+          347
+        ],
+        [
+          615,
+          347
+        ],
+        [
+          609,
+          347
+        ],
+        [
+          579,
+          347
+        ],
+        [
+          556,
+          347
+        ],
+        [
+          544,
+          347
+        ],
+        [
+          123,
+          347
+        ]
+      ],
+      "content": "one from another ; is it possible that",
+      "native_label": "text"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        120,
+        373,
+        909,
+        403
+      ],
+      "polygon": [
+        [
+          120,
+          373
+        ],
+        [
+          126,
+          402
+        ],
+        [
+          149,
+          402
+        ],
+        [
+          155,
+          402
+        ],
+        [
+          214,
+          402
+        ],
+        [
+          270,
+          402
+        ],
+        [
+          281,
+          402
+        ],
+        [
+          299,
+          402
+        ],
+        [
+          311,
+          402
+        ],
+        [
+          321,
+          402
+        ],
+        [
+          364,
+          402
+        ],
+        [
+          375,
+          402
+        ],
+        [
+          908,
+          402
+        ],
+        [
+          908,
+          373
+        ]
+      ],
+      "content": "all those separate Parts should in",
+      "native_label": "text"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        124,
+        402,
+        905,
+        429
+      ],
+      "polygon": [
+        [
+          124,
+          402
+        ],
+        [
+          124,
+          429
+        ],
+        [
+          904,
+          429
+        ],
+        [
+          904,
+          402
+        ],
+        [
+          881,
+          402
+        ],
+        [
+          875,
+          402
+        ],
+        [
+          864,
+          402
+        ]
+      ],
+      "content": "' that State be one Individual confcic ther; will they thereby, or by any",
+      "native_label": "text"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        121,
+        430,
+        909,
+        459
+      ],
+      "polygon": [
+        [
+          121,
+          440
+        ],
+        [
+          128,
+          458
+        ],
+        [
+          908,
+          458
+        ],
+        [
+          908,
+          430
+        ],
+        [
+          128,
+          430
+        ]
+      ],
+      "content": "' ous Being? Suppose then all these",
+      "native_label": "text"
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "bbox_2d": [
+        129,
+        459,
+        910,
+        487
+      ],
+      "polygon": [
+        [
+          129,
+          459
+        ],
+        [
+          129,
+          486
+        ],
+        [
+          909,
+          486
+        ],
+        [
+          909,
+          459
+        ]
+      ],
+      "content": "' Particles brought together into one",
+      "native_label": "text"
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "bbox_2d": [
+        130,
+        487,
+        911,
+        514
+      ],
+      "polygon": [
+        [
+          130,
+          487
+        ],
+        [
+          130,
+          513
+        ],
+        [
+          910,
+          513
+        ],
+        [
+          910,
+          487
+        ]
+      ],
+      "content": "' System, so as to touch one anoc ther; will they thereby, or by any",
+      "native_label": "text"
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "bbox_2d": [
+        131,
+        542,
+        913,
+        570
+      ],
+      "polygon": [
+        [
+          131,
+          542
+        ],
+        [
+          137,
+          569
+        ],
+        [
+          911,
+          569
+        ],
+        [
+          911,
+          547
+        ],
+        [
+          782,
+          542
+        ],
+        [
+          737,
+          542
+        ],
+        [
+          450,
+          542
+        ],
+        [
+          385,
+          542
+        ],
+        [
+          190,
+          542
+        ]
+      ],
+      "content": "Motion or Composition whatsoever,",
+      "native_label": "text"
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "bbox_2d": [
+        132,
+        569,
+        915,
+        598
+      ],
+      "polygon": [
+        [
+          132,
+          569
+        ],
+        [
+          132,
+          593
+        ],
+        [
+          143,
+          598
+        ],
+        [
+          914,
+          598
+        ],
+        [
+          914,
+          569
+        ],
+        [
+          318,
+          569
+        ],
+        [
+          312,
+          569
+        ]
+      ],
+      "content": "' become any whit less truly distinct",
+      "native_label": "text"
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "bbox_2d": [
+        134,
+        598,
+        916,
+        626
+      ],
+      "polygon": [
+        [
+          134,
+          598
+        ],
+        [
+          134,
+          625
+        ],
+        [
+          915,
+          625
+        ],
+        [
+          915,
+          598
+        ]
+      ],
+      "content": "' Beings, than they were at the",
+      "native_label": "text"
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "bbox_2d": [
+        135,
+        627,
+        919,
+        655
+      ],
+      "polygon": [
+        [
+          135,
+          627
+        ],
+        [
+          135,
+          654
+        ],
+        [
+          917,
+          654
+        ],
+        [
+          917,
+          632
+        ],
+        [
+          853,
+          627
+        ],
+        [
+          286,
+          627
+        ],
+        [
+          254,
+          627
+        ]
+      ],
+      "content": "' greatest distance ? How then can",
+      "native_label": "text"
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "bbox_2d": [
+        131,
+        654,
+        919,
+        682
+      ],
+      "polygon": [
+        [
+          131,
+          654
+        ],
+        [
+          137,
+          677
+        ],
+        [
+          172,
+          682
+        ],
+        [
+          724,
+          682
+        ],
+        [
+          913,
+          682
+        ],
+        [
+          917,
+          654
+        ]
+      ],
+      "content": "their being disposed in any possible",
+      "native_label": "text"
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "bbox_2d": [
+        136,
+        682,
+        917,
+        709
+      ],
+      "polygon": [
+        [
+          136,
+          682
+        ],
+        [
+          136,
+          709
+        ],
+        [
+          916,
+          709
+        ],
+        [
+          916,
+          682
+        ],
+        [
+          495,
+          682
+        ],
+        [
+          489,
+          682
+        ]
+      ],
+      "content": "System, make them one Individual",
+      "native_label": "text"
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "bbox_2d": [
+        137,
+        709,
+        920,
+        738
+      ],
+      "polygon": [
+        [
+          137,
+          709
+        ],
+        [
+          137,
+          733
+        ],
+        [
+          202,
+          737
+        ],
+        [
+          919,
+          737
+        ],
+        [
+          919,
+          709
+        ]
+      ],
+      "content": "' Confcious Being? If you suppose",
+      "native_label": "text"
+    },
+    {
+      "index": 23,
+      "label": "text",
+      "bbox_2d": [
+        140,
+        737,
+        920,
+        766
+      ],
+      "polygon": [
+        [
+          140,
+          737
+        ],
+        [
+          140,
+          765
+        ],
+        [
+          919,
+          765
+        ],
+        [
+          919,
+          737
+        ]
+      ],
+      "content": "God by his Infinite Power superadding Conscioufsness to the uni-",
+      "native_label": "text"
+    },
+    {
+      "index": 24,
+      "label": "text",
+      "bbox_2d": [
+        140,
+        793,
+        926,
+        821
+      ],
+      "polygon": [
+        [
+          140,
+          793
+        ],
+        [
+          140,
+          820
+        ],
+        [
+          925,
+          820
+        ],
+        [
+          925,
+          793
+        ]
+      ],
+      "content": "- ted Particles, yet still those. Par-",
+      "native_label": "text"
+    },
+    {
+      "index": 25,
+      "label": "text",
+      "bbox_2d": [
+        141,
+        820,
+        927,
+        849
+      ],
+      "polygon": [
+        [
+          141,
+          820
+        ],
+        [
+          147,
+          848
+        ],
+        [
+          926,
+          848
+        ],
+        [
+          926,
+          825
+        ],
+        [
+          916,
+          820
+        ],
+        [
+          539,
+          820
+        ]
+      ],
+      "content": "ticles, being really and neceffarily",
+      "native_label": "text"
+    },
+    {
+      "index": 26,
+      "label": "text",
+      "bbox_2d": [
+        149,
+        848,
+        927,
+        880
+      ],
+      "polygon": [
+        [
+          149,
+          848
+        ],
+        [
+          149,
+          879
+        ],
+        [
+          921,
+          879
+        ],
+        [
+          926,
+          874
+        ],
+        [
+          921,
+          848
+        ]
+      ],
+      "content": "as distinct Beings as ever, cannot be",
+      "native_label": "text"
+    },
+    {
+      "index": 27,
+      "label": "text",
+      "bbox_2d": [
+        760,
+        878,
+        925,
+        905
+      ],
+      "polygon": [
+        [
+          760,
+          878
+        ],
+        [
+          760,
+          904
+        ],
+        [
+          923,
+          904
+        ],
+        [
+          923,
+          878
+        ]
+      ],
+      "content": "'them-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        318,
+        32,
+        484,
+        74
+      ],
+      "polygon": [
+        [
+          318,
+          32
+        ],
+        [
+          318,
+          73
+        ],
+        [
+          482,
+          73
+        ],
+        [
+          482,
+          32
+        ]
+      ],
+      "content": "## [3]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        15,
+        74,
+        781,
+        105
+      ],
+      "polygon": [
+        [
+          15,
+          74
+        ],
+        [
+          15,
+          104
+        ],
+        [
+          780,
+          104
+        ],
+        [
+          780,
+          74
+        ]
+      ],
+      "content": "- themselves the Subject in which that",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        14,
+        104,
+        783,
+        133
+      ],
+      "polygon": [
+        [
+          14,
+          104
+        ],
+        [
+          19,
+          132
+        ],
+        [
+          44,
+          132
+        ],
+        [
+          64,
+          132
+        ],
+        [
+          89,
+          132
+        ],
+        [
+          423,
+          132
+        ],
+        [
+          782,
+          132
+        ],
+        [
+          782,
+          109
+        ],
+        [
+          748,
+          104
+        ]
+      ],
+      "content": "- Individual Confcioufness inheres ;",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        15,
+        131,
+        779,
+        159
+      ],
+      "polygon": [
+        [
+          15,
+          131
+        ],
+        [
+          15,
+          158
+        ],
+        [
+          773,
+          158
+        ],
+        [
+          777,
+          136
+        ],
+        [
+          753,
+          131
+        ]
+      ],
+      "content": "but the Confcioufness can only be",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        11,
+        158,
+        776,
+        187
+      ],
+      "polygon": [
+        [
+          11,
+          186
+        ],
+        [
+          775,
+          186
+        ],
+        [
+          775,
+          164
+        ],
+        [
+          761,
+          158
+        ],
+        [
+          17,
+          158
+        ]
+      ],
+      "content": "superadded by the addition of Some-",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        11,
+        186,
+        775,
+        214
+      ],
+      "polygon": [
+        [
+          11,
+          186
+        ],
+        [
+          11,
+          213
+        ],
+        [
+          774,
+          213
+        ],
+        [
+          774,
+          191
+        ],
+        [
+          755,
+          186
+        ]
+      ],
+      "content": "thing, which. in all the Particles",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        10,
+        213,
+        774,
+        241
+      ],
+      "polygon": [
+        [
+          10,
+          213
+        ],
+        [
+          10,
+          241
+        ],
+        [
+          773,
+          241
+        ],
+        [
+          773,
+          219
+        ],
+        [
+          763,
+          213
+        ]
+      ],
+      "content": "must still it self be but one Individual Being. The Soul therefore, whose",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        11,
+        267,
+        773,
+        297
+      ],
+      "polygon": [
+        [
+          11,
+          267
+        ],
+        [
+          11,
+          296
+        ],
+        [
+          772,
+          296
+        ],
+        [
+          772,
+          267
+        ]
+      ],
+      "content": "Power of Thinking is undeniably",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        14,
+        295,
+        772,
+        324
+      ],
+      "polygon": [
+        [
+          14,
+          295
+        ],
+        [
+          14,
+          323
+        ],
+        [
+          770,
+          323
+        ],
+        [
+          766,
+          295
+        ],
+        [
+          752,
+          295
+        ],
+        [
+          746,
+          295
+        ],
+        [
+          451,
+          295
+        ],
+        [
+          434,
+          295
+        ]
+      ],
+      "content": "one Individual Conscioufsness, cannot possibly be a Material Substance.",
+      "native_label": "text"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        9,
+        375,
+        776,
+        460
+      ],
+      "polygon": [
+        [
+          9,
+          375
+        ],
+        [
+          9,
+          460
+        ],
+        [
+          775,
+          460
+        ],
+        [
+          775,
+          375
+        ]
+      ],
+      "content": "To invalidate the force of this Argument, the following Objections have been offered to the publick.",
+      "native_label": "text"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        15,
+        462,
+        783,
+        894
+      ],
+      "polygon": [
+        [
+          15,
+          462
+        ],
+        [
+          21,
+          894
+        ],
+        [
+          782,
+          894
+        ],
+        [
+          773,
+          462
+        ]
+      ],
+      "content": "I. That * an Individual Power may reside in a Material System which consists of actually separate and distinct parts; That an Individual Power can be lodged by God in, or superadded to That which is not an Individual Being; or it may follow from the Composition or Modification of a Material System consisting of actually separate and distinct Particles; And if so, then the very Soul and strength of the foregoing Demonstration is gone. That, as to this, Matter of Fact is so plain and obvious, that a Man",
+      "native_label": "text"
+    },
+    {
+      "index": 11,
+      "label": "aside_text",
+      "bbox_2d": [
+        777,
+        467,
+        933,
+        644
+      ],
+      "polygon": [
+        [
+          777,
+          467
+        ],
+        [
+          777,
+          624
+        ],
+        [
+          783,
+          643
+        ],
+        [
+          911,
+          643
+        ],
+        [
+          922,
+          633
+        ],
+        [
+          927,
+          629
+        ],
+        [
+          927,
+          594
+        ],
+        [
+          931,
+          565
+        ],
+        [
+          931,
+          472
+        ],
+        [
+          891,
+          467
+        ]
+      ],
+      "content": "* A Letter containing some Re marks on z pretended Demon- lization, &c. pgs. 11.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        403,
+        29,
+        582,
+        74
+      ],
+      "polygon": [
+        [
+          403,
+          29
+        ],
+        [
+          403,
+          73
+        ],
+        [
+          581,
+          73
+        ],
+        [
+          581,
+          29
+        ]
+      ],
+      "content": "## [4]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        90,
+        78,
+        908,
+        111
+      ],
+      "polygon": [
+        [
+          90,
+          78
+        ],
+        [
+          90,
+          110
+        ],
+        [
+          906,
+          110
+        ],
+        [
+          906,
+          78
+        ]
+      ],
+      "content": "can't turn his Eye $^{2}$ ,but he will meet",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        90,
+        110,
+        908,
+        138
+      ],
+      "polygon": [
+        [
+          90,
+          110
+        ],
+        [
+          96,
+          138
+        ],
+        [
+          906,
+          138
+        ],
+        [
+          906,
+          115
+        ],
+        [
+          881,
+          110
+        ],
+        [
+          590,
+          110
+        ],
+        [
+          583,
+          110
+        ]
+      ],
+      "content": "' with Material Systems, wherein there",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        98,
+        138,
+        911,
+        167
+      ],
+      "polygon": [
+        [
+          98,
+          138
+        ],
+        [
+          98,
+          166
+        ],
+        [
+          910,
+          166
+        ],
+        [
+          910,
+          138
+        ]
+      ],
+      "content": "are Individual Powers, which are",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        99,
+        167,
+        913,
+        195
+      ],
+      "polygon": [
+        [
+          99,
+          167
+        ],
+        [
+          99,
+          194
+        ],
+        [
+          906,
+          194
+        ],
+        [
+          911,
+          167
+        ],
+        [
+          724,
+          167
+        ],
+        [
+          713,
+          167
+        ],
+        [
+          612,
+          167
+        ],
+        [
+          573,
+          167
+        ],
+        [
+          567,
+          167
+        ]
+      ],
+      "content": "' not in every one nor in any one of",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        99,
+        195,
+        910,
+        222
+      ],
+      "polygon": [
+        [
+          99,
+          195
+        ],
+        [
+          99,
+          221
+        ],
+        [
+          909,
+          221
+        ],
+        [
+          909,
+          195
+        ],
+        [
+          695,
+          195
+        ],
+        [
+          684,
+          195
+        ]
+      ],
+      "content": "the Particles that compose them,",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        100,
+        223,
+        913,
+        250
+      ],
+      "polygon": [
+        [
+          100,
+          223
+        ],
+        [
+          106,
+          250
+        ],
+        [
+          911,
+          250
+        ],
+        [
+          911,
+          223
+        ]
+      ],
+      "content": "4 when taken apart and considered",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        105,
+        250,
+        916,
+        280
+      ],
+      "polygon": [
+        [
+          105,
+          250
+        ],
+        [
+          111,
+          280
+        ],
+        [
+          915,
+          280
+        ],
+        [
+          915,
+          250
+        ]
+      ],
+      "content": "fingly. That a Rose, for Example,",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        108,
+        279,
+        919,
+        307
+      ],
+      "polygon": [
+        [
+          108,
+          279
+        ],
+        [
+          108,
+          306
+        ],
+        [
+          918,
+          306
+        ],
+        [
+          918,
+          279
+        ]
+      ],
+      "content": "confils of several Particles, which",
+      "native_label": "text"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        109,
+        307,
+        921,
+        335
+      ],
+      "polygon": [
+        [
+          109,
+          307
+        ],
+        [
+          109,
+          334
+        ],
+        [
+          920,
+          334
+        ],
+        [
+          920,
+          307
+        ]
+      ],
+      "content": "separately and fingly want a Power",
+      "native_label": "text"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        113,
+        335,
+        921,
+        363
+      ],
+      "polygon": [
+        [
+          113,
+          335
+        ],
+        [
+          113,
+          362
+        ],
+        [
+          398,
+          362
+        ],
+        [
+          404,
+          362
+        ],
+        [
+          519,
+          362
+        ],
+        [
+          530,
+          362
+        ],
+        [
+          555,
+          362
+        ],
+        [
+          634,
+          362
+        ],
+        [
+          920,
+          362
+        ],
+        [
+          920,
+          335
+        ],
+        [
+          259,
+          335
+        ]
+      ],
+      "content": "to produce that agreeable Sensation",
+      "native_label": "text"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        114,
+        364,
+        922,
+        391
+      ],
+      "polygon": [
+        [
+          114,
+          364
+        ],
+        [
+          114,
+          390
+        ],
+        [
+          921,
+          390
+        ],
+        [
+          921,
+          364
+        ]
+      ],
+      "content": "we experience in them when united;",
+      "native_label": "text"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        114,
+        389,
+        924,
+        419
+      ],
+      "polygon": [
+        [
+          114,
+          389
+        ],
+        [
+          114,
+          418
+        ],
+        [
+          922,
+          418
+        ],
+        [
+          922,
+          389
+        ]
+      ],
+      "content": "And therefore either each of the",
+      "native_label": "text"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        113,
+        419,
+        926,
+        448
+      ],
+      "polygon": [
+        [
+          113,
+          419
+        ],
+        [
+          119,
+          447
+        ],
+        [
+          129,
+          447
+        ],
+        [
+          925,
+          447
+        ],
+        [
+          925,
+          424
+        ],
+        [
+          870,
+          419
+        ],
+        [
+          816,
+          419
+        ],
+        [
+          804,
+          419
+        ],
+        [
+          736,
+          419
+        ],
+        [
+          730,
+          419
+        ]
+      ],
+      "content": "Particles in that Union contributes",
+      "native_label": "text"
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "bbox_2d": [
+        116,
+        446,
+        926,
+        475
+      ],
+      "polygon": [
+        [
+          116,
+          446
+        ],
+        [
+          122,
+          474
+        ],
+        [
+          925,
+          474
+        ],
+        [
+          925,
+          451
+        ],
+        [
+          905,
+          456
+        ],
+        [
+          860,
+          446
+        ],
+        [
+          777,
+          446
+        ],
+        [
+          771,
+          446
+        ],
+        [
+          741,
+          446
+        ],
+        [
+          711,
+          446
+        ],
+        [
+          705,
+          446
+        ],
+        [
+          567,
+          446
+        ],
+        [
+          561,
+          446
+        ]
+      ],
+      "content": "to the Individual Power, which is",
+      "native_label": "text"
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "bbox_2d": [
+        116,
+        475,
+        931,
+        503
+      ],
+      "polygon": [
+        [
+          116,
+          475
+        ],
+        [
+          122,
+          498
+        ],
+        [
+          162,
+          503
+        ],
+        [
+          222,
+          503
+        ],
+        [
+          536,
+          503
+        ],
+        [
+          930,
+          503
+        ],
+        [
+          930,
+          480
+        ],
+        [
+          850,
+          475
+        ]
+      ],
+      "content": "the external cause of our Senfation ;",
+      "native_label": "text"
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "bbox_2d": [
+        119,
+        503,
+        931,
+        530
+      ],
+      "polygon": [
+        [
+          119,
+          503
+        ],
+        [
+          119,
+          518
+        ],
+        [
+          150,
+          529
+        ],
+        [
+          930,
+          529
+        ],
+        [
+          930,
+          503
+        ]
+      ],
+      "content": "or else God superadds the Power",
+      "native_label": "text"
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "bbox_2d": [
+        119,
+        531,
+        931,
+        559
+      ],
+      "polygon": [
+        [
+          119,
+          531
+        ],
+        [
+          125,
+          554
+        ],
+        [
+          140,
+          558
+        ],
+        [
+          930,
+          558
+        ],
+        [
+          930,
+          535
+        ],
+        [
+          816,
+          531
+        ],
+        [
+          766,
+          531
+        ],
+        [
+          730,
+          531
+        ],
+        [
+          706,
+          531
+        ],
+        [
+          680,
+          531
+        ],
+        [
+          644,
+          531
+        ]
+      ],
+      "content": "of producing that Sensation in us,",
+      "native_label": "text"
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "bbox_2d": [
+        120,
+        559,
+        934,
+        587
+      ],
+      "polygon": [
+        [
+          120,
+          559
+        ],
+        [
+          120,
+          581
+        ],
+        [
+          136,
+          586
+        ],
+        [
+          932,
+          586
+        ],
+        [
+          927,
+          559
+        ],
+        [
+          843,
+          559
+        ],
+        [
+          813,
+          559
+        ]
+      ],
+      "content": "upon the Union of the Particles.",
+      "native_label": "text"
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "bbox_2d": [
+        122,
+        586,
+        939,
+        615
+      ],
+      "polygon": [
+        [
+          122,
+          586
+        ],
+        [
+          122,
+          610
+        ],
+        [
+          139,
+          614
+        ],
+        [
+          937,
+          614
+        ],
+        [
+          927,
+          586
+        ],
+        [
+          904,
+          586
+        ],
+        [
+          878,
+          586
+        ],
+        [
+          709,
+          586
+        ],
+        [
+          703,
+          586
+        ],
+        [
+          693,
+          586
+        ]
+      ],
+      "content": "- That this may be the Cafe of Matters thinking. Those Particles which",
+      "native_label": "text"
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "bbox_2d": [
+        122,
+        642,
+        937,
+        671
+      ],
+      "polygon": [
+        [
+          122,
+          642
+        ],
+        [
+          122,
+          670
+        ],
+        [
+          936,
+          670
+        ],
+        [
+          936,
+          647
+        ],
+        [
+          911,
+          642
+        ],
+        [
+          798,
+          642
+        ],
+        [
+          787,
+          642
+        ],
+        [
+          768,
+          642
+        ],
+        [
+          721,
+          642
+        ],
+        [
+          638,
+          642
+        ],
+        [
+          617,
+          642
+        ],
+        [
+          547,
+          642
+        ],
+        [
+          438,
+          642
+        ],
+        [
+          422,
+          642
+        ]
+      ],
+      "content": "compose the Brain, may under that",
+      "native_label": "text"
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "bbox_2d": [
+        122,
+        669,
+        940,
+        698
+      ],
+      "polygon": [
+        [
+          122,
+          669
+        ],
+        [
+          129,
+          697
+        ],
+        [
+          168,
+          697
+        ],
+        [
+          939,
+          697
+        ],
+        [
+          939,
+          674
+        ],
+        [
+          889,
+          669
+        ],
+        [
+          760,
+          669
+        ],
+        [
+          754,
+          669
+        ],
+        [
+          675,
+          669
+        ],
+        [
+          669,
+          669
+        ]
+      ],
+      "content": "Modification either have the Power of Thinking necessarily flowing",
+      "native_label": "text"
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "bbox_2d": [
+        134,
+        754,
+        941,
+        781
+      ],
+      "polygon": [
+        [
+          134,
+          754
+        ],
+        [
+          134,
+          781
+        ],
+        [
+          940,
+          781
+        ],
+        [
+          940,
+          754
+        ]
+      ],
+      "content": "Power of Thinking superadded to",
+      "native_label": "text"
+    },
+    {
+      "index": 23,
+      "label": "text",
+      "bbox_2d": [
+        134,
+        781,
+        942,
+        811
+      ],
+      "polygon": [
+        [
+          134,
+          781
+        ],
+        [
+          134,
+          810
+        ],
+        [
+          941,
+          810
+        ],
+        [
+          941,
+          781
+        ],
+        [
+          593,
+          781
+        ],
+        [
+          582,
+          781
+        ],
+        [
+          567,
+          781
+        ]
+      ],
+      "content": "them by the Power of God, tho'",
+      "native_label": "text"
+    },
+    {
+      "index": 24,
+      "label": "text",
+      "bbox_2d": [
+        137,
+        810,
+        939,
+        838
+      ],
+      "polygon": [
+        [
+          137,
+          810
+        ],
+        [
+          137,
+          837
+        ],
+        [
+          582,
+          837
+        ],
+        [
+          588,
+          837
+        ],
+        [
+          608,
+          837
+        ],
+        [
+          688,
+          837
+        ],
+        [
+          694,
+          837
+        ],
+        [
+          937,
+          837
+        ],
+        [
+          937,
+          810
+        ],
+        [
+          918,
+          810
+        ],
+        [
+          854,
+          810
+        ],
+        [
+          843,
+          810
+        ],
+        [
+          823,
+          810
+        ]
+      ],
+      "content": "fingly and separately they may not",
+      "native_label": "text"
+    },
+    {
+      "index": 25,
+      "label": "text",
+      "bbox_2d": [
+        134,
+        837,
+        947,
+        867
+      ],
+      "polygon": [
+        [
+          134,
+          866
+        ],
+        [
+          946,
+          866
+        ],
+        [
+          941,
+          837
+        ],
+        [
+          863,
+          837
+        ],
+        [
+          822,
+          837
+        ],
+        [
+          797,
+          837
+        ],
+        [
+          419,
+          837
+        ],
+        [
+          413,
+          837
+        ],
+        [
+          393,
+          837
+        ],
+        [
+          387,
+          837
+        ],
+        [
+          359,
+          837
+        ],
+        [
+          332,
+          837
+        ],
+        [
+          318,
+          837
+        ],
+        [
+          170,
+          837
+        ],
+        [
+          140,
+          837
+        ]
+      ],
+      "content": "have the Power of Thinking. And",
+      "native_label": "text"
+    },
+    {
+      "index": 26,
+      "label": "text",
+      "bbox_2d": [
+        136,
+        866,
+        947,
+        908
+      ],
+      "polygon": [
+        [
+          136,
+          866
+        ],
+        [
+          136,
+          898
+        ],
+        [
+          147,
+          907
+        ],
+        [
+          232,
+          907
+        ],
+        [
+          946,
+          907
+        ],
+        [
+          946,
+          871
+        ],
+        [
+          906,
+          866
+        ],
+        [
+          867,
+          866
+        ],
+        [
+          843,
+          866
+        ],
+        [
+          807,
+          866
+        ],
+        [
+          752,
+          866
+        ]
+      ],
+      "content": "that the Fallacy of the fore-mentio-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        337,
+        13,
+        499,
+        58
+      ],
+      "polygon": [
+        [
+          337,
+          13
+        ],
+        [
+          337,
+          57
+        ],
+        [
+          498,
+          57
+        ],
+        [
+          498,
+          13
+        ]
+      ],
+      "content": "# [ 5 ]",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        53,
+        61,
+        785,
+        91
+      ],
+      "polygon": [
+        [
+          53,
+          66
+        ],
+        [
+          53,
+          91
+        ],
+        [
+          784,
+          91
+        ],
+        [
+          784,
+          61
+        ],
+        [
+          89,
+          61
+        ]
+      ],
+      "content": "ned Argument lies in this, that by",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        54,
+        91,
+        788,
+        118
+      ],
+      "polygon": [
+        [
+          54,
+          91
+        ],
+        [
+          54,
+          117
+        ],
+        [
+          787,
+          117
+        ],
+        [
+          787,
+          96
+        ],
+        [
+          717,
+          91
+        ]
+      ],
+      "content": "an Individual Power is there meant",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        55,
+        118,
+        787,
+        145
+      ],
+      "polygon": [
+        [
+          55,
+          118
+        ],
+        [
+          55,
+          144
+        ],
+        [
+          785,
+          144
+        ],
+        [
+          785,
+          118
+        ]
+      ],
+      "content": "a Power that can only proceed from,",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        55,
+        144,
+        783,
+        172
+      ],
+      "polygon": [
+        [
+          55,
+          144
+        ],
+        [
+          61,
+          171
+        ],
+        [
+          623,
+          171
+        ],
+        [
+          629,
+          171
+        ],
+        [
+          782,
+          171
+        ],
+        [
+          782,
+          144
+        ]
+      ],
+      "content": "or reside in, an Individual Being :",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        60,
+        172,
+        787,
+        200
+      ],
+      "polygon": [
+        [
+          60,
+          172
+        ],
+        [
+          60,
+          199
+        ],
+        [
+          785,
+          199
+        ],
+        [
+          785,
+          172
+        ]
+      ],
+      "content": "Which is a plain begging of the",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        60,
+        200,
+        278,
+        226
+      ],
+      "polygon": [
+        [
+          60,
+          200
+        ],
+        [
+          60,
+          225
+        ],
+        [
+          277,
+          225
+        ],
+        [
+          277,
+          200
+        ]
+      ],
+      "content": "' Question:",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        56,
+        224,
+        789,
+        336
+      ],
+      "polygon": [
+        [
+          56,
+          336
+        ],
+        [
+          788,
+          336
+        ],
+        [
+          788,
+          224
+        ],
+        [
+          66,
+          224
+        ]
+      ],
+      "content": "II. That though a System of Matter were allowed not to be capable of Thinking, yet it is evident, that, according to the fore-going",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        57,
+        335,
+        791,
+        363
+      ],
+      "polygon": [
+        [
+          57,
+          335
+        ],
+        [
+          57,
+          362
+        ],
+        [
+          790,
+          362
+        ],
+        [
+          790,
+          335
+        ]
+      ],
+      "content": "Argument, the separate and distinct",
+      "native_label": "text"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        60,
+        362,
+        793,
+        389
+      ],
+      "polygon": [
+        [
+          60,
+          362
+        ],
+        [
+          60,
+          388
+        ],
+        [
+          788,
+          388
+        ],
+        [
+          792,
+          362
+        ],
+        [
+          529,
+          362
+        ],
+        [
+          508,
+          362
+        ],
+        [
+          295,
+          362
+        ],
+        [
+          284,
+          362
+        ],
+        [
+          274,
+          362
+        ],
+        [
+          220,
+          362
+        ],
+        [
+          204,
+          362
+        ],
+        [
+          170,
+          362
+        ],
+        [
+          154,
+          362
+        ]
+      ],
+      "content": "Parts of Matter are capable of",
+      "native_label": "text"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        59,
+        389,
+        792,
+        443
+      ],
+      "polygon": [
+        [
+          59,
+          389
+        ],
+        [
+          59,
+          443
+        ],
+        [
+          597,
+          443
+        ],
+        [
+          603,
+          443
+        ],
+        [
+          613,
+          443
+        ],
+        [
+          791,
+          443
+        ],
+        [
+          787,
+          389
+        ]
+      ],
+      "content": "having a Power of Thinking, or an Individual Confcioufsness superwant of Individuality or Distinct-",
+      "native_label": "text"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        61,
+        443,
+        794,
+        471
+      ],
+      "polygon": [
+        [
+          66,
+          443
+        ],
+        [
+          81,
+          454
+        ],
+        [
+          91,
+          465
+        ],
+        [
+          91,
+          470
+        ],
+        [
+          793,
+          470
+        ],
+        [
+          793,
+          443
+        ],
+        [
+          774,
+          443
+        ]
+      ],
+      "content": "- added to Each of them ; because the",
+      "native_label": "text"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        42,
+        498,
+        793,
+        525
+      ],
+      "polygon": [
+        [
+          42,
+          524
+        ],
+        [
+          709,
+          524
+        ],
+        [
+          719,
+          524
+        ],
+        [
+          724,
+          514
+        ],
+        [
+          763,
+          514
+        ],
+        [
+          768,
+          505
+        ],
+        [
+          788,
+          498
+        ],
+        [
+          42,
+          498
+        ]
+      ],
+      "content": "' nefs, is the sole Reason urged.",
+      "native_label": "text"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        43,
+        525,
+        793,
+        552
+      ],
+      "polygon": [
+        [
+          43,
+          525
+        ],
+        [
+          43,
+          552
+        ],
+        [
+          753,
+          552
+        ],
+        [
+          792,
+          547
+        ],
+        [
+          792,
+          525
+        ]
+      ],
+      "content": "- why a System of Matter cannot have",
+      "native_label": "text"
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "bbox_2d": [
+        61,
+        552,
+        794,
+        579
+      ],
+      "polygon": [
+        [
+          61,
+          578
+        ],
+        [
+          793,
+          578
+        ],
+        [
+          793,
+          552
+        ],
+        [
+          66,
+          552
+        ]
+      ],
+      "content": "a Power of Thinking or an Individual Consciouiness; and it is only required that a Thing be an Indivi-",
+      "native_label": "text"
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "bbox_2d": [
+        55,
+        632,
+        798,
+        661
+      ],
+      "polygon": [
+        [
+          61,
+          632
+        ],
+        [
+          65,
+          660
+        ],
+        [
+          797,
+          660
+        ],
+        [
+          797,
+          632
+        ]
+      ],
+      "content": "dual Being, in order to its being a",
+      "native_label": "text"
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "bbox_2d": [
+        65,
+        660,
+        799,
+        688
+      ],
+      "polygon": [
+        [
+          65,
+          660
+        ],
+        [
+          71,
+          688
+        ],
+        [
+          733,
+          688
+        ],
+        [
+          798,
+          688
+        ],
+        [
+          798,
+          660
+        ]
+      ],
+      "content": "proper Subject of a Power of Think-",
+      "native_label": "text"
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "bbox_2d": [
+        66,
+        688,
+        798,
+        716
+      ],
+      "polygon": [
+        [
+          66,
+          688
+        ],
+        [
+          72,
+          715
+        ],
+        [
+          797,
+          715
+        ],
+        [
+          797,
+          688
+        ]
+      ],
+      "content": "ing, or at least in order to its being",
+      "native_label": "text"
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "bbox_2d": [
+        70,
+        714,
+        799,
+        741
+      ],
+      "polygon": [
+        [
+          70,
+          714
+        ],
+        [
+          70,
+          741
+        ],
+        [
+          798,
+          741
+        ],
+        [
+          798,
+          714
+        ]
+      ],
+      "content": "a Subject to which it may be possible",
+      "native_label": "text"
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "bbox_2d": [
+        70,
+        741,
+        802,
+        770
+      ],
+      "polygon": [
+        [
+          70,
+          741
+        ],
+        [
+          70,
+          769
+        ],
+        [
+          797,
+          769
+        ],
+        [
+          801,
+          741
+        ],
+        [
+          235,
+          741
+        ],
+        [
+          224,
+          741
+        ]
+      ],
+      "content": "for God to Superadd a power of",
+      "native_label": "text"
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "bbox_2d": [
+        70,
+        768,
+        302,
+        797
+      ],
+      "polygon": [
+        [
+          70,
+          768
+        ],
+        [
+          70,
+          796
+        ],
+        [
+          301,
+          796
+        ],
+        [
+          301,
+          768
+        ]
+      ],
+      "content": "Thinking.",
+      "native_label": "text"
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "bbox_2d": [
+        66,
+        795,
+        937,
+        881
+      ],
+      "polygon": [
+        [
+          66,
+          880
+        ],
+        [
+          936,
+          880
+        ],
+        [
+          927,
+          795
+        ],
+        [
+          72,
+          795
+        ]
+      ],
+      "content": "III. 'That, though it were allow- ed, * that Conscioufsness could re- A A fide * pag. 13]",
+      "native_label": "text"
+    },
+    {
+      "index": 22,
+      "label": "aside_text",
+      "bbox_2d": [
+        789,
+        286,
+        905,
+        331
+      ],
+      "polygon": [
+        [
+          789,
+          286
+        ],
+        [
+          789,
+          331
+        ],
+        [
+          904,
+          331
+        ],
+        [
+          904,
+          286
+        ]
+      ],
+      "content": "† pag. 8\n♥ 9.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        475,
+        12,
+        638,
+        58
+      ],
+      "polygon": [
+        [
+          475,
+          12
+        ],
+        [
+          475,
+          57
+        ],
+        [
+          636,
+          57
+        ],
+        [
+          636,
+          12
+        ]
+      ],
+      "content": "## [6]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        170,
+        57,
+        938,
+        90
+      ],
+      "polygon": [
+        [
+          170,
+          57
+        ],
+        [
+          176,
+          89
+        ],
+        [
+          937,
+          89
+        ],
+        [
+          937,
+          57
+        ]
+      ],
+      "content": "fide only in an Individual Being 5",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        176,
+        87,
+        938,
+        118
+      ],
+      "polygon": [
+        [
+          176,
+          87
+        ],
+        [
+          176,
+          112
+        ],
+        [
+          937,
+          117
+        ],
+        [
+          937,
+          93
+        ],
+        [
+          908,
+          87
+        ]
+      ],
+      "content": "and also that That Individual Being",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        177,
+        115,
+        937,
+        146
+      ],
+      "polygon": [
+        [
+          177,
+          115
+        ],
+        [
+          183,
+          146
+        ],
+        [
+          936,
+          146
+        ],
+        [
+          936,
+          121
+        ],
+        [
+          762,
+          115
+        ]
+      ],
+      "content": "must be an Immaterial Being; yet",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        179,
+        143,
+        937,
+        172
+      ],
+      "polygon": [
+        [
+          179,
+          143
+        ],
+        [
+          179,
+          171
+        ],
+        [
+          936,
+          171
+        ],
+        [
+          936,
+          143
+        ],
+        [
+          878,
+          143
+        ],
+        [
+          871,
+          143
+        ],
+        [
+          819,
+          143
+        ],
+        [
+          802,
+          143
+        ],
+        [
+          783,
+          143
+        ],
+        [
+          777,
+          143
+        ]
+      ],
+      "content": "even then the Soul would not be",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        178,
+        171,
+        934,
+        200
+      ],
+      "polygon": [
+        [
+          178,
+          171
+        ],
+        [
+          178,
+          200
+        ],
+        [
+          933,
+          200
+        ],
+        [
+          933,
+          176
+        ],
+        [
+          898,
+          171
+        ],
+        [
+          880,
+          171
+        ],
+        [
+          863,
+          171
+        ],
+        [
+          789,
+          171
+        ],
+        [
+          713,
+          171
+        ],
+        [
+          623,
+          171
+        ],
+        [
+          618,
+          171
+        ]
+      ],
+      "content": "proved to be naturally Immortal ;",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        180,
+        199,
+        938,
+        228
+      ],
+      "polygon": [
+        [
+          180,
+          199
+        ],
+        [
+          180,
+          228
+        ],
+        [
+          220,
+          228
+        ],
+        [
+          937,
+          228
+        ],
+        [
+          937,
+          199
+        ]
+      ],
+      "content": "that is, the Thinking Immaterial",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        179,
+        227,
+        942,
+        256
+      ],
+      "polygon": [
+        [
+          179,
+          227
+        ],
+        [
+          179,
+          255
+        ],
+        [
+          941,
+          255
+        ],
+        [
+          941,
+          227
+        ],
+        [
+          902,
+          227
+        ],
+        [
+          881,
+          227
+        ],
+        [
+          833,
+          227
+        ],
+        [
+          806,
+          227
+        ],
+        [
+          777,
+          227
+        ]
+      ],
+      "content": "Being would not be proved to be Imterial Subject or Substance it self; Because Thinking is an Action which",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        180,
+        255,
+        943,
+        284
+      ],
+      "polygon": [
+        [
+          180,
+          255
+        ],
+        [
+          186,
+          283
+        ],
+        [
+          942,
+          283
+        ],
+        [
+          942,
+          260
+        ],
+        [
+          913,
+          255
+        ]
+      ],
+      "content": "- mortal, but only the bare immaterial Subject or Substance it self; Because Thinking is an Action which",
+      "native_label": "text"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        182,
+        339,
+        949,
+        368
+      ],
+      "polygon": [
+        [
+          182,
+          339
+        ],
+        [
+          188,
+          367
+        ],
+        [
+          948,
+          367
+        ],
+        [
+          948,
+          339
+        ]
+      ],
+      "content": "may commence after the Existence",
+      "native_label": "text"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        182,
+        367,
+        949,
+        397
+      ],
+      "polygon": [
+        [
+          182,
+          387
+        ],
+        [
+          188,
+          396
+        ],
+        [
+          948,
+          396
+        ],
+        [
+          948,
+          372
+        ],
+        [
+          898,
+          367
+        ],
+        [
+          855,
+          367
+        ],
+        [
+          789,
+          367
+        ],
+        [
+          769,
+          367
+        ],
+        [
+          726,
+          367
+        ],
+        [
+          640,
+          367
+        ],
+        [
+          615,
+          367
+        ],
+        [
+          594,
+          367
+        ],
+        [
+          188,
+          367
+        ]
+      ],
+      "content": "of its Subject, and may perish or",
+      "native_label": "text"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        182,
+        395,
+        949,
+        424
+      ],
+      "polygon": [
+        [
+          182,
+          395
+        ],
+        [
+          188,
+          423
+        ],
+        [
+          948,
+          423
+        ],
+        [
+          948,
+          395
+        ]
+      ],
+      "content": "cease to exist, its Subject still reing can only be the Subject of a Power of Thinking, then, according to the foregoing Argument, either it will be proved that Material Substance is capable of Thinking, or else that neither is Immaterial Substance capable of it: Because either several Particles of Matter, when united in one System, may become an Individual Being, and be by the Power of God rendred incapable of any Division or Separation by Natural Causes, and consequently be a Subject",
+      "native_label": "text"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        182,
+        423,
+        394,
+        451
+      ],
+      "polygon": [
+        [
+          182,
+          423
+        ],
+        [
+          182,
+          451
+        ],
+        [
+          393,
+          451
+        ],
+        [
+          393,
+          423
+        ]
+      ],
+      "content": "*maining.*",
+      "native_label": "text"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        29,
+        456,
+        169,
+        487
+      ],
+      "polygon": [
+        [
+          29,
+          456
+        ],
+        [
+          29,
+          486
+        ],
+        [
+          163,
+          486
+        ],
+        [
+          168,
+          482
+        ],
+        [
+          168,
+          456
+        ]
+      ],
+      "content": "## pag. 9.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "bbox_2d": [
+        205,
+        450,
+        949,
+        481
+      ],
+      "polygon": [
+        [
+          205,
+          450
+        ],
+        [
+          205,
+          480
+        ],
+        [
+          948,
+          480
+        ],
+        [
+          948,
+          450
+        ]
+      ],
+      "content": "IV. 'That, if $\\dagger$ an Individual Being can only be the Subject of a Power of Thinking, then, according to the foregoing Argument, either it will be proved that Material Substance is capable of Thinking, or else that neither is Immaterial Substance capable of it: Because either several Particles of Matter, when united in one System, may become an Individual Being, and be by the Power of God rendred incapable of any Division or Separation by Natural Causes, and consequently be a Subject",
+      "native_label": "text"
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "bbox_2d": [
+        192,
+        841,
+        955,
+        873
+      ],
+      "polygon": [
+        [
+          192,
+          841
+        ],
+        [
+          192,
+          873
+        ],
+        [
+          954,
+          873
+        ],
+        [
+          954,
+          846
+        ]
+      ],
+      "content": "capable of Thinking, or else Immaterial",
+      "native_label": "text"
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "bbox_2d": [
+        720,
+        871,
+        950,
+        903
+      ],
+      "polygon": [
+        [
+          720,
+          871
+        ],
+        [
+          720,
+          903
+        ],
+        [
+          949,
+          903
+        ],
+        [
+          949,
+          871
+        ]
+      ],
+      "content": "Substance",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        320,
+        11,
+        482,
+        53
+      ],
+      "polygon": [
+        [
+          320,
+          11
+        ],
+        [
+          320,
+          48
+        ],
+        [
+          336,
+          52
+        ],
+        [
+          481,
+          52
+        ],
+        [
+          481,
+          11
+        ],
+        [
+          459,
+          11
+        ],
+        [
+          447,
+          11
+        ]
+      ],
+      "content": "$$\n[ 7 ]\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        28,
+        48,
+        794,
+        79
+      ],
+      "polygon": [
+        [
+          28,
+          48
+        ],
+        [
+          34,
+          78
+        ],
+        [
+          793,
+          78
+        ],
+        [
+          793,
+          48
+        ]
+      ],
+      "content": "6 Substance also may as well be conceifition that Extension is not excluded",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        29,
+        78,
+        794,
+        106
+      ],
+      "polygon": [
+        [
+          29,
+          78
+        ],
+        [
+          35,
+          105
+        ],
+        [
+          793,
+          105
+        ],
+        [
+          793,
+          78
+        ]
+      ],
+      "content": "- ved capable of Division,upon Suppofition that Extension is not excluded",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        30,
+        133,
+        734,
+        160
+      ],
+      "polygon": [
+        [
+          30,
+          133
+        ],
+        [
+          30,
+          154
+        ],
+        [
+          41,
+          159
+        ],
+        [
+          733,
+          159
+        ],
+        [
+          728,
+          133
+        ]
+      ],
+      "content": "' out of the Idea of Immateriality.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        79,
+        159,
+        847,
+        187
+      ],
+      "polygon": [
+        [
+          79,
+          187
+        ],
+        [
+          821,
+          187
+        ],
+        [
+          826,
+          159
+        ],
+        [
+          156,
+          159
+        ],
+        [
+          109,
+          169
+        ],
+        [
+          109,
+          159
+        ],
+        [
+          85,
+          159
+        ]
+      ],
+      "content": "V. 'That, if * from the Power of $^{*} 1 4$",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        19,
+        187,
+        789,
+        215
+      ],
+      "polygon": [
+        [
+          175,
+          187
+        ],
+        [
+          175,
+          191
+        ],
+        [
+          190,
+          197
+        ],
+        [
+          190,
+          210
+        ],
+        [
+          200,
+          214
+        ],
+        [
+          788,
+          214
+        ],
+        [
+          788,
+          187
+        ],
+        [
+          365,
+          187
+        ],
+        [
+          219,
+          187
+        ],
+        [
+          204,
+          187
+        ]
+      ],
+      "content": "' Thinking, or Individual Consciouf-",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        35,
+        215,
+        795,
+        243
+      ],
+      "polygon": [
+        [
+          35,
+          215
+        ],
+        [
+          35,
+          242
+        ],
+        [
+          794,
+          242
+        ],
+        [
+          794,
+          220
+        ],
+        [
+          769,
+          215
+        ],
+        [
+          396,
+          215
+        ],
+        [
+          359,
+          215
+        ],
+        [
+          350,
+          215
+        ]
+      ],
+      "content": "nefs, we can prove the Immateriateriality prove its natural Immortali-",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        31,
+        242,
+        799,
+        271
+      ],
+      "polygon": [
+        [
+          37,
+          242
+        ],
+        [
+          37,
+          270
+        ],
+        [
+          797,
+          270
+        ],
+        [
+          793,
+          242
+        ]
+      ],
+      "content": "- lity of the Soul, and from its Immateriality prove its natural Immortali-",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        31,
+        298,
+        797,
+        326
+      ],
+      "polygon": [
+        [
+          31,
+          326
+        ],
+        [
+          792,
+          326
+        ],
+        [
+          796,
+          298
+        ],
+        [
+          31,
+          298
+        ]
+      ],
+      "content": "- ' ty ; then the Consequence will be,",
+      "native_label": "text"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        32,
+        326,
+        799,
+        353
+      ],
+      "polygon": [
+        [
+          32,
+          326
+        ],
+        [
+          32,
+          352
+        ],
+        [
+          797,
+          352
+        ],
+        [
+          793,
+          326
+        ],
+        [
+          169,
+          326
+        ],
+        [
+          132,
+          326
+        ],
+        [
+          68,
+          326
+        ],
+        [
+          57,
+          326
+        ]
+      ],
+      "content": "- that all the numerous sensible Creathe same condition with Man, and",
+      "native_label": "text"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        32,
+        408,
+        800,
+        436
+      ],
+      "polygon": [
+        [
+          32,
+          408
+        ],
+        [
+          32,
+          435
+        ],
+        [
+          789,
+          435
+        ],
+        [
+          799,
+          435
+        ],
+        [
+          799,
+          408
+        ]
+      ],
+      "content": "made capable of eternal Happiness",
+      "native_label": "text"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        35,
+        436,
+        800,
+        464
+      ],
+      "polygon": [
+        [
+          35,
+          436
+        ],
+        [
+          35,
+          463
+        ],
+        [
+          799,
+          463
+        ],
+        [
+          799,
+          436
+        ],
+        [
+          700,
+          436
+        ],
+        [
+          689,
+          436
+        ],
+        [
+          650,
+          436
+        ],
+        [
+          609,
+          436
+        ]
+      ],
+      "content": "*as well as he 5 or else, to avoid*",
+      "native_label": "text"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        34,
+        463,
+        802,
+        492
+      ],
+      "polygon": [
+        [
+          34,
+          463
+        ],
+        [
+          34,
+          491
+        ],
+        [
+          801,
+          491
+        ],
+        [
+          796,
+          463
+        ]
+      ],
+      "content": "' this Consequence , it must be sup-",
+      "native_label": "text"
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "bbox_2d": [
+        35,
+        491,
+        801,
+        520
+      ],
+      "polygon": [
+        [
+          35,
+          491
+        ],
+        [
+          35,
+          519
+        ],
+        [
+          690,
+          519
+        ],
+        [
+          800,
+          519
+        ],
+        [
+          800,
+          491
+        ]
+      ],
+      "content": "poSED, either that all those Creatures",
+      "native_label": "text"
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "bbox_2d": [
+        36,
+        518,
+        801,
+        546
+      ],
+      "polygon": [
+        [
+          36,
+          518
+        ],
+        [
+          42,
+          545
+        ],
+        [
+          800,
+          545
+        ],
+        [
+          800,
+          518
+        ]
+      ],
+      "content": "are only mere Machines, or else that",
+      "native_label": "text"
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "bbox_2d": [
+        39,
+        546,
+        801,
+        573
+      ],
+      "polygon": [
+        [
+          39,
+          546
+        ],
+        [
+          39,
+          572
+        ],
+        [
+          509,
+          572
+        ],
+        [
+          515,
+          572
+        ],
+        [
+          526,
+          572
+        ],
+        [
+          800,
+          572
+        ],
+        [
+          800,
+          551
+        ],
+        [
+          755,
+          546
+        ],
+        [
+          240,
+          546
+        ]
+      ],
+      "content": "their Souls shall be annihilated upon",
+      "native_label": "text"
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "bbox_2d": [
+        37,
+        572,
+        802,
+        601
+      ],
+      "polygon": [
+        [
+          37,
+          577
+        ],
+        [
+          37,
+          600
+        ],
+        [
+          801,
+          600
+        ],
+        [
+          801,
+          572
+        ],
+        [
+          313,
+          572
+        ],
+        [
+          226,
+          572
+        ],
+        [
+          137,
+          572
+        ],
+        [
+          108,
+          572
+        ]
+      ],
+      "content": "the diffolution of their Bodies; And",
+      "native_label": "text"
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "bbox_2d": [
+        38,
+        600,
+        802,
+        631
+      ],
+      "polygon": [
+        [
+          38,
+          600
+        ],
+        [
+          38,
+          630
+        ],
+        [
+          801,
+          630
+        ],
+        [
+          801,
+          600
+        ]
+      ],
+      "content": "' if so, then the proof of the natural",
+      "native_label": "text"
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "bbox_2d": [
+        43,
+        629,
+        802,
+        657
+      ],
+      "polygon": [
+        [
+          43,
+          629
+        ],
+        [
+          43,
+          634
+        ],
+        [
+          83,
+          640
+        ],
+        [
+          157,
+          646
+        ],
+        [
+          43,
+          646
+        ],
+        [
+          43,
+          656
+        ],
+        [
+          801,
+          656
+        ],
+        [
+          801,
+          629
+        ],
+        [
+          223,
+          629
+        ],
+        [
+          217,
+          629
+        ]
+      ],
+      "content": "Immortality of Mens Souls from",
+      "native_label": "text"
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "bbox_2d": [
+        41,
+        655,
+        804,
+        684
+      ],
+      "polygon": [
+        [
+          41,
+          655
+        ],
+        [
+          47,
+          683
+        ],
+        [
+          803,
+          683
+        ],
+        [
+          803,
+          660
+        ],
+        [
+          734,
+          655
+        ],
+        [
+          665,
+          655
+        ]
+      ],
+      "content": "their Immateriality, tends not to",
+      "native_label": "text"
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "bbox_2d": [
+        44,
+        683,
+        806,
+        713
+      ],
+      "polygon": [
+        [
+          44,
+          683
+        ],
+        [
+          44,
+          712
+        ],
+        [
+          600,
+          712
+        ],
+        [
+          606,
+          712
+        ],
+        [
+          804,
+          712
+        ],
+        [
+          804,
+          683
+        ]
+      ],
+      "content": "prove that their Souls shall really",
+      "native_label": "text"
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "bbox_2d": [
+        43,
+        764,
+        808,
+        878
+      ],
+      "polygon": [
+        [
+          43,
+          764
+        ],
+        [
+          49,
+          863
+        ],
+        [
+          184,
+          873
+        ],
+        [
+          284,
+          877
+        ],
+        [
+          807,
+          877
+        ],
+        [
+          807,
+          764
+        ]
+      ],
+      "content": "The Question being of great Importance, and the Objections very ingenious, as containing in brief all that",
+      "native_label": "text"
+    },
+    {
+      "index": 22,
+      "label": "aside_text",
+      "bbox_2d": [
+        819,
+        161,
+        943,
+        187
+      ],
+      "polygon": [
+        [
+          819,
+          161
+        ],
+        [
+          819,
+          186
+        ],
+        [
+          942,
+          186
+        ],
+        [
+          942,
+          161
+        ]
+      ],
+      "content": "pag. 14.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        461,
+        15,
+        627,
+        64
+      ],
+      "polygon": [
+        [
+          461,
+          15
+        ],
+        [
+          461,
+          64
+        ],
+        [
+          625,
+          64
+        ],
+        [
+          625,
+          15
+        ]
+      ],
+      "content": "## [8]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        156,
+        62,
+        910,
+        330
+      ],
+      "polygon": [
+        [
+          156,
+          62
+        ],
+        [
+          162,
+          330
+        ],
+        [
+          909,
+          330
+        ],
+        [
+          909,
+          62
+        ]
+      ],
+      "content": "that can be said in Favour of Matter's being capable of thinking; It is presumed it may be acceptable to the impartial Reader, to see a clear Answer given to each of them, as they are here represented in their full Strength, tho' (for Methods fake) in somewhat a different Order than they were at first published.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        165,
+        345,
+        924,
+        915
+      ],
+      "polygon": [
+        [
+          171,
+          345
+        ],
+        [
+          181,
+          904
+        ],
+        [
+          889,
+          914
+        ],
+        [
+          923,
+          909
+        ],
+        [
+          914,
+          345
+        ]
+      ],
+      "content": "I. To the First, viz. That an individual Power may reside in a Material System; as Sweetness, in a Rose; And that Thinking may be supposed to do so, as well as any other Individual Power: It is answered, that tis so far from being true, as is alleged, that Matter of Fact is so plain and obvious, that a Man can't turn his Eye, but he will meet with Material Systems, wherein there are Individual Powers, which are not in every one, nor in any one of the Particles that compose them, when taken apart and considered singly; This, I say, is so far from being True, that, on the contrary, tis both absolutely false in Fact, and impossible and a direct Contradiction in the Nature of the Thing it self, that any",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        343,
+        29,
+        534,
+        79
+      ],
+      "polygon": [
+        [
+          343,
+          29
+        ],
+        [
+          343,
+          78
+        ],
+        [
+          533,
+          78
+        ],
+        [
+          533,
+          29
+        ]
+      ],
+      "content": "## [9]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        57,
+        77,
+        875,
+        913
+      ],
+      "polygon": [
+        [
+          57,
+          83
+        ],
+        [
+          108,
+          897
+        ],
+        [
+          565,
+          912
+        ],
+        [
+          829,
+          912
+        ],
+        [
+          874,
+          887
+        ],
+        [
+          874,
+          673
+        ],
+        [
+          824,
+          77
+        ]
+      ],
+      "content": "any Power whatsoever should in here or reside in, any System or Composition of Matter, different from the Powers residing in the single Parts. For the clearer and more distinct Explication and Proof of which Doctrine, it is to be observed that all Powers or Qualities may be distinguished into Three sorts. 1st, Some Qualities there are, which do, strictly and properly speaking, inhere in the Substance to which they are ascribed. And concerning these, it is evident at first sight, that every Power or Quality, that is or can be inherent in any System of Matter, is nothing else than the Sum or Aggregate of so many Powers or Qualities of the same kind, inherent in all its parts. The Magnitude of any Body, is nothing but the Sum of the Magnitudes of all its Parts. Its Motion, is nothing but the Sum of the Motions of all its Parts. And if Cogitation in like manner could possibly be a Quality, really inherent in a System of Matter, it must likewise necessarily be the Sum and Result of the Cogitations of the several Parts: And so",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        828,
+        890,
+        878,
+        916
+      ],
+      "polygon": [
+        [
+          828,
+          890
+        ],
+        [
+          828,
+          915
+        ],
+        [
+          877,
+          915
+        ],
+        [
+          877,
+          890
+        ]
+      ],
+      "content": "fo",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        400,
+        27,
+        612,
+        73
+      ],
+      "polygon": [
+        [
+          400,
+          27
+        ],
+        [
+          400,
+          67
+        ],
+        [
+          551,
+          72
+        ],
+        [
+          611,
+          72
+        ],
+        [
+          611,
+          27
+        ]
+      ],
+      "content": "## [ 10 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        99,
+        70,
+        913,
+        934
+      ],
+      "polygon": [
+        [
+          114,
+          70
+        ],
+        [
+          99,
+          909
+        ],
+        [
+          564,
+          934
+        ],
+        [
+          902,
+          929
+        ],
+        [
+          907,
+          75
+        ]
+      ],
+      "content": "so there would be as many distinct Consciousnesses, as there are Particles of Matter, of which the System consists; Which I suppose will be granted to be very absurd. Compositions or Divisions of Magnitude, varied in infinite manners to Eternity, can produce nothing in the whole System, no Quality or Power whatsoever, but mere Magnitude; Compositions and Variations of Motion, nothing but mere Motion. And Sound may as well be added to a Colour, or Colour to a Smell; or any Quality be made to subsist, without any Subject at all; as that any Power whatsoever should be superadded to, and really made to reside in, any Compositum or System of Matter, without being made to inhere proportionably in the Parts of that Whole, taken singly as well as together. This, I say, is evidently and at first sight True, of all real Qualities, which truly and properly inhere in the Subject to which they belong; such as are Magnitude, and Motion in Matter. 2dly, Other Qualities there are, which are vulgarly looked upon as Individual Powers,",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        411,
+        33,
+        606,
+        75
+      ],
+      "polygon": [
+        [
+          411,
+          33
+        ],
+        [
+          411,
+          74
+        ],
+        [
+          605,
+          74
+        ],
+        [
+          605,
+          33
+        ]
+      ],
+      "content": "[ 11 ]",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        28,
+        73,
+        821,
+        888
+      ],
+      "polygon": [
+        [
+          38,
+          73
+        ],
+        [
+          28,
+          788
+        ],
+        [
+          54,
+          868
+        ],
+        [
+          820,
+          887
+        ],
+        [
+          806,
+          73
+        ]
+      ],
+      "content": "Powers, resulting from and residing in the whole System, without residing particularly in each or any of its single and original Parts; such as are the Sweetness of certain Bodies, their Colours, &c. But this is only a vulgar and very gross Error. For neither do these Qualities reside in, or at all result from, the whole System, in any proper Sense: Neither in any Sense at all, in which they can be ascribed to that Body or System of Matter to which they are vulgarly supposed to belong, are they truly Individual Powers. In the first place, they are not really Qualities of the System, and evidently do not at all in any proper Sense belong to it, but are only Effects occasionally produced by it in some other Substance, and truly Qualities or Modes of that other Substance in which they are produced; Thus the Sweetness of a Rose, is well known not to be a Quality really inhering in the Rose; but a Sensation, which is merely in him that smells it, and a Mode of the Thinking Substance that is in the Man. In the next place, these Qualities",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        357,
+        32,
+        609,
+        77
+      ],
+      "polygon": [
+        [
+          357,
+          32
+        ],
+        [
+          357,
+          77
+        ],
+        [
+          448,
+          77
+        ],
+        [
+          453,
+          77
+        ],
+        [
+          462,
+          77
+        ],
+        [
+          525,
+          77
+        ],
+        [
+          538,
+          77
+        ],
+        [
+          569,
+          77
+        ],
+        [
+          608,
+          77
+        ],
+        [
+          608,
+          37
+        ],
+        [
+          538,
+          32
+        ]
+      ],
+      "content": "[ 12 ]",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        157,
+        79,
+        911,
+        912
+      ],
+      "polygon": [
+        [
+          167,
+          79
+        ],
+        [
+          157,
+          896
+        ],
+        [
+          910,
+          911
+        ],
+        [
+          910,
+          89
+        ]
+      ],
+      "content": "lities, in no Sense wherein they can be afforded to the System of Matter, are Individual Powers. They are Individuals, only as they are Modes of the Thinking Substance that perceives them; but in the Bodies themselves, they are only specifically, not individually, single Powers; that is, they are only a number of similar Motions or Figures of the Parts of the Body. Nay, they are not always so much as specifically single Powers. Thus Compound Colours, as certain Greens, for Example, which are Individual Modes in the Thinking Substance that perceives them, may in the Objects be nothing but a number of Figures or Motions even specifically different, namely such as usually represent both Blue and Yellow. And the same may be said of Heat, Light, Taste, Sound, and all those others which we call Sensible Qualities. 3dly, Other Powers, such as Magnetism and Electrical Attractions, are not real Qualities at all, residing in any Subject, but merely abstract Names to express the Effects of some determinate Motions of certain Streams of Mat-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        306,
+        46,
+        515,
+        91
+      ],
+      "polygon": [
+        [
+          306,
+          52
+        ],
+        [
+          306,
+          91
+        ],
+        [
+          514,
+          91
+        ],
+        [
+          514,
+          46
+        ],
+        [
+          392,
+          46
+        ],
+        [
+          316,
+          46
+        ],
+        [
+          312,
+          46
+        ]
+      ],
+      "content": "[ 13 ]",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        30,
+        91,
+        835,
+        904
+      ],
+      "polygon": [
+        [
+          800,
+          91
+        ],
+        [
+          30,
+          97
+        ],
+        [
+          65,
+          888
+        ],
+        [
+          789,
+          903
+        ],
+        [
+          834,
+          884
+        ]
+      ],
+      "content": "Matter: And Gravitation it self, is not a Quality inhering in Matter, or that can possibly result from any Texture or Composition of it; but only an Effect of the continual and regular Operation of some other Being upon it; by which the Parts are all made to tend one towards another. Under these three Heads must necessarily be contained all possible Qualites, Modes or Powers whatsoever: They must either be Qualities really inhering in the Subject to which they are usually ascribed; or Modes produced by it in some other Subject; or else mere abstract Names, signifying certain Powers or Effects that do not properly reside in any Subject at all. And now the Question is, among which of these Three sorts of Powers must Consciousness or Thinking be reckoned. I suppose it will neither be said to be a mere abstract Name, nor yet an Effect produced in or upon a Foreign Substance, (as the Sweetness or Colour of a Rose, is not any Individual Power in the Rose it self, but merely a Sensation excited in him that smells or sees it;) but that it",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        795,
+        885,
+        834,
+        909
+      ],
+      "polygon": [
+        [
+          795,
+          885
+        ],
+        [
+          795,
+          908
+        ],
+        [
+          833,
+          908
+        ],
+        [
+          833,
+          885
+        ]
+      ],
+      "content": "is",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        432,
+        35,
+        640,
+        82
+      ],
+      "polygon": [
+        [
+          438,
+          35
+        ],
+        [
+          432,
+          49
+        ],
+        [
+          432,
+          77
+        ],
+        [
+          438,
+          81
+        ],
+        [
+          540,
+          81
+        ],
+        [
+          556,
+          81
+        ],
+        [
+          634,
+          81
+        ],
+        [
+          639,
+          72
+        ],
+        [
+          639,
+          35
+        ],
+        [
+          571,
+          35
+        ],
+        [
+          545,
+          35
+        ]
+      ],
+      "content": "## [ 14 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        151,
+        83,
+        929,
+        920
+      ],
+      "polygon": [
+        [
+          157,
+          83
+        ],
+        [
+          157,
+          904
+        ],
+        [
+          928,
+          919
+        ],
+        [
+          918,
+          83
+        ]
+      ],
+      "content": "is certainly a Power or Quality truly and really inhering in the Thinking Substance it self. And therefore, if that Thinking Substance be a System of Matter, the former Reasoning holds strictly and demonstratively true, that the Consciouiness must inhere in all and every one of the Particles of that System, taken singly, as well as together. To suppose any Power or Quality of this kind, arising from, or belonging to any whole System of Matter, without belonging to the several Parts, of which that Whole consists, is a direct and express Contradiction: 'Tis supposing either an Universal to exist, without Particulars; or an Effect to be produced without a Cause, or to have more in it than was in the Cause; or that a Quality is by the Power of God made so to arise out of Nothing, as to be superadded to a Subject, and to subsist without inhering in that Subject to which it is at the same time supposed to belong. By this I presume it sufficiently appears with what possibility of Truth it is alleged, that the Particles of",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        160,
+        950,
+        177,
+        967
+      ],
+      "polygon": [
+        [
+          160,
+          950
+        ],
+        [
+          160,
+          966
+        ],
+        [
+          176,
+          966
+        ],
+        [
+          176,
+          950
+        ]
+      ],
+      "content": "```markdown\n\n```",
+      "native_label": "number"
+    },
+    {
+      "index": 3,
+      "label": "footer",
+      "bbox_2d": [
+        784,
+        903,
+        927,
+        931
+      ],
+      "polygon": [
+        [
+          784,
+          903
+        ],
+        [
+          784,
+          930
+        ],
+        [
+          925,
+          930
+        ],
+        [
+          925,
+          903
+        ]
+      ],
+      "content": "Matter",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        311,
+        13,
+        512,
+        57
+      ],
+      "polygon": [
+        [
+          311,
+          13
+        ],
+        [
+          311,
+          57
+        ],
+        [
+          411,
+          57
+        ],
+        [
+          472,
+          57
+        ],
+        [
+          475,
+          57
+        ],
+        [
+          507,
+          57
+        ],
+        [
+          510,
+          57
+        ],
+        [
+          510,
+          13
+        ]
+      ],
+      "content": "## [15]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        7,
+        65,
+        801,
+        610
+      ],
+      "polygon": [
+        [
+          13,
+          65
+        ],
+        [
+          18,
+          610
+        ],
+        [
+          800,
+          610
+        ],
+        [
+          800,
+          71
+        ]
+      ],
+      "content": "Matter which compose the Brain, may under that Modification either have the Power of Thinking necessarily flowing from them, or else may have the Power of Thinking superadded to them by the Power of God, though singly and separately they may not have the Power of Thinking. And it will easily be judged, whether it be indeed a Fallacy and a plain begging of the Question, to affirm that an Individual Power, properly and strictly speaking, such as Consciousness or Thinking must needs be acknowledged to be, can only proceed from, or reside in, an Individual Being; or whether the contrary be not rather demonstrated to be a plain Contradiction.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        21,
+        633,
+        817,
+        921
+      ],
+      "polygon": [
+        [
+          21,
+          633
+        ],
+        [
+          27,
+          911
+        ],
+        [
+          101,
+          921
+        ],
+        [
+          811,
+          921
+        ],
+        [
+          811,
+          633
+        ]
+      ],
+      "content": "II. To the Second, viz. That, according to the Argument now under Consideration, if not a System of Matter, yet at least the separate and distinct Parts of Matter, are capable of having a Power of Thinking, or an Individual Consciousness superadded to Each of them; seeing it is only required that a thing be an Individual Be- B ing,",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        429,
+        16,
+        624,
+        62
+      ],
+      "polygon": [
+        [
+          429,
+          16
+        ],
+        [
+          429,
+          61
+        ],
+        [
+          623,
+          61
+        ],
+        [
+          623,
+          16
+        ],
+        [
+          544,
+          16
+        ],
+        [
+          534,
+          16
+        ]
+      ],
+      "content": "## [16]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        168,
+        64,
+        958,
+        910
+      ],
+      "polygon": [
+        [
+          168,
+          64
+        ],
+        [
+          208,
+          889
+        ],
+        [
+          494,
+          909
+        ],
+        [
+          957,
+          909
+        ],
+        [
+          918,
+          75
+        ]
+      ],
+      "content": "ing, in order to its being a proper Subject of a Power of Thinking: It is answered, First, that supposing any Particle of Matter could be truly an Individual, that is, an Indivisible or Indiscerpible Being; yet it would not therefore follow, that it could be capable of Thinking. For though Divisibility or Discercpibility in any Subject, is a sufficient Proof that That Subject is not capable of such an individual Power as Thinking; yet it does not from thence presently follow on the contrary, that whatever is Indiscerpible, is therefore capable of Thinking. Though the present Argument proves indeed only, that whatever is Discercpible, cannot Think; that is, that Individuality is a fine qua non, or a necessary Qualification without which no Subject can be capable of Thinking; yet it does by no means exclude other Considerations, or at all imply that whatever has this Property of Individuality, must therefore necessarily be capable of Thinking, and cannot by any other Property be rendred, or by any other Argument proved to be, incapable",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        301,
+        14,
+        500,
+        59
+      ],
+      "polygon": [
+        [
+          301,
+          14
+        ],
+        [
+          301,
+          48
+        ],
+        [
+          301,
+          54
+        ],
+        [
+          301,
+          58
+        ],
+        [
+          499,
+          58
+        ],
+        [
+          499,
+          14
+        ]
+      ],
+      "content": "## [ 17 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        8,
+        61,
+        797,
+        902
+      ],
+      "polygon": [
+        [
+          8,
+          61
+        ],
+        [
+          23,
+          891
+        ],
+        [
+          796,
+          896
+        ],
+        [
+          782,
+          66
+        ]
+      ],
+      "content": "incapable of it. Though the want of Individuality or Distinctness, is indeed the sole Reason urged in the present Argument, why a System of Matter cannot have a Power of Thinking or an Individual Consciousness; yet it ought not therefore to be said, that it is Only required that a Thing be an Individual Being, in order to its being a proper Subject of a Power of Thinking. Besides; Supposing any Particle of Matter could be truly an Individual Being, and also that upon that account (which yet is by no means necessary) it could be capable of Thinking; yet still the principal part of the Question would be certain and unavoidable, that a Thinking Being must be, if not Immaterial, yet however naturally Immortal: For whatever is Indiscperible, tho' it were supposed Material, could not by any Power of Time, or any Force in Nature, receive any such Alteration, but that not only its Substance, but even all its Qualities also, must naturally remain for ever unchanged. But then, Secondly, it is answered further, that the Suppositi-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        443,
+        18,
+        643,
+        61
+      ],
+      "polygon": [
+        [
+          443,
+          18
+        ],
+        [
+          443,
+          60
+        ],
+        [
+          642,
+          60
+        ],
+        [
+          642,
+          18
+        ]
+      ],
+      "content": "## [18]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        141,
+        59,
+        961,
+        900
+      ],
+      "polygon": [
+        [
+          151,
+          59
+        ],
+        [
+          141,
+          520
+        ],
+        [
+          196,
+          885
+        ],
+        [
+          960,
+          900
+        ],
+        [
+          930,
+          59
+        ]
+      ],
+      "content": "on it self of this Objection, is utterly impossible, viz. that any Particle of Matter can be truly an Individual or Indiscerpible Being. For it is necessarily included in the Nature of Solid Substance, how small forever it be conceived to be, to consist still of Parts not essentially connected, and not at all depending upon each other for their Existence. So that it is absolutely impossible and contradictory, to suppose any Particle of Matter so truly an Individual, but that by the Power of God (for the Powers of Nature here are nothing to the purpose,) it may be divided into two or more Particles, which shall each of them separately be as Perfect and Complete Matter, and continue to have all the very same Properties, as the whole Particle had before it was divided. Suppose then the smallest imaginable Particle of Matter, induced with Consciousness or Thought: Yet by the Power of God, this Particle may be divided into two distinct Parts; and then what will naturally and consequently become of its",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        284,
+        14,
+        493,
+        56
+      ],
+      "polygon": [
+        [
+          284,
+          14
+        ],
+        [
+          284,
+          55
+        ],
+        [
+          492,
+          55
+        ],
+        [
+          492,
+          14
+        ]
+      ],
+      "content": "$$\n[ 1 9 ]\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        3,
+        56,
+        799,
+        889
+      ],
+      "polygon": [
+        [
+          3,
+          56
+        ],
+        [
+          34,
+          883
+        ],
+        [
+          797,
+          888
+        ],
+        [
+          773,
+          56
+        ]
+      ],
+      "content": "its Power of Thinking? If That Power will continue in it unchanged; then there must either be two distinct Consciousnesses, in the two separate Parts; or else the Power continuing in the intermediate Space, as well as in the Parts themselves, must there subsist without a Subject; or else, not the Material Substance, but some other Thing, is the Subject of the Consciousness. If the Power of Thinking will remain only in One of the separated Parts; then either That One Part only, had at first the Power residing in it; and then the same Question will return, upon the Supposition of Its being likewise divided; or else it will follow that one and the same Individual Quality may be transferred from one Subject to another; which all Philosophers of all Sects in the World, have always confessed to be impossible. If, in the last place, it be said, that, upon the Division of the Particle, the Power of Thinking, which was in it, will wholly cease; then it will follow, that That Power was\n\nB 3 never",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        448,
+        7,
+        646,
+        56
+      ],
+      "polygon": [
+        [
+          448,
+          7
+        ],
+        [
+          448,
+          56
+        ],
+        [
+          645,
+          56
+        ],
+        [
+          645,
+          7
+        ]
+      ],
+      "content": "[ 20 ]",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        168,
+        61,
+        958,
+        699
+      ],
+      "polygon": [
+        [
+          168,
+          66
+        ],
+        [
+          198,
+          698
+        ],
+        [
+          957,
+          693
+        ],
+        [
+          933,
+          61
+        ]
+      ],
+      "content": "rever at all a real Quality inhering or residing in the Substance, (in which mere separation of Parts, makes no Alteration ;) but that it was merely an external Denomination, such as is Roundness in a Globe, which perishes at its being divided : And this, I suppose, will be granted to be sufficiently absurd. There is no way to evade this Argument, but by affirming either that a Particle of Matter may be so small, as that it shall not be in the Power of God to divide it; or that, if it be divided, it will consequently and necessarily be annihilated; (neither of which , I suppose, will be affirmed ;) or else that the same may be argued concerning Immaterial Substance also; which is the Fourth Objection, and will be considered presently in its proper place.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        200,
+        693,
+        968,
+        891
+      ],
+      "polygon": [
+        [
+          200,
+          693
+        ],
+        [
+          200,
+          870
+        ],
+        [
+          371,
+          880
+        ],
+        [
+          660,
+          890
+        ],
+        [
+          967,
+          890
+        ],
+        [
+          962,
+          693
+        ]
+      ],
+      "content": "III. To the Third, viz. That though Consciousness were allowed necessarily to infer Indivisibility, and Indivisibility to infer Immateriality: yet even then not the Soul, the Thinking Immaterial Being, but only the bare",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        306,
+        16,
+        505,
+        63
+      ],
+      "polygon": [
+        [
+          306,
+          16
+        ],
+        [
+          306,
+          53
+        ],
+        [
+          306,
+          58
+        ],
+        [
+          306,
+          62
+        ],
+        [
+          420,
+          62
+        ],
+        [
+          495,
+          62
+        ],
+        [
+          499,
+          62
+        ],
+        [
+          504,
+          58
+        ],
+        [
+          504,
+          21
+        ],
+        [
+          405,
+          16
+        ]
+      ],
+      "content": "## [ 21 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        28,
+        65,
+        826,
+        896
+      ],
+      "polygon": [
+        [
+          43,
+          65
+        ],
+        [
+          49,
+          875
+        ],
+        [
+          244,
+          895
+        ],
+        [
+          685,
+          895
+        ],
+        [
+          824,
+          895
+        ],
+        [
+          800,
+          65
+        ]
+      ],
+      "content": "bare Immaterial Subject or Substance itself, would be proved to be naturally Immortal; since Thinking is an Action (a Power it should rather have been call'd,) which may commence after the Existence of its Subject, and may cease, its Subject still remaining: It is answered, that the contrary is evidently True; namely, that not only the bare Immaterial Subject, but the Subject and the Power together, the Thinking Immaterial Being it self, is hereby proved to be naturally Immortal: Because, whatever Substance is wholly indiscerpible, is plainly, by Virtue of that property, not only it self incapable of being destroyed by any Natural Power, (for so also is the most discerpible Substance likewise;) but all its Qualities and Modes also, are utterly incapable of being affected in any measure, or changed in any degree, by any Power of Nature; For all real and inherent Qualities of any Substance, are either Modifications of the Substance it self, or else Powers superadded and connected to the Substance,",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        816,
+        910,
+        834,
+        927
+      ],
+      "polygon": [
+        [
+          816,
+          910
+        ],
+        [
+          816,
+          927
+        ],
+        [
+          833,
+          927
+        ],
+        [
+          833,
+          910
+        ]
+      ],
+      "content": ".",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        451,
+        24,
+        653,
+        69
+      ],
+      "polygon": [
+        [
+          451,
+          24
+        ],
+        [
+          451,
+          54
+        ],
+        [
+          451,
+          64
+        ],
+        [
+          451,
+          69
+        ],
+        [
+          652,
+          69
+        ],
+        [
+          652,
+          24
+        ]
+      ],
+      "content": "[22]",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        160,
+        67,
+        971,
+        900
+      ],
+      "polygon": [
+        [
+          160,
+          67
+        ],
+        [
+          190,
+          889
+        ],
+        [
+          910,
+          899
+        ],
+        [
+          969,
+          884
+        ],
+        [
+          945,
+          67
+        ]
+      ],
+      "content": "stance, by the immediate Power of God; And in either of these cases, 'tis manifest no Quality can be altered by any natural Power, which is not able to affect and make some Alteration (in the Disposition of the Parts at least) of the Substance it self; which in an indiscperible Substance 'tis evident cannot be done. The Soul therefore, the whole Conscious Being; the Power of Thinking that resides in it, as well as the bare Immaterial Subject or Substance it self; (whatever may be said concerning the Power of God in this Question;) will clearly, notwithstanding what any Finite Power can do, of necessity he naturally Immortal. The Truth of this Reasoning is evident from what we cannot but observe even in the Material World; namely, that all the Changes which are caused therein by any Powers of Nature, are nothing but Changes of the order and Disposition of the Parts of compound Bodies. The original and perfectly solid Particles of Matter, which are, (not indeed absolutely",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        916,
+        883,
+        967,
+        907
+      ],
+      "polygon": [
+        [
+          916,
+          883
+        ],
+        [
+          916,
+          906
+        ],
+        [
+          966,
+          906
+        ],
+        [
+          966,
+          883
+        ]
+      ],
+      "content": "in",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        347,
+        21,
+        540,
+        63
+      ],
+      "polygon": [
+        [
+          347,
+          21
+        ],
+        [
+          347,
+          63
+        ],
+        [
+          539,
+          63
+        ],
+        [
+          539,
+          21
+        ],
+        [
+          526,
+          21
+        ],
+        [
+          448,
+          21
+        ]
+      ],
+      "content": "## [ 23 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        68,
+        62,
+        840,
+        380
+      ],
+      "polygon": [
+        [
+          68,
+          62
+        ],
+        [
+          68,
+          380
+        ],
+        [
+          839,
+          380
+        ],
+        [
+          839,
+          62
+        ]
+      ],
+      "content": "in themselves, but) to any Power of Nature, indiscerpible; are utterly incapable of having not only their Substance, but even any of their Qualities or Properties altered in any measure by any Power of Nature: As is evident from the Form or Species of those we vulgarly call simple or elementary Bodies, remaining always unalterably the same, and induced continually with the same Powers and Qualities.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        71,
+        424,
+        842,
+        821
+      ],
+      "polygon": [
+        [
+          71,
+          424
+        ],
+        [
+          91,
+          806
+        ],
+        [
+          137,
+          820
+        ],
+        [
+          841,
+          820
+        ],
+        [
+          836,
+          424
+        ]
+      ],
+      "content": "IV. To the Fourth, viz. That, according to the Argument we are now considering, either a System of Matter, being by a strict Union of Parts made an Individual Being, may become capable of Thinking; or else Immaterial Substance also may as well be conceived capable of Division, and consequently incapable of Thought; supposing Extension not excluded out of the Idea of Immateriality: It is answered, that the Case is very different: Because some of the first and most obvious Properties",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        405,
+        23,
+        602,
+        67
+      ],
+      "polygon": [
+        [
+          405,
+          23
+        ],
+        [
+          405,
+          66
+        ],
+        [
+          601,
+          66
+        ],
+        [
+          601,
+          23
+        ]
+      ],
+      "content": "[24]",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        113,
+        70,
+        907,
+        875
+      ],
+      "polygon": [
+        [
+          113,
+          70
+        ],
+        [
+          144,
+          864
+        ],
+        [
+          601,
+          874
+        ],
+        [
+          905,
+          874
+        ],
+        [
+          891,
+          75
+        ]
+      ],
+      "content": "Properties which we certainly know of Matter, as its having partes extra partes, strictly and properly speaking, that is, its consisting of such Parts as are actually unconnected and are truly distinct Beings, and can (as we see by Experience) exist separately, and have no dependence one upon another; do necessarily and confessedly imply Discernibility: But in Immaterial Beings we do not know of any such Properties, as any wise imply Discernibility. It cannot be collected from any Property we know of Them, but that they may be such Beings as can no more be divided than annihilated, that is, whose whole Essence may be necessarily One, and their Substance essentially indivisible, upon the same Ground as their Existence continues: Nay, the only Properties we certainly and indisputably know of them, namely Consciousness and its Mbdes, do prove (as has been before shown) that they must necessarily be such Indiscernible Beings. As evidently as the known",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        379,
+        12,
+        579,
+        58
+      ],
+      "polygon": [
+        [
+          379,
+          12
+        ],
+        [
+          379,
+          57
+        ],
+        [
+          578,
+          57
+        ],
+        [
+          578,
+          17
+        ],
+        [
+          573,
+          12
+        ],
+        [
+          529,
+          12
+        ],
+        [
+          468,
+          12
+        ],
+        [
+          439,
+          12
+        ],
+        [
+          413,
+          12
+        ]
+      ],
+      "content": "## [25]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        88,
+        63,
+        874,
+        858
+      ],
+      "polygon": [
+        [
+          88,
+          63
+        ],
+        [
+          103,
+          858
+        ],
+        [
+          873,
+          848
+        ],
+        [
+          868,
+          63
+        ]
+      ],
+      "content": "known Properties of Matter prove it to be certainly a Discernible Substance, whatever other unknown Properties it may be endued with; so evidently the known and confessed Properties of Immaterial Beings prove them to be Indiscernible, whatever other unknown Properties They likewise may be induced with. How far such Indiscernibility can be reconciled and be consistent with some kind of Expansion; that is, what unknown Properties are joyned together with these known ones of Consciousness and Indiscernibility; is another Question of considerable Difficulty, but of no Necessity to be resolved in the present Argument. Only This: As the Parts of Space or Expansion it self, can demonstrably be proved to be absolutely Indiscernible; so it ought not to be reckoned an insuperable Difficulty, to imagine that all Immaterial Thinking Substances (upon Supposition that Expansion is not excluded out of their Idea,) may be so likewise.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        723,
+        849,
+        869,
+        883
+      ],
+      "polygon": [
+        [
+          723,
+          849
+        ],
+        [
+          723,
+          882
+        ],
+        [
+          868,
+          882
+        ],
+        [
+          868,
+          849
+        ]
+      ],
+      "content": "V. To",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        345,
+        28,
+        541,
+        71
+      ],
+      "polygon": [
+        [
+          345,
+          28
+        ],
+        [
+          345,
+          70
+        ],
+        [
+          540,
+          70
+        ],
+        [
+          540,
+          28
+        ]
+      ],
+      "content": "[26]",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        81,
+        94,
+        846,
+        870
+      ],
+      "polygon": [
+        [
+          86,
+          94
+        ],
+        [
+          101,
+          855
+        ],
+        [
+          845,
+          870
+        ],
+        [
+          836,
+          100
+        ]
+      ],
+      "content": "V. To the Fifth, viz. That, by the fore-mentioned Argument, all the sensible Creatures in the Universe are put in the same Condition with Man, and made capable of eternal Happiness as well as be; or else, that, to avoid this Consequence, all those Creatures must either be supposed to be only mere Machines, or else that their Souls shall be annihilated upon the dissolution of their Bodies; And if so, then the Proof of the natural Immortality of Mens Souls from their Immateriality, tends not to prove that their Souls shall really be Immortal: It is answered, that, though all Sensible Creatures have certainly in them something that is Immaterial, yet it does not at all follow, either that they must needs be annihilated upon the Dissolution of their Bodies, or else that they must be capable of Eternal Happiness as well as Man. This is just such an Argument, as if a Man should conclude, that whatsoever is not exactly like himself, can there-fore",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        474,
+        30,
+        669,
+        74
+      ],
+      "polygon": [
+        [
+          474,
+          30
+        ],
+        [
+          474,
+          74
+        ],
+        [
+          668,
+          74
+        ],
+        [
+          668,
+          30
+        ]
+      ],
+      "content": "[27]",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        116,
+        73,
+        876,
+        888
+      ],
+      "polygon": [
+        [
+          116,
+          73
+        ],
+        [
+          132,
+          863
+        ],
+        [
+          462,
+          888
+        ],
+        [
+          875,
+          888
+        ],
+        [
+          866,
+          79
+        ]
+      ],
+      "content": "fore have no Being at all; Or that all the Stars of Heaven, if they be not exactly like our Globe of Earth, cannot possibly be any Globes at all. Certainly the Omnipotent and infinitely Wife God may, without any very great difficulty, be supposed to have more ways of disposing of his Creatures, than we are at present let into the secret of. He may indeed, if he please, annihilate them at the dissolution of their Bodies; (And so he might, if he thought fit, annihilate the Souls of Men; and yet it would be never the less true, that they are in in their own Nature Immortal;) or he may, if he pleases, without either annihilating them or suffering them to fall into a State of entire Inactivity, dispose of them into numberless States, concerning the particular Nature of which, we are not now able to make the least conjecture. I suppose, That Man does not do any great Honour either to God, or to the Christian Religion, who will needs contend",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        92,
+        91,
+        847,
+        274
+      ],
+      "polygon": [
+        [
+          92,
+          91
+        ],
+        [
+          92,
+          269
+        ],
+        [
+          842,
+          273
+        ],
+        [
+          842,
+          91
+        ]
+      ],
+      "content": "contend, that thro' a boundless Eternity there shall never exist any thing in the immense Universe, but what must needs partake either of the Happiness or Misery of Mankind.",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        326,
+        620,
+        625,
+        660
+      ],
+      "polygon": [
+        [
+          326,
+          625
+        ],
+        [
+          326,
+          660
+        ],
+        [
+          624,
+          660
+        ],
+        [
+          624,
+          620
+        ],
+        [
+          331,
+          620
+        ]
+      ],
+      "content": "FINIS.",
+      "native_label": "text"
+    }
+  ]
+]

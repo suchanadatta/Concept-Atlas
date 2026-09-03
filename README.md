@@ -1,0 +1,62 @@
+# BMoral — British Moral Philosophy Corpus System
+
+A scholar's search system over **129 books of 18th-century British moral
+philosophy** (~27,000 pages): OCR with word-level geometry, a verified
+202-concept knowledge graph, hybrid semantic search (Jasper embeddings +
+archaic-aware lexical), and an interactive 2D/3D concept-graph UI.
+
+## What's in this repo
+
+| Path | Contents |
+|---|---|
+| `tools/` | OCR pipeline, Jasper index builder + semantic search server, validators, audit suite |
+| `outputs/` | **Committed OCR extractions** — per-book `.pages.jsonl` (blocks + word `bbox_pts` + paragraphs + page numbers), `.json`, `.md` |
+| `Concept Maps/final/` | **Committed knowledge graph** — 202 concepts, 1,099 relations, 2,072 verbatim evidence paragraphs, 42 research queries |
+| `Concept Maps/graph-ui/` | The full web UI (search engine, PDF/TXT reader with annotations, concept graphs, query graphs) |
+| `models/` | Model weights & embedding indexes (NOT committed — rebuilt by scripts) |
+| `data/` | Source PDFs/TXTs (NOT committed — see `data/.gitkeep`) |
+| `log/` | Pipeline orchestration scripts + server launchers |
+| `plans/` | Engineering decision/audit logs from the build process |
+
+## Quickstart
+
+```bash
+# deps (uv)
+uv venv --python 3.12 && uv pip install -r pyproject.toml
+
+# 1) OCR new PDFs          (needs GPU ~10GB for vLLM)
+bash log/run_full_68.sh
+
+# 2) Build the semantic index   (needs free GPU)
+python tools/build_jasper_index.py --device cuda --batch 128
+python tools/build_concept_vectors.py cuda          # concept vectors for query graphs
+
+# 3) Launch
+python tools/jasper_search_server.py --port 8790 --device cuda   # semantic backend
+cd "Concept Maps/graph-ui" && ./start.sh                          # UI on :8788
+```
+
+## The UI (`http://<host>:8788`)
+
+- **Search** — natural-language queries; 🧠 semantic (Jasper hybrid, scored
+  results) or ⌨ keyword (archaic-spelling aware: *vertue*, *loue*, *felf*)
+- **Passages** → click → side-panel PDF reader at the exact page with
+  word-level highlights; TXT books open in paragraph mode with word
+  selection annotation
+- **Concepts** → matched concepts → floating concept graph
+- **Graph tab** → live **query graph**: concept matches + bridge concepts +
+  documents + their interconnections (2D pan/zoom/hover + 3D orbit)
+- **Explore** → the full 202-node concept map: per-relation colored/dashed
+  edges, neighborhood isolation, spread control, edge clicks, dark mode
+- **Docs** → in-app documentation
+
+## Data model
+
+Each book gets `<BOOK_ID>.pages.jsonl` — one line per page:
+`blocks[]` (text, zone, `bbox_pts` in PDF points, `words[]` with per-word
+`bbox_pts`), `paragraphs[]` (char-offset ranges + rebased word boxes),
+`book_page_number`, `printed_page_number`, two-up sheet detection.
+
+The concept graph (`Concept Maps/final/`) was built by 15 extractor agents →
+20 verifiers → 20 double-auditors → 25 independent auditors; every evidence
+quote is a verbatim OCR substring with page/box citations.

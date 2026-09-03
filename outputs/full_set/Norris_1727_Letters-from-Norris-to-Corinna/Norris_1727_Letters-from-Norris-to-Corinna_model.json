@@ -1,0 +1,5197 @@
+[
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "TTERS\n\nFROM\nNORRIS\nTO\nRINNA,\nFOR THE\nRECTION\nOF HER\nUDIES.",
+      "bbox_2d": [
+        270,
+        20,
+        936,
+        622
+      ],
+      "polygon": [
+        [
+          281,
+          20
+        ],
+        [
+          286,
+          622
+        ],
+        [
+          551,
+          622
+        ],
+        [
+          920,
+          622
+        ],
+        [
+          935,
+          20
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "footer",
+      "content": "O N D Q N: in the YEAR, 1727.",
+      "bbox_2d": [
+        286,
+        836,
+        911,
+        927
+      ],
+      "polygon": [
+        [
+          286,
+          841
+        ],
+        [
+          292,
+          927
+        ],
+        [
+          910,
+          927
+        ],
+        [
+          910,
+          836
+        ],
+        [
+          376,
+          836
+        ],
+        [
+          336,
+          836
+        ],
+        [
+          316,
+          836
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        45,
+        330,
+        899,
+        763
+      ],
+      "polygon": [
+        [
+          56,
+          330
+        ],
+        [
+          45,
+          703
+        ],
+        [
+          61,
+          763
+        ],
+        [
+          489,
+          763
+        ],
+        [
+          515,
+          763
+        ],
+        [
+          838,
+          763
+        ],
+        [
+          898,
+          703
+        ],
+        [
+          898,
+          330
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "content": "Mr. Norris's LETTERS.",
+      "bbox_2d": [
+        174,
+        61,
+        736,
+        94
+      ],
+      "polygon": [
+        [
+          174,
+          61
+        ],
+        [
+          180,
+          93
+        ],
+        [
+          735,
+          93
+        ],
+        [
+          735,
+          66
+        ],
+        [
+          635,
+          61
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "content": "95",
+      "bbox_2d": [
+        823,
+        74,
+        886,
+        100
+      ],
+      "polygon": [
+        [
+          823,
+          74
+        ],
+        [
+          823,
+          99
+        ],
+        [
+          886,
+          99
+        ],
+        [
+          886,
+          74
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "doc_title",
+      "content": "```markdown\n\n```",
+      "bbox_2d": [
+        34,
+        126,
+        882,
+        160
+      ],
+      "polygon": [
+        [
+          34,
+          126
+        ],
+        [
+          34,
+          160
+        ],
+        [
+          882,
+          160
+        ],
+        [
+          882,
+          126
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "LETTER I.",
+      "bbox_2d": [
+        253,
+        182,
+        653,
+        212
+      ],
+      "polygon": [
+        [
+          253,
+          182
+        ],
+        [
+          253,
+          212
+        ],
+        [
+          653,
+          212
+        ],
+        [
+          653,
+          182
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Bemerton, April 25. 1699.",
+      "bbox_2d": [
+        406,
+        237,
+        894,
+        268
+      ],
+      "polygon": [
+        [
+          406,
+          237
+        ],
+        [
+          406,
+          263
+        ],
+        [
+          496,
+          268
+        ],
+        [
+          515,
+          268
+        ],
+        [
+          555,
+          268
+        ],
+        [
+          893,
+          268
+        ],
+        [
+          893,
+          237
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "MADAM,",
+      "bbox_2d": [
+        71,
+        261,
+        287,
+        288
+      ],
+      "polygon": [
+        [
+          71,
+          261
+        ],
+        [
+          71,
+          283
+        ],
+        [
+          86,
+          287
+        ],
+        [
+          169,
+          287
+        ],
+        [
+          179,
+          287
+        ],
+        [
+          287,
+          287
+        ],
+        [
+          287,
+          266
+        ],
+        [
+          159,
+          261
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "YOU have here my particular Thanks for your very extraordinary and obliging Present, which entertained me with great Pleasure and Wonder, and in which I can find nothing to censure but the Meanness of the Subject, though to confess the Truth that is my Fault more than yours *. You have, I perceive, a very pregnant Genius for Poetry, and, I doubt not, for greater Things, and it you will be advised by one, who has had some Conversation with the Muses, you should not employ very much of your Time in their Company, which in you would be better bestowed upon more serious and useful Studies.",
+      "bbox_2d": [
+        31,
+        288,
+        903,
+        601
+      ],
+      "polygon": [
+        [
+          31,
+          288
+        ],
+        [
+          36,
+          601
+        ],
+        [
+          902,
+          601
+        ],
+        [
+          902,
+          288
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "God has given you a great Force and Strength of Spirit, and it is Pity, but that its Motion should be as well determined. I pray him to direct it upon the best Things, and in the best Way, remaining with the greatest Respect,",
+      "bbox_2d": [
+        34,
+        599,
+        907,
+        717
+      ],
+      "polygon": [
+        [
+          34,
+          599
+        ],
+        [
+          34,
+          712
+        ],
+        [
+          70,
+          717
+        ],
+        [
+          906,
+          717
+        ],
+        [
+          901,
+          599
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Your very humble and obliged Servant,",
+      "bbox_2d": [
+        174,
+        733,
+        853,
+        763
+      ],
+      "polygon": [
+        [
+          174,
+          733
+        ],
+        [
+          174,
+          763
+        ],
+        [
+          852,
+          763
+        ],
+        [
+          847,
+          733
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "J. NORRIS.",
+      "bbox_2d": [
+        639,
+        781,
+        909,
+        810
+      ],
+      "polygon": [
+        [
+          639,
+          781
+        ],
+        [
+          639,
+          809
+        ],
+        [
+          908,
+          809
+        ],
+        [
+          908,
+          786
+        ],
+        [
+          793,
+          781
+        ],
+        [
+          784,
+          781
+        ],
+        [
+          778,
+          781
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "footnote",
+      "content": "* The Lady had sent him a Copy of Verses upon his Writings, which the Reader may see in her printed Poems. 8vo. Page 6.",
+      "bbox_2d": [
+        44,
+        850,
+        906,
+        918
+      ],
+      "polygon": [
+        [
+          44,
+          850
+        ],
+        [
+          44,
+          913
+        ],
+        [
+          205,
+          918
+        ],
+        [
+          756,
+          918
+        ],
+        [
+          896,
+          918
+        ],
+        [
+          906,
+          913
+        ],
+        [
+          906,
+          855
+        ],
+        [
+          851,
+          850
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "footer",
+      "content": "Let",
+      "bbox_2d": [
+        816,
+        913,
+        907,
+        936
+      ],
+      "polygon": [
+        [
+          816,
+          913
+        ],
+        [
+          816,
+          936
+        ],
+        [
+          906,
+          936
+        ],
+        [
+          906,
+          913
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "content": "96",
+      "bbox_2d": [
+        78,
+        69,
+        154,
+        103
+      ],
+      "polygon": [
+        [
+          83,
+          69
+        ],
+        [
+          78,
+          74
+        ],
+        [
+          78,
+          102
+        ],
+        [
+          123,
+          102
+        ],
+        [
+          134,
+          102
+        ],
+        [
+          138,
+          102
+        ],
+        [
+          144,
+          102
+        ],
+        [
+          148,
+          102
+        ],
+        [
+          153,
+          98
+        ],
+        [
+          153,
+          69
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "content": "Mr. Norris's LETTERS.",
+      "bbox_2d": [
+        236,
+        67,
+        802,
+        101
+      ],
+      "polygon": [
+        [
+          236,
+          72
+        ],
+        [
+          242,
+          100
+        ],
+        [
+          801,
+          100
+        ],
+        [
+          801,
+          67
+        ],
+        [
+          792,
+          67
+        ],
+        [
+          776,
+          67
+        ],
+        [
+          382,
+          67
+        ],
+        [
+          351,
+          67
+        ],
+        [
+          341,
+          67
+        ],
+        [
+          331,
+          67
+        ],
+        [
+          277,
+          67
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "doc_title",
+      "content": "```markdown\n\n```",
+      "bbox_2d": [
+        80,
+        125,
+        932,
+        159
+      ],
+      "polygon": [
+        [
+          80,
+          125
+        ],
+        [
+          80,
+          159
+        ],
+        [
+          931,
+          159
+        ],
+        [
+          931,
+          125
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "LETTER II.",
+      "bbox_2d": [
+        311,
+        177,
+        717,
+        208
+      ],
+      "polygon": [
+        [
+          311,
+          177
+        ],
+        [
+          311,
+          208
+        ],
+        [
+          717,
+          208
+        ],
+        [
+          717,
+          177
+        ],
+        [
+          594,
+          177
+        ],
+        [
+          573,
+          177
+        ],
+        [
+          549,
+          177
+        ],
+        [
+          385,
+          177
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "GOOD MADAM,",
+      "bbox_2d": [
+        119,
+        224,
+        498,
+        250
+      ],
+      "polygon": [
+        [
+          119,
+          224
+        ],
+        [
+          119,
+          250
+        ],
+        [
+          498,
+          250
+        ],
+        [
+          498,
+          229
+        ],
+        [
+          493,
+          224
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "I pray, forgive my Rudeness in deferring so long my Answer to your obliging Letter, of which some accidental Interruptions, together with my late Indispositions of Health, have been the Occasion. I should very gladly comply with your Request, in giving you such poor Assistance as I am able, towards the Direction of your Studies, but cannot so well do it at this Distance, and upon that little Knowledge I have of you, unless you will be pleased to let me know what your Education has hitherto been in the Way of Learning, what Progress you have made in it, what Languages you understand besides your own, that so I may know what Books you are capable of reading, and withal what your Design is, and what Sort of Books they are that you would read, whether such as serve only to the Promotion of Christian Life and Practice, or such as tend more immediately to the Illumination of your Mind, and the Improvement of your Reason and Understanding in the Way of Science and Speculation. If you please, Madam, to give me some few necessary Hints concerning these Things, that I may not be altogether in the dark in what I have to do, you shall receive my Instruction and Advice. In the mean time, you have the Prayers and best Wishes of",
+      "bbox_2d": [
+        62,
+        242,
+        938,
+        878
+      ],
+      "polygon": [
+        [
+          73,
+          247
+        ],
+        [
+          68,
+          878
+        ],
+        [
+          917,
+          878
+        ],
+        [
+          932,
+          247
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "Bemerton, June 12. 1699.",
+      "bbox_2d": [
+        61,
+        891,
+        370,
+        945
+      ],
+      "polygon": [
+        [
+          61,
+          891
+        ],
+        [
+          61,
+          935
+        ],
+        [
+          66,
+          945
+        ],
+        [
+          369,
+          945
+        ],
+        [
+          369,
+          891
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Your humble Servant,",
+      "bbox_2d": [
+        465,
+        872,
+        854,
+        899
+      ],
+      "polygon": [
+        [
+          465,
+          876
+        ],
+        [
+          465,
+          899
+        ],
+        [
+          853,
+          899
+        ],
+        [
+          853,
+          876
+        ],
+        [
+          833,
+          872
+        ],
+        [
+          471,
+          872
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "J. NORRIS.\nN. F",
+      "bbox_2d": [
+        631,
+        914,
+        940,
+        961
+      ],
+      "polygon": [
+        [
+          631,
+          914
+        ],
+        [
+          631,
+          950
+        ],
+        [
+          636,
+          960
+        ],
+        [
+          939,
+          960
+        ],
+        [
+          939,
+          919
+        ],
+        [
+          934,
+          914
+        ],
+        [
+          925,
+          914
+        ],
+        [
+          879,
+          914
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "Mr. Norris's LETTERS.",
+      "bbox_2d": [
+        182,
+        59,
+        732,
+        92
+      ],
+      "polygon": [
+        [
+          182,
+          59
+        ],
+        [
+          182,
+          92
+        ],
+        [
+          731,
+          92
+        ],
+        [
+          731,
+          59
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "content": "97",
+      "bbox_2d": [
+        815,
+        66,
+        882,
+        101
+      ],
+      "polygon": [
+        [
+          815,
+          66
+        ],
+        [
+          815,
+          90
+        ],
+        [
+          820,
+          100
+        ],
+        [
+          882,
+          100
+        ],
+        [
+          882,
+          66
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "N. B. Corinna upon repeating her Request to Mr. Norris, for his Direction of her Studies, acquainted him that she understood Latin, and intended to learn French, upon which he sent her the following Instructions.",
+      "bbox_2d": [
+        30,
+        95,
+        888,
+        214
+      ],
+      "polygon": [
+        [
+          30,
+          95
+        ],
+        [
+          30,
+          213
+        ],
+        [
+          887,
+          213
+        ],
+        [
+          882,
+          100
+        ],
+        [
+          818,
+          95
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "```markdown\n\n```",
+      "bbox_2d": [
+        30,
+        254,
+        889,
+        301
+      ],
+      "polygon": [
+        [
+          30,
+          254
+        ],
+        [
+          36,
+          301
+        ],
+        [
+          888,
+          301
+        ],
+        [
+          888,
+          254
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "LETTER III.",
+      "bbox_2d": [
+        181,
+        337,
+        680,
+        369
+      ],
+      "polygon": [
+        [
+          181,
+          342
+        ],
+        [
+          181,
+          369
+        ],
+        [
+          679,
+          369
+        ],
+        [
+          679,
+          337
+        ],
+        [
+          570,
+          337
+        ],
+        [
+          310,
+          337
+        ],
+        [
+          246,
+          337
+        ],
+        [
+          206,
+          337
+        ],
+        [
+          186,
+          337
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "MADAM,",
+      "bbox_2d": [
+        71,
+        394,
+        292,
+        424
+      ],
+      "polygon": [
+        [
+          71,
+          394
+        ],
+        [
+          71,
+          419
+        ],
+        [
+          76,
+          423
+        ],
+        [
+          291,
+          423
+        ],
+        [
+          291,
+          394
+        ],
+        [
+          257,
+          394
+        ],
+        [
+          246,
+          394
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "abstract",
+      "content": "Since we are rational Creatures, whose greatest Happiness consists in the perfect Contemplation of Truth and Love of Good; I think it concerns us most to apply our Thoughts to those Things that tend to the Improvement of our Reason, and to the Regulation of our Manners. The former as our best Learning, and the latter as our best Wisdom. As for what the World calls Learning, which consists rather in the Furniture of the Memory, and Force of the Imagination (such as Knowledge of Matters of Fact, History, Languages, great Reading, &c.) than in any clear intellectual Sight of Things, though I do not exclude, yet I would not much commend it, as not understanding the great Value of it, or how it contributes to the Accomplishment of a reasonable Soul, whose greatest Learning must needs lye in the most perfect Habit of Thinking, and whose best Study must consequently be that, which best serves to give her that Perfection. In Order to which the first Thing you\n\nVol. IV. K",
+      "bbox_2d": [
+        25,
+        428,
+        898,
+        942
+      ],
+      "polygon": [
+        [
+          25,
+          428
+        ],
+        [
+          36,
+          926
+        ],
+        [
+          140,
+          941
+        ],
+        [
+          892,
+          941
+        ],
+        [
+          892,
+          428
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "content": "98",
+      "bbox_2d": [
+        67,
+        55,
+        140,
+        91
+      ],
+      "polygon": [
+        [
+          67,
+          60
+        ],
+        [
+          67,
+          90
+        ],
+        [
+          139,
+          90
+        ],
+        [
+          139,
+          55
+        ],
+        [
+          83,
+          55
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "header",
+      "content": "Mr. Norris's LETTERS.",
+      "bbox_2d": [
+        226,
+        58,
+        781,
+        87
+      ],
+      "polygon": [
+        [
+          226,
+          58
+        ],
+        [
+          226,
+          87
+        ],
+        [
+          780,
+          87
+        ],
+        [
+          780,
+          58
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "should regularly do, is to apply yourself to Geometry (in which I am glad to hear you have had some little Initiation) as being the Foundation of the rest, and that which will qualify and prepare your Mind for the Contemplation of any Truth, and for the profitable reading of any Books. Among which the first I would commend to you, is Art de Penser*, both for the Value of the Book, and the Subject it treats of, which is Logick. The next that I would have you read, shall I say, or study, as that which lays the Foundation of all Science, and will belt conduct and methodize your Thoughts, is Malebranche's Recherche de la Verité†. This I say, I would commend next, but that in-Order to your reading him with Pleasure or Advantage, it is absolutely necessary, you should understand the Cartesian Philosophy, whereof Malebranche is a Superstructure and Improvement. Descartes therefore you must next undertake (after some Competency in the Principles of common Geometry) beginning at his Metaphysical Meditations, thence proceeding to his Principles, and after that as you please in the rest of his Works. When you understand Descartes thoroughly, read one or two of the best Cartesians, such as Robault and Regis‡, and by that time, and truly not well sooner,",
+      "bbox_2d": [
+        61,
+        92,
+        921,
+        723
+      ],
+      "polygon": [
+        [
+          72,
+          92
+        ],
+        [
+          61,
+          723
+        ],
+        [
+          921,
+          723
+        ],
+        [
+          911,
+          92
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "footnote",
+      "content": "* The Art. of Thinking. This Book is translated into English.",
+      "bbox_2d": [
+        59,
+        775,
+        922,
+        819
+      ],
+      "polygon": [
+        [
+          59,
+          819
+        ],
+        [
+          916,
+          819
+        ],
+        [
+          921,
+          775
+        ],
+        [
+          65,
+          775
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "footnote",
+      "content": "+ Malebranche's Search after Truth. Which is also translated.",
+      "bbox_2d": [
+        61,
+        817,
+        921,
+        858
+      ],
+      "polygon": [
+        [
+          61,
+          826
+        ],
+        [
+          67,
+          857
+        ],
+        [
+          920,
+          857
+        ],
+        [
+          920,
+          817
+        ],
+        [
+          796,
+          817
+        ],
+        [
+          781,
+          817
+        ],
+        [
+          766,
+          817
+        ],
+        [
+          756,
+          817
+        ],
+        [
+          660,
+          817
+        ],
+        [
+          530,
+          817
+        ],
+        [
+          471,
+          817
+        ],
+        [
+          251,
+          817
+        ],
+        [
+          221,
+          817
+        ],
+        [
+          67,
+          822
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "footnote",
+      "content": "Jacobi Rohaulti Physica & Regii Philosophia. The formor of these is now likewise translated.",
+      "bbox_2d": [
+        61,
+        857,
+        923,
+        902
+      ],
+      "polygon": [
+        [
+          61,
+          857
+        ],
+        [
+          66,
+          901
+        ],
+        [
+          917,
+          901
+        ],
+        [
+          922,
+          879
+        ],
+        [
+          917,
+          857
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "number",
+      "content": "you",
+      "bbox_2d": [
+        859,
+        917,
+        921,
+        940
+      ],
+      "polygon": [
+        [
+          920,
+          917
+        ],
+        [
+          896,
+          917
+        ],
+        [
+          859,
+          922
+        ],
+        [
+          859,
+          939
+        ],
+        [
+          920,
+          939
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "content": "Mr. Norris's LETTERS.",
+      "bbox_2d": [
+        190,
+        72,
+        747,
+        102
+      ],
+      "polygon": [
+        [
+          190,
+          72
+        ],
+        [
+          190,
+          102
+        ],
+        [
+          727,
+          102
+        ],
+        [
+          737,
+          102
+        ],
+        [
+          746,
+          98
+        ],
+        [
+          746,
+          76
+        ],
+        [
+          657,
+          72
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "content": "99",
+      "bbox_2d": [
+        832,
+        78,
+        898,
+        105
+      ],
+      "polygon": [
+        [
+          832,
+          78
+        ],
+        [
+          832,
+          104
+        ],
+        [
+          897,
+          104
+        ],
+        [
+          897,
+          78
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "you will be fit to undertake Malebranche, whom when you have made your own, you will be able to direct your self in all your farther Progress. Only there are a few Books, which I would put into your Hands, some for Science, some for Entertainment, and some for Practice. I shall only mention them, leaving you to range them under their distinct respective Heads as you come to read them. A late French Treatise of the Knowledge of One's Self in 4 Volumes. A most excellent Book, Poiret's Cogitationes Nationales, and his l'Oeconomie Divine, a great and noble System. The Port Royal's Morality of the New Testament. The Moral Essays of M. Nicole. Dr. More's Etbicks, his Immortality of the Soul, his Mystery of Godlines, and his Philosophical Poems. Burnet's Theory. Dr. Nicholls's Conference with a Tbeist. Wilkins of Natural Religion. Dr. Allefree's Sermons, not so much for their Exactness, as for the natural Flame of Wit, and Spirit of Devotion that shines in them. Dr. Scott's Christian Life. The Country Parson's Advice to his Parishioners, a plain, but very good Book, written with great Judgment and Consideration. *Mr. Locke of Understanding, is a Book you should read, and may with great Advantage; but I would not have you read it yet, and when you do, it must be with due Caution and Circum-spection. I might be more large, but I consider your Capacity, and am loth to charge you",
+      "bbox_2d": [
+        35,
+        109,
+        918,
+        802
+      ],
+      "polygon": [
+        [
+          35,
+          109
+        ],
+        [
+          46,
+          797
+        ],
+        [
+          917,
+          802
+        ],
+        [
+          902,
+          109
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "footnote",
+      "content": "★ By the Reverend Mr. Herbert, Author of the TEMPLE, Sacred Poems, etc.",
+      "bbox_2d": [
+        53,
+        857,
+        914,
+        905
+      ],
+      "polygon": [
+        [
+          53,
+          857
+        ],
+        [
+          53,
+          904
+        ],
+        [
+          914,
+          904
+        ],
+        [
+          914,
+          857
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "footer",
+      "content": "K 2",
+      "bbox_2d": [
+        507,
+        925,
+        626,
+        956
+      ],
+      "polygon": [
+        [
+          507,
+          925
+        ],
+        [
+          507,
+          955
+        ],
+        [
+          626,
+          955
+        ],
+        [
+          626,
+          925
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "100 Mr. Norris's LETTERS.",
+      "bbox_2d": [
+        60,
+        71,
+        769,
+        103
+      ],
+      "polygon": [
+        [
+          60,
+          71
+        ],
+        [
+          66,
+          102
+        ],
+        [
+          769,
+          102
+        ],
+        [
+          769,
+          76
+        ],
+        [
+          644,
+          71
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "with too much at once. These I think, may serve for the present, and for some of these, there will be a Necessity of a Language or two, Latin is more difficult, and French will now answer all, which therefore I would have you learn out of Hand. 'Tis the most commanding, and therefore most useful Language at present, and Malebranche alone will abundantly reward all the Pains you shall take in it, which need not be great neither, if omitting the tedious Way of learning the Grammar, you only read over twice or thrice the Particles, then the Verbs, and then proceed to go over the Dialogues, and after that any plain Book with a Translation, by which Way you may be Mistresss of French so far, as to read a Book by the Help of a Dictionary, in a Month's time. I speak upon Experience, and would have you try. And so I pray God to bless and prosper your Studies, and to make you Wife here, and Happy hereafter.",
+      "bbox_2d": [
+        60,
+        110,
+        911,
+        581
+      ],
+      "polygon": [
+        [
+          60,
+          110
+        ],
+        [
+          60,
+          581
+        ],
+        [
+          910,
+          581
+        ],
+        [
+          895,
+          110
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "I am, MADAM;",
+      "bbox_2d": [
+        234,
+        598,
+        570,
+        628
+      ],
+      "polygon": [
+        [
+          234,
+          598
+        ],
+        [
+          234,
+          628
+        ],
+        [
+          570,
+          628
+        ],
+        [
+          570,
+          598
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Bemerton, July 12. 1699.",
+      "bbox_2d": [
+        62,
+        719,
+        260,
+        792
+      ],
+      "polygon": [
+        [
+          62,
+          719
+        ],
+        [
+          62,
+          782
+        ],
+        [
+          68,
+          787
+        ],
+        [
+          78,
+          792
+        ],
+        [
+          224,
+          792
+        ],
+        [
+          250,
+          787
+        ],
+        [
+          255,
+          777
+        ],
+        [
+          260,
+          768
+        ],
+        [
+          260,
+          719
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "header",
+      "content": "---",
+      "bbox_2d": [
+        816,
+        29,
+        857,
+        41
+      ],
+      "polygon": [
+        [
+          816,
+          29
+        ],
+        [
+          816,
+          40
+        ],
+        [
+          856,
+          40
+        ],
+        [
+          856,
+          29
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Your sincere Friend;",
+      "bbox_2d": [
+        339,
+        646,
+        712,
+        676
+      ],
+      "polygon": [
+        [
+          339,
+          646
+        ],
+        [
+          339,
+          676
+        ],
+        [
+          712,
+          676
+        ],
+        [
+          712,
+          652
+        ],
+        [
+          707,
+          646
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "and very humble Servant;",
+      "bbox_2d": [
+        380,
+        695,
+        854,
+        724
+      ],
+      "polygon": [
+        [
+          380,
+          695
+        ],
+        [
+          386,
+          724
+        ],
+        [
+          853,
+          724
+        ],
+        [
+          853,
+          695
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "J. NORRIS.",
+      "bbox_2d": [
+        617,
+        781,
+        899,
+        815
+      ],
+      "polygon": [
+        [
+          617,
+          781
+        ],
+        [
+          617,
+          815
+        ],
+        [
+          893,
+          815
+        ],
+        [
+          898,
+          810
+        ],
+        [
+          898,
+          786
+        ],
+        [
+          888,
+          781
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "content": "Corianna to Mr. Norris. 101",
+      "bbox_2d": [
+        191,
+        47,
+        904,
+        78
+      ],
+      "polygon": [
+        [
+          191,
+          51
+        ],
+        [
+          197,
+          77
+        ],
+        [
+          904,
+          77
+        ],
+        [
+          904,
+          51
+        ],
+        [
+          884,
+          47
+        ],
+        [
+          864,
+          47
+        ],
+        [
+          829,
+          47
+        ],
+        [
+          197,
+          47
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "doc_title",
+      "content": "---",
+      "bbox_2d": [
+        25,
+        128,
+        902,
+        163
+      ],
+      "polygon": [
+        [
+          25,
+          128
+        ],
+        [
+          31,
+          162
+        ],
+        [
+          896,
+          162
+        ],
+        [
+          901,
+          128
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "LETTER IV.",
+      "bbox_2d": [
+        252,
+        202,
+        700,
+        232
+      ],
+      "polygon": [
+        [
+          252,
+          207
+        ],
+        [
+          252,
+          211
+        ],
+        [
+          257,
+          231
+        ],
+        [
+          700,
+          231
+        ],
+        [
+          700,
+          202
+        ],
+        [
+          481,
+          202
+        ],
+        [
+          401,
+          202
+        ],
+        [
+          257,
+          202
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Corinna to Mr. Norris.",
+      "bbox_2d": [
+        190,
+        260,
+        742,
+        291
+      ],
+      "polygon": [
+        [
+          190,
+          260
+        ],
+        [
+          190,
+          290
+        ],
+        [
+          741,
+          290
+        ],
+        [
+          741,
+          260
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Reverend SIR;",
+      "bbox_2d": [
+        76,
+        322,
+        368,
+        349
+      ],
+      "polygon": [
+        [
+          76,
+          322
+        ],
+        [
+          76,
+          343
+        ],
+        [
+          81,
+          348
+        ],
+        [
+          368,
+          348
+        ],
+        [
+          368,
+          322
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "I have perused your Book*, with great Admiration, and I hope not without some Advantage; but the Argument being too sublime for my weak Capacity, I dare not presume to give my Opinion of what so much transcends my Understanding. The Account which I hear from others, is, that the Generality of Readers cannot prevail with themselves, to allow that Brutes are mere Machines. Though at the same time they grant, you have set the Matter in a clearer Light, than any have done before, and confirmed it with Arguments, they are not able to answer, which chews, how almost impossible it is to overcome habitual Prejudices, and the strong Impressions of Sense. A learned Divine of our Acquaintance, was pleased to object, that your Theory supposed Precogistancy in God; which being an Imperfection was absolutely inconsistent with the Divine Nature, and resulted only from the Defects of Finite Understandings, and Limited Power. But",
+      "bbox_2d": [
+        27,
+        357,
+        903,
+        831
+      ],
+      "polygon": [
+        [
+          27,
+          357
+        ],
+        [
+          48,
+          830
+        ],
+        [
+          902,
+          830
+        ],
+        [
+          902,
+          357
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "footer",
+      "content": "★ His Theory of the Ideal World. Vol.I.",
+      "bbox_2d": [
+        155,
+        876,
+        804,
+        901
+      ],
+      "polygon": [
+        [
+          155,
+          876
+        ],
+        [
+          161,
+          900
+        ],
+        [
+          803,
+          900
+        ],
+        [
+          798,
+          876
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "number",
+      "content": "K 3",
+      "bbox_2d": [
+        487,
+        903,
+        577,
+        931
+      ],
+      "polygon": [
+        [
+          487,
+          903
+        ],
+        [
+          487,
+          931
+        ],
+        [
+          577,
+          931
+        ],
+        [
+          577,
+          903
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "102 Corinna to Mr. Norris.",
+      "bbox_2d": [
+        107,
+        44,
+        820,
+        79
+      ],
+      "polygon": [
+        [
+          107,
+          44
+        ],
+        [
+          113,
+          78
+        ],
+        [
+          820,
+          78
+        ],
+        [
+          820,
+          44
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "God being pure A&t, could not be Reasonably, and Philosophically said to Premeditate, or contrive before-hand; since every Thought of the Divine Nature was immediately Productive, and to Think with the Almighty was to A&t. It is also enquired by some, whether there may not be such a specific Difference in Thought, that a System of Matter fitly disposed, and organized, may be capable of what you call impure Thought, or Imagination; as being only the Operation of one Body on another, after a peculiar Manner. And as there are pure intellectual Minds without Body above us, so whether there may not be sensible Bodies without intelligent immaterial Souls below us. Since they say, it is not less difficult to conceive, how pure Spirits can apprehend sensible Objects without being united to Bodies, than how mere Matter, duely formed, may perceive some Impression of Body, without the Intervention of an immaterial Soul. But granting a specific Identity of Thoughts, according to your Hypothesis, quite flops the Mouths of such Enquirers. I am sorry, I have not time to enlarge farther, as I could with, who am,",
+      "bbox_2d": [
+        106,
+        81,
+        958,
+        646
+      ],
+      "polygon": [
+        [
+          112,
+          81
+        ],
+        [
+          112,
+          646
+        ],
+        [
+          957,
+          646
+        ],
+        [
+          952,
+          81
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "SIR, Your most obliged Servant,",
+      "bbox_2d": [
+        280,
+        662,
+        893,
+        694
+      ],
+      "polygon": [
+        [
+          280,
+          662
+        ],
+        [
+          280,
+          694
+        ],
+        [
+          892,
+          694
+        ],
+        [
+          892,
+          671
+        ],
+        [
+          872,
+          662
+        ],
+        [
+          788,
+          662
+        ],
+        [
+          768,
+          662
+        ],
+        [
+          744,
+          662
+        ],
+        [
+          698,
+          662
+        ],
+        [
+          619,
+          662
+        ],
+        [
+          599,
+          662
+        ],
+        [
+          569,
+          662
+        ],
+        [
+          553,
+          662
+        ],
+        [
+          534,
+          662
+        ],
+        [
+          359,
+          662
+        ],
+        [
+          330,
+          662
+        ],
+        [
+          324,
+          662
+        ],
+        [
+          310,
+          662
+        ],
+        [
+          294,
+          662
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "CORINNA.",
+      "bbox_2d": [
+        701,
+        738,
+        947,
+        766
+      ],
+      "polygon": [
+        [
+          701,
+          738
+        ],
+        [
+          701,
+          766
+        ],
+        [
+          946,
+          766
+        ],
+        [
+          946,
+          738
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "content": "L1T²",
+      "bbox_2d": [
+        827,
+        869,
+        958,
+        906
+      ],
+      "polygon": [
+        [
+          827,
+          869
+        ],
+        [
+          827,
+          890
+        ],
+        [
+          832,
+          905
+        ],
+        [
+          957,
+          905
+        ],
+        [
+          957,
+          869
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "content": "Mr. Norris's Anfwer.",
+      "bbox_2d": [
+        226,
+        42,
+        731,
+        76
+      ],
+      "polygon": [
+        [
+          226,
+          42
+        ],
+        [
+          226,
+          75
+        ],
+        [
+          730,
+          75
+        ],
+        [
+          730,
+          42
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "content": "103",
+      "bbox_2d": [
+        808,
+        49,
+        899,
+        79
+      ],
+      "polygon": [
+        [
+          808,
+          49
+        ],
+        [
+          808,
+          78
+        ],
+        [
+          898,
+          78
+        ],
+        [
+          898,
+          49
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        35,
+        120,
+        908,
+        169
+      ],
+      "polygon": [
+        [
+          35,
+          120
+        ],
+        [
+          35,
+          169
+        ],
+        [
+          907,
+          169
+        ],
+        [
+          907,
+          120
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "LETTER V.",
+      "bbox_2d": [
+        273,
+        212,
+        699,
+        242
+      ],
+      "polygon": [
+        [
+          273,
+          212
+        ],
+        [
+          273,
+          242
+        ],
+        [
+          698,
+          242
+        ],
+        [
+          698,
+          212
+        ],
+        [
+          569,
+          212
+        ],
+        [
+          383,
+          212
+        ],
+        [
+          353,
+          212
+        ],
+        [
+          343,
+          212
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "MADAM,",
+      "bbox_2d": [
+        80,
+        267,
+        308,
+        293
+      ],
+      "polygon": [
+        [
+          80,
+          267
+        ],
+        [
+          80,
+          289
+        ],
+        [
+          85,
+          293
+        ],
+        [
+          307,
+          293
+        ],
+        [
+          307,
+          271
+        ],
+        [
+          169,
+          267
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Need, and I beg your Pardon, for not answering your Letter (for which I thank you) so soon as I should, and indeed as I would, if I had not met with many Hindrances since I received it, which as I remember was no sooner than May Day, though it be dated the 30th of March. You cannot imagine what a Hurry my Life is, and what little Command I have of my Time, which instead of being free and intire for my own Use and the Service of my Friends, is lost and dispersed among a Company of Strangers, to whose importune Visits I am continually exposed, an Unhappiness, which I can more easily lament than remedy, but which my Friends I hope will forgive. As to the Objection, which the learned Person you speak of, is pleased to make against the Theory of the Ideal World, that it supposes Precogitancy in God; I grant it most readily, and 'tis what I contend for as a necessary Requisite to his Operations ad extra, or doing any thing without himself, which cannot be effected without some Preconception of it within, unless you will suppose God to act ignorantly, and without knowing what he does, or is about to do, which is impossible. But then I deny that all Precogitancy is an Imperfection. Indeed",
+      "bbox_2d": [
+        30,
+        295,
+        916,
+        917
+      ],
+      "polygon": [
+        [
+          30,
+          295
+        ],
+        [
+          51,
+          901
+        ],
+        [
+          916,
+          916
+        ],
+        [
+          916,
+          301
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "104 Mr. Norris's Anfwer.",
+      "bbox_2d": [
+        54,
+        40,
+        744,
+        76
+      ],
+      "polygon": [
+        [
+          54,
+          45
+        ],
+        [
+          54,
+          76
+        ],
+        [
+          743,
+          76
+        ],
+        [
+          743,
+          40
+        ],
+        [
+          224,
+          40
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Precogitancy as it signifies a laborious and anxious Fore-thought or Contrivance, such as is accompanied with that intense Application of Mind, which we call Study or Premeditation, this indeed is an Imperfection, and such as results from the Limitedness of Understanding, and consequently cannot agree with the Perfection of an infinite Mind. But as for Precogitancy absolutely considered as it signifies only an Ideal View or Preconception of Things, this is so far from being an Imperfection, that without it, God could neither be what he is, nor do what he has done. Nor is it any Objection against Precogitancy in God in this Sense of the Word, to say, that every Thought of the Divine Nature, is immediately Productive, and that to Think with God is to A&t. I grant that Thought in God is immediately Productive in Opposition to any manual Operation, or physical Motion, but not in Opposition to a Fore-thought, which must as Necessity intervene, or mediate. And so again, to Think with God, is the same as to A&t. It is true, in this Sense, that God acts by Thought, and not by Motion. But it is not true, in this Sense, that all Thought in God is Action, and so (which I suppose, is what this Objection means) that there is no Thought in God antecedent to Action, or no Fore-thought. For that Thought whereby God acts, and which is indeed his Action, is Thought of Volition, and in this Sense to Think with God is to A&t; but then there is another Thought in God which regulates and conducts, and in Order of Nature precedes this Action, and that is Thought of Perception or Idea, and in this Sense to Think with God, is Not the Same as to A&t. And this I take",
+      "bbox_2d": [
+        50,
+        76,
+        918,
+        919
+      ],
+      "polygon": [
+        [
+          56,
+          76
+        ],
+        [
+          61,
+          904
+        ],
+        [
+          917,
+          918
+        ],
+        [
+          892,
+          76
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "Mr. Norris's Anfwer.",
+      "bbox_2d": [
+        209,
+        66,
+        722,
+        100
+      ],
+      "polygon": [
+        [
+          209,
+          66
+        ],
+        [
+          209,
+          100
+        ],
+        [
+          721,
+          100
+        ],
+        [
+          721,
+          71
+        ],
+        [
+          706,
+          66
+        ],
+        [
+          371,
+          66
+        ],
+        [
+          329,
+          66
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "content": "105",
+      "bbox_2d": [
+        802,
+        75,
+        896,
+        103
+      ],
+      "polygon": [
+        [
+          802,
+          75
+        ],
+        [
+          802,
+          89
+        ],
+        [
+          802,
+          94
+        ],
+        [
+          802,
+          98
+        ],
+        [
+          807,
+          102
+        ],
+        [
+          895,
+          102
+        ],
+        [
+          895,
+          75
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "I take to be a clear and a full Answer to your first Objection, which I desire you to accept with my Thanks and Service to the learned and worthy Author of it. As to your second, I do not at present well understand it. It seems to me to be confused and wide. But I may consider farther of it, and perhaps may give you my Thoughts of it. I wish you well, and shall pray for your Health and Prosperity in the best Things, and remain with mine and my Wife's most affectionate Respects,",
+      "bbox_2d": [
+        27,
+        104,
+        904,
+        357
+      ],
+      "polygon": [
+        [
+          27,
+          104
+        ],
+        [
+          27,
+          356
+        ],
+        [
+          903,
+          356
+        ],
+        [
+          898,
+          104
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Your most humble.",
+      "bbox_2d": [
+        381,
+        371,
+        715,
+        402
+      ],
+      "polygon": [
+        [
+          381,
+          375
+        ],
+        [
+          381,
+          397
+        ],
+        [
+          387,
+          402
+        ],
+        [
+          635,
+          402
+        ],
+        [
+          665,
+          402
+        ],
+        [
+          714,
+          402
+        ],
+        [
+          714,
+          371
+        ],
+        [
+          387,
+          371
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "and faithful Servant.",
+      "bbox_2d": [
+        402,
+        416,
+        830,
+        452
+      ],
+      "polygon": [
+        [
+          402,
+          425
+        ],
+        [
+          402,
+          443
+        ],
+        [
+          428,
+          447
+        ],
+        [
+          508,
+          452
+        ],
+        [
+          749,
+          452
+        ],
+        [
+          754,
+          452
+        ],
+        [
+          765,
+          452
+        ],
+        [
+          809,
+          452
+        ],
+        [
+          815,
+          452
+        ],
+        [
+          824,
+          452
+        ],
+        [
+          829,
+          447
+        ],
+        [
+          829,
+          421
+        ],
+        [
+          824,
+          416
+        ],
+        [
+          448,
+          416
+        ],
+        [
+          408,
+          421
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Jun. 6. 1700.",
+      "bbox_2d": [
+        29,
+        450,
+        304,
+        485
+      ],
+      "polygon": [
+        [
+          29,
+          450
+        ],
+        [
+          29,
+          484
+        ],
+        [
+          303,
+          484
+        ],
+        [
+          303,
+          456
+        ],
+        [
+          273,
+          450
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "J. Norris.",
+      "bbox_2d": [
+        567,
+        496,
+        891,
+        534
+      ],
+      "polygon": [
+        [
+          567,
+          501
+        ],
+        [
+          567,
+          506
+        ],
+        [
+          567,
+          511
+        ],
+        [
+          567,
+          515
+        ],
+        [
+          572,
+          534
+        ],
+        [
+          845,
+          534
+        ],
+        [
+          890,
+          530
+        ],
+        [
+          890,
+          496
+        ],
+        [
+          836,
+          496
+        ],
+        [
+          800,
+          496
+        ],
+        [
+          572,
+          496
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "```markdown\n\n```",
+      "bbox_2d": [
+        39,
+        586,
+        914,
+        622
+      ],
+      "polygon": [
+        [
+          39,
+          586
+        ],
+        [
+          39,
+          622
+        ],
+        [
+          299,
+          622
+        ],
+        [
+          914,
+          622
+        ],
+        [
+          914,
+          586
+        ],
+        [
+          759,
+          586
+        ],
+        [
+          744,
+          586
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Lady Pakington to Corinna.",
+      "bbox_2d": [
+        142,
+        665,
+        828,
+        703
+      ],
+      "polygon": [
+        [
+          142,
+          665
+        ],
+        [
+          147,
+          702
+        ],
+        [
+          688,
+          702
+        ],
+        [
+          778,
+          702
+        ],
+        [
+          798,
+          702
+        ],
+        [
+          808,
+          702
+        ],
+        [
+          828,
+          698
+        ],
+        [
+          823,
+          665
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "I must always acknowledge kind Corinna to be the best natured and most generous Person in the World, since she can still have obliging Thoughts for One who so little deserves them, because she appears so ungrateful, and I have only to plead in my Excuse a great deal of Indifposition and Melancholy, which have been my constant Companions for a considerable time, and have so unfitted me for Conversat",
+      "bbox_2d": [
+        41,
+        722,
+        913,
+        943
+      ],
+      "polygon": [
+        [
+          41,
+          722
+        ],
+        [
+          52,
+          933
+        ],
+        [
+          589,
+          943
+        ],
+        [
+          912,
+          943
+        ],
+        [
+          912,
+          727
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "106 Lady Pakington's Letter.",
+      "bbox_2d": [
+        114,
+        71,
+        842,
+        105
+      ],
+      "polygon": [
+        [
+          114,
+          76
+        ],
+        [
+          114,
+          105
+        ],
+        [
+          842,
+          105
+        ],
+        [
+          842,
+          71
+        ],
+        [
+          179,
+          71
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "verfation of this Kind, that I have almost forgot writing, you will not wonder at this, when I tell you there has been two Buryings out of our Family within this two Months, and that since Sir John went to London, I have hardly flirred out, or seen any Company, except Trees and Woods may be called so; but I assure you, our Oaks have not the Quality of those in DODONA's Grove*, and therefore we shall have little Benefit of their Conversation; as unfortunately for me, the Time is palt, when the gentle rural Deities appeared unto Mortals, and we have no Hopes now, of entertaining our selves with the Dryades, the Hamadryades, or any of those pretty Wood-Nymphs so obliging heretofore; instead of them, a rougher God vr fits as often, Boreas I mean, and by his boistrous Behaviour, makes us believe what some have said, that we are either shoved nearer the Pole than we were, or that our Climate is more Northerly than supposed, I often wished the Muses had been so favourable to me, as you, which would make all Places pleasant; but ill-natured as they are, I invoke them in vain, and the only Way I have of finding them, is in your Veres, which I was glad of an Excuse not to restore when I was in London, though at my Return I shall if you desire it. I cannot yet quit these Heatben Gods, without telling you that I have a fort of Indignation against one of them for your Sake, and methinks, Esculapus",
+      "bbox_2d": [
+        100,
+        107,
+        969,
+        806
+      ],
+      "polygon": [
+        [
+          111,
+          107
+        ],
+        [
+          100,
+          806
+        ],
+        [
+          968,
+          806
+        ],
+        [
+          948,
+          112
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "footnote",
+      "content": "* This alludes to a little Book, written by Mr. Howell called Dodona's Grove; Or, the Vocal Forest.",
+      "bbox_2d": [
+        99,
+        857,
+        968,
+        905
+      ],
+      "polygon": [
+        [
+          99,
+          857
+        ],
+        [
+          99,
+          905
+        ],
+        [
+          967,
+          905
+        ],
+        [
+          967,
+          857
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "footer",
+      "content": "show",
+      "bbox_2d": [
+        861,
+        914,
+        970,
+        942
+      ],
+      "polygon": [
+        [
+          861,
+          914
+        ],
+        [
+          861,
+          941
+        ],
+        [
+          969,
+          941
+        ],
+        [
+          969,
+          914
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "doc_title",
+      "content": "Lady Pakington's Letter. 107",
+      "bbox_2d": [
+        175,
+        55,
+        905,
+        90
+      ],
+      "polygon": [
+        [
+          175,
+          55
+        ],
+        [
+          175,
+          90
+        ],
+        [
+          904,
+          90
+        ],
+        [
+          904,
+          60
+        ],
+        [
+          869,
+          60
+        ],
+        [
+          759,
+          55
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "thows but little Regard to his Father, since he takes no more Care of the Health of a Person, whom Apollo favours so much; but I hope, he will be more good-natured for the Future, which will be very acceptable News, to",
+      "bbox_2d": [
+        55,
+        90,
+        912,
+        207
+      ],
+      "polygon": [
+        [
+          55,
+          90
+        ],
+        [
+          55,
+          202
+        ],
+        [
+          66,
+          207
+        ],
+        [
+          96,
+          207
+        ],
+        [
+          121,
+          207
+        ],
+        [
+          666,
+          207
+        ],
+        [
+          911,
+          207
+        ],
+        [
+          911,
+          95
+        ],
+        [
+          901,
+          90
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Your affured Friend,",
+      "bbox_2d": [
+        233,
+        223,
+        609,
+        253
+      ],
+      "polygon": [
+        [
+          233,
+          223
+        ],
+        [
+          233,
+          252
+        ],
+        [
+          608,
+          252
+        ],
+        [
+          608,
+          223
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "and humble Servant,",
+      "bbox_2d": [
+        319,
+        271,
+        701,
+        300
+      ],
+      "polygon": [
+        [
+          319,
+          271
+        ],
+        [
+          319,
+          299
+        ],
+        [
+          700,
+          299
+        ],
+        [
+          700,
+          276
+        ],
+        [
+          690,
+          271
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Westwood, May 30. 1701.",
+      "bbox_2d": [
+        51,
+        291,
+        248,
+        364
+      ],
+      "polygon": [
+        [
+          55,
+          291
+        ],
+        [
+          51,
+          301
+        ],
+        [
+          51,
+          340
+        ],
+        [
+          55,
+          359
+        ],
+        [
+          60,
+          364
+        ],
+        [
+          243,
+          364
+        ],
+        [
+          248,
+          359
+        ],
+        [
+          248,
+          291
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "HESTER PAKINGTON.",
+      "bbox_2d": [
+        396,
+        336,
+        911,
+        363
+      ],
+      "polygon": [
+        [
+          396,
+          336
+        ],
+        [
+          396,
+          359
+        ],
+        [
+          402,
+          363
+        ],
+        [
+          910,
+          363
+        ],
+        [
+          910,
+          336
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        50,
+        407,
+        899,
+        460
+      ],
+      "polygon": [
+        [
+          50,
+          407
+        ],
+        [
+          50,
+          460
+        ],
+        [
+          898,
+          460
+        ],
+        [
+          898,
+          407
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Lady Chudleigh's Letters:",
+      "bbox_2d": [
+        165,
+        499,
+        795,
+        536
+      ],
+      "polygon": [
+        [
+          165,
+          499
+        ],
+        [
+          165,
+          535
+        ],
+        [
+          794,
+          535
+        ],
+        [
+          794,
+          499
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "paragraph_title",
+      "content": "MADAM,",
+      "bbox_2d": [
+        107,
+        552,
+        327,
+        579
+      ],
+      "polygon": [
+        [
+          107,
+          552
+        ],
+        [
+          107,
+          574
+        ],
+        [
+          112,
+          579
+        ],
+        [
+          326,
+          579
+        ],
+        [
+          326,
+          557
+        ],
+        [
+          176,
+          552
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "abstract",
+      "content": "THE weak Defense I have made for my Sex* , is so far from deserving the Thanks you are pleased to give me both in your obliging Letter, and your admirable Verfes, that it hardly merits the least Regard; as having nothing in it that can render it acceptable, besides the Kindness and Zeal with which it was written. I was troubled to see Them made the Jeft of a very vain Pretender to Wit, and exposed by a scurrilous Pamphlet, rather than a Sermon, to the malicious Censures of invidious De-",
+      "bbox_2d": [
+        46,
+        580,
+        917,
+        827
+      ],
+      "polygon": [
+        [
+          46,
+          580
+        ],
+        [
+          51,
+          826
+        ],
+        [
+          912,
+          826
+        ],
+        [
+          907,
+          580
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "footer",
+      "content": "* A Poem wrote by her Ladyship.",
+      "bbox_2d": [
+        182,
+        872,
+        774,
+        900
+      ],
+      "polygon": [
+        [
+          187,
+          872
+        ],
+        [
+          187,
+          900
+        ],
+        [
+          773,
+          900
+        ],
+        [
+          773,
+          872
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "footer",
+      "content": "tractor",
+      "bbox_2d": [
+        768,
+        894,
+        914,
+        918
+      ],
+      "polygon": [
+        [
+          768,
+          899
+        ],
+        [
+          768,
+          918
+        ],
+        [
+          913,
+          918
+        ],
+        [
+          913,
+          894
+        ],
+        [
+          774,
+          894
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "108 Lady Chudleigh's Letters.",
+      "bbox_2d": [
+        103,
+        62,
+        862,
+        96
+      ],
+      "polygon": [
+        [
+          103,
+          62
+        ],
+        [
+          103,
+          95
+        ],
+        [
+          862,
+          95
+        ],
+        [
+          857,
+          62
+        ],
+        [
+          842,
+          62
+        ],
+        [
+          827,
+          62
+        ],
+        [
+          817,
+          62
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "traitors; of Men, who think they cannot be obedient Wives, without being Slaves, nor pay their Husbands that Respect they owe them, without sacrificing their Reason to their Humour. I heartily wish they had a better Champion, so good a Cause deserving to have been managed by a more accurate Pen than mine: But, I hope, 'twill not be long before some ingenious Lady will undertake the Quarrel, and do us Justice. Give me leave to say, Madam, that, since you write so incomparably well both in Prose and Verse, none can manage it to greater Advantage than your self; it being a Province to which your extraordinary Accomplishments give you an undisputed Right *. I am proud of the Honour you do me in defining my Acquaintance, 'tis a Favour I cannot enough acknowledge, and which I could not expect from a Person to whom I had not the Happiness to be known. That Correspondence you have so generously begun, I hope you will be so kind to continue, which will be the greatest Obligation you can possibly lay on",
+      "bbox_2d": [
+        101,
+        99,
+        956,
+        619
+      ],
+      "polygon": [
+        [
+          107,
+          99
+        ],
+        [
+          107,
+          618
+        ],
+        [
+          955,
+          618
+        ],
+        [
+          955,
+          99
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "paragraph_title",
+      "content": "Your most humble Servant,",
+      "bbox_2d": [
+        384,
+        658,
+        866,
+        689
+      ],
+      "polygon": [
+        [
+          384,
+          658
+        ],
+        [
+          384,
+          688
+        ],
+        [
+          865,
+          688
+        ],
+        [
+          865,
+          658
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Ashton, the 19th of October, 1701.",
+      "bbox_2d": [
+        101,
+        706,
+        461,
+        756
+      ],
+      "polygon": [
+        [
+          101,
+          706
+        ],
+        [
+          101,
+          751
+        ],
+        [
+          107,
+          756
+        ],
+        [
+          460,
+          756
+        ],
+        [
+          460,
+          706
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "MARY CHUDLEIGH.",
+      "bbox_2d": [
+        495,
+        751,
+        953,
+        780
+      ],
+      "polygon": [
+        [
+          495,
+          751
+        ],
+        [
+          495,
+          779
+        ],
+        [
+          953,
+          779
+        ],
+        [
+          953,
+          756
+        ],
+        [
+          803,
+          751
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "footnote",
+      "content": "* See, An Essay upon the Mischief of giving Fortunes with Women in Marriage. Lately printed for Mr. Curll in the Strand.",
+      "bbox_2d": [
+        100,
+        838,
+        956,
+        903
+      ],
+      "polygon": [
+        [
+          100,
+          838
+        ],
+        [
+          100,
+          898
+        ],
+        [
+          955,
+          903
+        ],
+        [
+          955,
+          838
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "doc_title",
+      "content": "Lady Chudleigh's Letters. 109",
+      "bbox_2d": [
+        27,
+        60,
+        879,
+        154
+      ],
+      "polygon": [
+        [
+          27,
+          75
+        ],
+        [
+          27,
+          154
+        ],
+        [
+          878,
+          154
+        ],
+        [
+          878,
+          65
+        ],
+        [
+          783,
+          60
+        ],
+        [
+          48,
+          60
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "LETTER II.",
+      "bbox_2d": [
+        240,
+        172,
+        645,
+        202
+      ],
+      "polygon": [
+        [
+          240,
+          172
+        ],
+        [
+          240,
+          202
+        ],
+        [
+          644,
+          202
+        ],
+        [
+          644,
+          172
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "MADAM,",
+      "bbox_2d": [
+        46,
+        218,
+        266,
+        245
+      ],
+      "polygon": [
+        [
+          46,
+          218
+        ],
+        [
+          46,
+          239
+        ],
+        [
+          51,
+          245
+        ],
+        [
+          265,
+          245
+        ],
+        [
+          265,
+          218
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "THE continuance of your Kindness to a Stranger, to one who has nothing to recommend her to your Esteem, nothing that can satisfy entitle her to those Eacomiums you are leased to give her, raises my Wonder, and I look on it as the Result of an uncommon Generosity, of a more than ordinary Goodness of Temper: You take Delight in obliging, and estow your Favours with such an indearing sweetness, such an engaging Civility, that 'tis impossible to receive them without being sensibly touched by them; they make a deep Impression on the Mind, and with an agreeable Violence constrain the Persons on whom they are conferred, to become your Debtors, among which Number, I must own my self to be one: Yes, Madam, you have laid so many Obligations on me, that you have put it out of my power to make you a Requital: I have nothing to offer you in Return but Thanks, and hearty and sincere Acknowledgment, which desire you to accept, as being the only Retribution I am yet capable of making you. The Correspondence you have so obligingly begun, shall (if you please to continue it) prove as lasting as our Lives, and I shall think my self very happy in the Conversation and Friendship of so ingenious a Person. I was troubled to hear of the melancholy Occasion of your Silence; the Kindness with which you treat me.\n\nVol. IV.",
+      "bbox_2d": [
+        20,
+        251,
+        889,
+        949
+      ],
+      "polygon": [
+        [
+          26,
+          251
+        ],
+        [
+          36,
+          949
+        ],
+        [
+          888,
+          944
+        ],
+        [
+          878,
+          251
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "110 Lady Chudleigh's Letters.",
+      "bbox_2d": [
+        115,
+        71,
+        874,
+        105
+      ],
+      "polygon": [
+        [
+          115,
+          76
+        ],
+        [
+          115,
+          105
+        ],
+        [
+          873,
+          105
+        ],
+        [
+          873,
+          71
+        ],
+        [
+          121,
+          71
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "makes me interest my self in all your Concerns : I heartily with Your's and your Grandmother's Health : 'Tis a Pity, a Person who knows so well how to employ her Eyes, should have any Illness in them ; but since you write me, that the Weakness was Casual, I hope by this Time you are wholly freed from it; if you are, I shall beg the Favour to hear from you as often as your Convenience will permit you to give your self the Trouble; for I am, with much Sincerity,",
+      "bbox_2d": [
+        110,
+        109,
+        963,
+        361
+      ],
+      "polygon": [
+        [
+          110,
+          115
+        ],
+        [
+          110,
+          361
+        ],
+        [
+          957,
+          361
+        ],
+        [
+          957,
+          109
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Your most humble Servant,",
+      "bbox_2d": [
+        438,
+        379,
+        929,
+        408
+      ],
+      "polygon": [
+        [
+          438,
+          379
+        ],
+        [
+          438,
+          408
+        ],
+        [
+          928,
+          408
+        ],
+        [
+          928,
+          379
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Aspon, Dec.\n8. 1701.",
+      "bbox_2d": [
+        115,
+        403,
+        349,
+        452
+      ],
+      "polygon": [
+        [
+          115,
+          403
+        ],
+        [
+          115,
+          447
+        ],
+        [
+          120,
+          452
+        ],
+        [
+          309,
+          452
+        ],
+        [
+          348,
+          447
+        ],
+        [
+          348,
+          403
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "MARY CHUDLEIGE.",
+      "bbox_2d": [
+        577,
+        447,
+        955,
+        474
+      ],
+      "polygon": [
+        [
+          577,
+          447
+        ],
+        [
+          577,
+          474
+        ],
+        [
+          955,
+          474
+        ],
+        [
+          955,
+          452
+        ],
+        [
+          860,
+          447
+        ],
+        [
+          801,
+          447
+        ],
+        [
+          791,
+          447
+        ],
+        [
+          771,
+          447
+        ],
+        [
+          736,
+          447
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "```markdown\n\n```",
+      "bbox_2d": [
+        110,
+        493,
+        958,
+        527
+      ],
+      "polygon": [
+        [
+          110,
+          493
+        ],
+        [
+          110,
+          526
+        ],
+        [
+          953,
+          526
+        ],
+        [
+          958,
+          493
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "LETTER III.",
+      "bbox_2d": [
+        302,
+        542,
+        742,
+        572
+      ],
+      "polygon": [
+        [
+          302,
+          542
+        ],
+        [
+          302,
+          572
+        ],
+        [
+          741,
+          572
+        ],
+        [
+          741,
+          542
+        ],
+        [
+          555,
+          542
+        ],
+        [
+          418,
+          542
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "I Return my dear Corinna my humble Thanks for both her obliging Letters, and for the Concern she is pleased to express for me. The Story you heard of our being over-turned by a Waggon had not so much as the Shadow of Truth in it, we were not in the least Danger of any kind throughout the whole Journey. You desire a Description of Mr. Norris, which I'll endeavour to give you. He is a little Man of a pale Complexion, but he has a great deal of Sweetness and good Humour in his Face, attended with an extraordinary Modesty, and a more than common Air of Humility; there seems to be a Reservedness in his Temper, but when you're acquainted with him, you'll find",
+      "bbox_2d": [
+        106,
+        594,
+        973,
+        942
+      ],
+      "polygon": [
+        [
+          106,
+          594
+        ],
+        [
+          117,
+          941
+        ],
+        [
+          972,
+          941
+        ],
+        [
+          963,
+          594
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "Lady Chudleigh's Letters. 111",
+      "bbox_2d": [
+        159,
+        63,
+        903,
+        96
+      ],
+      "polygon": [
+        [
+          159,
+          63
+        ],
+        [
+          159,
+          96
+        ],
+        [
+          902,
+          96
+        ],
+        [
+          897,
+          63
+        ],
+        [
+          832,
+          63
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "it only the Result of Thoughtfulness : In a Word, he's a Man whose Conversation is very agreeable, as well as instructive, and as I writ you, one who is very much your Friend. I'll leave you and Mr. to agree about the designed Match with the Etherial Nymph mentioned in Count Gabalis ; there's but one Thing that will render it difficult, and that is, that his Mistress before she's his Wife must learn a Catechism of his own composing. Now I would willingly know how we shall be able to teach it to an Aerial Lady ? But this Point I leave you to settle.",
+      "bbox_2d": [
+        28,
+        98,
+        906,
+        391
+      ],
+      "polygon": [
+        [
+          34,
+          98
+        ],
+        [
+          28,
+          390
+        ],
+        [
+          906,
+          390
+        ],
+        [
+          906,
+          98
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "I am sorry for your Grandmother's Illness, and I much fear your being forced to such a constant Attendance will very much injure your Health, at which, I assure you, I should be much concerned, give my Service to her, and to your Mother, I am, my dear Corinna, with the greatest Sincerity.",
+      "bbox_2d": [
+        31,
+        390,
+        906,
+        552
+      ],
+      "polygon": [
+        [
+          31,
+          390
+        ],
+        [
+          42,
+          552
+        ],
+        [
+          906,
+          552
+        ],
+        [
+          906,
+          390
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Your most Humble Servant,",
+      "bbox_2d": [
+        375,
+        593,
+        869,
+        625
+      ],
+      "polygon": [
+        [
+          375,
+          593
+        ],
+        [
+          375,
+          624
+        ],
+        [
+          868,
+          624
+        ],
+        [
+          868,
+          593
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Apton, July 2-1702.",
+      "bbox_2d": [
+        78,
+        638,
+        321,
+        690
+      ],
+      "polygon": [
+        [
+          78,
+          638
+        ],
+        [
+          78,
+          690
+        ],
+        [
+          321,
+          690
+        ],
+        [
+          321,
+          638
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "MARISSA",
+      "bbox_2d": [
+        649,
+        720,
+        904,
+        753
+      ],
+      "polygon": [
+        [
+          649,
+          720
+        ],
+        [
+          649,
+          753
+        ],
+        [
+          904,
+          753
+        ],
+        [
+          904,
+          720
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "number",
+      "content": "2.4",
+      "bbox_2d": [
+        438,
+        862,
+        563,
+        893
+      ],
+      "polygon": [
+        [
+          438,
+          866
+        ],
+        [
+          438,
+          892
+        ],
+        [
+          513,
+          892
+        ],
+        [
+          518,
+          892
+        ],
+        [
+          523,
+          892
+        ],
+        [
+          533,
+          892
+        ],
+        [
+          538,
+          892
+        ],
+        [
+          562,
+          888
+        ],
+        [
+          562,
+          866
+        ],
+        [
+          542,
+          862
+        ],
+        [
+          444,
+          862
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "footer",
+      "content": "LET",
+      "bbox_2d": [
+        773,
+        862,
+        909,
+        893
+      ],
+      "polygon": [
+        [
+          773,
+          862
+        ],
+        [
+          773,
+          892
+        ],
+        [
+          908,
+          892
+        ],
+        [
+          908,
+          862
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "doc_title",
+      "content": "112 Lady Chudleigh's Letters.",
+      "bbox_2d": [
+        110,
+        66,
+        948,
+        176
+      ],
+      "polygon": [
+        [
+          110,
+          72
+        ],
+        [
+          110,
+          176
+        ],
+        [
+          948,
+          176
+        ],
+        [
+          948,
+          112
+        ],
+        [
+          933,
+          66
+        ],
+        [
+          171,
+          66
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "LETTER IV.",
+      "bbox_2d": [
+        329,
+        202,
+        759,
+        234
+      ],
+      "polygon": [
+        [
+          329,
+          202
+        ],
+        [
+          329,
+          234
+        ],
+        [
+          758,
+          234
+        ],
+        [
+          758,
+          202
+        ],
+        [
+          609,
+          202
+        ],
+        [
+          594,
+          202
+        ],
+        [
+          570,
+          202
+        ],
+        [
+          404,
+          202
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "I assure you, my dear Corinna, your Letter was very welcome to me, because it brought with it the good News of your being past those Dangers which your late Illness threatened you with; I hope your present Complaints will vanish as soon as you've recovered a little more Strength, but I fear you will not be perfectly well till Spring, the warm Weather being necessary to compleat your Care; but neither that, nor any other thing, can be of use to you, if you're still negligent of your self, if you still keep irregular Hours; you ought to remember that, there's a regard due to your self, as well as to your nearest Relations, and that you cannot without being guilty of a Crime, be careless of your own Life; 'tis a Gift bestowed on you by God, and as such ought to be valued; when he thinks fit to refume it, you must indeed part with it without a Murmur, but till that time, 'tis certainly your Duty to preserve it with all imaginable Care, and I believe your Grandmother loves you too well to expect such Services from you as may endanger it. I'm obliged to you for the Concern you express for my Health; but that Abstinence you fear may prejudice me, is absolutely necessary. The greatest Part of my time is spent in my Closet; there, I meet with nothing to disturb me, nothing to render me uneasy; I find my Books and my Thoughts to be the",
+      "bbox_2d": [
+        100,
+        259,
+        967,
+        947
+      ],
+      "polygon": [
+        [
+          105,
+          259
+        ],
+        [
+          100,
+          937
+        ],
+        [
+          966,
+          947
+        ],
+        [
+          956,
+          259
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "Lady Chudleigh's Letters 113",
+      "bbox_2d": [
+        154,
+        49,
+        900,
+        86
+      ],
+      "polygon": [
+        [
+          154,
+          49
+        ],
+        [
+          154,
+          85
+        ],
+        [
+          899,
+          85
+        ],
+        [
+          899,
+          54
+        ],
+        [
+          800,
+          49
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "most agreeable Companions, and had I not be time accustomed my self to their Conversation, perhaps I should have been as unhappy as any of my Sex: But now, I thank God, I cannot only patiently, but cheerfully, bear a great many Things which others would call Afflictions, Life and Death are Things very indifferent to me; I'm neither solicitous for the one, or afraid of the other; I know my self too well to be flattered into a Belief of my being any way useful to the World; my being out of it would prove no loss to any of my Acquaintance; they would find every where much more valuable Persons, such as would be more capable of serving them, and whose Conversation would be much more Entertaining and Instructive than mine. I cannot help pleasing my self sometimes with the Hopes of shortly leaving a World I've very little Reason to be fond of; the Thoughts of lying down in a silent Grave, of taking Sanctuary in a quiet undisturbed Recess, have something very delightful in them; but when I consider, that it becomes me to conform my Will to that of my Maker, and to think that to be best for me which he judges to be so, I blame my self for giving Way to such Thoughts, and resolve to be sedate and easy under every Circumstance of Life; and to employ my leisure Hours in improving my Mind, in enlarging my Understanding, and in making some Progress in the useful Parts of Learning: Morality has been my chief Study since I saw you; the Essays I've writ, are on Knowledge, Friendship, Life, Death, Humility, Grief, and on several other Subjects; you shall see them if I come to London this Winter, but that I believe I shall not, because",
+      "bbox_2d": [
+        32,
+        86,
+        921,
+        928
+      ],
+      "polygon": [
+        [
+          38,
+          86
+        ],
+        [
+          58,
+          913
+        ],
+        [
+          454,
+          922
+        ],
+        [
+          590,
+          927
+        ],
+        [
+          921,
+          927
+        ],
+        [
+          906,
+          91
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "content": "L-3",
+      "bbox_2d": [
+        469,
+        909,
+        562,
+        937
+      ],
+      "polygon": [
+        [
+          469,
+          909
+        ],
+        [
+          469,
+          932
+        ],
+        [
+          526,
+          937
+        ],
+        [
+          561,
+          937
+        ],
+        [
+          561,
+          909
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "114 Lady Chudleigh's Letters.",
+      "bbox_2d": [
+        126,
+        47,
+        877,
+        83
+      ],
+      "polygon": [
+        [
+          126,
+          47
+        ],
+        [
+          131,
+          83
+        ],
+        [
+          877,
+          83
+        ],
+        [
+          877,
+          47
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "I find Sir George will not leave the Country and 'twill be Melancholly for me to be alone in Lodgings, it tired me the last Winter. Pardon me, my dear Corinna, for giving you this Trouble; the Kindness you express for me encourages me to it, and that will, I hope, incline you to Excuse it. I am with much Sincerity,",
+      "bbox_2d": [
+        120,
+        85,
+        973,
+        272
+      ],
+      "polygon": [
+        [
+          126,
+          85
+        ],
+        [
+          120,
+          271
+        ],
+        [
+          972,
+          267
+        ],
+        [
+          968,
+          90
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Your most Humble Servant.",
+      "bbox_2d": [
+        459,
+        286,
+        946,
+        324
+      ],
+      "polygon": [
+        [
+          459,
+          286
+        ],
+        [
+          459,
+          324
+        ],
+        [
+          945,
+          324
+        ],
+        [
+          945,
+          291
+        ],
+        [
+          830,
+          286
+        ],
+        [
+          786,
+          286
+        ],
+        [
+          765,
+          286
+        ],
+        [
+          660,
+          286
+        ],
+        [
+          654,
+          286
+        ],
+        [
+          644,
+          286
+        ],
+        [
+          619,
+          286
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Apton, O.B.\n8, 1703.",
+      "bbox_2d": [
+        162,
+        333,
+        406,
+        390
+      ],
+      "polygon": [
+        [
+          162,
+          333
+        ],
+        [
+          162,
+          380
+        ],
+        [
+          167,
+          390
+        ],
+        [
+          390,
+          390
+        ],
+        [
+          405,
+          385
+        ],
+        [
+          405,
+          333
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "MARISSA",
+      "bbox_2d": [
+        739,
+        396,
+        965,
+        424
+      ],
+      "polygon": [
+        [
+          739,
+          396
+        ],
+        [
+          739,
+          423
+        ],
+        [
+          965,
+          423
+        ],
+        [
+          965,
+          401
+        ],
+        [
+          830,
+          396
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "---",
+      "bbox_2d": [
+        134,
+        453,
+        968,
+        493
+      ],
+      "polygon": [
+        [
+          134,
+          453
+        ],
+        [
+          134,
+          493
+        ],
+        [
+          962,
+          493
+        ],
+        [
+          967,
+          453
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "paragraph_title",
+      "content": "LETTER V.",
+      "bbox_2d": [
+        348,
+        531,
+        767,
+        567
+      ],
+      "polygon": [
+        [
+          348,
+          531
+        ],
+        [
+          348,
+          567
+        ],
+        [
+          538,
+          567
+        ],
+        [
+          543,
+          567
+        ],
+        [
+          567,
+          567
+        ],
+        [
+          727,
+          567
+        ],
+        [
+          766,
+          567
+        ],
+        [
+          766,
+          549
+        ],
+        [
+          766,
+          536
+        ],
+        [
+          761,
+          531
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "paragraph_title",
+      "content": "MADAM,",
+      "bbox_2d": [
+        160,
+        594,
+        376,
+        625
+      ],
+      "polygon": [
+        [
+          160,
+          594
+        ],
+        [
+          160,
+          625
+        ],
+        [
+          375,
+          625
+        ],
+        [
+          375,
+          594
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "I am grieved to hear, you enjoy so little Health, 'tis a Blessing I heartily with you, and all my other Friends, as being one of the greatest Pleasures of Life; while I had the Happiness of possessing it, I could cheerfully struggle with my Misfortunes, be pleasant in the midst of Storms, and easy without any other Company but my Thoughts and Books; but now my Body sinks under the Pressure, and will not keep Pace with my Mind: Life is what I have for many Years had no Reason to be fond of, and a Grave has appeared to me the happiest and best Asylum; I know 'tis",
+      "bbox_2d": [
+        112,
+        627,
+        970,
+        940
+      ],
+      "polygon": [
+        [
+          117,
+          627
+        ],
+        [
+          112,
+          934
+        ],
+        [
+          969,
+          939
+        ],
+        [
+          969,
+          627
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "Lady Chudleigh's Letters. 115",
+      "bbox_2d": [
+        96,
+        50,
+        896,
+        88
+      ],
+      "polygon": [
+        [
+          96,
+          50
+        ],
+        [
+          96,
+          83
+        ],
+        [
+          142,
+          88
+        ],
+        [
+          341,
+          88
+        ],
+        [
+          377,
+          88
+        ],
+        [
+          576,
+          88
+        ],
+        [
+          582,
+          88
+        ],
+        [
+          896,
+          88
+        ],
+        [
+          896,
+          54
+        ],
+        [
+          861,
+          54
+        ],
+        [
+          746,
+          50
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "my Duty to maintain my Post, to keep the Station God has assigned me; this Consideration made me leave Afton, and 'tis that which keeps me here; when I am fully recovered, I will return to my Home, to my solitary Reeves, and these Think away the remaining Moments of my Life. I am very glad you have had the Advantage of good Conversation. You are happy in Mrs. Bridgman's and her Daughter's desirable Company, when you see them, give them my humble Service and my Thanks for the obliging Concern they are pleased to express for me, which I shall ever look on as a Favour that can never be enough acknowledged. I never saw the Verses writ on a Window in Blenbeim House, nor those written on the Dutchess's visiting the Relicks of Richard the III. I think my self infinitely obliged to Dr. Garth, to whom I desire you to do me the Favour to present the inclosed Letter. I am too weak to write much, it tires me; I can only assure you, that your Letters are very welcome, I read them with Pleasure; so much Wit and good Sense is an agreeable Entertainment. I am with great Reality,",
+      "bbox_2d": [
+        29,
+        87,
+        912,
+        652
+      ],
+      "polygon": [
+        [
+          29,
+          87
+        ],
+        [
+          39,
+          652
+        ],
+        [
+          906,
+          652
+        ],
+        [
+          906,
+          92
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "paragraph_title",
+      "content": "Dear MADAM,",
+      "bbox_2d": [
+        194,
+        668,
+        521,
+        697
+      ],
+      "polygon": [
+        [
+          194,
+          668
+        ],
+        [
+          194,
+          696
+        ],
+        [
+          520,
+          696
+        ],
+        [
+          520,
+          668
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Your affectionate bumble Servant,",
+      "bbox_2d": [
+        240,
+        714,
+        862,
+        747
+      ],
+      "polygon": [
+        [
+          240,
+          720
+        ],
+        [
+          240,
+          746
+        ],
+        [
+          861,
+          746
+        ],
+        [
+          861,
+          714
+        ],
+        [
+          245,
+          714
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Exon, Oct. 15.\n1703.",
+      "bbox_2d": [
+        50,
+        762,
+        338,
+        818
+      ],
+      "polygon": [
+        [
+          50,
+          767
+        ],
+        [
+          50,
+          813
+        ],
+        [
+          60,
+          817
+        ],
+        [
+          333,
+          817
+        ],
+        [
+          337,
+          803
+        ],
+        [
+          337,
+          767
+        ],
+        [
+          333,
+          762
+        ],
+        [
+          55,
+          762
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "footer",
+      "content": "MARY CHUDLEIGH",
+      "bbox_2d": [
+        446,
+        831,
+        914,
+        864
+      ],
+      "polygon": [
+        [
+          446,
+          836
+        ],
+        [
+          446,
+          863
+        ],
+        [
+          913,
+          863
+        ],
+        [
+          913,
+          831
+        ],
+        [
+          451,
+          831
+        ]
+      ]
+    }
+  ]
+]

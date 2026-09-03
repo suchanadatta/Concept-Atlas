@@ -1,0 +1,65 @@
+# BMoral — British Moral Philosophy Corpus System
+# Large data & caches — never commit
+*.pdf
+*.zip
+*.tar.xz
+*.npy
+*.safetensors
+*.pt
+*.bin
+
+# Models (weights are GB-scale; rebuild/download via scripts)
+models/GLM-OCR/
+models/doctr/
+models/easyocr/
+models/hf-cache/
+models/Jasper-Token-Compression-600M/
+models/jasper_index/embeddings.npy
+models/jasper_index/concepts.npy
+
+# OCR outputs: images are heavy; JSONL/JSON/MD text IS committed (see allow rules)
+outputs/**/imgs/
+outputs/**/layout_vis/
+outputs/bench/
+outputs/test_*/
+*.jpg
+*.png
+!docs*.png
+!vendor/**/*.png
+
+# Raw source scans (the user re-supplies these)
+data/BMoral_pdf_collection/
+data/full_set_pdfs/
+data/drive_pdfs/
+data/txt_books/
+
+# Caches & runtime
+__pycache__/
+*.pyc
+.ruff_cache/
+.venv/
+.rigor-trash/
+*.log
+atlas.pid
+.playwright-mcp/
+
+# Node/other
+node_modules/
+
+# Concept Maps: commit the distilled knowledge graph (final/), not the
+# multi-agent intermediate audit trails (regenerable from final/)
+Concept Maps/raw/
+Concept Maps/verified/
+Concept Maps/p3_verified/
+Concept Maps/p3_reports/
+Concept Maps/text_extracts/
+Concept Maps/merged/
+Concept Maps/shards*.json
+Concept Maps/graph-ui/data/annotations/
+
+# OS
+.DS_Store
+
+# Embedded repos (upstream clones — re-clone from GitHub if needed)
+GLM-OCR/
+Unlimited-OCR/

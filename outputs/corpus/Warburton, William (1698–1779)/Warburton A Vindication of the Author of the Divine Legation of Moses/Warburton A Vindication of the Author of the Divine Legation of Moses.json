@@ -1,0 +1,4139 @@
+[
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        633,
+        26,
+        927,
+        130
+      ],
+      "polygon": [
+        [
+          638,
+          26
+        ],
+        [
+          633,
+          32
+        ],
+        [
+          633,
+          130
+        ],
+        [
+          926,
+          130
+        ],
+        [
+          926,
+          32
+        ],
+        [
+          922,
+          26
+        ],
+        [
+          887,
+          26
+        ],
+        [
+          876,
+          26
+        ]
+      ],
+      "content": "1413.e.12 / 10",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        487,
+        281,
+        532,
+        308
+      ],
+      "polygon": [
+        [
+          492,
+          281
+        ],
+        [
+          487,
+          286
+        ],
+        [
+          487,
+          303
+        ],
+        [
+          492,
+          308
+        ],
+        [
+          531,
+          308
+        ],
+        [
+          531,
+          281
+        ]
+      ],
+      "content": "## A",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        168,
+        300,
+        881,
+        620
+      ],
+      "polygon": [
+        [
+          168,
+          320
+        ],
+        [
+          168,
+          620
+        ],
+        [
+          880,
+          620
+        ],
+        [
+          876,
+          330
+        ],
+        [
+          856,
+          310
+        ],
+        [
+          856,
+          300
+        ],
+        [
+          334,
+          300
+        ],
+        [
+          399,
+          315
+        ]
+      ],
+      "content": "VINDICATION OF THE AUTHOR OF\n\nThe Divine Legation of MOSES, &c.",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        489,
+        81,
+        533,
+        108
+      ],
+      "polygon": [
+        [
+          489,
+          81
+        ],
+        [
+          489,
+          107
+        ],
+        [
+          533,
+          107
+        ],
+        [
+          533,
+          81
+        ]
+      ],
+      "content": "## A",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        158,
+        124,
+        879,
+        232
+      ],
+      "polygon": [
+        [
+          158,
+          124
+        ],
+        [
+          164,
+          232
+        ],
+        [
+          408,
+          232
+        ],
+        [
+          869,
+          232
+        ],
+        [
+          879,
+          124
+        ],
+        [
+          859,
+          124
+        ],
+        [
+          854,
+          124
+        ],
+        [
+          834,
+          124
+        ],
+        [
+          789,
+          124
+        ]
+      ],
+      "content": "# VINDICATION OF THE",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        205,
+        248,
+        832,
+        302
+      ],
+      "polygon": [
+        [
+          205,
+          258
+        ],
+        [
+          210,
+          302
+        ],
+        [
+          295,
+          302
+        ],
+        [
+          425,
+          302
+        ],
+        [
+          741,
+          302
+        ],
+        [
+          752,
+          302
+        ],
+        [
+          831,
+          302
+        ],
+        [
+          831,
+          248
+        ],
+        [
+          215,
+          248
+        ]
+      ],
+      "content": "AUTHOR",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        485,
+        328,
+        561,
+        355
+      ],
+      "polygon": [
+        [
+          485,
+          328
+        ],
+        [
+          485,
+          354
+        ],
+        [
+          560,
+          354
+        ],
+        [
+          560,
+          328
+        ]
+      ],
+      "content": "OF",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        156,
+        365,
+        904,
+        463
+      ],
+      "polygon": [
+        [
+          156,
+          365
+        ],
+        [
+          161,
+          463
+        ],
+        [
+          899,
+          463
+        ],
+        [
+          904,
+          370
+        ]
+      ],
+      "content": "The Divine Legation of MOSES, &c.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        451,
+        488,
+        607,
+        513
+      ],
+      "polygon": [
+        [
+          451,
+          488
+        ],
+        [
+          451,
+          508
+        ],
+        [
+          456,
+          513
+        ],
+        [
+          607,
+          513
+        ],
+        [
+          607,
+          488
+        ]
+      ],
+      "content": "F R O M",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        157,
+        514,
+        894,
+        615
+      ],
+      "polygon": [
+        [
+          157,
+          514
+        ],
+        [
+          163,
+          610
+        ],
+        [
+          192,
+          614
+        ],
+        [
+          893,
+          614
+        ],
+        [
+          888,
+          514
+        ],
+        [
+          678,
+          514
+        ],
+        [
+          633,
+          514
+        ],
+        [
+          603,
+          514
+        ],
+        [
+          598,
+          514
+        ],
+        [
+          578,
+          514
+        ]
+      ],
+      "content": "The Asperfions of the COUNTRY CLERGYMAN'S LETTER in the Weekly Miscellany of February 24, 1737.",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        160,
+        677,
+        965,
+        743
+      ],
+      "polygon": [
+        [
+          160,
+          677
+        ],
+        [
+          160,
+          738
+        ],
+        [
+          171,
+          743
+        ],
+        [
+          200,
+          743
+        ],
+        [
+          256,
+          743
+        ],
+        [
+          275,
+          743
+        ],
+        [
+          281,
+          743
+        ],
+        [
+          965,
+          743
+        ],
+        [
+          960,
+          677
+        ]
+      ],
+      "content": "BY WILLIAM WARBURTON, A. M.",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        164,
+        801,
+        900,
+        903
+      ],
+      "polygon": [
+        [
+          164,
+          801
+        ],
+        [
+          169,
+          903
+        ],
+        [
+          899,
+          903
+        ],
+        [
+          899,
+          801
+        ]
+      ],
+      "content": "L O N D O N,\n\nPrinted for FLETCHER GYLES against Grays Inn in Holborn. MDCCXXXVIII.\n\n[Price 6d.]",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        426,
+        67,
+        558,
+        108
+      ],
+      "polygon": [
+        [
+          426,
+          67
+        ],
+        [
+          426,
+          108
+        ],
+        [
+          558,
+          108
+        ],
+        [
+          558,
+          67
+        ]
+      ],
+      "content": "[5]",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "image",
+      "bbox_2d": [
+        154,
+        147,
+        827,
+        282
+      ],
+      "polygon": [
+        [
+          154,
+          147
+        ],
+        [
+          154,
+          282
+        ],
+        [
+          826,
+          282
+        ],
+        [
+          821,
+          147
+        ]
+      ],
+      "content": null,
+      "native_label": "image",
+      "image_path": "imgs/cropped_page2_idx0.jpg"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        472,
+        322,
+        515,
+        347
+      ],
+      "polygon": [
+        [
+          472,
+          322
+        ],
+        [
+          472,
+          346
+        ],
+        [
+          515,
+          346
+        ],
+        [
+          515,
+          322
+        ]
+      ],
+      "content": "## A",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        138,
+        365,
+        847,
+        458
+      ],
+      "polygon": [
+        [
+          138,
+          365
+        ],
+        [
+          143,
+          457
+        ],
+        [
+          422,
+          457
+        ],
+        [
+          842,
+          457
+        ],
+        [
+          847,
+          365
+        ],
+        [
+          808,
+          365
+        ],
+        [
+          777,
+          365
+        ],
+        [
+          733,
+          365
+        ],
+        [
+          722,
+          365
+        ],
+        [
+          688,
+          365
+        ],
+        [
+          657,
+          365
+        ]
+      ],
+      "content": "VINDICATION OF THE",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        189,
+        470,
+        802,
+        519
+      ],
+      "polygon": [
+        [
+          189,
+          470
+        ],
+        [
+          189,
+          519
+        ],
+        [
+          802,
+          519
+        ],
+        [
+          802,
+          476
+        ],
+        [
+          727,
+          470
+        ]
+      ],
+      "content": "AUTHOR",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        460,
+        538,
+        528,
+        559
+      ],
+      "polygon": [
+        [
+          460,
+          538
+        ],
+        [
+          460,
+          559
+        ],
+        [
+          528,
+          559
+        ],
+        [
+          528,
+          538
+        ]
+      ],
+      "content": "OF",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        134,
+        571,
+        849,
+        610
+      ],
+      "polygon": [
+        [
+          134,
+          571
+        ],
+        [
+          134,
+          605
+        ],
+        [
+          284,
+          609
+        ],
+        [
+          309,
+          609
+        ],
+        [
+          319,
+          609
+        ],
+        [
+          848,
+          609
+        ],
+        [
+          848,
+          576
+        ]
+      ],
+      "content": "The Divine Legation of Mofes, &c.",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "image",
+      "bbox_2d": [
+        137,
+        645,
+        334,
+        761
+      ],
+      "polygon": [
+        [
+          137,
+          645
+        ],
+        [
+          137,
+          680
+        ],
+        [
+          137,
+          741
+        ],
+        [
+          137,
+          761
+        ],
+        [
+          333,
+          761
+        ],
+        [
+          333,
+          645
+        ]
+      ],
+      "content": null,
+      "native_label": "image",
+      "image_path": "imgs/cropped_page2_idx1.jpg"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        126,
+        645,
+        858,
+        909
+      ],
+      "polygon": [
+        [
+          136,
+          645
+        ],
+        [
+          131,
+          894
+        ],
+        [
+          181,
+          909
+        ],
+        [
+          853,
+          909
+        ],
+        [
+          853,
+          645
+        ]
+      ],
+      "content": "FTER having twice offered my Thoughts to the Public, on two very important Subjects, and had the Honour to be favourably heard, it must needs be a sufficient Mortification to me to be obliged to descend to so low a Subject as myself. That, and the Deference due to the Public,",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        411,
+        78,
+        536,
+        122
+      ],
+      "polygon": [
+        [
+          411,
+          78
+        ],
+        [
+          411,
+          122
+        ],
+        [
+          536,
+          122
+        ],
+        [
+          536,
+          78
+        ]
+      ],
+      "content": "[6]",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        123,
+        120,
+        830,
+        887
+      ],
+      "polygon": [
+        [
+          123,
+          120
+        ],
+        [
+          129,
+          866
+        ],
+        [
+          414,
+          886
+        ],
+        [
+          829,
+          886
+        ],
+        [
+          820,
+          120
+        ]
+      ],
+      "content": "Public, had certainly restrained this Appeal to it, had the Matter terminated there. But when the Accusation intended against me appeared visibly designed to render a projected Defence of Revelation suspected; which, I will presume (and, as the Author of it, the Reader will excuse me for presuming) may be of some small Service to our Holy Faith, I thought it my Duty to vindicate myself, in this public Manner, from the horrid Accusations of a Letter Writer in the Weekly Miscellany of the 24th of February last. Whether this was the true Motive of this Vindication will be best seen by the Temper in which it is written. The Letter Writer begins with me in this Manner, A late Writer, the Author of the Divine Legation of Moses, &c. is very severe upon ALL Clergymen who take the Liberty of censuring the Conduct OF ANY OF THEIR BRETHREN. The Passage, on which this Accusation is founded, is in p. 21. of the Dedication. — I appeal then to the Public, whether my Severity falls on those who censure the Conduct of any of their Brethren:",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        419,
+        77,
+        547,
+        116
+      ],
+      "polygon": [
+        [
+          419,
+          77
+        ],
+        [
+          419,
+          116
+        ],
+        [
+          546,
+          116
+        ],
+        [
+          546,
+          77
+        ],
+        [
+          532,
+          77
+        ],
+        [
+          506,
+          77
+        ]
+      ],
+      "content": "## [ 7 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        135,
+        119,
+        829,
+        238
+      ],
+      "polygon": [
+        [
+          135,
+          119
+        ],
+        [
+          135,
+          238
+        ],
+        [
+          340,
+          238
+        ],
+        [
+          345,
+          238
+        ],
+        [
+          355,
+          238
+        ],
+        [
+          409,
+          238
+        ],
+        [
+          440,
+          238
+        ],
+        [
+          828,
+          238
+        ],
+        [
+          828,
+          119
+        ]
+      ],
+      "content": "Brethren : or on those, who abuse the whole Body of the Clergy, considered as an Order instituted by Christ, and established by the State.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        134,
+        262,
+        841,
+        872
+      ],
+      "polygon": [
+        [
+          134,
+          267
+        ],
+        [
+          139,
+          867
+        ],
+        [
+          840,
+          872
+        ],
+        [
+          840,
+          267
+        ]
+      ],
+      "content": "He goes on, — If I am capable of understanding the Meaning and Drift of his Book, he had Reason to apprehend it might draw upon him the Censures of all the Clergy who are sincere Friends to Christianity — therefore it might be politic to obviate the Force of such Animadversions before-hand. Had I been conscious of deserving the Censure of any honest Man, I had done, like those who delight in Mischief; I had wounded in the Dark. But when I chose to write without a Name, it was for very contrary Purposes. When I presumed to publish (in Defence of the Established Clergy) a Vindication of the Church of England, under the Title of The Alliance between Church and State, which surely might deserve their Pardon, left the World should imagine I expected more, I put it out without my Name. And now writing in the com-",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        757,
+        879,
+        839,
+        897
+      ],
+      "polygon": [
+        [
+          757,
+          879
+        ],
+        [
+          757,
+          897
+        ],
+        [
+          838,
+          897
+        ],
+        [
+          838,
+          879
+        ]
+      ],
+      "content": "mon",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        400,
+        83,
+        531,
+        122
+      ],
+      "polygon": [
+        [
+          400,
+          83
+        ],
+        [
+          400,
+          121
+        ],
+        [
+          531,
+          121
+        ],
+        [
+          531,
+          83
+        ]
+      ],
+      "content": "## [8]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        110,
+        125,
+        825,
+        357
+      ],
+      "polygon": [
+        [
+          115,
+          125
+        ],
+        [
+          110,
+          356
+        ],
+        [
+          824,
+          356
+        ],
+        [
+          820,
+          125
+        ]
+      ],
+      "content": "mon Cause of Christianity, I have publicly owned it. For if ever the Suspicion of being ashamed of the Faith of Jesus be more carefully to be avoided at one time than at another, it must certainly be in this, when Infidelity is become so reputable as to be esteemed a Test of superior Parts and Discernment.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        112,
+        379,
+        837,
+        881
+      ],
+      "polygon": [
+        [
+          117,
+          379
+        ],
+        [
+          122,
+          871
+        ],
+        [
+          826,
+          876
+        ],
+        [
+          836,
+          379
+        ]
+      ],
+      "content": "He proceeds, I shall add, that if he really means to defend Christianity, be hath published the weakest Defence of it that I have ever read. How are we to understand him here? Must we rectify the Proposition thus, If the Author gives this Volume as a Defence of Christianity, then it is the weakest? The Consequence will then indeed be true. But I had cut off all Pretence for begging the Premisses. For I have formally and expressly said in the Beginning, and repeated it towards the End, that the Design of this Volume was only preparatory to the Defence of Revelation, and to prove the use of Religion in general, and the Doctrine of a future State in particular to Ci-",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        779,
+        869,
+        836,
+        893
+      ],
+      "polygon": [
+        [
+          779,
+          869
+        ],
+        [
+          779,
+          892
+        ],
+        [
+          836,
+          892
+        ],
+        [
+          836,
+          869
+        ]
+      ],
+      "content": "vil",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        421,
+        81,
+        561,
+        123
+      ],
+      "polygon": [
+        [
+          421,
+          81
+        ],
+        [
+          421,
+          118
+        ],
+        [
+          427,
+          122
+        ],
+        [
+          561,
+          122
+        ],
+        [
+          561,
+          81
+        ]
+      ],
+      "content": "## [ 9 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        114,
+        124,
+        869,
+        276
+      ],
+      "polygon": [
+        [
+          114,
+          124
+        ],
+        [
+          114,
+          276
+        ],
+        [
+          868,
+          276
+        ],
+        [
+          868,
+          124
+        ]
+      ],
+      "content": "vil Society. And had I not said this, the Book itself would shew that it is no more a Defence of Christianity than the first Proposition of the three Terms is a Syllogism.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        105,
+        302,
+        873,
+        629
+      ],
+      "polygon": [
+        [
+          111,
+          302
+        ],
+        [
+          105,
+          624
+        ],
+        [
+          872,
+          629
+        ],
+        [
+          867,
+          302
+        ]
+      ],
+      "content": "But if the Letter Writer means, what his Words express, That if I have a serious Purpose of defending Christianity, this Volume is the weakest Defence? his Premisses will be true indeed, but then they will have no relation to his Conclusion. For it does not follow from those Premisses, that this is any Defence at all; any more than that, if I had a serious Purpose of building a House, the Foundation-stones were that House.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        108,
+        656,
+        871,
+        899
+      ],
+      "polygon": [
+        [
+          108,
+          656
+        ],
+        [
+          113,
+          898
+        ],
+        [
+          871,
+          898
+        ],
+        [
+          871,
+          656
+        ]
+      ],
+      "content": "The Deference due to the Public, from so obscure a Writer as myself, was the true Reason why this first Part came out separately; the Author not presuming to obtrude a voluminous Work upon it till he had some Assurance of its Willingness to receive it. But the same regard that obliged me to this Conduct, would",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        509,
+        894,
+        543,
+        918
+      ],
+      "polygon": [
+        [
+          509,
+          894
+        ],
+        [
+          509,
+          917
+        ],
+        [
+          542,
+          917
+        ],
+        [
+          542,
+          894
+        ]
+      ],
+      "content": "B",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        416,
+        77,
+        578,
+        115
+      ],
+      "polygon": [
+        [
+          416,
+          82
+        ],
+        [
+          416,
+          114
+        ],
+        [
+          577,
+          114
+        ],
+        [
+          577,
+          77
+        ],
+        [
+          539,
+          77
+        ],
+        [
+          509,
+          77
+        ],
+        [
+          475,
+          77
+        ],
+        [
+          435,
+          77
+        ],
+        [
+          422,
+          77
+        ]
+      ],
+      "content": "## [ 10 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        127,
+        119,
+        852,
+        522
+      ],
+      "polygon": [
+        [
+          137,
+          119
+        ],
+        [
+          127,
+          522
+        ],
+        [
+          852,
+          522
+        ],
+        [
+          852,
+          119
+        ]
+      ],
+      "content": "not suffer me to make a Secret of the Medium by which I pretended to establish my Demonstration, especially as it had the Fortune to be generally esteem'd a Paradox. I therefore gave the Proof in form two Years ago in the Appendix to The Alliance between Church and State. There it is to be found; and had the Letter Writer, instead of indulging his monstrous Suspicions of the Author, turned himself to making Objections to his Argument, he might possibly have then as much served Truth as he now has violated Charity.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        121,
+        550,
+        852,
+        780
+      ],
+      "polygon": [
+        [
+          121,
+          550
+        ],
+        [
+          131,
+          780
+        ],
+        [
+          851,
+          780
+        ],
+        [
+          851,
+          550
+        ]
+      ],
+      "content": "He goes on, — He is a warmer Advocate for Dr. — who denies the Divine Inspiration of the Scriptures than for the Scriptures themselves. How warm an Advocate I am for him we shall see by and by; how true an Accuser the Letter Writer is of him we shall examine at present. Dr. — says, * it is NECESSARY to believe of the Scri-",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "footnote",
+      "bbox_2d": [
+        127,
+        802,
+        845,
+        850
+      ],
+      "polygon": [
+        [
+          132,
+          802
+        ],
+        [
+          127,
+          850
+        ],
+        [
+          844,
+          850
+        ],
+        [
+          844,
+          802
+        ],
+        [
+          232,
+          802
+        ],
+        [
+          227,
+          802
+        ]
+      ],
+      "content": "* Remarks on a Reply to the Defence of a Letter to Dr. W. p. 69.",
+      "native_label": "footnote"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        410,
+        84,
+        578,
+        123
+      ],
+      "polygon": [
+        [
+          410,
+          84
+        ],
+        [
+          410,
+          122
+        ],
+        [
+          445,
+          122
+        ],
+        [
+          514,
+          122
+        ],
+        [
+          578,
+          122
+        ],
+        [
+          578,
+          84
+        ]
+      ],
+      "content": "## [ 11 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        115,
+        126,
+        878,
+        538
+      ],
+      "polygon": [
+        [
+          115,
+          132
+        ],
+        [
+          125,
+          537
+        ],
+        [
+          877,
+          537
+        ],
+        [
+          867,
+          126
+        ]
+      ],
+      "content": "ptures in general that they are divinely inspired; and that all which he denies is, that the Scriptures are of absolute and universal Inspiration*. He shews that Tillotson and Grotius were of the same Opinion, who, he charitably presumes, were Christians. And as he tells his Friends and Acquaintance the same he tells the Public, the Letter Writer must excuse me, if I believe a Man whose Candour, Since- rity, Benevolence, and Charity I have experienced, before him, who has not given me the Pleasure of remarking in him any of those Christian Qualities.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        115,
+        563,
+        888,
+        802
+      ],
+      "polygon": [
+        [
+          121,
+          563
+        ],
+        [
+          121,
+          801
+        ],
+        [
+          887,
+          801
+        ],
+        [
+          882,
+          563
+        ]
+      ],
+      "content": "But I would not have the Letter Writer infer, that, because he has been pleased to make me Dr. 's Advocate, I am to be responsible for his Opinions. I differ widely from him in the Matter of Inspiration, and as widely in some others. But we can differ from each other, and avow and maintain our Difference of O-",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "footnote",
+      "bbox_2d": [
+        131,
+        823,
+        887,
+        876
+      ],
+      "polygon": [
+        [
+          131,
+          823
+        ],
+        [
+          131,
+          875
+        ],
+        [
+          887,
+          875
+        ],
+        [
+          887,
+          823
+        ]
+      ],
+      "content": "* Remarks on a Reply to the Defence of a Letter to Dr. W. p. 70.",
+      "native_label": "footnote"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        541,
+        887,
+        616,
+        914
+      ],
+      "polygon": [
+        [
+          541,
+          887
+        ],
+        [
+          541,
+          914
+        ],
+        [
+          616,
+          914
+        ],
+        [
+          616,
+          892
+        ],
+        [
+          596,
+          887
+        ]
+      ],
+      "content": "B2",
+      "native_label": "number"
+    },
+    {
+      "index": 5,
+      "label": "footer",
+      "bbox_2d": [
+        768,
+        884,
+        888,
+        919
+      ],
+      "polygon": [
+        [
+          768,
+          884
+        ],
+        [
+          768,
+          919
+        ],
+        [
+          882,
+          919
+        ],
+        [
+          887,
+          914
+        ],
+        [
+          887,
+          884
+        ]
+      ],
+      "content": "pinion",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        411,
+        76,
+        567,
+        114
+      ],
+      "polygon": [
+        [
+          411,
+          76
+        ],
+        [
+          411,
+          114
+        ],
+        [
+          566,
+          114
+        ],
+        [
+          566,
+          76
+        ]
+      ],
+      "content": "[12]",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        139,
+        118,
+        861,
+        882
+      ],
+      "polygon": [
+        [
+          139,
+          118
+        ],
+        [
+          154,
+          871
+        ],
+        [
+          636,
+          881
+        ],
+        [
+          860,
+          871
+        ],
+        [
+          851,
+          118
+        ]
+      ],
+      "content": "pinion without Violation of common Humanity, Friendship, or Christian Charity. I will give the Letter Writer another Instance of Difference in Opinion between us, from this very Book he so much condemns. The Writer of the Defence of the Letter to Dr. W. p. 45 says — Is the Notion of the Divine Origin of the Law and Inspiration of Moses to be resolved into Fiction, or Fable, or Political Lying? No, far be it from me to think or say so. But this perhaps one may venture to say, that the Supposition of some Degree of such Fiction may possibly be found necessary to the solving the Difficulties of the Mosaic Writings without any Hurt to their Authority, or Advantage to Infidelity. I am, as I say, of a different Opinion. The Writer endeavours to support his by several Arguments; amongst which one is, the Professions and Example of the ancient Sages and Legislators. Now, in the second Section of my Third Book I have inquired into the Principles that induced the ancient Sages and Legislators to deem it lawful to deceive for the Public Good;",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        822,
+        868,
+        860,
+        891
+      ],
+      "polygon": [
+        [
+          822,
+          868
+        ],
+        [
+          822,
+          890
+        ],
+        [
+          860,
+          890
+        ],
+        [
+          860,
+          868
+        ]
+      ],
+      "content": "in",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        432,
+        77,
+        600,
+        117
+      ],
+      "polygon": [
+        [
+          432,
+          77
+        ],
+        [
+          432,
+          117
+        ],
+        [
+          447,
+          117
+        ],
+        [
+          473,
+          117
+        ],
+        [
+          503,
+          117
+        ],
+        [
+          549,
+          117
+        ],
+        [
+          599,
+          117
+        ],
+        [
+          599,
+          81
+        ],
+        [
+          523,
+          77
+        ]
+      ],
+      "content": "## [13]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        119,
+        116,
+        901,
+        804
+      ],
+      "polygon": [
+        [
+          134,
+          121
+        ],
+        [
+          119,
+          799
+        ],
+        [
+          901,
+          799
+        ],
+        [
+          896,
+          121
+        ]
+      ],
+      "content": "in the Discovery of which, I think, I have made it evident that those Reasons or Principles could have no Place amongst the Founders and Propagators of the Jewish and Christian Religions. This Truth (as well as several others interspersed throughout this First Volume, and which may perhaps give Offence to the indiscreet Zeal of the Letter Writer) is in my next Volume applied and inforced to the Overthrowing that Opinion that some Degree of Fiction may be necessary, &c. And even in this I could not forbear, in the most conspicuous Place of my Book, to shew the Use of it, as may be seen by these Words of the Contents, B. 3. S. 2.\n\nThe Principles, that induced the ancient Sages to deem it lawful to deceive for Public Good in Matters of Religion, are explained and shewn to be such as had no Place in the Propagation or Genius of the Jewish and Christian Religion.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        141,
+        825,
+        899,
+        912
+      ],
+      "polygon": [
+        [
+          141,
+          830
+        ],
+        [
+          146,
+          893
+        ],
+        [
+          216,
+          907
+        ],
+        [
+          241,
+          912
+        ],
+        [
+          590,
+          912
+        ],
+        [
+          729,
+          912
+        ],
+        [
+          864,
+          912
+        ],
+        [
+          894,
+          912
+        ],
+        [
+          899,
+          825
+        ],
+        [
+          440,
+          825
+        ],
+        [
+          420,
+          825
+        ],
+        [
+          366,
+          825
+        ],
+        [
+          146,
+          825
+        ]
+      ],
+      "content": "But I am a warm Advocate for Dr. In what? I have called him a very formidable",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        385,
+        86,
+        556,
+        125
+      ],
+      "polygon": [
+        [
+          385,
+          86
+        ],
+        [
+          385,
+          124
+        ],
+        [
+          556,
+          124
+        ],
+        [
+          556,
+          86
+        ]
+      ],
+      "content": "## [14]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        82,
+        126,
+        842,
+        504
+      ],
+      "polygon": [
+        [
+          92,
+          126
+        ],
+        [
+          87,
+          504
+        ],
+        [
+          841,
+          504
+        ],
+        [
+          836,
+          126
+        ]
+      ],
+      "content": "midable Adversary to the Free Thinkers. And I think I had Reason: For the Arguments he hath used for the Truth of Christianity against Tindal have never yet been answered by them, nor I think ever can. I say for the Truth of Christianity, for his Reasonings from p. 59. to 64.* relate only to its Truth, and can be understood in no other Sense. After this, to think he would have Christianity supported only because it is useful, is such a Way of interpreting a Writer as my Charity will never suffer to follow.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        80,
+        532,
+        845,
+        824
+      ],
+      "polygon": [
+        [
+          85,
+          532
+        ],
+        [
+          80,
+          824
+        ],
+        [
+          839,
+          824
+        ],
+        [
+          844,
+          532
+        ]
+      ],
+      "content": "The Opinion I have of Dr. 's Abilities, and of the Sincerity of his Professions, were the true Reasons of that Esteem I express for him; being desirous of allaying all Disgust, if any hath arisen in him, from the Treatment of his less candid Adversaries; and of engaging him to a further and more compleat Vindication of our Holy Faith, at a Time when the good Dispositions of the meanest Ad-",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "footnote",
+      "bbox_2d": [
+        317,
+        846,
+        606,
+        871
+      ],
+      "polygon": [
+        [
+          322,
+          846
+        ],
+        [
+          322,
+          870
+        ],
+        [
+          606,
+          870
+        ],
+        [
+          606,
+          846
+        ]
+      ],
+      "content": "* Letter to Dr. W.",
+      "native_label": "footnote"
+    },
+    {
+      "index": 4,
+      "label": "footer",
+      "bbox_2d": [
+        723,
+        882,
+        842,
+        903
+      ],
+      "polygon": [
+        [
+          723,
+          882
+        ],
+        [
+          723,
+          903
+        ],
+        [
+          841,
+          903
+        ],
+        [
+          841,
+          882
+        ]
+      ],
+      "content": "vocate",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        411,
+        83,
+        570,
+        122
+      ],
+      "polygon": [
+        [
+          411,
+          83
+        ],
+        [
+          411,
+          122
+        ],
+        [
+          485,
+          122
+        ],
+        [
+          511,
+          122
+        ],
+        [
+          570,
+          122
+        ],
+        [
+          570,
+          83
+        ]
+      ],
+      "content": "## [15]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        128,
+        126,
+        852,
+        619
+      ],
+      "polygon": [
+        [
+          134,
+          131
+        ],
+        [
+          134,
+          618
+        ],
+        [
+          846,
+          618
+        ],
+        [
+          851,
+          131
+        ]
+      ],
+      "content": "vocate for Revelation should not, I think, in Prudence be discouraged: Nay, was I so unhappy to think of Dr. as the Letter Writer is disposed to do, I should yet be inclined to behave myself very differently towards him. I should be so far from estranging him further from the Faith by uncharitable Anathemas, that I should do all I could to court and allure him to Christianity, by thinking well of its Professors. Thus much, I conceive, Christian Charity would require; and how far Christian Policy would persuade, let the Learned say, who know what Ornament his Pen would be to the Christian Faith, and his Acquaintance of what Example his Morals to Christian Practice.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        135,
+        646,
+        853,
+        879
+      ],
+      "polygon": [
+        [
+          135,
+          646
+        ],
+        [
+          135,
+          879
+        ],
+        [
+          852,
+          879
+        ],
+        [
+          852,
+          646
+        ]
+      ],
+      "content": "But the Letter Writer, having taken it into his Head, that Dr. 's true Sentiments are, that Christianity can only be defended as useful in the present Circumstances of Life, makes, as it would seem, this Imagination the Key to my real Sentiments and Designs in defending Revelation. Hence those strange Expressions, If I",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        792,
+        884,
+        848,
+        902
+      ],
+      "polygon": [
+        [
+          792,
+          884
+        ],
+        [
+          792,
+          901
+        ],
+        [
+          848,
+          901
+        ],
+        [
+          848,
+          884
+        ]
+      ],
+      "content": "am",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        408,
+        84,
+        573,
+        119
+      ],
+      "polygon": [
+        [
+          408,
+          84
+        ],
+        [
+          408,
+          119
+        ],
+        [
+          572,
+          119
+        ],
+        [
+          572,
+          84
+        ]
+      ],
+      "content": "## [16]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        98,
+        118,
+        862,
+        732
+      ],
+      "polygon": [
+        [
+          108,
+          118
+        ],
+        [
+          98,
+          731
+        ],
+        [
+          857,
+          731
+        ],
+        [
+          857,
+          118
+        ]
+      ],
+      "content": "am capable of understanding the Meaning and Drift of his Book — be must excuse me, if I suspect his Faith and condemn his Book — This I am sure of, the Author must be a subtle Enemy to Revelation, or a very indiscreet Friend — I must own he has left me in no Doubt. Now if those be Dr. —'s true Sentiments, which yet I no more believe than that Tindal was a Christian in his Heart, I shall not scruple to say that he whom I called one of the most formidable of the Free-Thinkers Adversaries, is indeed one of the weakest and most contemptible. But if they be mine, after all I have said in this Volume, I will not scruple to say, that That Character would be far too mild for me; and that it would be but Justice to esteem me the most abandoned Writer that ever appeared in any Cause.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        101,
+        759,
+        855,
+        878
+      ],
+      "polygon": [
+        [
+          101,
+          759
+        ],
+        [
+          106,
+          878
+        ],
+        [
+          231,
+          878
+        ],
+        [
+          854,
+          878
+        ],
+        [
+          854,
+          759
+        ]
+      ],
+      "content": "Let us now take this Key, and apply it to what I have written -- And it will indeed throughly serve the Letter Writer's declared Purpose to lessen my Credit. For",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        818,
+        881,
+        852,
+        902
+      ],
+      "polygon": [
+        [
+          818,
+          881
+        ],
+        [
+          818,
+          902
+        ],
+        [
+          851,
+          902
+        ],
+        [
+          851,
+          881
+        ]
+      ],
+      "content": "it",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        455,
+        85,
+        621,
+        124
+      ],
+      "polygon": [
+        [
+          455,
+          85
+        ],
+        [
+          455,
+          124
+        ],
+        [
+          620,
+          124
+        ],
+        [
+          620,
+          85
+        ]
+      ],
+      "content": "$$\n[ 1 7 ]\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        145,
+        125,
+        892,
+        884
+      ],
+      "polygon": [
+        [
+          160,
+          125
+        ],
+        [
+          145,
+          878
+        ],
+        [
+          877,
+          883
+        ],
+        [
+          892,
+          130
+        ]
+      ],
+      "content": "it will make the whole Volume a Heap of Absurdities and Contradictions. But lay aside this visionary Key, and let me be interpreted by those common Rules that all Mankind have ever used in understanding one another, and then it will be seen I could not possibly have had any other Intention than to prove Moses to be a TRUE PROPHET SENT IMMEDIATELY AND EXTRAORDINARILY FROM GOD.—I pretend to do it from Moses's Omission of the Doctrine of a future State; which under an unequal Providence, is (as I have shewn in this Book, that being the only End of writing it) absolutely necessary to Society. From whence I conclude Moses's Pretentions were true: who assured the Israelites that God had chosen them to be his People, had condescended to be their King, and would, consequently, govern them by an equal, that is an EXTRAORDINARY PROVIDENCE; which Conclusion (that appears almost self-evident) I employ my second Volume to support, illustrate, and free from Objections.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "image",
+      "bbox_2d": [
+        517,
+        881,
+        588,
+        918
+      ],
+      "polygon": [
+        [
+          522,
+          881
+        ],
+        [
+          517,
+          886
+        ],
+        [
+          517,
+          913
+        ],
+        [
+          522,
+          917
+        ],
+        [
+          587,
+          917
+        ],
+        [
+          587,
+          881
+        ]
+      ],
+      "content": null,
+      "native_label": "image",
+      "image_path": "imgs/cropped_page14_idx2.jpg"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        762,
+        884,
+        881,
+        912
+      ],
+      "polygon": [
+        [
+          762,
+          884
+        ],
+        [
+          762,
+          912
+        ],
+        [
+          880,
+          912
+        ],
+        [
+          880,
+          884
+        ]
+      ],
+      "content": "Hence",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        399,
+        81,
+        559,
+        121
+      ],
+      "polygon": [
+        [
+          399,
+          81
+        ],
+        [
+          399,
+          121
+        ],
+        [
+          558,
+          121
+        ],
+        [
+          558,
+          81
+        ]
+      ],
+      "content": "## [18]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        109,
+        151,
+        850,
+        495
+      ],
+      "polygon": [
+        [
+          114,
+          151
+        ],
+        [
+          109,
+          495
+        ],
+        [
+          849,
+          495
+        ],
+        [
+          844,
+          151
+        ]
+      ],
+      "content": "Hence it appears on what Account. I so much insist on the Usefulness and Necessity of Religion in general, and the Doctrine of a future State in particular to Society. The Course of my Argument, and all the Rules of Logic obliged me to this Conduct: And indeed I thought it the peculiar Happiness of my Argument that they did so; for I suppose, till the Insidels be convinced that Religion is useful to civil Society, they will never be brought to believe it true.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        112,
+        517,
+        857,
+        891
+      ],
+      "polygon": [
+        [
+          112,
+          517
+        ],
+        [
+          112,
+          871
+        ],
+        [
+          560,
+          891
+        ],
+        [
+          851,
+          891
+        ],
+        [
+          856,
+          517
+        ]
+      ],
+      "content": "I now hast to the other Part of the Letter-writer's Charge, left he should be tempted, in his Impatience, to repeat it; and say again, that I am a warmer Advocate for Dr. than for the Scriptures. The Reader, who has never seen my Book will naturally conclude, from these Words, that either I had undervalu'd Scripture, or at least neglected a fair Opportunity of vindicating it. He will be surprised to be told that the latter Part of the Charge was only for compleat- ing",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        420,
+        81,
+        594,
+        123
+      ],
+      "polygon": [
+        [
+          420,
+          81
+        ],
+        [
+          420,
+          123
+        ],
+        [
+          593,
+          123
+        ],
+        [
+          593,
+          81
+        ]
+      ],
+      "content": "$$\n[ 1 9 ]\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        120,
+        126,
+        891,
+        214
+      ],
+      "polygon": [
+        [
+          120,
+          126
+        ],
+        [
+          120,
+          214
+        ],
+        [
+          891,
+          214
+        ],
+        [
+          891,
+          131
+        ],
+        [
+          726,
+          126
+        ]
+      ],
+      "content": "ing the Antithesis. So indeed it appears to me; but the Reader shall judge for himself.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        117,
+        241,
+        903,
+        889
+      ],
+      "polygon": [
+        [
+          122,
+          241
+        ],
+        [
+          132,
+          889
+        ],
+        [
+          898,
+          884
+        ],
+        [
+          893,
+          246
+        ]
+      ],
+      "content": "There are but two Places in this Volume, in which I had Occasion to make Observations on the Scripture; the one is at p. 117. where I endeavour to shew that the Argument which the Commentators use to prove the Pentateuch (against Spinosa and others) to be written by Moses, is a very strong and solid one. The other is at p. 83. where I say, that the New Testament does not contain any regular or compleat System or Digest of moral Laws; the occasional Precepts there delivered, how excellent and divine soever, arising only from Conjunctures and Circumstances that were the Subjects of those Preachings or Writings, in which such Precepts are found. For the rest, for a general Knowledge of the whole Body of moral Duty, the great Pandect of the Law of Nature is held open by it to be searched and studied. Finally, says the Apostle Paul, whatsoever Things are true, &c.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        778,
+        887,
+        894,
+        919
+      ],
+      "polygon": [
+        [
+          778,
+          887
+        ],
+        [
+          778,
+          918
+        ],
+        [
+          783,
+          918
+        ],
+        [
+          788,
+          918
+        ],
+        [
+          894,
+          918
+        ],
+        [
+          894,
+          891
+        ],
+        [
+          844,
+          887
+        ],
+        [
+          839,
+          887
+        ],
+        [
+          828,
+          887
+        ]
+      ],
+      "content": "I fup-",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        407,
+        75,
+        567,
+        115
+      ],
+      "polygon": [
+        [
+          407,
+          75
+        ],
+        [
+          407,
+          115
+        ],
+        [
+          566,
+          115
+        ],
+        [
+          566,
+          75
+        ]
+      ],
+      "content": "## [ 20 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        116,
+        146,
+        860,
+        872
+      ],
+      "polygon": [
+        [
+          126,
+          146
+        ],
+        [
+          116,
+          867
+        ],
+        [
+          850,
+          872
+        ],
+        [
+          860,
+          146
+        ]
+      ],
+      "content": "I suppose then, if the Letter Writer had any particular Meaning, this was the Place that was to justify him in saying that I was no warm Advocate for the Scriptures. But does the New Testament contain any such compleat or regular System? will the Letter Writer say so? will any one besides say so? How weak and indiscreet a Friend soever he may please to think me of Religion, I will assure the Reader, that as I make it one Point of my Religion to say nothing but what I think the Truth, so I do not use to throw about those Truths at random. The Observation was here necessary to overthrow the most pernicious Doctrine that ever infected Society. If it was true, then, it was not untimely urged. But had the Letter Writer had a little Patience he would have seen in the second Volume (as that will be the Case of many other Truths interspersed throughout the first) that, by the Assistance of this very Truth, I overthrow a prevailing Notion, which I suppose He, no more than I, will think",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        401,
+        75,
+        568,
+        113
+      ],
+      "polygon": [
+        [
+          401,
+          75
+        ],
+        [
+          401,
+          113
+        ],
+        [
+          480,
+          113
+        ],
+        [
+          490,
+          113
+        ],
+        [
+          568,
+          113
+        ],
+        [
+          568,
+          75
+        ]
+      ],
+      "content": "## [ 21 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        110,
+        115,
+        858,
+        204
+      ],
+      "polygon": [
+        [
+          110,
+          115
+        ],
+        [
+          110,
+          204
+        ],
+        [
+          853,
+          204
+        ],
+        [
+          858,
+          115
+        ]
+      ],
+      "content": "very orthodox, namely that Christianity is ONLY a Republication of the Religion of Nature.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        108,
+        232,
+        872,
+        885
+      ],
+      "polygon": [
+        [
+          113,
+          232
+        ],
+        [
+          118,
+          875
+        ],
+        [
+          807,
+          884
+        ],
+        [
+          871,
+          884
+        ],
+        [
+          861,
+          232
+        ]
+      ],
+      "content": "This, I can assure the Reader, is the Case of all other Principles occasionally laid down in this first Volume, which are not only here used to prove the Usefulness and Truth of Religion in general, but are in the next Volume applied to prove the Truth of Revelation in particular. To give one Instance at present, in the sixth Section of the second Book, I have attempted to explain the Nature of Paganism, as distinguished from true Revelation; where I have shewn, that tho' they abounded in pretended Revelations they were utter Strangers to the Idea of one Revelation's being founded upon, or the Completion of another. This Principle I apply and inforce in the second Volume against the fourth Chapter of Collins's Grounds and Reasons of the Christian Religion, where he lays it down for one of his fundamental Principles (against all Antiquity and Fact) that it is a com-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        408,
+        81,
+        571,
+        120
+      ],
+      "polygon": [
+        [
+          408,
+          81
+        ],
+        [
+          408,
+          119
+        ],
+        [
+          571,
+          119
+        ],
+        [
+          571,
+          81
+        ]
+      ],
+      "content": "## [ 22 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        120,
+        123,
+        852,
+        209
+      ],
+      "polygon": [
+        [
+          126,
+          123
+        ],
+        [
+          120,
+          209
+        ],
+        [
+          851,
+          209
+        ],
+        [
+          851,
+          123
+        ]
+      ],
+      "content": "a common and necessary Method for new Revelations to be built and grounded on precedent Revelations. See p. 20-26.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        114,
+        235,
+        852,
+        752
+      ],
+      "polygon": [
+        [
+          120,
+          235
+        ],
+        [
+          114,
+          747
+        ],
+        [
+          847,
+          747
+        ],
+        [
+          847,
+          235
+        ]
+      ],
+      "content": "The Letter Writer proceeds Mr. Warburton modestly says, they [the English Clergy] have undertaken to prove Christianity without understanding it. As in the Case before, about censuring the Conduct of Clergymen, the Letter Writer turned what I said in general of the Body, particularly, to Individuals; so here, by a strange Perverity, he turns what I said particularly of some certain Persons, generally, to the English Clergy. My Words are these p. 2. Who, in this long Controversy between us and the Deists, hath not applied to certain late Advocates of Revelation what was formerly said of Arnoius and Laetantius, that they undertook the Defence of Christianity before they understood it?",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        114,
+        778,
+        847,
+        876
+      ],
+      "polygon": [
+        [
+          114,
+          778
+        ],
+        [
+          114,
+          870
+        ],
+        [
+          847,
+          876
+        ],
+        [
+          847,
+          778
+        ]
+      ],
+      "content": "But have none but Englishmen wrote of late in Defence of Christianity? Have no English Men but the English Clergy wrote",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        802,
+        871,
+        843,
+        892
+      ],
+      "polygon": [
+        [
+          802,
+          871
+        ],
+        [
+          802,
+          892
+        ],
+        [
+          843,
+          892
+        ],
+        [
+          843,
+          871
+        ]
+      ],
+      "content": "in",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        389,
+        83,
+        555,
+        123
+      ],
+      "polygon": [
+        [
+          389,
+          83
+        ],
+        [
+          389,
+          123
+        ],
+        [
+          555,
+          123
+        ],
+        [
+          555,
+          83
+        ]
+      ],
+      "content": "## [23]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        102,
+        125,
+        846,
+        652
+      ],
+      "polygon": [
+        [
+          102,
+          125
+        ],
+        [
+          108,
+          652
+        ],
+        [
+          840,
+          652
+        ],
+        [
+          840,
+          125
+        ]
+      ],
+      "content": "in Defense of it? If neither of these Questions can be answered in the Negative, I would ask a third, what possessed the Letter Writer to bear Witness against me, to the World, that I have any where said that the English Clergy have undertaken to prove Christianity without understanding it? I solemnly declare that in the Passage above quoted I meant no English Clergyman whatsoever. So far from that, I expressly say in p. 19 of the Dedication, that the Clergy of the established Church are they who have been principally watchful in the common Cause of Christianity, and most successful in repelling the Insults of its Enemies. I must appeal then, this second Time, to the Public for Justice.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        105,
+        676,
+        847,
+        908
+      ],
+      "polygon": [
+        [
+          115,
+          676
+        ],
+        [
+          110,
+          883
+        ],
+        [
+          534,
+          903
+        ],
+        [
+          573,
+          908
+        ],
+        [
+          847,
+          908
+        ],
+        [
+          842,
+          676
+        ]
+      ],
+      "content": "As I was cold in Defense of Scripture in general, so my next Charge is, that I have undervalued the Evidence arising from Miracles. Would the Reader know how? Hardly, by saying, as I expressly do p. 3. that Men have proved our Religion actually divine thereby. But this went",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        432,
+        92,
+        584,
+        128
+      ],
+      "polygon": [
+        [
+          432,
+          92
+        ],
+        [
+          432,
+          127
+        ],
+        [
+          584,
+          127
+        ],
+        [
+          584,
+          92
+        ]
+      ],
+      "content": "## [24]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        134,
+        127,
+        858,
+        388
+      ],
+      "polygon": [
+        [
+          144,
+          127
+        ],
+        [
+          134,
+          383
+        ],
+        [
+          852,
+          388
+        ],
+        [
+          852,
+          127
+        ]
+      ],
+      "content": "went for nothing, because I said in the same Place, that the external Evidence (in which Miracles are included) is not capable of strict Demonstration; but that the Internal is. Now here might be some Pretence for saying I overvalued internal Evidence: But by what Kind of Logic it could be inferred that, therefore, I undervalued Miracles, I know not.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        129,
+        416,
+        853,
+        872
+      ],
+      "polygon": [
+        [
+          134,
+          416
+        ],
+        [
+          129,
+          872
+        ],
+        [
+          843,
+          872
+        ],
+        [
+          852,
+          416
+        ]
+      ],
+      "content": "The Letter Writer next turns (as it would seem) from me to those who deny the Divinity of Christ, the Merits of his Death, the Obligation and Effects of the Sacraments, and the Doctrine of Grace. But it is but seeming. He appears willing that these false Opinions should be thought mine. For having charged me with horrid Crimes, without Shadow of Proof or Probability, he would cover the Scandal by infinuating me guilty of Heterodoxy; or why else did he lead his Reader to the very Door of Calumny, by artfully joining me, as undervaluing Miracles, to one of these, who he says denies the Truth of one of them?",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        773,
+        873,
+        844,
+        900
+      ],
+      "polygon": [
+        [
+          773,
+          873
+        ],
+        [
+          773,
+          900
+        ],
+        [
+          843,
+          900
+        ],
+        [
+          843,
+          873
+        ]
+      ],
+      "content": "But",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        411,
+        93,
+        576,
+        133
+      ],
+      "polygon": [
+        [
+          411,
+          93
+        ],
+        [
+          411,
+          133
+        ],
+        [
+          576,
+          133
+        ],
+        [
+          576,
+          93
+        ]
+      ],
+      "content": "## [ 25 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        120,
+        164,
+        873,
+        430
+      ],
+      "polygon": [
+        [
+          120,
+          164
+        ],
+        [
+          120,
+          430
+        ],
+        [
+          872,
+          430
+        ],
+        [
+          867,
+          164
+        ]
+      ],
+      "content": "But the Letter Writer should have considered, if this was his Design, that in this very Book I affirm more than once or twice, that the Doctrine of Redemption is the Foundation, and of the very Essence of Christianity. He should have known that all or most of those true Christian Doctrines mentioned above, are contained in the Doctrine of Redemption.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        122,
+        455,
+        885,
+        844
+      ],
+      "polygon": [
+        [
+          122,
+          455
+        ],
+        [
+          128,
+          844
+        ],
+        [
+          884,
+          844
+        ],
+        [
+          879,
+          455
+        ]
+      ],
+      "content": "There are, and those esteemed sincere Christians too, who would have taken the Names of Infidel and Heretic for Favours at the Hand of the Letter Writer. But I am of a different Humour. These Titles have no Charms for me. I have lived some Time in the World; and, blessed be God, without giving or taking Offence. This Time has been spent in my Parish Church (for I am a Country Clergyman, and reside constantly on my Cure) in the Service of my Neighbour, in my Study, and in the Offices of filial Piety,",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        498,
+        872,
+        542,
+        897
+      ],
+      "polygon": [
+        [
+          498,
+          872
+        ],
+        [
+          498,
+          896
+        ],
+        [
+          542,
+          896
+        ],
+        [
+          542,
+          872
+        ]
+      ],
+      "content": "## D",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        743,
+        866,
+        884,
+        898
+      ],
+      "polygon": [
+        [
+          743,
+          871
+        ],
+        [
+          743,
+          898
+        ],
+        [
+          884,
+          898
+        ],
+        [
+          884,
+          866
+        ],
+        [
+          753,
+          866
+        ]
+      ],
+      "content": "\"With",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        407,
+        76,
+        571,
+        117
+      ],
+      "polygon": [
+        [
+          407,
+          76
+        ],
+        [
+          407,
+          117
+        ],
+        [
+          571,
+          117
+        ],
+        [
+          571,
+          76
+        ],
+        [
+          502,
+          76
+        ],
+        [
+          496,
+          76
+        ]
+      ],
+      "content": "## [26]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        169,
+        133,
+        855,
+        189
+      ],
+      "polygon": [
+        [
+          169,
+          133
+        ],
+        [
+          169,
+          189
+        ],
+        [
+          855,
+          189
+        ],
+        [
+          855,
+          133
+        ]
+      ],
+      "content": "\"With lenient Arts t'extend a Mother's Breath,",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        169,
+        191,
+        854,
+        244
+      ],
+      "polygon": [
+        [
+          169,
+          191
+        ],
+        [
+          169,
+          244
+        ],
+        [
+          854,
+          244
+        ],
+        [
+          854,
+          191
+        ]
+      ],
+      "content": "\" Make Languor smile, and smooth the Bed of Death,",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        171,
+        246,
+        854,
+        303
+      ],
+      "polygon": [
+        [
+          171,
+          251
+        ],
+        [
+          171,
+          298
+        ],
+        [
+          181,
+          303
+        ],
+        [
+          854,
+          303
+        ],
+        [
+          854,
+          246
+        ],
+        [
+          515,
+          246
+        ],
+        [
+          504,
+          246
+        ],
+        [
+          485,
+          246
+        ],
+        [
+          465,
+          246
+        ],
+        [
+          454,
+          246
+        ],
+        [
+          281,
+          246
+        ]
+      ],
+      "content": "\" Explore the Thought, explain the asking Eye,",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        169,
+        305,
+        856,
+        362
+      ],
+      "polygon": [
+        [
+          169,
+          305
+        ],
+        [
+          174,
+          362
+        ],
+        [
+          855,
+          362
+        ],
+        [
+          855,
+          305
+        ]
+      ],
+      "content": "\" And keep awhile one Parent from the Sky.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        116,
+        373,
+        861,
+        889
+      ],
+      "polygon": [
+        [
+          121,
+          373
+        ],
+        [
+          116,
+          864
+        ],
+        [
+          591,
+          889
+        ],
+        [
+          856,
+          889
+        ],
+        [
+          861,
+          373
+        ]
+      ],
+      "content": "Excess of Zeal in such as the Letter Writer, and Defect of Religion in others of better Breeding, so efface these Feelings of Nature, that I could hardly have known how to have told them, had I not both the Example and the fine Words too, of one of the politeest Men of the Age to keep me in Countenance. The Time spent in my Study has been employed in confirming my own Faith against the erroneous Opinions the Letter Writer has raked together, and then, in planning a Work to confirm my Brethren. All the Reward I ever had, or ever expect to have here, is the Testimony of a good Conscience within Doors, and a good Name without. The first no Man can take from me; the other,",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        406,
+        101,
+        573,
+        146
+      ],
+      "polygon": [
+        [
+          406,
+          106
+        ],
+        [
+          406,
+          146
+        ],
+        [
+          573,
+          146
+        ],
+        [
+          573,
+          101
+        ],
+        [
+          436,
+          101
+        ]
+      ],
+      "content": "$$\n[ 2 7 ]\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        111,
+        145,
+        843,
+        239
+      ],
+      "polygon": [
+        [
+          111,
+          150
+        ],
+        [
+          111,
+          238
+        ],
+        [
+          843,
+          238
+        ],
+        [
+          843,
+          145
+        ]
+      ],
+      "content": "other, this Letter Writer, in the most unchristian Manner, has attempted to invade.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        113,
+        262,
+        869,
+        919
+      ],
+      "polygon": [
+        [
+          113,
+          267
+        ],
+        [
+          128,
+          914
+        ],
+        [
+          478,
+          918
+        ],
+        [
+          494,
+          918
+        ],
+        [
+          539,
+          918
+        ],
+        [
+          579,
+          918
+        ],
+        [
+          684,
+          918
+        ],
+        [
+          868,
+          904
+        ],
+        [
+          849,
+          262
+        ]
+      ],
+      "content": "But I heartily forgive him: And instead of putting uncharitable Constructions on his secret Intentions, will believe, tho' I know no more of him than by his Letter, that he is sincere, and only unhappily agitated by a furious Zeal for the Cause of God and Religion; instead of thinking he ought to be hindered from any further Advancement in the Church. If the Want of that be the Cause of his Spleen and Virulency, I heartily wish it may be speedily removed: nay, that the Letter he has wrote against me, may contribute towards it. Instead of using any warm Endeavours to lessen his Credit, which he professes in so many Words to be his Purpose against me, I wish him all Increase of Reputation and Honour: and instead of insulting him with the Words he seems to apply to me, — I pray for the Forgiveness and Conversion of all bad Men, I will assure him, that I pray for him as a Brother.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        484,
+        904,
+        871,
+        933
+      ],
+      "polygon": [
+        [
+          484,
+          904
+        ],
+        [
+          484,
+          933
+        ],
+        [
+          870,
+          933
+        ],
+        [
+          870,
+          904
+        ]
+      ],
+      "content": "D2 I have",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        417,
+        93,
+        575,
+        138
+      ],
+      "polygon": [
+        [
+          417,
+          93
+        ],
+        [
+          417,
+          128
+        ],
+        [
+          417,
+          133
+        ],
+        [
+          417,
+          137
+        ],
+        [
+          495,
+          137
+        ],
+        [
+          531,
+          137
+        ],
+        [
+          575,
+          137
+        ],
+        [
+          575,
+          93
+        ]
+      ],
+      "content": "## [ 28 ]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        161,
+        852,
+        917
+      ],
+      "polygon": [
+        [
+          135,
+          161
+        ],
+        [
+          125,
+          892
+        ],
+        [
+          265,
+          917
+        ],
+        [
+          842,
+          917
+        ],
+        [
+          852,
+          166
+        ]
+      ],
+      "content": "I have only one Word more to add: I have presumed to appeal to the Public, in a Matter indeed that little concerns it, yet perhaps of some Moment in the Consequence and Example. But whatever Necessity I now found myself under of not submitting to so false a Charge, the Public need not be under Apprehensions that I shall ever give them a second Trouble of the same Kind. It must be some strange Provocation indeed that can make me repeat it. For if I can forgive Injuries of this Kind, it is sure no hard Task to despise 'em. In a Word, I have made my Defence against these Calumnies now once for all; and my Enemies must pardon me, if I decline to be drawn in, into a Controversy of this Nature; or to be drawn off from the Subject I have commenced in Defence of Revelation. And, by the Grace of God, no unchristian Treatment shall ever make me languid or remiss in vindicating the Truth of the Christian Cause. Whether I am a weak Defender of Christianity must be submitted to the Judgment",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        429,
+        91,
+        592,
+        136
+      ],
+      "polygon": [
+        [
+          429,
+          91
+        ],
+        [
+          429,
+          136
+        ],
+        [
+          591,
+          136
+        ],
+        [
+          591,
+          91
+        ],
+        [
+          556,
+          91
+        ],
+        [
+          540,
+          91
+        ]
+      ],
+      "content": "## [29]",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        143,
+        136,
+        884,
+        920
+      ],
+      "polygon": [
+        [
+          143,
+          136
+        ],
+        [
+          148,
+          900
+        ],
+        [
+          223,
+          915
+        ],
+        [
+          884,
+          920
+        ],
+        [
+          869,
+          136
+        ]
+      ],
+      "content": "Judgment of the Public. But I am persuaded that That Public will suspend all Severity of Judgment till they see the whole Performance: And then, I hope, those who now think I have advanced a Paradox that cannot be supported, will be of another Opinion. But if it should not be my good Fortune to make out my Point to their Satisfaction, yet I should hope they will pass a more equitable Construction on the Attempt than the Letter Writer has thought fit to do; and make all favourable Allowances for the Newness and Difficulty of the Subject, and the many incidental Points touched upon, which will, I hope, be thought by all Persons of Equity, Candor, and good Learning to have their Use. In the mean Time, I can say with great Truth, and, I hope I may do it with Modesty, that what I offer to the Public concerning the Divine Legation of Moses is not a hafty sudden Thought, and what has appeared flattening to me upon its first Appearance only; as such Things often strike, which, upon Review, give no Satisfaction. But this has been long the Subject",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        412,
+        100,
+        562,
+        141
+      ],
+      "polygon": [
+        [
+          412,
+          100
+        ],
+        [
+          412,
+          140
+        ],
+        [
+          557,
+          140
+        ],
+        [
+          562,
+          130
+        ],
+        [
+          562,
+          100
+        ]
+      ],
+      "content": "[ 30 ]",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        128,
+        140,
+        823,
+        403
+      ],
+      "polygon": [
+        [
+          133,
+          140
+        ],
+        [
+          128,
+          402
+        ],
+        [
+          818,
+          398
+        ],
+        [
+          823,
+          140
+        ]
+      ],
+      "content": "Subject of my Thoughts; often laid by, and then again, at proper Intervals, refumed, reviewed, and turned on all Sides. What then I have been in no Hafte to approve after carefully weighing and examining every Part, I shall hope the equitable Reader will be in no Hafte to condemn or suspect while he has seen only one.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        343,
+        495,
+        602,
+        531
+      ],
+      "polygon": [
+        [
+          343,
+          495
+        ],
+        [
+          343,
+          530
+        ],
+        [
+          602,
+          530
+        ],
+        [
+          602,
+          495
+        ]
+      ],
+      "content": "FINIS.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "image",
+      "bbox_2d": [
+        294,
+        617,
+        651,
+        795
+      ],
+      "polygon": [
+        [
+          294,
+          617
+        ],
+        [
+          294,
+          739
+        ],
+        [
+          305,
+          795
+        ],
+        [
+          650,
+          795
+        ],
+        [
+          650,
+          617
+        ]
+      ],
+      "content": null,
+      "native_label": "image",
+      "image_path": "imgs/cropped_page27_idx3.jpg"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        231,
+        358,
+        753,
+        388
+      ],
+      "polygon": [
+        [
+          231,
+          378
+        ],
+        [
+          236,
+          388
+        ],
+        [
+          753,
+          388
+        ],
+        [
+          753,
+          358
+        ],
+        [
+          236,
+          358
+        ]
+      ],
+      "content": "Lately publish'd by the same Author,",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        150,
+        396,
+        840,
+        474
+      ],
+      "polygon": [
+        [
+          150,
+          396
+        ],
+        [
+          150,
+          474
+        ],
+        [
+          840,
+          474
+        ],
+        [
+          840,
+          396
+        ]
+      ],
+      "content": "THE Alliance between Church and State, or the Necessity and Equity of an Established Religion and a Test-Law, demonstrated.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        151,
+        476,
+        840,
+        528
+      ],
+      "polygon": [
+        [
+          151,
+          476
+        ],
+        [
+          151,
+          528
+        ],
+        [
+          839,
+          528
+        ],
+        [
+          839,
+          476
+        ]
+      ],
+      "content": "Printed for Fletcher Gyles against Grays Inn in Holborn.",
+      "native_label": "text"
+    }
+  ],
+  []
+]

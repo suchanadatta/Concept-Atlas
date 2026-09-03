@@ -1,0 +1,3650 @@
+[
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "A N",
+      "bbox_2d": [
+        505,
+        50,
+        612,
+        78
+      ],
+      "polygon": [
+        [
+          505,
+          50
+        ],
+        [
+          505,
+          78
+        ],
+        [
+          612,
+          78
+        ],
+        [
+          612,
+          50
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        189,
+        111,
+        260,
+        165
+      ],
+      "polygon": [
+        [
+          189,
+          111
+        ],
+        [
+          189,
+          165
+        ],
+        [
+          259,
+          165
+        ],
+        [
+          259,
+          111
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        352,
+        113,
+        416,
+        166
+      ],
+      "polygon": [
+        [
+          352,
+          113
+        ],
+        [
+          352,
+          166
+        ],
+        [
+          416,
+          166
+        ],
+        [
+          416,
+          113
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        508,
+        114,
+        578,
+        167
+      ],
+      "polygon": [
+        [
+          508,
+          114
+        ],
+        [
+          508,
+          166
+        ],
+        [
+          577,
+          166
+        ],
+        [
+          577,
+          114
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        666,
+        115,
+        745,
+        169
+      ],
+      "polygon": [
+        [
+          666,
+          115
+        ],
+        [
+          666,
+          168
+        ],
+        [
+          745,
+          168
+        ],
+        [
+          745,
+          115
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        840,
+        113,
+        923,
+        167
+      ],
+      "polygon": [
+        [
+          840,
+          113
+        ],
+        [
+          840,
+          167
+        ],
+        [
+          922,
+          167
+        ],
+        [
+          922,
+          113
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "O N",
+      "bbox_2d": [
+        499,
+        201,
+        611,
+        227
+      ],
+      "polygon": [
+        [
+          499,
+          201
+        ],
+        [
+          499,
+          226
+        ],
+        [
+          611,
+          226
+        ],
+        [
+          611,
+          201
+        ],
+        [
+          515,
+          201
+        ],
+        [
+          509,
+          201
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        229,
+        263,
+        369,
+        336
+      ],
+      "polygon": [
+        [
+          229,
+          263
+        ],
+        [
+          229,
+          336
+        ],
+        [
+          369,
+          336
+        ],
+        [
+          369,
+          263
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        496,
+        267,
+        627,
+        337
+      ],
+      "polygon": [
+        [
+          496,
+          267
+        ],
+        [
+          496,
+          337
+        ],
+        [
+          627,
+          337
+        ],
+        [
+          627,
+          267
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        739,
+        264,
+        879,
+        339
+      ],
+      "polygon": [
+        [
+          739,
+          264
+        ],
+        [
+          739,
+          338
+        ],
+        [
+          878,
+          338
+        ],
+        [
+          878,
+          264
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "In EPISTLES to a Friend.",
+      "bbox_2d": [
+        211,
+        386,
+        903,
+        420
+      ],
+      "polygon": [
+        [
+          211,
+          391
+        ],
+        [
+          211,
+          420
+        ],
+        [
+          902,
+          420
+        ],
+        [
+          898,
+          386
+        ],
+        [
+          709,
+          386
+        ],
+        [
+          634,
+          386
+        ],
+        [
+          216,
+          386
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "EPISTLE IV.",
+      "bbox_2d": [
+        365,
+        506,
+        752,
+        533
+      ],
+      "polygon": [
+        [
+          365,
+          506
+        ],
+        [
+          365,
+          533
+        ],
+        [
+          751,
+          533
+        ],
+        [
+          751,
+          506
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        403,
+        593,
+        702,
+        687
+      ],
+      "polygon": [
+        [
+          403,
+          593
+        ],
+        [
+          403,
+          687
+        ],
+        [
+          467,
+          687
+        ],
+        [
+          478,
+          687
+        ],
+        [
+          697,
+          687
+        ],
+        [
+          702,
+          682
+        ],
+        [
+          702,
+          598
+        ],
+        [
+          692,
+          593
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "L O N D O N :",
+      "bbox_2d": [
+        378,
+        758,
+        734,
+        782
+      ],
+      "polygon": [
+        [
+          378,
+          758
+        ],
+        [
+          378,
+          782
+        ],
+        [
+          733,
+          782
+        ],
+        [
+          733,
+          758
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Printed for J. Wilford, at the Three Flower-de-Luces behind the Chapter-House, St. Paul's. [Price one Shilling.]",
+      "bbox_2d": [
+        188,
+        790,
+        921,
+        871
+      ],
+      "polygon": [
+        [
+          188,
+          790
+        ],
+        [
+          188,
+          871
+        ],
+        [
+          921,
+          871
+        ],
+        [
+          921,
+          790
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "THE",
+      "bbox_2d": [
+        495,
+        151,
+        674,
+        170
+      ],
+      "polygon": [
+        [
+          495,
+          151
+        ],
+        [
+          495,
+          169
+        ],
+        [
+          673,
+          169
+        ],
+        [
+          673,
+          151
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "doc_title",
+      "content": "CONTENTS.",
+      "bbox_2d": [
+        206,
+        188,
+        893,
+        230
+      ],
+      "polygon": [
+        [
+          206,
+          188
+        ],
+        [
+          206,
+          230
+        ],
+        [
+          892,
+          230
+        ],
+        [
+          892,
+          188
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Of the NATURE and STATE of MAN, with respect to HAPPINESS.",
+      "bbox_2d": [
+        169,
+        250,
+        935,
+        302
+      ],
+      "polygon": [
+        [
+          169,
+          250
+        ],
+        [
+          169,
+          302
+        ],
+        [
+          494,
+          302
+        ],
+        [
+          934,
+          302
+        ],
+        [
+          934,
+          250
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Appiness ill defin'd by the Philosophers, Ver. 19. That it is the End of all men, and attainable by all, 28. God governs by general, not particular laws: intends Happiness to be equal, and to be so, it must be social, since all particular happiness depends on general, 35. As it is necessary for Order, and the Peace and Welfare of Society, that External goods should be unequal, happiness is not made to consist in these, 47. But, notwithstanding that inequality, the Balance of Happiness among mankind is kept even by Providence, by the two Passions of Hope and Fear, 66. What the happiness of Individuals is? as far as is consistent with the Constitution of this world, 76. That the good man has here the advantage, 80. The Error of imputing to Virtue what are only the calamities of Nature, or of Fortune, 92. The Folly of expecting that God should alter his General Laws in favour of particulars, 118. That we are not judges who are good? but that whoever they are, they must be happiest, 130, &c. That external goods are not the proper rewards, often inconsistent with, or destructive of Virtue, 166. But that even these can make no man happy without Virtue. Instanced in Riches, 176. Honours, 184. Birth, 203. Greatness, 213. Fame, 233. Superior Talents, 257. with pictures of human Infelicity in men possess of them all, 275, &c. That Virtue only constitutes a Happiness, whose Object is universal, 311. and whose Prospect eternal, 345. The perfection of which consists in a conformity to the Order of Providence, here, and in a resignation to it, here and hereafter, 534. Or (in other words) in Love of God, and Charity to all men, &c. to the end.",
+      "bbox_2d": [
+        172,
+        322,
+        943,
+        839
+      ],
+      "polygon": [
+        [
+          172,
+          322
+        ],
+        [
+          172,
+          839
+        ],
+        [
+          942,
+          839
+        ],
+        [
+          938,
+          322
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "content": "A N",
+      "bbox_2d": [
+        453,
+        185,
+        534,
+        204
+      ],
+      "polygon": [
+        [
+          453,
+          185
+        ],
+        [
+          453,
+          204
+        ],
+        [
+          533,
+          204
+        ],
+        [
+          533,
+          185
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "doc_title",
+      "content": "ESSAY on MAN.",
+      "bbox_2d": [
+        160,
+        224,
+        824,
+        266
+      ],
+      "polygon": [
+        [
+          160,
+          224
+        ],
+        [
+          160,
+          266
+        ],
+        [
+          823,
+          266
+        ],
+        [
+          823,
+          224
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "header",
+      "content": "E P I S T L E IV.",
+      "bbox_2d": [
+        296,
+        316,
+        685,
+        342
+      ],
+      "polygon": [
+        [
+          296,
+          316
+        ],
+        [
+          296,
+          342
+        ],
+        [
+          684,
+          342
+        ],
+        [
+          684,
+          316
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "image",
+      "content": null,
+      "bbox_2d": [
+        127,
+        402,
+        248,
+        479
+      ],
+      "polygon": [
+        [
+          127,
+          402
+        ],
+        [
+          127,
+          478
+        ],
+        [
+          248,
+          478
+        ],
+        [
+          248,
+          402
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "HAPPINESS! our Being's End and Aim! Good, Pleasure, Ease, Content! whate'er thy name :",
+      "bbox_2d": [
+        253,
+        400,
+        865,
+        491
+      ],
+      "polygon": [
+        [
+          253,
+          400
+        ],
+        [
+          259,
+          490
+        ],
+        [
+          865,
+          490
+        ],
+        [
+          865,
+          400
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "That Something still, which prompts th'eternal figh, For which we bear to live, nor fear to die; Which still so near us, yet beyond us lies, O'erlook'd, seen double, by the fool — and wife. Plant of Cæleftial feed! if dropt below, Say, in what mortal foil thou deign'ft to grow? Fair-opening to some Court's propitious Shine, Or deep with diamonds in the flaming Mine, 10 Twin'd with the wreaths Parnaßfian Laurels yield, Or reap'd in Iron Harvefts of the Field?",
+      "bbox_2d": [
+        120,
+        496,
+        854,
+        805
+      ],
+      "polygon": [
+        [
+          120,
+          496
+        ],
+        [
+          120,
+          805
+        ],
+        [
+          853,
+          805
+        ],
+        [
+          853,
+          496
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "aside_text",
+      "content": "5",
+      "bbox_2d": [
+        844,
+        566,
+        862,
+        585
+      ],
+      "polygon": [
+        [
+          844,
+          566
+        ],
+        [
+          844,
+          585
+        ],
+        [
+          862,
+          585
+        ],
+        [
+          862,
+          566
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "number",
+      "content": "B",
+      "bbox_2d": [
+        465,
+        811,
+        493,
+        831
+      ],
+      "polygon": [
+        [
+          465,
+          811
+        ],
+        [
+          465,
+          831
+        ],
+        [
+          493,
+          831
+        ],
+        [
+          493,
+          811
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "aside_text",
+      "content": "E X .",
+      "bbox_2d": [
+        960,
+        2,
+        980,
+        50
+      ],
+      "polygon": [
+        [
+          960,
+          2
+        ],
+        [
+          960,
+          50
+        ],
+        [
+          979,
+          50
+        ],
+        [
+          979,
+          2
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(2)",
+      "bbox_2d": [
+        407,
+        64,
+        530,
+        101
+      ],
+      "polygon": [
+        [
+          407,
+          64
+        ],
+        [
+          407,
+          101
+        ],
+        [
+          530,
+          101
+        ],
+        [
+          530,
+          64
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Where grows - where grows it not?- If vain our toil, We ought to blame the Culture, not the Soil: Fix'd to no spot is Happiness sincere; 15 'Tis no where to be found, or ev'ry where; 'Tis never to be bought, but always free, And fled from Monarchs, Lelius! dwells with thee.",
+      "bbox_2d": [
+        79,
+        120,
+        860,
+        306
+      ],
+      "polygon": [
+        [
+          79,
+          120
+        ],
+        [
+          79,
+          306
+        ],
+        [
+          859,
+          306
+        ],
+        [
+          859,
+          120
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Ask of the Learn'd the way, the Learn'd are blind, This bids to serve, and that to shun mankind: 20 Some place the bliss in Action, some in Ease, Those call it Pleasure, and Contentment these: Who thus define it, say they more or less Than this, that Happiness is Happiness? One grants his Pleasure is but Rest from pain, 25 One doubts of All, one owns ev'n Virtue vain.",
+      "bbox_2d": [
+        73,
+        316,
+        862,
+        568
+      ],
+      "polygon": [
+        [
+          78,
+          316
+        ],
+        [
+          73,
+          567
+        ],
+        [
+          861,
+          567
+        ],
+        [
+          861,
+          316
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Take Nature's path, and mad Opinion's leave, All States can reach it, and all Heads conceive; Obvious her goods, in no Extreme they dwell, There needs but thinking right, and meaning well; And mourn our various portions as we please, Equal is common Sense, and common Ease.",
+      "bbox_2d": [
+        71,
+        576,
+        849,
+        764
+      ],
+      "polygon": [
+        [
+          71,
+          576
+        ],
+        [
+          81,
+          764
+        ],
+        [
+          689,
+          764
+        ],
+        [
+          664,
+          754
+        ],
+        [
+          705,
+          754
+        ],
+        [
+          694,
+          764
+        ],
+        [
+          754,
+          764
+        ],
+        [
+          829,
+          764
+        ],
+        [
+          848,
+          764
+        ],
+        [
+          848,
+          586
+        ],
+        [
+          819,
+          576
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Remember Man! \"the Universal Cause \" Acts not by partial, but by gen'ral Laws;",
+      "bbox_2d": [
+        84,
+        768,
+        756,
+        830
+      ],
+      "polygon": [
+        [
+          84,
+          779
+        ],
+        [
+          84,
+          830
+        ],
+        [
+          99,
+          830
+        ],
+        [
+          104,
+          830
+        ],
+        [
+          756,
+          830
+        ],
+        [
+          756,
+          768
+        ],
+        [
+          99,
+          768
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "( 3 )",
+      "bbox_2d": [
+        456,
+        67,
+        578,
+        105
+      ],
+      "polygon": [
+        [
+          456,
+          67
+        ],
+        [
+          456,
+          104
+        ],
+        [
+          578,
+          104
+        ],
+        [
+          578,
+          72
+        ],
+        [
+          544,
+          67
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "And makes what Happiness we justly call,\nSubfist not in the Good of one, but all.\nThere's not a blessing Individuals find,\nBut some way leans and hearkens to the Kind.\nNo Bandit fierce, no Tyrant mad with pride,\nNo cavern'd Hermit, rest self-fatisfy'd;\nWho most to shun or hate mankind pretend,\nSeek an Admirer, or wou'd fix a Friend.\nAbstract what others feel, what others think,\nAll Pleasures ficken, and all Glories sink;\nEach has his share, and who wou'd more obtain\nShall find, the pleasure pays not half the pain.",
+      "bbox_2d": [
+        130,
+        124,
+        880,
+        501
+      ],
+      "polygon": [
+        [
+          130,
+          124
+        ],
+        [
+          135,
+          500
+        ],
+        [
+          879,
+          500
+        ],
+        [
+          879,
+          190
+        ],
+        [
+          869,
+          174
+        ],
+        [
+          879,
+          169
+        ],
+        [
+          879,
+          149
+        ],
+        [
+          840,
+          124
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "ORDER is Heav'n's first Law; and this confess, Some are, and must be, greater than the rest, More rich, more wise: but who infers from hence That such are happier, shocks all common sense. 50 Heav'n to mankind impartial we confess If all are equal in their happiness: But mutual wants this happiness increase, All Nature's difference keeps all Nature's peace. Condition, Circumstance is not the thing: Blifs is the same, in Subject or in King;",
+      "bbox_2d": [
+        131,
+        508,
+        897,
+        823
+      ],
+      "polygon": [
+        [
+          136,
+          508
+        ],
+        [
+          136,
+          822
+        ],
+        [
+          896,
+          822
+        ],
+        [
+          896,
+          508
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(4)",
+      "bbox_2d": [
+        389,
+        71,
+        509,
+        107
+      ],
+      "polygon": [
+        [
+          389,
+          71
+        ],
+        [
+          389,
+          107
+        ],
+        [
+          509,
+          107
+        ],
+        [
+          509,
+          71
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "In who obtain defence, or who defend; In him who is, or him who finds, a friend. Heav'n breathes thro' ev'ry member of the whole One common Blessing, as one common Soul: But Fortune's gifts if each alike possess, And each were equal, must not all contest? If then to all men Happiness was meant, God in Externals could not place Content.",
+      "bbox_2d": [
+        70,
+        127,
+        784,
+        373
+      ],
+      "polygon": [
+        [
+          75,
+          127
+        ],
+        [
+          70,
+          373
+        ],
+        [
+          784,
+          373
+        ],
+        [
+          774,
+          127
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "aside_text",
+      "content": "60",
+      "bbox_2d": [
+        785,
+        222,
+        829,
+        241
+      ],
+      "polygon": [
+        [
+          785,
+          222
+        ],
+        [
+          785,
+          240
+        ],
+        [
+          828,
+          240
+        ],
+        [
+          828,
+          222
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Fortune her gifts may variously dispose, And these be call'd unhappy, happy those; But Heav'n's just balance equal will appear, While those are plac'd in Hope, and these in Fear: Not present Good or Ill, the joy or curse, But future views, of Better, or of Worfe. 65 70",
+      "bbox_2d": [
+        67,
+        381,
+        822,
+        566
+      ],
+      "polygon": [
+        [
+          67,
+          381
+        ],
+        [
+          67,
+          566
+        ],
+        [
+          821,
+          566
+        ],
+        [
+          821,
+          551
+        ],
+        [
+          821,
+          381
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Oh Sons of Earth! attempt ye still to rise By mountains pil'd on mountains, to the Skies? Heav'n still with laughter the vain toil furveys, And buries Madmen in the Heaps they raise.",
+      "bbox_2d": [
+        67,
+        571,
+        783,
+        694
+      ],
+      "polygon": [
+        [
+          67,
+          571
+        ],
+        [
+          67,
+          693
+        ],
+        [
+          773,
+          693
+        ],
+        [
+          782,
+          571
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Know, all the Good that Individuals find, Or God and Nature meant to meer mankind, Reason's whole pleasures, all the joys of Senfe, Lie in three words, Health, Peace, and Competence.",
+      "bbox_2d": [
+        70,
+        698,
+        818,
+        819
+      ],
+      "polygon": [
+        [
+          70,
+          698
+        ],
+        [
+          70,
+          819
+        ],
+        [
+          818,
+          819
+        ],
+        [
+          818,
+          698
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "( 5 )",
+      "bbox_2d": [
+        423,
+        87,
+        538,
+        124
+      ],
+      "polygon": [
+        [
+          423,
+          87
+        ],
+        [
+          423,
+          123
+        ],
+        [
+          537,
+          123
+        ],
+        [
+          537,
+          87
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "But Health consists with Temperance alone, And Peace, fair Virtue! Peace is all thy own; 80 The gifts of Fortune good or bad may gain; But these less taste them, as they worse obtain. Say, in pursuit of Profit or Delight, Who risque the most, that take wrong means,or right? Of Vice or Virtue, whether blest or curst, 85 Which meets Contempt, or which Compassion first? Count all th' advantage profp'rous Vice attains, 'Tis but what Virtue flies from, and disdains; And grant the bad what happiness they wou'd, One they must want, which is, to pass for good. 90",
+      "bbox_2d": [
+        121,
+        142,
+        852,
+        510
+      ],
+      "polygon": [
+        [
+          121,
+          142
+        ],
+        [
+          126,
+          509
+        ],
+        [
+          842,
+          509
+        ],
+        [
+          847,
+          142
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Oh blind to Truth, and God's whole Scheme be Who fancy Blifs to Vice, to Virtue Woe: [low! Who fees and follows that great Scheme the best, Best knows his blessing, and will most be blest. But Fools the Good alone unhappy call, For Ills or Accidents that chance to All. See Falkland falls, the virtuous and the just! See godlike TURENNE prostrate on the duft! See SIDNEY bleeds amid the martial strife! Was this their Virtue, or Contempt of life? 100",
+      "bbox_2d": [
+        123,
+        515,
+        853,
+        814
+      ],
+      "polygon": [
+        [
+          123,
+          515
+        ],
+        [
+          123,
+          769
+        ],
+        [
+          188,
+          774
+        ],
+        [
+          168,
+          784
+        ],
+        [
+          168,
+          799
+        ],
+        [
+          178,
+          814
+        ],
+        [
+          853,
+          814
+        ],
+        [
+          853,
+          515
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "paragraph_title",
+      "content": "C",
+      "bbox_2d": [
+        460,
+        826,
+        492,
+        848
+      ],
+      "polygon": [
+        [
+          460,
+          826
+        ],
+        [
+          460,
+          847
+        ],
+        [
+          492,
+          847
+        ],
+        [
+          492,
+          826
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "content": "---",
+      "bbox_2d": [
+        959,
+        947,
+        971,
+        972
+      ],
+      "polygon": [
+        [
+          959,
+          947
+        ],
+        [
+          959,
+          972
+        ],
+        [
+          970,
+          972
+        ],
+        [
+          970,
+          951
+        ],
+        [
+          964,
+          947
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "( 6 )",
+      "bbox_2d": [
+        426,
+        92,
+        546,
+        126
+      ],
+      "polygon": [
+        [
+          426,
+          92
+        ],
+        [
+          426,
+          126
+        ],
+        [
+          545,
+          126
+        ],
+        [
+          545,
+          92
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Say was it Virtue, more tho' Heav'n ne'er gave, Lamented DIGBY! funk thee to the Grave? Tell me, if Virtue made the Son expire, Why, full of Days and Honour, lives the Sire? Why drew Marseilles good Bishop purer breath, 105 When Nature ficken'd, and each gale was death? Or why so long (in Life if long can be) Lent Heav'n a Parent to the Poor and Me?",
+      "bbox_2d": [
+        112,
+        144,
+        839,
+        388
+      ],
+      "polygon": [
+        [
+          117,
+          144
+        ],
+        [
+          112,
+          387
+        ],
+        [
+          789,
+          387
+        ],
+        [
+          834,
+          378
+        ],
+        [
+          839,
+          144
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "What makes all Physical or Moral Ill? There deviates Nature, and here wanders Will. 110 God sends not Ill, 'tis Nature lets it fall Or Chance escape, and Man improves it all. We just as wisely might of Heav'n complain, That righteous Abel was destroy'd by Cain, As that the virtuous Son is ill at ease, 115 When his lewd Father gave the dire disease. Think we like some weak Prince th' Eternal Cause, Prone for his Fav'rites to reverse his Laws? Shall burning Etna, if a Sage requires, Forget to thunder, and recall her fires? 120 On Air or Sea new motions be imprest, O blamelefs Bethel! to relieve thy breast?",
+      "bbox_2d": [
+        107,
+        397,
+        844,
+        825
+      ],
+      "polygon": [
+        [
+          112,
+          397
+        ],
+        [
+          107,
+          825
+        ],
+        [
+          843,
+          825
+        ],
+        [
+          838,
+          760
+        ],
+        [
+          838,
+          750
+        ],
+        [
+          843,
+          397
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "( 7 )",
+      "bbox_2d": [
+        423,
+        79,
+        545,
+        116
+      ],
+      "polygon": [
+        [
+          423,
+          79
+        ],
+        [
+          423,
+          116
+        ],
+        [
+          544,
+          116
+        ],
+        [
+          544,
+          79
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "When the loose Mountain trembles from on high, Shall Gravitation cease, if you go by? Or some old Temple nodding to its fall, 125 For Chartres head reserve the hanging Wall?",
+      "bbox_2d": [
+        111,
+        132,
+        857,
+        256
+      ],
+      "polygon": [
+        [
+          111,
+          137
+        ],
+        [
+          111,
+          255
+        ],
+        [
+          856,
+          255
+        ],
+        [
+          856,
+          132
+        ],
+        [
+          166,
+          132
+        ],
+        [
+          146,
+          132
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "But still this World (fo fitted for the Knave) Contents us not. A better shall we have?\n\nA Kingdom of the Just then let it be:\n\nBut first consider how those Just agree? 130\n\nThe Good must merit God's peculiar care;\n\nBut who but God can tell us, who they are?\n\nOne thinks on Calvin Heav'n's own spirit fell,\n\nAnother deems him Instrument of Hell;\n\nIf Calvin feel Heav'n's Blessing, or its Rod, 135\n\nThis cries there is, and that, there is no God.\n\nWhat shocks one part will edify the rest,\n\nNor with one System can they all be blest.\n\nGive each a System, all must be at strife;\n\nWhat different Systems for a man and wife? 140\n\nThe very best will variously incline,\n\nAnd what rewards your Virtue, punish mine.\n\n\"Whatever is, is right.\" — This world, 'tis true,\n\nWas made for Caesar — but for Titus too;",
+      "bbox_2d": [
+        117,
+        260,
+        871,
+        812
+      ],
+      "polygon": [
+        [
+          117,
+          260
+        ],
+        [
+          132,
+          812
+        ],
+        [
+          871,
+          812
+        ],
+        [
+          866,
+          260
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Was made for Caesar — but for Titus too :",
+      "bbox_2d": [
+        133,
+        795,
+        735,
+        822
+      ],
+      "polygon": [
+        [
+          133,
+          795
+        ],
+        [
+          133,
+          822
+        ],
+        [
+          539,
+          822
+        ],
+        [
+          589,
+          822
+        ],
+        [
+          734,
+          818
+        ],
+        [
+          734,
+          795
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(8)",
+      "bbox_2d": [
+        412,
+        77,
+        537,
+        115
+      ],
+      "polygon": [
+        [
+          412,
+          77
+        ],
+        [
+          412,
+          114
+        ],
+        [
+          537,
+          114
+        ],
+        [
+          537,
+          77
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "And which more bleft? who chain'd his Country, fay, Or he, whose Virtue figh'd to lose a day? 146",
+      "bbox_2d": [
+        87,
+        131,
+        860,
+        193
+      ],
+      "polygon": [
+        [
+          92,
+          131
+        ],
+        [
+          92,
+          193
+        ],
+        [
+          860,
+          193
+        ],
+        [
+          860,
+          136
+        ],
+        [
+          745,
+          131
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "\"But sometimes Virtue starves while Vice is fed.\" What then? is the reward of Virtue, Bread?\n\nThat, Vice may merit; 'tis the price of Toil:\n\nThe Knave deserves it when he tills the Soil,\n\nThe Knave deserves it when he tempts the Main, Where Madness fights, for Tyrants, or for Gain.\n\nThe good man may be weak, be indolent,\n\nNor is his claim to Plenty, but Content.\n\nBut grant him Riches, your demand is o'er?\n\n\"No—shall the good want health, the good want Add health and pow'r, and ev'ry earthly thing: [Pow'r?\n\n\"Why bounded pow'r? why private? why no King?\n\nNay, why external for internal giv'n,\n\nWhy is not Man a God, and Earth a Heav'n?\n\nWho ask and reason thus, will scarce conceive God gives enough while he has more to give:\n\nImmense the Pow'r, immense were the demand;\n\nSay, at what part of Nature will they stand?\n\nWhat nothing earthly gives, or can destroy.",
+      "bbox_2d": [
+        83,
+        182,
+        868,
+        790
+      ],
+      "polygon": [
+        [
+          83,
+          182
+        ],
+        [
+          83,
+          790
+        ],
+        [
+          858,
+          790
+        ],
+        [
+          863,
+          182
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "What nothing earthly gives, or can destroy, 165 The Soul's calm fun-fhine, and the heart-felt joy,",
+      "bbox_2d": [
+        81,
+        768,
+        855,
+        830
+      ],
+      "polygon": [
+        [
+          81,
+          768
+        ],
+        [
+          86,
+          830
+        ],
+        [
+          854,
+          830
+        ],
+        [
+          854,
+          768
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "( 9 )",
+      "bbox_2d": [
+        464,
+        104,
+        578,
+        140
+      ],
+      "polygon": [
+        [
+          464,
+          104
+        ],
+        [
+          464,
+          140
+        ],
+        [
+          577,
+          140
+        ],
+        [
+          577,
+          104
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Is Virtue's Prize : A better would you fix, And give Humility a Coach and fix? Justice a Conqu'ror's sword, or Truth a Gown, Or Publick Spirit, its great cure, a Crown? 170 Rewards that either would to Virtue bring No joy, or be destructive of the thing. How oft by these at sixty are undone The Virtues of a Saint at twenty-one!",
+      "bbox_2d": [
+        167,
+        160,
+        879,
+        407
+      ],
+      "polygon": [
+        [
+          167,
+          160
+        ],
+        [
+          167,
+          406
+        ],
+        [
+          878,
+          406
+        ],
+        [
+          878,
+          160
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "For Riches, can they give but to the Juft, His own Contentment, or another's Trust? Judges and Senates have been bought for gold, Esteem and Love were never to be fold. O Fool! to think, God hates the worthy Mind, The Lover, and the Love, of Human kind, 180 Whose Life is healthful, and whose Conscience clear; Because he wants a thousand pounds a year!\n\nHonour and Shame from no Condition rise; Act well your part, there all the Honour lies. Fortune in men has some small difference made, 185 One flaunts in Rags, one flutters in Brocade; The Cobler apron'd, and the Parfon gown'd, The Fryar hooded, and the Monarch crown'd.",
+      "bbox_2d": [
+        174,
+        410,
+        899,
+        851
+      ],
+      "polygon": [
+        [
+          174,
+          416
+        ],
+        [
+          180,
+          850
+        ],
+        [
+          893,
+          850
+        ],
+        [
+          893,
+          410
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "paragraph_title",
+      "content": "D",
+      "bbox_2d": [
+        529,
+        857,
+        560,
+        879
+      ],
+      "polygon": [
+        [
+          529,
+          857
+        ],
+        [
+          529,
+          878
+        ],
+        [
+          560,
+          878
+        ],
+        [
+          560,
+          857
+        ],
+        [
+          555,
+          857
+        ],
+        [
+          544,
+          857
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(10)",
+      "bbox_2d": [
+        379,
+        104,
+        526,
+        140
+      ],
+      "polygon": [
+        [
+          379,
+          104
+        ],
+        [
+          379,
+          140
+        ],
+        [
+          525,
+          140
+        ],
+        [
+          525,
+          104
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "\"What differ more (you cry) than Crown and Cowl?\" I'll tell you, friend: a Wife man and a Fool. 190 You'll find, if once the Monarch acts the Monk, Or Cobler-like, the Parson will be drunk, Worth makes the Man, and want of it the Fellow; The rest, is all but Leather or Prunelia.",
+      "bbox_2d": [
+        67,
+        158,
+        827,
+        345
+      ],
+      "polygon": [
+        [
+          67,
+          158
+        ],
+        [
+          67,
+          344
+        ],
+        [
+          826,
+          340
+        ],
+        [
+          826,
+          158
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Stuck o'er with Titles, and hung round with Strings, That thou may't be, by Kings, or Whores of Kings. Thy boasted Blood, a thousand years or so, May from Lucretia to Lucretia flow; But by your Father's worth if yours you rate, Count me those only who were good and great. 205 Go! if your ancient but ignoble blood Has crept thro' Scoundrels ever since the Flood, Go! and pretend your Family is young; Not own your Fathers have been fools so long. 210 What can ennoble Sots, or Slaves, or Cowards? Alas! not all the blood of all the Howards.",
+      "bbox_2d": [
+        69,
+        352,
+        833,
+        718
+      ],
+      "polygon": [
+        [
+          69,
+          352
+        ],
+        [
+          74,
+          718
+        ],
+        [
+          832,
+          718
+        ],
+        [
+          828,
+          352
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Look next on Greatness, say where Greatness lies? Where, but among the Heroes, and the Wife ?\" Heroes are much the fame, the point's agreed, 215 From Macedonia's Madman to the Suede;",
+      "bbox_2d": [
+        80,
+        727,
+        839,
+        851
+      ],
+      "polygon": [
+        [
+          80,
+          727
+        ],
+        [
+          80,
+          850
+        ],
+        [
+          838,
+          850
+        ],
+        [
+          838,
+          727
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(11)",
+      "bbox_2d": [
+        445,
+        93,
+        585,
+        130
+      ],
+      "polygon": [
+        [
+          445,
+          93
+        ],
+        [
+          445,
+          130
+        ],
+        [
+          585,
+          130
+        ],
+        [
+          585,
+          93
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "The whole strange purpose of their lives, to find",
+      "bbox_2d": [
+        149,
+        147,
+        821,
+        176
+      ],
+      "polygon": [
+        [
+          149,
+          147
+        ],
+        [
+          149,
+          176
+        ],
+        [
+          821,
+          176
+        ],
+        [
+          821,
+          147
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Or make, an Enemy of all Mankind:",
+      "bbox_2d": [
+        148,
+        178,
+        696,
+        206
+      ],
+      "polygon": [
+        [
+          148,
+          178
+        ],
+        [
+          148,
+          206
+        ],
+        [
+          696,
+          206
+        ],
+        [
+          696,
+          178
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Not one looks backward, onward still he goes,",
+      "bbox_2d": [
+        151,
+        212,
+        817,
+        240
+      ],
+      "polygon": [
+        [
+          151,
+          216
+        ],
+        [
+          151,
+          239
+        ],
+        [
+          816,
+          239
+        ],
+        [
+          816,
+          216
+        ],
+        [
+          791,
+          212
+        ],
+        [
+          166,
+          212
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Yet ne'er looks foreward, further than his nose. 220",
+      "bbox_2d": [
+        153,
+        244,
+        882,
+        269
+      ],
+      "polygon": [
+        [
+          153,
+          244
+        ],
+        [
+          153,
+          269
+        ],
+        [
+          877,
+          269
+        ],
+        [
+          882,
+          244
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "No lefs alike the Politick and wife,",
+      "bbox_2d": [
+        153,
+        274,
+        666,
+        302
+      ],
+      "polygon": [
+        [
+          153,
+          274
+        ],
+        [
+          153,
+          302
+        ],
+        [
+          665,
+          302
+        ],
+        [
+          665,
+          274
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "content": "All fly flow things, with circumfpective eyes;",
+      "bbox_2d": [
+        153,
+        308,
+        812,
+        335
+      ],
+      "polygon": [
+        [
+          153,
+          308
+        ],
+        [
+          153,
+          335
+        ],
+        [
+          811,
+          335
+        ],
+        [
+          811,
+          308
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "content": "Men in their loofe, unguarded hours they take,",
+      "bbox_2d": [
+        153,
+        339,
+        833,
+        366
+      ],
+      "polygon": [
+        [
+          153,
+          339
+        ],
+        [
+          153,
+          366
+        ],
+        [
+          832,
+          366
+        ],
+        [
+          832,
+          339
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "content": "Nor that themselves are wife, but others weak.",
+      "bbox_2d": [
+        154,
+        370,
+        828,
+        397
+      ],
+      "polygon": [
+        [
+          154,
+          370
+        ],
+        [
+          154,
+          397
+        ],
+        [
+          828,
+          397
+        ],
+        [
+          828,
+          370
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "content": "But grant that those can conquer, these can cheat, 225",
+      "bbox_2d": [
+        155,
+        402,
+        883,
+        430
+      ],
+      "polygon": [
+        [
+          155,
+          402
+        ],
+        [
+          155,
+          429
+        ],
+        [
+          883,
+          429
+        ],
+        [
+          883,
+          402
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "content": "'Tis phrafe abfurd to call a Villain great.",
+      "bbox_2d": [
+        155,
+        434,
+        747,
+        462
+      ],
+      "polygon": [
+        [
+          155,
+          434
+        ],
+        [
+          155,
+          461
+        ],
+        [
+          747,
+          461
+        ],
+        [
+          747,
+          434
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "content": "Who wickedly is wife, or madly brave,",
+      "bbox_2d": [
+        156,
+        465,
+        733,
+        492
+      ],
+      "polygon": [
+        [
+          156,
+          465
+        ],
+        [
+          161,
+          491
+        ],
+        [
+          732,
+          491
+        ],
+        [
+          732,
+          465
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "content": "Is but the more a fool, the more a knave.",
+      "bbox_2d": [
+        158,
+        496,
+        740,
+        523
+      ],
+      "polygon": [
+        [
+          158,
+          496
+        ],
+        [
+          158,
+          518
+        ],
+        [
+          189,
+          522
+        ],
+        [
+          739,
+          522
+        ],
+        [
+          739,
+          496
+        ],
+        [
+          685,
+          496
+        ],
+        [
+          664,
+          496
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "label": "text",
+      "content": "Who noble ends by noble means obtains,",
+      "bbox_2d": [
+        158,
+        527,
+        758,
+        554
+      ],
+      "polygon": [
+        [
+          158,
+          527
+        ],
+        [
+          158,
+          554
+        ],
+        [
+          752,
+          554
+        ],
+        [
+          757,
+          548
+        ],
+        [
+          757,
+          527
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "label": "text",
+      "content": "Or failing, smiles in Exile or in Chains,",
+      "bbox_2d": [
+        158,
+        558,
+        746,
+        585
+      ],
+      "polygon": [
+        [
+          158,
+          558
+        ],
+        [
+          158,
+          585
+        ],
+        [
+          745,
+          585
+        ],
+        [
+          745,
+          558
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "label": "text",
+      "content": "Like good Aurelius let him reign, or bleed",
+      "bbox_2d": [
+        160,
+        589,
+        789,
+        617
+      ],
+      "polygon": [
+        [
+          160,
+          589
+        ],
+        [
+          160,
+          616
+        ],
+        [
+          783,
+          616
+        ],
+        [
+          788,
+          611
+        ],
+        [
+          788,
+          589
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "label": "text",
+      "content": "Like Socrates, that Man is great indeed.",
+      "bbox_2d": [
+        159,
+        621,
+        743,
+        648
+      ],
+      "polygon": [
+        [
+          159,
+          621
+        ],
+        [
+          159,
+          648
+        ],
+        [
+          742,
+          648
+        ],
+        [
+          742,
+          621
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "label": "text",
+      "content": "What's Fame? that fancy'd Life in others breath!",
+      "bbox_2d": [
+        196,
+        653,
+        887,
+        680
+      ],
+      "polygon": [
+        [
+          196,
+          653
+        ],
+        [
+          196,
+          679
+        ],
+        [
+          887,
+          679
+        ],
+        [
+          887,
+          653
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "label": "text",
+      "content": "A thing beyond us ev'n before our death.",
+      "bbox_2d": [
+        161,
+        686,
+        759,
+        713
+      ],
+      "polygon": [
+        [
+          161,
+          690
+        ],
+        [
+          167,
+          708
+        ],
+        [
+          192,
+          713
+        ],
+        [
+          759,
+          713
+        ],
+        [
+          759,
+          686
+        ],
+        [
+          167,
+          686
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "label": "text",
+      "content": "Just what you hear you have, and what's unknown 235",
+      "bbox_2d": [
+        161,
+        716,
+        891,
+        744
+      ],
+      "polygon": [
+        [
+          161,
+          716
+        ],
+        [
+          161,
+          744
+        ],
+        [
+          891,
+          744
+        ],
+        [
+          891,
+          716
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "label": "text",
+      "content": "The fame (my Lord) if Tully's, or your own.",
+      "bbox_2d": [
+        161,
+        748,
+        815,
+        776
+      ],
+      "polygon": [
+        [
+          161,
+          748
+        ],
+        [
+          161,
+          776
+        ],
+        [
+          815,
+          776
+        ],
+        [
+          815,
+          748
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "label": "text",
+      "content": "All that we feel of it begins and ends",
+      "bbox_2d": [
+        163,
+        779,
+        720,
+        806
+      ],
+      "polygon": [
+        [
+          163,
+          779
+        ],
+        [
+          163,
+          806
+        ],
+        [
+          719,
+          806
+        ],
+        [
+          719,
+          779
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "label": "text",
+      "content": "In the small circle of our foes or friends;",
+      "bbox_2d": [
+        164,
+        810,
+        769,
+        839
+      ],
+      "polygon": [
+        [
+          164,
+          810
+        ],
+        [
+          164,
+          838
+        ],
+        [
+          763,
+          838
+        ],
+        [
+          768,
+          834
+        ],
+        [
+          768,
+          810
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "(12)",
+      "bbox_2d": [
+        385,
+        99,
+        533,
+        135
+      ],
+      "polygon": [
+        [
+          385,
+          99
+        ],
+        [
+          385,
+          134
+        ],
+        [
+          533,
+          134
+        ],
+        [
+          533,
+          99
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "To all beside, as much an empty Shade\nAn Eugene living, as a Cæfar dead,\nAlike, or when or where, they shone or shine,\nOr on the Rubicon, or on the Rhine.\nA Wit's a Feather, and a Chief a Rod;\nAn honest man's the noblest Work of God:\nFame but from death a Villain's name can save, 245\nAs Justice tears his body from the grave;\nWhen what t' Oblivion better were resign'd,\nIs hung on high, to poison half mankind.\nAll Fame is foreign, but of true Desert,\nPlays round the head, but comes not to the heart.\nOne self-approving Hour whole years out-weighs 251\nOf stupid Starers, and of loud huzza's;\nAnd more true joy Marcellus exil'd feels\nThan Cæfar with a Senate at his heels.\n\nIn Parts superior what advantage lies!\nTell (for You can) what is it to be wife?\n'Tis but to know, how little can be known,\nTo see all others faults, and feel our own;\nCondemn'd in Business or in Arts to drudge\nWithout a Second, or without a Judge:",
+      "bbox_2d": [
+        58,
+        157,
+        851,
+        849
+      ],
+      "polygon": [
+        [
+          63,
+          157
+        ],
+        [
+          58,
+          849
+        ],
+        [
+          846,
+          849
+        ],
+        [
+          850,
+          162
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(13)",
+      "bbox_2d": [
+        429,
+        86,
+        578,
+        120
+      ],
+      "polygon": [
+        [
+          429,
+          86
+        ],
+        [
+          429,
+          119
+        ],
+        [
+          578,
+          119
+        ],
+        [
+          578,
+          86
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Truths would you teach, or fave a finking Land?",
+      "bbox_2d": [
+        133,
+        139,
+        863,
+        166
+      ],
+      "polygon": [
+        [
+          133,
+          139
+        ],
+        [
+          133,
+          166
+        ],
+        [
+          862,
+          166
+        ],
+        [
+          862,
+          139
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "All fear, none aid you, and few understand.",
+      "bbox_2d": [
+        137,
+        172,
+        780,
+        199
+      ],
+      "polygon": [
+        [
+          137,
+          172
+        ],
+        [
+          137,
+          199
+        ],
+        [
+          780,
+          199
+        ],
+        [
+          780,
+          172
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "Painful Preheminence! yourself to view",
+      "bbox_2d": [
+        137,
+        204,
+        730,
+        232
+      ],
+      "polygon": [
+        [
+          137,
+          204
+        ],
+        [
+          137,
+          231
+        ],
+        [
+          729,
+          231
+        ],
+        [
+          729,
+          204
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "content": "Above Life's Weaknefs, and its Comforts too.",
+      "bbox_2d": [
+        139,
+        237,
+        789,
+        263
+      ],
+      "polygon": [
+        [
+          139,
+          241
+        ],
+        [
+          139,
+          263
+        ],
+        [
+          789,
+          263
+        ],
+        [
+          784,
+          237
+        ],
+        [
+          175,
+          237
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "content": "Bring then these Blessings to a strict account, 265\nMake fair deductions, see to what they mount?\nHow much of other each is sure to cost?\nHow each for other oft is wholly lost?\nHow inconsistent greater Goods with these?\nHow sometimes Life is risqu'd, and always Ease? 270\nThink, and if still the Things thy envy call,\nSay, would't thou be the Man to whom they fall?\nTo sigh for Ribbands if thou art so silly,\nMark how they grace Lord Umbra, or Sir Billy.\nIs yellow Dirt the passion of thy life? 275\nLook but on Gripus, or on Gripus' wife.\nIf Parts allure thee, think how Bacon shin'd,\nThe wisest, brightest, meanest of Mankind:\nOr ravish'd with the whistling of a Name,\nSee Cromwell, damn'd to everlasting Fame! 280\nIf all, united, thy ambition call,\nFrom ancient Story learn to scorn them all.",
+      "bbox_2d": [
+        141,
+        268,
+        893,
+        834
+      ],
+      "polygon": [
+        [
+          141,
+          268
+        ],
+        [
+          147,
+          834
+        ],
+        [
+          893,
+          834
+        ],
+        [
+          893,
+          268
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "label": "number",
+      "content": "E",
+      "bbox_2d": [
+        547,
+        844,
+        577,
+        867
+      ],
+      "polygon": [
+        [
+          547,
+          844
+        ],
+        [
+          547,
+          867
+        ],
+        [
+          577,
+          867
+        ],
+        [
+          577,
+          844
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(14)",
+      "bbox_2d": [
+        385,
+        91,
+        537,
+        128
+      ],
+      "polygon": [
+        [
+          385,
+          91
+        ],
+        [
+          385,
+          128
+        ],
+        [
+          536,
+          128
+        ],
+        [
+          536,
+          91
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "There, in the rich, the honour'd, fam'd, and great,\nSee the false Scale of Happiness compleat!\nIn hearts of Kings or arms of Queens who lay, 285\n(How happy!) those to ruin, these betray,\nMark by what wretched steps their Glory grows,\nFrom dirt and sea-weed as proud Venice rose;\nIn each, how Guilt and Greatness equal ran,\nAnd all that rais'd the Hero funk the Man. 290\nNow Europe's Lawrels on their brows behold,\nBut itain'd with Blood, or ill exchang'd for Gold:\nThen see them broke with Toils, or lost in Ease,\nOr infamous for plunder'd Provinces.\nOh Wealth ill-fated! which no Act of fame 295\nE'er taught to shine, or sanctify'd from shame!\nWhat greater bliss attends their close of life?\nSome greedy Minion, or imperious Wife,\nThe trophy'd Arches, story'd Halls invade,\nAnd haunt their flumbers in the pompous Shade.\nAlas! not dazled with their Noontide ray, 300\nCompute the Morn and Evening to the Day:\nThe whole amount of that enormous Fame\nA Tale! that blends their Glory with their Shame!",
+      "bbox_2d": [
+        63,
+        149,
+        851,
+        837
+      ],
+      "polygon": [
+        [
+          63,
+          149
+        ],
+        [
+          73,
+          836
+        ],
+        [
+          850,
+          836
+        ],
+        [
+          850,
+          149
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(15)",
+      "bbox_2d": [
+        450,
+        78,
+        598,
+        117
+      ],
+      "polygon": [
+        [
+          450,
+          78
+        ],
+        [
+          450,
+          117
+        ],
+        [
+          524,
+          117
+        ],
+        [
+          559,
+          117
+        ],
+        [
+          598,
+          117
+        ],
+        [
+          598,
+          78
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Know then this Truth (enough for man to know)\n\nVIRTUE alone is Happiness below:\n\nThe only point where human bliss stands still,\nAnd tastes the good without the fall to ill;\nWhere only, Merit constant pay receives,\nIs bless'd in what it takes, and what it gives:\nThe joy unequal'd, if its end it gain,\nAnd if it lose, attended with no pain:\nWithout fatiety, tho' e'er so bless'd,\nAnd but more relish'd as the more distress'd:\nThe broadest mirth unfeeling Folly wears,\nLess pleasing far than Virtue's very Tears.\n\nGood, from each object, from each place acquir'd,\nFor ever exercis'd, yet never tir'd;\n\nNever elated, while one man's oppress'd,\nNever dejected, while another's bless'd;\n\nAnd where no wants, no wishes can remain,\n\nSince but to wish more Virtue, is to gain.\n\nSee! the sole Blifs Heav'n could on all bestow,\nWhich who but feels, can taste, but thinks, can know:\n\nYet poor with Fortune, and with I earning blind",
+      "bbox_2d": [
+        148,
+        133,
+        920,
+        784
+      ],
+      "polygon": [
+        [
+          148,
+          133
+        ],
+        [
+          148,
+          784
+        ],
+        [
+          920,
+          784
+        ],
+        [
+          920,
+          133
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "Yet poor with Fortune, and with Learning blind,",
+      "bbox_2d": [
+        156,
+        769,
+        868,
+        798
+      ],
+      "polygon": [
+        [
+          156,
+          769
+        ],
+        [
+          156,
+          797
+        ],
+        [
+          863,
+          797
+        ],
+        [
+          868,
+          769
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "content": "The Bad muft mifs, the Good untaught will find, 325",
+      "bbox_2d": [
+        155,
+        800,
+        914,
+        829
+      ],
+      "polygon": [
+        [
+          155,
+          800
+        ],
+        [
+          155,
+          828
+        ],
+        [
+          914,
+          828
+        ],
+        [
+          914,
+          800
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(16)",
+      "bbox_2d": [
+        384,
+        92,
+        536,
+        129
+      ],
+      "polygon": [
+        [
+          384,
+          92
+        ],
+        [
+          384,
+          128
+        ],
+        [
+          536,
+          128
+        ],
+        [
+          536,
+          92
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Slave to no Sect, who takes no private road,\nBut looks thro' Nature up to Nature's God,\nPurfues that Chain which links th' immense Design,\nJoyns Heav'n, and Earth, and mortal, and divine;\nSees, that no Being any Blifs can know 330\nBut touches some above, and some below;\nLearns, from this Union of the rising Whole,\nThe first, last Purpose of the human Soul;\nAnd knows, where Faith, Law, Morals all began,\nAll end, in Love of God, and Love of Man. 335",
+      "bbox_2d": [
+        55,
+        148,
+        848,
+        460
+      ],
+      "polygon": [
+        [
+          55,
+          148
+        ],
+        [
+          55,
+          459
+        ],
+        [
+          847,
+          459
+        ],
+        [
+          843,
+          148
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "content": "For him alone, Hope leads from gole to gole, And opens still, and opens, on his soul, Till lengthen'd on to Faith, and unconfin'd, It pours the blifs that fills up all the mind. He fees, why Nature plants in Man alone Hope of known blifs, and Faith in blifs unknown? (Nature, whose dictates to no other Kind Are giv'n in vain, but what they seek they find) Wife is the Present: she connects in this His greatest Virtue with his greatest Blifs, 345 At once his own bright Prospect to be bleft, And strongest Motive to afflist the rest.",
+      "bbox_2d": [
+        53,
+        467,
+        850,
+        842
+      ],
+      "polygon": [
+        [
+          53,
+          467
+        ],
+        [
+          59,
+          841
+        ],
+        [
+          850,
+          841
+        ],
+        [
+          850,
+          467
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "( 71 )",
+      "bbox_2d": [
+        476,
+        87,
+        628,
+        131
+      ],
+      "polygon": [
+        [
+          476,
+          87
+        ],
+        [
+          476,
+          130
+        ],
+        [
+          628,
+          130
+        ],
+        [
+          628,
+          87
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "Self-Love thus push'd to Social, to Divine,\nGives thee to make thy Neighbour's blessing thine:\nIs this too little for the boundless heart?\nExtend it, let thy Enemies have part:\nGrasp the whole Worlds, of Reason, Life, and Sense,\nIn one close System of Benevolence.\nHappier, as kinder! in whate'er degree,\nAnd height of Blifs but height of Charity. 355\n\nGod loves from Whole to Parts: but human Soul\nMust rise from Individual to the Whole.\n\nSelf-love but serves the virtuous mind to wake,\nAs the small pebble stirs the peaceful Lake,\nThe Centre mov'd, a Circle strait succeeds, 360\nAnother still, and still another spreads;\nFriend, Parent, Neighbour, first it will embrace,\nHis Country next, and next all Human-race,\nWide, and more wide, th' O'erflowings of the mind\nTake ev'ry Creature in, of ev'ry kind; 365\nEarth smiles around, with boundless bounty bleft,\nAnd Heav'n beholds its Image in his Breast.\n\nCome then, my Friend! my Genius come along,\nOh Master of the Poet, and the Song!",
+      "bbox_2d": [
+        134,
+        138,
+        942,
+        848
+      ],
+      "polygon": [
+        [
+          150,
+          138
+        ],
+        [
+          134,
+          843
+        ],
+        [
+          936,
+          848
+        ],
+        [
+          941,
+          144
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "content": "F",
+      "bbox_2d": [
+        552,
+        851,
+        582,
+        874
+      ],
+      "polygon": [
+        [
+          552,
+          851
+        ],
+        [
+          552,
+          874
+        ],
+        [
+          581,
+          874
+        ],
+        [
+          581,
+          851
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "paragraph_title",
+      "content": "(18)",
+      "bbox_2d": [
+        386,
+        107,
+        532,
+        147
+      ],
+      "polygon": [
+        [
+          386,
+          107
+        ],
+        [
+          386,
+          146
+        ],
+        [
+          532,
+          146
+        ],
+        [
+          532,
+          112
+        ],
+        [
+          527,
+          107
+        ],
+        [
+          508,
+          107
+        ],
+        [
+          454,
+          107
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "And while the Muse now stoops, or now ascends,\nTo Man's low Passions, or their glorious Ends,\nTeach me like thee, in various Nature wife,\nTo fall with Dignity, with Temper rise;\nForm'd by thy Converse, happily to steer\nFrom grave to gay, from lively to severe,\nCorrect with spirit, eloquent with ease,\nIntent to reason, or polite to please.\n\nO! while along the stream of Time, thy Name\nExpanded flies, and gathers all its fame,\nSay, shall my little Bark attendant fail,\nPursue the Triumph, and partake the Gale?\nAnd shall this Verse to future age pretend\nThou wert my Guide, Philosopher, and Friend? 385\nThat urg'd by thee, I turn'd the tuneful Art\nFrom Sounds to Things, from Fancy to the Heart;\nFor Wit's false Mirror held up Nature's Light;\nShew'd erring Pride Whatever Is, is Right;\nThat Reason, Passion, answer one great Aim; 390\nThat true Self-love and Social are the same;\nThat Virtue only makes our Bliss below;\nAnd all our Knowledge is, Ourselves to know.",
+      "bbox_2d": [
+        58,
+        161,
+        841,
+        852
+      ],
+      "polygon": [
+        [
+          79,
+          161
+        ],
+        [
+          58,
+          852
+        ],
+        [
+          840,
+          852
+        ],
+        [
+          840,
+          161
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "content": "219",
+      "bbox_2d": [
+        416,
+        852,
+        467,
+        871
+      ],
+      "polygon": [
+        [
+          416,
+          852
+        ],
+        [
+          416,
+          865
+        ],
+        [
+          421,
+          871
+        ],
+        [
+          467,
+          871
+        ],
+        [
+          467,
+          865
+        ],
+        [
+          467,
+          858
+        ],
+        [
+          467,
+          852
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "Lately Published the three former Parts of",
+      "bbox_2d": [
+        208,
+        425,
+        848,
+        455
+      ],
+      "polygon": [
+        [
+          208,
+          425
+        ],
+        [
+          208,
+          455
+        ],
+        [
+          847,
+          455
+        ],
+        [
+          847,
+          425
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "content": "ANESSAY on MAN. In Epistles to a Friend. Sold by J. Wilford at the Three Flower-de-Luces, behind the Chapter-House in St. Paul's Church-yard.",
+      "bbox_2d": [
+        136,
+        473,
+        918,
+        574
+      ],
+      "polygon": [
+        [
+          136,
+          473
+        ],
+        [
+          136,
+          574
+        ],
+        [
+          907,
+          574
+        ],
+        [
+          917,
+          473
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "content": "Pope, Alexander. An essay on man. In epistles to a friend. Epistle IV. Printed for J. Wilford, at the Three Flower-de-Luces, behind the Chapter-House, St. Paul's, [1734]. Eighteenth Century Collections Online, link.gale.com%2Fapps%2Fdoc%2FCW0124721750%2FECCO%3Fu%3Ddublin%26sid%3Dbookmark-ECCO. Accessed 23 Sept. 2025.",
+      "bbox_2d": [
+        45,
+        20,
+        920,
+        53
+      ],
+      "polygon": [
+        [
+          45,
+          20
+        ],
+        [
+          45,
+          53
+        ],
+        [
+          919,
+          53
+        ],
+        [
+          919,
+          20
+        ]
+      ]
+    }
+  ]
+]

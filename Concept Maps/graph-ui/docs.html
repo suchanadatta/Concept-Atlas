@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation — Concept Atlas</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C15B5B'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%277%27 fill=%27%23C15B5B%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="vendor/fonts.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.docs{max-width:820px;margin:0 auto;padding:32px 24px 80px;color:var(--ink)}
+.docs h1{font-family:var(--serif);font-size:36px;margin:0 0 6px}
+.docs h2{font-family:var(--serif);font-size:24px;margin:32px 0 10px;border-bottom:2px solid var(--line);padding-bottom:6px}
+.docs h3{font-size:16px;margin:20px 0 8px}
+.docs p,.docs li{font-size:15px;line-height:1.65}
+.docs ul{padding-left:22px}
+.docs kbd{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1px 7px;font-size:12.5px;font-family:var(--sans)}
+.docs table{border-collapse:collapse;width:100%;margin:12px 0}
+.docs td,.docs th{border:1px solid var(--line);padding:8px 12px;font-size:13.5px;text-align:left}
+.docs th{background:var(--paper-2)}
+body.dark .docs{color:#D8D2C4}
+body.dark .docs h2{border-color:#3A362E}
+body.dark .docs kbd{background:#2E2A24;border-color:#4A443A;color:#E8E2D5}
+body.dark .docs td,body.dark .docs th{border-color:#3A362E}
+body.dark .docs th{background:#2A2721}
+</style>
+</head>
+<body>
+<div class="docs">
+<h1>Concept Atlas — Documentation</h1>
+<p style="color:var(--ink-soft)">A scholar's search system for 129 books of 18th-century British moral philosophy · 202 concepts · 1,099 relations · 27,000 pages.</p>
+
+<h2>1 · Searching</h2>
+<p>Start from the landing page (or the <kbd>/</kbd> search box in the header). Any query works — natural language included:</p>
+<ul>
+<li><b>“What is love?”</b> — question words are stripped; matches the <i>Love</i> concept and passages about love.</li>
+<li><b>“self-love and benevolence”</b> — multi-word AND across pages.</li>
+<li><b>“virtue”</b> — archaic spellings (<i>vertue</i>, <i>felf</i> for <i>self</i>, <i>loue</i> for <i>love</i>) are searched automatically.</li>
+</ul>
+<h3>Two search modes</h3>
+<table>
+<tr><th>🧠 semantic</th><td>Jasper embedding model (600M, token-compression) finds passages by <i>meaning</i>, then blends in lexical overlap (0.6 semantic + 0.4 lexical). Every result shows its score: <i>score 0.82 (sem 0.70 · lex 1.00)</i>.</td></tr>
+<tr><th>⌨ keyword</th><td>Classic term matching with archaic variants and per-page hit counts (×N). Instant.</td></tr>
+</table>
+<h3>Results view</h3>
+<ul>
+<li><b>Passages tab</b> — click any passage: the book opens in the right-hand reader at that exact page with every matching word boxed on the scan.</li>
+<li><b>Concepts tab</b> — matched concepts; click to open the floating concept graph focused on it.</li>
+<li><b>Graph tab</b> — the dynamic query graph: your query at the center, document hits and concepts around it, linked by relevance.</li>
+<li>The search bar at the top of results lets you refine the query without going back.</li>
+</ul>
+
+<h2>2 · The Concept Graph</h2>
+<p>Click <b>🌐 Explore concept graph</b> for the full 202-node map (2D or 3D).</p>
+<h3>Reading the edges</h3>
+<table>
+<tr><th>Relation</th><th>Line style</th></tr>
+<tr><td>supports</td><td>green solid, thick</td></tr>
+<tr><td>requires</td><td>teal solid</td></tr>
+<tr><td>entails</td><td>forest solid</td></tr>
+<tr><td>opposes</td><td><b>red solid, thickest</b> (pulses in 3D)</td></tr>
+<tr><td>contrasts with</td><td>orange dashed</td></tr>
+<tr><td>underlies / develops from / influences / exemplifies / subsumes</td><td>distinct dashes — see the Relations legend in the sidebar</td></tr>
+</table>
+<h3>Interactions</h3>
+<ul>
+<li><b>Click a node</b> — detail panel: definition, aliases, importance, related concepts (click to hop), evidence passages with 📖 open-in-PDF.</li>
+<li><b>Click an edge</b> — relation panel: endpoints, strength, other links of the same type. (Edges are clickable in both 2D and 3D.)</li>
+<li><b>Neighborhood</b> (Layout panel) — <i>1-hop only</i> isolates a concept's immediate connections; <i>2-hop</i> goes one further.</li>
+<li><b>⤢ spread</b> — each click spaces the graph 40% wider (2D and 3D) so dense clusters open up.</li>
+<li><b>Drag nodes</b> — they bounce back (force layout); hover shows definition tooltips.</li>
+<li><b>Importance / Relation-strength sliders</b> — filter the graph live.</li>
+<li><b>Queries tab</b> — 42 curated research questions; selecting one highlights its top concepts with rank badges.</li>
+</ul>
+
+<h2>3 · The Reader</h2>
+<ul>
+<li>Opens as a <b>side panel</b> (results shrink left) or full-screen from the graph.</li>
+<li><b>Word-level highlights</b> — your search terms are boxed on the scan using the OCR's word geometry.</li>
+<li><b>✎ Annotate</b> — toggle, then drag on the page to add notes; annotations persist per book.</li>
+<li><b>🔍 Search in book</b> — full-text search inside the open book (archaic-aware); click a hit to jump.</li>
+<li><b>Downloads</b> — PDF · TXT · MD · OCR JSONL · your annotations (JSON/Markdown).</li>
+<li>Text-only books open in paragraph mode — select words to annotate them.</li>
+<li><kbd>←</kbd><kbd>→</kbd> pages · <kbd>+</kbd><kbd>−</kbd> zoom · <kbd>Esc</kbd> close.</li>
+</ul>
+
+<h2>4 · Keyboard shortcuts</h2>
+<table>
+<tr><td><kbd>/</kbd></td><td>focus search</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>close reader / panel / overlay</td></tr>
+<tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>reader: previous / next page</td></tr>
+<tr><td><kbd>+</kbd> <kbd>−</kbd></td><td>reader zoom</td></tr>
+</table>
+
+<h2>5 · The floating graph window</h2>
+<p>From search results, the <b>Graph tab</b> or a concept click opens a movable (drag the title bar), resizable (drag the corner) mini-graph over the results. The <b>⇄ static/dynamic</b> button flips between the full concept map and a graph built live from your search results (query center → documents → concepts).</p>
+
+<h2>6 · Under the hood</h2>
+<ul>
+<li>OCR: GLM-OCR (VLM) + docTR word geometry, 300 dpi, validated 0 problems.</li>
+<li>Concept map: 15 extractors → 20 verifiers → 20 double-auditors → 25 independent auditors (1,096 verdicts); every evidence quote is a verbatim OCR substring.</li>
+<li>Semantic search: Jasper-Token-Compression-600M, 132,444 paragraphs (OCR + text books), 2048-dim, hybrid rerank.</li>
+</ul>
+<p style="margin-top:40px;color:var(--ink-faint)">Concept Atlas · British Moral Philosophy corpus · <a href="/">← back to the atlas</a></p>
+</div>
+</body>
+</html>

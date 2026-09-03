@@ -1,0 +1,16 @@
+{
+ "_warning": "Name-based TXT<->JSONL matching is UNRELIABLE across this corpus (different edition/collected-works naming). Only exact-name matches listed as reliable. For real ground-truth pairing use CONTENT matching (e.g., first-paragraph similarity) at eval time.",
+ "reliable_exact_name_pairs": [
+  [
+   "ASTELL-and-NORRIS_1695_1695_Letters-concerning-the_Love-of-God-2nd-ed-with-additions_0.txt",
+   "ASTELL-and-NORRIS_1695_1695_Letters-concerning-the_Love-of-God-2nd-ed-with-additions",
+   1.0
+  ],
+  [
+   "Copy of TURNBULL_1740_0_The-Principles-of-Moral-Philoosophy_1_(1).txt",
+   "TURNBULL_1740_0_The-Principles-of-Moral-Philoosophy",
+   1.0
+  ]
+ ],
+ "everything_else": "requires content-based matching"
+}

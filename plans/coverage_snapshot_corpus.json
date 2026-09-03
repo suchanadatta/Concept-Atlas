@@ -1,0 +1,307 @@
+{
+ "Whartonia vol. 2": {
+  "tok": 41753,
+  "words": 19299,
+  "cov": 0.4622
+ },
+ "Astell Bartlemy Fair": {
+  "tok": 44715,
+  "words": 20357,
+  "cov": 0.4553
+ },
+ "Astell Christian Religion (part 1)": {
+  "tok": 69017,
+  "words": 36127,
+  "cov": 0.5235
+ },
+ "Burnet A Method of Devotion (part 1)": {
+  "tok": 63053,
+  "words": 21427,
+  "cov": 0.3398
+ },
+ "Burnet A Method of Devotion (part 2)": {
+  "tok": 45536,
+  "words": 21298,
+  "cov": 0.4677
+ },
+ "Burnet Selected Correspondence in Broad 2019": {
+  "tok": 18577,
+  "words": 7161,
+  "cov": 0.3855
+ },
+ "Campbell An Enquiry into the Original of Moral Virtue part 3": {
+  "tok": 60049,
+  "words": 23765,
+  "cov": 0.3958
+ },
+ "Chudleigh The_Poems_and_Prose_of_Mary_Lady_Chudleigh_----_(The_Ladies_Defence_Or_The_Bride-Woman_s_Counsellor_Answer_d)": {
+  "tok": 14549,
+  "words": 7445,
+  "cov": 0.5117
+ },
+ "Cockburn Works vol. 2 (part 3)": {
+  "tok": 21616,
+  "words": 9235,
+  "cov": 0.4272
+ },
+ "Trotter Love at a Loss": {
+  "tok": 26851,
+  "words": 10279,
+  "cov": 0.3828
+ },
+ "Cudworth A Treatise concerning Eternal and Immutable Morality (part 1)": {
+  "tok": 39790,
+  "words": 18884,
+  "cov": 0.4746
+ },
+ "Cudworth A Treatise concerning Eternal and Immutable Morality (part 2)": {
+  "tok": 24605,
+  "words": 12109,
+  "cov": 0.4921
+ },
+ "Hutcheson An Essay on the Nature and Conduct of the Passions and Affections with Illustrations on the Moral Sense": {
+  "tok": 91679,
+  "words": 43410,
+  "cov": 0.4735
+ },
+ "Hutcheson An Inquiry into the Original of our Ideas of Beauty and Virtue": {
+  "tok": 111291,
+  "words": 47353,
+  "cov": 0.4255
+ },
+ "Hutcheson Philosophiae Moralis Institutio Compendiaria with A Short Introduction to Moral Philosophy": {
+  "tok": 194386,
+  "words": 86075,
+  "cov": 0.4428
+ },
+ "Hutcheson System of Moral Philosophy vol. 1 (part 1)": {
+  "tok": 51076,
+  "words": 26698,
+  "cov": 0.5227
+ },
+ "Hutcheson System of Moral Philosophy vol. 1 (part 2)": {
+  "tok": 54649,
+  "words": 28151,
+  "cov": 0.5151
+ },
+ "Hutcheson System of Moral Philosophy vol. 1 (part 3)": {
+  "tok": 8144,
+  "words": 4010,
+  "cov": 0.4924
+ },
+ "Hutcheson The Meditations of Marcus Aurelius": {
+  "tok": 93832,
+  "words": 38918,
+  "cov": 0.4148
+ },
+ "King An Essay on the Origin of Evil 1st ed 1731 (part 1)": {
+  "tok": 102020,
+  "words": 42999,
+  "cov": 0.4215
+ },
+ "King An Essay on the Origin of Evil 2nd ed 1732 vol. 1 (part 2)": {
+  "tok": 44513,
+  "words": 19163,
+  "cov": 0.4305
+ },
+ "King An Essay on the Origin of Evil 2nd ed 1732 vol. 2 (part 1)": {
+  "tok": 77384,
+  "words": 34806,
+  "cov": 0.4498
+ },
+ "Law A Discourse upon the Life and Character of Christ": {
+  "tok": 20299,
+  "words": 10133,
+  "cov": 0.4992
+ },
+ "Law Considertions on the State of the World with regard to the Theory of Religion (part 1)": {
+  "tok": 50400,
+  "words": 23422,
+  "cov": 0.4647
+ },
+ "Mandeville A Treatise on the Hypochondriack and the Hysterick Passions (part 1)": {
+  "tok": 42827,
+  "words": 21151,
+  "cov": 0.4939
+ },
+ "Mandeville Fable of the Bees 1714 (part 1)": {
+  "tok": 39731,
+  "words": 19244,
+  "cov": 0.4844
+ },
+ "Masham A Discourse concerning the love of God": {
+  "tok": 22813,
+  "words": 10455,
+  "cov": 0.4583
+ },
+ "Masham Discourse_concerning_the_love_of_God": {
+  "tok": 24033,
+  "words": 11344,
+  "cov": 0.472
+ },
+ "Masham Occasional Thoughts": {
+  "tok": 36167,
+  "words": 19199,
+  "cov": 0.5308
+ },
+ "Masham Selected Correspondence in Broad 2019": {
+  "tok": 62209,
+  "words": 25992,
+  "cov": 0.4178
+ },
+ "Newcome the Plain Account of the Sacrament": {
+  "tok": 23472,
+  "words": 11134,
+  "cov": 0.4744
+ },
+ "Norris A Practical Treatise concerning Humility part 1": {
+  "tok": 46219,
+  "words": 22041,
+  "cov": 0.4769
+ },
+ "Norris A collection of miscellanies": {
+  "tok": 109526,
+  "words": 33276,
+  "cov": 0.3038
+ },
+ "Norris Spiritual Counsel or The Fathers Advice to his Children": {
+  "tok": 24948,
+  "words": 4963,
+  "cov": 0.1989
+ },
+ "Norris Two Treatises concerning the divine light": {
+  "tok": 32843,
+  "words": 15855,
+  "cov": 0.4828
+ },
+ "Pope Essay on Man Epistle II": {
+  "tok": 2485,
+  "words": 1192,
+  "cov": 0.4797
+ },
+ "Pope Essay on Man Epistle III": {
+  "tok": 2660,
+  "words": 1173,
+  "cov": 0.441
+ },
+ "Pope Essay on Man Epistle IV": {
+  "tok": 3597,
+  "words": 1734,
+  "cov": 0.4821
+ },
+ "Rutherforth An essay on the nature and obligations of virtue Part 1": {
+  "tok": 51252,
+  "words": 25533,
+  "cov": 0.4982
+ },
+ "Rutherforth An essay on the nature and obligations of virtue Part 3": {
+  "tok": 4971,
+  "words": 1299,
+  "cov": 0.2613
+ },
+ "Rutherforth Institutes of Natural Law vol. 1 part 2": {
+  "tok": 64216,
+  "words": 30148,
+  "cov": 0.4695
+ },
+ "Rutherforth Institutes of Natural Law vol. 1 part 3": {
+  "tok": 34941,
+  "words": 17100,
+  "cov": 0.4894
+ },
+ "Rutherforth Institutes of Natural Law vol. 2 part 1": {
+  "tok": 62470,
+  "words": 30854,
+  "cov": 0.4939
+ },
+ "Rutherforth Institutes of Natural Law vol. 2 part 3": {
+  "tok": 64156,
+  "words": 30715,
+  "cov": 0.4788
+ },
+ "Shaftesbury Characteristicks vol. 1 LF edition": {
+  "tok": 86570,
+  "words": 39927,
+  "cov": 0.4612
+ },
+ "Shaftesbury Characteristicks vol. 3 LF edition": {
+  "tok": 136934,
+  "words": 57669,
+  "cov": 0.4211
+ },
+ "Shaftesbury Philosophical Regimen ed Rand": {
+  "tok": 221203,
+  "words": 101612,
+  "cov": 0.4594
+ },
+ "Gwinnett and Thomas Pylades and Corinna vol. 1 (part 2)": {
+  "tok": 25627,
+  "words": 12718,
+  "cov": 0.4963
+ },
+ "Thomas Miscellany Poems on Several Occasions": {
+  "tok": 24742,
+  "words": 13504,
+  "cov": 0.5458
+ },
+ "Thomas Selected Correspondence in Broad 2020": {
+  "tok": 20427,
+  "words": 8231,
+  "cov": 0.4029
+ },
+ "Turnbull Education for Life": {
+  "tok": 189979,
+  "words": 82042,
+  "cov": 0.4318
+ },
+ "Turnbull Observations upon Liberal Education": {
+  "tok": 187331,
+  "words": 84756,
+  "cov": 0.4524
+ },
+ "Turnbull The Principles of Moral and Christian Philosophy vol. 1": {
+  "tok": 195567,
+  "words": 87992,
+  "cov": 0.4499
+ },
+ "Warburton A Critical and Philosophical Commentary on Mr Pope_s Essay on Man (part 2)": {
+  "tok": 1759,
+  "words": 843,
+  "cov": 0.4792
+ },
+ "Warburton A Vindication of the Author of the Divine Legation of Moses": {
+  "tok": 4480,
+  "words": 2408,
+  "cov": 0.5375
+ },
+ "Warburton Divine Legation of Moses (part 2)": {
+  "tok": 66514,
+  "words": 27905,
+  "cov": 0.4195
+ },
+ "Watts Logick or the Right Use of Reason part 2": {
+  "tok": 50734,
+  "words": 22322,
+  "cov": 0.44
+ },
+ "Watts Philosophical Essays 1733 (part 2)": {
+  "tok": 39682,
+  "words": 19063,
+  "cov": 0.4804
+ },
+ "Watts Philosophical Essays 1742 3rd ed (part 2)": {
+  "tok": 42735,
+  "words": 20701,
+  "cov": 0.4844
+ },
+ "Watts The Improvement of the Mind (part 1)": {
+  "tok": 42843,
+  "words": 22641,
+  "cov": 0.5285
+ },
+ "Watts The Improvement of the Mind (part 2)": {
+  "tok": 43825,
+  "words": 22791,
+  "cov": 0.52
+ }
+}

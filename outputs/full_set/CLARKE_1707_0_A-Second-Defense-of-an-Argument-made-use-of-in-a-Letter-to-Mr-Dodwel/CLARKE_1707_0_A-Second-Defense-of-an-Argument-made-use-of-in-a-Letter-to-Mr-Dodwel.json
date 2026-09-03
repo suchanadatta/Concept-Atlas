@@ -1,0 +1,8226 @@
+[
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        384,
+        48,
+        882,
+        103
+      ],
+      "polygon": [
+        [
+          390,
+          48
+        ],
+        [
+          390,
+          103
+        ],
+        [
+          842,
+          103
+        ],
+        [
+          852,
+          103
+        ],
+        [
+          872,
+          98
+        ],
+        [
+          877,
+          93
+        ],
+        [
+          877,
+          48
+        ]
+      ],
+      "content": "A Second 112. $\\frac {9}{2}$ $\\frac {5}{2}$",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        100,
+        113,
+        890,
+        185
+      ],
+      "polygon": [
+        [
+          100,
+          113
+        ],
+        [
+          100,
+          185
+        ],
+        [
+          889,
+          185
+        ],
+        [
+          889,
+          113
+        ],
+        [
+          246,
+          113
+        ]
+      ],
+      "content": "DEFENSE",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        103,
+        202,
+        885,
+        458
+      ],
+      "polygon": [
+        [
+          103,
+          213
+        ],
+        [
+          103,
+          457
+        ],
+        [
+          884,
+          457
+        ],
+        [
+          884,
+          223
+        ],
+        [
+          869,
+          202
+        ],
+        [
+          123,
+          202
+        ]
+      ],
+      "content": "OF AN ARGUMENT Made ufe of in a LETTER To Mr DODWEL,",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        163,
+        459,
+        823,
+        607
+      ],
+      "polygon": [
+        [
+          163,
+          474
+        ],
+        [
+          163,
+          607
+        ],
+        [
+          643,
+          607
+        ],
+        [
+          738,
+          602
+        ],
+        [
+          818,
+          597
+        ],
+        [
+          822,
+          459
+        ],
+        [
+          183,
+          459
+        ]
+      ],
+      "content": "To Prove The Immateriality And Natural Immortality",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        140,
+        625,
+        852,
+        709
+      ],
+      "polygon": [
+        [
+          140,
+          625
+        ],
+        [
+          140,
+          708
+        ],
+        [
+          847,
+          708
+        ],
+        [
+          851,
+          704
+        ],
+        [
+          847,
+          625
+        ],
+        [
+          325,
+          625
+        ],
+        [
+          290,
+          625
+        ],
+        [
+          215,
+          625
+        ],
+        [
+          205,
+          625
+        ]
+      ],
+      "content": "SOUL.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        89,
+        726,
+        892,
+        788
+      ],
+      "polygon": [
+        [
+          89,
+          731
+        ],
+        [
+          94,
+          787
+        ],
+        [
+          891,
+          787
+        ],
+        [
+          891,
+          726
+        ],
+        [
+          144,
+          726
+        ],
+        [
+          94,
+          726
+        ]
+      ],
+      "content": "In a Letter to the Author of A Reply to Mr Clarke's Defense, &c.",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        309,
+        806,
+        673,
+        838
+      ],
+      "polygon": [
+        [
+          309,
+          806
+        ],
+        [
+          309,
+          833
+        ],
+        [
+          315,
+          837
+        ],
+        [
+          325,
+          837
+        ],
+        [
+          672,
+          837
+        ],
+        [
+          672,
+          806
+        ]
+      ],
+      "content": "L O N D O N,",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        89,
+        838,
+        894,
+        898
+      ],
+      "polygon": [
+        [
+          89,
+          838
+        ],
+        [
+          89,
+          897
+        ],
+        [
+          892,
+          897
+        ],
+        [
+          892,
+          838
+        ]
+      ],
+      "content": "Printed by W. B. for James Knapton, at the Crown in St. Paul's Church-Yard. 1707.",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        425,
+        27,
+        579,
+        71
+      ],
+      "polygon": [
+        [
+          425,
+          27
+        ],
+        [
+          425,
+          70
+        ],
+        [
+          578,
+          70
+        ],
+        [
+          578,
+          27
+        ]
+      ],
+      "content": "(    )",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        402,
+        155,
+        607,
+        186
+      ],
+      "polygon": [
+        [
+          402,
+          161
+        ],
+        [
+          402,
+          165
+        ],
+        [
+          402,
+          171
+        ],
+        [
+          402,
+          175
+        ],
+        [
+          402,
+          181
+        ],
+        [
+          402,
+          185
+        ],
+        [
+          606,
+          185
+        ],
+        [
+          606,
+          155
+        ],
+        [
+          408,
+          155
+        ]
+      ],
+      "content": "# A Second",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        110,
+        193,
+        859,
+        256
+      ],
+      "polygon": [
+        [
+          110,
+          193
+        ],
+        [
+          110,
+          256
+        ],
+        [
+          858,
+          256
+        ],
+        [
+          858,
+          193
+        ]
+      ],
+      "content": "# DEFENSE",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        380,
+        269,
+        609,
+        297
+      ],
+      "polygon": [
+        [
+          380,
+          269
+        ],
+        [
+          380,
+          296
+        ],
+        [
+          399,
+          296
+        ],
+        [
+          430,
+          296
+        ],
+        [
+          608,
+          296
+        ],
+        [
+          608,
+          269
+        ]
+      ],
+      "content": "O F A N",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        80,
+        304,
+        904,
+        377
+      ],
+      "polygon": [
+        [
+          80,
+          304
+        ],
+        [
+          85,
+          376
+        ],
+        [
+          903,
+          376
+        ],
+        [
+          903,
+          304
+        ]
+      ],
+      "content": "ARGUMENT to prove the Im materiality of the SOUL, c.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        130,
+        394,
+        290,
+        427
+      ],
+      "polygon": [
+        [
+          130,
+          394
+        ],
+        [
+          130,
+          426
+        ],
+        [
+          289,
+          426
+        ],
+        [
+          289,
+          394
+        ]
+      ],
+      "content": "SIR,",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        84,
+        427,
+        921,
+        697
+      ],
+      "polygon": [
+        [
+          84,
+          427
+        ],
+        [
+          94,
+          697
+        ],
+        [
+          920,
+          692
+        ],
+        [
+          920,
+          427
+        ]
+      ],
+      "content": "IN abstract and Metaphysical Speculations, it is hardly possible that anything should ever be soclearly expressed, or so strongly proved; but Those who are not very much versed in such Inquiries, will perpetually be apt to misapprehend what is said; and Men of Wit and Parts will always be able to raise new Difficulties, and perplex their Readers with intricate and endless Disputations.",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        96,
+        695,
+        940,
+        912
+      ],
+      "polygon": [
+        [
+          96,
+          695
+        ],
+        [
+          112,
+          906
+        ],
+        [
+          939,
+          911
+        ],
+        [
+          930,
+          695
+        ]
+      ],
+      "content": "Since you have not thought fit in your Reply, to offer any new Arguments, but only to urge again the same Objections which you had before advanced, against what I perswade my self I have already explained with as much clearness as can reasonably be expected in Questions of this",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        449,
+        2,
+        607,
+        42
+      ],
+      "polygon": [
+        [
+          449,
+          2
+        ],
+        [
+          449,
+          42
+        ],
+        [
+          602,
+          42
+        ],
+        [
+          606,
+          37
+        ],
+        [
+          606,
+          2
+        ]
+      ],
+      "content": "$$\n(2)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        125,
+        41,
+        922,
+        569
+      ],
+      "polygon": [
+        [
+          135,
+          46
+        ],
+        [
+          125,
+          568
+        ],
+        [
+          917,
+          568
+        ],
+        [
+          911,
+          41
+        ]
+      ],
+      "content": "this Nature; I think I might very well, without entering into any further debate, have now left it wholly to the judicious and impartial Reader, to consider and determine with himself on which side the greatest Strength of Reason and Argument lies. Neverthieless, the Candour and Ingenuity with which you have written, have once more engaged me to indeavour to give you satisfaction in this matter; by pointing out to you some of the principal instances, wherein you seem either to have mistaken the Question it self, or to have misunderstood my Argument upon it. But hereafter, unless any new Objections shall be proposed, and not merely Repetitions and ingenious Representations of the former Difficulties, you must excuse me if I think not my self obliged to do so any more.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "aside_text",
+      "bbox_2d": [
+        0,
+        650,
+        100,
+        696
+      ],
+      "polygon": [
+        [
+          5,
+          650
+        ],
+        [
+          0,
+          656
+        ],
+        [
+          0,
+          695
+        ],
+        [
+          99,
+          695
+        ],
+        [
+          99,
+          650
+        ]
+      ],
+      "content": "A. 19, B. 10, C. 20",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        112,
+        585,
+        923,
+        914
+      ],
+      "polygon": [
+        [
+          123,
+          591
+        ],
+        [
+          123,
+          899
+        ],
+        [
+          645,
+          913
+        ],
+        [
+          907,
+          913
+        ],
+        [
+          918,
+          585
+        ]
+      ],
+      "content": "In repeating my answer to your first Objection, you cite my Words thus; To suppose any Power or Quality of this kind, arising from or belonging to the several Parts of which the Whole consists, is a direct and express Contradiction : Whereas my Words were ; To suppose any Power or Quality of this kind, arising from, or belonging to [any whole System of Matter, without belonging to] the several Parts of which that Whole consists, is a direct and express Contradiction",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        389,
+        14,
+        535,
+        55
+      ],
+      "polygon": [
+        [
+          389,
+          14
+        ],
+        [
+          389,
+          54
+        ],
+        [
+          534,
+          54
+        ],
+        [
+          534,
+          14
+        ]
+      ],
+      "content": "$$\n(3)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        69,
+        53,
+        958,
+        273
+      ],
+      "polygon": [
+        [
+          74,
+          59
+        ],
+        [
+          74,
+          273
+        ],
+        [
+          948,
+          268
+        ],
+        [
+          957,
+          53
+        ]
+      ],
+      "content": "I make no question but this Defence is only a Fault of the Press in your Reply. P. 14. Yet it was proper to take notice of it, because perhaps every Reader will not be at the Pains to compare the Books; and it happens, as the Passage stands in your citation, to give a very disadvantageous Representation of my Sense.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        70,
+        288,
+        850,
+        902
+      ],
+      "polygon": [
+        [
+          80,
+          288
+        ],
+        [
+          80,
+          896
+        ],
+        [
+          849,
+          901
+        ],
+        [
+          849,
+          288
+        ]
+      ],
+      "content": "In your preliminary defining the Signification of the Terms $^{*}$ , I cannot see any Reason, (unless it be to perplex the Reader with a new Question, Whether the Soul always Actually thinks or not, which is wholly foreign to the Matter at present in Dispute;) I cannot see any Reason, I say, why you should affirm that Consciousness cannot be properly employed to signify the same thing with a Power of Thinking, unless by a Power of Thinking, be understood, not a Capacity to Think, but Actual Thinking. For, the thing to be proved, being This, that a Divisible Substance is not capable of a Power of Thinking; what difference can it make, whether by a Power of Thinking you understand actual Thinking, or a Capacity to Think? For I presume you will not deny, but whatever is proved incapable of actual Thinking, is also proved incapable (pardon the Expression) of a Capacity of Thinking; and whatever is proved",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        836,
+        292,
+        946,
+        366
+      ],
+      "polygon": [
+        [
+          871,
+          297
+        ],
+        [
+          866,
+          302
+        ],
+        [
+          857,
+          307
+        ],
+        [
+          851,
+          312
+        ],
+        [
+          846,
+          317
+        ],
+        [
+          841,
+          322
+        ],
+        [
+          836,
+          342
+        ],
+        [
+          836,
+          366
+        ],
+        [
+          945,
+          366
+        ],
+        [
+          945,
+          297
+        ]
+      ],
+      "content": "* Reply;\npag. 10.",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        395,
+        10,
+        545,
+        49
+      ],
+      "polygon": [
+        [
+          395,
+          10
+        ],
+        [
+          395,
+          48
+        ],
+        [
+          544,
+          48
+        ],
+        [
+          544,
+          10
+        ]
+      ],
+      "content": "(4) ",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        72,
+        48,
+        892,
+        319
+      ],
+      "polygon": [
+        [
+          72,
+          48
+        ],
+        [
+          88,
+          318
+        ],
+        [
+          891,
+          318
+        ],
+        [
+          881,
+          48
+        ]
+      ],
+      "content": "incapable of a Capacity of Thinking, is all proved incapable of actual Thinking. Wherefore there was no need of indeavouring at this time to perplex and multiply the Question by any such disputable Distinction; Which kind of Difficulties, foreign to the thing at present under Consideration, they who are desirous to come at Truth, and to come at it the nearest way, ought always very carefully to avoid.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        96,
+        316,
+        907,
+        701
+      ],
+      "polygon": [
+        [
+          96,
+          322
+        ],
+        [
+          111,
+          701
+        ],
+        [
+          906,
+          701
+        ],
+        [
+          886,
+          316
+        ]
+      ],
+      "content": "Consciousness, in the most strict and exact Sense of the Word, signifies neither a Capacity of Thinking, nor yet Actual Thinking, but the Reflex Act by which I know that I think, and that my Thoughts and Actions are my own and not Anothers. But in the present Question, the Reader needs not trouble himself with this Nicety of Distinction; but may understand it indifferently in all or any of these Significations; Because the Argument proves universally, that Matter is neither capable of This Reflex Act, nor of the first Direct Act, nor of the Capacity of Thinking at all.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        115,
+        717,
+        922,
+        915
+      ],
+      "polygon": [
+        [
+          115,
+          722
+        ],
+        [
+          115,
+          890
+        ],
+        [
+          355,
+          909
+        ],
+        [
+          921,
+          914
+        ],
+        [
+          917,
+          722
+        ]
+      ],
+      "content": "By an Individual Power I mean (in the Sense that Logicians commonly use the Word Individual when they oppose it to Specifick,) such a Power as is really and truly in the Nature of the thing it self One Power, in opposition to its being such merely in our abstract",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        423,
+        14,
+        573,
+        55
+      ],
+      "polygon": [
+        [
+          423,
+          14
+        ],
+        [
+          423,
+          54
+        ],
+        [
+          572,
+          54
+        ],
+        [
+          572,
+          14
+        ]
+      ],
+      "content": "( 5 )",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        88,
+        50,
+        893,
+        905
+      ],
+      "polygon": [
+        [
+          88,
+          50
+        ],
+        [
+          88,
+          889
+        ],
+        [
+          193,
+          904
+        ],
+        [
+          892,
+          904
+        ],
+        [
+          892,
+          56
+        ]
+      ],
+      "content": "abstract Complex Notion. For Instance: When I speak of my own Consciousness, and call it an Individual Power; I mean thereby to express that it is really and truly one undivided Consciousness, and not a multitude of distinct Consciousnesses added together: But when I speak of the Blueness (suppose) or Redness, or Sweetness of a Body, as of a single Power belonging to that Body; 'tis evident I can mean only, that it is such merely in the abstract complex Notion or Idea I frame in my Mind; that is, in the same Sense as we say an Army or a City is One; But that really and indeed it is a vast Multitude of Bluenesses, Rednesses, or Sweetnesses; or rather (to speak strictly and properly) a vast Multitude of such Parts as excite in us the Sensations of Blueness, Redness or Sweetness. Now the thing to be proved, was, that such an Individual Power as Consciousness, cannot possibly inhere in or result from a divisible Substance. And this I did prove; not by defining or supposing an Individual Power to be a Power that cannot possibly inhere in or result from a divisible Substance; (which would indeed have been a Begging of the Question;) but by demonstrating, that it would necessarily imply a plain and direct Contradiction, for any Power which is really One and",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        447,
+        4,
+        594,
+        41
+      ],
+      "polygon": [
+        [
+          447,
+          4
+        ],
+        [
+          447,
+          40
+        ],
+        [
+          593,
+          40
+        ],
+        [
+          593,
+          4
+        ]
+      ],
+      "content": "(6) ",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        128,
+        42,
+        914,
+        99
+      ],
+      "polygon": [
+        [
+          128,
+          42
+        ],
+        [
+          128,
+          98
+        ],
+        [
+          913,
+          98
+        ],
+        [
+          913,
+          42
+        ]
+      ],
+      "content": "not Many, (such as you your self acknowledge Confcioufsfes to be, by confessing",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        2,
+        97,
+        914,
+        231
+      ],
+      "polygon": [
+        [
+          2,
+          97
+        ],
+        [
+          7,
+          230
+        ],
+        [
+          913,
+          225
+        ],
+        [
+          913,
+          97
+        ]
+      ],
+      "content": "it does not reside † in the single and separate Parts of the Brain,) to inhere in or result from a divisible Substance. Wherefore it is altogether without Reason, that you indeavour to perplex your Reader,",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        0,
+        233,
+        922,
+        556
+      ],
+      "polygon": [
+        [
+          0,
+          233
+        ],
+        [
+          5,
+          556
+        ],
+        [
+          921,
+          556
+        ],
+        [
+          917,
+          233
+        ]
+      ],
+      "content": "by telling him that * a System of Matter being supposed to consist of Parts, and Thinking being supposed to be a Power incapable of residing in a Being that consists of Parts, the Question of Matter's Thinking will amount to this, Whether that which cannot think, can think; When you well know, that I made use of no such Supposition, but indeavoured to prove (and, I hope, have proved with some strength and clearness) what you seem to infinuate as if I only supposed.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        141,
+        574,
+        937,
+        907
+      ],
+      "polygon": [
+        [
+          141,
+          574
+        ],
+        [
+          141,
+          877
+        ],
+        [
+          366,
+          897
+        ],
+        [
+          936,
+          906
+        ],
+        [
+          932,
+          574
+        ]
+      ],
+      "content": "I. You reply to my Answer to your first Objection; that it is nothing else but Argumentum ad Ignorantiam : that in enumerating the sorts of Powers or Qualities of Matter, I suppose that a System of Matter has and can have only Powers of one sort or kind, such as Magnitude and Motion, which are only the Sum or Aggregate of Powers of the same kind; Which, what is it else but to argue, that because we know of no other Powers of a different kind in Matter from Magnitude",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        381,
+        1,
+        537,
+        42
+      ],
+      "polygon": [
+        [
+          381,
+          6
+        ],
+        [
+          381,
+          41
+        ],
+        [
+          536,
+          41
+        ],
+        [
+          536,
+          1
+        ],
+        [
+          386,
+          1
+        ]
+      ],
+      "content": "$$\n(7)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        55,
+        35,
+        895,
+        899
+      ],
+      "polygon": [
+        [
+          55,
+          41
+        ],
+        [
+          65,
+          873
+        ],
+        [
+          894,
+          898
+        ],
+        [
+          875,
+          41
+        ]
+      ],
+      "content": "Magnitude and Motion, therefore it Has and Can have no other Powers? Now I cannot think, Sir, but a Man of your Understanding, if you please to consider the Matter a second time, will find it is by no means Argumentum ad Ignorantiam. For if a Disjunction be complete, (as that in which I enumerate the several sorts of Powers of which Matter is capable, either is; or else you ought to have proved that another Member could be added to it, to show that it was not;) it contains in it all the possible particulars, as well the unknown, as those that are ever so well known. For how many particulars soever be supposed to be unknown, and how impossible soever it be supposed to come at the knowledge of those particulars; yet, if the Heads or Kinds be rightly distributed, they must of Necessity contain under them all the unknown particulars, as certainly as those that are the most known. All the possible Qualities, I said, or Powers of Matter, (whether known or unknown.) must of Necessity be either Qualities really inhering in the Subject itself to which they are ascribed; or Modes produced by it in some other Subject; or else mere abstract Names, signifying certain Powers or Effects that do not properly reside in any Subject at all. Now if this Disjunction be true; and Thinking",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        425,
+        15,
+        581,
+        56
+      ],
+      "polygon": [
+        [
+          425,
+          21
+        ],
+        [
+          425,
+          56
+        ],
+        [
+          580,
+          56
+        ],
+        [
+          580,
+          15
+        ],
+        [
+          431,
+          15
+        ]
+      ],
+      "content": "(8) ",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        81,
+        51,
+        914,
+        905
+      ],
+      "polygon": [
+        [
+          86,
+          51
+        ],
+        [
+          91,
+          899
+        ],
+        [
+          908,
+          899
+        ],
+        [
+          913,
+          57
+        ]
+      ],
+      "content": "Thinking be at all a Quality or Power of Matter; and be confessed not to belong to either of the two latter sorts; it must of necessity, (how unknown soever the Nature of it be otherwise supposed to be.) be included in the former. And then the Argument holds unanswerably good; that Thinking, (or, if you please to imagine any other even yet more abstruse Qualities or Powers of Matter, even these also) as well as Magnitude and Motion, which I instanced in; and whatever else be reducible to this Kind, by truly and really inhering in the Subject itself; must of necessity inhere in all and every one of the particles of the System, taken singly as well as together. Because, as I said before, to suppose any Power or Quality of this kind, arising from, or belonging to any whole System of Matter, without belonging to the several Parts, of which that whole consists, is a direct and express Contradiction: 'Tis supposing either an Universal to exist, without Particulars; or an Effect to be produced without a Cause, or to have more in it than was in the Cause; or that a Quality is by the Power of God made so to arise out of Nothing, as to be superadded to a Subject, and to subsist without inhering in that Subject to which it is at the same time supposed to belong.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        843,
+        896,
+        910,
+        924
+      ],
+      "polygon": [
+        [
+          843,
+          896
+        ],
+        [
+          843,
+          924
+        ],
+        [
+          909,
+          924
+        ],
+        [
+          909,
+          901
+        ],
+        [
+          889,
+          896
+        ],
+        [
+          880,
+          896
+        ],
+        [
+          874,
+          896
+        ]
+      ],
+      "content": "To",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        76,
+        46,
+        846,
+        898
+      ],
+      "polygon": [
+        [
+          76,
+          46
+        ],
+        [
+          102,
+          883
+        ],
+        [
+          845,
+          888
+        ],
+        [
+          845,
+          51
+        ]
+      ],
+      "content": "To this you reply, * that to suppose a Power arising from Matter, without belonging to the Parts of which the Whole consists; is not to suppose an Universal to exist without Particulars, but a Particular Power existing, to which several particular Powers contribute; as every Man is a Particular Man, though various Powers are necessary to constitute him of that Species. But, Sir, if that Whole or result, which you call a Particular Power, be entirely and Specifically different from all and every one of the particular Powers contributing to it; as Thinking manifestly is, from all the Powers of particles not induced with Thought; you will find, if you please to consider it carefully, that 'tis as certain and evident as any Arithmetical Demonstration, that such a Particular Power is a Whole bigger than all its Parts; a Whole, that contains something in it besides All and every one of its Parts; that is, I think, an Universal without particulars. It is exactly as if you should assert, that a Smell and a Colour could be joyned together to make up a Sound; or as if Hardness and Figure could be the particulars contributing to constitute a Motion. A Man, if you mean the whole Man, the Thinking Person; (as the Reader may be apt to think you do;) and suppose him",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "number",
+      "bbox_2d": [
+        801,
+        883,
+        849,
+        904
+      ],
+      "polygon": [
+        [
+          801,
+          883
+        ],
+        [
+          801,
+          903
+        ],
+        [
+          848,
+          903
+        ],
+        [
+          848,
+          883
+        ]
+      ],
+      "content": "to",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        404,
+        4,
+        591,
+        42
+      ],
+      "polygon": [
+        [
+          404,
+          4
+        ],
+        [
+          404,
+          42
+        ],
+        [
+          590,
+          42
+        ],
+        [
+          590,
+          4
+        ]
+      ],
+      "content": "$$\n(1 0)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        65,
+        45,
+        905,
+        609
+      ],
+      "polygon": [
+        [
+          65,
+          51
+        ],
+        [
+          65,
+          608
+        ],
+        [
+          904,
+          608
+        ],
+        [
+          904,
+          45
+        ]
+      ],
+      "content": "to be constituted of mere Matter, whose single particles are none of them induced with Thought; is such a contradictory Whole: But if you mean, (as you seem to do,) the Body only, with its Mechanical Powers; then there is nothing in it, differing from the Powers of the single Parts; except only the bare Name, the Abstract Notion of its being a Whole; which is a complex Idea in our Mind; but in the Thing it self tis nothing at all, but its being the Sum of the Magnitudes, Figures, and Motions of all the several parts; from which constituent parts no Whole can (without an evident Contradiction) differ any otherwise, than as in Numbers a Thousand differs from Ten hundred, or as in Weights a Pound differs from Sixteen Ounces, or as an Army differs from all the Men that compose it; that is, in nothing but the bare Name.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        64,
+        605,
+        898,
+        935
+      ],
+      "polygon": [
+        [
+          64,
+          611
+        ],
+        [
+          64,
+          910
+        ],
+        [
+          449,
+          930
+        ],
+        [
+          892,
+          935
+        ],
+        [
+          897,
+          611
+        ]
+      ],
+      "content": "You add : Neither is it a supposing an Effect produced without a Cause : For the different Powers in the single and separate Parts of a System of Matter, by uniting in one Operation or Power to operate, are the Cause of the Existence of that Power which did not exist in the Particles singly considered. And thus in those Particles which compose the Brain, &c. Now here, Sir, I really cannot but wonder how a Gentleman so well skilled in Philosophy,",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        381,
+        10,
+        574,
+        48
+      ],
+      "polygon": [
+        [
+          381,
+          10
+        ],
+        [
+          381,
+          48
+        ],
+        [
+          573,
+          48
+        ],
+        [
+          573,
+          10
+        ]
+      ],
+      "content": "$$\n(1 1)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        50,
+        45,
+        905,
+        898
+      ],
+      "polygon": [
+        [
+          66,
+          45
+        ],
+        [
+          56,
+          878
+        ],
+        [
+          889,
+          898
+        ],
+        [
+          903,
+          50
+        ]
+      ],
+      "content": "sophy, as you are, can suffer himself to be imposed upon by so very gross and palpable a Fallacy. For though the different Powers in the single and separate Parts of a System of Matter, (as, for instance, their Magnitude, Situation, Figure and Motion,) may, by uniting in one Operation or Power to operate, be the Cause of the Existence of another Power of the same Species, which did not exist in the Particles singly considered; that is, may constitute another Magnitude, another Figure, another Motion, than was in the single Particles; just as twenty different Numbers added together, constitute a new Number different from any of the Particulars: Yet those Powers cannot, without an evident Contradiction, be the Cause of the Existence of any other Power of a different Species; (as Thinking is confessedly of a different Species from Magnitude, Figure, Motion, or whatever other properties may belong to Unthinking Particles of Matter;) for the same reason as the Addition of different Numbers in Arithmetick, cannot without a manifest Contradiction, be the Cause of the Existence of a Line or a Figure; or the mixture of Tarts, constitute a Colour; Namely, because thus the Effect would contain more in it than was in the Cause; that is, something would",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        436,
+        7,
+        615,
+        44
+      ],
+      "polygon": [
+        [
+          436,
+          7
+        ],
+        [
+          436,
+          44
+        ],
+        [
+          614,
+          44
+        ],
+        [
+          614,
+          7
+        ]
+      ],
+      "content": "$$\n(\\mathrm {1 2})\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        127,
+        44,
+        941,
+        797
+      ],
+      "polygon": [
+        [
+          132,
+          44
+        ],
+        [
+          127,
+          787
+        ],
+        [
+          940,
+          792
+        ],
+        [
+          930,
+          44
+        ]
+      ],
+      "content": "would, without any Efficient, be produced out of Nothing. In like manner; Though the different Powers in the single and separate Parts of a System of Matter, (their Magnitude suppose, Situation, Figure and Motion,) may, by uniting in One Operation or Power to operate, be the cause of the Existence of a Power to affect some foreign Substance, which Power did not exist in the Particles singly considered; that is, certain particles united, may prick the Skin and cause Pain, which the single ones could not do; or may strike the Eye so as to excite the Sensation of blew or red, which the single ones could not do; Just as a Wedge may force itself a passage, where a Body of some other shape could not: Yet those Powers cannot, without an evident Contradiction, be the Cause of the Existence of any new Quality really inhering in the Subject itself; (as Thinking confessedly is a Quality really inhering in the Thinking Being it self, and not barely an abstract Notion, or Power of Affecting some foreign Substance;) for the same Reason as the sharpening of the point of a Needle, cannot possibly be the Cause that the Needle itself should feel pain.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        7,
+        794,
+        951,
+        886
+      ],
+      "polygon": [
+        [
+          7,
+          819
+        ],
+        [
+          7,
+          880
+        ],
+        [
+          950,
+          885
+        ],
+        [
+          945,
+          794
+        ],
+        [
+          113,
+          794
+        ]
+      ],
+      "content": "From hence it easily appears how de- p.14. defective your Similitude is k, when you say it is no Contradiction to suppose a Power",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        379,
+        7,
+        568,
+        44
+      ],
+      "polygon": [
+        [
+          379,
+          11
+        ],
+        [
+          379,
+          43
+        ],
+        [
+          567,
+          43
+        ],
+        [
+          567,
+          7
+        ],
+        [
+          514,
+          7
+        ],
+        [
+          403,
+          7
+        ],
+        [
+          385,
+          7
+        ]
+      ],
+      "content": "( 13 )",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        61,
+        44,
+        925,
+        908
+      ],
+      "polygon": [
+        [
+          61,
+          49
+        ],
+        [
+          86,
+          897
+        ],
+        [
+          830,
+          907
+        ],
+        [
+          855,
+          902
+        ],
+        [
+          924,
+          892
+        ],
+        [
+          905,
+          44
+        ]
+      ],
+      "content": "arising from Matter, without belonging to the Parts of which the Whole consists; no more than to conceive that a Whole is not the same with a piece of a Clock; wherein the Power resulting from the different contributing Powers in the System, neither belongs to any Part of the System when considered by it self, nor is it of the same sort or kind with any Power in any part of the System. For that which you call the Power of a Clock, to show the time of the Day, is evidently nothing in the Clock it self, but the Figure and Motion of its Parts; and consequently not any thing of a different sort or kind from the Powers inherent in the Parts: Whereas Thinking, if it was the result of the Powers of the different parts of the Machine of the Body, or of the Brain in particular, would be something really inhering in the Machine it self, specifically different from all and every one of the Powers of the several Parts out of which it resulted: Which is an express Contradiction, a supposing the Effect to have more in it than the Cause. And therefore, though you are pleased to make use of it as a Similitude; yet in reality this Power of Thinking, which truly and properly inheres in its Subject, has not in any respect the least appearance of likeness to the Power of a Clock to show the time of the day.",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "aside_text",
+      "bbox_2d": [
+        3,
+        169,
+        127,
+        196
+      ],
+      "polygon": [
+        [
+          3,
+          169
+        ],
+        [
+          3,
+          195
+        ],
+        [
+          126,
+          195
+        ],
+        [
+          126,
+          169
+        ]
+      ],
+      "content": "6. [A E B]",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        432,
+        23,
+        609,
+        61
+      ],
+      "polygon": [
+        [
+          432,
+          23
+        ],
+        [
+          432,
+          60
+        ],
+        [
+          608,
+          60
+        ],
+        [
+          608,
+          23
+        ]
+      ],
+      "content": "( 14 )",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        136,
+        61,
+        921,
+        167
+      ],
+      "polygon": [
+        [
+          136,
+          61
+        ],
+        [
+          136,
+          166
+        ],
+        [
+          920,
+          166
+        ],
+        [
+          920,
+          61
+        ],
+        [
+          891,
+          61
+        ],
+        [
+          846,
+          61
+        ]
+      ],
+      "content": "which is merely an abstract complex Notion in the Man that beholds it, and nothing at all really in the Clock it self.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        114,
+        165,
+        920,
+        894
+      ],
+      "polygon": [
+        [
+          139,
+          165
+        ],
+        [
+          114,
+          884
+        ],
+        [
+          909,
+          884
+        ],
+        [
+          915,
+          165
+        ]
+      ],
+      "content": "In like manner, when you say it may be conceived that there may be a Power in all those Particles which compose the Brain, to contribute to the Act of Thinking, before they are united under that Form; though, while they are disunited, they have no more of Consciousness, than any Being which produces Sweetness in us (that is made up of Parts wherein different Powers inhere) when under a particular Form, has a Power to produce Sweetness in us, when its parts are disunited and separated; you fall again into the same Fallacy. For the Power of a Body to excite in us the Idea of Sweetness, is nothing else but a certain Figure and Motion, resulting from different Figures and Motions of its original constituent parts; just as the Power of a Pin to cause Pain in us, is nothing but its Motion and the sharp Figure of its Point, resulting from different Motions, Figures and Situations of its constituent parts. And if the Effect of the Powers, by which the several particles that compose the Brain, contribute (as your Phrase is) to the Act of Thinking, was likewise only the exciting of certain Thoughts in something which",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "number",
+      "bbox_2d": [
+        834,
+        884,
+        909,
+        904
+      ],
+      "polygon": [
+        [
+          834,
+          884
+        ],
+        [
+          834,
+          904
+        ],
+        [
+          908,
+          904
+        ],
+        [
+          908,
+          884
+        ]
+      ],
+      "content": "was",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        375,
+        10,
+        558,
+        47
+      ],
+      "polygon": [
+        [
+          375,
+          10
+        ],
+        [
+          375,
+          42
+        ],
+        [
+          381,
+          46
+        ],
+        [
+          552,
+          46
+        ],
+        [
+          557,
+          42
+        ],
+        [
+          557,
+          10
+        ]
+      ],
+      "content": "( 15 )",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        47,
+        47,
+        878,
+        606
+      ],
+      "polygon": [
+        [
+          53,
+          47
+        ],
+        [
+          47,
+          605
+        ],
+        [
+          877,
+          605
+        ],
+        [
+          877,
+          47
+        ]
+      ],
+      "content": "was before a Thinking Substance, your Similitude would have something of likeness in it. But that Particles which in themselves have no Thought, should ever contribute any thing towards making the Substance, which they constitute, a Thinking Being; this I am sure you can no more be able to clear from being an express Contradiction; (though I doubt not but you can argue upon it as acutely as any One;) than if you should undertake to prove, that a Solid Mass of Marble is made up of Particles, which without having any Solidity themselves, contribute by other unknown Powers to constitute a Solid Mass; or that a Foot-square of any Matter, is made up of Particles, which without having any Extension themselves, contribute by other different and unknown Powers, to constitute an extended Solid Quantity.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        49,
+        603,
+        872,
+        887
+      ],
+      "polygon": [
+        [
+          49,
+          603
+        ],
+        [
+          49,
+          877
+        ],
+        [
+          79,
+          886
+        ],
+        [
+          283,
+          886
+        ],
+        [
+          867,
+          886
+        ],
+        [
+          871,
+          603
+        ]
+      ],
+      "content": "And here I cannot but take notice, that besides the Contradictions before-mentioned, you have, by choosing to annex Consciousness to so flux a Substance as the Brain or the Spirits in it, fallen into another very great Absurdity. For if the Brain or Spirits be the subject of Consciousness; and the Parts of the Brain or Spirits be (as they certainly are, whatever Question may be made concerning any o-",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "number",
+      "bbox_2d": [
+        459,
+        871,
+        491,
+        892
+      ],
+      "polygon": [
+        [
+          459,
+          871
+        ],
+        [
+          459,
+          891
+        ],
+        [
+          490,
+          891
+        ],
+        [
+          490,
+          871
+        ]
+      ],
+      "content": "B",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        446,
+        2,
+        623,
+        41
+      ],
+      "polygon": [
+        [
+          446,
+          2
+        ],
+        [
+          446,
+          40
+        ],
+        [
+          622,
+          40
+        ],
+        [
+          622,
+          2
+        ]
+      ],
+      "content": "$$\n(1 6)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "aside_text",
+      "bbox_2d": [
+        9,
+        750,
+        152,
+        830
+      ],
+      "polygon": [
+        [
+          9,
+          750
+        ],
+        [
+          9,
+          829
+        ],
+        [
+          151,
+          829
+        ],
+        [
+          151,
+          750
+        ]
+      ],
+      "content": "# Demonfly of the Being and Attrib. of God.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        146,
+        42,
+        923,
+        367
+      ],
+      "polygon": [
+        [
+          152,
+          42
+        ],
+        [
+          152,
+          367
+        ],
+        [
+          922,
+          362
+        ],
+        [
+          922,
+          42
+        ]
+      ],
+      "content": "original Solid Stamina of the Body,) in perpetual flux and change; it will follow that That Consciousness, by which I not only Remember that certain Things were done many Years since, but also am Conscious that they were done by Me, by the very same Individual Conscious Being who now remembers them; it will follow, I say, that That Consciousness is transferred from one Subject to another; that is to say, that it is a real Quality which subsists without inhering in any Subject at all.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        146,
+        363,
+        927,
+        902
+      ],
+      "polygon": [
+        [
+          152,
+          363
+        ],
+        [
+          157,
+          877
+        ],
+        [
+          554,
+          902
+        ],
+        [
+          926,
+          902
+        ],
+        [
+          922,
+          363
+        ]
+      ],
+      "content": "But to return to the Argument before us. You suppose that the Particles which compose the Brain, though themselves void of Consciousness when taken singly, may yet by other different Powers contribute towards the making up One Conscious Whole. This I affirm to be, and I think I have proved it to be, an express Contradiction; an assigning more to the Effect than was in the Cause; a making the Whole bigger than all its Parts, and Specifically different from All and every One of them. The occasion, the common ground and foundation of Mens Erring in this whole Matter, I have * elsewhere largely discovered; and shall here repeat what I think may be sufficient to satisfy an inquisitive and unprejudiced Person. \"Whatever can arise from, or be compounded:",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        383,
+        10,
+        587,
+        48
+      ],
+      "polygon": [
+        [
+          383,
+          10
+        ],
+        [
+          383,
+          48
+        ],
+        [
+          586,
+          48
+        ],
+        [
+          586,
+          44
+        ],
+        [
+          586,
+          38
+        ],
+        [
+          586,
+          24
+        ],
+        [
+          586,
+          14
+        ],
+        [
+          586,
+          10
+        ]
+      ],
+      "content": "(17)",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        70,
+        46,
+        921,
+        904
+      ],
+      "polygon": [
+        [
+          70,
+          46
+        ],
+        [
+          70,
+          814
+        ],
+        [
+          70,
+          873
+        ],
+        [
+          105,
+          898
+        ],
+        [
+          380,
+          903
+        ],
+        [
+          602,
+          903
+        ],
+        [
+          901,
+          898
+        ],
+        [
+          901,
+          46
+        ]
+      ],
+      "content": "pounded of any Things; is still only those very Things, of which it was compounded: And if infinite Compositions or Divisions be made eternally, the Things will still be but eternally the same: And all their possible Effects, can never be any thing but Repetitions of the same. For instance: All possible Changes of Figure, are still nothing but Figure: [All possible variations, Compositions and Divisions of Magnitude, are still nothing but Magnitude:] \"All possible Compositions or Effects of Motion, are still nothing but mere Motion: [All Compositions of Magnitude, Figure and Motion together, are still nothing but Magnitude, Figure and Motion: And how many other Qualites soever, known or unknown, the particles of Matter be supposed to be induced with; those Qualities can never in any Composition, or Division produce any new Power specifically different from themselves, unless a Cause could give more to the Effect than is in itself. And consequently, if the Matter of the Brain be the Subject in which Consciousness inheres, That Consciousness cannot possibly be the result of any other known or unknown Powers of the several constituent Particles, but what must themselves have been originally of the same Species, that is to say,",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        478,
+        884,
+        559,
+        908
+      ],
+      "polygon": [
+        [
+          478,
+          884
+        ],
+        [
+          478,
+          908
+        ],
+        [
+          558,
+          908
+        ],
+        [
+          558,
+          884
+        ]
+      ],
+      "content": "B i",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        413,
+        10,
+        594,
+        47
+      ],
+      "polygon": [
+        [
+          413,
+          10
+        ],
+        [
+          413,
+          46
+        ],
+        [
+          593,
+          46
+        ],
+        [
+          593,
+          10
+        ]
+      ],
+      "content": "( 18 )",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        107,
+        47,
+        925,
+        888
+      ],
+      "polygon": [
+        [
+          107,
+          47
+        ],
+        [
+          113,
+          878
+        ],
+        [
+          923,
+          888
+        ],
+        [
+          923,
+          47
+        ]
+      ],
+      "content": "so many several Conscioussnesses.] \"That which has been apt to deceive Men in this matter, is this; that they imagine Compounds to be somewhat really [specifically] different from the Things of which they are compounded. Which is a very great mistake. For all the Things, of which Men so judge; either, if they be really different, are not Compounds nor Effects of what Men judge them to be, but are something totally distinct; as when the Vulgar thinks Colours and Sounds to be Properties inherent in Bodies, when indeed they are purely Thoughts of the Mind: Or else, if they be really Compounds and Effects, then they are not different, but exactly the same that ever they were; As when two Triangles put together make a Square, that Square is still nothing but two Triangles; or when a Square cut in halves makes two Triangles, those two Triangles are still only the two halves of a Square; or when the mixture of Blew and Yellow Powder makes a Green, that Green is still nothing but Blue and Yellow intermixt, as is plainly visible by the help of Microscopes: And, in short, every thing by Composition, Division or Motion; is nothing else but the very same",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        365,
+        3,
+        539,
+        41
+      ],
+      "polygon": [
+        [
+          365,
+          3
+        ],
+        [
+          365,
+          40
+        ],
+        [
+          538,
+          40
+        ],
+        [
+          538,
+          3
+        ]
+      ],
+      "content": "$$\n(1 9)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        76,
+        38,
+        843,
+        278
+      ],
+      "polygon": [
+        [
+          81,
+          38
+        ],
+        [
+          76,
+          268
+        ],
+        [
+          86,
+          277
+        ],
+        [
+          842,
+          273
+        ],
+        [
+          842,
+          38
+        ]
+      ],
+      "content": "it was before, taken either in whole or by Parts, or in different Place or Order, [so as to excite in our Minds different complex Notions, and occasion new abstract Names of Things, but by no means to produce any new real Quality in the Things themselves, such as Consciousness is agreed to be, inhering truly and properly in the Subject it is ascribed to.]",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        75,
+        277,
+        847,
+        885
+      ],
+      "polygon": [
+        [
+          80,
+          277
+        ],
+        [
+          91,
+          875
+        ],
+        [
+          846,
+          884
+        ],
+        [
+          837,
+          277
+        ]
+      ],
+      "content": "The true state of this Case, seems in brief to be This. Sometimes we consider one and the same Quality of a Thing, in different Circumstances and Respects, and with relation to other different things; which relation may be changed by the alteration or removal of those other things, and a new Effect be produced, without any alteration at all of the Thing it self or any of its Qualities; And yet then we give it a new Name, and are apt to think that new Name a new Quality. Sometimes we consider several distinct Qualities of different parcels of Matter, together; and, because some new Effect is thereby occasioned in some other Being, we give the imaginary Whole a new Name, and think that new Denomination a new Quality. But with how little reason this is done, will abundantly appear by the following Instances. The same particle of Matter which makes a point in the Surface of a Globe, may, by",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        395,
+        5,
+        585,
+        42
+      ],
+      "polygon": [
+        [
+          395,
+          5
+        ],
+        [
+          395,
+          42
+        ],
+        [
+          579,
+          42
+        ],
+        [
+          584,
+          37
+        ],
+        [
+          584,
+          5
+        ]
+      ],
+      "content": "$$\n(2 0)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        70,
+        41,
+        943,
+        858
+      ],
+      "polygon": [
+        [
+          897,
+          41
+        ],
+        [
+          70,
+          46
+        ],
+        [
+          115,
+          853
+        ],
+        [
+          937,
+          853
+        ],
+        [
+          937,
+          365
+        ]
+      ],
+      "content": "other parts being shaved off, become the point of the Angle of a Cube, without undergoing any alteration it self; and produce an effect, which it could not produce before: But is this truly a new Quality or Power in the Point it self? Blue and Yellow Powder, mingled together, occasion a new Effect, and are called by a new Name, Green: But is this really a new Quality or Power? is it not plainly the same two Qualities, which they had when separate, acting still distinctly, as appears in a Microscope? That particular and determinate degree of Velocity in a Wheel, whereby it turns once round precisely in twelve Hours, is that which you call the Power of a Clock to show the Time of the Day: And because such a determinate Velocity of Motion is made use of by Us for the Measure of Time, and has an abstract Name given it to express that use; is it therefore really a new Quality or Power distinct from the Motion it self? And, to mention no more; When a Weight in one Scale of a Balance, does, by taking out part of the Weight that was in the other Scale, begin to preponderate, which it did not before; is this any new Quality or real Power in the Weight that is not altered, different from what it had before?",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        913,
+        877,
+        938,
+        910
+      ],
+      "polygon": [
+        [
+          913,
+          877
+        ],
+        [
+          913,
+          905
+        ],
+        [
+          918,
+          909
+        ],
+        [
+          937,
+          909
+        ],
+        [
+          937,
+          877
+        ],
+        [
+          928,
+          877
+        ],
+        [
+          917,
+          877
+        ]
+      ],
+      "content": "1",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        385,
+        16,
+        556,
+        52
+      ],
+      "polygon": [
+        [
+          385,
+          16
+        ],
+        [
+          385,
+          52
+        ],
+        [
+          455,
+          52
+        ],
+        [
+          502,
+          52
+        ],
+        [
+          555,
+          52
+        ],
+        [
+          555,
+          16
+        ],
+        [
+          456,
+          16
+        ],
+        [
+          404,
+          16
+        ]
+      ],
+      "content": "$$\n(2 1)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        83,
+        55,
+        870,
+        907
+      ],
+      "polygon": [
+        [
+          94,
+          55
+        ],
+        [
+          89,
+          882
+        ],
+        [
+          144,
+          902
+        ],
+        [
+          869,
+          906
+        ],
+        [
+          869,
+          61
+        ]
+      ],
+      "content": "I shall observe but one Thing more upon this Head; and that is, that whereas I affirmed every Power or Quality that is or can be inherent in any System of Matter, to be nothing else than the Sum or Aggregate of so many Powers or Qualities of the same kind inhering in all the Parts; meaning that the Powers inhering in the several Parts, must be of the same kind or Species with that Power, which is the result of the Whole; you seem all along to understand it as if I had asserted that the Powers or Qualities inhering in the several Parts, must needs be all of the same kind or Species one with another: Thereby diverting your Reader from the true strength of the Argument, and perplexing him with that which has no relation to the Question: For whether the Powers of the several Parts be all of the same kind one with another, or of ever so different kinds one from another; that which I affirmed, is still equally certain and necessary; that the Power of the Whole, being but the Sum or Mixture of the Powers of the Parts, cannot possibly be of a different kind or Species from all the several Powers of the Parts; as Thinking is of necessity specifically different from all and every one of the Powers, known or unknown, of Particles which are confessed to be void of Thought. Wherefore when you say,",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        464,
+        7,
+        627,
+        43
+      ],
+      "polygon": [
+        [
+          464,
+          7
+        ],
+        [
+          464,
+          42
+        ],
+        [
+          563,
+          42
+        ],
+        [
+          568,
+          42
+        ],
+        [
+          626,
+          42
+        ],
+        [
+          626,
+          7
+        ]
+      ],
+      "content": "(22)",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        16,
+        44,
+        948,
+        559
+      ],
+      "polygon": [
+        [
+          22,
+          44
+        ],
+        [
+          27,
+          558
+        ],
+        [
+          946,
+          558
+        ],
+        [
+          937,
+          44
+        ]
+      ],
+      "content": "fay, * he ought to have demonstrated, if he would have proved the point be undertook to prove, that there can be no other power in any System of Matter, but what is the Sum or Aggregate of Powers of the same kind; And that, till it is demonstrated, that there can be no other Power in any System of Matter, but what is the Sum or Aggregate of Powers of the same kind, it may as well be supposed that there are Powers of different kinds in different Particles of Matter; And that 'tis so far from being the Sum or Aggregate of Powers of the same kind, that the new Power will be the Sum or Aggregate of Powers of a different kind; And that the Power of every System will not be the Sum of Powers of the same kind, but be the Sum of Powers of different kinds: All this is entirely besides the Purpose.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        16,
+        578,
+        950,
+        902
+      ],
+      "polygon": [
+        [
+          27,
+          588
+        ],
+        [
+          16,
+          871
+        ],
+        [
+          47,
+          896
+        ],
+        [
+          949,
+          901
+        ],
+        [
+          949,
+          578
+        ],
+        [
+          82,
+          578
+        ]
+      ],
+      "content": "Your supposition, * that the Matter of which an Egg consists, doth intirely constitute the young one; and that the Action of Sensation began under a particular Disposition of the Parts by Motion, without the Addition of an Immaterial and Immortal Soul; is in every part contrary to all the Discoveries in Anatomy, and to all true Philosophy : For so far is it from being true, that the Matter of the Egg, by any particular disposition of its Parts by Motion, is formed into",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        375,
+        2,
+        568,
+        43
+      ],
+      "polygon": [
+        [
+          567,
+          2
+        ],
+        [
+          515,
+          2
+        ],
+        [
+          375,
+          6
+        ],
+        [
+          375,
+          42
+        ],
+        [
+          558,
+          42
+        ],
+        [
+          567,
+          38
+        ],
+        [
+          567,
+          20
+        ],
+        [
+          567,
+          15
+        ]
+      ],
+      "content": "(23) ",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        72,
+        41,
+        920,
+        899
+      ],
+      "polygon": [
+        [
+          78,
+          41
+        ],
+        [
+          102,
+          888
+        ],
+        [
+          919,
+          898
+        ],
+        [
+          900,
+          51
+        ]
+      ],
+      "content": "into or entirely constitutes the young one, that it does not constitute it at all, not so much as the Body of it; but only serves it for nourishment and growth: It being as impossible that the Organized Body of a Chicken should by the Power of any Mechanical Motions be formed out of the unorganized matter of an Egg; as that the Sun, Moon and Stars, should by mere Mechanism arise out of a Chaos. And that Sensation should be added to it by arising from a particular Disposition of the Parts by Motion, is still more impossible; because it is supposing something to come out of that, in which it never was: Than which, nothing in the World can be a more express Contradiction. You think it ridiculous to recur to the Addition of an Immaterial and Immortal Soul: Let it be so: I can as easily suppose, if you must needs have an Hypothesis, that the immaterial Substance was not Added afterwards, but was in it from the beginning, from the time that the Seminal Principle itself of the Organized Bodv was framed: And who shall tell us when That was? The deeper Discoveries every Age makes in Anatomy by Microscopical Observations, the further all these things are found to be removed backwards from the search and common Notions even of the most inquisitive",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        461,
+        0,
+        646,
+        37
+      ],
+      "polygon": [
+        [
+          461,
+          0
+        ],
+        [
+          461,
+          25
+        ],
+        [
+          467,
+          36
+        ],
+        [
+          645,
+          36
+        ],
+        [
+          645,
+          0
+        ]
+      ],
+      "content": "$$\n(2 4)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        144,
+        37,
+        960,
+        371
+      ],
+      "polygon": [
+        [
+          144,
+          37
+        ],
+        [
+          144,
+          370
+        ],
+        [
+          955,
+          370
+        ],
+        [
+          959,
+          37
+        ]
+      ],
+      "content": "tive Men. Suppose therefore we could not frame any probable Hypothesis at all, when and how the immaterial principle of Sensation came in; yet why ought this to incline any Man to doubt the Truth of a certain Proof which shows him that there Is such a principle; any more than the difficulty (which is altogether as great an one) of framing an Hypothesis how and whence the Organized Body came, can make him disbelieve his Senses which discover it to him?",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "aside_text",
+      "bbox_2d": [
+        2,
+        403,
+        139,
+        430
+      ],
+      "polygon": [
+        [
+          2,
+          408
+        ],
+        [
+          2,
+          429
+        ],
+        [
+          138,
+          429
+        ],
+        [
+          138,
+          403
+        ],
+        [
+          7,
+          403
+        ]
+      ],
+      "content": "25. 25.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        88,
+        388,
+        951,
+        913
+      ],
+      "polygon": [
+        [
+          139,
+          394
+        ],
+        [
+          103,
+          434
+        ],
+        [
+          88,
+          498
+        ],
+        [
+          88,
+          893
+        ],
+        [
+          530,
+          913
+        ],
+        [
+          950,
+          913
+        ],
+        [
+          950,
+          388
+        ]
+      ],
+      "content": "You tell me again, * that I have not rightly enumerated the known Powers of Matter. To prove which charge, you repeat what you had before said, concerning Aggregates of Powers of the same kind; wherein I have already shown that you lay stress upon that which is wholly foreign to the Question. And what you add concerning the particular Texture of a Body, as being something that is different from the Magnitude and Motion of its Parts, and on which depend certain Powers, as the Power of the Eye, for instance, to be operated upon by external Objects, and to contribute to the Art of Vision; which Power, because it ceases wholly upon the least Alteration of the Texture of any part of the Eye, 'tis evident does not inhere in the Parts of the System,",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        408,
+        9,
+        590,
+        49
+      ],
+      "polygon": [
+        [
+          408,
+          9
+        ],
+        [
+          408,
+          49
+        ],
+        [
+          589,
+          49
+        ],
+        [
+          589,
+          9
+        ]
+      ],
+      "content": "$$\n(2 5)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        72,
+        46,
+        896,
+        819
+      ],
+      "polygon": [
+        [
+          72,
+          46
+        ],
+        [
+          83,
+          819
+        ],
+        [
+          895,
+          819
+        ],
+        [
+          876,
+          46
+        ]
+      ],
+      "content": "System, in the same Sense with Magnitude and Motion: This also is altogether foreign to the Question. For the Eye's Power of Seeing, is not, as your Argument supposes, one of those Powers which I ranked under the first Head, that is, a Power which really inheres in the System, and consequently in all the Parts of it; But it is one of those Powers which I called the third fort, viz. which are mere abstract Names signifying certain Powers or Effects which do not at all reside in the Subject. For the Eye does not See, in the same Sense as the Thinking Substance Thinks; But Seeing in the Eye, is what Magnetism is in the Load-stone; not a real inherent Quality, but merely a Situation of parts and pores, so as to be the occasion of an Effect wholly extrinsic to it self, an effect produced in some other Substance by Rays transmitted through the pores of the Eye, just as the Magnetic Effluvia are through a Loadstone, or Corn through a Sieve. So that you might exactly as well have compared the Power by which the Soul Thinks, to the Power by which a Sieve transmits Corn, as to the Power by which the Eye fees.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        97,
+        837,
+        985,
+        923
+      ],
+      "polygon": [
+        [
+          97,
+          842
+        ],
+        [
+          97,
+          903
+        ],
+        [
+          189,
+          913
+        ],
+        [
+          229,
+          918
+        ],
+        [
+          984,
+          918
+        ],
+        [
+          984,
+          842
+        ]
+      ],
+      "content": "You observe, $^{*}$ that Saying Consciousness is an individual Power, is but calling Consciousness",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        386,
+        5,
+        568,
+        44
+      ],
+      "polygon": [
+        [
+          386,
+          5
+        ],
+        [
+          386,
+          34
+        ],
+        [
+          386,
+          39
+        ],
+        [
+          386,
+          43
+        ],
+        [
+          567,
+          43
+        ],
+        [
+          567,
+          5
+        ]
+      ],
+      "content": "( 26 )",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        52,
+        51,
+        880,
+        903
+      ],
+      "polygon": [
+        [
+          57,
+          51
+        ],
+        [
+          57,
+          903
+        ],
+        [
+          875,
+          893
+        ],
+        [
+          879,
+          51
+        ]
+      ],
+      "content": "consciousness by another Name, and not giving an account of what Consciousness is, or where in it consists; which is requisite to demonstrate from Consciousness, that Consciousness cannot be added to a Being that consists of actually separate and distinct Parts. 'Tis true; my affirming Consciousness to be an individual Power, is not a giving an account of what Consciousness is; neither was it intended to be so. Every Man feels and knows by experience what Consciousness is, better than any Man can explain it: Which is the Case of all simple Ideas: And it is not at all necessary to define more particularly what it is; but abundantly sufficient that we know and agree what it is not, viz. that it is not a multitude of distinct and separate Consciousnesses; in order to prove that it does not and cannot inherit in a Being, that consists of a Multitude of separate and distinct Parts. You your self acknowledge that the parts which constitute the Brain, are not separately and distinctly conscious; that is, that the Consciousness of a Man, is not a Multitude of Consciousnesses, but One. This is all that I suppose, when I call Consciousness an Individual Power; and from hence I think it is proved strongly, that Consciousness cannot reside in a Being that consists of a multitude of sepa-",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "number",
+      "bbox_2d": [
+        793,
+        899,
+        871,
+        920
+      ],
+      "polygon": [
+        [
+          793,
+          899
+        ],
+        [
+          793,
+          919
+        ],
+        [
+          870,
+          919
+        ],
+        [
+          870,
+          899
+        ]
+      ],
+      "content": "rate",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        361,
+        15,
+        527,
+        54
+      ],
+      "polygon": [
+        [
+          361,
+          15
+        ],
+        [
+          361,
+          53
+        ],
+        [
+          526,
+          53
+        ],
+        [
+          526,
+          49
+        ],
+        [
+          526,
+          39
+        ],
+        [
+          526,
+          35
+        ],
+        [
+          526,
+          29
+        ],
+        [
+          526,
+          20
+        ],
+        [
+          522,
+          15
+        ]
+      ],
+      "content": "$$\n(2 7.)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        75,
+        54,
+        841,
+        913
+      ],
+      "polygon": [
+        [
+          75,
+          54
+        ],
+        [
+          91,
+          893
+        ],
+        [
+          840,
+          913
+        ],
+        [
+          826,
+          54
+        ]
+      ],
+      "content": "rate and distinct parts: Because if it could, it must necessarily follow, either that it would become a Multitude of distinct Consciousnesses, contrary to the Supposition which you your self allow; or else that an Individual Quality of each single particle, would become the Individual Quality of every one of the rest likewise, which is a Contradiction in Terms; or else, that the Consciousness would be one Power resulting from the contributing Powers of all the several separate and distinct Particles; in which case, it would be, as I have before proved in enumerating the several kinds of Powers, a mere abstract Name or complex Notion, and not a real Quality residing in any Subject at all. 'Tis therefore wholly without reason, that you say † Mr Clark's calling Consciousness an Individual Power, in his Sense of an Individual Power, is supposing that Matter cannot think; and that you insinuate to your Reader, * that Consciousness being an Individual Power, in Mr Clark's Sense of those Words, is supposing that it is a Power which can only reside in an Individual Being; to prove which he has not said any thing, but barely by calling Consciousness an Individual Power. For an Individual Power, in my Sense of the Word, does not mean in the Definition a Power",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "aside_text",
+      "bbox_2d": [
+        832,
+        554,
+        952,
+        728
+      ],
+      "polygon": [
+        [
+          837,
+          554
+        ],
+        [
+          832,
+          559
+        ],
+        [
+          832,
+          598
+        ],
+        [
+          832,
+          609
+        ],
+        [
+          832,
+          613
+        ],
+        [
+          837,
+          628
+        ],
+        [
+          837,
+          673
+        ],
+        [
+          837,
+          697
+        ],
+        [
+          847,
+          702
+        ],
+        [
+          852,
+          727
+        ],
+        [
+          951,
+          727
+        ],
+        [
+          951,
+          554
+        ],
+        [
+          852,
+          554
+        ],
+        [
+          841,
+          554
+        ]
+      ],
+      "content": "† pag. 21\n\n* pag. 22",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "number",
+      "bbox_2d": [
+        439,
+        13,
+        616,
+        53
+      ],
+      "polygon": [
+        [
+          439,
+          13
+        ],
+        [
+          439,
+          52
+        ],
+        [
+          514,
+          52
+        ],
+        [
+          571,
+          52
+        ],
+        [
+          575,
+          52
+        ],
+        [
+          615,
+          47
+        ],
+        [
+          615,
+          13
+        ]
+      ],
+      "content": "(28)",
+      "native_label": "number"
+    },
+    {
+      "index": 1,
+      "label": "aside_text",
+      "bbox_2d": [
+        19,
+        284,
+        78,
+        307
+      ],
+      "polygon": [
+        [
+          19,
+          284
+        ],
+        [
+          19,
+          307
+        ],
+        [
+          77,
+          307
+        ],
+        [
+          77,
+          284
+        ]
+      ],
+      "content": "Dirección",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        134,
+        55,
+        943,
+        249
+      ],
+      "polygon": [
+        [
+          140,
+          55
+        ],
+        [
+          134,
+          249
+        ],
+        [
+          942,
+          244
+        ],
+        [
+          942,
+          55
+        ]
+      ],
+      "content": "Power which can only reside in an Individual Being ; but it signifies One Power, in opposition to a Multitude ; and I have proved that such a Power can only reside in an Individual Being, (not by Supposing it, but) by reducing the contrary Supposition to an express Contradiction.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        139,
+        269,
+        941,
+        490
+      ],
+      "polygon": [
+        [
+          139,
+          269
+        ],
+        [
+          139,
+          489
+        ],
+        [
+          940,
+          489
+        ],
+        [
+          940,
+          269
+        ]
+      ],
+      "content": "What you say again $^{*}$ , concerning Sums and Aggregates of Powers of the same kind ; is repeating the same mistake, which I have before shown you to have fallen into, in understanding Powers of the same kind with one another, instead of Powers of the same kind [or Species] with the Whole that results from them.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        9,
+        507,
+        946,
+        916
+      ],
+      "polygon": [
+        [
+          25,
+          513
+        ],
+        [
+          9,
+          538
+        ],
+        [
+          15,
+          901
+        ],
+        [
+          420,
+          915
+        ],
+        [
+          945,
+          915
+        ],
+        [
+          945,
+          507
+        ]
+      ],
+      "content": "You are pleased to entertain your self and your Reader, upon my accusing you with supposing Sweetness to be in a Rosé. But I hope this will appear very pardonable, since it seemed necessary to me to understand you as I did, because I could not otherwise apprehend what you said concerning it, to be pertinent to your purpose. For you compared the Power which results from the several Particles of a Rosé, without being in the Particles themselves separately and singly; to the Power which results from the several Particles of the Brain, without being in the Particles",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        385,
+        8,
+        567,
+        48
+      ],
+      "polygon": [
+        [
+          385,
+          8
+        ],
+        [
+          385,
+          42
+        ],
+        [
+          391,
+          47
+        ],
+        [
+          566,
+          47
+        ],
+        [
+          566,
+          8
+        ]
+      ],
+      "content": "$$\n(2 9)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        85,
+        46,
+        901,
+        810
+      ],
+      "polygon": [
+        [
+          85,
+          52
+        ],
+        [
+          91,
+          809
+        ],
+        [
+          900,
+          809
+        ],
+        [
+          895,
+          57
+        ]
+      ],
+      "content": "Particles themselves separately and singly: Now the Power which you say results from the disposition of the several Particles of the Brain, is Consciousness residing in the Brain it self: Either therefore by the Power resulting from the disposition of the several Particles of the Rose, you must mean Something residing likewise in the Rose it self; or else your Similitude is not at all parallel. Now That Power which resides in the Rose it self, as Consciousness does in the Brain, and yet belongs not to the several constituent Particles of the Rose, can neither be Magnitude, nor Figure, nor Motion, (for these belong to the several parts singly;) nor Texture, (for That, so far as it differs from the former, is nothing but a mere abstract Notion, and nothing really in the Thing itself;) but must be either Sweetness itself, or something else equally unintelligible and inexplicable. If you will say you mean a Power not residing in the Rose at all, but resulting from it; then, (besides that, as I said before, it is not pertinent to your purpose,) what is this, but supposing a Power subsisting without any Subject at all? a mere Name?",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        94,
+        826,
+        908,
+        913
+      ],
+      "polygon": [
+        [
+          94,
+          830
+        ],
+        [
+          94,
+          893
+        ],
+        [
+          200,
+          902
+        ],
+        [
+          225,
+          907
+        ],
+        [
+          489,
+          912
+        ],
+        [
+          519,
+          912
+        ],
+        [
+          907,
+          907
+        ],
+        [
+          907,
+          830
+        ],
+        [
+          858,
+          826
+        ]
+      ],
+      "content": "In my assertion, that the Powers in a Rose are nothing else but a Number of similar",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        431,
+        6,
+        611,
+        54
+      ],
+      "polygon": [
+        [
+          431,
+          11
+        ],
+        [
+          431,
+          53
+        ],
+        [
+          610,
+          53
+        ],
+        [
+          610,
+          6
+        ],
+        [
+          496,
+          6
+        ]
+      ],
+      "content": "# ( 30 )",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        38,
+        48,
+        935,
+        633
+      ],
+      "polygon": [
+        [
+          38,
+          54
+        ],
+        [
+          38,
+          628
+        ],
+        [
+          934,
+          632
+        ],
+        [
+          930,
+          48
+        ]
+      ],
+      "content": "similar Motions or Figures, you * tell me there are two things to be proved. 1st, That the mere Figure and Motion of the parts of a Rose, do produce, or are the sole external cause of the Sensation caused by them. 2dly, That those Motions and Figures are perfectly similar. By Similar, I meant that they were so far similar, as the Smell or Colour of the Rose was similar or homogeneous: But whether they be similar, or no, is of no concern at all in the present Question, unless you still continue in your former mistake about Powers of the same kind with one another, instead of with the Whole. And as to the other thing which you say wants proof; I think I may appeal to your self, whether you can find or conceive any thing else in the Rose, which can be the cause of our Sensation, besides the mere Magnitude, Figure, Situation, and perhaps Motion of its parts.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        140,
+        645,
+        945,
+        928
+      ],
+      "polygon": [
+        [
+          140,
+          656
+        ],
+        [
+          140,
+          898
+        ],
+        [
+          155,
+          913
+        ],
+        [
+          276,
+          928
+        ],
+        [
+          944,
+          928
+        ],
+        [
+          940,
+          645
+        ],
+        [
+          155,
+          645
+        ]
+      ],
+      "content": "You find fault with me † for asserting that Gravitation is the effect of the continued and regular Operation of some other Being on Matter ; whereas, you think, it does not appear but that Matter gravitates by virtue of Powers originally placed in it by God, and is now left to itself to act by those Original Powers. This Opinion of yours, I cannot but think, Sir, to be a great mis- take",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        343,
+        10,
+        525,
+        54
+      ],
+      "polygon": [
+        [
+          343,
+          10
+        ],
+        [
+          343,
+          53
+        ],
+        [
+          524,
+          53
+        ],
+        [
+          524,
+          10
+        ]
+      ],
+      "content": "$$\n(\\xi 1)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        36,
+        46,
+        821,
+        412
+      ],
+      "polygon": [
+        [
+          36,
+          46
+        ],
+        [
+          41,
+          411
+        ],
+        [
+          820,
+          411
+        ],
+        [
+          820,
+          52
+        ],
+        [
+          536,
+          46
+        ]
+      ],
+      "content": "stake in your Philosophy. For when a Stone that was at Rest, does of itself, upon its Support being removed, begin to fall downward; what is it that causes the Stone to begin to move? Is it possible to be an Effect produced without a Cause? Is it impelled without any Impeller? or can a Law or Power, that is to say, a mere abstract Name or complex Notion, and not any real Being, impell a Stone and cause it to begin to move? In any other Case you would not doubt but this implied an absolute Contradiction.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        45,
+        427,
+        836,
+        917
+      ],
+      "polygon": [
+        [
+          45,
+          427
+        ],
+        [
+          65,
+          912
+        ],
+        [
+          811,
+          917
+        ],
+        [
+          831,
+          907
+        ],
+        [
+          831,
+          427
+        ]
+      ],
+      "content": "II. When in my Answer to your second Objection, I said that though the want of Individuality is indeed the sole reason urged in the present Argument, why a System of Matter cannot think; yet that it ought not therefore to be said that Individuality is the only thing required, to render a Being a proper Subject of a Power of Thinking; (Because I would not exclude any other Argument, by which other inquisitive Persons might prove othe Conditions also, as well as Individuality, to be necessary Requisites in order to a Subject's being capable of Thinking:) You hereupon make the following Remark; *Upon this I observe, that Mr Clark owns the Truth of my reasoning, upon the Supposition, that Individuality",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        838,
+        821,
+        949,
+        851
+      ],
+      "polygon": [
+        [
+          838,
+          821
+        ],
+        [
+          838,
+          850
+        ],
+        [
+          948,
+          850
+        ],
+        [
+          948,
+          821
+        ]
+      ],
+      "content": "* pag. 26",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        431,
+        10,
+        627,
+        57
+      ],
+      "polygon": [
+        [
+          431,
+          15
+        ],
+        [
+          431,
+          57
+        ],
+        [
+          581,
+          57
+        ],
+        [
+          626,
+          53
+        ],
+        [
+          626,
+          10
+        ],
+        [
+          436,
+          10
+        ]
+      ],
+      "content": "(36) ",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        38,
+        53,
+        936,
+        636
+      ],
+      "polygon": [
+        [
+          38,
+          59
+        ],
+        [
+          43,
+          636
+        ],
+        [
+          935,
+          636
+        ],
+        [
+          935,
+          53
+        ]
+      ],
+      "content": "similar Motions or Figures, you * tell me there are two things to be proved. 1st, That the mere Figure and Motion of the parts of a Rose, do produce, or are the sole external cause of the Sensation caused by them. 2dly, That those Motions and Figures are perfectly similar. By Similar, I meant that they were so far similar, as the Smell or Colour of the Rose was similar or homogeneous: But whether they be similar, or no, is of no concern at all in the present Question, unless you still continue in your former mistake about Powers of the same kind with one another, instead of with the Whole. And as to the other thing which you say wants proof; I think I may appeal to your self, whether you can find or conceive any thing else in the Rose, which can be the cause of our Sensation, besides the mere Magnitude, Figure, Situation, and perhaps Motion of its parts.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        23,
+        671,
+        140,
+        699
+      ],
+      "polygon": [
+        [
+          23,
+          671
+        ],
+        [
+          23,
+          699
+        ],
+        [
+          139,
+          699
+        ],
+        [
+          139,
+          671
+        ]
+      ],
+      "content": "pag. 24.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        143,
+        649,
+        951,
+        930
+      ],
+      "polygon": [
+        [
+          143,
+          654
+        ],
+        [
+          143,
+          910
+        ],
+        [
+          154,
+          920
+        ],
+        [
+          300,
+          930
+        ],
+        [
+          950,
+          930
+        ],
+        [
+          945,
+          649
+        ]
+      ],
+      "content": "You find fault with me † for asserting that Gravitation is the effect of the continued and regular Operation of some other Being on Matter; whereas, you think, it does not appear but that Matter gravitates by virtue of Powers originally placed in it by God, and is now left to itself to act by those Original Powers. This Opinion of yours, I cannot but think, Sir, to be a great mi- stake",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        346,
+        11,
+        532,
+        56
+      ],
+      "polygon": [
+        [
+          346,
+          11
+        ],
+        [
+          346,
+          56
+        ],
+        [
+          531,
+          56
+        ],
+        [
+          531,
+          32
+        ],
+        [
+          531,
+          26
+        ],
+        [
+          531,
+          17
+        ],
+        [
+          439,
+          11
+        ]
+      ],
+      "content": "# ( 31 )",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        31,
+        49,
+        834,
+        420
+      ],
+      "polygon": [
+        [
+          31,
+          49
+        ],
+        [
+          36,
+          420
+        ],
+        [
+          833,
+          420
+        ],
+        [
+          823,
+          49
+        ]
+      ],
+      "content": "flake in your Philosophy. For when a Stone that was at Rest, does of itself, upon its Support being removed, begin to fall downward; what is it that causes the Stone to begin to move? Is it possible to be an Effect produced without a Cause? Is it impelled without any Impeller? or can a Law or Power, that is to say, a mere abstract Name or complex Notion, and not any real Being, impell a Stone and cause it to begin to move? In any other Case you would not doubt but this implied an absolute Contradiction.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        44,
+        435,
+        857,
+        937
+      ],
+      "polygon": [
+        [
+          44,
+          435
+        ],
+        [
+          69,
+          931
+        ],
+        [
+          856,
+          931
+        ],
+        [
+          842,
+          435
+        ]
+      ],
+      "content": "II. When in my Answer to your second Objection, I said that though the want of Individuality is indeed the sole reason urged in the present Argument, why a System of Matter cannot think; yet that it ought not therefore to be said that Individuality is the only thing required, to render a Being a proper Subject of a Power of Thinking; (Because I would not exclude any other Argument, by which other inquisitive Persons might prove othe Conditions also, as well as Individuality, to be necessary Requisites in order to a Subject's being capable of Thinking:) You hereupon make the following Remark; *Upon this I observe, that Mr Clark owns the Truth of my reasoning, upon the Supposition, that Individuality",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        857,
+        835,
+        971,
+        866
+      ],
+      "polygon": [
+        [
+          857,
+          840
+        ],
+        [
+          857,
+          865
+        ],
+        [
+          970,
+          865
+        ],
+        [
+          970,
+          835
+        ],
+        [
+          879,
+          835
+        ]
+      ],
+      "content": "* pag.2 $\\dot{6}$",
+      "native_label": "aside_text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        128,
+        32,
+        892,
+        595
+      ],
+      "polygon": [
+        [
+          133,
+          48
+        ],
+        [
+          128,
+          594
+        ],
+        [
+          891,
+          594
+        ],
+        [
+          882,
+          52
+        ],
+        [
+          592,
+          32
+        ]
+      ],
+      "content": "is only required by him in a Subject of a Power of Thinking; (you should have added; and upon Supposition also, that a Particle of Matter, could be truly an Individual;) but denies that I have any reason to infer that Individuality is only required, from the Want of Individuality's being the sole reason urged why a System of Matter cannot have a power of Thinking; Which I cannot help thinking to be all one, till there is a Difference assigned between only required in the present Argument, and the sole reason urged in the present Argument. Now This is a very unfair Observation: Because the Difference to be assigned, and which I did assign expressly, was, between the sole reason urged in the present Argument, and what was only required (not in the present, but) in any new Argument which Others might make use of.",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        11,
+        612,
+        900,
+        912
+      ],
+      "polygon": [
+        [
+          11,
+          618
+        ],
+        [
+          11,
+          891
+        ],
+        [
+          97,
+          902
+        ],
+        [
+          277,
+          906
+        ],
+        [
+          340,
+          906
+        ],
+        [
+          371,
+          911
+        ],
+        [
+          899,
+          911
+        ],
+        [
+          899,
+          612
+        ]
+      ],
+      "content": "III. The Question concerning the * Alterations of the Modes or Qualities of Immaterial Beings, seems indeed to have some Difficulties in it, but not such as any way affect our present Argument. The Thing you objected, was, that though the Substance of the Soul were proved to be both Immaterial and Immortal, yet it would not follow that it must be an Immortal Thinking Substance, because its Thinking",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        406,
+        4,
+        587,
+        44
+      ],
+      "polygon": [
+        [
+          406,
+          9
+        ],
+        [
+          406,
+          44
+        ],
+        [
+          582,
+          44
+        ],
+        [
+          586,
+          39
+        ],
+        [
+          586,
+          4
+        ],
+        [
+          411,
+          4
+        ]
+      ],
+      "content": "( 33 )",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        78,
+        40,
+        892,
+        905
+      ],
+      "polygon": [
+        [
+          83,
+          40
+        ],
+        [
+          78,
+          745
+        ],
+        [
+          103,
+          895
+        ],
+        [
+          792,
+          904
+        ],
+        [
+          887,
+          904
+        ],
+        [
+          882,
+          46
+        ]
+      ],
+      "content": "Thinking might perish, though its Substance did not. To this I replied; that the Power of Thinking could no more be destroyed by any Natural Power, than the Substance it self; because the Qualities or Modes of any Substance not being alterable otherwise, than by some alteration in the Substance it self; 'tis manifest that an Indiscperible Substance not being itself alterable by any natural Power, it must follow that neither can any of its Qualities be altered by any natural Power. When therefore I said that all its Qualities and Modes are utterly incapable of being affected in any measure, or changed in any degree, by any Power of Nature; you had no reason to understand this, as if I had asserted, that an Indiscperible Substance could not be acted upon at all by any Power of Nature; But my meaning was, that it could not be so acted upon, as to destroy, change or alter any of its inherent Qualities or Powers; which was all that the thing in Question required me to prove. And that this was my meaning, you might have understood from the Comparison I used, of the original and perfectly solid Particles of Matter. For as those Particles, being (not absolutely in themselves, but) to any Power of Nature, indiscperible; are evidently incapable of having any of their\n\nC 2 Qua-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        396,
+        0,
+        621,
+        39
+      ],
+      "polygon": [
+        [
+          396,
+          0
+        ],
+        [
+          396,
+          38
+        ],
+        [
+          620,
+          38
+        ],
+        [
+          620,
+          0
+        ]
+      ],
+      "content": "$$\n(3 4)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        106,
+        36,
+        886,
+        825
+      ],
+      "polygon": [
+        [
+          116,
+          42
+        ],
+        [
+          106,
+          810
+        ],
+        [
+          131,
+          824
+        ],
+        [
+          885,
+          824
+        ],
+        [
+          876,
+          36
+        ]
+      ],
+      "content": "Qualities or Properties altered in any measure by any Power of Nature; that is, their Figure, their Magnitude, their Hardness, and all the respective Effects or Powers depending upon these, can by no natural means be changed; and yet you could not imagine me to mean, but these particles might be acted upon, might be struck by each other, might be removed this way or that way, upwards or downwards; all which makes no real alteration in them: So an indiscernible immaterial thinking Substance, though it may be transferred from one part of the Universe to another, though it may be acted upon by a multitude of things, though it may have different Ideas represented to it, though the Organs of the Senses may at times transmit different Species or hinder them from being transmitted to it; yet all this makes no real Alteration either in the Substance or its inherent Powers; nor can its Power of Thinking (which was the Thing in Question) be destroyed or altered by these or any other natural Powers, any more than the Mobility or Hardness of the original perfectly solid Particles of Matter can be destroyed by any of their Actings one upon another.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        26,
+        824,
+        890,
+        902
+      ],
+      "polygon": [
+        [
+          26,
+          850
+        ],
+        [
+          26,
+          890
+        ],
+        [
+          36,
+          901
+        ],
+        [
+          889,
+          901
+        ],
+        [
+          889,
+          824
+        ],
+        [
+          97,
+          824
+        ],
+        [
+          36,
+          835
+        ]
+      ],
+      "content": "There is still less weight in what you add ; $\\star$ Now till Mr Clark has a compleat Idea",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        384,
+        27,
+        569,
+        66
+      ],
+      "polygon": [
+        [
+          568,
+          27
+        ],
+        [
+          514,
+          27
+        ],
+        [
+          384,
+          32
+        ],
+        [
+          384,
+          65
+        ],
+        [
+          568,
+          65
+        ]
+      ],
+      "content": "(35) ",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        65,
+        67,
+        909,
+        535
+      ],
+      "polygon": [
+        [
+          70,
+          67
+        ],
+        [
+          65,
+          535
+        ],
+        [
+          908,
+          535
+        ],
+        [
+          903,
+          67
+        ]
+      ],
+      "content": "Idea of both sorts of Beings, [Material and Immaterial,] and of their Powers and Operations one on another; it is impossible for him, in Many Respects, to tell how far they can affect one anothers Operations. This is true indeed; but what follows from it? Because, in Many Respects, I cannot tell how far they can affect one anothers Operations; does it therefore follow, that I cannot in any respect tell wherein they can not affect one anothers Operations? All that I pretend to, is to deny the possibility of such Effects, as plainly imply a Contradiction; and this, I presume, I may be allowed to do, though I were in most respects ignorant how far Material and Immaterial Beings can affect one another.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        66,
+        535,
+        917,
+        949
+      ],
+      "polygon": [
+        [
+          72,
+          535
+        ],
+        [
+          66,
+          819
+        ],
+        [
+          76,
+          919
+        ],
+        [
+          97,
+          948
+        ],
+        [
+          911,
+          948
+        ],
+        [
+          901,
+          535
+        ]
+      ],
+      "content": "As to the Power of God to destroy any Mode or Quality in an immaterial indiscperible Substance, I said nothing concerning it, neither is our Question at all concerned in it. But since you have thought fit to put the Question whether, according to my Principles, God can destroy a Mode of Quality in an Immaterial Being, without making some alteration in the Substance it self; I cannot but take notice, that all the Answers you have made for me to this Question, are such as I cannot approve, and that therefore I am not concerned in any of their Consequence.",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        420,
+        35,
+        588,
+        76
+      ],
+      "polygon": [
+        [
+          420,
+          35
+        ],
+        [
+          420,
+          75
+        ],
+        [
+          587,
+          75
+        ],
+        [
+          587,
+          35
+        ]
+      ],
+      "content": "(36)",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        122,
+        76,
+        872,
+        298
+      ],
+      "polygon": [
+        [
+          122,
+          82
+        ],
+        [
+          132,
+          297
+        ],
+        [
+          871,
+          297
+        ],
+        [
+          862,
+          76
+        ]
+      ],
+      "content": "ces. The Answer I would make for my self, is, that supposing God to destroy any Mode or Quality in an Immaterial Being, it is reasonable to imagine that he must do it by making some such Alteration in that Substance, as may be analogous or equivalent to altering the Disposition of the Parts in a Material Substance. But you ought",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        40,
+        300,
+        878,
+        544
+      ],
+      "polygon": [
+        [
+          40,
+          311
+        ],
+        [
+          45,
+          543
+        ],
+        [
+          877,
+          543
+        ],
+        [
+          873,
+          300
+        ],
+        [
+          120,
+          300
+        ]
+      ],
+      "content": "not to have jumbled these two things together, (which I carefully distinguished,) by supposing me to answer, that God must do it by making an Alteration in the Parts of the Immaterial Substance, (to which it is not proper to ascribe any Parts,) and thence coucluding that an Immaterial Substance is as discerible by the Power of God, as a Material Substance.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        37,
+        546,
+        887,
+        962
+      ],
+      "polygon": [
+        [
+          42,
+          546
+        ],
+        [
+          37,
+          927
+        ],
+        [
+          52,
+          957
+        ],
+        [
+          882,
+          962
+        ],
+        [
+          882,
+          546
+        ]
+      ],
+      "content": "Lastly, you tell me that after all I make the Immaterial Thinking Substance to be in no other Sense Immortal, than I make the original solid Particles of Matter to be indiscerpible; that is to say, that the one is immortal, and the other indiscerpible, only with respect to the Powers of Nature; but that, in respect of the Power of God, neither is the one indiscerpible, nor the other immortal. Your Expressions in this whole Section lie under so much Obscurity, that I can hardly be sure whether I understand you right or not. But if this be your Sense; I confess I do indeed make",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        389,
+        9,
+        578,
+        48
+      ],
+      "polygon": [
+        [
+          389,
+          9
+        ],
+        [
+          389,
+          48
+        ],
+        [
+          568,
+          48
+        ],
+        [
+          577,
+          43
+        ],
+        [
+          577,
+          9
+        ]
+      ],
+      "content": "(37) ",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        74,
+        46,
+        903,
+        271
+      ],
+      "polygon": [
+        [
+          74,
+          52
+        ],
+        [
+          74,
+          271
+        ],
+        [
+          897,
+          271
+        ],
+        [
+          897,
+          46
+        ]
+      ],
+      "content": "make it so; and I suppose no confiderate Man ever made the Soul immortal in any other Sense. For though I believe it is not discerpible, even by the Power of God; yet He is undoubtedly able to destroy it either by annihilating it, or perhaps by otherwise depriving it of all its Faculties, in ways which we can know nothing of.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        86,
+        289,
+        900,
+        375
+      ],
+      "polygon": [
+        [
+          92,
+          289
+        ],
+        [
+          92,
+          374
+        ],
+        [
+          899,
+          374
+        ],
+        [
+          899,
+          289
+        ]
+      ],
+      "content": "IV. To the Difficulties arising from the Supposition of Immateriality not excluding Extension; I answer,",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        88,
+        372,
+        916,
+        915
+      ],
+      "polygon": [
+        [
+          88,
+          372
+        ],
+        [
+          109,
+          915
+        ],
+        [
+          453,
+          915
+        ],
+        [
+          464,
+          915
+        ],
+        [
+          915,
+          915
+        ],
+        [
+          905,
+          372
+        ]
+      ],
+      "content": "1. That all these Difficulties are wide of the main Question. For if the foregoing Proof, that Matter is incapable of Thinking, cannot be shown to be defective; it follows necessarily that the Soul must be an Immaterial indiscerpible Substance. But the Difficulties that arise from any following Hypotheses concerning other Properties of that Immaterial Indiscerpible Substance, as whether it be Extended or Unextended, whether it ever acts wholly separate, or always in some material Vehicle, finer or groser. and the like; the Difficulties, I say, that arise from any of these particular Hypotheses, affect only the particular Hypotheses from which they arise, and not at all the foregoing general Proof. I take it to be demonstrated, that the Soul is an Immaterial indiscer-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        418,
+        2,
+        602,
+        49
+      ],
+      "polygon": [
+        [
+          601,
+          2
+        ],
+        [
+          531,
+          2
+        ],
+        [
+          418,
+          7
+        ],
+        [
+          418,
+          48
+        ],
+        [
+          601,
+          48
+        ]
+      ],
+      "content": "(38) ",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        58,
+        47,
+        876,
+        442
+      ],
+      "polygon": [
+        [
+          58,
+          52
+        ],
+        [
+          58,
+          432
+        ],
+        [
+          73,
+          441
+        ],
+        [
+          875,
+          437
+        ],
+        [
+          865,
+          47
+        ]
+      ],
+      "content": "discerpible Substance : He that thinks the Difficulties arising from the Supposition of that Immaterial indiscerpible Substance being Extended, to be unsurmountable; may try if he can find fewer Difficulties in supposing it Unextended ; And he that thinks the Difficulties that arise from supposing it Unextended, are not to be got over ; may try to solve the difficulties that arise from supposing it Extended : But the main Argument remains firm either way ; and no difficulty arising from following Hypotheses can be so great, as to lessen the force of the foregoing positive Proof.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        84,
+        439,
+        900,
+        945
+      ],
+      "polygon": [
+        [
+          84,
+          445
+        ],
+        [
+          100,
+          939
+        ],
+        [
+          470,
+          944
+        ],
+        [
+          898,
+          944
+        ],
+        [
+          879,
+          439
+        ]
+      ],
+      "content": "2. But conceiving Immateriality not to exclude Extension, and supposing the Difficulties arising from that Hypothesis to be such as could not be clearly answered; yet this would not weaken the foregoing Proof, unless that Argument could otherwise be shown to be in it self defective. For there are many Demonstrations even in abstract Mathematicks themselves, which no Man who understands them can in the least doubt of the certainty of, which yet are attended with difficult Consequences that cannot perfectly be cleared. The infinite Divisibility of Quantity, is an Instance of this kind. Also the Eternity of God, than which nothing is more self-evident; and yet the Diffi-",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        379,
+        18,
+        568,
+        57
+      ],
+      "polygon": [
+        [
+          379,
+          18
+        ],
+        [
+          379,
+          56
+        ],
+        [
+          567,
+          56
+        ],
+        [
+          567,
+          18
+        ]
+      ],
+      "content": "$$\n(3 9)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        16,
+        55,
+        867,
+        193
+      ],
+      "polygon": [
+        [
+          16,
+          55
+        ],
+        [
+          16,
+          187
+        ],
+        [
+          26,
+          192
+        ],
+        [
+          866,
+          192
+        ],
+        [
+          866,
+          55
+        ]
+      ],
+      "content": "Difficulties consequent upon it, are such as have reduced most of the Schoolmen to entertain that unintelligible Notion of a Nunc Stans. And his Inmensity, attended with much the like Difficulties.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        22,
+        191,
+        897,
+        921
+      ],
+      "polygon": [
+        [
+          28,
+          197
+        ],
+        [
+          22,
+          636
+        ],
+        [
+          53,
+          910
+        ],
+        [
+          895,
+          920
+        ],
+        [
+          866,
+          191
+        ]
+      ],
+      "content": "3. But neither is this the true state of the Case. For the Difficulties arising from the Supposition of Immaterial indiscerpible Extension, are by no means like those before mentioned. Space, (which you unphilosophically call the meer Absence of Bodies, and yet confess it to be positively infinite,) is without difficulty confessed by you to be an Instance of such an Extension; An Extension whose Parts (improperly so called) depend on each other for their Existence, not only because of its Infinity, but because of the Contradiction which a Separation of them manifestly would imply. And the only Thing required in the present case, is, to conceive that God can create a finite Substance, which shall not, like the solid, rigid, determined Extension of Matter, consist of Parts which are actually so many distinct Beings, independent on each other for their Existence; but be a Substance perfectly and essentially One, so that to suppose any Division of it, shall necessarily infer a Destruction of the Essence of that Substance. This must indeed be confessed to be a considerable Difficulty:",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        433,
+        12,
+        599,
+        54
+      ],
+      "polygon": [
+        [
+          433,
+          12
+        ],
+        [
+          433,
+          54
+        ],
+        [
+          598,
+          54
+        ],
+        [
+          598,
+          12
+        ]
+      ],
+      "content": "( 40 )",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        138,
+        58,
+        879,
+        200
+      ],
+      "polygon": [
+        [
+          138,
+          58
+        ],
+        [
+          138,
+          199
+        ],
+        [
+          878,
+          199
+        ],
+        [
+          878,
+          58
+        ]
+      ],
+      "content": "culty : But if the difficulties arising upon any other Hypothesis, be (as they certainly are) at least as great ; nothing can thence be inferred to the weakening of the foregoing Proof.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        138,
+        198,
+        885,
+        571
+      ],
+      "polygon": [
+        [
+          138,
+          198
+        ],
+        [
+          138,
+          570
+        ],
+        [
+          884,
+          570
+        ],
+        [
+          880,
+          198
+        ]
+      ],
+      "content": "Your applying the Argument, by which I proved that Matter could not Think, in the same Words, to prove that neither could Immaterial Substance be capable of Thinking; is fallacious in the first Sentence. For the Supposition of the Substance being by the Power of God divided into two Parts, which concerning Matter is confessed to be always possible, may concerning Immaterial Substance (even though Extension be not excluded) be denied to be possible, as being a Supposition which destroys the very Essence of the substance itself.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "aside_text",
+      "bbox_2d": [
+        13,
+        657,
+        142,
+        726
+      ],
+      "polygon": [
+        [
+          13,
+          657
+        ],
+        [
+          13,
+          725
+        ],
+        [
+          132,
+          725
+        ],
+        [
+          137,
+          716
+        ],
+        [
+          141,
+          706
+        ],
+        [
+          141,
+          667
+        ],
+        [
+          137,
+          662
+        ],
+        [
+          42,
+          657
+        ]
+      ],
+      "content": "* pag. 43\nand again\nP. 44.",
+      "native_label": "aside_text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        138,
+        585,
+        888,
+        949
+      ],
+      "polygon": [
+        [
+          138,
+          585
+        ],
+        [
+          138,
+          933
+        ],
+        [
+          559,
+          948
+        ],
+        [
+          843,
+          948
+        ],
+        [
+          869,
+          943
+        ],
+        [
+          887,
+          943
+        ],
+        [
+          887,
+          590
+        ]
+      ],
+      "content": "V. As to your last Difficulty concerning Brutes, I answer, that your Disjunction is still imperfect, when you say they must either necessarily be annihilated some time or other, or else be capable of Eternal Happiness as well as Man. For though they should never be annihilated, yet why must they needs be capable of Eternal Happiness as well as Man; any more than their present Subsisting, implies that they must needs be capable of the Expectations and Conditions of eternal Happiness.",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        381,
+        35,
+        571,
+        74
+      ],
+      "polygon": [
+        [
+          381,
+          35
+        ],
+        [
+          381,
+          59
+        ],
+        [
+          381,
+          69
+        ],
+        [
+          381,
+          74
+        ],
+        [
+          570,
+          74
+        ],
+        [
+          570,
+          35
+        ]
+      ],
+      "content": "$$\n(4 1)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        72,
+        73,
+        904,
+        402
+      ],
+      "polygon": [
+        [
+          72,
+          73
+        ],
+        [
+          82,
+          401
+        ],
+        [
+          903,
+          401
+        ],
+        [
+          888,
+          73
+        ]
+      ],
+      "content": "nefs, as well as Man? But what is all this, to our purpose? Cannot God, if he pleases, cause them to perish at the dissolution of their Bodies? Or cannot he, if he pleases, annihilate them at any other time, when he shall so think fit? Or cannot he, if he pleases, without ever annihilating them at all, dispose of them into States suitable to their particular Natures; which yet may in no propriety of Speech be stiled a Capacity of eternal Happiness, as that of Man is?",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        86,
+        420,
+        916,
+        643
+      ],
+      "polygon": [
+        [
+          86,
+          425
+        ],
+        [
+          96,
+          642
+        ],
+        [
+          915,
+          642
+        ],
+        [
+          910,
+          420
+        ]
+      ],
+      "content": "Having thus at large indeavoured to give you particular Satisfaction, in every one of the Difficulties you proposed; I shall conclude with briefly repeating the Strength of the Argument, in a few plain and easy Propositions; and so leave it to the judgment of the inquisitive and impartial Reader.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "footer",
+      "bbox_2d": [
+        810,
+        862,
+        921,
+        895
+      ],
+      "polygon": [
+        [
+          810,
+          866
+        ],
+        [
+          810,
+          894
+        ],
+        [
+          920,
+          894
+        ],
+        [
+          920,
+          862
+        ],
+        [
+          867,
+          862
+        ],
+        [
+          860,
+          862
+        ],
+        [
+          816,
+          862
+        ]
+      ],
+      "content": "Note,",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        430,
+        22,
+        612,
+        62
+      ],
+      "polygon": [
+        [
+          430,
+          22
+        ],
+        [
+          430,
+          61
+        ],
+        [
+          610,
+          61
+        ],
+        [
+          610,
+          22
+        ]
+      ],
+      "content": "( 42 )",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        142,
+        146,
+        931,
+        437
+      ],
+      "polygon": [
+        [
+          142,
+          151
+        ],
+        [
+          148,
+          436
+        ],
+        [
+          926,
+          436
+        ],
+        [
+          930,
+          146
+        ]
+      ],
+      "content": "Ote; by Conscioufsness in the following Propositions, the Reader may understand indifferently either the Reflex Act, by which a Man knows his Thoughts to be his own Thoughts; (which is the strict and properef Serse of the Word;) or the Direct Act of Thinking; or the Power or Capacity of Thinking; or (which is of the same import,) simple Sensation; or the Power of Self Motion, or of beginning Motion by the Will: The Argument holding equally in all or any of these Serses; as has been before said.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        497,
+        474,
+        534,
+        504
+      ],
+      "polygon": [
+        [
+          497,
+          474
+        ],
+        [
+          497,
+          503
+        ],
+        [
+          532,
+          503
+        ],
+        [
+          532,
+          474
+        ]
+      ],
+      "content": "## I.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        95,
+        510,
+        931,
+        583
+      ],
+      "polygon": [
+        [
+          95,
+          583
+        ],
+        [
+          930,
+          583
+        ],
+        [
+          930,
+          510
+        ],
+        [
+          696,
+          510
+        ],
+        [
+          646,
+          510
+        ],
+        [
+          101,
+          510
+        ]
+      ],
+      "content": "Every System of Matter consists of a Multitude of distinct Parts.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        180,
+        592,
+        771,
+        628
+      ],
+      "polygon": [
+        [
+          180,
+          592
+        ],
+        [
+          186,
+          628
+        ],
+        [
+          770,
+          628
+        ],
+        [
+          770,
+          592
+        ]
+      ],
+      "content": "This, I think, is granted by All.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        479,
+        644,
+        532,
+        672
+      ],
+      "polygon": [
+        [
+          479,
+          644
+        ],
+        [
+          479,
+          671
+        ],
+        [
+          531,
+          671
+        ],
+        [
+          531,
+          644
+        ]
+      ],
+      "content": "## II.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        96,
+        688,
+        917,
+        761
+      ],
+      "polygon": [
+        [
+          96,
+          688
+        ],
+        [
+          96,
+          760
+        ],
+        [
+          916,
+          760
+        ],
+        [
+          916,
+          688
+        ]
+      ],
+      "content": "Every real Quality inheres in some Subject.",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        136,
+        777,
+        918,
+        902
+      ],
+      "polygon": [
+        [
+          136,
+          777
+        ],
+        [
+          136,
+          901
+        ],
+        [
+          917,
+          896
+        ],
+        [
+          917,
+          777
+        ]
+      ],
+      "content": "This also, I think, is granted by All. For whatever is called a Quality, and yet inheres not in any Subject, must either subfist of it self; and then it is a Substance, not a Quality; or else it is nothing but a mere Name.",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "number",
+      "bbox_2d": [
+        852,
+        897,
+        906,
+        923
+      ],
+      "polygon": [
+        [
+          852,
+          897
+        ],
+        [
+          852,
+          922
+        ],
+        [
+          905,
+          922
+        ],
+        [
+          905,
+          897
+        ]
+      ],
+      "content": "HIY",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        340,
+        0,
+        544,
+        44
+      ],
+      "polygon": [
+        [
+          340,
+          0
+        ],
+        [
+          340,
+          44
+        ],
+        [
+          543,
+          44
+        ],
+        [
+          543,
+          0
+        ]
+      ],
+      "content": "$$\n(4 3)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        415,
+        65,
+        489,
+        96
+      ],
+      "polygon": [
+        [
+          415,
+          65
+        ],
+        [
+          415,
+          95
+        ],
+        [
+          488,
+          95
+        ],
+        [
+          488,
+          65
+        ]
+      ],
+      "content": "III.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        35,
+        116,
+        882,
+        253
+      ],
+      "polygon": [
+        [
+          35,
+          253
+        ],
+        [
+          881,
+          248
+        ],
+        [
+          881,
+          116
+        ],
+        [
+          772,
+          116
+        ],
+        [
+          766,
+          116
+        ],
+        [
+          745,
+          116
+        ],
+        [
+          41,
+          116
+        ]
+      ],
+      "content": "No Individual or single Quality of one particle of Matter, can be the Individual or single Quality of another particle.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        75,
+        272,
+        886,
+        509
+      ],
+      "polygon": [
+        [
+          75,
+          272
+        ],
+        [
+          81,
+          508
+        ],
+        [
+          885,
+          508
+        ],
+        [
+          885,
+          272
+        ]
+      ],
+      "content": "The Heat of one particle, is not the Heat of another. The Gravity, the Colour, the Figure of one particle, is not the same individual Gravity, Colour or Figure of another particle. The Consciousness or Sensation of one particle, (supposing it to be a Quality of Matter ,) is not the Consciousness or Sensation of another. If it was; it would follow, that the same thing could be Two, in the same sense, and at the same time, that it is but One.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        80,
+        508,
+        886,
+        864
+      ],
+      "polygon": [
+        [
+          80,
+          508
+        ],
+        [
+          85,
+          864
+        ],
+        [
+          885,
+          864
+        ],
+        [
+          885,
+          508
+        ]
+      ],
+      "content": "Note; From hence may be drawn an evident Confutation of that absurd Notion which Mr Hobbs Suggests in his Physicks, (chap. 25, Seit. 5.) that All Matter is essentially endued with an obscure actual Sense and Perception, but that there is required a Number and apt Composition of parts to make up a clear and distinct Sensation or Consciousness. For from this Notion it would follow, that the resulting Sensation or Consciousness at last, being but One distinct Sensitation or Consciousness, (as is that of a Man;) the Sensation or Consciousness of every One of the constituent particles, would be the individual Sensation or Consciousness of All and Each of the rest.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "number",
+      "bbox_2d": [
+        812,
+        880,
+        884,
+        908
+      ],
+      "polygon": [
+        [
+          812,
+          880
+        ],
+        [
+          812,
+          884
+        ],
+        [
+          818,
+          907
+        ],
+        [
+          883,
+          907
+        ],
+        [
+          883,
+          880
+        ]
+      ],
+      "content": "IV.",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        448,
+        0,
+        646,
+        42
+      ],
+      "polygon": [
+        [
+          448,
+          0
+        ],
+        [
+          448,
+          41
+        ],
+        [
+          645,
+          41
+        ],
+        [
+          645,
+          0
+        ]
+      ],
+      "content": "(44)",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        507,
+        62,
+        581,
+        96
+      ],
+      "polygon": [
+        [
+          507,
+          67
+        ],
+        [
+          507,
+          95
+        ],
+        [
+          580,
+          95
+        ],
+        [
+          580,
+          62
+        ],
+        [
+          523,
+          62
+        ]
+      ],
+      "content": "IV.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        144,
+        112,
+        945,
+        257
+      ],
+      "polygon": [
+        [
+          144,
+          112
+        ],
+        [
+          144,
+          256
+        ],
+        [
+          944,
+          256
+        ],
+        [
+          944,
+          117
+        ]
+      ],
+      "content": "Every real Simple Quality, that refides in any whole material System, refides in All the Parts of that System.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        0,
+        281,
+        168,
+        661
+      ],
+      "polygon": [
+        [
+          0,
+          286
+        ],
+        [
+          5,
+          661
+        ],
+        [
+          163,
+          661
+        ],
+        [
+          167,
+          471
+        ],
+        [
+          153,
+          281
+        ]
+      ],
+      "content": "- Note; by Heat here, is meant that Motion which causes in Us the Sensation of Heat; By Colour, that Magnitude and Figure, which causes particular Rays to be transmitted to us; etc.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        181,
+        274,
+        950,
+        599
+      ],
+      "polygon": [
+        [
+          181,
+          274
+        ],
+        [
+          192,
+          598
+        ],
+        [
+          948,
+          598
+        ],
+        [
+          944,
+          274
+        ]
+      ],
+      "content": "The Magnitude of every Body, is the Sum of the Magnitudes of its several Parts. The Motion of every Body, is the Sum of the Motions of its several Parts. The Weight of every Body, is the Sum of the Weights of its several Parts. The Heat of every Body, is the Heat of its several Parts. The Colour of every Body, is the Colour of its several Parts. And the same is universally true of every Simple Quality refiding in any System. For refiding in the Whole, and not refiding in the Part, is refiding in a Thing, and not refiding in it, at the same time.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        558,
+        616,
+        616,
+        647
+      ],
+      "polygon": [
+        [
+          558,
+          616
+        ],
+        [
+          558,
+          647
+        ],
+        [
+          615,
+          647
+        ],
+        [
+          615,
+          616
+        ]
+      ],
+      "content": "## V.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        144,
+        672,
+        954,
+        882
+      ],
+      "polygon": [
+        [
+          144,
+          678
+        ],
+        [
+          150,
+          882
+        ],
+        [
+          953,
+          877
+        ],
+        [
+          953,
+          672
+        ]
+      ],
+      "content": "Every real Compound Quality, that resides in any whole material System, is a number of simple Qualities residing in all the Parts of that System; some in one part, some in another.",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "footer",
+      "bbox_2d": [
+        860,
+        890,
+        956,
+        920
+      ],
+      "polygon": [
+        [
+          860,
+          890
+        ],
+        [
+          860,
+          919
+        ],
+        [
+          955,
+          919
+        ],
+        [
+          955,
+          890
+        ]
+      ],
+      "content": "Thus",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        364,
+        4,
+        578,
+        44
+      ],
+      "polygon": [
+        [
+          364,
+          4
+        ],
+        [
+          364,
+          44
+        ],
+        [
+          577,
+          44
+        ],
+        [
+          577,
+          4
+        ]
+      ],
+      "content": "$$\n(4 5)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        83,
+        42,
+        893,
+        266
+      ],
+      "polygon": [
+        [
+          83,
+          42
+        ],
+        [
+          83,
+          265
+        ],
+        [
+          892,
+          265
+        ],
+        [
+          887,
+          42
+        ]
+      ],
+      "content": "Thus in the Instance of mixt Colours; When the Simples, Blue, suppose, and Yellow, make the Whole appear Green; In this Case, That Portion of the System, in which any one of the particular Simple Qualities resides, is a Whole System with respect to That Quality; and the Quality residing in it, resides in the several Particles of which That Portion of the System is constituted: And so of the reft.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        440,
+        283,
+        518,
+        314
+      ],
+      "polygon": [
+        [
+          440,
+          283
+        ],
+        [
+          440,
+          313
+        ],
+        [
+          517,
+          313
+        ],
+        [
+          517,
+          283
+        ]
+      ],
+      "content": "## VI.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        57,
+        333,
+        913,
+        676
+      ],
+      "polygon": [
+        [
+          62,
+          333
+        ],
+        [
+          67,
+          675
+        ],
+        [
+          911,
+          675
+        ],
+        [
+          902,
+          333
+        ]
+      ],
+      "content": "Every real Quality, Simple or Compound, that results from any whole material System, but does not reside in it, that is, neither in All its distinct parts, nor in All the parts of some Portion of it, according to the Explication of the two foregoing Propositions; is the Mode or Quality of some Other Substance, and not of That.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        109,
+        692,
+        918,
+        819
+      ],
+      "polygon": [
+        [
+          109,
+          692
+        ],
+        [
+          109,
+          814
+        ],
+        [
+          120,
+          819
+        ],
+        [
+          917,
+          819
+        ],
+        [
+          913,
+          692
+        ],
+        [
+          872,
+          692
+        ]
+      ],
+      "content": "All sensible secondary Qualities, Heat, Colour, Smell, Taste, Sound, and the like, are of this kind ; being in reality not Qualities of the Bodies they are ascribed to, but Modes of the Mind that perceives them.",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        372,
+        2,
+        558,
+        53
+      ],
+      "polygon": [
+        [
+          372,
+          2
+        ],
+        [
+          372,
+          37
+        ],
+        [
+          377,
+          53
+        ],
+        [
+          499,
+          53
+        ],
+        [
+          505,
+          53
+        ],
+        [
+          509,
+          53
+        ],
+        [
+          557,
+          48
+        ],
+        [
+          557,
+          2
+        ]
+      ],
+      "content": "( 46 )",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        70,
+        118,
+        897,
+        532
+      ],
+      "polygon": [
+        [
+          70,
+          118
+        ],
+        [
+          80,
+          532
+        ],
+        [
+          896,
+          532
+        ],
+        [
+          891,
+          118
+        ]
+      ],
+      "content": "Every Power, Simple or Compound, that results from any whole material System, but does not reside in it, that is, in All its parts, in the manner before explained; nor yet resides in any Other Substance, as its Subject; is no real Quality at all; but must either be it self a real Substance, (which seems unintelligible;) or else it is nothing but merely an abstract Name or Notion, as all Universals are.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        123,
+        545,
+        918,
+        930
+      ],
+      "polygon": [
+        [
+          123,
+          545
+        ],
+        [
+          139,
+          910
+        ],
+        [
+          509,
+          930
+        ],
+        [
+          917,
+          930
+        ],
+        [
+          903,
+          545
+        ]
+      ],
+      "content": "Thus the Power resulting from the Texture of a Rose, to excite in us the Sensation of Sweetness, is nothing but an abstract Name, signifying a particular Motion and Figure of certain parts emitted. The Power of a Clock to show the Hour of the Day, is nothing but one new Complex Name, to express at once the several Motions of the parts, and particularly the determinate Velocity of the last Wheel to turn round once in twelve Hours; Upon the stopping which Motion by the Touch of a Finger or any other Impediment, without making any Alteration at all in the Number; Figure, or Disposition of the Parts of the Clock, the Power wholly ceases: and upon removing",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        361,
+        14,
+        544,
+        59
+      ],
+      "polygon": [
+        [
+          361,
+          14
+        ],
+        [
+          361,
+          58
+        ],
+        [
+          542,
+          58
+        ],
+        [
+          542,
+          14
+        ]
+      ],
+      "content": "## (47)",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        73,
+        56,
+        869,
+        824
+      ],
+      "polygon": [
+        [
+          83,
+          56
+        ],
+        [
+          73,
+          814
+        ],
+        [
+          868,
+          824
+        ],
+        [
+          853,
+          56
+        ]
+      ],
+      "content": "removing the Impediment, by which nothing is restored but mere Motion, the Power returns again, which is therefore no new real Quality of the Whole, but only the mere Motion of the Parts. The Power of a Pin to prick, is nothing distinct from its mere Figure permitting it to enter the Skin. The Power of a Weight in one Scale of a Balance, to ascend or descend, upon increasing or diminishing the Counterpoise in the other Scale; is not a new real Quality, distinct from its absolute Gravity, though it occasions a new Effect; there being no Alteration at all made in the Weight it self. The Power of the Eye to see, is not a real Quality of the Whole Eye, but merely an abstract Name, signifying a Transmitting and Refracting of the Rays of Light in a certain manner through its several Parts; Which Effect, by the interposition or removal of an Opake Body, is destroyed or renewed, without any Alteration at all in the Eye it self. A Key, by having many new Locks made fit to it, acquires a new Power of producing Effects, which it could not before; and yet no new real Quality is produced, nor any Alteration at all made, in the Key it self. And so universally of all Powers of this kind. If these Powers were any thing else, but mere abstract Names; they would signify Qualities subsisting without any Subject at all; that is, such as must themselves be distinct Substances. Which is unintelligible.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        455,
+        870,
+        501,
+        896
+      ],
+      "polygon": [
+        [
+          455,
+          870
+        ],
+        [
+          455,
+          895
+        ],
+        [
+          500,
+          895
+        ],
+        [
+          500,
+          870
+        ]
+      ],
+      "content": "## D",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 3,
+      "label": "footer",
+      "bbox_2d": [
+        780,
+        868,
+        881,
+        899
+      ],
+      "polygon": [
+        [
+          780,
+          868
+        ],
+        [
+          780,
+          899
+        ],
+        [
+          880,
+          899
+        ],
+        [
+          880,
+          868
+        ]
+      ],
+      "content": "VIII.",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "header",
+      "bbox_2d": [
+        390,
+        20,
+        578,
+        66
+      ],
+      "polygon": [
+        [
+          390,
+          25
+        ],
+        [
+          390,
+          66
+        ],
+        [
+          577,
+          66
+        ],
+        [
+          577,
+          20
+        ],
+        [
+          395,
+          20
+        ]
+      ],
+      "content": "( 48 )",
+      "native_label": "header"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        429,
+        86,
+        532,
+        118
+      ],
+      "polygon": [
+        [
+          429,
+          86
+        ],
+        [
+          429,
+          118
+        ],
+        [
+          531,
+          118
+        ],
+        [
+          531,
+          86
+        ]
+      ],
+      "content": "## VIII.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        78,
+        136,
+        913,
+        482
+      ],
+      "polygon": [
+        [
+          78,
+          136
+        ],
+        [
+          88,
+          481
+        ],
+        [
+          911,
+          481
+        ],
+        [
+          907,
+          136
+        ]
+      ],
+      "content": "Consciousness is neither a mere abstract Name, (such as are the Powers mentioned in Prop. VII;) nor a Power of exciting or occasioning different Modes in a foreign Substance, (such as are all the sensible Qualities of Bodies, Prop. VI;) but a real Quality, truly and properly inhering in the Subject itself, the Thinking Substance.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        130,
+        496,
+        921,
+        736
+      ],
+      "polygon": [
+        [
+          130,
+          502
+        ],
+        [
+          146,
+          735
+        ],
+        [
+          920,
+          735
+        ],
+        [
+          920,
+          496
+        ]
+      ],
+      "content": "If it was a mere abstract Name; it would be nothing at all in the Person that Thinks, or in the Thinking Substance itself; but only a Notion framed by the imagination of some Other Being. For all those Powers which are only abstract Names, are not at all in the Things whose Powers they are called; but are only Notions framed in Imagination, by the Mind that observes, compares, and reasons about different Objects without itself.",
+      "native_label": "text"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        146,
+        734,
+        934,
+        908
+      ],
+      "polygon": [
+        [
+          146,
+          734
+        ],
+        [
+          151,
+          907
+        ],
+        [
+          933,
+          907
+        ],
+        [
+          928,
+          734
+        ]
+      ],
+      "content": "If it was a Power of exciting or occasioning different Modes in a foreign Substance; Then the Power of Thinking must be before in that foreign Substance; and that foreign Substance alone would in reality be Confcious, and not This which excites the different Modes in That foreign Substance. For the Power that is in",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "footer",
+      "bbox_2d": [
+        860,
+        906,
+        931,
+        926
+      ],
+      "polygon": [
+        [
+          860,
+          911
+        ],
+        [
+          860,
+          925
+        ],
+        [
+          930,
+          925
+        ],
+        [
+          930,
+          906
+        ],
+        [
+          866,
+          906
+        ]
+      ],
+      "content": "one",
+      "native_label": "footer"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        355,
+        13,
+        573,
+        51
+      ],
+      "polygon": [
+        [
+          355,
+          13
+        ],
+        [
+          355,
+          50
+        ],
+        [
+          572,
+          50
+        ],
+        [
+          572,
+          13
+        ]
+      ],
+      "content": "# ( 49 )",
+      "native_label": "doc_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        80,
+        51,
+        885,
+        243
+      ],
+      "polygon": [
+        [
+          80,
+          51
+        ],
+        [
+          85,
+          242
+        ],
+        [
+          884,
+          242
+        ],
+        [
+          884,
+          51
+        ],
+        [
+          355,
+          51
+        ]
+      ],
+      "content": "one Substance, of exciting different Modes in another Substance; presupposes necessarily in that other Substance the Foundation of those Modes. Thus in the Cafe of all the sensible Qualities of Bodies; the Power of Thinking is beforehand in that Being, wherein those Qualities excite or occasion different Modes of Thinking.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        82,
+        242,
+        883,
+        438
+      ],
+      "polygon": [
+        [
+          88,
+          242
+        ],
+        [
+          82,
+          438
+        ],
+        [
+          877,
+          438
+        ],
+        [
+          877,
+          242
+        ],
+        [
+          316,
+          242
+        ]
+      ],
+      "content": "It remains therefore, that it must of necessity be a real Quality, truly and properly inhering in the Subject itself, the Thinking Substance; there being no other Species of Powers or Qualities left, to which it can possibly be referred. And this indeed is of itself as evident by every Man's Experience, as it can be rendered by any Explication or Proof whatsoever.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        426,
+        457,
+        501,
+        485
+      ],
+      "polygon": [
+        [
+          426,
+          457
+        ],
+        [
+          426,
+          485
+        ],
+        [
+          500,
+          485
+        ],
+        [
+          500,
+          457
+        ]
+      ],
+      "content": "## IX.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        42,
+        506,
+        892,
+        716
+      ],
+      "polygon": [
+        [
+          48,
+          506
+        ],
+        [
+          52,
+          715
+        ],
+        [
+          891,
+          715
+        ],
+        [
+          882,
+          506
+        ]
+      ],
+      "content": "No real Quality can result from the Composition of different Qualities, so as to be a new Quality in the same Subject, of a different Kind or Species from all and every one of the Component Qualities.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        86,
+        731,
+        891,
+        928
+      ],
+      "polygon": [
+        [
+          97,
+          913
+        ],
+        [
+          143,
+          922
+        ],
+        [
+          890,
+          927
+        ],
+        [
+          890,
+          731
+        ],
+        [
+          92,
+          731
+        ]
+      ],
+      "content": "If it could, it would be a Creation of Something out of Nothing. From compound Motions can arise nothing but Motion : From Magnitudes, nothing but Magnitude : From Figures, nothing but Figure : From compositions of Magnitude, Figure and Motion together; nothing but Magnitude, Figure and Motion : From Mechanical D 2",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        390,
+        14,
+        588,
+        54
+      ],
+      "polygon": [
+        [
+          390,
+          14
+        ],
+        [
+          390,
+          53
+        ],
+        [
+          587,
+          53
+        ],
+        [
+          587,
+          14
+        ]
+      ],
+      "content": "## ( 50 )",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        118,
+        50,
+        911,
+        752
+      ],
+      "polygon": [
+        [
+          123,
+          50
+        ],
+        [
+          118,
+          746
+        ],
+        [
+          910,
+          751
+        ],
+        [
+          900,
+          50
+        ]
+      ],
+      "content": "chanical Powers, nothing but Mechanical Powers : From a composition of Colours, nothing but Colour; which it self (as appears by Microscopes) is still the simple Colours of which it was compounded. From mixtures of Chymical Liquors, nothing but Ferments; which are only mere Motions of the particles in mixing; such Motions as arise from the placing of Iron and a Load-stone near each other. Gravity, is not a Quality of Matter, arising from its Texture or any other Powers in it; but merely an Endeavour to Motion, excited by some foreign Force or Power. Magnetism and Electricity, are not new Qualities, resulting from different and unknown Powers; but merely emissions of certain streams of Matter, which produce certain determinate Motions. Compositions of Colours, can never contribute to produce a Sound; nor compositions of Magnitude and Figure to produce a Motion; nor necessary and determined Motions, to produce a free and indetermined Power of Self-Motion; nor any Mechanical Powers whatsoever, to produce a Power not Mechanical. And the same must of necessity hold universally true, of all Qualities and Powers whatsoever, whether known or unknown: Because otherwise, as hath been before said, there would in the Compound be Something created out of Nothing.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        473,
+        769,
+        530,
+        801
+      ],
+      "polygon": [
+        [
+          473,
+          769
+        ],
+        [
+          473,
+          800
+        ],
+        [
+          529,
+          800
+        ],
+        [
+          529,
+          769
+        ]
+      ],
+      "content": "## X.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        100,
+        816,
+        909,
+        930
+      ],
+      "polygon": [
+        [
+          100,
+          831
+        ],
+        [
+          105,
+          910
+        ],
+        [
+          220,
+          915
+        ],
+        [
+          275,
+          910
+        ],
+        [
+          371,
+          920
+        ],
+        [
+          545,
+          930
+        ],
+        [
+          908,
+          930
+        ],
+        [
+          908,
+          821
+        ],
+        [
+          494,
+          816
+        ],
+        [
+          136,
+          816
+        ],
+        [
+          110,
+          816
+        ]
+      ],
+      "content": "Consciousness therefore, being a real Quality, (Prop. VIII,) and of a Kind",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        359,
+        5,
+        568,
+        44
+      ],
+      "polygon": [
+        [
+          359,
+          5
+        ],
+        [
+          359,
+          44
+        ],
+        [
+          567,
+          44
+        ],
+        [
+          567,
+          5
+        ]
+      ],
+      "content": "$$\n(5 1)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        43,
+        44,
+        889,
+        256
+      ],
+      "polygon": [
+        [
+          43,
+          44
+        ],
+        [
+          49,
+          255
+        ],
+        [
+          887,
+          250
+        ],
+        [
+          883,
+          44
+        ]
+      ],
+      "content": "Kind specifically different from all other Qualities, whether known or unknown, which are themselves acknowledged to be void of Consciousness; can never possibly result from any Composition of such Qualities.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        88,
+        269,
+        893,
+        470
+      ],
+      "polygon": [
+        [
+          88,
+          269
+        ],
+        [
+          88,
+          469
+        ],
+        [
+          892,
+          469
+        ],
+        [
+          887,
+          269
+        ]
+      ],
+      "content": "This is as evident from the foregoing Propositions, as that a Sound cannot be the result of a Mixture of Colours and Smells ; nor Extension , the result of a composition of parts unextended ; nor Solidity the result of parts not solid ; whatever other different Qualities, known or unknown, those constituent parts may be supposed to be endued with.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        435,
+        487,
+        518,
+        521
+      ],
+      "polygon": [
+        [
+          435,
+          492
+        ],
+        [
+          435,
+          520
+        ],
+        [
+          517,
+          520
+        ],
+        [
+          517,
+          492
+        ],
+        [
+          512,
+          487
+        ],
+        [
+          455,
+          487
+        ],
+        [
+          449,
+          487
+        ],
+        [
+          441,
+          487
+        ]
+      ],
+      "content": "## XI.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        60,
+        537,
+        898,
+        647
+      ],
+      "polygon": [
+        [
+          60,
+          537
+        ],
+        [
+          66,
+          646
+        ],
+        [
+          897,
+          641
+        ],
+        [
+          897,
+          537
+        ]
+      ],
+      "content": "No Individual Quality can be transferred from one Subject to another.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        149,
+        659,
+        569,
+        695
+      ],
+      "polygon": [
+        [
+          149,
+          659
+        ],
+        [
+          149,
+          694
+        ],
+        [
+          568,
+          694
+        ],
+        [
+          568,
+          659
+        ]
+      ],
+      "content": "This is granted by All.",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        433,
+        713,
+        532,
+        745
+      ],
+      "polygon": [
+        [
+          433,
+          713
+        ],
+        [
+          433,
+          744
+        ],
+        [
+          530,
+          744
+        ],
+        [
+          530,
+          713
+        ]
+      ],
+      "content": "## XII.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        65,
+        763,
+        911,
+        939
+      ],
+      "polygon": [
+        [
+          65,
+          763
+        ],
+        [
+          70,
+          909
+        ],
+        [
+          201,
+          929
+        ],
+        [
+          234,
+          929
+        ],
+        [
+          300,
+          929
+        ],
+        [
+          501,
+          939
+        ],
+        [
+          910,
+          939
+        ],
+        [
+          910,
+          763
+        ]
+      ],
+      "content": "The Spirits and Particles of the Brain, being loose and in perpetual Flux, cannot therefore be the seat of that Consciousness, by which a Man",
+      "native_label": "text"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "text",
+      "bbox_2d": [
+        385,
+        8,
+        584,
+        54
+      ],
+      "polygon": [
+        [
+          385,
+          14
+        ],
+        [
+          385,
+          53
+        ],
+        [
+          554,
+          53
+        ],
+        [
+          583,
+          48
+        ],
+        [
+          583,
+          8
+        ],
+        [
+          455,
+          8
+        ]
+      ],
+      "content": "( 52 )",
+      "native_label": "text"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        72,
+        49,
+        892,
+        230
+      ],
+      "polygon": [
+        [
+          72,
+          55
+        ],
+        [
+          78,
+          229
+        ],
+        [
+          891,
+          224
+        ],
+        [
+          891,
+          49
+        ]
+      ],
+      "content": "Man not only remembers things done many years since, but also is Conscious that He himself, the same Individual Conscious Being, was the Doer of them.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        118,
+        247,
+        888,
+        309
+      ],
+      "polygon": [
+        [
+          118,
+          251
+        ],
+        [
+          118,
+          309
+        ],
+        [
+          887,
+          309
+        ],
+        [
+          887,
+          247
+        ],
+        [
+          819,
+          247
+        ],
+        [
+          742,
+          247
+        ]
+      ],
+      "content": "This follows evidently from the foregoing.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        426,
+        323,
+        530,
+        356
+      ],
+      "polygon": [
+        [
+          426,
+          323
+        ],
+        [
+          426,
+          355
+        ],
+        [
+          529,
+          355
+        ],
+        [
+          529,
+          323
+        ]
+      ],
+      "content": "## XIII.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        73,
+        378,
+        903,
+        623
+      ],
+      "polygon": [
+        [
+          73,
+          378
+        ],
+        [
+          83,
+          623
+        ],
+        [
+          901,
+          618
+        ],
+        [
+          897,
+          378
+        ]
+      ],
+      "content": "The Consciousness that a Man has at one and the same time, is One Consciousness; and not a Multitude of Consciousneses; as the Solidity, Motion, or Colour of any piece of Matter, is a Multitude of distinct Solidities, Motions, or Colours.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        124,
+        645,
+        901,
+        748
+      ],
+      "polygon": [
+        [
+          124,
+          645
+        ],
+        [
+          130,
+          747
+        ],
+        [
+          900,
+          747
+        ],
+        [
+          900,
+          645
+        ]
+      ],
+      "content": "This is granted by All, who deny that the particles of the Brain, which they suppose to constitute a Conscious Substance, are themselves each of them Conscious.",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        441,
+        773,
+        558,
+        804
+      ],
+      "polygon": [
+        [
+          441,
+          773
+        ],
+        [
+          441,
+          778
+        ],
+        [
+          441,
+          783
+        ],
+        [
+          441,
+          788
+        ],
+        [
+          447,
+          803
+        ],
+        [
+          557,
+          803
+        ],
+        [
+          557,
+          773
+        ]
+      ],
+      "content": "## XIV.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        90,
+        824,
+        904,
+        897
+      ],
+      "polygon": [
+        [
+          90,
+          824
+        ],
+        [
+          90,
+          896
+        ],
+        [
+          898,
+          896
+        ],
+        [
+          903,
+          824
+        ]
+      ],
+      "content": "Consciousness therefore cannot at all reside in the Substance of the Brain,",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "number",
+      "bbox_2d": [
+        846,
+        900,
+        899,
+        928
+      ],
+      "polygon": [
+        [
+          846,
+          900
+        ],
+        [
+          846,
+          923
+        ],
+        [
+          851,
+          927
+        ],
+        [
+          865,
+          927
+        ],
+        [
+          876,
+          927
+        ],
+        [
+          898,
+          927
+        ],
+        [
+          898,
+          900
+        ]
+      ],
+      "content": "or",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        363,
+        5,
+        575,
+        53
+      ],
+      "polygon": [
+        [
+          363,
+          10
+        ],
+        [
+          363,
+          53
+        ],
+        [
+          529,
+          53
+        ],
+        [
+          574,
+          49
+        ],
+        [
+          574,
+          5
+        ],
+        [
+          393,
+          5
+        ]
+      ],
+      "content": "$$\n(5 3)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        31,
+        46,
+        898,
+        198
+      ],
+      "polygon": [
+        [
+          31,
+          197
+        ],
+        [
+          490,
+          197
+        ],
+        [
+          897,
+          197
+        ],
+        [
+          897,
+          46
+        ],
+        [
+          37,
+          46
+        ]
+      ],
+      "content": "or Spirits, or in any other material System, as its Subject; but must be a Quality of some Immaterial Substance.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        81,
+        205,
+        921,
+        627
+      ],
+      "polygon": [
+        [
+          81,
+          211
+        ],
+        [
+          91,
+          626
+        ],
+        [
+          920,
+          626
+        ],
+        [
+          905,
+          205
+        ]
+      ],
+      "content": "This follows necessarily from the foregoing Propositions compared together. For since every possible Power of Matter, whether known or unknown, must needs be either, 1st, a real Quality of the Matter to which it is ascribed; and then it must inhere in the several distinct parts: Or, 2dly, a Power of exciting or occasioning certain Modes in some other Subject; and then it is truly the Quality, not of the Matter, but of that other Subject. Or, 3dly, a mere abstract Name or Notion of what is, properly speaking, no real Quality at all, and inheres in no Subject at all: And Consciousness is acknowledged to be none of these: It follows unavoidably, that it must of necessity be a Quality of some Immaterial Substance.",
+      "native_label": "text"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        438,
+        642,
+        538,
+        675
+      ],
+      "polygon": [
+        [
+          438,
+          647
+        ],
+        [
+          438,
+          674
+        ],
+        [
+          537,
+          674
+        ],
+        [
+          537,
+          642
+        ],
+        [
+          444,
+          642
+        ]
+      ],
+      "content": "## XV.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        55,
+        693,
+        937,
+        875
+      ],
+      "polygon": [
+        [
+          55,
+          693
+        ],
+        [
+          61,
+          875
+        ],
+        [
+          931,
+          875
+        ],
+        [
+          927,
+          693
+        ]
+      ],
+      "content": "Difficulties that arise afterwards, concerning Other Qualities of that Immaterial Substance, as whether it be Extended or Unextended; do not at all affect the present Argument.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "number",
+      "bbox_2d": [
+        857,
+        897,
+        933,
+        927
+      ],
+      "polygon": [
+        [
+          857,
+          897
+        ],
+        [
+          857,
+          926
+        ],
+        [
+          931,
+          926
+        ],
+        [
+          931,
+          897
+        ]
+      ],
+      "content": "For",
+      "native_label": "number"
+    }
+  ],
+  [
+    {
+      "index": 0,
+      "label": "formula",
+      "bbox_2d": [
+        405,
+        14,
+        606,
+        55
+      ],
+      "polygon": [
+        [
+          405,
+          14
+        ],
+        [
+          405,
+          55
+        ],
+        [
+          605,
+          55
+        ],
+        [
+          605,
+          14
+        ]
+      ],
+      "content": "$$\n(5 4)\n$$",
+      "native_label": "display_formula"
+    },
+    {
+      "index": 1,
+      "label": "text",
+      "bbox_2d": [
+        110,
+        53,
+        918,
+        275
+      ],
+      "polygon": [
+        [
+          110,
+          59
+        ],
+        [
+          110,
+          274
+        ],
+        [
+          913,
+          274
+        ],
+        [
+          917,
+          53
+        ]
+      ],
+      "content": "For thus even abstract Mathematical Demonstrations; as those concerning the Infinite Divisibility of Quantity, the Eternity of God; and his Immensity; have almost insuperable Difficulties on the other side: And yet no Man, who understands those Matters, thinks that those Difficulties do at all weaken the Force, or diminish the Certainty of the Demonstrations.",
+      "native_label": "text"
+    },
+    {
+      "index": 2,
+      "label": "text",
+      "bbox_2d": [
+        283,
+        300,
+        710,
+        347
+      ],
+      "polygon": [
+        [
+          283,
+          300
+        ],
+        [
+          283,
+          347
+        ],
+        [
+          709,
+          347
+        ],
+        [
+          709,
+          300
+        ]
+      ],
+      "content": "## FINIS.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 3,
+      "label": "text",
+      "bbox_2d": [
+        65,
+        414,
+        909,
+        505
+      ],
+      "polygon": [
+        [
+          65,
+          414
+        ],
+        [
+          65,
+          504
+        ],
+        [
+          908,
+          504
+        ],
+        [
+          908,
+          414
+        ]
+      ],
+      "content": "## BOOKS Written by the Reverend Mr Clark : Printed for James Knapton, at the Crown in St Paul's Church-Yard.",
+      "native_label": "paragraph_title"
+    },
+    {
+      "index": 4,
+      "label": "text",
+      "bbox_2d": [
+        65,
+        516,
+        913,
+        570
+      ],
+      "polygon": [
+        [
+          65,
+          570
+        ],
+        [
+          907,
+          570
+        ],
+        [
+          911,
+          516
+        ],
+        [
+          70,
+          516
+        ]
+      ],
+      "content": "A Demonstration of the Being and Attributes of God, &c. Pr. 3 s.",
+      "native_label": "text"
+    },
+    {
+      "index": 5,
+      "label": "text",
+      "bbox_2d": [
+        60,
+        565,
+        921,
+        663
+      ],
+      "polygon": [
+        [
+          60,
+          662
+        ],
+        [
+          910,
+          662
+        ],
+        [
+          919,
+          648
+        ],
+        [
+          919,
+          565
+        ],
+        [
+          156,
+          565
+        ],
+        [
+          110,
+          565
+        ],
+        [
+          66,
+          570
+        ]
+      ],
+      "content": "A Difcourfe concerning the Unchangeable Obligations of Natural Religion, and the Truth and Certainty of the Christian Revelation, &c. Pr. 5 s.",
+      "native_label": "text"
+    },
+    {
+      "index": 6,
+      "label": "text",
+      "bbox_2d": [
+        60,
+        659,
+        911,
+        711
+      ],
+      "polygon": [
+        [
+          60,
+          659
+        ],
+        [
+          60,
+          710
+        ],
+        [
+          910,
+          710
+        ],
+        [
+          910,
+          659
+        ]
+      ],
+      "content": "The Great Duty of Universal Love and Charity, Oc. Pr. 6 d.",
+      "native_label": "text"
+    },
+    {
+      "index": 7,
+      "label": "text",
+      "bbox_2d": [
+        105,
+        706,
+        788,
+        734
+      ],
+      "polygon": [
+        [
+          105,
+          711
+        ],
+        [
+          105,
+          733
+        ],
+        [
+          787,
+          733
+        ],
+        [
+          787,
+          706
+        ],
+        [
+          299,
+          706
+        ],
+        [
+          240,
+          706
+        ]
+      ],
+      "content": "A Letter to Mr Dodwel, Ec. Pr. 1 s.",
+      "native_label": "text"
+    },
+    {
+      "index": 8,
+      "label": "text",
+      "bbox_2d": [
+        62,
+        730,
+        911,
+        781
+      ],
+      "polygon": [
+        [
+          62,
+          730
+        ],
+        [
+          62,
+          780
+        ],
+        [
+          910,
+          780
+        ],
+        [
+          910,
+          730
+        ],
+        [
+          525,
+          730
+        ],
+        [
+          519,
+          730
+        ],
+        [
+          494,
+          730
+        ]
+      ],
+      "content": "A Defense of an Argument made use of in a Letter to Mr Dodwel, Ec. Pr. 3 d.",
+      "native_label": "text"
+    },
+    {
+      "index": 9,
+      "label": "text",
+      "bbox_2d": [
+        59,
+        777,
+        911,
+        827
+      ],
+      "polygon": [
+        [
+          59,
+          782
+        ],
+        [
+          59,
+          826
+        ],
+        [
+          910,
+          826
+        ],
+        [
+          910,
+          777
+        ]
+      ],
+      "content": "A Paraphrafe on the four Evangelists, &c. Intwo Vol. Pr. 12s.",
+      "native_label": "text"
+    },
+    {
+      "index": 10,
+      "label": "text",
+      "bbox_2d": [
+        62,
+        823,
+        911,
+        874
+      ],
+      "polygon": [
+        [
+          62,
+          823
+        ],
+        [
+          62,
+          873
+        ],
+        [
+          910,
+          873
+        ],
+        [
+          910,
+          823
+        ]
+      ],
+      "content": "The whole Duty of a Christian, Cc. Pr. 6 d. 100 for 2 l.",
+      "native_label": "text"
+    },
+    {
+      "index": 11,
+      "label": "text",
+      "bbox_2d": [
+        97,
+        871,
+        798,
+        899
+      ],
+      "polygon": [
+        [
+          97,
+          876
+        ],
+        [
+          97,
+          898
+        ],
+        [
+          663,
+          898
+        ],
+        [
+          669,
+          898
+        ],
+        [
+          685,
+          898
+        ],
+        [
+          733,
+          898
+        ],
+        [
+          782,
+          898
+        ],
+        [
+          797,
+          894
+        ],
+        [
+          792,
+          871
+        ],
+        [
+          257,
+          871
+        ]
+      ],
+      "content": "Jacobi Rohaulti Physica, 8s. Pr.",
+      "native_label": "text"
+    },
+    {
+      "index": 12,
+      "label": "text",
+      "bbox_2d": [
+        54,
+        894,
+        908,
+        949
+      ],
+      "polygon": [
+        [
+          54,
+          904
+        ],
+        [
+          54,
+          948
+        ],
+        [
+          902,
+          948
+        ],
+        [
+          907,
+          894
+        ],
+        [
+          185,
+          894
+        ],
+        [
+          149,
+          894
+        ]
+      ],
+      "content": "Some Reflections on that part of a Book called Amyntor, &c. Pr. 6 d.",
+      "native_label": "text"
+    }
+  ]
+]
