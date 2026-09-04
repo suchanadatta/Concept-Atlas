@@ -63,3 +63,7 @@ Concept Maps/graph-ui/data/annotations/
 # Embedded repos (upstream clones — re-clone from GitHub if needed)
 GLM-OCR/
 Unlimited-OCR/
+
+# v2 index: embeddings excluded (rebuildable); meta.jsonl >50MB also excluded
+# (rebuild via tools/build_jasper_index_v2.py)
+models/jasper_index_v2/
