@@ -435,8 +435,14 @@ class Handler(BaseHTTPRequestHandler):
             elif self.path == "/semantic":
                 self._json(
                     200,
-                    semantic_search(req.get("query", ""), int(req.get("top_k", 20))),
+                    semantic_search(
+                        req.get("query", ""),
+                        int(req.get("top_k", 20)),
+                        mode=req.get("mode", "hybrid"),
+                    ),
                 )
+            elif self.path == "/device":
+                self._json(200, handle_device_request(req))
             else:
                 self._json(404, {"error": "not found"})
         except Exception as e:
@@ -448,10 +454,65 @@ class Handler(BaseHTTPRequestHandler):
         sys.stderr.write("[jasper-v2] " + (fmt % args) + "\n")
 
 
-def semantic_search(query: str, top_k: int):
+def handle_device_request(req: dict) -> dict:
+    """POST /device {"action": "get"|"switch", "device": "cpu"|"cuda"}
+
+    get:    -> {"device": current, "available": {cpu: true, cuda: bool}}
+    switch: moves the model to the requested device IN-PROCESS (no restart),
+            reports the new device + load time.
+    """
+    import torch
+
+    action = req.get("action", "get")
+    cuda_ok = torch.cuda.is_available()
+    if action == "get":
+        return {
+            "device": _state.get("device", "cpu"),
+            "available": {"cpu": True, "cuda": cuda_ok},
+        }
+    if action == "switch":
+        target = req.get("device", "cpu")
+        if target == "cuda" and not cuda_ok:
+            return {"error": "cuda not available", "device": _state.get("device")}
+        if target not in ("cpu", "cuda"):
+            return {"error": f"unknown device {target}"}
+        current = _state.get("device")
+        if current == target:
+            return {"device": target, "changed": False}
+        t0 = time.time()
+        model = _state["model"]
+        try:
+            # sentence-transformers: move submodules then the ST wrapper
+            model._target_device = torch.device(target)
+            for module in model.modules():
+                try:
+                    module.to(target)
+                except Exception:
+                    pass
+            # free the old device's cache when leaving cuda
+            if current == "cuda":
+                torch.cuda.empty_cache()
+            _state["device"] = target
+            return {
+                "device": target,
+                "changed": True,
+                "took_ms": round((time.time() - t0) * 1000),
+            }
+        except Exception as e:
+            return {"error": str(e), "device": _state.get("device")}
+    return {"error": f"unknown action {action}"}
+
+
+def semantic_search(query: str, top_k: int, mode: str = "hybrid"):
+    """mode: 'hybrid' (0.6·cosine + 0.4·lexical) or 'semantic' (pure cosine).
+
+    Pure semantic keeps the full cosine ranking untouched — the embedding
+    space IS the ranking — with the same work-cap + near-dup diversity
+    filters so one book doesn't crowd the top-k.
+    """
     query = (query or "").strip()
     if not query:
-        return {"query": "", "n": 0, "results": []}
+        return {"query": "", "n": 0, "results": [], "mode": mode}
     t0 = time.time()
     model = _state["model"]
     qv = model.encode(
@@ -471,7 +532,11 @@ def semantic_search(query: str, top_k: int):
     for ci in cand:
         m = meta[ci]
         lex = lexical_overlap(terms, m["text_l"]) if terms else 0.0
-        scored.append((0.6 * float(sims[ci]) + 0.4 * lex, float(sims[ci]), lex, ci))
+        if mode == "semantic":
+            score = float(sims[ci])  # pure cosine — the index IS the ranking
+        else:
+            score = 0.6 * float(sims[ci]) + 0.4 * lex
+        scored.append((score, float(sims[ci]), lex, ci))
     scored.sort(key=lambda x: -x[0])
     per_work, results = {}, []  # per-WORK cap: editions collapse together
     seen_snippets = set()
@@ -517,6 +582,7 @@ def semantic_search(query: str, top_k: int):
     return {
         "query": query,
         "n": len(results),
+        "mode": mode,
         "took_ms": round((time.time() - t0) * 1000),
         "results": results,
     }
@@ -541,6 +607,7 @@ def main():
 
     print(f"loading Jasper on {device}…")
     _state["model"] = load_model(device)
+    _state["device"] = device
     _state.update(emb=emb, meta=meta, n=emb.shape[0], cemb=cemb, cids=cids)
 
     graph_path = REPO / "Concept Maps" / "final" / "concept_graph.jsonl"

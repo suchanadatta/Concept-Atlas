@@ -103,7 +103,7 @@
           r = await fetch("/book/api/semantic_proxy", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ query: q, top_k: 40 }),
+            body: JSON.stringify({ query: q, top_k: 40, mode: forceMode === "semantic" ? "semantic" : "hybrid" }),
             signal: AbortSignal.timeout(14000),
           });
           if (!r.ok) { r = null; }
@@ -116,6 +116,7 @@
           count: Math.round(x.score * 100), snippet: x.snippet,
           blocks: x.bbox_pts ? [{ text: x.text, bbox_pts: x.bbox_pts }] : [],
           score: x.score, semantic: x.semantic, lexical: x.lexical,
+          pure: forceMode === "semantic",
         }));
         mode = "semantic";
       } else if (lastErr) {
@@ -164,7 +165,7 @@
     document.querySelectorAll(".gres-tabs button").forEach(b => b.classList.remove("active"));
     document.getElementById("gres-tab-passages").classList.add("active");
     $("gres-summary").textContent =
-      `${passages.length} passage${passages.length === 1 ? "" : "s"}${mode === "semantic" ? " · semantic" : mode === "bm25" ? " · BM25" : ""} · ${concepts.length} concept${concepts.length === 1 ? "" : "s"} — “${q}”`;
+      `${passages.length} passage${passages.length === 1 ? "" : "s"}${mode === "semantic" ? (forceMode === "semantic" ? " · pure semantic" : " · semantic") : mode === "bm25" ? " · BM25" : ""} · ${concepts.length} concept${concepts.length === 1 ? "" : "s"} — “${q}”`;
     renderResults();
   }
 
@@ -238,7 +239,9 @@
           <div class="gr-pass" data-book="${esc(p.book_id)}" data-page="${p.page}">
             <div class="gp-head">
               <span class="gp-book">${esc(p.book_id.replace(/_/g, " "))}</span>
-              <span>page ${p.page}${p.printed_page_number ? ` (printed ${typeof p.printed_page_number === "object" ? p.printed_page_number.value : p.printed_page_number})` : ""} · ${p.semantic != null
+              <span>page ${p.page}${p.printed_page_number ? ` (printed ${typeof p.printed_page_number === "object" ? p.printed_page_number.value : p.printed_page_number})` : ""} · ${p.pure
+                ? `<span class="gp-score" title="pure semantic: cosine similarity to the query embedding">cos ${(+p.score).toFixed(3)}</span>`
+                : p.semantic != null
                 ? `<span class="gp-score" title="hybrid: 0.6·semantic + 0.4·lexical">score ${(+p.score).toFixed(2)} <span class="gp-sub">(sem ${(+p.semantic).toFixed(2)} · lex ${(+p.lexical).toFixed(2)})</span></span>`
                 : p.bm25
                 ? `<span class="gp-score" title="BM25 relevance (k1=1.5, b=0.75, archaic-expanded)">bm25 ${(+p.score).toFixed(1)}</span>`

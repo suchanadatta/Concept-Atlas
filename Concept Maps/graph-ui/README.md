@@ -345,3 +345,12 @@ POST /book/api/annotations?book=&page=     save annotations
 - **Fix**: new same-origin proxy `POST /book/api/semantic_proxy` on :8788
   forwards to the Jasper server; UI uses the proxy. Verified: "greed and
   envy" → 40 scored passages, top `score 0.80 (sem 0.67 · lex 1.00)`.
+
+## v20 — retrieval dedup (Playwright-verified)
+- **Per-WORK result cap**: `work_key()` normalizes book_ids so editions of
+  the same work (Watts 1733/1742, King 1st/2nd) count as ONE work with a
+  3-result cap — the top-8 for a liberty/necessity query now spans 5+
+  distinct authors instead of 3 editions of the same essays.
+- **Core-window near-dup filter**: 100-char normalized window at offset 200
+  drops exact reprints across editions.
+- Eval after dedup: nDCG@10 0.890 · MRR 0.802 (diversity up, ranking held).

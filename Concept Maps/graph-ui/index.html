@@ -217,7 +217,18 @@
     </div>
   </div>
 
-  <!-- Dynamic query-graph side panel (same dock as the PDF reader) -->
+  <!-- Settings bar (bottom of page) -->
+  <div id="settings-bar">
+    <span class="settings-brand">⚙️</span>
+    <span class="settings-item" id="settings-device">
+      <span class="settings-label">Engine:</span>
+      <button id="device-cpu" class="dev-btn active" title="Run the embedding model on CPU (slower, leaves GPU free)">CPU</button>
+      <button id="device-cuda" class="dev-btn" title="Run the embedding model on GPU (fast)">GPU</button>
+      <span id="device-status" class="settings-status">checking…</span>
+    </span>
+  </div>
+</main>
+
   <div id="dyngraph" class="hidden">
     <div id="dyngraph-bar">
       <button id="dyngraph-close" title="Close (Esc)">×</button>
@@ -246,6 +257,7 @@
       <span class="gres-mode">
         <select id="gres-algo" title="Ranking algorithm">
           <option value="hybrid" selected>🧠 hybrid (semantic+lexical)</option>
+          <option value="semantic">🔮 pure semantic (cosine)</option>
           <option value="bm25">📊 BM25</option>
           <option value="keyword">⌨ keyword</option>
         </select>
@@ -258,7 +270,6 @@
     </div>
     <div id="gres-body"></div>
   </div>
-</main>
 
 <script type="importmap">
 { "imports": { "three": "./vendor/three.module.min.js" } }
@@ -273,6 +284,7 @@
 <script src="search.js?v=1788430849"></script>
 <script src="floatgraph.js?v=1788430849"></script>
 <script src="dyngraph.js?v=1788430849"></script>
+<script src="settings.js?v=1788430849"></script>
 <script type="module" src="labels3d.mjs"></script>
 </body>
 </html>

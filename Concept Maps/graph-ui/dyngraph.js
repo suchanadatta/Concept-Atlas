@@ -26,7 +26,10 @@
   const rcol = (r) => RSTYLE[r] || "#8B8375";
 
   function init() {
-    $("dyngraph-close").onclick = close;
+    $("dyngraph-close").onclick = () => {
+      if (window.closeDynGraph) window.closeDynGraph();
+      else close();
+    };
     $("dyngraph-2d").onclick = () => setView("2d");
     $("dyngraph-3d").onclick = () => setView("3d");
     new ResizeObserver(() => { sizeCanvas(); if (running && view === "2d") draw(); }).observe($("dyngraph-stage"));

@@ -46,7 +46,10 @@ function showReaderShell() {
   $("reader-download-jsonl").onclick = () => { location.href = `/book/jsonl/${encodeURIComponent(Reader.bookId)}`; };
   $("reader-export-json").onclick = () => { location.href = `/book/api/export_annotations?book=${encodeURIComponent(Reader.bookId)}&fmt=json`; };
   $("reader-export-md").onclick = () => { location.href = `/book/api/export_annotations?book=${encodeURIComponent(Reader.bookId)}&fmt=markdown`; };
-  $("reader-close").onclick = closeReader;
+  $("reader-close").onclick = () => {
+    if (window.closeReader) window.closeReader();
+    else closeReader();
+  };
   $("reader-prev").onclick = () => gotoPage(Reader.pageNum - 1);
   $("reader-next").onclick = () => gotoPage(Reader.pageNum + 1);
   $("reader-jump").onchange = (e) => gotoPage(parseInt(e.target.value, 10) || 1);

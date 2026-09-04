@@ -631,6 +631,20 @@ class BookAPI:
         )
 
     @staticmethod
+    def device_proxy(query: dict, body: bytes):
+        """POST /book/api/device_proxy — same-origin proxy to /device."""
+        import urllib.request as _urllib
+        try:
+            req = _urllib.Request(
+                "http://127.0.0.1:8790/device", data=body,
+                headers={"Content-Type": "application/json"}, method="POST")
+            with _urllib.urlopen(req, timeout=60) as resp:
+                data = resp.read()
+            return 200, "application/json", data
+        except Exception as e:
+            return 502, "application/json", _json.dumps({"error": f"device backend unavailable: {e}"}).encode()
+
+    @staticmethod
     def bm25_proxy(query: dict, body: bytes):
         """POST /book/api/bm25_proxy — same-origin proxy to the Jasper server's /bm25."""
         import urllib.request as _urllib
@@ -802,6 +816,10 @@ class Handler(SimpleHTTPRequestHandler):
                 res = BookAPI.save_annotations(
                     query.get("book", ""), query.get("page", "0"), body
                 )
+            elif path == "/book/api/device_proxy":
+                length = int(self.headers.get("Content-Length", 0))
+                body = self.rfile.read(length) if length else b"{}"
+                res = BookAPI.device_proxy(query, body)
             elif path == "/book/api/bm25_proxy":
                 length = int(self.headers.get("Content-Length", 0))
                 body = self.rfile.read(length) if length else b"{}"
