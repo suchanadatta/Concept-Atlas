@@ -53,9 +53,11 @@
       $("dyngraph-stage").innerHTML = `<p class="hint" style="padding:40px;text-align:center">Graph backend unavailable.</p>`;
       return;
     }
+    // clear the loading screen BEFORE creating the canvas
+    $("dyngraph-stage").innerHTML = "";
+    canvas = null; ctx = null;
     build();
     sizeCanvas();
-    $("dyngraph-stage").innerHTML = "";
     if (view === "3d") init3D();
     else { if (!running) { running = true; requestAnimationFrame(tick); } }
   }
@@ -97,32 +99,44 @@
   function build() {
     if (!data) return;
     nodes = []; links = [];
-    const cx = W / 2, cy = H / 2;
+    const cx = W / 2, cy = H / 2 - 14;
+    const minR = Math.min(W, H);
+    const rQuery = 16;
+    const rConcept = minR * 0.30;   // inner ring
+    const rBridge = minR * 0.44;    // bridge concepts between rings
+    const rDoc = minR * 0.46;      // outer ring
     // query node
     nodes.push({ id: "__q", label: "“" + (data.query.length > 30 ? data.query.slice(0, 30) + "…" : data.query) + "”",
-                 color: "#8A3B32", r: 15, x: cx, y: cy, vx: 0, vy: 0, kind: "query" });
-    // concept nodes: direct matches + bridges
+                 color: "#8A3B32", r: rQuery, x: cx, y: cy, hx: cx, hy: cy, vx: 0, vy: 0, kind: "query" });
+    // concept nodes: direct matches on the inner ring, bridges just outside
     const cById = {};
-    (data.concepts || []).forEach((c, i) => {
-      const ang = (i / (data.concepts.length || 1)) * 6.2832;
-      const rad = c.match === "bridge" ? 165 : 110;
-      const n = { id: "c:" + c.id, cid: c.id, label: c.label, color: "#C15B5B",
-                 r: 6 + 6 * Math.min(1, c.score), x: cx + Math.cos(ang) * rad, y: cy + Math.sin(ang) * rad,
-                 vx: 0, vy: 0, kind: "concept", def: c.definition, match: c.match || "direct", score: c.score };
-      cById[c.id] = n; nodes.push(n);
-      links.push({ s: "__q", t: n.id, r: "to_query", w: 0.3 + 0.4 * Math.min(1, c.score) });
-    });
+    const directs = (data.concepts || []).filter(c => c.match !== "bridge");
+    const bridges = (data.concepts || []).filter(c => c.match === "bridge");
+    const placeRing = (arr, radius, offset, byIdMap) => {
+      arr.forEach((c, i) => {
+        const ang = (i / Math.max(1, arr.length)) * 6.2832 + offset;
+        const hx = cx + Math.cos(ang) * radius, hy = cy + Math.sin(ang) * radius;
+        const n = { id: "c:" + c.id, cid: c.id, label: c.label, color: "#C15B5B",
+                   r: 7 + 7 * Math.min(1, c.score), x: hx, y: hy, hx, hy,
+                   vx: 0, vy: 0, kind: "concept", def: c.definition, match: c.match || "direct", score: c.score };
+        byIdMap[c.id] = n; nodes.push(n);
+        links.push({ s: "__q", t: n.id, r: "to_query", w: 0.3 + 0.4 * Math.min(1, c.score) });
+      });
+    };
+    placeRing(directs, rConcept, -Math.PI / 2, cById);
+    placeRing(bridges, rBridge, -Math.PI / 2 + 0.35, cById);
     // concept↔concept edges (map relations)
     (data.c2c || []).forEach(e => {
       const s = cById[e.s], t = cById[e.t];
       if (s && t) links.push({ s: s.id, t: t.id, r: e.r, w: e.w });
     });
-    // doc nodes
+    // doc nodes on the outer ring
     (data.docs || []).forEach((d, i) => {
-      const ang = (i / (data.docs.length || 1)) * 6.2832 + 0.3;
+      const ang = (i / Math.max(1, data.docs.length)) * 6.2832 + 0.12;
+      const hx = cx + Math.cos(ang) * rDoc, hy = cy + Math.sin(ang) * rDoc;
       const n = { id: "d" + i, label: shortBook(d.book_id) + " ·" + (d.page != null ? "p" + d.page : "¶"),
-                 color: "#4E79A7", r: 4 + 4 * Math.min(1, d.score * 1.2),
-                 x: cx + Math.cos(ang) * 235, y: cy + Math.sin(ang) * 235, vx: 0, vy: 0,
+                 color: "#4E79A7", r: 5 + 5 * Math.min(1, d.score * 1.2),
+                 x: hx, y: hy, hx, hy, vx: 0, vy: 0,
                  kind: "doc", book: d.book_id, page: d.page, snippet: d.snippet, score: d.score };
       nodes.push(n);
       links.push({ s: "__q", t: n.id, r: "to_doc", w: 0.2 + 0.4 * d.score });
@@ -145,8 +159,9 @@
 
   function tick() {
     if (!running || view !== "2d") return;
-    const alpha = sim ? Math.max(sim.alpha -= 0.0012, 0.015) : 0.015;
+    const alpha = sim ? Math.max(sim.alpha -= 0.0012, 0.012) : 0.012;
     const m = byId();
+    // gentle relaxation only — the radial layout does the real work
     for (let i = 0; i < nodes.length; i++) {
       const a = nodes[i];
       for (let j = i + 1; j < nodes.length; j++) {
@@ -154,9 +169,12 @@
         let dx = b.x - a.x, dy = b.y - a.y;
         let d2 = dx * dx + dy * dy; if (d2 < 1) d2 = 1;
         const d = Math.sqrt(d2);
-        const f = (1600 / d2) * alpha;
-        dx /= d; dy /= d;
-        a.vx -= dx * f; a.vy -= dy * f; b.vx += dx * f; b.vy += dy * f;
+        const minSep = (a.r + b.r + 6);
+        if (d < minSep) { // only push apart overlapping nodes
+          const f = (minSep - d) * 0.25 * alpha;
+          dx /= d; dy /= d;
+          a.vx -= dx * f; a.vy -= dy * f; b.vx += dx * f; b.vy += dy * f;
+        }
       }
     }
     for (const l of links) {
@@ -164,13 +182,18 @@
       if (!a || !b) continue;
       const dx = b.x - a.x, dy = b.y - a.y;
       const d = Math.sqrt(dx * dx + dy * dy) || 1;
-      const f = (d - 58) * 0.02 * alpha * (0.5 + l.w);
+      const f = (d - 58) * 0.008 * alpha * (0.5 + l.w);
       a.vx += dx / d * f; a.vy += dy / d * f; b.vx -= dx / d * f; b.vy -= dy / d * f;
     }
     for (const n of nodes) {
-      n.vx += (W / 2 - n.x) * 0.0025 * alpha;
-      n.vy += (H / 2 - n.y) * 0.0025 * alpha;
-      if (n !== nodeDrag) { n.vx *= 0.85; n.vy *= 0.85; n.x += n.vx; n.y += n.vy; }
+      // ring retention: each node relaxes toward its assigned layout spot
+      // (radial positions from build()), not toward the center — this keeps
+      // the query/concepts/docs rings from collapsing into a blob
+      if (n.hx != null && n !== nodeDrag) {
+        n.vx += (n.hx - n.x) * 0.06 * alpha;
+        n.vy += (n.hy - n.y) * 0.06 * alpha;
+      }
+      if (n !== nodeDrag) { n.vx *= 0.82; n.vy *= 0.82; n.x += n.vx; n.y += n.vy; }
     }
     draw();
     requestAnimationFrame(tick);
@@ -190,14 +213,19 @@
     const m = byId();
     const hov = hovered;
     const isNb = (n) => !hov || n === hov || linked(hov, n);
-    ctx.lineWidth = 1.4 / view_t.k;
+    // EDGES FIRST — always colored by relation so connections read clearly
     for (const l of links) {
       const a = m.get(l.s), b = m.get(l.t);
       if (!a || !b) continue;
       const hot = hov && ((l.s === hov.id) || (l.t === hov.id));
-      ctx.strokeStyle = hot ? rcol(l.r) : (dark ? "rgba(150,142,124,.20)" : "rgba(120,105,80,.16)");
-      ctx.globalAlpha = hov && !hot ? 0.12 : (hot ? 0.9 : 1);
+      const base = rcol(l.r);
+      ctx.strokeStyle = hot ? base : (dark ? "rgba(150,142,124,.30)" : "rgba(120,105,80,.26)");
+      ctx.globalAlpha = hov && !hot ? 0.10 : (hot ? 0.95 : 1);
+      ctx.lineWidth = (hot ? 2.6 : 1.5 + (l.w || 0.4)) / view_t.k;
+      // dashed for same-book links (weaker semantic)
+      if (l.r === "same_book") ctx.setLineDash([4, 4]);
       ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      ctx.setLineDash([]);
     }
     ctx.globalAlpha = 1;
     const labelAlpha = Math.min(1, Math.max(0.15, (view_t.k - 0.45) * 1.7));
@@ -215,6 +243,20 @@
       }
       ctx.fillStyle = n.color;
       ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 6.2832); ctx.fill();
+      // white rim so nodes pop against edges
+      ctx.lineWidth = 1.5 / view_t.k;
+      ctx.strokeStyle = dark ? "rgba(30,28,24,.8)" : "rgba(251,248,240,.9)";
+      ctx.stroke();
+      // score badge on direct concept matches
+      if (n.kind === "concept" && n.match === "direct" && n.score > 0) {
+        ctx.beginPath(); ctx.arc(n.x + n.r * 0.72, n.y - n.r * 0.72, 6.5, 0, 6.2832);
+        ctx.fillStyle = "#8A3B32"; ctx.fill();
+        ctx.fillStyle = "#F6F1E5"; ctx.font = "700 8px Inter, sans-serif";
+        ctx.textAlign = "center"; ctx.textBaseline = "middle";
+        ctx.fillText(Math.round(n.score * 100), n.x + n.r * 0.72, n.y - n.r * 0.72 + 0.5);
+        ctx.textBaseline = "alphabetic";
+      }
+      // labels: query + concepts always; docs on hover/zoom
       if (n.kind !== "doc" || n === hov || view_t.k > 1.4) {
         ctx.globalAlpha = isNb(n) ? labelAlpha : 0.1;
         ctx.fillStyle = dark ? "#E8E2D5" : "#2E2A24";
@@ -225,9 +267,44 @@
     }
     ctx.globalAlpha = 1;
     ctx.restore();
+    drawLegend();
   }
 
   function linked(a, b) { return links.some(l => (l.s === a.id && l.t === b.id) || (l.t === a.id && l.s === b.id)); }
+
+  /* bottom legend: node kinds + edge relations present in this graph */
+  function drawLegend() {
+    if (!ctx) return;
+    const dark = document.body.classList.contains("dark");
+    const rels = [...new Set(links.map(l => l.r))].filter(r => r !== "to_query");
+    const items = [
+      { color: "#8A3B32", label: "query" },
+      { color: "#C15B5B", label: "concept" },
+      { color: "#4E79A7", label: "document" },
+      ...rels.map(r => ({ color: rcol(r), label: r.replace(/_/g, " "), edge: true })),
+    ];
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.font = "500 10px Inter, sans-serif";
+    ctx.textAlign = "left"; ctx.textBaseline = "middle";
+    let x = 12;
+    const y = H - 14;
+    for (const it of items) {
+      if (it.edge) {
+        ctx.strokeStyle = it.color; ctx.lineWidth = 2;
+        ctx.setLineDash(it.label === "same book" ? [4, 4] : []);
+        ctx.beginPath(); ctx.moveTo(x, y - 4); ctx.lineTo(x + 16, y - 4); ctx.stroke();
+        ctx.setLineDash([]);
+      } else {
+        ctx.fillStyle = it.color;
+        ctx.beginPath(); ctx.arc(x + 8, y - 4, 5, 0, 6.2832); ctx.fill();
+      }
+      ctx.fillStyle = dark ? "#B8B2A4" : "#6B6353";
+      ctx.fillText(it.label, x + (it.edge ? 20 : 16), y - 4);
+      x += (it.edge ? 20 : 16) + ctx.measureText(it.label).width + 14;
+      if (x > W - 90) break; // wrap guard
+    }
+    ctx.textBaseline = "alphabetic";
+  }
 
   function pick(gx, gy) {
     let best = null, bestD = 1e9;
