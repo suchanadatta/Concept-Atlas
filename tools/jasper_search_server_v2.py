@@ -101,6 +101,26 @@ def load_model(device: str):
     )
 
 
+def work_key(book_id: str) -> str:
+    """Normalize a book_id to the WORK level (editions/parts collapse).
+
+    'Watts Philosophical Essays 1733 (part 2)', 'WATTS_1733_...-essays' and
+    'Watts ... 1742 3rd ed (part 1)' all map to 'watts philosophical essays'
+    so the per-work cap (3) limits cross-edition crowding in results.
+    """
+    b = re.sub(r"[\(\)]", " ", (book_id or "").lower())
+    b = re.sub(r"[_\-]+", " ", b)
+    b = re.sub(
+        r"\b(3rd|2nd|1st|4th|new|ed(ition)?s?|part\s*\d*|vol\.?\s*\d*|copy of)\b",
+        " ",
+        b,
+    )
+    # ALL 4-digit years (ranges like 1731 1732 leave both, fine for identity)
+    b = re.sub(r"\b(1[4-9]\d\d|20\d\d)\b", " ", b)
+    b = re.sub(r"\s+", " ", b).strip()
+    return b[:45]
+
+
 def variants_for(word: str):
     vs = {word}
     if "s" in word:
@@ -453,13 +473,24 @@ def semantic_search(query: str, top_k: int):
         lex = lexical_overlap(terms, m["text_l"]) if terms else 0.0
         scored.append((0.6 * float(sims[ci]) + 0.4 * lex, float(sims[ci]), lex, ci))
     scored.sort(key=lambda x: -x[0])
-    per_book, results = {}, []
+    per_work, results = {}, []  # per-WORK cap: editions collapse together
+    seen_snippets = set()
     for score, sem, lex, ci in scored:
         m = meta[ci]
-        bid = m["book_id"]
-        if per_book.get(bid, 0) >= 3:
+        wk = work_key(m["book_id"])
+        if per_work.get(wk, 0) >= 3:
             continue
-        per_book[bid] = per_book.get(bid, 0) + 1
+        # near-dup key: normalized 100-char window from the passage core
+        core = re.sub(r"\s+", " ", m["text"][200:300]).strip().lower()
+        dup_key = (
+            core
+            if len(core) > 40
+            else re.sub(r"\s+", " ", m["text"][:100]).strip().lower()
+        )
+        if dup_key in seen_snippets:
+            continue
+        seen_snippets.add(dup_key)
+        per_work[wk] = per_work.get(wk, 0) + 1
         pos = m["text_l"].find(words[0]) if words else -1
         snippet = (
             m["text"][max(0, pos - 100) : pos + 200].replace("\n", " ")
@@ -468,7 +499,7 @@ def semantic_search(query: str, top_k: int):
         )
         results.append(
             {
-                "book_id": bid,
+                "book_id": m["book_id"],
                 "page": m["page"],
                 "printed_page": m.get("printed_page"),
                 "block_id": m.get("block_id"),
