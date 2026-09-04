@@ -299,15 +299,30 @@
       .width(stage.clientWidth).height(stage.clientHeight)
       .backgroundColor(document.body.classList.contains("dark") ? "#1E1C18" : "#F6F1E5")
       .nodeRelSize(4.5).nodeResolution(22).linkResolution(3)
-      .nodeLabel(n => `<div style="font:600 12.5px Inter,sans-serif;color:#F6F1E5;background:#2E2A24;padding:5px 9px;border-radius:6px;max-width:240px">${esc(n.label)}${n.def ? `<div style="font:italic 11px Georgia;color:#CFC7B4;margin-top:3px">${esc(n.def.slice(0, 110))}…</div>` : ""}</div>`)
+      .nodeLabel(n => `<div style="font:600 12.5px Inter,sans-serif;color:#F6F1E5;background:#2E2A24;padding:5px 9px;border-radius:6px;max-width:240px">${esc(n.label)}${n.def ? `<div style="font:italic 11px Georgia;color:#CFC7B4;margin-top:3px">${esc(n.def.slice(0, 110))}…</div>` : ""}${n.snippet ? `<div style="font:italic 11px Georgia;color:#CFC7B4;margin-top:3px">${esc(n.snippet.slice(0, 110))}…</div>` : ""}</div>`)
       .linkColor(l => rcol(l.r))
       .linkWidth(l => 0.4 + (l.w || 0.4) * 1.6)
       .linkOpacity(0.45)
+      .onNodeHover((n) => { stage.style.cursor = n ? "pointer" : "default"; })
       .onNodeClick((n) => {
         if (n.kind === "doc" && typeof openReader === "function") openReader(n.book, { page: n.page });
         else if (n.kind === "concept" && typeof selectById === "function") selectById(n.cid, false);
       });
+    // persistent label sprites (same mechanism as the main concept graph)
+    if (window.Atlas3D && window.Atlas3D.makeLabel) {
+      const { makeLabel } = window.Atlas3D;
+      g3d.nodeThreeObjectExtend(true)
+        .nodeThreeObject((n) => {
+          // query + concepts always labeled; docs labeled when important
+          if (n.kind === "doc" && (n.r || 0) < 6) return null;
+          const dark = document.body.classList.contains("dark");
+          const spr = makeLabel(n.label, dark ? "#E8E2D5" : "#3A352C", 13);
+          spr.position.set(0, (n.r || 5) + 7, 0);
+          return spr;
+        });
+    }
     g3d.graphData({ nodes: nodes.map(n => ({ ...n })), links: links.map(l => ({ source: l.s, target: l.t, r: l.r, w: l.w })) });
+    window.__dynG3D = g3d; // for live theme switching
     setTimeout(() => { try { g3d.zoomToFit(600, 40); } catch {} }, 1500);
   }
 

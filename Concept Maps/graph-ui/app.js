@@ -313,10 +313,11 @@ function draw() {
       alpha = (n === focus || focusNb.has(n.id)) ? 1 : 0.15;
     }
     ctx.globalAlpha = alpha;
-    // halo
+    // halo (theme-aware: parchment in light, dark card in dark mode)
     ctx.beginPath();
     ctx.arc(n.x, n.y, r + 1.6, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(251,248,240,0.9)";
+    ctx.fillStyle = document.body.classList.contains("dark")
+      ? "rgba(38,35,30,0.95)" : "rgba(251,248,240,0.9)";
     ctx.fill();
     // body
     ctx.beginPath();
@@ -324,7 +325,8 @@ function draw() {
     ctx.fillStyle = n.color;
     ctx.fill();
     ctx.lineWidth = 1;
-    ctx.strokeStyle = "rgba(46,42,36,0.35)";
+    ctx.strokeStyle = document.body.classList.contains("dark")
+      ? "rgba(232,226,213,0.25)" : "rgba(46,42,36,0.35)";
     ctx.stroke();
 
     if (n === S.selected || n === S.hovered) {
@@ -346,7 +348,7 @@ function draw() {
         ctx.arc(n.x + r * 0.75, n.y - r * 0.75, 7.5, 0, Math.PI * 2);
         ctx.fillStyle = "#8A3B32";
         ctx.fill();
-        ctx.fillStyle = "#F6F1E5";
+        ctx.fillStyle = document.body.classList.contains("dark") ? "#1E1C18" : "#F6F1E5";
         ctx.font = "600 9.5px Inter, sans-serif";
         ctx.textAlign = "center"; ctx.textBaseline = "middle";
         ctx.fillText(String(q.rank), n.x + r * 0.75, n.y - r * 0.75 + 0.5);
@@ -368,10 +370,11 @@ function draw() {
     else if (focus && n !== focus && !focusNb.has(n.id)) alpha = 0.22;
     ctx.globalAlpha = alpha;
     const y = n.y + r + 3;
+    const darkMode = document.body.classList.contains("dark");
     ctx.lineWidth = 3;
-    ctx.strokeStyle = "rgba(246,241,229,0.85)";
+    ctx.strokeStyle = darkMode ? "rgba(30,28,24,0.9)" : "rgba(246,241,229,0.85)";
     ctx.strokeText(n.label, n.x, y);
-    ctx.fillStyle = "#3A352C";
+    ctx.fillStyle = darkMode ? "#E8E2D5" : "#3A352C";
     ctx.fillText(n.label, n.x, y);
   }
   ctx.globalAlpha = 1;
@@ -871,7 +874,7 @@ function bindEvents() {
     if (S.mode === "3d") rebuild3DData();
     else if (S.selected && S.egoDepth) {
       const eg = egoSet();
-      if (eg) fitView(S.simNodes.filter(x => eg.has(x.id)), true);
+      if (eg) fitViewCapped(S.simNodes.filter(x => eg.has(x.id)), true, 1.15);
     } else if (S.mode === "2d") fitView();
     S.dirty = true;
     updateStatus();
@@ -1106,9 +1109,34 @@ function selectNode(n) {
   update3DColors();
   if (S.egoDepth && S.mode === "2d") {
     const eg = egoSet();
-    if (eg) fitView(S.simNodes.filter(x => eg.has(x.id)), true);
+    if (eg) {
+      // fit to the neighborhood but never zoom IN aggressively — keep at
+      // most a gentle 1.15x so the view doesn't "shrink/flash" on click
+      const sub = S.simNodes.filter(x => eg.has(x.id));
+      fitViewCapped(sub, true, 1.15);
+    }
   }
   if (S.egoDepth && S.mode === "3d") rebuild3DData();
+}
+
+/* fitView but with a max zoom-IN cap so clicking a node never snaps the
+   camera into the node's face (the reported "shrink/scaling glitch") */
+function fitViewCapped(nodes, animate = true, maxK = 1.15) {
+  if (!nodes || !nodes.length) return;
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  for (const n of nodes) {
+    if (n.x == null) continue;
+    x0 = Math.min(x0, n.x); y0 = Math.min(y0, n.y);
+    x1 = Math.max(x1, n.x); y1 = Math.max(y1, n.y);
+  }
+  if (x0 === Infinity) return;
+  const pad = 90;
+  const bw = (x1 - x0) + pad * 2, bh = (y1 - y0) + pad * 2;
+  // never zoom in past maxK; if the neighborhood is small, stay wide enough
+  const k = clamp(Math.min(S.w / bw, S.h / bh), 0.15, maxK);
+  const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+  const target = { k, x: S.w / 2 - cx * k, y: S.h / 2 - cy * k };
+  if (animate) animateTo(target, 600); else { S.t = target; S.dirty = true; }
 }
 
 function clearSelection() {

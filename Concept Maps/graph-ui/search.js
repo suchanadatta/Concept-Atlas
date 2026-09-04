@@ -33,14 +33,15 @@
     };
     $("gres-go").onclick = rerunFromBar;
     $("gres-input").addEventListener("keydown", (e) => { if (e.key === "Enter") rerunFromBar(); });
-    window._forceSearchMode = window._forceSearchMode || "auto";
-    const syncModeBtns = () => {
-      $("gres-mode-sem").classList.toggle("active", window._forceSearchMode !== "keyword");
-      $("gres-mode-kw").classList.toggle("active", window._forceSearchMode === "keyword");
-    };
-    syncModeBtns();
-    $("gres-mode-sem").onclick = () => { window._forceSearchMode = "auto"; syncModeBtns(); rerunSearch(); };
-    $("gres-mode-kw").onclick = () => { window._forceSearchMode = "keyword"; syncModeBtns(); rerunSearch(); };
+    window._forceSearchMode = window._forceSearchMode || "auto"; // auto|keyword|bm25
+    const algoSel = $("gres-algo");
+    if (algoSel) {
+      algoSel.value = window._forceSearchMode === "auto" ? "hybrid" : window._forceSearchMode;
+      algoSel.onchange = () => {
+        window._forceSearchMode = algoSel.value === "hybrid" ? "auto" : algoSel.value;
+        rerunSearch();
+      };
+    }
     window.__rerunSearch = rerunSearch;
     function rerunSearch() {
       const u = new URLSearchParams(location.search);
@@ -121,6 +122,22 @@
         console.warn("semantic search unavailable:", lastErr.message || lastErr);
       }
     }
+    if (!passages.length && forceMode === "bm25") {
+      try {
+        const res = await fetch("/book/api/bm25_proxy", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query: q, top_k: 40 }),
+        });
+        const d = await res.json();
+        passages = (d.results || []).map(x => ({
+          book_id: x.book_id, page: x.page, printed_page_number: x.printed_page,
+          count: Math.round(x.score), snippet: x.snippet,
+          blocks: x.bbox_pts ? [{ text: "", bbox_pts: x.bbox_pts }] : [],
+          score: x.score, bm25: true,
+        }));
+        mode = "bm25";
+      } catch (e) { console.error(e); }
+    }
     if (!passages.length) {
       try {
         const res = await fetch(`/book/api/gsearch?q=${encodeURIComponent(q)}&limit=40`);
@@ -147,7 +164,7 @@
     document.querySelectorAll(".gres-tabs button").forEach(b => b.classList.remove("active"));
     document.getElementById("gres-tab-passages").classList.add("active");
     $("gres-summary").textContent =
-      `${passages.length} passage${passages.length === 1 ? "" : "s"}${mode === "semantic" ? " · semantic" : ""} · ${concepts.length} concept${concepts.length === 1 ? "" : "s"} — “${q}”`;
+      `${passages.length} passage${passages.length === 1 ? "" : "s"}${mode === "semantic" ? " · semantic" : mode === "bm25" ? " · BM25" : ""} · ${concepts.length} concept${concepts.length === 1 ? "" : "s"} — “${q}”`;
     renderResults();
   }
 
@@ -223,6 +240,8 @@
               <span class="gp-book">${esc(p.book_id.replace(/_/g, " "))}</span>
               <span>page ${p.page}${p.printed_page_number ? ` (printed ${typeof p.printed_page_number === "object" ? p.printed_page_number.value : p.printed_page_number})` : ""} · ${p.semantic != null
                 ? `<span class="gp-score" title="hybrid: 0.6·semantic + 0.4·lexical">score ${(+p.score).toFixed(2)} <span class="gp-sub">(sem ${(+p.semantic).toFixed(2)} · lex ${(+p.lexical).toFixed(2)})</span></span>`
+                : p.bm25
+                ? `<span class="gp-score" title="BM25 relevance (k1=1.5, b=0.75, archaic-expanded)">bm25 ${(+p.score).toFixed(1)}</span>`
                 : `<span class="gp-count">keyword ×${p.count}</span>`}</span>
             </div>
             <div class="gp-snip">${highlightTerms(esc(p.snippet), q)}</div>

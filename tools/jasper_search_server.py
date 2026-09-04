@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import glob
 import json
+import math
 import re
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -107,6 +108,100 @@ def variants_for(word: str):
     if word in ARCH:
         vs.update(ARCH[word])
     return vs
+
+
+def build_bm25_index():
+    """Precompute BM25 statistics over all paragraphs (archaic-tokenized)."""
+    meta = _state["meta"]
+    docs = []
+    df = {}
+    for m in meta:
+        # tokenize with archaic expansion: each raw token + its variants
+        toks = []
+        for w in re.split(r"\W+", m["text_l"]):
+            if len(w) < 2:
+                continue
+            toks.append(w)
+            if "s" in w and "f" not in w:
+                toks.append(w.replace("s", "f"))
+            if "f" in w and "s" not in w:
+                toks.append(w.replace("f", "s"))
+        docs.append(toks)
+        for t in set(toks):
+            df[t] = df.get(t, 0) + 1
+    N = len(docs)
+    avgdl = sum(len(d) for d in docs) / max(1, N)
+    _state["bm25_docs"] = docs
+    _state["bm25_df"] = df
+    _state["bm25_N"] = N
+    _state["bm25_avgdl"] = avgdl
+    print(f"BM25 index: {N:,} docs, avgdl {avgdl:.0f}, vocab {len(df):,}")
+
+
+def bm25_search(query: str, top_k: int = 40, k1: float = 1.5, b: float = 0.75):
+    """Classic BM25 ranking with archaic-spelling expansion."""
+    if not query.strip() or "bm25_docs" not in _state:
+        return {"query": query, "n": 0, "results": []}
+    meta = _state["meta"]
+    docs = _state["bm25_docs"]
+    df = _state["bm25_df"]
+    N = _state["bm25_N"]
+    avgdl = _state["bm25_avgdl"]
+    # query terms with variants
+    qterms = []
+    for w in re.split(r"\W+", query.lower()):
+        if len(w) < 2:
+            continue
+        qterms.append(w)
+        for v in variants_for(w):
+            if v != w and v not in qterms:
+                qterms.append(v)
+    scores = []
+    for i, toks in enumerate(docs):
+        tf = {}
+        for t in toks:
+            tf[t] = tf.get(t, 0) + 1
+        s = 0.0
+        dl = len(toks)
+        norm = k1 * (1 - b + b * dl / avgdl)
+        for qt in qterms:
+            f = tf.get(qt, 0)
+            if not f:
+                continue
+            n_t = df.get(qt, 0)
+            idf = math.log(1 + (N - n_t + 0.5) / (n_t + 0.5))
+            s += idf * (f * (k1 + 1)) / (f + norm)
+        if s > 0:
+            scores.append((s, i))
+    scores.sort(key=lambda x: -x[0])
+    per_book = {}
+    results = []
+    for s, i in scores:
+        m = meta[i]
+        bid = m["book_id"]
+        if per_book.get(bid, 0) >= 3:
+            continue
+        per_book[bid] = per_book.get(bid, 0) + 1
+        pos = m["text_l"].find(qterms[0]) if qterms else -1
+        snippet = (
+            m["text"][max(0, pos - 100) : pos + 180].replace("\n", " ")
+            if pos >= 0
+            else m["text"][:180]
+        )
+        results.append(
+            {
+                "book_id": bid,
+                "page": m["page"],
+                "printed_page": m.get("printed_page"),
+                "score": round(s, 4),
+                "snippet": snippet,
+                "bbox_pts": m.get("bbox_pts"),
+                "count": 1,
+            }
+        )
+        if len(results) >= top_k:
+            break
+    return {"query": query, "n": len(results), "results": results}
 
 
 def build_query_graph(query: str, n_concepts: int = 8, n_docs: int = 24):
@@ -338,6 +433,16 @@ class Handler(BaseHTTPRequestHandler):
             except Exception as e:
                 self._json(500, {"error": str(e)})
             return
+        if self.path == "/bm25":
+            try:
+                length = int(self.headers.get("Content-Length", 0))
+                req = json.loads(self.rfile.read(length) or b"{}")
+                self._json(
+                    200, bm25_search(req.get("query", ""), int(req.get("top_k", 40)))
+                )
+            except Exception as e:
+                self._json(500, {"error": str(e)})
+            return
         if self.path != "/semantic":
             self._json(404, {"error": "not found"})
             return
@@ -476,6 +581,7 @@ def main():
                 d = json.loads(line)
                 c2b.setdefault(d["concept_id"], set()).add(d["book_id"])
         _state["c2b"] = c2b
+        build_bm25_index()
         print(
             f"concept map: {len(cnodes)} nodes, {len(cedges)} edges, {len(c2b)} concept->book sets"
         )

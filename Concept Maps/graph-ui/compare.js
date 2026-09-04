@@ -27,6 +27,15 @@
     localStorage.setItem("atlas-theme", dark ? "dark" : "light");
     document.getElementById("btn-theme").textContent = dark ? "☀️" : "🌙";
     if (typeof S !== "undefined") S.dirty = true; // redraw 2D
+    // live-update the main 3D view background if open
+    if (typeof S !== "undefined" && S.g3d && S.mode === "3d") {
+      try { S.g3d.backgroundColor(dark ? "#1E1C18" : "#F6F1E5"); } catch {}
+    }
+    // live-update the query-graph panel 3D if open
+    const dg = document.getElementById("dyngraph");
+    if (dg && !dg.classList.contains("hidden") && window.__dynG3D) {
+      try { window.__dynG3D.backgroundColor(dark ? "#1E1C18" : "#F6F1E5"); } catch {}
+    }
   }
 
   function openCompare() {

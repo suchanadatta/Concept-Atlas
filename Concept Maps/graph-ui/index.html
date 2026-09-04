@@ -244,8 +244,11 @@
       </span>
       <span id="gres-summary">–</span>
       <span class="gres-mode">
-        <button id="gres-mode-sem" class="active" title="Jasper semantic + lexical hybrid">🧠 semantic</button>
-        <button id="gres-mode-kw" title="Lexical only (archaic variants, instant)">⌨ keyword</button>
+        <select id="gres-algo" title="Ranking algorithm">
+          <option value="hybrid" selected>🧠 hybrid (semantic+lexical)</option>
+          <option value="bm25">📊 BM25</option>
+          <option value="keyword">⌨ keyword</option>
+        </select>
       </span>
       <span class="gres-tabs">
         <button id="gres-tab-passages" class="active">Passages</button>
