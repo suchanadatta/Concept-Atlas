@@ -21,7 +21,16 @@ archaic-aware lexical), and an interactive 2D/3D concept-graph UI.
 ## Quickstart
 
 ```bash
-# deps (uv)
+# one command on a fresh clone (uv + GPU required for the semantic index):
+bash scripts/bootstrap.sh
+```
+
+This installs deps (uv + Python 3.12), downloads the Jasper embedding model
+(`infgrad/Jasper-Token-Compression-600M`, ~1.2 GB, one-time), builds the
+semantic index over the committed OCR text, and prints the server start
+commands. Manual equivalent:
+
+```bash
 uv venv --python 3.12 && uv pip install -r pyproject.toml
 
 # 1) OCR new PDFs          (needs GPU ~10GB for vLLM)
@@ -35,6 +44,12 @@ python tools/build_concept_vectors.py cuda          # concept vectors for query 
 python tools/jasper_search_server.py --port 8790 --device cuda   # semantic backend
 cd "Concept Maps/graph-ui" && ./start.sh                          # UI on :8788
 ```
+
+**What works without any downloads** (keyword + BM25 search + full UI):
+the committed OCR text (`outputs/`, 129 books) and concept map
+(`Concept Maps/final/`) are in the repo — `serve.py` starts immediately.
+Semantic mode additionally needs the Jasper model + embeddings (bootstrap
+step 2–3).
 
 ## The UI (`http://<host>:8788`)
 
