@@ -31,7 +31,8 @@ outputs/test_*/
 data/BMoral_pdf_collection/
 data/full_set_pdfs/
 data/drive_pdfs/
-data/txt_books/
+# NOTE: data/txt_books/ IS committed (44MB primary corpus: Berkeley works,
+# Locke correspondence, Hume essays — different editions than the PDF scans)
 
 # Caches & runtime
 __pycache__/
