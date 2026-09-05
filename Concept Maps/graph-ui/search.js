@@ -563,6 +563,7 @@
     const txtOnly = p.page == null || p.has_pdf === false || p.source === "txt";
     if (txtOnly) {
       if (typeof Reader !== "undefined") {
+        Reader.highlights = [];   // no page geometry in a text edition
         Reader.bookId = p.book_id;
         Reader.open = true;
         Reader.txtMode = false;
@@ -572,14 +573,16 @@
       }
       return;
     }
+    // Highlights describe THIS passage. They used to be pushed onto a list
+    // that was never cleared, so boxes (and their tooltips) from every
+    // previously opened result reappeared on unrelated pages.
     openReader(p.book_id, {
       page: p.page,
       highlight: p.blocks?.[0]?.bbox_pts ? { page: p.page, bbox_pts: p.blocks[0].bbox_pts, concept_id: q } : null,
+      highlights: (p.blocks || [])
+        .filter(b => b.bbox_pts)
+        .map(b => ({ book_id: p.book_id, page: p.page, bbox_pts: b.bbox_pts, concept_id: q, text: b.text })),
     });
-    // add ALL matching blocks as persistent highlights
-    for (const b of p.blocks || []) {
-      if (b.bbox_pts) Reader.highlights.push({ book_id: p.book_id, page: p.page, bbox_pts: b.bbox_pts, concept_id: q, text: b.text });
-    }
   }
 
   /* -------------------------------------------------------- keyboard nav */

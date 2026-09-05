@@ -14,7 +14,18 @@ const Reader = {
   renderTask: null,
   pendingHighlight: null,  // {page, bbox_pts, concept_id} to flash after render
   _initDone: false,
+  /* Every async step below (PDF load, page render, OCR fetch, word-highlight
+     fetch, annotation fetch) writes into this one shared object. Clicking a
+     second search result before the first finished let a stale response land
+     on the new page: the OCR panel showed another page's text and word boxes
+     from the previous passage were painted over the current scan. `seq` is
+     bumped by every navigation; each continuation captures it and bails if it
+     is no longer current. */
+  seq: 0,
 };
+function readerBump() { return ++Reader.seq; }
+function readerStale(t) { return t !== Reader.seq; }
+window.Reader = Reader;   // exposed for tests and the panel-stacking manager
 
 const READER_CDN = "vendor/pdfjs/";
 function setStatus(msg) {
@@ -66,6 +77,12 @@ function showReaderShell() {
 }
 async function openReader(bookId, opts = {}) {
   if (!bookId) return;
+  const token = readerBump();
+  // Highlights belong to one book+query. They used to accumulate across every
+  // passage opened in a session and reappear on unrelated pages, so the caller
+  // now hands in the boxes for THIS passage; anything else is dropped.
+  if (opts.highlights) Reader.highlights = opts.highlights;
+  else if (Reader.bookId !== bookId) Reader.highlights = [];
   Reader.bookId = bookId;
   Reader.open = true;
   Reader.txtMode = false;
@@ -84,9 +101,12 @@ async function openReader(bookId, opts = {}) {
     if (!Reader.pdfDoc || Reader._loadedFor !== bookId) {
       const url = `/book/pdf/${encodeURIComponent(bookId)}`;
       const task = pdfjsLib.getDocument({ url, disableAutoFetch: false });
-      Reader.pdfDoc = await task.promise;
+      const doc = await task.promise;
+      if (readerStale(token)) { try { doc.destroy(); } catch {} return; }
+      Reader.pdfDoc = doc;
       Reader._loadedFor = bookId;
     }
+    if (readerStale(token)) return;
     Reader.numPages = Reader.pdfDoc.numPages;
     $("reader-page-total").textContent = Reader.numPages;
     $("reader-jump").max = Reader.numPages;
@@ -98,10 +118,13 @@ async function openReader(bookId, opts = {}) {
       </div>`;
     // rewire overlay drag for annotations
     overlayDragHandlers();
-    await renderReaderPage();
-    await loadAnnotations();
-    await loadPageOcr();
-    setStatus(`${bookId} — ${Reader.numPages} pages`);
+    await renderReaderPage(token);
+    if (readerStale(token)) return;
+    await loadAnnotations(token);
+    await loadPageOcr(token);
+    if (readerStale(token)) return;
+    const c = window.Cite ? Cite.parse(bookId) : null;
+    setStatus(`${(c && c.cite) || bookId} — ${Reader.numPages} pages`);
   } catch (e) {
     console.error("reader open failed", e);
     await openTxtMode(bookId);
@@ -168,15 +191,21 @@ function clearSplit() {
 
 async function gotoPage(p) {
   p = clamp(p, 1, Reader.numPages);
+  const token = readerBump();   // invalidates any in-flight load for the old page
   Reader.pageNum = p;
-  await renderReaderPage();
-  await loadAnnotations();
-  await loadPageOcr();
+  await renderReaderPage(token);
+  if (readerStale(token)) return;
+  await loadAnnotations(token);
+  await loadPageOcr(token);
 }
 
 /* ————— render one page + overlay ————— */
-async function renderReaderPage() {
-  const page = await Reader.pdfDoc.getPage(Reader.pageNum);
+async function renderReaderPage(token) {
+  if (token == null) token = Reader.seq;   // zoom/redraw: keep the current generation
+  if (!Reader.pdfDoc) return;
+  const pageAtStart = Reader.pageNum;
+  const page = await Reader.pdfDoc.getPage(pageAtStart);
+  if (readerStale(token) || Reader.pageNum !== pageAtStart) return;
   const canvas = $("reader-canvas");
   const ctx2 = canvas.getContext("2d");
   const dpr = window.devicePixelRatio || 1;
@@ -196,10 +225,11 @@ async function renderReaderPage() {
   if (Reader.renderTask) try { Reader.renderTask.cancel(); } catch {}
   Reader.renderTask = page.render({ canvasContext: ctx2, viewport: page.getViewport({ scale: scale * dpr }) });
   await Reader.renderTask.promise.catch(() => {});
+  if (readerStale(token) || Reader.pageNum !== pageAtStart) return;
   $("reader-page-cur").textContent = Reader.pageNum;
   $("reader-jump").value = Reader.pageNum;
   $("reader-zoom-label").textContent = Math.round(scale / fitScale * 100) + "%";
-  drawOverlay(page, vp);
+  drawOverlay(page, vp, token);
 }
 
 /* map PDF points (bbox_pts) -> canvas px using page viewport in points */
@@ -209,7 +239,7 @@ function ptsToCanvas(bbox, vp) {
   return { x: x0 * sx, y: vp.height - y1 * sy, w: (x1 - x0) * sx, h: (y1 - y0) * sy };
 }
 
-function drawOverlay(page, vp) {
+function drawOverlay(page, vp, token) {
   Reader._lastVp = vp;
   const wrap = $("reader-overlay");
   wrap.innerHTML = "";
@@ -242,7 +272,7 @@ function drawOverlay(page, vp) {
     Reader.pendingHighlight = null;
   }
   // word-level query highlights (async, appends)
-  applyWordHighlights();
+  applyWordHighlights(token != null ? token : Reader.seq);
   // saved annotations
   const anns = Reader.annotations[Reader.pageNum] || [];
   for (const a of anns) {
@@ -261,16 +291,19 @@ function drawOverlay(page, vp) {
    page's OCR words[] matching a term gets its own precise box. */
 Reader.activeTerms = Reader.activeTerms || null;
 
-async function applyWordHighlights() {
+async function applyWordHighlights(token) {
   if (!Reader.activeTerms || !Reader.activeTerms.length) return;
   // dedup: clear previous word highlights for this page before re-applying
   document.querySelectorAll(".hl-word").forEach(el => el.remove());
   const wrap = $("reader-overlay");
+  const bookAtStart = Reader.bookId, pageAtStart = Reader.pageNum;
   // fetch page words
   try {
-    const res = await fetch(`/book/api/page_text?book=${encodeURIComponent(Reader.bookId)}&page=${Reader.pageNum}`);
+    const res = await fetch(`/book/api/page_text?book=${encodeURIComponent(bookAtStart)}&page=${pageAtStart}`);
     if (!res.ok) return;
     const d = await res.json();
+    // a newer navigation started while this fetch was in flight
+    if (readerStale(token) || Reader.bookId !== bookAtStart || Reader.pageNum !== pageAtStart) return;
     const terms = Reader.activeTerms.map(t => t.toLowerCase());
     const vp = Reader._lastVp;
     if (!vp) return;
@@ -296,14 +329,18 @@ async function applyWordHighlights() {
 }
 
 /* fetch OCR blocks for the current page (text + printed page no.) */
-async function loadPageOcr() {
+async function loadPageOcr(token) {
   const el = $("reader-ocr");
   if (!el) return;
+  if (token == null) token = Reader.seq;
+  const bookAtStart = Reader.bookId, pageAtStart = Reader.pageNum;
   el.textContent = "loading…";
   try {
-    const res = await fetch(`/book/api/page_text?book=${encodeURIComponent(Reader.bookId)}&page=${Reader.pageNum}`);
+    const res = await fetch(`/book/api/page_text?book=${encodeURIComponent(bookAtStart)}&page=${pageAtStart}`);
+    if (readerStale(token) || Reader.bookId !== bookAtStart || Reader.pageNum !== pageAtStart) return;
     if (!res.ok) { el.textContent = "(no OCR for this page)"; return; }
     const d = await res.json();
+    if (readerStale(token) || Reader.pageNum !== pageAtStart) return;
     const printed = d.printed_page_number ? ` (printed p. ${typeof d.printed_page_number === 'object' ? d.printed_page_number.value : d.printed_page_number})` : "";
     const body = (d.blocks || []).map(b => b.text).join("\n\n");
     el.textContent = `— page ${d.page_number}${printed} —\n\n${body || "(empty page)"}`;
@@ -318,12 +355,18 @@ function toggleAnnotMode() {
   $("reader-overlay").classList.toggle("annotating", annotMode);
 }
 
-async function loadAnnotations() {
+async function loadAnnotations(token) {
+  if (token == null) token = Reader.seq;
+  const bookAtStart = Reader.bookId;
   try {
-    const res = await fetch(`/book/api/annotations?book=${encodeURIComponent(Reader.bookId)}`);
+    const res = await fetch(`/book/api/annotations?book=${encodeURIComponent(bookAtStart)}`);
     const d = await res.json();
+    if (readerStale(token) || Reader.bookId !== bookAtStart) return;
     Reader.annotations = d.annotations || {};
-  } catch { Reader.annotations = {}; }
+  } catch {
+    if (readerStale(token)) return;
+    Reader.annotations = {};
+  }
   drawAnnotationsList();
 }
 

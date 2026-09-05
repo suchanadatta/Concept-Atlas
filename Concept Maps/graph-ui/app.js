@@ -714,10 +714,23 @@ function pickNode(px, py) {
 
 /* ————————— events ————————— */
 function bindEvents() {
-  window.addEventListener("resize", () => {
+  /* The stage resizes without the window doing so: opening the detail panel,
+     the compare overlay, or a split view all narrow it. Watching only
+     window.resize left the canvas backing store at its old width while the
+     CSS width shrank, so the bitmap was stretched non-uniformly and every
+     node circle rendered as an oval. A ResizeObserver catches all of it. */
+  const onStageResize = () => {
     resize();
     if (S.g3d) S.g3d.width($("stage").clientWidth).height($("stage").clientHeight);
-  });
+  };
+  window.addEventListener("resize", onStageResize);
+  if (window.ResizeObserver) {
+    let raf = 0;
+    new ResizeObserver(() => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(onStageResize);   // coalesce transition frames
+    }).observe($("stage"));
+  }
 
   /* canvas pointer */
   let downPos = null, moved = false;
