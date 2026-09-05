@@ -506,8 +506,20 @@ class BookAPI:
         for v in list(variants):
             if v in ARCH:
                 variants.update(ARCH[v])
-        # multi-word: each word must appear on the page (AND), single word: any variant
-        words = [w for w in _re.split(r"\W+", term.lower()) if w]
+        # multi-word: each CONTENT word must appear on the page. Requiring
+        # every token including "to"/"and"/"the" meant a natural research
+        # question ("Moral relations to ourselves, to others, and to God")
+        # matched nothing at all — the strict AND was over function words.
+        STOP = {
+            "the", "a", "an", "and", "or", "but", "of", "in", "on", "at", "to",
+            "from", "by", "with", "as", "is", "are", "was", "were", "be", "it",
+            "its", "this", "that", "these", "those", "for", "not", "no", "than",
+            "then", "which", "who", "what", "when", "where", "why", "how",
+            "whether", "if", "into", "over", "upon", "their", "his", "her",
+            "our", "we", "they", "them", "you", "there", "such", "so",
+        }
+        all_words = [w for w in _re.split(r"\W+", term.lower()) if w]
+        words = [w for w in all_words if len(w) > 2 and w not in STOP] or all_words
         word_variants = []
         for w in words:
             vs = {w}
@@ -519,51 +531,66 @@ class BookAPI:
                 vs.update(ARCH[w])
             word_variants.append(vs)
 
-        hits = []
-        per_book = {}
         idx = BookAPI._load_page_index()
-        for pg in idx:
-            pl = pg["text_lower"]
-            if len(words) > 1:
-                if not all(any(v in pl for v in vs) for vs in word_variants):
-                    continue
-            else:
-                if not any(v in pl for v in variants):
-                    continue
-            if per_book.get(pg["book_id"], 0) >= 8:
-                continue
-            blocks = []
-            for b in pg["blocks"]:
-                btl = b["text"].lower()
+
+        def collect(require_all: bool):
+            hits, per_book = [], {}
+            for pg in idx:
+                pl = pg["text_lower"]
                 if len(words) > 1:
-                    ok = all(any(v in btl for v in vs) for vs in word_variants)
+                    n_hit = sum(
+                        1 for vs in word_variants if any(v in pl for v in vs)
+                    )
+                    need = len(words) if require_all else max(2, (len(words) + 1) // 2)
+                    if n_hit < need:
+                        continue
                 else:
-                    ok = any(v in btl for v in variants)
-                if ok:
-                    blocks.append({"text": b["text"][:280], "bbox_pts": b["bbox_pts"]})
-            if not blocks:
-                continue
-            count = (
-                sum(pl.count(v) for vs in word_variants for v in vs)
-                if len(words) > 1
-                else sum(pl.count(v) for v in variants)
-            )
-            pos = pl.find(words[0])
-            snippet = pl[max(0, pos - 100) : pos + 200].replace("\n", " ")
-            hits.append(
-                {
-                    "book_id": pg["book_id"],
-                    "page": pg["page"],
-                    "printed_page_number": pg["printed"],
-                    "count": count,
-                    "snippet": snippet,
-                    "blocks": blocks[:5],
-                    "pdf_url": f"/book/pdf/{pg['book_id']}",
-                }
-            )
-            per_book[pg["book_id"]] = per_book.get(pg["book_id"], 0) + 1
-            if len(hits) >= limit * 3:
-                break
+                    if not any(v in pl for v in variants):
+                        continue
+                if per_book.get(pg["book_id"], 0) >= 8:
+                    continue
+                blocks = []
+                for b in pg["blocks"]:
+                    btl = b["text"].lower()
+                    ok = any(
+                        any(v in btl for v in vs) for vs in (word_variants or [variants])
+                    )
+                    if ok:
+                        blocks.append(
+                            {"text": b["text"][:280], "bbox_pts": b["bbox_pts"]}
+                        )
+                if not blocks:
+                    continue
+                count = (
+                    sum(pl.count(v) for vs in word_variants for v in vs)
+                    if len(words) > 1
+                    else sum(pl.count(v) for v in variants)
+                )
+                pos = min(
+                    (i for i in (pl.find(w) for w in words) if i >= 0), default=-1
+                )
+                snippet = (
+                    pl[max(0, pos - 100) : pos + 220] if pos >= 0 else pl[:220]
+                ).replace("\n", " ")
+                hits.append(
+                    {
+                        "book_id": pg["book_id"],
+                        "page": pg["page"],
+                        "printed_page_number": pg["printed"],
+                        "count": count,
+                        "snippet": snippet,
+                        "blocks": blocks[:5],
+                        "pdf_url": f"/book/pdf/{pg['book_id']}",
+                    }
+                )
+                per_book[pg["book_id"]] = per_book.get(pg["book_id"], 0) + 1
+                if len(hits) >= limit * 3:
+                    break
+            return hits
+
+        hits = collect(require_all=True)
+        if not hits and len(words) > 1:
+            hits = collect(require_all=False)  # relax to a majority of terms
         # rank: hit count desc
         hits.sort(key=lambda h: -h["count"])
         total = len(hits)

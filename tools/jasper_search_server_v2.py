@@ -462,27 +462,52 @@ def build_facets(results):
 
 # ---------------------------------------------------------------- bm25
 def build_bm25_index():
+    """Postings-list BM25.
+
+    The previous build kept the full token list of every passage and rescored
+    all 90,975 of them per query in Python. It also never ran: `s, dl, norm =
+    0.0, len(toks), k1 * (... dl ...)` reads `dl` while the tuple is still
+    being evaluated, so every /bm25 call raised UnboundLocalError. Postings
+    fix both — scoring now touches only the passages that contain a query
+    term, and doc lengths are computed once at build time.
+    """
     meta = _state["meta"]
-    docs, df = [], {}
-    for m in meta:
-        toks = []
+    postings: dict[str, dict[int, int]] = {}
+    doclen = np.zeros(len(meta), dtype=np.int32)
+    for i, m in enumerate(meta):
+        tf: dict[str, int] = {}
+        n = 0
         for w in re.split(r"\W+", m["text_l"]):
             if len(w) < 2:
                 continue
-            toks.append(w)
+            forms = [w]
+            # long-s OCR confusion: "vertue"/"felf" ↔ "vertue"/"self"
             if "s" in w and "f" not in w:
-                toks.append(w.replace("s", "f"))
+                forms.append(w.replace("s", "f"))
             if "f" in w and "s" not in w:
-                toks.append(w.replace("f", "s"))
-        docs.append(toks)
-        for t in set(toks):
-            df[t] = df.get(t, 0) + 1
-    N = len(docs)
+                forms.append(w.replace("f", "s"))
+            for t in forms:
+                tf[t] = tf.get(t, 0) + 1
+                n += 1
+        doclen[i] = n
+        for t, c in tf.items():
+            postings.setdefault(t, {})[i] = c
+    N = len(meta)
+    # freeze each posting list into parallel numpy arrays for vectorised scoring
+    frozen = {
+        t: (
+            np.fromiter(d.keys(), dtype=np.int32, count=len(d)),
+            np.fromiter(d.values(), dtype=np.float32, count=len(d)),
+        )
+        for t, d in postings.items()
+    }
+    df = {t: len(d) for t, d in postings.items()}
     _state.update(
-        bm25_docs=docs,
+        bm25_post=frozen,
         bm25_df=df,
         bm25_N=N,
-        bm25_avgdl=sum(len(d) for d in docs) / max(1, N),
+        bm25_doclen=doclen.astype(np.float32),
+        bm25_avgdl=float(doclen.mean()) if N else 1.0,
     )
     # idf for the hybrid lexical score: rare words (benevolence) should count
     # far more than common ones (nature), which flat coverage ignored.
@@ -495,64 +520,79 @@ def build_bm25_index():
 
 
 def bm25_search(query: str, top_k: int = 40, k1: float = 1.5, b: float = 0.75):
-    if not query.strip() or "bm25_docs" not in _state:
+    if not query.strip() or "bm25_post" not in _state:
         return {"query": query, "n": 0, "results": []}
-    meta, docs, df = _state["meta"], _state["bm25_docs"], _state["bm25_df"]
-    N, avgdl = _state["bm25_N"], _state["bm25_avgdl"]
+    t0 = time.time()
+    meta = _state["meta"]
+    post, df = _state["bm25_post"], _state["bm25_df"]
+    N, avgdl, doclen = _state["bm25_N"], _state["bm25_avgdl"], _state["bm25_doclen"]
+    words = query_terms(query)
     qterms = []
-    for w in re.split(r"\W+", query.lower()):
-        if len(w) < 2:
-            continue
-        qterms.append(w)
+    for w in words:
         for v in variants_for(w):
-            if v != w and v not in qterms:
+            if v not in qterms:
                 qterms.append(v)
-    scores = []
-    for i, toks in enumerate(docs):
-        tf = {}
-        for t in toks:
-            tf[t] = tf.get(t, 0) + 1
-        s, dl, norm = 0.0, len(toks), k1 * (1 - b + b * dl / avgdl)
-        for qt in qterms:
-            f = tf.get(qt, 0)
-            if f:
-                n_t = df.get(qt, 0)
-                s += (
-                    math.log(1 + (N - n_t + 0.5) / (n_t + 0.5))
-                    * (f * (k1 + 1))
-                    / (f + norm)
-                )
-        if s > 0:
-            scores.append((s, i))
-    scores.sort(key=lambda x: -x[0])
-    per_book, results = {}, []
-    for s, i in scores:
-        m = meta[i]
-        bid = m["book_id"]
-        if per_book.get(bid, 0) >= 3:
+    scores = np.zeros(N, dtype=np.float32)
+    hit_any = False
+    norm = k1 * (1 - b + b * doclen / max(avgdl, 1e-6))
+    for qt in qterms:
+        pl = post.get(qt)
+        if pl is None:
             continue
-        per_book[bid] = per_book.get(bid, 0) + 1
-        c = cite_for(bid)
+        hit_any = True
+        ids, tfs = pl
+        n_t = df[qt]
+        w_idf = math.log(1 + (N - n_t + 0.5) / (n_t + 0.5))
+        scores[ids] += w_idf * (tfs * (k1 + 1)) / (tfs + norm[ids])
+    if not hit_any:
+        return {"query": query, "n": 0, "mode": "bm25", "results": []}
+    pool = min(N, max(top_k * 20, 400))
+    cand = np.argpartition(-scores, pool - 1)[:pool]
+    cand = cand[np.argsort(-scores[cand])]
+    per_work, results = {}, []
+    seen = set()
+    for i in cand:
+        sc = float(scores[i])
+        if sc <= 0:
+            break
+        m = meta[i]
+        wk = work_key(m["book_id"])
+        if per_work.get(wk, 0) >= 3:
+            continue
+        dup = re.sub(r"\s+", " ", m["text"][:120]).strip().lower()
+        if dup in seen:
+            continue
+        seen.add(dup)
+        per_work[wk] = per_work.get(wk, 0) + 1
+        c = cite_for(m["book_id"])
         results.append(
             {
-                "book_id": bid,
+                "book_id": m["book_id"],
+                "page": m["page"],
+                "printed_page": m.get("printed_page"),
+                "source": m.get("source"),
                 "author": c["author"],
                 "year": c["year"],
                 "title": c["title"],
                 "volume": c["volume"],
                 "cite": c["cite"],
-                "source": m.get("source"),
-                "page": m["page"],
-                "printed_page": m.get("printed_page"),
-                "score": round(s, 4),
-                "snippet": make_snippet(m["text"], qterms),
+                "score": round(sc, 4),
+                "snippet": make_snippet(m["text"], words),
                 "bbox_pts": m.get("bbox_pts"),
                 "count": 1,
             }
         )
         if len(results) >= top_k:
             break
-    return {"query": query, "n": len(results), "results": results}
+    return {
+        "query": query,
+        "n": len(results),
+        "mode": "bm25",
+        "terms": words,
+        "facets": build_facets(results),
+        "took_ms": round((time.time() - t0) * 1000),
+        "results": results,
+    }
 
 
 # ---------------------------------------------------------------- graph

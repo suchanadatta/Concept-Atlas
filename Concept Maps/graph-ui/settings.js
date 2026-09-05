@@ -75,12 +75,12 @@
       $("sp-stats").innerHTML = `<span>engine</span><b>offline</b>`;
       return;
     }
-    chip.innerHTML = `<b>${(d.index || 0).toLocaleString()}</b> passages · <b>${d.books || 0}</b> books`;
+    chip.innerHTML = `<b>${(d.index || 0).toLocaleString()}</b> passages · <b>${d.books || 0}</b> sources`;
     const c = d.cache || {};
     const total = (c.hits || 0) + (c.misses || 0);
     $("sp-stats").innerHTML = [
       ["passages", (d.index || 0).toLocaleString()],
-      ["books", d.books || 0],
+      ["sources", d.books || 0],
       ["concepts", d.concepts || 0],
       ["embedding dim", d.dim || 0],
       ["device", (d.device || "?").toUpperCase()],

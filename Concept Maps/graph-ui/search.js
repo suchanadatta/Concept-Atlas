@@ -16,6 +16,8 @@
     "another same own one two say said let make made take taken come came go went thing things way ways").split(" "));
 
   function init() {
+    // published before anything can dispatch atlas:search
+    window.__doGlobalSearch = doGlobalSearch;
     // landing state: hide main app chrome until search/graph chosen
     const params = new URLSearchParams(location.search);
     const q = params.get("q");
@@ -101,7 +103,6 @@
 
   /* ------------------------------------------------------------------ search */
   async function doGlobalSearch(q) {
-    window.__doGlobalSearch = doGlobalSearch;
     const seq = ++searchSeq;
     hideLanding();
     $("gres").classList.remove("hidden");
@@ -164,6 +165,8 @@
           body: JSON.stringify({ query: q, top_k: topK }),
         });
         const d = await res.json();
+        facets = d.facets || null;
+        serverMs = d.took_ms;
         passages = (d.results || []).map(x => ({
           book_id: x.book_id, page: x.page, printed_page_number: x.printed_page,
           count: Math.round(x.score), snippet: x.snippet,
@@ -222,7 +225,7 @@
     $("gres-body").innerHTML = `
       <div class="searching-state">
         <div class="searching-spinner"></div>
-        <div class="searching-text">Searching ${(engine.books || 129)} books<span class="dots"><span>.</span><span>.</span><span>.</span></span></div>
+        <div class="searching-text">Searching ${(engine.books || 197)} sources<span class="dots"><span>.</span><span>.</span><span>.</span></span></div>
         <div class="searching-sub">embedding “${esc(q)}” with Jasper · ranking ${(engine.index || 90975).toLocaleString()} passages${slow ? " · running on CPU, this takes a few seconds" : ""}</div>
         <div class="searching-elapsed" id="searching-elapsed">0.0s</div>
       </div>`;
@@ -629,10 +632,9 @@ function doGlobalSearchExternal(q) {
   document.dispatchEvent(evt);
 }
 document.addEventListener("atlas:search", (e) => {
-  document.getElementById("landing").classList.add("hidden");
-  // reuse internal via programmatic call
   const input = document.getElementById("landing-input");
-  input.value = e.detail;
-  // call the IIFE-internal fn via a re-bound reference
-  window.__doGlobalSearch ? window.__doGlobalSearch(e.detail) : null;
+  if (input) input.value = e.detail;
+  // doGlobalSearch hides the landing page itself; hiding it here first would
+  // leave a blank screen if the call never happened
+  if (window.__doGlobalSearch) window.__doGlobalSearch(e.detail);
 });

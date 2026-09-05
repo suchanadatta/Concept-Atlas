@@ -357,20 +357,39 @@ function draw() {
   }
   ctx.globalAlpha = 1;
 
-  /* labels */
+  /* labels — collision-culled.
+     202 concepts in one cluster produced overprinted text ("Moral
+     Obligat|Reward and Punishment"). Labels are laid out in importance order
+     and any that would overlap an already-placed label, or a node circle,
+     is dropped rather than drawn on top of it. Focused/selected/query nodes
+     are placed first so they always survive the cull. */
   ctx.font = "500 11px Inter, sans-serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "top";
+  const darkMode = document.body.classList.contains("dark");
+  const boxes = [];
   for (const n of nodes) {
-    if (!labels.has(n.id) || n.x == null) continue;
-    if (ego && !ego.has(n.id)) continue;
+    if (n.x == null) continue;
     const r = nodeRadius(n);
+    boxes.push({ x: n.x - r, y: n.y - r, w: r * 2, h: r * 2 });
+  }
+  const overlaps = (b) => boxes.some(o =>
+    b.x < o.x + o.w && b.x + b.w > o.x && b.y < o.y + o.h && b.y + b.h > o.y);
+  const pri = (n) => (n === focus ? 4 : qTop?.has(n.id) ? 3 : focusNb?.has(n.id) ? 2 : 0);
+  const cands = nodes
+    .filter(n => labels.has(n.id) && n.x != null && !(ego && !ego.has(n.id)))
+    .sort((a, b) => pri(b) - pri(a) || a._labelRank - b._labelRank);
+  for (const n of cands) {
+    const r = nodeRadius(n);
+    const w = ctx.measureText(n.label).width, y = n.y + r + 3;
+    const box = { x: n.x - w / 2 - 2, y: y - 1, w: w + 4, h: 13 };
+    const must = pri(n) >= 3;
+    if (!must && overlaps(box)) continue;
+    boxes.push(box);
     let alpha = 0.92;
     if (S.query && !qTop.has(n.id)) alpha = 0.25;
     else if (focus && n !== focus && !focusNb.has(n.id)) alpha = 0.22;
     ctx.globalAlpha = alpha;
-    const y = n.y + r + 3;
-    const darkMode = document.body.classList.contains("dark");
     ctx.lineWidth = 3;
     ctx.strokeStyle = darkMode ? "rgba(30,28,24,0.9)" : "rgba(246,241,229,0.85)";
     ctx.strokeText(n.label, n.x, y);
@@ -978,11 +997,15 @@ function syncCatList() {
   });
 }
 
-/* ————————— search ————————— */
-function renderSuggestions(q) {
-  const box = $("suggestions");
-  q = q.trim().toLowerCase();
-  if (!q) { box.classList.add("hidden"); return; }
+/* ————————— search —————————
+   Two-stage: instant literal matching on labels/aliases, then a semantic
+   pass over the 202 concept embeddings. A phrase like "what makes an action
+   right" shares no substring with any concept label, so the literal pass
+   alone returned "No concepts match" for exactly the questions this atlas
+   exists to answer. */
+let _sugSeq = 0, _sugTimer = null;
+
+function literalMatches(q) {
   const scored = [];
   for (const n of S.nodes) {
     let s = -1;
@@ -996,17 +1019,62 @@ function renderSuggestions(q) {
     if (s > 0) scored.push([s, n]);
   }
   scored.sort((a, b) => b[0] - a[0]);
-  const top = scored.slice(0, 8);
-  box.innerHTML = top.length
-    ? top.map(([, n]) => `<div class="sg" data-id="${esc(n.id)}">
-        <span class="dot" style="background:${n.color}"></span>
-        <span class="lbl">${esc(n.label)}</span>
-        <span class="cat">${esc(n.top)}</span></div>`).join("")
+  return scored.map(([, n]) => n);
+}
+
+function paintSuggestions(list, q, { pending = false, semantic = false } = {}) {
+  const box = $("suggestions");
+  const rows = list.slice(0, 8).map(n => `
+    <div class="sg${n._sem ? " sg-sem" : ""}" data-id="${esc(n.id)}">
+      <span class="dot" style="background:${n.color}"></span>
+      <span class="lbl">${esc(n.label)}</span>
+      <span class="cat">${esc(n.top || (n.category || [])[0] || "")}</span>
+    </div>`).join("");
+  const foot = pending
+    ? `<div class="sg-foot">searching the concept map…</div>`
+    : semantic
+    ? `<div class="sg-foot">◆ = related in meaning, not spelling</div>`
+    : "";
+  box.innerHTML = rows
+    ? rows + foot
+    : pending
+    ? `<div class="sg-foot">searching the concept map…</div>`
     : `<div class="none">No concepts match “${esc(q)}”</div>`;
   box.classList.remove("hidden");
   box.querySelectorAll(".sg").forEach(el => {
     el.onclick = () => { selectById(el.dataset.id, true); box.classList.add("hidden"); };
   });
+}
+
+function renderSuggestions(raw) {
+  const box = $("suggestions");
+  const q = raw.trim().toLowerCase();
+  clearTimeout(_sugTimer);
+  const seq = ++_sugSeq;
+  if (!q) { box.classList.add("hidden"); return; }
+  const lit = literalMatches(q);
+  paintSuggestions(lit, q, { pending: lit.length < 8 });
+  if (lit.length >= 8 || q.length < 3) return;
+  // only reach for the engine once typing settles
+  _sugTimer = setTimeout(async () => {
+    let sem = [];
+    try {
+      const r = await fetch("/book/api/concepts_proxy", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: raw.trim(), top_k: 10, mode: "hybrid" }),
+        signal: AbortSignal.timeout(30000),
+      });
+      if (r.ok) sem = (await r.json()).results || [];
+    } catch { /* engine down — literal results stand */ }
+    if (seq !== _sugSeq) return;
+    const byId = new Map(S.nodes.map(n => [n.id, n]));
+    const have = new Set(lit.map(n => n.id));
+    const extra = sem
+      .filter(c => c.score > 0.25 && !have.has(c.id))
+      .map(c => { const n = byId.get(c.id); return n ? { ...n, _sem: true } : null; })
+      .filter(Boolean);
+    paintSuggestions([...lit, ...extra], q, { semantic: extra.length > 0 });
+  }, 260);
 }
 
 function ensureVisible(n) {
