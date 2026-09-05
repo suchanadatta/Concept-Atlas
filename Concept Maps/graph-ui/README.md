@@ -354,3 +354,70 @@ POST /book/api/annotations?book=&page=     save annotations
 - **Core-window near-dup filter**: 100-char normalized window at offset 200
   drops exact reprints across editions.
 - Eval after dedup: nDCG@10 0.890 · MRR 0.802 (diversity up, ranking held).
+
+## v21 — citations, facets, and a concept-map search engine
+
+**Backend** (`tools/jasper_search_server_v2.py`)
+- **Query-embedding LRU cache.** A single user query hit the model up to
+  three times (passages → mode switch → query graph). On CPU that was ~30s
+  of re-encoding for one vector; repeats now return in ~40ms. `/healthz`
+  reports cache size and hit rate; a device switch clears it.
+- **`POST /concepts`** — semantic search over the concept map itself. The 202
+  concept vectors were loaded but only `/query_graph` used them, so concept
+  lookup was pure string matching. "what makes an action morally right?" now
+  returns Moral Obligation, Moral Fitness, Eternal Morality.
+- **BM25 was broken and is now fast.** `s, dl, norm = 0.0, len(toks), k1 * (…
+  dl …)` reads `dl` while the tuple is still evaluating, so every `/bm25`
+  call raised UnboundLocalError and the UI silently fell back to lexical.
+  Rewritten on postings lists with numpy scoring: 2–10ms, correct, and the
+  results carry citations, snippets and facets like the semantic path.
+- **`lexical_overlap` is IDF-weighted with a proximity bonus** and drops
+  function words. Flat coverage saturated at 1.00 for every candidate, so the
+  0.4 lexical half of the hybrid score carried no discrimination at all.
+  `will`/`good`/`right`/`end` stay searchable — moral vocabulary here.
+- **`parse_book_id()`** turns raw ids into author/title/year/volume. All 197
+  ids in the index parse. **`make_snippet()`** centres on the densest term
+  cluster, snaps to word boundaries and strips OCR/LaTeX artifacts; the old
+  fixed slice regularly ended mid-word ("…at the grea").
+- Responses carry `author`/`title`/`year`/`cite` plus author, period and work
+  facets.
+
+**Frontend**
+- **`cite.js`** — the same parser for the client-only paths. Results read
+  *Clarke, A Discourse Concerning the Unchangeable Obligations of Natural
+  Religion (1706)* instead of `CLARKE_1706_1708_A-Discourse-…`.
+- **Refine rail** — filter by author, period and source with live counts;
+  sort by relevance / year / author. Uses the space left of the results.
+- **Score bars scaled across the result set.** An absolute 0–1 bar was full
+  for every row, since every good hit sits near 0.85.
+- `j`/`k`/`↑↓` + `Enter` keyboard navigation; stopword-aware highlighting
+  (every snippet used to paint "and" and "the" yellow); "text edition"
+  instead of "page null" for the TXT corpus.
+- **Settings popover** replaces the bare bottom strip: device switch, results
+  per search, default ranking, refine panel, theme — persisted to
+  localStorage — plus live index/cache stats and last-search timing.
+- **Landing boards**: central concepts, curated research questions, corpus
+  facts and most-represented authors. Every item runs a real search.
+- **Concept-map search** — the header box runs a semantic pass after the
+  literal one, marked with a diamond.
+- 2D graph labels are collision-culled against each other and against node
+  circles, in importance order.
+- Query graph: passage nodes carry real citations; the legend explains the
+  match-% badge and bridge concepts.
+
+**Fixes**
+- The fixed settings strip overlapped every full-height panel (results,
+  reader, query graph) and the graph status bar. Its height is now reserved.
+- Dark mode defined only four of its tokens, so anything using `--paper` /
+  `--ink-soft` / `--ink-faint` rendered light-on-light.
+- Keyword mode required *every* token including function words, so a real
+  research question matched nothing; it now requires content words and
+  relaxes to a majority when the strict pass is empty.
+- `window.__doGlobalSearch` was only published from inside `doGlobalSearch`,
+  so any external trigger before the first search hid the landing page and
+  rendered nothing.
+- `serve.py`: four near-identical Jasper proxies collapsed into one helper;
+  adds `/book/api/concepts_proxy` and `/book/api/engine`.
+
+Verified: Playwright 12/12 results behaviour, 13/13 panel stacking, 10/10
+ranking modes; `tools/eval_retrieval.py` nDCG@10 0.977 · MRR 1.000.

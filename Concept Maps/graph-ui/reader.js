@@ -39,7 +39,11 @@ function showReaderShell() {
   el.classList.remove("docked");
   document.body.classList.toggle("split-reading", resultsOpen);
   positionSplit(resultsOpen);
-  $("reader-title").textContent = Reader.bookId;
+  // the raw id is a filename ("KING_1731_1732_An-Essay-on-the-Origin-of-Evil_1");
+  // show the citation and keep the id on hover for provenance
+  const _c = window.Cite ? Cite.parse(Reader.bookId) : null;
+  $("reader-title").textContent = _c && _c.cite ? _c.cite : Reader.bookId;
+  $("reader-title").title = Reader.bookId;
   $("reader-download-pdf").onclick = () => { location.href = `/book/pdf/${encodeURIComponent(Reader.bookId)}`; };
   $("reader-download-txt").onclick = () => { location.href = `/book/txt/${encodeURIComponent(Reader.bookId)}`; };
   $("reader-download-md").onclick = () => { location.href = `/book/md/${encodeURIComponent(Reader.bookId)}`; };
