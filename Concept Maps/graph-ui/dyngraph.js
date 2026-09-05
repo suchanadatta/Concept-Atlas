@@ -14,7 +14,15 @@
   let data = null;
 
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const shortBook = (b) => (b || "").replace(/_/g, " ").split(" ").slice(0, 3).join(" ").slice(0, 26);
+  /* Document nodes used to be labelled with a chopped raw id
+     ("BUTLER 1726 1887 ·p106"); the parsed citation is both shorter and
+     actually identifies the work. */
+  function shortBook(b) {
+    const c = (window.Cite ? Cite.parse(b) : null);
+    if (!c || !c.title) return (b || "").replace(/_/g, " ").slice(0, 26);
+    const t = c.title.length > 22 ? c.title.slice(0, 21).replace(/\s+\S*$/, "") + "…" : c.title;
+    return [c.author, t].filter(Boolean).join(" · ") + (c.year ? ` ${c.year}` : "");
+  }
 
   // relation colors (mirrors the main graph's REL_STYLE)
   const RSTYLE = {
@@ -137,7 +145,7 @@
     (data.docs || []).forEach((d, i) => {
       const ang = (i / Math.max(1, data.docs.length)) * 6.2832 + 0.12;
       const hx = cx + Math.cos(ang) * rDoc, hy = cy + Math.sin(ang) * rDoc;
-      const n = { id: "d" + i, label: shortBook(d.book_id) + " ·" + (d.page != null ? "p" + d.page : "¶"),
+      const n = { id: "d" + i, label: shortBook(d.book_id) + (d.page != null ? ` p.${d.page}` : ""),
                  color: "#4E79A7", r: 5 + 5 * Math.min(1, d.score * 1.2),
                  x: hx, y: hy, hx, hy, vx: 0, vy: 0,
                  kind: "doc", book: d.book_id, page: d.page, snippet: d.snippet, score: d.score };
@@ -232,6 +240,8 @@
     }
     ctx.globalAlpha = 1;
     const labelAlpha = Math.min(1, Math.max(0.15, (view_t.k - 0.45) * 1.7));
+    const labelQueue = [];
+    const rank = (n) => n.kind === "query" ? 100 : n.kind === "concept" ? 10 + (n.score || 0) : (n.score || 0);
     for (const n of nodes) {
       ctx.globalAlpha = isNb(n) ? 1 : 0.22;
       if (n === hov) {
@@ -259,14 +269,40 @@
         ctx.fillText(Math.round(n.score * 100), n.x + n.r * 0.72, n.y - n.r * 0.72 + 0.5);
         ctx.textBaseline = "alphabetic";
       }
-      // labels: query + concepts always; docs on hover/zoom
-      if (n.kind !== "doc" || n === hov || view_t.k > 1.4) {
-        ctx.globalAlpha = isNb(n) ? labelAlpha : 0.1;
-        ctx.fillStyle = dark ? "#E8E2D5" : "#2E2A24";
-        ctx.font = (n.kind === "query" ? "600 13px" : "500 10.5px") + " Inter, sans-serif";
-        ctx.textAlign = "center";
-        ctx.fillText(n.label, n.x, n.y + n.r + 13);
+      labelQueue.push(n);
+    }
+    // labels drawn last, after every node, so a circle can never cover text.
+    // A coarse occupancy grid drops labels that would overprint an earlier
+    // one — the old pass let concept names pile on top of each other.
+    // Seed the occupancy map with every node circle: a label that lands on
+    // another node reads as part of it ("(*)Happiness"), which the earlier
+    // label-vs-label-only check let through.
+    const taken = nodes.map(n => ({ x: n.x - n.r, y: n.y - n.r, w: n.r * 2, h: n.r * 2 }));
+    const fits = (x0, y0, w, h) => {
+      for (const b of taken) {
+        if (x0 < b.x + b.w && x0 + w > b.x && y0 < b.y + b.h && y0 + h > b.y) return false;
       }
+      taken.push({ x: x0, y: y0, w, h });
+      return true;
+    };
+    labelQueue.sort((a, b) => rank(b) - rank(a));   // important labels claim space first
+    for (const n of labelQueue) {
+      const always = n.kind === "query" || n === hov;
+      if (!always && n.kind === "doc" && view_t.k < 0.75) continue;
+      ctx.font = (n.kind === "query" ? "600 13px" : n.kind === "concept" ? "600 10.5px" : "500 9.5px")
+        + " Inter, sans-serif";
+      const w = ctx.measureText(n.label).width, h = 12;
+      const x0 = n.x - w / 2, y0 = n.y + n.r + 4;   // below the node, clear of its own circle
+      if (!always && !fits(x0 - 2, y0 - 2, w + 4, h + 4)) continue;
+      if (always) taken.push({ x: x0 - 2, y: y0 - 2, w: w + 4, h: h + 4 });
+      ctx.globalAlpha = isNb(n) ? (n.kind === "doc" ? labelAlpha * 0.85 : labelAlpha) : 0.1;
+      // halo keeps text legible where it crosses an edge
+      ctx.lineWidth = 3; ctx.lineJoin = "round";
+      ctx.strokeStyle = dark ? "rgba(30,28,24,.85)" : "rgba(246,241,229,.85)";
+      ctx.textAlign = "center";
+      ctx.strokeText(n.label, n.x, n.y + n.r + 13);
+      ctx.fillStyle = n.kind === "doc" ? (dark ? "#9FB6CE" : "#3E6187") : (dark ? "#E8E2D5" : "#2E2A24");
+      ctx.fillText(n.label, n.x, n.y + n.r + 13);
     }
     ctx.globalAlpha = 1;
     ctx.restore();
@@ -280,17 +316,24 @@
     if (!ctx) return;
     const dark = document.body.classList.contains("dark");
     const rels = [...new Set(links.map(l => l.r))].filter(r => r !== "to_query");
+    const hasBridge = nodes.some(n => n.match === "bridge");
     const items = [
-      { color: "#8A3B32", label: "query" },
-      { color: "#C15B5B", label: "concept" },
-      { color: "#4E79A7", label: "document" },
+      { color: "#8A3B32", label: "your query" },
+      { color: "#C15B5B", label: "concept · badge = match %" },
+      ...(hasBridge ? [{ color: "#C15B5B", label: "bridge concept", ring: true }] : []),
+      { color: "#4E79A7", label: "passage" },
       ...rels.map(r => ({ color: rcol(r), label: r.replace(/_/g, " "), edge: true })),
     ];
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = dark ? "rgba(30,28,24,.92)" : "rgba(246,241,229,.92)";
+    ctx.fillRect(0, H - 28, W, 28);
+    ctx.strokeStyle = dark ? "#3A362E" : "#DDD3BE";
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(0, H - 28.5); ctx.lineTo(W, H - 28.5); ctx.stroke();
     ctx.font = "500 10px Inter, sans-serif";
     ctx.textAlign = "left"; ctx.textBaseline = "middle";
     let x = 12;
-    const y = H - 14;
+    const y = H - 10;
     for (const it of items) {
       if (it.edge) {
         ctx.strokeStyle = it.color; ctx.lineWidth = 2;
@@ -300,6 +343,11 @@
       } else {
         ctx.fillStyle = it.color;
         ctx.beginPath(); ctx.arc(x + 8, y - 4, 5, 0, 6.2832); ctx.fill();
+        if (it.ring) {
+          ctx.beginPath(); ctx.arc(x + 8, y - 4, 7.5, 0, 6.2832);
+          ctx.setLineDash([3, 3]); ctx.strokeStyle = "rgba(123,104,181,.85)";
+          ctx.lineWidth = 1.2; ctx.stroke(); ctx.setLineDash([]);
+        }
       }
       ctx.fillStyle = dark ? "#B8B2A4" : "#6B6353";
       ctx.fillText(it.label, x + (it.edge ? 20 : 16), y - 4);

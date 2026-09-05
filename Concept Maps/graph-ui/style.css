@@ -11,6 +11,7 @@
   --accent-soft: #B45E52;
   --sel: #2E2A24;
   --shadow: 0 10px 30px rgba(46, 42, 36, .10);
+  --settings-h: 30px;
   --serif: "EB Garamond", Georgia, "Times New Roman", serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -288,7 +289,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 4px 0 0;
 ::-webkit-scrollbar-track { background: transparent; }
 
 /* ————————————— Book Reader ————————————— */
-#reader{position:fixed;inset:0;background:rgba(24,22,18,.92);z-index:200;display:flex;flex-direction:column}
+#reader{position:fixed;inset:0 0 var(--settings-h) 0;background:rgba(24,22,18,.92);z-index:200;display:flex;flex-direction:column}
 #reader.hidden{display:none}
 #reader-toolbar{display:flex;align-items:center;gap:14px;padding:8px 16px;background:#2A2721;color:#E8E2D5;border-bottom:1px solid #4A443A}
 #reader-title{font-family:"EB Garamond",serif;font-size:15px;font-weight:600;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -362,7 +363,13 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 4px 0 0;
 #help-close{position:absolute;top:8px;right:10px;background:none;border:none;font-size:20px;cursor:pointer}
 
 /* ————— dark mode ————— */
-body.dark{--bg:#1E1C18;--panel:#26231E;--ink:#D8D2C4;--muted:#9C9484;--line:#3A362E}
+/* Dark mode originally redefined only four tokens, so anything styled with
+   --paper / --ink-soft / --ink-faint fell through to the light values and
+   rendered as dark-on-dark. The hand-written `body.dark X` rules below are
+   more specific and still win wherever they exist. */
+body.dark{--bg:#1E1C18;--panel:#26231E;--ink:#D8D2C4;--muted:#9C9484;--line:#3A362E;
+  --paper:#1E1C18;--paper-2:#2E2A24;--ink-soft:#B8B2A4;--ink-faint:#8B8375;
+  --shadow:0 10px 30px rgba(0,0,0,.35)}
 body.dark{background:#1E1C18}
 body.dark #topbar{background:#26231E;border-color:#3A362E}
 body.dark #topbar h1,body.dark #stat-nodes,body.dark #stat-edges{color:#E8E2D5}
@@ -462,7 +469,7 @@ body.dark .landing-examples .ex{background:#2E2A24;border-color:#4A443A;color:#C
 body.dark .landing-links button{border-color:#4A443A;color:#C9C2B2}
 
 /* ————— global results ————— */
-#gres{position:fixed;inset:0;z-index:140;background:var(--paper);display:flex;flex-direction:column;transition:right .25s ease}
+#gres{position:fixed;inset:0 0 var(--settings-h) 0;z-index:140;background:var(--paper);display:flex;flex-direction:column;transition:right .25s ease}
 /* split-reading: results shrink left, reader slides in as right panel */
 body.split-reading #gres{right:54%}
 #reader.split{left:46%;width:54%;animation:readerslide .25s ease-out}
@@ -488,19 +495,74 @@ body.dark #gres-algo{background:#2E2A24;color:#E8E2D5;border-color:#4A443A}
 .gres-tabs{display:flex;gap:4px}
 .gres-tabs button{background:none;border:1px solid var(--line);border-radius:14px;padding:5px 13px;font-size:12.5px;cursor:pointer;color:var(--ink-soft)}
 .gres-tabs button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-#gres-body{flex:1;overflow-y:auto;padding:20px 26px;max-width:900px;margin:0 auto;width:100%}
-.gr-pass{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:12px;cursor:pointer;transition:border-color .15s}
-.gr-pass:hover{border-color:var(--accent-soft)}
-.gr-pass .gp-head{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-faint);margin-bottom:6px}
-.gr-pass .gp-book{font-weight:600;color:var(--ink-soft)}
-.gr-pass .gp-snip{font-family:var(--serif);font-size:15.5px;line-height:1.55;color:var(--ink)}
+.gres-main{flex:1;display:flex;min-height:0;overflow:hidden}
+#gres-body{flex:1;overflow-y:auto;padding:20px 26px 60px;max-width:940px;margin:0 auto;width:100%;scroll-padding-top:12px}
+
+/* ————— refine rail ————— */
+#gres-facets{width:236px;flex:none;overflow-y:auto;padding:18px 14px 60px;
+  border-right:1px solid var(--line);background:var(--paper-2)}
+#gres-facets.empty,body.facets-collapsed #gres-facets,body.tab-concepts #gres-facets{display:none}
+.facets-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+.facets-head h3{margin:0;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);font-weight:600}
+#gres-facets .fg{margin-bottom:18px}
+#gres-facets .fg h4{margin:0 0 6px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--ink-faint);font-weight:600}
+.fitem{display:flex;align-items:center;gap:8px;justify-content:space-between;padding:3px 7px;margin:1px -7px;
+  border-radius:5px;cursor:pointer;font-size:12.5px;color:var(--ink-soft);line-height:1.35;
+  border:1px solid transparent;transition:background .12s,color .12s}
+.fitem:hover{background:rgba(138,59,50,.07);color:var(--ink)}
+.fitem.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.fitem .fname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fitem .fcount{font-size:11px;opacity:.65;font-variant-numeric:tabular-nums;flex:none}
+.fitem.on .fcount{opacity:.85}
+
+/* ————— searching state ————— */
+.searching-elapsed{margin-top:10px;font-size:12px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+.empty-note{padding:48px 20px;text-align:center;max-width:520px;margin:0 auto;line-height:1.6}
+#gres-sort{background:var(--panel);color:var(--ink-soft);border:1px solid var(--line);border-radius:14px;
+  padding:5px 8px;font-size:12px;cursor:pointer;outline:none}
+body.dark #gres-sort{background:#2E2A24;color:#C9C2B2;border-color:#4A443A}
+#gres-facet-toggle{font-size:13px;padding:5px 10px}
+.gs-mode{color:var(--accent);font-weight:600}
+.gr-pass{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  padding:13px 18px 12px;margin-bottom:11px;cursor:pointer;outline:none;
+  transition:border-color .15s,box-shadow .15s,transform .12s}
+.gr-pass:hover,.gr-pass:focus-visible{border-color:var(--accent-soft);box-shadow:0 2px 12px rgba(46,42,36,.07)}
+.gr-pass.cursor{border-color:var(--accent);box-shadow:0 0 0 2px rgba(138,59,50,.18)}
+.gr-pass .gp-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  font-size:12px;color:var(--ink-faint);margin-bottom:7px}
+.gp-cite{font-size:12.5px;color:var(--ink-soft);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gp-author{font-weight:650;color:var(--ink)}
+.gp-title{font-family:var(--serif);font-style:italic;font-size:14px}
+.gp-vol,.gp-year{color:var(--ink-faint)}
+.gp-meta{flex:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.gp-loc{font-variant-numeric:tabular-nums}
+.gp-loc-txt{font-style:italic}
+.gp-printed{opacity:.7}
+.gr-pass .gp-snip{font-family:var(--serif);font-size:15.5px;line-height:1.58;color:var(--ink)}
 .gr-pass .gp-snip mark{background:rgba(217,164,65,.35);border-radius:2px;padding:0 2px}
+.gp-actions{margin-top:7px;height:0;overflow:hidden;transition:height .15s}
+.gr-pass:hover .gp-actions,.gr-pass.cursor .gp-actions{height:15px}
+.gp-open{font-size:11.5px;color:var(--accent);letter-spacing:.02em}
+/* score: a bar for the glance, the number for the record */
+.gp-score{display:inline-flex;align-items:center;gap:7px;color:var(--accent);font-weight:600;font-size:12px}
+.gp-bar{display:inline-block;width:44px;height:4px;border-radius:2px;background:var(--line);overflow:hidden;flex:none}
+.gp-bar i{display:block;height:100%;background:var(--accent-soft);border-radius:2px}
+.gp-num{font-variant-numeric:tabular-nums}
+.gp-score .gp-sub{color:var(--ink-faint);font-weight:400;font-size:11px}
 .gr-pass .gp-count{color:var(--accent);font-size:11.5px}
-.gr-concept{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:12px;display:flex;gap:14px;align-items:flex-start}
-.gr-concept .gc-dot{width:14px;height:14px;border-radius:50%;margin-top:4px;flex:none}
-.gr-concept h4{margin:0 0 3px;font-family:var(--serif);font-size:17px;color:var(--ink)}
-.gr-concept .gc-cat{font-size:11.5px;color:var(--ink-faint)}
-.gr-concept .gc-def{font-size:13px;color:var(--ink-soft);line-height:1.5;margin-top:5px}
+
+.gr-concept{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;
+  margin-bottom:11px;display:flex;gap:14px;align-items:flex-start;cursor:pointer;outline:none;
+  transition:border-color .15s,box-shadow .15s}
+.gr-concept:hover,.gr-concept:focus-visible{border-color:var(--accent-soft);box-shadow:0 2px 12px rgba(46,42,36,.07)}
+.gr-concept.cursor{border-color:var(--accent);box-shadow:0 0 0 2px rgba(138,59,50,.18)}
+.gr-concept .gc-dot{width:14px;height:14px;border-radius:50%;margin-top:5px;flex:none}
+.gr-concept .gc-main{flex:1;min-width:0}
+.gr-concept h4{margin:0 0 2px;font-family:var(--serif);font-size:18px;color:var(--ink);font-weight:600}
+.gr-concept .gc-cat{font-size:11.5px;color:var(--ink-faint);letter-spacing:.01em}
+.gr-concept .gc-def{font-size:13px;color:var(--ink-soft);line-height:1.55;margin-top:6px}
+.gr-concept .gp-score{align-self:flex-start;margin-top:4px;flex:none}
 body.dark #gres{background:#1E1C18}
 body.dark .gres-bar{background:#26231E;border-color:#3A362E}
 body.dark #gres-summary{color:#9C9484}
@@ -513,6 +575,17 @@ body.dark .gr-pass .gp-snip{color:#D8D2C4}
 body.dark .gr-concept{background:#26231E;border-color:#3A362E}
 body.dark .gr-concept h4{color:#E8E2D5}
 body.dark .gr-concept .gc-def{color:#9C9484}
+body.dark #gres-facets{background:#221F1A;border-color:#3A362E}
+body.dark .fitem{color:#C9C2B2}
+body.dark .fitem:hover{background:rgba(193,91,91,.14);color:#E8E2D5}
+body.dark .fitem.on{background:#8A3B32;color:#F6F1E5;border-color:#8A3B32}
+body.dark .gp-author{color:#E8E2D5}
+body.dark .gp-cite{color:#C9C2B2}
+body.dark .gp-bar{background:#3A362E}
+body.dark .gp-bar i{background:#C15B5B}
+body.dark .gp-score{color:#C15B5B}
+body.dark .gp-open{color:#C15B5B}
+body.dark .gr-pass.cursor,body.dark .gr-concept.cursor{border-color:#C15B5B;box-shadow:0 0 0 2px rgba(193,91,91,.22)}
 
 .hl-word{position:absolute;background:rgba(217,164,65,.30);border:1px solid rgba(200,150,40,.55);border-radius:2px;pointer-events:none;mix-blend-mode:multiply}
 body.dark .hl-word{background:rgba(217,164,65,.35);mix-blend-mode:normal}
@@ -559,16 +632,21 @@ body.dark #graph-float .gf-bar .gf-title{color:#E8E2D5}
   #landing-input{width:100%;font-size:15px;padding:8px 4px}
   #landing-go{width:100%;border-radius:16px;margin-top:4px}
   .landing-examples{display:none}
-  #reader.docked,#reader.full,#reader.split{position:fixed;inset:0;width:100%;left:0}
+  #reader.docked,#reader.full,#reader.split{position:fixed;inset:0 0 var(--settings-h) 0;width:100%;left:0}
   #split-divider{display:none !important}
-  #dyngraph{position:fixed;inset:0;width:100% !important;left:0 !important;border-left:none}
+  #dyngraph{position:fixed;inset:0 0 var(--settings-h) 0;width:100% !important;left:0 !important;border-left:none}
   .dyngraph-hint{display:none}
   #reader-toolbar{flex-wrap:wrap;gap:6px;padding:6px 8px}
   .reader-nav,.reader-tools,.reader-dl{font-size:11px}
   #reader-side{width:auto;max-height:32%}
   #compare-grid{grid-auto-flow:row;grid-auto-columns:auto}
   .gres-bar{flex-wrap:wrap;gap:6px}
-  #gres-body{padding:12px}
+  #gres-body{padding:12px 12px 60px}
+  .gres-main{flex-direction:column}
+  #gres-facets{width:auto;max-height:132px;border-right:none;border-bottom:1px solid var(--line);padding:10px 12px}
+  #gres-facets .fg{display:inline-block;vertical-align:top;margin:0 18px 8px 0;max-width:46%}
+  .gr-pass .gp-head{flex-wrap:wrap;gap:4px}
+  .gp-cite{white-space:normal}
   .zoomctl{bottom:70px}
 }
 
@@ -616,7 +694,7 @@ body.dark .searching-sub{color:#9C9484}
 body.dark .searching-spinner{border-color:#3A362E;border-top-color:#C15B5B}
 
 /* ————— v13: dynamic query-graph side panel ————— */
-#dyngraph{position:fixed;top:0;right:0;bottom:0;width:54%;z-index:160;background:var(--paper);
+#dyngraph{position:fixed;top:0;right:0;bottom:var(--settings-h);width:54%;z-index:160;background:var(--paper);
   display:flex;flex-direction:column;box-shadow:-12px 0 40px rgba(0,0,0,.25);
   animation:readerslide .25s ease-out;border-left:2px solid var(--line)}
 #dyngraph.hidden{display:none}
@@ -678,11 +756,51 @@ body.dark .zoomctl button { background: #3A362E; color: #D8D2C4; border: 1px sol
    parchment halo rgba(251,248,240,.9) is drawn in canvas — handled in app.js */
 
 /* ————— v21: settings bar (bottom) ————— */
-#settings-bar{position:fixed;left:0;right:0;bottom:0;z-index:260;display:flex;align-items:center;
-  gap:18px;padding:6px 16px;background:var(--panel);border-top:1px solid var(--line);
-  font-size:12.5px;color:var(--ink-soft)}
-.settings-brand{font-size:15px}
+#settings-bar{position:fixed;left:0;right:0;bottom:0;height:var(--settings-h);z-index:260;
+  display:flex;align-items:center;gap:14px;padding:0 14px;background:var(--panel);
+  border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft)}
+#settings-open{display:flex;align-items:center;gap:6px;background:none;border:1px solid transparent;
+  border-radius:12px;padding:3px 9px;font-size:12px;color:var(--ink-soft);cursor:pointer}
+#settings-open:hover,#settings-open.on{background:var(--paper-2);border-color:var(--line);color:var(--ink)}
+.settings-brand{font-size:14px}
 .settings-label{font-weight:600;color:var(--ink)}
+.settings-spacer{flex:1}
+.settings-chip{display:inline-flex;align-items:center;gap:6px;padding:2px 9px;border-radius:11px;
+  background:var(--paper-2);border:1px solid var(--line);font-size:11.5px;color:var(--ink-soft);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.settings-chip b{font-weight:650;color:var(--ink)}
+.chip-dot{width:6px;height:6px;border-radius:50%;background:#5FA052;flex:none}
+.chip-dot.warn{background:#D9A441}
+.chip-dot.off{background:#B0483F}
+
+/* popover */
+#settings-panel{position:fixed;left:12px;bottom:calc(var(--settings-h) + 8px);z-index:261;width:320px;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);
+  padding:14px 16px 12px;font-size:12.5px;color:var(--ink-soft)}
+#settings-panel h4{margin:0 0 8px;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-faint);font-weight:650}
+#settings-panel .sp-sec{padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)}
+#settings-panel .sp-sec:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.sp-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:5px 0}
+.sp-row label{color:var(--ink-soft)}
+.sp-row select,.sp-row input[type=number]{background:var(--paper-2);color:var(--ink);border:1px solid var(--line);
+  border-radius:8px;padding:3px 8px;font-size:12px;outline:none;font-family:var(--sans)}
+.sp-stats{display:grid;grid-template-columns:1fr auto;gap:2px 10px;font-size:11.5px;
+  font-variant-numeric:tabular-nums}
+.sp-stats b{font-weight:600;color:var(--ink)}
+.sp-note{font-size:11px;color:var(--ink-faint);line-height:1.45;margin-top:6px}
+#settings-panel .mini{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;
+  padding:3px 10px;font-size:11.5px;color:var(--ink-soft);cursor:pointer}
+#settings-panel .mini:hover{border-color:var(--accent);color:var(--accent)}
+body.dark #settings-panel{background:#26231E;border-color:#3A362E;color:#C9C2B2}
+body.dark #settings-panel .sp-sec{border-color:#3A362E}
+body.dark #settings-panel h4{color:#8B8375}
+body.dark .sp-row select,body.dark .sp-row input[type=number],body.dark #settings-panel .mini{
+  background:#3A362E;border-color:#5A5344;color:#D8D2C4}
+body.dark .sp-stats b{color:#E8E2D5}
+body.dark .settings-chip{background:#2E2A24;border-color:#4A443A;color:#B8B2A4}
+body.dark .settings-chip b{color:#E8E2D5}
+body.dark #settings-open:hover,body.dark #settings-open.on{background:#3A362E;border-color:#4A443A;color:#E8E2D5}
 .dev-btn{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;
   padding:3px 14px;font-size:12px;cursor:pointer;color:var(--ink-soft);margin:0 2px}
 .dev-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}

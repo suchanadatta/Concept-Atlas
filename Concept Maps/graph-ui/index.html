@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 <title>Concept Atlas — British Moral Philosophy</title>
 <link rel="stylesheet" href="vendor/fonts.css">
-<link rel="stylesheet" href="style.css?v=1788430849">
+<link rel="stylesheet" href="style.css?v=1788642608">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C15B5B'/%3E%3Ccircle cx='6' cy='8' r='3.4' fill='%234E79A7'/%3E%3Ccircle cx='26' cy='7' r='3' fill='%235FA052'/%3E%3Ccircle cx='25' cy='25' r='3.2' fill='%23D9A441'/%3E%3Cpath d='M16 16L6 8M16 16L26 7M16 16L25 25' stroke='%23948B7B' stroke-width='1'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -187,6 +187,8 @@
         <tr><td>📖 on evidence</td><td>open PDF at that passage (highlighted)</td></tr>
         <tr><td>✎ in reader</td><td>drag to annotate the page</td></tr>
         <tr><td>⇄ Compare</td><td>pick 2-4 concepts, compare evidence side-by-side</td></tr>
+        <tr><td>j / k</td><td>results: next / previous</td></tr>
+        <tr><td>Enter</td><td>results: open the selected passage</td></tr>
         <tr><td>🌙</td><td>toggle dark mode</td></tr>
       </table>
     </div>
@@ -219,13 +221,77 @@
 
   <!-- Settings bar (bottom of page) -->
   <div id="settings-bar">
-    <span class="settings-brand">⚙️</span>
-    <span class="settings-item" id="settings-device">
-      <span class="settings-label">Engine:</span>
-      <button id="device-cpu" class="dev-btn active" title="Run the embedding model on CPU (slower, leaves GPU free)">CPU</button>
-      <button id="device-cuda" class="dev-btn" title="Run the embedding model on GPU (fast)">GPU</button>
-      <span id="device-status" class="settings-status">checking…</span>
+    <button id="settings-open" title="Search engine &amp; display settings">
+      <span class="settings-brand">&#9881;</span> Settings
+    </button>
+    <span class="settings-chip" id="chip-engine" title="Embedding engine status">
+      <span class="chip-dot" id="engine-dot"></span><span id="engine-chip-text">checking&#8230;</span>
     </span>
+    <span class="settings-chip" id="chip-index" title="Loaded search index"></span>
+    <span class="settings-spacer"></span>
+    <span class="settings-chip" id="chip-timing" title="Last search timing" style="display:none"></span>
+  </div>
+
+  <!-- Settings popover -->
+  <div id="settings-panel" class="hidden">
+    <div class="sp-sec">
+      <h4>Embedding engine</h4>
+      <div class="sp-row">
+        <label>Device</label>
+        <span>
+          <button id="device-cpu" class="dev-btn" title="Run the embedding model on CPU (slower, leaves the GPU free)">CPU</button>
+          <button id="device-cuda" class="dev-btn" title="Run the embedding model on GPU (fast)">GPU</button>
+        </span>
+      </div>
+      <div class="sp-row"><label>Status</label><span id="device-status" class="settings-status">checking&#8230;</span></div>
+      <p class="sp-note" id="device-note">Switching moves the Jasper model between devices in place &#8212; no restart, and the index stays loaded.</p>
+    </div>
+    <div class="sp-sec">
+      <h4>Search</h4>
+      <div class="sp-row">
+        <label for="set-topk">Results per search</label>
+        <select id="set-topk">
+          <option value="20">20</option>
+          <option value="40">40</option>
+          <option value="60" selected>60</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <div class="sp-row">
+        <label for="set-mode">Default ranking</label>
+        <select id="set-mode">
+          <option value="auto" selected>hybrid</option>
+          <option value="semantic">pure semantic</option>
+          <option value="bm25">BM25</option>
+          <option value="keyword">keyword</option>
+        </select>
+      </div>
+      <div class="sp-row">
+        <label for="set-facets">Refine panel</label>
+        <select id="set-facets">
+          <option value="on" selected>shown</option>
+          <option value="off">hidden</option>
+        </select>
+      </div>
+    </div>
+    <div class="sp-sec">
+      <h4>Appearance</h4>
+      <div class="sp-row">
+        <label for="set-theme">Theme</label>
+        <select id="set-theme">
+          <option value="light">light</option>
+          <option value="dark">dark</option>
+        </select>
+      </div>
+    </div>
+    <div class="sp-sec">
+      <h4>Index</h4>
+      <div class="sp-stats" id="sp-stats"></div>
+      <div class="sp-row" style="margin-top:8px">
+        <span class="sp-note" style="margin:0">Cached query vectors make repeat searches instant.</span>
+        <button id="sp-refresh" class="mini">refresh</button>
+      </div>
+    </div>
   </div>
 </main>
 
@@ -262,13 +328,24 @@
           <option value="keyword">⌨ keyword</option>
         </select>
       </span>
+      <span class="gres-mode">
+        <select id="gres-sort" title="Order the result list">
+          <option value="relevance" selected>&#8595; relevance</option>
+          <option value="year">&#8593; year</option>
+          <option value="author">A&#8211;Z author</option>
+        </select>
+      </span>
       <span class="gres-tabs">
+        <button id="gres-facet-toggle" class="active" title="Show / hide the refine panel">&#9887;</button>
         <button id="gres-tab-passages" class="active">Passages</button>
         <button id="gres-tab-concepts">Concepts</button>
         <button id="gres-tab-graph">Graph</button>
       </span>
     </div>
-    <div id="gres-body"></div>
+    <div class="gres-main">
+      <aside id="gres-facets" class="empty"></aside>
+      <div id="gres-body"></div>
+    </div>
   </div>
 
 <script type="importmap">
@@ -278,13 +355,14 @@
 <script src="vendor/3d-force-graph.min.js"></script>
 <script src="vendor/pdfjs/pdf.min.js"></script>
 <script>pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdfjs/pdf.worker.min.js";</script>
-<script src="app.js?v=1788430849"></script>
-<script src="reader.js?v=1788430849"></script>
-<script src="compare.js?v=1788430849"></script>
-<script src="search.js?v=1788430849"></script>
-<script src="floatgraph.js?v=1788430849"></script>
-<script src="dyngraph.js?v=1788430849"></script>
-<script src="settings.js?v=1788430849"></script>
+<script src="app.js?v=1788642608"></script>
+<script src="reader.js?v=1788642608"></script>
+<script src="compare.js?v=1788642608"></script>
+<script src="cite.js?v=1788642608"></script>
+<script src="search.js?v=1788642608"></script>
+<script src="floatgraph.js?v=1788642608"></script>
+<script src="dyngraph.js?v=1788642608"></script>
+<script src="settings.js?v=1788642608"></script>
 <script type="module" src="labels3d.mjs"></script>
 </body>
 </html>

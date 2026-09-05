@@ -97,6 +97,8 @@ class BookAPI:
     def handle(path: str, query: dict):
         parts = path.split("/")
         # /book/api/library
+        if path == "/book/api/engine":
+            return BookAPI.engine_status(query)
         if path == "/book/api/library":
             return BookAPI.library()
         if path.startswith("/book/api/export_annotations"):
@@ -630,74 +632,68 @@ class BookAPI:
             ).encode(),
         )
 
-    @staticmethod
-    def device_proxy(query: dict, body: bytes):
-        """POST /book/api/device_proxy — same-origin proxy to /device."""
-        import urllib.request as _urllib
-        try:
-            req = _urllib.Request(
-                "http://127.0.0.1:8790/device", data=body,
-                headers={"Content-Type": "application/json"}, method="POST")
-            with _urllib.urlopen(req, timeout=60) as resp:
-                data = resp.read()
-            return 200, "application/json", data
-        except Exception as e:
-            return 502, "application/json", _json.dumps({"error": f"device backend unavailable: {e}"}).encode()
+    # ---- Jasper backend proxies ----
+    # Browsers on other intranet machines resolve 127.0.0.1 to THEMSELVES, so
+    # a direct :8790 fetch only works on the host. Everything goes through
+    # :8788 instead, which makes search work from any client.
+    JASPER = "http://127.0.0.1:8790"
 
     @staticmethod
-    def bm25_proxy(query: dict, body: bytes):
-        """POST /book/api/bm25_proxy — same-origin proxy to the Jasper server's /bm25."""
-        import urllib.request as _urllib
-        try:
-            req = _urllib.Request(
-                "http://127.0.0.1:8790/bm25", data=body,
-                headers={"Content-Type": "application/json"}, method="POST")
-            with _urllib.urlopen(req, timeout=30) as resp:
-                data = resp.read()
-            return 200, "application/json", data
-        except Exception as e:
-            return 502, "application/json", _json.dumps({"error": f"bm25 backend unavailable: {e}"}).encode()
-
-    @staticmethod
-    def query_graph_proxy(query: dict, body: bytes):
-        """POST /book/api/query_graph_proxy — same-origin proxy to the
-        Jasper server's /query_graph (concept+book network for a query)."""
-        import urllib.request as _urllib
-        try:
-            req = _urllib.Request(
-                "http://127.0.0.1:8790/query_graph", data=body,
-                headers={"Content-Type": "application/json"}, method="POST")
-            with _urllib.urlopen(req, timeout=45) as resp:
-                data = resp.read()
-            return 200, "application/json", data
-        except Exception as e:
-            return 502, "application/json", _json.dumps({"error": f"query_graph backend unavailable: {e}"}).encode()
-
-    @staticmethod
-    def semantic_proxy(query: dict, body: bytes):
-        """POST /book/api/semantic — same-origin proxy to the Jasper server.
-
-        Why: browsers on other intranet machines resolve 127.0.0.1 to
-        THEMSELVES, so direct :8790 fetches fail everywhere except the host.
-        Proxying through :8788 makes semantic search work from any client.
-        """
+    def _jasper(endpoint: str, body: bytes, timeout: int = 30):
         import urllib.request as _urllib
 
         try:
             req = _urllib.Request(
-                "http://127.0.0.1:8790/semantic",
+                f"{BookAPI.JASPER}{endpoint}",
                 data=body,
                 headers={"Content-Type": "application/json"},
                 method="POST",
             )
-            with _urllib.urlopen(req, timeout=25) as resp:
-                data = resp.read()
-            return 200, "application/json", data
+            with _urllib.urlopen(req, timeout=timeout) as resp:
+                return 200, "application/json", resp.read()
         except Exception as e:
             return (
                 502,
                 "application/json",
-                _json.dumps({"error": f"semantic backend unavailable: {e}"}).encode(),
+                _json.dumps(
+                    {"error": f"{endpoint.lstrip('/')} backend unavailable: {e}"}
+                ).encode(),
+            )
+
+    @staticmethod
+    def device_proxy(query: dict, body: bytes):
+        return BookAPI._jasper("/device", body, timeout=90)
+
+    @staticmethod
+    def bm25_proxy(query: dict, body: bytes):
+        return BookAPI._jasper("/bm25", body, timeout=45)
+
+    @staticmethod
+    def query_graph_proxy(query: dict, body: bytes):
+        return BookAPI._jasper("/query_graph", body, timeout=90)
+
+    @staticmethod
+    def semantic_proxy(query: dict, body: bytes):
+        return BookAPI._jasper("/semantic", body, timeout=90)
+
+    @staticmethod
+    def concepts_proxy(query: dict, body: bytes):
+        """Semantic search over the concept map itself (202 concept vectors)."""
+        return BookAPI._jasper("/concepts", body, timeout=90)
+
+    @staticmethod
+    def engine_status(query: dict):
+        """GET /book/api/engine — Jasper health (device, index size, cache)."""
+        import urllib.request as _urllib
+
+        try:
+            with _urllib.urlopen(f"{BookAPI.JASPER}/healthz", timeout=5) as resp:
+                return 200, "application/json", resp.read()
+        except Exception as e:
+            return (
+                200,
+                "application/json",
+                _json.dumps({"status": "offline", "error": str(e)}).encode(),
             )
 
     # ---- annotations (per book+page, JSON files) ----
@@ -832,6 +828,10 @@ class Handler(SimpleHTTPRequestHandler):
                 length = int(self.headers.get("Content-Length", 0))
                 body = self.rfile.read(length) if length else b"{}"
                 res = BookAPI.semantic_proxy(query, body)
+            elif path == "/book/api/concepts_proxy":
+                length = int(self.headers.get("Content-Length", 0))
+                body = self.rfile.read(length) if length else b"{}"
+                res = BookAPI.concepts_proxy(query, body)
             else:
                 res = None
         if res is None:
