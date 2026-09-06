@@ -14,6 +14,7 @@ Endpoints (same contract as v1):
   POST /semantic   {"query", "top_k"}       -> scored passages
   POST /bm25       {"query", "top_k"}       -> BM25 ranking
   POST /concepts   {"query", "top_k", "mode"} -> semantic concept-map search
+  POST /semantic_graph {"query", n_docs, min_sim} -> embedding-induced passage network
   POST /query_graph {"query", n_concepts, n_docs} -> concept+book network
   GET  /healthz
 
@@ -723,6 +724,254 @@ def build_query_graph(query: str, n_concepts: int = 8, n_docs: int = 24):
     }
 
 
+# --------------------------------------------------------- semantic graph
+# Similarity bands for passage-to-passage edges. The concept graph's relations
+# ("supports", "opposes") are editorial judgements from the concept map; a
+# graph built straight from the embeddings cannot claim those, so its edges say
+# only how close two passages sit in the embedding space — which is the honest
+# relation an embedding actually encodes.
+SEM_BANDS = [
+    (0.93, "near_identical", "near-identical wording (reprint or close borrowing)"),
+    (0.86, "closely_allied", "closely allied — same argument, different words"),
+    (0.79, "related", "related — same theme"),
+    (0.72, "loosely_related", "loosely related"),
+]
+
+
+def sem_band(w: float):
+    for thr, name, desc in SEM_BANDS:
+        if w >= thr:
+            return name, desc
+    return None, None
+
+
+def _cluster_label(members, meta, idf, k=3):
+    """Name a cluster by the terms that distinguish it from ordinary prose.
+
+    Plain term frequency labels every cluster "god / man / thing"; weighting by
+    the corpus idf already built for BM25 surfaces what the cluster is *about*.
+    """
+    tf = {}
+    for ci in members:
+        seen = set()
+        for w in re.split(r"\W+", meta[ci]["text_l"]):
+            if len(w) < 4 or w in LEX_STOP or w in seen:
+                continue
+            seen.add(w)
+            tf[w] = tf.get(w, 0) + 1
+    if not tf:
+        return "passages"
+    scored = sorted(
+        tf.items(), key=lambda kv: -(kv[1] * idf.get(kv[0], 0.5) ** 2)
+    )
+    return " · ".join(w for w, _ in scored[:k])
+
+
+def semantic_graph(
+    query: str,
+    n_docs: int = 40,
+    min_sim: float = 0.72,
+    max_deg: int = 6,
+    n_concepts: int = 10,
+):
+    """A graph induced from the passage embeddings themselves.
+
+    The concept graph can only show ideas someone curated into the concept map.
+    A query about something the map does not cover ("hypochondriack distemper",
+    "coffee-house wit") returns an empty concept network even when the corpus
+    has plenty to say. This builds the network from the retrieved passages
+    instead: nodes are passages, edges are embedding similarity above a band
+    threshold, and clusters are the connected components of that graph, each
+    labelled by its idf-weighted distinctive terms.
+
+    Each node also carries its nearest concepts, which is what lets the UI
+    overlay this graph on the curated one.
+    """
+    query = (query or "").strip()
+    if not query:
+        return {"query": "", "nodes": [], "edges": [], "clusters": []}
+    t0 = time.time()
+    qv = embed_query(query)
+    emb, meta = _state["emb"], _state["meta"]
+    sims = emb @ qv
+    pool = min(max(n_docs * 8, 200), 900)
+    cand = np.argpartition(-sims, pool - 1)[:pool]
+    words = query_terms(query)
+    terms = [sorted(variants_for(w), key=lambda v: (v != w, v)) for w in words]
+    idf = _state.get("idf") or {}
+    scored = sorted(
+        (
+            (0.6 * float(sims[ci]) + 0.4 * lexical_overlap(terms, meta[ci]["text_l"], idf),
+             float(sims[ci]), ci)
+            for ci in cand
+        ),
+        key=lambda x: -x[0],
+    )
+    # same diversity rules as the result list, so the graph shows the same
+    # corpus the user is reading
+    per_work, picked, seen = {}, [], set()
+    for sc, sem, ci in scored:
+        m = meta[ci]
+        wk = work_key(m["book_id"])
+        if per_work.get(wk, 0) >= 3:
+            continue
+        core = re.sub(r"\s+", " ", m["text"][200:300]).strip().lower()
+        dup = core if len(core) > 40 else re.sub(r"\s+", " ", m["text"][:100]).strip().lower()
+        if dup in seen:
+            continue
+        seen.add(dup)
+        per_work[wk] = per_work.get(wk, 0) + 1
+        picked.append((sc, sem, int(ci)))
+        if len(picked) >= n_docs:
+            break
+    if not picked:
+        return {"query": query, "nodes": [], "edges": [], "clusters": []}
+
+    idxs = [ci for _, _, ci in picked]
+    sub = emb[idxs]                      # (n, d), rows already unit-normalised
+    sim = sub @ sub.T
+    n = len(idxs)
+
+    # kNN edges: each node keeps its strongest `max_deg` neighbours above the
+    # band floor. A full threshold graph on 40 nodes is a hairball.
+    edges, seen_pair = [], set()
+    for i in range(n):
+        order = np.argsort(-sim[i])
+        kept = 0
+        for j in order:
+            j = int(j)
+            if j == i or kept >= max_deg:
+                continue
+            w = float(sim[i, j])
+            if w < min_sim:
+                break
+            key = (min(i, j), max(i, j))
+            if key in seen_pair:
+                continue
+            seen_pair.add(key)
+            rel, _ = sem_band(w)
+            edges.append({"s": i, "t": j, "w": round(w, 4), "rel": rel or "loosely_related"})
+            kept += 1
+
+    # Communities by weighted label propagation. Connected components put
+    # every node in one blob — above the band floor the retrieved set is
+    # almost always connected, since they all answer the same query. Label
+    # propagation splits it where the *internal* similarity is strongest,
+    # which is what a reader means by "these passages go together".
+    adj: dict[int, list[tuple[int, float]]] = {i: [] for i in range(n)}
+    for e in edges:
+        adj[e["s"]].append((e["t"], e["w"]))
+        adj[e["t"]].append((e["s"], e["w"]))
+    lab = list(range(n))
+    order_nodes = sorted(range(n), key=lambda i: -len(adj[i]))
+    for _ in range(12):
+        changed = False
+        for i in order_nodes:
+            if not adj[i]:
+                continue
+            tally: dict[int, float] = {}
+            for j, w in adj[i]:
+                # emphasise strong links so a chain of weak ones can't merge
+                # two genuinely different themes
+                tally[lab[j]] = tally.get(lab[j], 0.0) + (w - min_sim + 0.02) ** 2
+            best = max(tally.items(), key=lambda kv: (kv[1], -kv[0]))[0]
+            if best != lab[i]:
+                lab[i] = best
+                changed = True
+        if not changed:
+            break
+    comp: dict[int, list[int]] = {}
+    for i in range(n):
+        comp.setdefault(lab[i], []).append(i)
+    order = sorted(comp.values(), key=lambda m: -len(m))
+    cluster_of = {}
+    clusters = []
+    PALETTE = ["#8A3B32", "#4E79A7", "#5FA052", "#D9A441", "#7B68B5",
+               "#2E7D74", "#C0663A", "#948B7B"]
+    for ci, members in enumerate(order):
+        for m in members:
+            cluster_of[m] = ci
+        clusters.append(
+            {
+                "id": ci,
+                "n": len(members),
+                "color": PALETTE[ci % len(PALETTE)],
+                "label": _cluster_label([idxs[m] for m in members], meta, idf),
+            }
+        )
+
+    # nearest concepts per passage — the join that makes the overlay possible
+    cemb, cids = _state.get("cemb"), _state.get("cids") or []
+    cnodes = _state.get("cnodes") or {}
+    node_concepts = [[] for _ in range(n)]
+    concept_pool = {}
+    c2p = []
+    if cemb is not None and len(cids):
+        csim = sub @ cemb.T               # (n_passages, n_concepts)
+        for i in range(n):
+            for j in np.argsort(-csim[i])[:3]:
+                w = float(csim[i, int(j)])
+                if w < 0.40:
+                    break
+                cid = cids[int(j)]
+                node = cnodes.get(cid)
+                if not node:
+                    continue
+                node_concepts[i].append({"id": cid, "label": node.get("label", cid), "w": round(w, 3)})
+                c2p.append({"concept": cid, "passage": i, "w": round(w, 3)})
+                if cid not in concept_pool:
+                    concept_pool[cid] = {
+                        "id": cid,
+                        "label": node.get("label", cid),
+                        "category": node.get("category") or [],
+                        "definition": (node.get("definition") or "")[:220],
+                        "score": round(float(cemb[int(j)] @ qv), 4),
+                    }
+    concepts = sorted(concept_pool.values(), key=lambda c: -c["score"])[:n_concepts]
+    keep_c = {c["id"] for c in concepts}
+    c2p = [e for e in c2p if e["concept"] in keep_c]
+    for i in range(n):
+        node_concepts[i] = [c for c in node_concepts[i] if c["id"] in keep_c]
+
+    nodes = []
+    for i, (sc, sem, ci) in enumerate(picked):
+        m = meta[ci]
+        c = cite_for(m["book_id"])
+        nodes.append(
+            {
+                "i": i,
+                "book_id": m["book_id"],
+                "cite": c["cite"],
+                "author": c["author"],
+                "year": c["year"],
+                "title": c["title"],
+                "page": m["page"],
+                "printed_page": m.get("printed_page"),
+                "source": m.get("source"),
+                "bbox_pts": m.get("bbox_pts"),
+                "text": m["text"][:400],
+                "snippet": make_snippet(m["text"], words),
+                "score": round(sc, 4),
+                "semantic": round(sem, 4),
+                "cluster": cluster_of.get(i, 0),
+                "concepts": node_concepts[i],
+            }
+        )
+
+    return {
+        "query": query,
+        "mode": "semantic_graph",
+        "n": n,
+        "nodes": nodes,
+        "edges": edges,
+        "clusters": clusters,
+        "concepts": concepts,
+        "c2p": c2p,
+        "bands": [{"min": t, "rel": r, "desc": d} for t, r, d in SEM_BANDS],
+        "took_ms": round((time.time() - t0) * 1000),
+    }
+
+
 # ---------------------------------------------------------------- server
 class Handler(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
@@ -793,6 +1042,17 @@ class Handler(BaseHTTPRequestHandler):
                         req.get("query", ""),
                         int(req.get("top_k", 20)),
                         mode=req.get("mode", "hybrid"),
+                    ),
+                )
+            elif self.path == "/semantic_graph":
+                self._json(
+                    200,
+                    semantic_graph(
+                        req.get("query", ""),
+                        int(req.get("n_docs", 40)),
+                        float(req.get("min_sim", 0.72)),
+                        int(req.get("max_deg", 6)),
+                        int(req.get("n_concepts", 10)),
                     ),
                 )
             elif self.path == "/concepts":
@@ -1005,12 +1265,49 @@ def concept_search(query: str, top_k: int = 20, mode: str = "hybrid"):
                 "category": node.get("category") or [],
                 "importance": node.get("importance"),
                 "books": len(c2b.get(cid, ())),
+                "book_ids": sorted(c2b.get(cid, ()))[:12],
                 "score": round(score, 4),
                 "semantic": round(sem, 4),
                 "lexical": round(lex, 3),
             }
         )
     out.sort(key=lambda x: -x["score"])
+    # Relations were the missing half: a concept card listed a definition but
+    # nothing about how the concept sits in the map, which is the whole point
+    # of having a map. Attach each concept's edges, marking the ones whose
+    # other end is also a hit for this query.
+    keep = {c["id"] for c in out[:top_k]}
+    rel_by: dict[str, list] = {}
+    for e in _state.get("cedges") or []:
+        for a, b, direction in ((e["s"], e["t"], "out"), (e["t"], e["s"], "in")):
+            if a not in keep:
+                continue
+            other = cnodes.get(b)
+            if not other:
+                continue
+            rel_by.setdefault(a, []).append(
+                {
+                    "id": b,
+                    "label": other.get("label", b),
+                    "relation": e["r"],
+                    "strength": round(float(e.get("w") or 0.5), 3),
+                    "dir": direction,
+                    "in_results": b in keep,
+                }
+            )
+    # Symmetric relations ("contrasts_with") are stored from both ends, so the
+    # same fact arrived twice as an in- and an out-edge; keep the strongest.
+    for c in out[:top_k]:
+        best: dict[tuple, dict] = {}
+        for r in rel_by.get(c["id"], []):
+            k = (r["id"], r["relation"])
+            if k not in best or r["strength"] > best[k]["strength"]:
+                best[k] = r
+        rels = sorted(
+            best.values(), key=lambda r: (-r["in_results"], -r["strength"])
+        )
+        c["relations"] = rels[:14]
+        c["n_relations"] = len(rels)
     return {
         "query": query,
         "n": min(top_k, len(out)),

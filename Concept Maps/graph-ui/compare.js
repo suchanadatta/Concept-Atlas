@@ -9,33 +9,13 @@
     document.getElementById("compare-close").onclick = closeCompare;
     document.getElementById("btn-help").onclick = () => document.getElementById("help").classList.remove("hidden");
     document.getElementById("help-close").onclick = () => document.getElementById("help").classList.add("hidden");
-    document.getElementById("btn-theme").onclick = toggleTheme;
-    // theme persistence
-    if (localStorage.getItem("atlas-theme") === "dark") {
-      document.body.classList.add("dark");
-      document.getElementById("btn-theme").textContent = "☀️";
-    }
+    // theme lives in theme.js — one store, applied before first paint
+    document.getElementById("btn-theme").onclick = () => Theme.toggle();
     // hook node clicks for compare picking (ctrl/meta-click)
     document.addEventListener("click", (e) => {
       // only when compare overlay is open
       if (document.getElementById("compare").classList.contains("hidden")) return;
     }, true);
-  }
-
-  function toggleTheme() {
-    const dark = document.body.classList.toggle("dark");
-    localStorage.setItem("atlas-theme", dark ? "dark" : "light");
-    document.getElementById("btn-theme").textContent = dark ? "☀️" : "🌙";
-    if (typeof S !== "undefined") S.dirty = true; // redraw 2D
-    // live-update the main 3D view background if open
-    if (typeof S !== "undefined" && S.g3d && S.mode === "3d") {
-      try { S.g3d.backgroundColor(dark ? "#1E1C18" : "#F6F1E5"); } catch {}
-    }
-    // live-update the query-graph panel 3D if open
-    const dg = document.getElementById("dyngraph");
-    if (dg && !dg.classList.contains("hidden") && window.__dynG3D) {
-      try { window.__dynG3D.backgroundColor(dark ? "#1E1C18" : "#F6F1E5"); } catch {}
-    }
   }
 
   function openCompare() {

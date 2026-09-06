@@ -24,10 +24,22 @@ body.dark .docs h2{border-color:#3A362E}
 body.dark .docs kbd{background:#2E2A24;border-color:#4A443A;color:#E8E2D5}
 body.dark .docs td,body.dark .docs th{border-color:#3A362E}
 body.dark .docs th{background:#2A2721}
+.docs-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.docs-back{color:var(--accent,#8A3B32);text-decoration:none;font-size:13.5px}
+.docs-back:hover{text-decoration:underline}
+#btn-theme{background:none;border:1px solid var(--line,#DDD3BE);border-radius:14px;padding:4px 10px;
+  font-size:13px;cursor:pointer}
+body.dark .docs-back{color:#C15B5B}
+body.dark #btn-theme{border-color:#4A443A}
 </style>
 </head>
 <body>
+<script src="theme.js"></script>
 <div class="docs">
+<div class="docs-bar">
+  <a href="/" class="docs-back">&#8592; Concept Atlas</a>
+  <button id="btn-theme" title="Toggle dark mode">&#127769;</button>
+</div>
 <h1>Concept Atlas — Documentation</h1>
 <p style="color:var(--ink-soft)">A scholar's search system for 129 books of 18th-century British moral philosophy · 202 concepts · 1,099 relations · 27,000 pages.</p>
 
@@ -104,5 +116,9 @@ body.dark .docs th{background:#2A2721}
 </ul>
 <p style="margin-top:40px;color:var(--ink-faint)">Concept Atlas · British Moral Philosophy corpus · <a href="/">← back to the atlas</a></p>
 </div>
+<script>
+/* the docs page has no app bundle, so it wires its own toggle */
+document.getElementById("btn-theme").onclick = () => Theme.toggle();
+</script>
 </body>
 </html>

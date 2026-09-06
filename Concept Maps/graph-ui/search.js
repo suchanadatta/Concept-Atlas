@@ -39,6 +39,9 @@
     });
     $("landing-graph").onclick = () => { hideLanding(); history.replaceState({}, "", "?view=graph"); };
     $("landing-queries").onclick = () => { hideLanding(); $("tab-queries").click(); history.replaceState({}, "", "?view=queries"); };
+    const openAuthors = () => { if (window.Authors) Authors.open(); };
+    if ($("landing-authors")) $("landing-authors").onclick = openAuthors;
+    if ($("btn-authors")) $("btn-authors").onclick = openAuthors;
     $("gres-back").onclick = () => { $("gres").classList.add("hidden"); showLanding(); history.replaceState({}, "", "/"); };
     const rerunFromBar = () => {
       const q = $("gres-input").value.trim();
@@ -97,7 +100,7 @@
   let currentResults = null;
   let currentTab = "passages";
   let sortMode = "relevance";
-  let activeFacets = { author: new Set(), period: new Set(), source: new Set() };
+  let activeFacets = { author: new Set(), writer: new Set(), period: new Set(), source: new Set() };
   let cursor = -1;          // keyboard-selected result index
   let searchSeq = 0;        // guards against out-of-order responses
 
@@ -107,7 +110,7 @@
     hideLanding();
     $("gres").classList.remove("hidden");
     setTabsEnabled(false); // results not ready yet — prevents empty-graph clicks
-    activeFacets = { author: new Set(), period: new Set(), source: new Set() };
+    activeFacets = { author: new Set(), writer: new Set(), period: new Set(), source: new Set() };
     cursor = -1;
     $("gres-summary").textContent = `Searching “${q}”…`;
     showSearching(q);
@@ -274,7 +277,12 @@
                 id: c.id, label: c.label, definition: c.definition,
                 category: c.category, books: c.books, color: "#8A7B6B",
               };
-              return { n, score: c.score, semantic: c.semantic, lexical: c.lexical, sem: true };
+              return {
+                n, score: c.score, semantic: c.semantic, lexical: c.lexical, sem: true,
+                relations: c.relations || [], nRelations: c.n_relations || 0,
+                aliases: c.aliases || [], books: c.books, bookIds: c.book_ids || [],
+                importance: c.importance,
+              };
             });
           if (out.length) return out;
         }
@@ -364,10 +372,15 @@
     };
   }
 
+  const WRITER_LABEL = { women: "women", men: "men", joint: "joint", unattributed: "unattributed" };
+
   function passageFacetKeys(p) {
     const c = Cite.of(p);
     return {
       author: c.author || "unattributed",
+      // the author registry carries the sex of each creator, which turns
+      // "who wrote this?" into a filter — the reason the registry exists
+      writer: window.Authors ? WRITER_LABEL[Authors.sexOf(c.author)] : null,
       period: c.year ? `${Math.floor(+c.year / 10) * 10}s` : null,
       source: p.source === "txt" || p.page == null ? "text edition" : "scanned page",
     };
@@ -378,6 +391,7 @@
     let list = currentResults.passages.filter(p => {
       const k = passageFacetKeys(p);
       if (activeFacets.author.size && !activeFacets.author.has(k.author)) return false;
+      if (activeFacets.writer.size && !activeFacets.writer.has(k.writer)) return false;
       if (activeFacets.period.size && !activeFacets.period.has(k.period)) return false;
       if (activeFacets.source.size && !activeFacets.source.has(k.source)) return false;
       return true;
@@ -399,10 +413,10 @@
       return;
     }
     host.classList.remove("empty");
-    const counts = { author: {}, period: {}, source: {} };
+    const counts = { author: {}, writer: {}, period: {}, source: {} };
     for (const p of currentResults.passages) {
       const k = passageFacetKeys(p);
-      for (const dim of ["author", "period", "source"]) {
+      for (const dim of ["author", "writer", "period", "source"]) {
         if (k[dim]) counts[dim][k[dim]] = (counts[dim][k[dim]] || 0) + 1;
       }
     }
@@ -421,6 +435,7 @@
         <h3>Refine</h3>
         ${anyActive ? `<button id="facet-clear" class="mini">clear</button>` : ""}
       </div>
+      ${group("writer", "Written by", sortEnt(counts.writer))}
       ${group("author", "Author", sortEnt(counts.author).slice(0, 18))}
       ${group("period", "Period", Object.entries(counts.period).sort())}
       ${group("source", "Source", sortEnt(counts.source))}`;
@@ -435,7 +450,7 @@
     });
     const clr = $("facet-clear");
     if (clr) clr.onclick = () => {
-      activeFacets = { author: new Set(), period: new Set(), source: new Set() };
+      activeFacets = { author: new Set(), writer: new Set(), period: new Set(), source: new Set() };
       renderResults(); renderSummary();
     };
   }
@@ -463,12 +478,35 @@
       body.innerHTML = concepts.length
         ? concepts.map((c, i) => conceptCard(c, i, cHi)).join("")
         : `<p class="hint empty-note">No concept matches for “${esc(q)}”.</p>`;
+      const showInMap = (id) => {
+        window._lastSearchConcept = id;
+        if (typeof window.setGraphFloatMode === "function") window.setGraphFloatMode(false);
+        if (typeof openGraphFloat === "function") openGraphFloat(id);
+      };
       body.querySelectorAll(".gr-concept").forEach(el => {
-        el.onclick = () => {
-          window._lastSearchConcept = el.dataset.id;
-          // stay on results; open the floating graph focused on this concept (static map)
-          if (typeof window.setGraphFloatMode === "function") window.setGraphFloatMode(false);
-          if (typeof openGraphFloat === "function") openGraphFloat(el.dataset.id);
+        el.onclick = () => showInMap(el.dataset.id);
+      });
+      // a relation chip navigates to that concept's card instead of opening
+      // the map, so following an argument stays inside the result list
+      body.querySelectorAll(".gc-rel").forEach(el => {
+        el.onclick = (e) => {
+          e.stopPropagation();
+          const target = el.dataset.goto;
+          const card = body.querySelector(`.gr-concept[data-id="${CSS.escape(target)}"]`);
+          if (card) {
+            card.scrollIntoView({ block: "center", behavior: "smooth" });
+            card.classList.add("flash");
+            setTimeout(() => card.classList.remove("flash"), 1200);
+          } else {
+            showInMap(target);
+          }
+        };
+      });
+      body.querySelectorAll(".gc-act").forEach(el => {
+        el.onclick = (e) => {
+          e.stopPropagation();
+          if (el.dataset.act === "graph") showInMap(el.dataset.id);
+          else doGlobalSearch(el.dataset.label);
         };
       });
     }
@@ -533,20 +571,67 @@
         <span class="gp-num">${label}</span>${sub}</span>`;
   }
 
-  function conceptCard({ n, score, semantic, sem }, i, hi) {
+  /* Relation glyphs. A concept card that shows only a definition wastes the
+     map: what makes it a map is how the concept sits among the others, so
+     each card carries its edges, with the ones that are also hits for this
+     query marked — those are the ones that explain the result set. */
+  const REL_STYLE = {
+    supports: ["→", "#3E6B52"], requires: ["⊢", "#2E7D74"], entails: ["⇒", "#2F5D3A"],
+    underlies: ["⊥", "#7A7A3A"], develops_from: ["↤", "#4E6BA7"], influences: ["↝", "#6A9AC7"],
+    exemplifies: ["∈", "#9C9484"], subsumes: ["⊃", "#7B68B5"], opposes: ["✕", "#A03A31"],
+    contrasts_with: ["↔", "#C0663A"],
+  };
+
+  function conceptCard(c, i, hi) {
+    const { n, score, semantic, sem, relations = [], nRelations = 0, aliases = [] } = c;
     const cat = (n.category || []).join(" › ");
+    const books = c.books != null ? c.books : n.books;
     const chip = sem
       ? `<span class="gp-score" title="semantic match against the concept's embedding${semantic != null ? ` (cosine ${(+semantic).toFixed(2)})` : ""}">
            <span class="gp-bar"><i style="width:${(Math.max(0.06, score / (hi || 1)) * 100).toFixed(0)}%"></i></span>
            <span class="gp-num">${(+score).toFixed(2)}</span></span>`
       : "";
+    // One chip per related concept. The map records several relations between
+    // the same pair (Self-Love both contrasts_with and opposes Benevolence),
+    // which printed "Benevolence" four times in a row; the chip shows the
+    // strongest and names them all on hover.
+    const byTarget = new Map();
+    for (const r of relations) {
+      const cur = byTarget.get(r.id);
+      if (!cur) byTarget.set(r.id, { ...r, all: [r] });
+      else {
+        cur.all.push(r);
+        if (r.strength > cur.strength) Object.assign(cur, r, { all: cur.all });
+      }
+    }
+    const grouped = [...byTarget.values()];
+    const shown = grouped.slice(0, 8);
+    const rels = shown.length ? `
+      <div class="gc-rels">
+        ${shown.map(r => {
+          const [glyph, col] = REL_STYLE[r.relation] || ["·", "#8B8375"];
+          const kinds = [...new Set(r.all.map(x => x.relation.replace(/_/g, " ")))];
+          return `<button class="gc-rel${r.in_results ? " hot" : ""}" data-goto="${esc(r.id)}"
+             title="${esc(n.label)} — ${esc(kinds.join(", "))} — ${esc(r.label)} · strength ${r.strength}${r.in_results ? " · also a hit for this query" : ""}">
+             <span class="gc-glyph" style="color:${col}">${glyph}</span>${esc(r.label)}${kinds.length > 1 ? `<span class="gc-multi">${kinds.length}</span>` : ""}</button>`;
+        }).join("")}
+        ${grouped.length > shown.length ? `<span class="gc-more">+${grouped.length - shown.length} more</span>` : ""}
+      </div>` : "";
+    const alias = aliases.length
+      ? `<div class="gc-alias">also: ${aliases.slice(0, 6).map(esc).join(", ")}</div>` : "";
     return `
       <div class="gr-concept" data-id="${esc(n.id)}" data-i="${i}" tabindex="0">
         <span class="gc-dot" style="background:${n.color || "#8A7B6B"}"></span>
         <div class="gc-main">
           <h4>${esc(n.label)}</h4>
-          <div class="gc-cat">${esc(cat)}${n.books ? ` · ${n.books} book${n.books === 1 ? "" : "s"}` : ""}</div>
-          <div class="gc-def">${esc((n.definition || "").slice(0, 260))}${(n.definition || "").length > 260 ? "…" : ""}</div>
+          <div class="gc-cat">${esc(cat)}${books ? ` · ${books} book${books === 1 ? "" : "s"}` : ""}${grouped.length ? ` · ${grouped.length} related concept${grouped.length === 1 ? "" : "s"}` : ""}</div>
+          <div class="gc-def">${esc((n.definition || "").slice(0, 300))}${(n.definition || "").length > 300 ? "…" : ""}</div>
+          ${alias}
+          ${rels}
+          <div class="gc-actions">
+            <button class="gc-act" data-act="graph" data-id="${esc(n.id)}">◎ show in the map</button>
+            <button class="gc-act" data-act="passages" data-id="${esc(n.id)}" data-label="${esc(n.label)}">▤ passages for this concept</button>
+          </div>
         </div>
         ${chip}
       </div>`;

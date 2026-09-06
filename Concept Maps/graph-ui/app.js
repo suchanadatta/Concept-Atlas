@@ -481,7 +481,9 @@ function linkColor3D(l) {
 
 function labelSet3D() {
   const set = new Set();
-  for (const n of S.g3dNodes) if (n._labelRank < 36) set.add(n.id);
+  // 36 labels in a 202-node cloud overlapped into an unreadable slab; the
+  // hover card carries the detail, so the sprites only need to orient you
+  for (const n of S.g3dNodes) if (n._labelRank < 18) set.add(n.id);
   if (S.query) for (const q of S.query.top) set.add(q.node.id);
   if (S.selected) { set.add(S.selected.id); for (const id of neighborsOf(S.selected)) set.add(id); }
   return set;
@@ -612,18 +614,20 @@ async function initGraph3D() {
     const G = new ForceGraph3D($("graph3d"), { controlType: "orbit" })
       .width($("stage").clientWidth)
       .height($("stage").clientHeight)
-      .backgroundColor("#F6F1E5")
+      .backgroundColor(document.body.classList.contains("dark") ? "#141310" : "#F6F1E5")
       .showNavInfo(false)
       .nodeRelSize(3.6)
       .nodeVal(n => 1.5 + n.importance * 9)
-      .nodeOpacity(0.92)
-      .nodeResolution(24)   // smooth spheres, not faceted polyhedra
-      .linkResolution(3)    // smooth link cylinders
+      .nodeOpacity(0.95)
+      .nodeResolution(28)   // smooth spheres, not faceted polyhedra
+      .linkResolution(6)    // smooth link cylinders
+      // fog gives the cloud depth: near concepts read as near
+      .linkCurvature(l => (l.r === "opposes" || l.r === "contrasts_with") ? 0.12 : 0)
       .nodeLabel(n => `<div style="font:600 13px Inter,sans-serif;color:#F6F1E5">${esc(n.label)}</div>
         <div style="font:11px Inter,sans-serif;color:#CFC7B4">${esc(n.top)}${n.sub ? " › " + esc(n.sub) : ""} · importance ${n.importance.toFixed(2)}</div>
         ${n.definition ? `<div style="font:italic 12px 'EB Garamond',serif;color:#E4DCC8;max-width:260px;margin-top:4px">${esc(n.definition.slice(0, 180))}…</div>` : ""}`)
-      .linkWidth(l => (0.5 + (l.w || 0.5) * 1.8) * relStyle(l.r).wmul)
-      .linkOpacity(0.42)
+      .linkWidth(l => (0.4 + (l.w || 0.5) * 2.0) * relStyle(l.r).wmul)
+      .linkOpacity(document.body.classList.contains("dark") ? 0.5 : 0.36)
       .linkDirectionalParticles(l => (l.r === "opposes" || l.r === "contrasts_with") ? 1 : 0)
       .linkDirectionalParticleWidth(1.6)
       .cooldownTicks(360)
@@ -647,8 +651,14 @@ async function initGraph3D() {
             (S.query && !S.query.topIds.has(n.id)) ||
             (S.selected && n.id !== S.selected.id && !S.adj.get(S.selected.id)?.has(n.id));
           const r = 3.6 * Math.cbrt(1.5 + n.importance * 9);
-          const spr = makeLabel(n.label, dimmed ? "#B7AF9C" : "#3A352C", 13);
-          spr.position.set(0, r + 7, 0);
+          const dark = document.body.classList.contains("dark");
+          const spr = makeLabel(
+            n.label,
+            dimmed ? (dark ? "#7E776A" : "#B7AF9C") : (dark ? "#EFE9DC" : "#2E2A24"),
+            8,
+            dark ? "rgba(20,19,16,0.88)" : "rgba(246,241,229,0.92)",
+          );
+          spr.position.set(0, r + 6, 0);
           return spr;
         });
     }

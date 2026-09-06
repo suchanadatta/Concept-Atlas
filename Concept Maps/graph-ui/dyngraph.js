@@ -11,7 +11,10 @@
   let hovered = null, nodeDrag = null;
   let view = "2d";
   let g3d = null;
-  let data = null;
+  let data = null;        // /query_graph response  (concept-driven)
+  let semData = null;     // /semantic_graph response (embedding-driven)
+  let graphMode = "concept";   // concept | semantic | overlay
+  let lastQuery = "";
 
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   /* Document nodes used to be labelled with a chopped raw id
@@ -30,6 +33,18 @@
     develops_from: "#4E6BA7", influences: "#6A9AC7", exemplifies: "#9C9484",
     subsumes: "#7B68B5", opposes: "#A03A31", contrasts_with: "#C0663A",
     to_query: "#8A3B32", to_doc: "#4E79A7", same_book: "#B0A890",
+    // semantic bands: these are not editorial relations, only how close two
+    // passages sit in the embedding space, so they get their own ramp
+    near_identical: "#8A3B32", closely_allied: "#B45E52",
+    related: "#7F94A8", loosely_related: "#B0A890",
+    to_concept: "#7B68B5",
+  };
+  const SEM_REL_LABEL = {
+    near_identical: "near-identical wording",
+    closely_allied: "closely allied",
+    related: "related",
+    loosely_related: "loosely related",
+    to_concept: "nearest concept",
   };
   const rcol = (r) => RSTYLE[r] || "#8B8375";
 
@@ -40,30 +55,66 @@
     };
     $("dyngraph-2d").onclick = () => setView("2d");
     $("dyngraph-3d").onclick = () => setView("3d");
+    ["concept", "semantic", "overlay"].forEach(m => {
+      const b = $("dyngraph-mode-" + m);
+      if (b) b.onclick = () => setGraphMode(m);
+    });
     new ResizeObserver(() => { sizeCanvas(); if (running && view === "2d") draw(); }).observe($("dyngraph-stage"));
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && !$("dyngraph").classList.contains("hidden")) close();
     });
   }
 
+  const needsConcept = () => graphMode === "concept" || graphMode === "overlay";
+  const needsSemantic = () => graphMode === "semantic" || graphMode === "overlay";
+
+  async function fetchConcept(query) {
+    const r = await fetch("/book/api/query_graph_proxy", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query, n_concepts: 10, n_docs: 18 }),
+      signal: AbortSignal.timeout(120000),
+    });
+    return r.json();
+  }
+  async function fetchSemantic(query) {
+    const r = await fetch("/book/api/semantic_graph_proxy", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query, n_docs: 44, min_sim: 0.72, max_deg: 5, n_concepts: 10 }),
+      signal: AbortSignal.timeout(120000),
+    });
+    return r.json();
+  }
+
+  function loadingScreen(msg) {
+    $("dyngraph-stage").innerHTML = `<div class="pdf-loading-state"><div class="searching-spinner"></div>
+      <div class="pdf-loading-text">${esc(msg)}</div></div>`;
+  }
+
+  let openSeq = 0;
   async function open(query) {
+    const seq = ++openSeq;
     $("dyngraph").classList.remove("hidden");
     document.body.classList.add("split-graph");
     $("gres").style.right = "54%";
     $("dyngraph-title").textContent = `“${query.slice(0, 40)}”`;
-    $("dyngraph-stage").innerHTML = `<div class="pdf-loading-state"><div class="searching-spinner"></div>
-      <div class="pdf-loading-text">Building concept–book graph…</div></div>`;
-    // fetch the graph from the semantic backend (via same-origin proxy)
+    if (query !== lastQuery) { data = null; semData = null; lastQuery = query; }
+    loadingScreen(graphMode === "semantic"
+      ? "Building the passage network from the embeddings…"
+      : graphMode === "overlay"
+      ? "Building both graphs…"
+      : "Building concept–book graph…");
     try {
-      const r = await fetch("/book/api/query_graph_proxy", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query, n_concepts: 10, n_docs: 18 }),
-      });
-      data = await r.json();
+      const jobs = [];
+      if (needsConcept() && !data) jobs.push(fetchConcept(query).then(d => { data = d; }));
+      if (needsSemantic() && !semData) jobs.push(fetchSemantic(query).then(d => { semData = d; }));
+      await Promise.all(jobs);
     } catch (e) {
-      $("dyngraph-stage").innerHTML = `<p class="hint" style="padding:40px;text-align:center">Graph backend unavailable.</p>`;
+      if (seq !== openSeq) return;
+      $("dyngraph-stage").innerHTML = `<p class="hint" style="padding:40px;text-align:center">Graph backend unavailable.<br><span style="font-size:12px">${esc(e.message || e)}</span></p>`;
       return;
     }
+    if (seq !== openSeq) return;   // a newer open superseded this one
+    paintModeButtons();
     // clear the loading screen BEFORE creating the canvas
     $("dyngraph-stage").innerHTML = "";
     canvas = null; ctx = null;
@@ -72,6 +123,29 @@
     if (view === "3d") init3D();
     else { if (!running) { running = true; requestAnimationFrame(tick); } }
   }
+
+  function paintModeButtons() {
+    ["concept", "semantic", "overlay"].forEach(m => {
+      const b = $("dyngraph-mode-" + m);
+      if (b) b.classList.toggle("active", graphMode === m);
+    });
+    const hint = $("dyngraph-hint");
+    if (hint) {
+      hint.textContent = graphMode === "concept"
+        ? "curated concepts & the documents that attest them"
+        : graphMode === "semantic"
+        ? "passages linked by embedding similarity — no concept map involved"
+        : "curated concepts over the passage network";
+    }
+  }
+
+  async function setGraphMode(m) {
+    if (m === graphMode) return;
+    graphMode = m;
+    paintModeButtons();
+    if (lastQuery) await open(lastQuery);
+  }
+  window.setDynGraphMode = setGraphMode;
 
   function close() {
     running = false;
@@ -108,14 +182,69 @@
   }
 
   function build() {
-    if (!data) return;
     nodes = []; links = [];
+    if (needsSemantic() && semData && semData.nodes) buildSemantic();
+    if (needsConcept() && data) buildConcept();
+    if (graphMode === "overlay") linkOverlay();
+    sim = { alpha: 1 };
+  }
+
+  /* ————— semantic graph: passages linked by embedding similarity —————
+     Nodes are the retrieved passages themselves, so a query about something
+     nobody curated into the concept map ("hypochondriack distemper") still
+     produces a real network. Clusters come from the backend's label
+     propagation; each gets a colour and a distinctive-terms name. */
+  function buildSemantic() {
+    const cx = W / 2, cy = H / 2 - 14;
+    const R = Math.min(W, H) * (graphMode === "overlay" ? 0.44 : 0.40);
+    const clusters = semData.clusters || [];
+    const byCluster = {};
+    (semData.nodes || []).forEach(n => (byCluster[n.cluster] = byCluster[n.cluster] || []).push(n));
+    // clusters get their own arc of the ring, so a community reads as a lobe
+    const total = (semData.nodes || []).length || 1;
+    let angle = -Math.PI / 2;
+    for (const cl of clusters) {
+      const members = byCluster[cl.id] || [];
+      const span = (members.length / total) * 6.2832;
+      const spread = Math.max(span, 0.35);
+      members.forEach((d, i) => {
+        const a = angle + (members.length > 1 ? (i / (members.length - 1) - 0.5) * spread * 0.92 : 0);
+        // rings within a lobe keep dense clusters from stacking on one arc
+        const rr = R * (0.72 + 0.28 * ((i % 3) / 2));
+        const hx = cx + Math.cos(a) * rr, hy = cy + Math.sin(a) * rr;
+        nodes.push({
+          id: "p" + d.i, kind: "passage", label: passageLabel(d), color: cl.color,
+          r: 5 + 7 * Math.min(1, (d.semantic || 0.5)), x: hx, y: hy, hx, hy, vx: 0, vy: 0,
+          book: d.book_id, page: d.page, snippet: d.snippet, bbox_pts: d.bbox_pts,
+          source: d.source, cite: d.cite, score: d.score, cluster: cl.id,
+          clusterLabel: cl.label, concepts: d.concepts || [],
+        });
+      });
+      angle += span;
+    }
+    for (const e of semData.edges || []) {
+      links.push({ s: "p" + e.s, t: "p" + e.t, r: e.rel, w: e.w });
+    }
+  }
+
+  function passageLabel(d) {
+    const who = d.author || (window.Cite ? Cite.parse(d.book_id).author : "") || "";
+    const t = (d.title || "").length > 18 ? d.title.slice(0, 17).replace(/\s+\S*$/, "") + "…" : (d.title || "");
+    const loc = d.page != null ? ` p.${d.page}` : "";
+    return [who, t].filter(Boolean).join(" · ") + loc;
+  }
+
+  /* ————— concept graph (curated map) ————— */
+  function buildConcept() {
     const cx = W / 2, cy = H / 2 - 14;
     const minR = Math.min(W, H);
+    const overlay = graphMode === "overlay";
     const rQuery = 16;
-    const rConcept = minR * 0.30;   // inner ring
-    const rBridge = minR * 0.44;    // bridge concepts between rings
-    const rDoc = minR * 0.46;      // outer ring
+    // in overlay the passage network already owns the outer ring, so the
+    // concepts sit inside it rather than competing for the same radius
+    const rConcept = minR * (overlay ? 0.16 : 0.30);
+    const rBridge = minR * (overlay ? 0.25 : 0.44);
+    const rDoc = minR * 0.46;
     // query node
     nodes.push({ id: "__q", label: "“" + (data.query.length > 30 ? data.query.slice(0, 30) + "…" : data.query) + "”",
                  color: "#8A3B32", r: rQuery, x: cx, y: cy, hx: cx, hy: cy, vx: 0, vy: 0, kind: "query" });
@@ -127,7 +256,10 @@
       arr.forEach((c, i) => {
         const ang = (i / Math.max(1, arr.length)) * 6.2832 + offset;
         const hx = cx + Math.cos(ang) * radius, hy = cy + Math.sin(ang) * radius;
-        const n = { id: "c:" + c.id, cid: c.id, label: c.label, color: "#C15B5B",
+        // in overlay the cluster palette already uses the warm reds, so a
+        // red concept node was indistinguishable from a passage
+        const n = { id: "c:" + c.id, cid: c.id, label: c.label,
+                   color: overlay ? "#7B68B5" : "#C15B5B",
                    r: 7 + 7 * Math.min(1, c.score), x: hx, y: hy, hx, hy,
                    vx: 0, vy: 0, kind: "concept", def: c.definition, match: c.match || "direct", score: c.score };
         byIdMap[c.id] = n; nodes.push(n);
@@ -141,8 +273,9 @@
       const s = cById[e.s], t = cById[e.t];
       if (s && t) links.push({ s: s.id, t: t.id, r: e.r, w: e.w });
     });
-    // doc nodes on the outer ring
-    (data.docs || []).forEach((d, i) => {
+    // doc nodes on the outer ring — omitted in overlay, where the semantic
+    // layer already shows every passage and these would duplicate them
+    (overlay ? [] : data.docs || []).forEach((d, i) => {
       const ang = (i / Math.max(1, data.docs.length)) * 6.2832 + 0.12;
       const hx = cx + Math.cos(ang) * rDoc, hy = cy + Math.sin(ang) * rDoc;
       const n = { id: "d" + i, label: shortBook(d.book_id) + (d.page != null ? ` p.${d.page}` : ""),
@@ -163,7 +296,21 @@
       const a = nodes.find(n => n.id === "d" + e.a), b = nodes.find(n => n.id === "d" + e.b);
       if (a && b) links.push({ s: a.id, t: b.id, r: "same_book", w: e.w });
     });
-    sim = { alpha: 1 };
+  }
+
+  /* ————— overlay: tie each passage to the concepts nearest it —————
+     This is the join that makes the two graphs one picture: the curated map
+     supplies the vocabulary, the embeddings supply the passages, and these
+     edges say which passage the map's words actually land on. */
+  function linkOverlay() {
+    if (!semData || !data) return;
+    const conceptIds = new Set(nodes.filter(n => n.kind === "concept").map(n => n.cid));
+    for (const e of semData.c2p || []) {
+      if (!conceptIds.has(e.concept)) continue;
+      const c = nodes.find(n => n.kind === "concept" && n.cid === e.concept);
+      const pn = nodes.find(n => n.id === "p" + e.passage);
+      if (c && pn) links.push({ s: c.id, t: pn.id, r: "to_concept", w: e.w * 0.6 });
+    }
   }
 
   const byId = () => { const m = new Map(); nodes.forEach(n => m.set(n.id, n)); return m; };
@@ -241,7 +388,8 @@
     ctx.globalAlpha = 1;
     const labelAlpha = Math.min(1, Math.max(0.15, (view_t.k - 0.45) * 1.7));
     const labelQueue = [];
-    const rank = (n) => n.kind === "query" ? 100 : n.kind === "concept" ? 10 + (n.score || 0) : (n.score || 0);
+    const rank = (n) => n.kind === "query" ? 100 : n.kind === "cluster" ? 50
+      : n.kind === "concept" ? 10 + (n.score || 0) : (n.score || 0);
     for (const n of nodes) {
       ctx.globalAlpha = isNb(n) ? 1 : 0.22;
       if (n === hov) {
@@ -285,12 +433,32 @@
       taken.push({ x: x0, y: y0, w, h });
       return true;
     };
+    // cluster names first: they are the reading of the picture, and without
+    // them the colours only mean something in the legend
+    if (semData && needsSemantic()) {
+      const byCl = {};
+      for (const n of nodes) {
+        if (n.kind !== "passage") continue;
+        (byCl[n.cluster] = byCl[n.cluster] || []).push(n);
+      }
+      for (const cl of semData.clusters || []) {
+        const ms = byCl[cl.id];
+        if (!ms || ms.length < 2) continue;
+        const mx = ms.reduce((a, n) => a + n.x, 0) / ms.length;
+        const my = ms.reduce((a, n) => a + n.y, 0) / ms.length;
+        labelQueue.push({
+          x: mx, y: my, r: 0, kind: "cluster", label: cl.label,
+          color: cl.color, score: 9,
+        });
+      }
+    }
     labelQueue.sort((a, b) => rank(b) - rank(a));   // important labels claim space first
     for (const n of labelQueue) {
-      const always = n.kind === "query" || n === hov;
-      if (!always && n.kind === "doc" && view_t.k < 0.75) continue;
-      ctx.font = (n.kind === "query" ? "600 13px" : n.kind === "concept" ? "600 10.5px" : "500 9.5px")
-        + " Inter, sans-serif";
+      const always = n.kind === "query" || n.kind === "cluster" || n === hov;
+      if (!always && (n.kind === "doc" || n.kind === "passage") && view_t.k < 0.75) continue;
+      ctx.font = (n.kind === "query" ? "600 13px"
+        : n.kind === "cluster" ? "700 11.5px"
+        : n.kind === "concept" ? "600 10.5px" : "500 9.5px") + " Inter, sans-serif";
       const w = ctx.measureText(n.label).width, h = 12;
       const x0 = n.x - w / 2, y0 = n.y + n.r + 4;   // below the node, clear of its own circle
       if (!always && !fits(x0 - 2, y0 - 2, w + 4, h + 4)) continue;
@@ -301,7 +469,9 @@
       ctx.strokeStyle = dark ? "rgba(30,28,24,.85)" : "rgba(246,241,229,.85)";
       ctx.textAlign = "center";
       ctx.strokeText(n.label, n.x, n.y + n.r + 13);
-      ctx.fillStyle = n.kind === "doc" ? (dark ? "#9FB6CE" : "#3E6187") : (dark ? "#E8E2D5" : "#2E2A24");
+      ctx.fillStyle = n.kind === "cluster" ? n.color
+        : n.kind === "doc" ? (dark ? "#9FB6CE" : "#3E6187")
+        : (dark ? "#E8E2D5" : "#2E2A24");
       ctx.fillText(n.label, n.x, n.y + n.r + 13);
     }
     ctx.globalAlpha = 1;
@@ -317,13 +487,24 @@
     const dark = document.body.classList.contains("dark");
     const rels = [...new Set(links.map(l => l.r))].filter(r => r !== "to_query");
     const hasBridge = nodes.some(n => n.match === "bridge");
-    const items = [
-      { color: "#8A3B32", label: "your query" },
-      { color: "#C15B5B", label: "concept · badge = match %" },
-      ...(hasBridge ? [{ color: "#C15B5B", label: "bridge concept", ring: true }] : []),
-      { color: "#4E79A7", label: "passage" },
-      ...rels.map(r => ({ color: rcol(r), label: r.replace(/_/g, " "), edge: true })),
-    ];
+    const has = (k) => nodes.some(n => n.kind === k);
+    const items = [];
+    if (has("query")) items.push({ color: "#8A3B32", label: "your query" });
+    if (has("concept")) {
+      const cc = graphMode === "overlay" ? "#7B68B5" : "#C15B5B";
+      items.push({ color: cc, label: "concept · badge = match %" });
+      if (hasBridge) items.push({ color: "#C15B5B", label: "bridge concept", ring: true });
+    }
+    if (has("doc")) items.push({ color: "#4E79A7", label: "passage" });
+    // in semantic/overlay mode node colour means cluster, so name the clusters
+    if (has("passage") && semData) {
+      for (const cl of (semData.clusters || []).slice(0, 4)) {
+        items.push({ color: cl.color, label: `${cl.label} (${cl.n})` });
+      }
+    }
+    for (const r of rels) {
+      items.push({ color: rcol(r), label: SEM_REL_LABEL[r] || r.replace(/_/g, " "), edge: true });
+    }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.fillStyle = dark ? "rgba(30,28,24,.92)" : "rgba(246,241,229,.92)";
     ctx.fillRect(0, H - 28, W, 28);
@@ -355,6 +536,40 @@
       if (x > W - 90) break; // wrap guard
     }
     ctx.textBaseline = "alphabetic";
+  }
+
+  /* A node is only useful if it takes you to the text. Passage nodes carry
+     their own bbox, so opening one lands on the exact scanned block the
+     embedding matched — the same jump a search result makes. */
+  function openNode(n) {
+    if (!n) return;
+    if (n.kind === "concept") {
+      if (typeof selectById === "function") selectById(n.cid, false);
+      return;
+    }
+    if (n.kind !== "doc" && n.kind !== "passage") return;
+    const isTxt = n.page == null || n.source === "txt";
+    if (typeof Reader !== "undefined") {
+      Reader.activeTerms = (lastQuery || "").toLowerCase().split(/[\s\-]+/).filter(t => t.length > 3);
+    }
+    if (isTxt) {
+      if (typeof openTxtMode !== "function" || typeof Reader === "undefined") return;
+      Reader.highlights = [];
+      Reader.bookId = n.book; Reader.open = true; Reader.txtMode = false;
+      Reader.pendingHighlight = { text: n.snippet || "", page: n.page };
+      if (typeof showReaderShell === "function") showReaderShell();
+      openTxtMode(n.book);
+      return;
+    }
+    if (typeof openReader !== "function") return;
+    const boxes = n.bbox_pts
+      ? [{ book_id: n.book, page: n.page, bbox_pts: n.bbox_pts, concept_id: lastQuery, text: n.snippet }]
+      : [];
+    openReader(n.book, {
+      page: n.page,
+      highlight: n.bbox_pts ? { page: n.page, bbox_pts: n.bbox_pts, concept_id: lastQuery } : null,
+      highlights: boxes,
+    });
   }
 
   function pick(gx, gy) {
@@ -389,17 +604,7 @@
         const gx = (e.clientX - r.left - view_t.x) / view_t.k, gy = (e.clientY - r.top - view_t.y) / view_t.k;
         const wasDrag = Math.hypot(nodeDrag.x - gx, nodeDrag.y - gy) > 4;
         const clicked = nodeDrag; nodeDrag = null;
-        if (clicked && !wasDrag) {
-          if (clicked.kind === "doc" && typeof openReader === "function") {
-            if (clicked.page == null && typeof openTxtMode === "function") {
-              Reader.bookId = clicked.book; Reader.open = true; Reader.txtMode = false;
-              if (typeof showReaderShell === "function") showReaderShell();
-              openTxtMode(clicked.book);
-            } else openReader(clicked.book, { page: clicked.page });
-          } else if (clicked.kind === "concept" && typeof selectById === "function") {
-            selectById(clicked.cid, false);
-          }
-        }
+        if (clicked && !wasDrag) openNode(clicked);
       }
       panning = false; panStart = null;
       canvas.style.cursor = hovered ? "pointer" : "grab";
@@ -416,6 +621,23 @@
     };
   }
 
+  /* Shared hover card for 2D tooltips and 3D labels. */
+  function tipHTML(n) {
+    const head = n.kind === "passage" ? (n.cite || n.label) : n.label;
+    const sub = n.kind === "passage"
+      ? `${n.page != null ? `page ${n.page}` : "text edition"}${n.clusterLabel ? ` · ${esc(n.clusterLabel)}` : ""}`
+      : n.kind === "concept" ? (n.def || "") : (n.snippet || "");
+    const cons = (n.concepts || []).length
+      ? `<div style="margin-top:4px;font:11px Inter,sans-serif;color:#B9A9C9">${n.concepts.map(c => esc(c.label)).join(" · ")}</div>` : "";
+    return `<div style="font:600 12.5px Inter,sans-serif;color:#F6F1E5;background:#2E2A24;padding:6px 10px;border-radius:7px;max-width:280px;box-shadow:0 6px 20px rgba(0,0,0,.4)">
+      ${esc(head)}
+      ${sub ? `<div style="font:italic 11.5px Georgia;color:#CFC7B4;margin-top:3px">${esc(String(sub).slice(0, 150))}</div>` : ""}
+      ${n.snippet && n.kind === "passage" ? `<div style="font:italic 11px Georgia;color:#B8B2A4;margin-top:4px">${esc(n.snippet.slice(0, 130))}…</div>` : ""}
+      ${cons}
+      <div style="margin-top:5px;font:10.5px Inter,sans-serif;color:#8B8375">click to open the source</div>
+    </div>`;
+  }
+
   /* 3D */
   function init3D() {
     const stage = $("dyngraph-stage");
@@ -423,37 +645,68 @@
     stage.innerHTML = ""; canvas = null; ctx = null;
     if (g3d) { try { g3d._destructor?.(); } catch {} g3d = null; }
     build();
+    const dark3 = document.body.classList.contains("dark");
     g3d = new ForceGraph3D(stage, { controlType: "orbit" })
       .width(stage.clientWidth).height(stage.clientHeight)
-      .backgroundColor(document.body.classList.contains("dark") ? "#1E1C18" : "#F6F1E5")
-      .nodeRelSize(4.5).nodeResolution(22).linkResolution(3)
-      .nodeLabel(n => `<div style="font:600 12.5px Inter,sans-serif;color:#F6F1E5;background:#2E2A24;padding:5px 9px;border-radius:6px;max-width:240px">${esc(n.label)}${n.def ? `<div style="font:italic 11px Georgia;color:#CFC7B4;margin-top:3px">${esc(n.def.slice(0, 110))}…</div>` : ""}${n.snippet ? `<div style="font:italic 11px Georgia;color:#CFC7B4;margin-top:3px">${esc(n.snippet.slice(0, 110))}…</div>` : ""}</div>`)
+      .backgroundColor(dark3 ? "#141310" : "#F6F1E5")
+      .showNavInfo(false)
+      .nodeRelSize(5).nodeResolution(26).linkResolution(6)
+      .nodeOpacity(0.94)
+      .nodeVal(n => Math.max(1, (n.r || 5) * (n.r || 5) * 0.05))
+      .nodeColor(n => n.color)
+      // strong links are drawn as moving particles, so the eye can follow
+      // where the argument actually flows instead of reading a static hairball
+      .linkDirectionalParticles(l => (l.w > 0.85 ? 2 : 0))
+      .linkDirectionalParticleWidth(1.4)
+      .linkDirectionalParticleSpeed(0.006)
+      .nodeLabel(n => tipHTML(n))
       .linkColor(l => rcol(l.r))
-      .linkWidth(l => 0.4 + (l.w || 0.4) * 1.6)
-      .linkOpacity(0.45)
+      .linkWidth(l => 0.3 + (l.w || 0.4) * 2.2)
+      .linkOpacity(dark3 ? 0.5 : 0.38)
       .onNodeHover((n) => { stage.style.cursor = n ? "pointer" : "default"; })
-      .onNodeClick((n) => {
-        if (n.kind === "doc" && typeof openReader === "function") openReader(n.book, { page: n.page });
-        else if (n.kind === "concept" && typeof selectById === "function") selectById(n.cid, false);
-      });
-    // persistent label sprites (same mechanism as the main concept graph)
+      .onNodeClick((n) => openNode(n));
+    /* Label sprites. Labelling every node produced a wall of overlapping
+       text that hid the graph it was describing, so only the nodes that
+       carry the reading get one: the query, the concepts, and the strongest
+       passage in each cluster plus the overall top few. */
     if (window.Atlas3D && window.Atlas3D.makeLabel) {
       const { makeLabel } = window.Atlas3D;
+      const labelled = new Set();
+      const passages = nodes.filter(n => n.kind === "passage" || n.kind === "doc");
+      const bestPerCluster = new Map();
+      for (const n of passages) {
+        const k = n.cluster ?? "_";
+        const cur = bestPerCluster.get(k);
+        if (!cur || (n.score || 0) > (cur.score || 0)) bestPerCluster.set(k, n);
+      }
+      for (const n of bestPerCluster.values()) labelled.add(n.id);
+      passages.slice().sort((a, b) => (b.score || 0) - (a.score || 0))
+        .slice(0, 6).forEach(n => labelled.add(n.id));
+      for (const n of nodes) if (n.kind === "query" || n.kind === "concept") labelled.add(n.id);
       g3d.nodeThreeObjectExtend(true)
         .nodeThreeObject((n) => {
-          // query + concepts always labeled; docs labeled when important
-          if (n.kind === "doc" && (n.r || 0) < 6) return null;
+          if (!labelled.has(n.id)) return null;
           const dark = document.body.classList.contains("dark");
-          const spr = makeLabel(n.label, dark ? "#E8E2D5" : "#3A352C", 13);
-          spr.position.set(0, (n.r || 5) + 7, 0);
+          const spr = makeLabel(
+            n.label.length > 34 ? n.label.slice(0, 33) + "…" : n.label,
+            dark ? "#EFE9DC" : "#2E2A24",
+            n.kind === "query" ? 9 : 7,
+            dark ? "rgba(20,19,16,0.88)" : "rgba(246,241,229,0.92)",
+          );
+          spr.position.set(0, (n.r || 5) + 6, 0);
           return spr;
         });
     }
     g3d.graphData({ nodes: nodes.map(n => ({ ...n })), links: links.map(l => ({ source: l.s, target: l.t, r: l.r, w: l.w })) });
     window.__dynG3D = g3d; // for live theme switching
-    setTimeout(() => { try { g3d.zoomToFit(600, 40); } catch {} }, 1500);
+    // fit twice: once when the force layout has roughly settled, again once
+    // it has actually stopped, or the graph ends up half off-screen
+    setTimeout(() => { try { g3d.zoomToFit(600, 60); } catch { /* not ready */ } }, 1600);
+    setTimeout(() => { try { g3d.zoomToFit(800, 60); } catch { /* not ready */ } }, 4200);
   }
 
+  // theme.js calls this so a live 2D graph repaints on a theme flip
+  window.redrawDynGraph = () => { if (running && view === "2d" && ctx) draw(); };
   window.openDynGraph = open;
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();

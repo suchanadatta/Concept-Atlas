@@ -10,8 +10,12 @@
    window.Atlas3D = { THREE, makeLabel(text, color, textHeight) -> THREE.Sprite } */
 import * as THREE from "three";
 
-function makeLabel(text, color, textHeight = 6) {
-  const font = "500 64px Inter, system-ui, sans-serif";
+/* `halo` is the colour painted behind the glyphs. It used to be hard-coded
+   parchment, which in dark mode put a bright cream slab behind every label
+   and turned a dense graph into an unreadable wall — the halo has to follow
+   the theme, like everything else drawn to a canvas. */
+function makeLabel(text, color, textHeight = 6, halo) {
+  const font = "600 64px Inter, system-ui, sans-serif";
   const pad = 16;
   const c = document.createElement("canvas");
   const ctx = c.getContext("2d");
@@ -25,7 +29,7 @@ function makeLabel(text, color, textHeight = 6) {
   ctx2.textBaseline = "middle";
   // parchment halo
   ctx2.lineWidth = 12;
-  ctx2.strokeStyle = "rgba(246,241,229,0.92)";
+  ctx2.strokeStyle = halo || "rgba(246,241,229,0.92)";
   ctx2.strokeText(text, c.width / 2, c.height / 2 + 2);
   ctx2.fillStyle = color;
   ctx2.fillText(text, c.width / 2, c.height / 2 + 2);

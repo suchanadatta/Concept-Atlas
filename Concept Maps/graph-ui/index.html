@@ -5,10 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 <title>Concept Atlas — British Moral Philosophy</title>
 <link rel="stylesheet" href="vendor/fonts.css">
-<link rel="stylesheet" href="style.css?v=1788646925">
+<link rel="stylesheet" href="style.css?v=1788659029">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C15B5B'/%3E%3Ccircle cx='6' cy='8' r='3.4' fill='%234E79A7'/%3E%3Ccircle cx='26' cy='7' r='3' fill='%235FA052'/%3E%3Ccircle cx='25' cy='25' r='3.2' fill='%23D9A441'/%3E%3Cpath d='M16 16L6 8M16 16L26 7M16 16L25 25' stroke='%23948B7B' stroke-width='1'/%3E%3C/svg%3E">
 </head>
 <body>
+<script src="theme.js?v=1788659029"></script>
 <header id="topbar">
   <div class="brand">
     <h1>Concept Atlas</h1>
@@ -29,6 +30,7 @@
     <button id="btn-2d" class="mode-btn view-btn active" title="2D canvas view">2D</button>
     <button id="btn-3d" class="mode-btn view-btn" title="3D WebGL view">3D</button>
     <button id="btn-help" class="mode-btn" title="Keyboard shortcuts">?</button>
+    <button id="btn-authors" class="mode-btn" title="Who wrote the corpus">Authors</button>
     <a href="docs.html" class="mode-btn" title="Documentation" style="text-decoration:none">Docs</a>
     <button id="btn-theme" class="mode-btn" title="Toggle dark mode">🌙</button>
   </nav>
@@ -215,6 +217,7 @@
       <div class="landing-links">
         <button id="landing-graph">🌐 Explore concept graph</button>
         <button id="landing-queries">📋 Browse 42 research queries</button>
+        <button id="landing-authors">👤 Who wrote the corpus</button>
       </div>
 
       <div class="landing-boards">
@@ -237,6 +240,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Authors panel -->
+  <div id="authors-panel" class="hidden"></div>
 
   <!-- Settings bar (bottom of page) -->
   <div id="settings-bar">
@@ -318,7 +324,12 @@
     <div id="dyngraph-bar">
       <button id="dyngraph-close" title="Close (Esc)">×</button>
       <span class="reader-title" id="dyngraph-title">Query graph</span>
-      <span class="dyngraph-hint">concepts & documents linked to your search</span>
+      <span class="dyngraph-hint" id="dyngraph-hint">curated concepts &amp; the documents that attest them</span>
+      <span class="reader-tools dg-modes">
+        <button id="dyngraph-mode-concept" class="active" title="Curated concept map: the concepts an editor recorded, and the documents attesting them">Concept</button>
+        <button id="dyngraph-mode-semantic" title="Built from the passage embeddings alone — works even for ideas the concept map never recorded">Semantic</button>
+        <button id="dyngraph-mode-overlay" title="Concepts drawn over the passage network, linked to the passages they land on">Overlay</button>
+      </span>
       <span class="reader-tools">
         <button id="dyngraph-2d" class="active">2D</button>
         <button id="dyngraph-3d">3D</button>
@@ -374,15 +385,16 @@
 <script src="vendor/3d-force-graph.min.js"></script>
 <script src="vendor/pdfjs/pdf.min.js"></script>
 <script>pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdfjs/pdf.worker.min.js";</script>
-<script src="cite.js?v=1788646925"></script>
-<script src="app.js?v=1788646925"></script>
-<script src="reader.js?v=1788646925"></script>
-<script src="compare.js?v=1788646925"></script>
-<script src="landing.js?v=1788646925"></script>
-<script src="search.js?v=1788646925"></script>
-<script src="floatgraph.js?v=1788646925"></script>
-<script src="dyngraph.js?v=1788646925"></script>
-<script src="settings.js?v=1788646925"></script>
+<script src="cite.js?v=1788659029"></script>
+<script src="authors.js?v=1788659029"></script>
+<script src="app.js?v=1788659029"></script>
+<script src="reader.js?v=1788659029"></script>
+<script src="compare.js?v=1788659029"></script>
+<script src="landing.js?v=1788659029"></script>
+<script src="search.js?v=1788659029"></script>
+<script src="floatgraph.js?v=1788659029"></script>
+<script src="dyngraph.js?v=1788659029"></script>
+<script src="settings.js?v=1788659029"></script>
 <script type="module" src="labels3d.mjs"></script>
 </body>
 </html>

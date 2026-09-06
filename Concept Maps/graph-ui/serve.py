@@ -97,6 +97,8 @@ class BookAPI:
     def handle(path: str, query: dict):
         parts = path.split("/")
         # /book/api/library
+        if path == "/book/api/authors":
+            return BookAPI.authors(query)
         if path == "/book/api/engine":
             return BookAPI.engine_status(query)
         if path == "/book/api/library":
@@ -709,6 +711,20 @@ class BookAPI:
         return BookAPI._jasper("/concepts", body, timeout=90)
 
     @staticmethod
+    def semantic_graph_proxy(query: dict, body: bytes):
+        """Passage network induced from the embeddings, not the concept map."""
+        return BookAPI._jasper("/semantic_graph", body, timeout=120)
+
+    @staticmethod
+    def authors(query: dict):
+        """GET /book/api/authors — the author registry joined to the corpus
+        (built by tools/build_author_stats.py)."""
+        f = Path(__file__).resolve().parent / "data" / "authors.json"
+        if not f.exists():
+            return 200, "application/json", b'{"authors":[],"groups":[]}'
+        return 200, "application/json", f.read_bytes()
+
+    @staticmethod
     def engine_status(query: dict):
         """GET /book/api/engine — Jasper health (device, index size, cache)."""
         import urllib.request as _urllib
@@ -859,6 +875,10 @@ class Handler(SimpleHTTPRequestHandler):
                 length = int(self.headers.get("Content-Length", 0))
                 body = self.rfile.read(length) if length else b"{}"
                 res = BookAPI.concepts_proxy(query, body)
+            elif path == "/book/api/semantic_graph_proxy":
+                length = int(self.headers.get("Content-Length", 0))
+                body = self.rfile.read(length) if length else b"{}"
+                res = BookAPI.semantic_graph_proxy(query, body)
             else:
                 res = None
         if res is None:

@@ -109,8 +109,7 @@
     else document.body.classList.remove("facets-collapsed");
     const ft = $("gres-facet-toggle");
     if (ft) ft.classList.toggle("active", prefs.facets === "on");
-    if (prefs.theme === "dark") document.body.classList.add("dark");
-    else document.body.classList.remove("dark");
+    if (window.Theme && Theme.get() !== prefs.theme) Theme.set(prefs.theme);
     // the ranking select is the same control the results bar exposes
     if (!window._forceSearchMode || window._forceSearchMode === "auto") {
       window._forceSearchMode = prefs.mode;
@@ -132,7 +131,7 @@
       if (window.__rerunSearch) window.__rerunSearch();
     };
     $("set-facets").onchange = (e) => { prefs.facets = e.target.value; save(); applyPrefs(); };
-    $("set-theme").onchange = (e) => { prefs.theme = e.target.value; save(); applyPrefs(); };
+    $("set-theme").onchange = (e) => { prefs.theme = e.target.value; save(); Theme.set(prefs.theme); };
     $("sp-refresh").onclick = () => { refreshDevice(); refreshStatus(); };
   }
 
@@ -236,8 +235,7 @@
   /* ---------- init ---------- */
   function init() {
     load();
-    // the header theme button and this panel edit the same preference
-    if (document.body.classList.contains("dark")) prefs.theme = "dark";
+    prefs.theme = window.Theme ? Theme.get() : prefs.theme;   // theme.js is authoritative
     applyPrefs();
     wirePrefs();
     $("device-cpu").onclick = () => switchDevice("cpu");
@@ -254,14 +252,11 @@
         e.stopPropagation();
       }
     }, true);
-    const themeBtn = $("btn-theme");
-    if (themeBtn) {
-      const orig = themeBtn.onclick;
-      themeBtn.onclick = (e) => {
-        if (orig) orig.call(themeBtn, e);
-        window.syncSettings({ theme: document.body.classList.contains("dark") ? "dark" : "light" });
-      };
-    }
+    // keep the panel's select in step when the header button flips the theme
+    document.addEventListener("atlas:theme", (e) => {
+      prefs.theme = e.detail;
+      if ($("set-theme")) $("set-theme").value = e.detail;
+    });
     refreshDevice();
     refreshStatus();
     setInterval(() => { refreshDevice(); refreshStatus(); }, 30000);

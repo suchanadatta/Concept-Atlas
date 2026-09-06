@@ -1,0 +1,50 @@
+﻿# Canonical author registry for the BMoral corpus.
+#
+# `sex` is the sex/gender of the creator as supplied by the project lead
+# (M / F / U = unknown, "M & F" for the Gwinnett–Thomas joint correspondence).
+# `key` is the surname token that appears at the head of a book_id, which is
+# how the corpus itself identifies an author; it is the join key used by
+# tools/build_author_stats.py.
+# `born`/`died` come from the BMoral_pdf_collection directory names where
+# available. Blank means not recorded in the collection.
+#
+key,display_name,sex,born,died,note
+cudworth,"Cudworth, Ralph",M,1617,1688,
+anon,"Anon. [Wellwisher of her Sex]",F?,,,"attributed to a woman by the title page; not confirmed"
+burnet,"Burnet, Elizabeth Berkeley",F,1661,1709,
+campbell,"Campbell, Archibald",M,1691,1756,
+astell,"Astell, Mary",F,1666,1733,
+chapone,"Chapone, Sarah",F,,,
+chudleigh,"Chudleigh, Mary Lee",F,1656,1710,
+cockburn,"Cockburn, Catharine Trotter",F,1679,1749,
+hume,"Hume, David",M,1711,1776,
+hutcheson,"Hutcheson, Francis",M,1694,1746,
+johnson,"Johnson, Thomas",M,,,
+johnston,"Johnston, George",M,,,
+king,"King, William",M,1650,1729,
+locke,"Locke, John",M,1632,1704,
+law,"Law, Edmund",M,1703,1787,
+mandeville,"Mandeville, Bernard",M,1670,1733,
+masham,"Masham, Damaris Cudworth",F,1658,1708,
+newcome,"Newcome, Susanna",F,1685,1753,
+norris,"Norris, John",M,1657,1711,
+pope,"Pope, Alexander",M,1688,1744,
+clarke,"Clarke, Samuel",M,1675,1729,
+rutherforth,"Rutherforth, Thomas",M,1712,1771,
+shaftesbury,"Shaftesbury, Anthony Ashley Cooper, Third Earl of",M,1671,1713,
+thomas,"Thomas, Elizabeth",F,1675,1731,
+turnbull,"Turnbull, George",M,1698,1748,
+warburton,"Warburton, William",M,1698,1779,
+watts,"Watts, Isaac",M,1674,1748,
+balfour,"Balfour, James",M,,,
+berkeley,"Berkeley, George",M,1685,1753,
+gwinnett-and-thomas,"Gwinnett, Richard and Thomas, Elizabeth",M & F,,,"joint correspondence"
+drake,"Drake, Judith",F,,,
+fordyce,"Fordyce, David",M,,,
+smith,"Smith, Adam",M,1723,1790,
+butler,"Butler, Joseph",M,1692,1752,
+balguy,"Balguy, John",M,1686,1748,"in the collection; sex not in the supplied table"
+gay,"Gay, John",M,1699,1745,"in the collection; sex not in the supplied table"
+whartonia,"Whartonia (miscellany)",U,,,"anthology, mixed authorship"
+astell-and-norris,"Astell, Mary and Norris, John",M & F,,,"joint correspondence"
+burnet-and-locke,"Burnet, Thomas and Locke, John",M,,,"joint correspondence"
