@@ -76,6 +76,37 @@ function showReaderShell() {
   $("reader-search").onkeydown = (e) => { if (e.key === "Enter") doBookSearch(); };
   wireMoreMenu();
   wireSideToggle();
+  wireCtxButton();
+}
+
+/* Attaching what you are reading is the commonest way to build context, so it
+   is a button in the reader rather than only a row in the picker. */
+function wireCtxButton() {
+  const btn = $("reader-ctx");
+  if (!btn || btn._wired) return;
+  btn._wired = true;
+  btn.onclick = () => {
+    if (!window.Chat) return;
+    const c = window.Cite ? Cite.parse(Reader.bookId) : null;
+    const label = (c && c.cite) || Reader.bookId;
+    const page = Reader.txtMode ? null : Reader.pageNum;
+    const choice = page
+      ? prompt(
+          `Attach to the chat context:\n\n` +
+          `  1  this page (${page})\n` +
+          `  2  pages ${Math.max(1, page - 5)}–${Math.min(Reader.numPages, page + 5)}\n` +
+          `  3  the whole book (${Reader.numPages} pages)\n\n` +
+          `Enter 1, 2 or 3 — or a range like 40-60:`, "2")
+      : "3";
+    if (!choice) return;
+    let from = null, to = null;
+    const m = String(choice).match(/^\s*(\d+)\s*[-–]\s*(\d+)\s*$/);
+    if (m) { from = +m[1]; to = +m[2]; }
+    else if (choice.trim() === "1") { from = page; to = page; }
+    else if (choice.trim() === "2") { from = Math.max(1, page - 5); to = Math.min(Reader.numPages, page + 5); }
+    else if (choice.trim() !== "3") return;
+    Chat.addContext([{ kind: "book", book_id: Reader.bookId, label, page_from: from, page_to: to }]);
+  };
 }
 
 /* The notes/page-text pane is useful when transcribing and in the way when

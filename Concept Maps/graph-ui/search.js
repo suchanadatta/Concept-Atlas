@@ -73,6 +73,12 @@
         window.openDynGraph(currentResults.q);
       }
     };
+    const ctxAll = $("gres-ctx");
+    if (ctxAll) ctxAll.onclick = () => {
+      if (!currentResults || !window.Chat) return;
+      Chat.addContext([{ kind: "search", query: currentResults.q,
+                         top_k: Math.min(60, currentResults.passages.length || 20) }]);
+    };
     const sortSel = $("gres-sort");
     if (sortSel) sortSel.onchange = () => { sortMode = sortSel.value; renderResults(); };
     const facetToggle = $("gres-facet-toggle");
@@ -473,6 +479,19 @@
       body.querySelectorAll(".gr-pass").forEach((el, i) => {
         el.onclick = () => openPassage(list[i], q);
       });
+      // a passage, or the whole result set, can be handed to the chat panel
+      body.querySelectorAll(".gp-ctx").forEach(b => {
+        b.onclick = (e) => {
+          e.stopPropagation();
+          const p = list[+b.dataset.i];
+          if (!p || !window.Chat) return;
+          Chat.addContext([{
+            kind: "passage", book_id: p.book_id, page: p.page,
+            cite: p.cite || p.book_id, label: `${p.cite || p.book_id}${p.page != null ? ` p.${p.page}` : ""}`,
+            text: p.blocks?.[0]?.text || p.snippet || "",
+          }]);
+        };
+      });
     } else {
       const cHi = Math.max(0.01, ...concepts.map(c => +c.score || 0));
       body.innerHTML = concepts.length
@@ -506,7 +525,9 @@
         el.onclick = (e) => {
           e.stopPropagation();
           if (el.dataset.act === "graph") showInMap(el.dataset.id);
-          else doGlobalSearch(el.dataset.label);
+          else if (el.dataset.act === "ctx") {
+            if (window.Chat) Chat.addContext([{ kind: "concept", concept_id: el.dataset.id, label: el.dataset.label }]);
+          } else doGlobalSearch(el.dataset.label);
         };
       });
     }
@@ -530,7 +551,10 @@
           <span class="gp-meta">${loc} ${scoreChip(p)}</span>
         </div>
         <div class="gp-snip">${highlightTerms(esc(p.snippet), q)}</div>
-        <div class="gp-actions"><span class="gp-open">${isTxt ? "read the text" : "open the scan"} →</span></div>
+        <div class="gp-actions">
+          <span class="gp-open">${isTxt ? "read the text" : "open the scan"} →</span>
+          <button class="ctx-btn gp-ctx" data-i="${i}" title="Attach this passage to the chat context">+ context</button>
+        </div>
       </div>`;
   }
 
@@ -631,6 +655,7 @@
           <div class="gc-actions">
             <button class="gc-act" data-act="graph" data-id="${esc(n.id)}">◎ show in the map</button>
             <button class="gc-act" data-act="passages" data-id="${esc(n.id)}" data-label="${esc(n.label)}">▤ passages for this concept</button>
+            <button class="gc-act" data-act="ctx" data-id="${esc(n.id)}" data-label="${esc(n.label)}">💬 add to chat context</button>
           </div>
         </div>
         ${chip}
