@@ -75,8 +75,20 @@ function showReaderShell() {
   $("reader-search-go").onclick = doBookSearch;
   $("reader-search").onkeydown = (e) => { if (e.key === "Enter") doBookSearch(); };
 }
+/* The side pane serves a scan (annotations + the page's OCR text) and a text
+   edition (annotations only) differently. */
+function setSidePanelMode(txt) {
+  const annT = $("reader-side-ann-title");
+  const ocrT = $("reader-ocr-title");
+  const ocr = $("reader-ocr");
+  if (annT) annT.textContent = txt ? "Annotations" : "Page annotations";
+  if (ocrT) ocrT.hidden = !!txt;
+  if (ocr) ocr.hidden = !!txt;
+}
+
 async function openReader(bookId, opts = {}) {
   if (!bookId) return;
+  setSidePanelMode(false);
   const token = readerBump();
   // Highlights belong to one book+query. They used to accumulate across every
   // passage opened in a session and reappear on unrelated pages, so the caller
@@ -507,7 +519,16 @@ async function openTxtMode(bookId) {
     const d = await res.json();
     Reader.txtParas = d.paragraphs;
     setStatus(`${d.book_id.slice(0, 40)} — ${d.n_paragraphs} paragraphs (text mode)`);
-    renderTxtParas(null);
+    // The initial paint caps at 600 paragraphs for speed, but 9 of the 68
+    // text editions have passages past ¶600 (Butler's Analogy runs to 2546),
+    // and those silently opened at the top of the book with nothing found.
+    // Locate the target first and render the window containing it.
+    const target = Reader.pendingHighlight && Reader.pendingHighlight.text
+      ? findTxtParaIndex(Reader.pendingHighlight.text) : -1;
+    renderTxtParas(null, target);
+    // a text edition has no scanned page, so the OCR pane has nothing to show;
+    // leaving the empty "Page text (OCR)" heading there just looked broken
+    setSidePanelMode(true);
     $("reader-page-cur").textContent = "txt";
     $("reader-page-total").textContent = d.n_paragraphs + " ¶";
     // scroll to evidence passage if we came from a search hit
@@ -515,6 +536,7 @@ async function openTxtMode(bookId) {
       scrollTxtTo(Reader.pendingHighlight.text);
       Reader.pendingHighlight = null;
     }
+    applyTxtTermHighlights();
     await loadTxtAnnotations();
   } catch (e2) {
     setStatus(`No PDF or TXT for ${bookId}`);
@@ -522,15 +544,39 @@ async function openTxtMode(bookId) {
   }
 }
 
-function renderTxtParas(filterFn) {
+/* Index of the paragraph whose text contains the passage, over the full
+   data — not over what happens to be painted. */
+function findTxtParaIndex(text) {
+  const needle = (text || "").toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim().slice(0, 44);
+  if (!needle) return -1;
+  const paras = Reader.txtParas || [];
+  for (let i = 0; i < paras.length; i++) {
+    const t = (paras[i].words || []).map(w => w.w).join(" ")
+      .toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ");
+    if (t.includes(needle)) return i;
+  }
+  return -1;
+}
+
+function renderTxtParas(filterFn, centreOn = -1) {
   const body = $("reader-body");
   const host = document.createElement("div");
   host.id = "reader-txt";
   host.style.cssText = "max-width:760px;margin:0 auto;padding:28px 20px 60px";
   const paras = Reader.txtParas || [];
+  const CAP = 600;
+  // window the paint around the passage we were asked to show
+  let lo = 0, hi = CAP;
+  if (!filterFn && centreOn >= 0 && paras.length > CAP) {
+    lo = Math.max(0, centreOn - Math.floor(CAP / 2));
+    hi = Math.min(paras.length, lo + CAP);
+    lo = Math.max(0, hi - CAP);
+  }
+  Reader.txtWindow = { lo, hi, total: paras.length };
   let shown = 0;
   paras.forEach((p, i) => {
-    if (shown > 600 && !filterFn) return; // initial paint cap; use search for more
+    if (!filterFn && (i < lo || i >= hi)) return;
+    if (shown > CAP && !filterFn) return; // paint cap; use search for more
     const div = document.createElement("div");
     div.className = "txt-para";
     div.dataset.para = p.para_idx;
@@ -542,24 +588,55 @@ function renderTxtParas(filterFn) {
     shown++;
   });
   body.innerHTML = "";
+  const win = Reader.txtWindow;
+  if (win && !filterFn && (win.lo > 0 || win.hi < win.total)) {
+    const note = document.createElement("div");
+    note.className = "txt-window-note";
+    note.textContent = `showing ¶${win.lo}–¶${win.hi - 1} of ${win.total} — use the in-book search for the rest`;
+    body.appendChild(note);
+  }
   body.appendChild(host);
   wireTxtSelection(host);
   renderTxtAnnotationMarks();
 }
 
-function scrollTxtTo(text) {
-  const needle = (text || "").slice(0, 80).toLowerCase().replace(/\s+/g, " ");
+/* Word-level query highlighting for text editions.
+   PDF pages box every matching word; text editions showed nothing, so the
+   reader dropped you into a wall of prose with no marker at all. */
+function applyTxtTermHighlights() {
+  const terms = (Reader.activeTerms || []).map(t => t.toLowerCase()).filter(t => t.length > 2);
+  if (!terms.length) return;
   const host = document.getElementById("reader-txt");
   if (!host) return;
-  for (const pel of host.querySelectorAll(".txt-para")) {
-    const t = pel.textContent.toLowerCase().replace(/\s+/g, " ");
-    if (needle && t.includes(needle.slice(0, 40))) {
-      pel.scrollIntoView({ block: "center" });
-      pel.classList.add("txt-flash");
-      setTimeout(() => pel.classList.remove("txt-flash"), 3000);
-      return;
+  let n = 0;
+  for (const el of host.querySelectorAll(".txt-w")) {
+    const w = el.textContent.toLowerCase().replace(/^[^a-z0-9]+|[^a-z0-9]+$/g, "");
+    if (!w) continue;
+    if (terms.some(t => w === t || w.startsWith(t) || (t.length > 4 && w.includes(t)))) {
+      el.classList.add("txt-hit");
+      n++;
     }
   }
+  if (n) setStatus(`${n} matching words in this text`);
+}
+
+function scrollTxtTo(text) {
+  const norm = (t) => (t || "").toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+  const needle = norm(text).slice(0, 44);
+  const host = document.getElementById("reader-txt");
+  if (!host || !needle) return false;
+  host.querySelectorAll(".txt-target").forEach(e => e.classList.remove("txt-target"));
+  for (const pel of host.querySelectorAll(".txt-para")) {
+    if (norm(pel.textContent).includes(needle)) {
+      pel.scrollIntoView({ block: "center" });
+      // a 3s flash was the only marker, so anyone who looked away lost the
+      // passage in a wall of prose; the marker now stays until you open
+      // another one, the way a PDF highlight box does
+      pel.classList.add("txt-target");
+      return true;
+    }
+  }
+  return false;
 }
 
 /* word-range selection → annotation */
