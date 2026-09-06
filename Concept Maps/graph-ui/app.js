@@ -99,8 +99,15 @@ async function init() {
     return;
   }
   const d = S.data;
+  // counts come from the data so the chrome cannot drift out of step with it
+  // (the queries badge said 43 for a 42-query set)
   $("stat-nodes").textContent = d.meta.nodes;
   $("stat-edges").textContent = d.meta.edges;
+  const nq = (d.queries || []).length;
+  for (const id of ["stat-queries", "stat-queries-2"]) {
+    const el = $(id);
+    if (el) el.textContent = nq;
+  }
   for (const n of d.nodes) { S.byId.set(n.id, n); n.color = d.colors[n.top] || "#79706E"; }
   S.nodes = d.nodes;
   S.edges = d.edges;
@@ -1421,9 +1428,19 @@ function renderQueryList() {
     <div class="query-item ${S.query?.id === q.id ? "active" : ""}" data-qid="${esc(q.id)}">
       <div class="qid">${esc(q.id)}</div>
       <div class="qtext">${esc(q.text)}</div>
+      <button class="q-run" data-run="${esc(q.text)}"
+        title="Run this as a corpus search">search the corpus &rarr;</button>
     </div>`).join("") || `<p class="hint">No queries match.</p>`;
   list.querySelectorAll(".query-item").forEach(el => {
     el.onclick = () => activateQuery(el.dataset.qid);
+  });
+  // highlighting the concepts is only half of what a researcher wants from a
+  // curated query; the other half is the passages behind them
+  list.querySelectorAll(".q-run").forEach(el => {
+    el.onclick = (e) => {
+      e.stopPropagation();
+      document.dispatchEvent(new CustomEvent("atlas:search", { detail: el.dataset.run }));
+    };
   });
 }
 function activateQuery(qid) {
@@ -1498,7 +1515,8 @@ function updateStatus() {
   const e = S.simEdges.length;
   const eg = egoSet();
   const egotxt = eg ? ` · neighborhood ${eg.size}` : "";
-  $("status-text").textContent = `${n} concepts · ${e} relations · ${Math.round(S.t.k * 100)}%${egotxt}`;
+  // "157%" beside two counts read like a coverage figure; it is the zoom
+  $("status-text").textContent = `${n} concepts · ${e} relations · zoom ${Math.round(S.t.k * 100)}%${egotxt}`;
 }
 
 init();

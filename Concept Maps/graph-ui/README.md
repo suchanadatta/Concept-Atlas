@@ -1,8 +1,10 @@
 # Concept Atlas — graph view UI
 
-Interactive graph view of the **British Moral Philosophy concept corpus**
-(129 books → 203 concepts, 1102 relations, 43 test queries), built from
-`Concept Maps/final/` (the double-audited merge).
+A scholar's search system over the **British Moral Philosophy corpus**:
+129 scanned volumes plus 68 clean-text editions (197 indexed sources,
+90,975 passages, 37 authors) mapped to 202 concepts and 1,099 relations,
+built from `Concept Maps/final/` (the double-audited merge) and searched
+with a Jasper embedding index.
 
 **Live on the intranet:** `http://10.20.113.88:8788`
 
@@ -12,11 +14,19 @@ Interactive graph view of the **British Moral Philosophy concept corpus**
   hover neighborhood highlighting, drag/zoom/pan
 - **3D WebGL view** (`3D` button) — same data via Three.js force layout in 3D,
   orbit controls, label sprites, click/hover/search/query all wired
-- **Search** — label + alias matching (`/` to focus, ↑↓ + Enter)
+- **Search** — four ranking modes (hybrid, pure semantic, BM25, keyword) over
+  90,975 passages, with a refine rail (author, written-by, period, source),
+  citations rather than filenames, and `j`/`k` navigation
+- **Two query graphs** — the curated concept map, an embedding-induced passage
+  network, and an overlay of both; any node opens the reader at that passage
+- **Authors** — 37 creators with sex and life dates, joined to every source
+- **Concept search** — semantic over the concept embeddings, so a question
+  with no literal overlap still finds the right concepts
 - **Explore tab** — category toggles, importance & relation-strength sliders
   (ranges follow the actual data), cluster toggle, label density, fit/re-run
-- **Queries tab** — the 43 corpus queries; selecting one highlights its
-  top-ranked concepts (rank badges in 2D, accent coloring in 3D)
+- **Queries tab** — the 42 corpus queries; selecting one highlights its
+  top-ranked concepts (rank badges in 2D, accent coloring in 3D), and
+  "search the corpus" runs it against the passages
 - **Detail panel** — definition, aliases, category path, stats, related
   concepts grouped by relation (click to navigate), verbatim evidence quotes
   with citations (author · year · page · book)

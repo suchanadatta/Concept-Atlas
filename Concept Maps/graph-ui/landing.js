@@ -74,7 +74,18 @@
     } catch { /* library unavailable — the stats row still stands */ }
   }
 
+  /* the header tagline counts sources, which only the engine knows */
+  async function fillHeaderStats() {
+    let eng = window._engineInfo;
+    if (!eng || eng.status !== "ok") {
+      try { eng = await (await fetch("/book/api/engine")).json(); } catch { return; }
+    }
+    const el = document.getElementById("stat-books");
+    if (el && eng.books) el.textContent = eng.books;
+  }
+
   function init() {
+    fillHeaderStats();
     fillCorpus();
     // the graph data loads asynchronously; poll briefly rather than reaching
     // into app.js's load sequence
