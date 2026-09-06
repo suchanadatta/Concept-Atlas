@@ -45,6 +45,15 @@ ANN_DIR = Path("/store/shuvam/BMoral/Concept Maps/graph-ui/data/annotations")
 ANN_DIR.mkdir(parents=True, exist_ok=True)
 
 
+def _attachment(filename: str) -> str:
+    """Content-Disposition for a download. Book ids carry spaces, commas and
+    apostrophes, none of which survive a bare quoted header, so send an ASCII
+    fallback alongside the RFC 5987 UTF-8 form."""
+    ascii_name = re.sub(r"[^A-Za-z0-9._-]", "_", filename) or "download"
+    quoted = urllib.parse.quote(filename, safe="")
+    return f"attachment; filename=\"{ascii_name}\"; filename*=UTF-8''{quoted}"
+
+
 def _find_book_pdf(book_id: str):
     """Locate source PDF for a book_id."""
     for d in BOOK_DIRS:
@@ -103,6 +112,8 @@ class BookAPI:
             return BookAPI.engine_status(query)
         if path == "/book/api/library":
             return BookAPI.library()
+        if path == "/book/api/formats":
+            return BookAPI.formats(query.get("book", ""))
         if path.startswith("/book/api/export_annotations"):
             return BookAPI.export_annotations(
                 query.get("book", ""), query.get("fmt", "json")
@@ -119,17 +130,27 @@ class BookAPI:
             return BookAPI.page_text(query)
         if path.startswith("/book/pdf/"):
             return BookAPI.serve_pdf(path[len("/book/pdf/") :], query)
+        # The path arrives percent-encoded (urlparse does not decode it) and most
+        # book ids contain spaces, so the id has to be unquoted before it can be
+        # matched against a filename — serve_pdf does this internally, which is
+        # why the PDF download worked while these three 404'd on almost every book.
         if path.startswith("/book/txt/"):
+            bid = urllib.parse.unquote(path[len("/book/txt/") :])
             return BookAPI.serve_file(
-                _find_book_txt(path[len("/book/txt/") :]), "text/plain; charset=utf-8"
+                _find_book_txt(bid), "text/plain; charset=utf-8",
+                filename=f"{bid}.txt",
             )
         if path.startswith("/book/md/"):
+            bid = urllib.parse.unquote(path[len("/book/md/") :])
             return BookAPI.serve_file(
-                _find_book_md(path[len("/book/md/") :]), "text/markdown; charset=utf-8"
+                _find_book_md(bid), "text/markdown; charset=utf-8",
+                filename=f"{bid}.md",
             )
         if path.startswith("/book/jsonl/"):
+            bid = urllib.parse.unquote(path[len("/book/jsonl/") :])
             return BookAPI.serve_file(
-                _find_book_jsonl(path[len("/book/jsonl/") :]), "application/x-ndjson"
+                _find_book_jsonl(bid), "application/x-ndjson",
+                filename=f"{bid}.pages.jsonl",
             )
         return None
 
@@ -168,6 +189,39 @@ class BookAPI:
         return 200, "application/json", body
 
     @staticmethod
+    def formats(book_id: str):
+        """GET /book/api/formats?book=ID -> which downloads exist for this book.
+
+        The reader's overflow menu used to offer all four source formats for
+        every book, so you learned that a text-only edition has no scan by
+        clicking and getting an error. Four stat() calls is cheap enough to
+        answer that up front."""
+        if not book_id:
+            return 400, "application/json", b'{"error":"book required"}'
+        n = 0
+        jl = _find_book_jsonl(book_id)
+        if jl:
+            try:
+                with open(jl, "r", encoding="utf-8") as fh:
+                    n = sum(1 for _ in fh)
+            except OSError:
+                n = 0
+        return (
+            200,
+            "application/json",
+            _json.dumps(
+                {
+                    "book_id": book_id,
+                    "pdf": bool(_find_book_pdf(book_id)),
+                    "txt": bool(_find_book_txt(book_id)),
+                    "md": bool(_find_book_md(book_id)),
+                    "jsonl": bool(jl),
+                    "ocr_pages": n,
+                }
+            ).encode(),
+        )
+
+    @staticmethod
     def serve_pdf(book_id: str, query: dict):
         import urllib.parse as _up
 
@@ -180,13 +234,26 @@ class BookAPI:
                 _json.dumps({"error": f"no pdf for {book_id}"}).encode(),
             )
         data = pdf.read_bytes()
+        if query.get("dl"):
+            return (
+                200,
+                "application/pdf",
+                data,
+                {"Content-Disposition": _attachment(f"{book_id}.pdf")},
+            )
         return 200, "application/pdf", data
 
     @staticmethod
-    def serve_file(path, ctype):
+    def serve_file(path, ctype, filename=None):
+        """Serve a book file. `filename` turns it into a download rather than
+        something the browser renders in place — a text edition navigated to
+        with location.href would otherwise replace the whole app with raw text."""
         if not path or not Path(path).exists():
             return 404, "application/json", b'{"error":"not found"}'
-        return 200, ctype, Path(path).read_bytes()
+        body = Path(path).read_bytes()
+        if not filename:
+            return 200, ctype, body
+        return 200, ctype, body, {"Content-Disposition": _attachment(filename)}
 
     @staticmethod
     def page_text(query: dict):
@@ -413,13 +480,19 @@ class BookAPI:
                         f"- **{a.get('type', 'highlight')}** ({r.get('x', 0):.0f},{r.get('y', 0):.0f} {r.get('w', 0):.0f}×{r.get('h', 0):.0f}): {note}"
                     )
                 lines.append("")
-            return 200, "text/markdown; charset=utf-8", "\n".join(lines).encode()
+            return (
+                200,
+                "text/markdown; charset=utf-8",
+                "\n".join(lines).encode(),
+                {"Content-Disposition": _attachment(f"{safe}.annotations.md")},
+            )
         return (
             200,
             "application/json",
             _json.dumps(
                 {"book": book, "pages": out}, ensure_ascii=False, indent=1
             ).encode(),
+            {"Content-Disposition": _attachment(f"{safe}.annotations.json")},
         )
 
     _page_index = (
@@ -997,13 +1070,16 @@ class Handler(SimpleHTTPRequestHandler):
                 res = None
         if res is None:
             return False
-        status, ctype, body = res
+        status, ctype, body = res[0], res[1], res[2]
+        extra = res[3] if len(res) > 3 else None
         self.send_response(status)
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(len(body)))
         self.send_header("Access-Control-Allow-Origin", "*")
-        if ctype == "application/pdf":
+        if ctype == "application/pdf" and not (extra or {}).get("Content-Disposition"):
             self.send_header("Content-Disposition", "inline")
+        for k, v in (extra or {}).items():
+            self.send_header(k, v)
         self.end_headers()
         self.wfile.write(body)
         return True

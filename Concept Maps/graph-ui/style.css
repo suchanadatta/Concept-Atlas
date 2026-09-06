@@ -321,6 +321,9 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 4px 0 0;
 #reader-toolbar button.active{background:#C15B5B;border-color:#C15B5B;color:#F6F1E5}
 #reader-toolbar button:focus-visible{outline:2px solid #C15B5B;outline-offset:1px}
 .rb-icon{width:30px;padding:0 !important}
+/* text editions disable the page and zoom controls; show that */
+.rb[disabled]{opacity:.32;cursor:not-allowed}
+#reader-jump[disabled]{opacity:.4;cursor:not-allowed}
 #reader-close{font-size:19px;line-height:1}
 .reader-title{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
   font-family:"EB Garamond",serif;font-size:14.5px;color:#D8D2C4}
@@ -371,6 +374,49 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 4px 0 0;
   background:transparent !important;border-color:transparent !important;font-size:12.5px;
   padding:0 8px !important;height:27px !important}
 .rmenu-pop button:hover{background:#3A362E !important}
+/* a format this edition does not have */
+.rmenu-pop button[disabled]{opacity:.34;cursor:not-allowed}
+.rmenu-pop button[disabled]:hover{background:transparent !important}
+
+/* the add-to-context popover, in place of a native prompt() */
+/* a long title would otherwise stretch the popover past the toolbar */
+.ctx-pop{min-width:286px;max-width:320px;padding:6px 6px 7px}
+.ctx-what{padding:2px 8px 7px;font-family:"EB Garamond",serif;font-size:13.5px;
+  color:#E8E2D5;line-height:1.35;border-bottom:1px solid #3D382F;margin-bottom:5px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ctx-opt{display:flex;align-items:center;gap:7px;padding:5px 8px;border-radius:6px;
+  font-size:12.5px;color:#D6CFC0;cursor:pointer}
+.ctx-opt:hover{background:#3A362E}
+.ctx-opt input[type=radio],.ctx-opt input[type=checkbox]{accent-color:#B08A4A;margin:0;cursor:pointer}
+.ctx-opt b{font-weight:500;color:#8B8375;font-variant-numeric:tabular-nums}
+.ctx-opt.off{opacity:.35;cursor:not-allowed}
+.ctx-opt.off:hover{background:transparent}
+.ctx-num{width:52px;height:22px;background:#211F1B;border:1px solid #4A443A;border-radius:5px;
+  color:#E8E2D5;font-size:12px;padding:0 5px;font-variant-numeric:tabular-nums}
+.ctx-dash{color:#8B8375}
+#ctx-notes-row{border-top:1px solid #3D382F;margin-top:4px;padding-top:8px}
+#ctx-notes-row.hidden{display:none}
+.ctx-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:8px 8px 2px;margin-top:4px;border-top:1px solid #3D382F}
+.ctx-est{font-size:11px;color:#8B8375}
+/* .rmenu-pop button is styled as a flush menu row; the Add button is not one */
+.ctx-foot button{display:inline-flex !important;width:auto !important;
+  justify-content:center !important;background:#B08A4A !important;color:#211F1B !important;
+  border:1px solid #B08A4A !important;border-radius:6px;font-weight:600;
+  padding:0 13px !important;height:25px !important;flex:none}
+.ctx-foot button:hover{background:#C29A55 !important;border-color:#C29A55 !important}
+@media (max-width:620px){ .ctx-pop{min-width:0;width:min(300px,calc(100vw - 24px))} }
+
+/* transient confirmation for the download/export actions, which otherwise gave
+   no sign whether a file was on its way or missing */
+#reader-toast{position:absolute;left:50%;bottom:22px;transform:translate(-50%,14px);
+  z-index:30;max-width:min(520px,86%);padding:9px 15px;border-radius:7px;
+  background:#2E2A24;border:1px solid #494336;color:#E8E2D5;font-size:12.5px;
+  line-height:1.45;box-shadow:0 6px 22px rgba(0,0,0,.45);
+  opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease}
+#reader-toast.show{opacity:1;transform:translate(-50%,0)}
+#reader-toast.ok{border-color:#5B7A4F}
+#reader-toast.err{border-color:#8C4A3F;background:#3A2622}
 
 /* the veil covers the OLD source the instant a new one is requested, so the
    reader never shows one book while loading another */

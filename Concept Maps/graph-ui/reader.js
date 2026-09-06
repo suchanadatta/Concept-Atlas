@@ -7,7 +7,7 @@ const Reader = {
   pdf: null,
   pageNum: 1,
   numPages: 0,
-  scale: 1.6,
+  scale: 1,        // multiplier of the fitted scale; 1 = fit
   highlights: [],       // [{page, bbox_pts, concept_id, text}]
   annotations: {},      // page -> [{id,type,rect,note,ts}]
   pdfDoc: null,
@@ -40,9 +40,23 @@ async function readerInit() {
 }
 
 /* ————— open the reader for a book, optionally jumping to a page+highlight ————— */
+/* Both toolbar popovers describe the book that is open — the overflow menu
+   which formats it has, the context popover its page count. Left open across a
+   switch they describe the previous book, so a new source closes them. */
+function closeReaderPopovers() {
+  [["reader-more-menu", "reader-more"], ["reader-ctx-menu", "reader-ctx"]].forEach(([pid, bid]) => {
+    const pop = $(pid), btn = $(bid);
+    if (pop) pop.classList.add("hidden");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  });
+  // the custom range belongs to the book it was typed for
+  if ($("ctx-from")) { $("ctx-from").value = ""; $("ctx-to").value = ""; }
+}
+
 function showReaderShell() {
   const el = $("reader");
   el.classList.remove("hidden");
+  closeReaderPopovers();
   // split-reading: when results view is open, reader slides in as the right
   // half (results shrink left) instead of covering the whole screen
   const resultsOpen = !$("gres")?.classList.contains("hidden") || !$("landing")?.classList.contains("hidden");
@@ -55,12 +69,18 @@ function showReaderShell() {
   const _c = window.Cite ? Cite.parse(Reader.bookId) : null;
   $("reader-title").textContent = _c && _c.cite ? _c.cite : Reader.bookId;
   $("reader-title").title = Reader.bookId;
-  $("reader-download-pdf").onclick = () => { location.href = `/book/pdf/${encodeURIComponent(Reader.bookId)}`; };
-  $("reader-download-txt").onclick = () => { location.href = `/book/txt/${encodeURIComponent(Reader.bookId)}`; };
-  $("reader-download-md").onclick = () => { location.href = `/book/md/${encodeURIComponent(Reader.bookId)}`; };
-  $("reader-download-jsonl").onclick = () => { location.href = `/book/jsonl/${encodeURIComponent(Reader.bookId)}`; };
-  $("reader-export-json").onclick = () => { location.href = `/book/api/export_annotations?book=${encodeURIComponent(Reader.bookId)}&fmt=json`; };
-  $("reader-export-md").onclick = () => { location.href = `/book/api/export_annotations?book=${encodeURIComponent(Reader.bookId)}&fmt=markdown`; };
+  const bid = () => encodeURIComponent(Reader.bookId);
+  $("reader-download-pdf").onclick = () => readerDownload(`/book/pdf/${bid()}?dl=1`, "PDF scan");
+  $("reader-download-txt").onclick = () => readerDownload(`/book/txt/${bid()}`, "plain text");
+  $("reader-download-md").onclick = () => readerDownload(`/book/md/${bid()}`, "Markdown");
+  $("reader-download-jsonl").onclick = () => readerDownload(`/book/jsonl/${bid()}`, "OCR JSONL");
+  $("reader-export-json").onclick = () =>
+    readerDownload(`/book/api/export_annotations?book=${bid()}&fmt=json`, "annotations (JSON)");
+  $("reader-export-md").onclick = () =>
+    readerDownload(`/book/api/export_annotations?book=${bid()}&fmt=markdown`, "annotations (Markdown)");
+  // stash the real tooltips before the mode switcher rewrites them
+  ["reader-prev", "reader-next", "reader-zoom-in", "reader-zoom-out", "reader-zoom-fit"]
+    .forEach((id) => { const b = $(id); if (b && !b.dataset.title) b.dataset.title = b.title; });
   $("reader-close").onclick = () => {
     if (window.closeReader) window.closeReader();
     else closeReader();
@@ -68,9 +88,9 @@ function showReaderShell() {
   $("reader-prev").onclick = () => gotoPage(Reader.pageNum - 1);
   $("reader-next").onclick = () => gotoPage(Reader.pageNum + 1);
   $("reader-jump").onchange = (e) => gotoPage(parseInt(e.target.value, 10) || 1);
-  $("reader-zoom-in").onclick = () => { Reader.userZoom = true; Reader.scale = Math.min(4, Reader.scale * 1.2); renderReaderPage(); };
-  $("reader-zoom-out").onclick = () => { Reader.userZoom = true; Reader.scale = Math.max(0.25, Reader.scale / 1.2); renderReaderPage(); };
-  $("reader-zoom-fit").onclick = () => { Reader.userZoom = false; Reader.scale = 1; renderReaderPage(); };
+  $("reader-zoom-in").onclick = () => readerZoom(1.2);
+  $("reader-zoom-out").onclick = () => readerZoom(1 / 1.2);
+  $("reader-zoom-fit").onclick = () => readerZoomFit();
   $("reader-annot-toggle").onclick = toggleAnnotMode;
   $("reader-search-go").onclick = doBookSearch;
   $("reader-search").onkeydown = (e) => { if (e.key === "Enter") doBookSearch(); };
@@ -80,32 +100,147 @@ function showReaderShell() {
 }
 
 /* Attaching what you are reading is the commonest way to build context, so it
-   is a button in the reader rather than only a row in the picker. */
+   is a button in the reader rather than only a row in the picker.
+
+   This used to be a native prompt() asking you to type "1", "2", "3" or a range
+   — blocking, unreadable on a phone, and it hid what you were actually about to
+   attach. It is now a popover that names the book, offers the sensible ranges
+   with their real page numbers, clamps a custom range to the book, and says how
+   many pages are going in before you commit. */
+function ctxRangeChoice() {
+  const page = Reader.txtMode ? null : Reader.pageNum;
+  const n = Reader.numPages || 0;
+  const pick = document.querySelector('#reader-ctx-menu input[name="ctxrange"]:checked');
+  const mode = Reader.txtMode ? "all" : (pick ? pick.value : "page");
+  if (mode === "all" || page == null) return { from: null, to: null, pages: n || null };
+  if (mode === "page") return { from: page, to: page, pages: 1 };
+  if (mode === "near") {
+    const f = Math.max(1, page - 5), t = Math.min(n || page + 5, page + 5);
+    return { from: f, to: t, pages: t - f + 1 };
+  }
+  // custom: clamp to the book and tolerate a reversed range
+  let f = parseInt($("ctx-from").value, 10);
+  let t = parseInt($("ctx-to").value, 10);
+  if (!Number.isFinite(f) && !Number.isFinite(t)) return null;
+  if (!Number.isFinite(f)) f = t;
+  if (!Number.isFinite(t)) t = f;
+  if (f > t) [f, t] = [t, f];
+  f = clamp(f, 1, n || f);
+  t = clamp(t, 1, n || t);
+  return { from: f, to: t, pages: t - f + 1 };
+}
+
+function paintCtxMenu() {
+  const c = window.Cite ? Cite.parse(Reader.bookId) : null;
+  const label = (c && c.cite) || Reader.bookId;
+  const page = Reader.txtMode ? null : Reader.pageNum;
+  const n = Reader.numPages || 0;
+  $("ctx-what").textContent = label;
+  $("ctx-what").title = Reader.bookId;
+
+  // a text edition has no pages, so only "whole book" is meaningful
+  document.querySelectorAll('#reader-ctx-menu input[name="ctxrange"]').forEach((r) => {
+    const only = Reader.txtMode;
+    r.disabled = only && r.value !== "all";
+    if (only && r.value === "all") r.checked = true;
+    r.closest(".ctx-opt").classList.toggle("off", r.disabled);
+  });
+  $("ctx-p1").textContent = page ? `(p. ${page})` : "";
+  $("ctx-p2").textContent = page
+    ? `(pp. ${Math.max(1, page - 5)}\u2013${Math.min(n || page + 5, page + 5)})`
+    : "";
+  $("ctx-p3").textContent = Reader.txtMode
+    ? "(full text)"
+    : (n ? `(${n} pages)` : "");
+  if (!$("ctx-from").value && page) {
+    $("ctx-from").value = Math.max(1, page - 5);
+    $("ctx-to").value = Math.min(n || page + 5, page + 5);
+  }
+  [$("ctx-from"), $("ctx-to")].forEach((i) => { if (n) i.max = n; });
+
+  const notes = (Reader.annotations && Object.values(Reader.annotations)
+    .reduce((a, v) => a + (v ? v.length : 0), 0)) || 0;
+  $("ctx-notes-row").classList.toggle("hidden", notes === 0);
+  $("ctx-notes-row").querySelector("span").textContent =
+    `Also attach my ${notes} note${notes === 1 ? "" : "s"} on this book`;
+
+  const r = ctxRangeChoice();
+  $("ctx-est").textContent = !r
+    ? "enter a range"
+    : (r.from == null
+        ? (Reader.txtMode ? "the whole text" : `all ${n} pages`)
+        : (r.pages === 1 ? "1 page" : `${r.pages} pages`));
+}
+
 function wireCtxButton() {
-  const btn = $("reader-ctx");
-  if (!btn || btn._wired) return;
+  const btn = $("reader-ctx"), pop = $("reader-ctx-menu");
+  if (!btn || !pop || btn._wired) return;
   btn._wired = true;
-  btn.onclick = () => {
-    if (!window.Chat) return;
+  const close = () => { pop.classList.add("hidden"); btn.setAttribute("aria-expanded", "false"); };
+
+  btn.onclick = (e) => {
+    e.stopPropagation();
+    const show = pop.classList.contains("hidden");
+    if (show) paintCtxMenu();
+    pop.classList.toggle("hidden", !show);
+    btn.setAttribute("aria-expanded", String(show));
+  };
+  pop.addEventListener("click", (e) => e.stopPropagation());
+  pop.addEventListener("input", paintCtxMenu);
+  // typing in the number boxes should select the custom row, not fight it
+  ["ctx-from", "ctx-to"].forEach((id) => {
+    const i = $(id);
+    if (i) i.addEventListener("focus", () => {
+      const c = document.querySelector('#reader-ctx-menu input[value="custom"]');
+      if (c && !c.disabled) { c.checked = true; paintCtxMenu(); }
+    });
+  });
+  document.addEventListener("click", (e) => {
+    if (!pop.classList.contains("hidden") && !pop.contains(e.target) && e.target !== btn) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !pop.classList.contains("hidden")) { e.stopPropagation(); close(); }
+  }, true);
+
+  $("ctx-add").onclick = async () => {
+    if (!window.Chat) { readerToast("The chat is not available", "err"); return; }
+    const r = ctxRangeChoice();
+    if (!r) { readerToast("Enter a page range first", "err"); return; }
     const c = window.Cite ? Cite.parse(Reader.bookId) : null;
     const label = (c && c.cite) || Reader.bookId;
-    const page = Reader.txtMode ? null : Reader.pageNum;
-    const choice = page
-      ? prompt(
-          `Attach to the chat context:\n\n` +
-          `  1  this page (${page})\n` +
-          `  2  pages ${Math.max(1, page - 5)}–${Math.min(Reader.numPages, page + 5)}\n` +
-          `  3  the whole book (${Reader.numPages} pages)\n\n` +
-          `Enter 1, 2 or 3 — or a range like 40-60:`, "2")
-      : "3";
-    if (!choice) return;
-    let from = null, to = null;
-    const m = String(choice).match(/^\s*(\d+)\s*[-–]\s*(\d+)\s*$/);
-    if (m) { from = +m[1]; to = +m[2]; }
-    else if (choice.trim() === "1") { from = page; to = page; }
-    else if (choice.trim() === "2") { from = Math.max(1, page - 5); to = Math.min(Reader.numPages, page + 5); }
-    else if (choice.trim() !== "3") return;
-    Chat.addContext([{ kind: "book", book_id: Reader.bookId, label, page_from: from, page_to: to }]);
+    const items = [{
+      kind: "book", book_id: Reader.bookId, label,
+      page_from: r.from, page_to: r.to,
+    }];
+    if ($("ctx-notes").checked) {
+      const lines = [];
+      Object.keys(Reader.annotations || {}).sort((a, b) => a - b).forEach((pg) => {
+        (Reader.annotations[pg] || []).forEach((a) => {
+          if (a.note) lines.push(`p. ${pg}: ${a.note}`);
+        });
+      });
+      if (lines.length) {
+        items.push({ kind: "note", label: `My notes — ${label}`, text: lines.join("\n") });
+      }
+    }
+    close();
+    // addContext opens the sign-in panel when there is no session; say so
+    // rather than claiming the pages were attached
+    if (!Chat.user) {
+      await Chat.addContext(items);
+      readerToast("Sign in to build a chat context", "err");
+      return;
+    }
+    try {
+      await Chat.addContext(items);
+      readerToast(
+        r.from == null
+          ? `Added the whole of ${label} to the chat context`
+          : `Added ${label}, ${r.pages === 1 ? `p. ${r.from}` : `pp. ${r.from}\u2013${r.to}`}`,
+        "ok");
+    } catch (err) {
+      readerToast(`Could not add to the context: ${err.message}`, "err");
+    }
   };
 }
 
@@ -142,6 +277,24 @@ function wireSideToggle() {
    finished streaming, so the reader showed one text while claiming another.
    The veil goes up synchronously on the click and only comes down when the
    new source has actually painted. */
+/* One zoom implementation for the buttons and the keys. Stepping from the
+   FITTED view (multiplier 1) rather than from whatever the multiplier happened
+   to be is what makes the first press read 120% instead of 192%. */
+function readerZoom(factor) {
+  if (Reader.txtMode) return;              // a text edition has nothing to scale
+  if (!Reader.userZoom) Reader.scale = 1;  // start from what is on screen
+  Reader.userZoom = true;
+  Reader.scale = Math.max(0.25, Math.min(4, Reader.scale * factor));
+  renderReaderPage();
+}
+
+function readerZoomFit() {
+  if (Reader.txtMode) return;
+  Reader.userZoom = false;
+  Reader.scale = 1;
+  renderReaderPage();
+}
+
 function setReaderPage(n) {
   const el = $("reader-jump");
   if (!el) return;
@@ -162,6 +315,96 @@ function readerVeilDown() {
 }
 window.readerVeil = readerVeil;
 
+/* Downloads used to be `location.href = url`. Three problems: a text edition
+   is text/plain, so the browser rendered it *in place of the whole app*; a 404
+   navigated to a bare JSON error; and either way there was no sign anything
+   had happened. Fetch it, report what went wrong, and save it under the name
+   the server asks for. */
+function readerToast(msg, kind) {
+  let t = $("reader-toast");
+  if (!t) {
+    t = document.createElement("div");
+    t.id = "reader-toast";
+    ($("reader") || document.body).appendChild(t);
+  }
+  t.textContent = msg;
+  t.className = "show" + (kind ? " " + kind : "");
+  clearTimeout(t._hide);
+  t._hide = setTimeout(() => { t.className = ""; }, kind === "err" ? 5000 : 2600);
+}
+
+function filenameFrom(disposition, fallback) {
+  const m = /filename\*=UTF-8''([^;]+)/i.exec(disposition || "");
+  if (m) { try { return decodeURIComponent(m[1]); } catch (e) { /* fall through */ } }
+  const q = /filename="([^"]+)"/i.exec(disposition || "");
+  return q ? q[1] : fallback;
+}
+
+async function readerDownload(url, label) {
+  readerToast(`Preparing ${label}\u2026`);
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      let why = `HTTP ${res.status}`;
+      try { const j = await res.json(); if (j && j.error) why = j.error; } catch (e) { /* not json */ }
+      readerToast(`No ${label} for this book (${why})`, "err");
+      return;
+    }
+    const blob = await res.blob();
+    const name = filenameFrom(res.headers.get("Content-Disposition"), `${Reader.bookId}`);
+    const href = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = href;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(href), 30000);
+    readerToast(`Saved ${name}`, "ok");
+  } catch (e) {
+    readerToast(`Could not download the ${label}: ${e.message}`, "err");
+  }
+}
+
+/* Which of the four source formats this book actually has. The menu offered
+   all four regardless, so you found out that a text-only edition has no scan
+   by clicking and reading an error. Cached per book. */
+const READER_FORMATS = new Map();
+
+async function readerFormats(bookId) {
+  if (READER_FORMATS.has(bookId)) return READER_FORMATS.get(bookId);
+  try {
+    const res = await fetch(`/book/api/formats?book=${encodeURIComponent(bookId)}`);
+    if (!res.ok) throw new Error("formats " + res.status);
+    const d = await res.json();
+    READER_FORMATS.set(bookId, d);
+    return d;
+  } catch (e) {
+    return null;   // unknown: leave every row enabled rather than lie
+  }
+}
+
+async function paintMoreMenu() {
+  const rows = {
+    pdf: "reader-download-pdf",
+    txt: "reader-download-txt",
+    md: "reader-download-md",
+    jsonl: "reader-download-jsonl",
+  };
+  const book = Reader.bookId;
+  Object.values(rows).forEach((id) => { const b = $(id); if (b) { b.disabled = false; b.title = ""; } });
+  const f = await readerFormats(book);
+  if (!f || book !== Reader.bookId) return;
+  Object.entries(rows).forEach(([k, id]) => {
+    const b = $(id);
+    if (!b) return;
+    b.disabled = !f[k];
+    b.title = f[k] ? "" : "This edition has no " + k.toUpperCase();
+  });
+  const jl = $("reader-download-jsonl");
+  if (jl && f.jsonl && f.ocr_pages) jl.title = `${f.ocr_pages} OCR pages with word geometry`;
+}
+
 function wireMoreMenu() {
   const btn = $("reader-more"), pop = $("reader-more-menu");
   if (!btn || !pop || btn._wired) return;
@@ -172,15 +415,40 @@ function wireMoreMenu() {
     const show = pop.classList.contains("hidden");
     pop.classList.toggle("hidden", !show);
     btn.setAttribute("aria-expanded", String(show));
+    if (show) paintMoreMenu();
   };
   document.addEventListener("click", (e) => {
     if (!pop.classList.contains("hidden") && !pop.contains(e.target) && e.target !== btn) close();
   });
-  pop.querySelectorAll("button").forEach(b => b.addEventListener("click", close));
+  pop.querySelectorAll("button").forEach(b => b.addEventListener("click", (e) => {
+    if (b.disabled) { e.stopPropagation(); return; }
+    close();
+  }));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); }, true);
 }
 /* The side pane serves a scan (annotations + the page's OCR text) and a text
    edition (annotations only) differently. */
+/* A text edition has no scanned pages and nothing to scale, so the page and
+   zoom controls cannot do anything there. They used to stay lit anyway: ‹ and ›
+   called gotoPage against a null PDF, and the zoom buttons silently returned —
+   a button that looks live and does nothing reads as a broken viewer. */
+function setToolbarMode(txt) {
+  const off = ["reader-prev", "reader-next", "reader-zoom-in", "reader-zoom-out", "reader-zoom-fit"];
+  off.forEach((id) => {
+    const b = $(id);
+    if (!b) return;
+    b.disabled = !!txt;
+    b.title = txt
+      ? "Not available for a text edition (no scanned pages)"
+      : (b.dataset.title || b.title);
+    if (!txt && b.dataset.title) b.title = b.dataset.title;
+  });
+  const lbl = $("reader-zoom-label");
+  if (lbl && txt) lbl.textContent = "text";
+  const ann = $("reader-annot-toggle");
+  if (ann) ann.title = txt ? "Select words to annotate" : "Draw annotations";
+}
+
 function setSidePanelMode(txt) {
   const annT = $("reader-side-ann-title");
   const ocrT = $("reader-ocr-title");
@@ -204,6 +472,7 @@ async function openReader(bookId, opts = {}) {
   Reader.txtMode = false;
   Reader.pendingHighlight = opts.highlight || null;
   Reader.pageNum = opts.page || 1;
+  if (Reader._loadedFor !== bookId) { Reader.userZoom = false; Reader.scale = 1; }
   showReaderShell();
   const cite = window.Cite ? Cite.parse(bookId) : null;
   readerVeil(
@@ -225,6 +494,7 @@ async function openReader(bookId, opts = {}) {
     $("reader-page-total").textContent = Reader.numPages;
     $("reader-jump").max = Reader.numPages;
     $("reader-jump").disabled = false;
+    setToolbarMode(false);
     $("reader-jump").placeholder = "";
     // restore the page-wrap markup (loading screen replaced it)
     $("reader-body").innerHTML = `
@@ -306,6 +576,7 @@ function clearSplit() {
 })();
 
 async function gotoPage(p) {
+  if (Reader.txtMode) return;   // no pages to go to; Reader.pdfDoc is null here
   p = clamp(p, 1, Reader.numPages);
   const token = readerBump();   // invalidates any in-flight load for the old page
   Reader.pageNum = p;
@@ -603,11 +874,18 @@ document.addEventListener("keydown", (e) => {
   if (!Reader.open) return;
   const tag = document.activeElement?.tagName;
   if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+  const page = (d) => { if (!Reader.txtMode) gotoPage(Reader.pageNum + d); };
   if (e.key === "Escape") { closeReader(); }
-  else if (e.key === "ArrowLeft" || e.key === "PageUp") { gotoPage(Reader.pageNum - 1); }
-  else if (e.key === "ArrowRight" || e.key === "PageDown") { gotoPage(Reader.pageNum + 1); }
-  else if (e.key === "+" || e.key === "=") { Reader.userZoom = true; Reader.scale = Math.min(4, Reader.scale * 1.2); renderReaderPage(); }
-  else if (e.key === "-") { Reader.userZoom = true; Reader.scale = Math.max(0.25, Reader.scale / 1.2); renderReaderPage(); }
+  else if (e.key === "ArrowLeft" || e.key === "PageUp") { page(-1); }
+  else if (e.key === "ArrowRight" || e.key === "PageDown") { page(1); }
+  else if (e.key === "Home" && !Reader.txtMode) { gotoPage(1); }
+  else if (e.key === "End" && !Reader.txtMode) { gotoPage(Reader.numPages); }
+  else if (e.key === "+" || e.key === "=") { readerZoom(1.2); }
+  else if (e.key === "-" || e.key === "_") { readerZoom(1 / 1.2); }
+  else if (e.key === "0") { readerZoomFit(); }   // the help promised this and
+                                                 // nothing implemented it
+  else return;                            // not ours: leave it alone
+  e.preventDefault();
 });
 
 /* TXT reading mode: paragraph-structured with word-level spans for annotation.
@@ -618,6 +896,16 @@ Reader.txtParas = null;
 async function openTxtMode(bookId) {
   Reader.txtMode = true;
   Reader.txtParas = null;
+  // Every call site set Reader.bookId itself before calling in; the function
+  // takes the id, so it owns it. Otherwise one forgetful caller leaves the
+  // toolbar, downloads, annotations and add-to-context pointing at whatever
+  // book was open before.
+  Reader.bookId = bookId;
+  Reader.open = true;
+  // showReaderShell also wires the toolbar (downloads, add-to-context, the
+  // overflow menu), so skipping it left a text edition with dead buttons. It
+  // is idempotent, so the callers that already call it are unaffected.
+  showReaderShell();
   const _c = window.Cite ? Cite.parse(bookId) : null;
   readerVeil((_c && _c.cite) || bookId, "loading the text edition…");
   try {
@@ -638,6 +926,7 @@ async function openTxtMode(bookId) {
     setSidePanelMode(true);
     setReaderPage("");
     $("reader-jump").disabled = true;         // a text edition has no pages
+    setToolbarMode(true);
     $("reader-jump").placeholder = "txt";
     $("reader-page-total").textContent = d.n_paragraphs + " ¶";
     // scroll to evidence passage if we came from a search hit
@@ -885,15 +1174,6 @@ function openEvidenceInReader(evidence) {
   });
 }
 
-/* ————— keyboard shortcuts ————— */
-document.addEventListener("keydown", (e) => {
-  if (!Reader.open) return;
-  // don't hijack typing in inputs
-  const tag = document.activeElement?.tagName;
-  if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
-  if (e.key === "Escape") { closeReader(); }
-  else if (e.key === "ArrowLeft" || e.key === "PageUp") { gotoPage(Reader.pageNum - 1); }
-  else if (e.key === "ArrowRight" || e.key === "PageDown") { gotoPage(Reader.pageNum + 1); }
-  else if (e.key === "+" || e.key === "=") { Reader.userZoom = true; Reader.scale = Math.min(4, Reader.scale * 1.2); renderReaderPage(); }
-  else if (e.key === "-") { Reader.userZoom = true; Reader.scale = Math.max(0.25, Reader.scale / 1.2); renderReaderPage(); }
-});
+/* The keyboard handler further up was registered a SECOND time here, so every
+   key acted twice: ArrowRight advanced two pages and "+" zoomed by 1.2
+   squared. One listener only. */

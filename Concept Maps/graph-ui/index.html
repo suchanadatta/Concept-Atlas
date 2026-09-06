@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 <title>Concept Atlas — British Moral Philosophy</title>
 <link rel="stylesheet" href="vendor/fonts.css">
-<link rel="stylesheet" href="style.css?v=1788717621">
+<link rel="stylesheet" href="style.css?v=1788717937">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C15B5B'/%3E%3Ccircle cx='6' cy='8' r='3.4' fill='%234E79A7'/%3E%3Ccircle cx='26' cy='7' r='3' fill='%235FA052'/%3E%3Ccircle cx='25' cy='25' r='3.2' fill='%23D9A441'/%3E%3Cpath d='M16 16L6 8M16 16L26 7M16 16L25 25' stroke='%23948B7B' stroke-width='1'/%3E%3C/svg%3E">
 </head>
 <body>
-<script src="theme.js?v=1788717621"></script>
-<script src="nav.js?v=1788717621"></script>
+<script src="theme.js?v=1788717937"></script>
+<script src="nav.js?v=1788717937"></script>
 <!-- One global bar across every view: identity, the three places the app
      actually goes, and the account. Before this there were three disjoint
      navigation surfaces (landing, results, graph) and the account lived
@@ -165,7 +165,25 @@
 
       <button id="reader-annot-toggle" class="rb rb-icon" title="Draw annotations" aria-label="Draw annotations">&#9998;</button>
       <button id="reader-side-toggle" class="rb rb-icon" title="Show / hide the notes &amp; page-text pane" aria-label="Toggle side pane">&#9707;</button>
-      <button id="reader-ctx" class="rb rb-icon" title="Attach this book or page to the chat context" aria-label="Add to chat context">&#128172;</button>
+      <span class="rmenu">
+        <button id="reader-ctx" class="rb rb-icon" title="Attach this book or page to the chat context" aria-haspopup="true" aria-expanded="false" aria-label="Add to chat context">&#128172;</button>
+        <div id="reader-ctx-menu" class="rmenu-pop ctx-pop hidden" role="dialog" aria-label="Add to chat context">
+          <div class="rmenu-h">Add to the chat context</div>
+          <div id="ctx-what" class="ctx-what">&#8211;</div>
+          <label class="ctx-opt"><input type="radio" name="ctxrange" value="page" checked><span>This page <b id="ctx-p1">&#8211;</b></span></label>
+          <label class="ctx-opt"><input type="radio" name="ctxrange" value="near"><span>Around it <b id="ctx-p2">&#8211;</b></span></label>
+          <label class="ctx-opt"><input type="radio" name="ctxrange" value="all"><span>Whole book <b id="ctx-p3">&#8211;</b></span></label>
+          <label class="ctx-opt"><input type="radio" name="ctxrange" value="custom"><span>Pages</span>
+            <input id="ctx-from" class="ctx-num" type="number" min="1" aria-label="From page">
+            <span class="ctx-dash">&#8211;</span>
+            <input id="ctx-to" class="ctx-num" type="number" min="1" aria-label="To page"></label>
+          <label class="ctx-opt" id="ctx-notes-row"><input type="checkbox" id="ctx-notes"><span>Also attach my notes on this book</span></label>
+          <div class="ctx-foot">
+            <span id="ctx-est" class="ctx-est"></span>
+            <button id="ctx-add" class="rb rb-go">Add</button>
+          </div>
+        </div>
+      </span>
 
       <span class="rmenu">
         <button id="reader-more" class="rb rb-icon" title="Downloads &amp; exports" aria-haspopup="true" aria-expanded="false">&#8943;</button>
@@ -232,7 +250,8 @@
         <tr><td>Enter</td><td>results: open the selected passage &#183;
           concept map: search the whole corpus for what you typed</td></tr>
         <tr><td>&#8592; &#8594;</td><td>reader: previous / next page</td></tr>
-        <tr><td>+ &#8722;</td><td>reader: zoom &#183; <b>0</b> fits the page</td></tr>
+        <tr><td>+ &#8722; 0</td><td>reader: zoom in, out, fit the page</td></tr>
+        <tr><td>Home / End</td><td>reader: first / last page</td></tr>
         <tr><td>Esc</td><td>close the top panel, then the one beneath it</td></tr>
 
         <tr><td colspan="2" class="help-sec">In the results</td></tr>
@@ -462,17 +481,17 @@
 <script src="vendor/3d-force-graph.min.js"></script>
 <script src="vendor/pdfjs/pdf.min.js"></script>
 <script>pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdfjs/pdf.worker.min.js";</script>
-<script src="cite.js?v=1788717621"></script>
-<script src="chat.js?v=1788717621"></script>
-<script src="authors.js?v=1788717621"></script>
-<script src="app.js?v=1788717621"></script>
-<script src="reader.js?v=1788717621"></script>
-<script src="compare.js?v=1788717621"></script>
-<script src="landing.js?v=1788717621"></script>
-<script src="search.js?v=1788717621"></script>
-<script src="floatgraph.js?v=1788717621"></script>
-<script src="dyngraph.js?v=1788717621"></script>
-<script src="settings.js?v=1788717621"></script>
+<script src="cite.js?v=1788717937"></script>
+<script src="chat.js?v=1788717937"></script>
+<script src="authors.js?v=1788717937"></script>
+<script src="app.js?v=1788717937"></script>
+<script src="reader.js?v=1788717937"></script>
+<script src="compare.js?v=1788717937"></script>
+<script src="landing.js?v=1788717937"></script>
+<script src="search.js?v=1788717937"></script>
+<script src="floatgraph.js?v=1788717937"></script>
+<script src="dyngraph.js?v=1788717937"></script>
+<script src="settings.js?v=1788717937"></script>
 <script type="module" src="labels3d.mjs"></script>
 </body>
 </html>
