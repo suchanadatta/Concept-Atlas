@@ -69,3 +69,6 @@ Unlimited-OCR/
 # (rebuild via tools/build_jasper_index_v2.py)
 models/jasper_index_v2/
 session-ses_*.md
+
+# chat store: user accounts, transcripts and their context are per-deployment
+data/atlas_chat/

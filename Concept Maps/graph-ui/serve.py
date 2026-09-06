@@ -720,6 +720,44 @@ class BookAPI:
         """Side-by-side of 2-4 concepts or free-text ideas across the corpus."""
         return BookAPI._jasper("/compare", body, timeout=120)
 
+    # ---- chat / accounts / sessions (atlas_chat_server on :8793) ----
+    CHAT = "http://127.0.0.1:8793"
+
+    @staticmethod
+    def chat_proxy(path: str, method: str, body: bytes, token: str, timeout: int = 120):
+        """Forward a chat/account call, carrying the caller's auth token.
+
+        Same reason as the Jasper proxies: 127.0.0.1 resolves to the client's
+        own machine, so every intranet browser must go through :8788.
+        """
+        import urllib.request as _urllib
+
+        headers = {"Content-Type": "application/json"}
+        if token:
+            headers["X-Atlas-Token"] = token
+        try:
+            req = _urllib.Request(
+                f"{BookAPI.CHAT}{path}",
+                data=body if method == "POST" else None,
+                headers=headers,
+                method=method,
+            )
+            with _urllib.urlopen(req, timeout=timeout) as resp:
+                ctype = resp.headers.get("Content-Type", "application/json")
+                disp = resp.headers.get("Content-Disposition")
+                data = resp.read()
+            extra = {"Content-Disposition": disp} if disp else None
+            return 200, ctype, data, extra
+        except _urllib.HTTPError as e:  # pass the service's own error through
+            return e.code, "application/json", e.read() or b"{}", None
+        except Exception as e:
+            return (
+                502,
+                "application/json",
+                _json.dumps({"error": f"chat backend unavailable: {e}"}).encode(),
+                None,
+            )
+
     @staticmethod
     def authors(query: dict):
         """GET /book/api/authors — the author registry joined to the corpus
@@ -851,6 +889,25 @@ class Handler(SimpleHTTPRequestHandler):
         parsed = urllib.parse.urlparse(self.path)
         path = parsed.path
         query = {k: v[0] for k, v in urllib.parse.parse_qs(parsed.query).items()}
+        # chat / accounts / sessions live in their own service; these need the
+        # caller's token and, for /chat itself, an unbuffered stream
+        if path.startswith("/book/api/chat/"):
+            sub = "/" + path[len("/book/api/chat/"):]
+            token = self.headers.get("X-Atlas-Token", "")
+            if sub == "/chat" and method == "POST":
+                return self._stream_chat(token)
+            length = int(self.headers.get("Content-Length", 0) or 0)
+            body = self.rfile.read(length) if (method == "POST" and length) else b"{}"
+            status, ctype, data, extra = BookAPI.chat_proxy(sub, method, body, token)
+            self.send_response(status)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Content-Length", str(len(data)))
+            self.send_header("Access-Control-Allow-Origin", "*")
+            for k, v in (extra or {}).items():
+                self.send_header(k, v)
+            self.end_headers()
+            self.wfile.write(data)
+            return True
         if method == "GET":
             res = BookAPI.handle(path, query)
         else:  # POST
@@ -901,6 +958,57 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_header("Content-Disposition", "inline")
         self.end_headers()
         self.wfile.write(body)
+        return True
+
+    def _stream_chat(self, token: str):
+        """Pass the SSE stream through unbuffered.
+
+        The other proxies read the whole response before replying, which for a
+        token stream would mean the user watches nothing happen for a minute
+        and then sees the finished answer appear at once.
+        """
+        import urllib.request as _urllib
+
+        length = int(self.headers.get("Content-Length", 0) or 0)
+        body = self.rfile.read(length) if length else b"{}"
+        headers = {"Content-Type": "application/json"}
+        if token:
+            headers["X-Atlas-Token"] = token
+        try:
+            req = _urllib.Request(
+                f"{BookAPI.CHAT}/chat", data=body, headers=headers, method="POST"
+            )
+            up = _urllib.urlopen(req, timeout=1800)
+        except _urllib.HTTPError as e:
+            data = e.read() or b"{}"
+            self.send_response(e.code)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+            return True
+        except Exception as e:
+            data = _json.dumps({"error": f"chat backend unavailable: {e}"}).encode()
+            self.send_response(502)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+            return True
+        self.send_response(200)
+        self.send_header("Content-Type", "text/event-stream")
+        self.send_header("Cache-Control", "no-cache")
+        self.send_header("X-Accel-Buffering", "no")
+        self.send_header("Connection", "close")
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.end_headers()
+        try:
+            with up:
+                for chunk in up:
+                    self.wfile.write(chunk)
+                    self.wfile.flush()
+        except (BrokenPipeError, ConnectionResetError):
+            pass  # the reader navigated away mid-answer
         return True
 
     def do_GET(self):
