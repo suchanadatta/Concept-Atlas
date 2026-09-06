@@ -22,6 +22,7 @@ const Chat = (function () {
   let streaming = false;
   let pickerTab = "books";
   let library = null;
+  let webOn = (() => { try { return localStorage.getItem("atlas.chatWeb") === "on"; } catch { return false; } })();
 
   const tok = () => { try { return localStorage.getItem(TOKEN_KEY) || ""; } catch { return ""; } };
   const setTok = (t) => { try { t ? localStorage.setItem(TOKEN_KEY, t) : localStorage.removeItem(TOKEN_KEY); } catch { /* private mode */ } };
@@ -334,21 +335,134 @@ const Chat = (function () {
     });
   }
 
+  const TOOL_LABEL = {
+    search_corpus: "searched the corpus", read_source: "read the source",
+    find_concept: "looked up concepts", concept_detail: "walked the concept map",
+    concept_passages: "pulled attesting quotes", query_network: "built the query network",
+    list_authors: "checked the authors", web_search: "searched the web",
+    web_fetch: "fetched a page",
+  };
+
+  function traceHTML(m) {
+    const t = m.tools || [];
+    if (!t.length) return "";
+    const live = m._live;
+    return `
+      <details class="ch-trace" ${live ? "open" : ""}>
+        <summary>${live ? "Working" : "What it looked at"}
+          <span class="ch-rlen">${t.length} call${t.length === 1 ? "" : "s"}</span></summary>
+        <ol class="ch-trace-list">
+          ${t.map(c => `<li>
+            <span class="ch-tname">${esc(TOOL_LABEL[c.name] || c.name)}</span>
+            ${c.args && Object.keys(c.args).length
+              ? `<code>${esc(Object.entries(c.args).map(([k, v]) => `${k}=${v}`).join(" · ").slice(0, 120))}</code>` : ""}
+            ${c.summary ? `<span class="ch-tsum">${esc(c.summary)}</span>`
+              : `<span class="ch-tsum ch-trun">running…</span>`}
+          </li>`).join("")}
+        </ol>
+      </details>`;
+  }
+
+  /* Sources are the point of the whole thing: a marker in the answer resolves
+     to a book and a page, and clicking it opens the reader there. */
+  function sourcesHTML(m) {
+    const src = m.sources || [];
+    if (!src.length) return "";
+    return `
+      <details class="ch-srcs">
+        <summary>Sources <span class="ch-rlen">${src.length}</span></summary>
+        <ol class="ch-src-list">
+          ${src.map(sv => `<li>
+            <button class="ch-src" data-sid="${esc(sv.id)}">[${esc(sv.id)}]</button>
+            ${sv.kind === "web"
+              ? `<a href="${esc(sv.url || "#")}" target="_blank" rel="noopener">${esc(sv.cite)}</a>`
+              : `<span class="ch-src-cite">${esc(sv.cite)}</span>
+                 <span class="ch-src-loc">${sv.page == null || sv.source === "txt" ? "text edition" : "p. " + sv.page}</span>`}
+            ${sv.snippet ? `<div class="ch-src-snip">${esc(sv.snippet.slice(0, 180))}</div>` : ""}
+          </li>`).join("")}
+        </ol>
+      </details>`;
+  }
+
+  /* [S3] in the prose becomes a chip that opens the passage. Only markers the
+     turn actually produced are linked — a hallucinated one stays plain text so
+     it cannot pretend to be evidence. */
+  function linkMarkers(htmlText, sources) {
+    const known = new Set((sources || []).map(s => s.id));
+    return htmlText.replace(/\[(S\d+)\]/g, (whole, id) =>
+      known.has(id)
+        ? `<button class="ch-cite" data-sid="${id}" title="open the source">${id}</button>`
+        : whole);
+  }
+
   function messageHTML(m, i) {
     if (m.role === "user") {
       return `<div class="ch-m ch-user"><div class="ch-bubble">${esc(m.content)}</div></div>`;
     }
     const hasR = (m.reasoning || "").trim().length > 0;
     return `<div class="ch-m ch-asst">
+      ${traceHTML(m)}
       ${hasR ? `
         <details class="ch-reason" ${m._openR ? "open" : ""}>
           <summary>Reasoning <span class="ch-rlen">${m.reasoning.length.toLocaleString()} chars</span></summary>
           <div class="ch-reason-body">${esc(m.reasoning)}</div>
         </details>` : ""}
-      <div class="ch-answer">${mdish(m.content || "")}</div>
-      ${(m.context_items || []).length ? `<div class="ch-used">grounded in ${
+      <div class="ch-answer">${linkMarkers(mdish(m.content || ""), m.sources)}</div>
+      ${sourcesHTML(m)}
+      ${(m.context_items || []).length ? `<div class="ch-used">also given: ${
         m.context_items.map(c => esc(c.label)).join(" · ")}</div>` : ""}
     </div>`;
+  }
+
+  /* A citation opens the reader at that page with the passage highlighted —
+     the same jump a search result makes. */
+  function openSource(sv) {
+    if (!sv) return;
+    if (sv.kind === "web") { if (sv.url) window.open(sv.url, "_blank", "noopener"); return; }
+    if (typeof Reader === "undefined") return;
+    close();
+    // A page-range citation's snippet starts with the reader's own "[page 33]"
+    // marker and generic prose, which produced highlight terms like "[page"
+    // and "things". Strip the furniture and the commonest words so what gets
+    // marked on the page is at least worth marking.
+    const STOP = new Set(("page the and that with which this from they their there here what when " +
+      "shall would could their them those been have hath unto upon into whom whose").split(" "));
+    Reader.activeTerms = [...new Set(
+      (sv.snippet || "").toLowerCase()
+        .replace(/\[[^\]]*\]/g, " ")
+        .split(/[^a-z']+/)
+        .filter(t => t.length > 5 && !STOP.has(t))
+    )].slice(0, 6);
+    if (sv.page == null || sv.source === "txt") {
+      Reader.highlights = [];
+      Reader.bookId = sv.book_id; Reader.open = true; Reader.txtMode = false;
+      Reader.pendingHighlight = { text: sv.snippet || "", page: null };
+      if (typeof showReaderShell === "function") showReaderShell();
+      if (typeof openTxtMode === "function") openTxtMode(sv.book_id);
+      return;
+    }
+    if (typeof openReader !== "function") return;
+    const box = sv.bbox_pts
+      ? [{ book_id: sv.book_id, page: sv.page, bbox_pts: sv.bbox_pts, concept_id: sv.id, text: sv.snippet }]
+      : [];
+    openReader(sv.book_id, {
+      page: sv.page,
+      highlight: sv.bbox_pts ? { page: sv.page, bbox_pts: sv.bbox_pts, concept_id: sv.id } : null,
+      highlights: box,
+    });
+  }
+
+  function wireCites(root) {
+    root.querySelectorAll(".ch-cite, .ch-src").forEach(b => {
+      b.onclick = (e) => {
+        e.preventDefault();
+        const id = b.dataset.sid;
+        for (const m of (cur && cur.messages) || []) {
+          const hit = (m.sources || []).find(x => x.id === id);
+          if (hit) return openSource(hit);
+        }
+      };
+    });
   }
 
   /* Just enough markdown for what the model actually emits: paragraphs,
@@ -356,8 +470,21 @@ const Chat = (function () {
      for no gain here. */
   function mdish(t) {
     const lines = esc(t).split("\n");
-    let out = "", inList = false;
+    let out = "", inList = false, inQuote = false;
+    const closeAll = () => {
+      if (inList) { out += "</ul>"; inList = false; }
+      if (inQuote) { out += "</blockquote>"; inQuote = false; }
+    };
     for (let ln of lines) {
+      // the model quotes with "> ", which rendered as a literal ">"
+      const bq = ln.match(/^\s*&gt;\s?(.*)$/);
+      if (bq) {
+        if (inList) { out += "</ul>"; inList = false; }
+        if (!inQuote) { out += "<blockquote>"; inQuote = true; }
+        if (bq[1].trim()) out += `<p>${inline(bq[1])}</p>`;
+        continue;
+      }
+      if (inQuote) { out += "</blockquote>"; inQuote = false; }
       const li = ln.match(/^\s*[-*]\s+(.*)$/);
       if (li) {
         if (!inList) { out += "<ul>"; inList = true; }
@@ -365,9 +492,11 @@ const Chat = (function () {
         continue;
       }
       if (inList) { out += "</ul>"; inList = false; }
+      const h = ln.match(/^\s*#{1,4}\s+(.*)$/);
+      if (h) { out += `<h4 class="ch-h">${inline(h[1])}</h4>`; continue; }
       if (ln.trim()) out += `<p>${inline(ln)}</p>`;
     }
-    if (inList) out += "</ul>";
+    closeAll();
     return out;
     function inline(x) {
       return x
@@ -391,6 +520,15 @@ const Chat = (function () {
               attached and cited from it.</p>
           </div>`}
       </div>
+      <div class="ch-opts">
+        <label class="ch-toggle" title="Let the agent search the open web when the corpus cannot answer. Off by default: answers stay inside the 197 sources.">
+          <input type="checkbox" id="ch-web" ${webOn ? "checked" : ""}>
+          <span>&#127760; web search</span>
+        </label>
+        <span class="ch-opts-note">${webOn
+          ? "the agent may look outside the corpus, and will say when it does"
+          : "answers stay inside the corpus"}</span>
+      </div>
       <form id="ch-form" class="ch-compose">
         <textarea id="ch-input" rows="1" placeholder="${
           window.matchMedia("(max-width: 820px)").matches
@@ -405,9 +543,16 @@ const Chat = (function () {
       if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("ch-form").requestSubmit(); }
     };
     $("ch-form").onsubmit = onSend;
+    const wt = $("ch-web");
+    if (wt) wt.onchange = () => {
+      webOn = wt.checked;
+      try { localStorage.setItem("atlas.chatWeb", webOn ? "on" : "off"); } catch { /* ignore */ }
+      renderThread();
+    };
     body.querySelectorAll(".ch-reason").forEach(d => {
       d.addEventListener("toggle", () => { /* stays open across a re-render via _openR */ });
     });
+    wireCites(body);
     scrollDown();
     ta.focus();
   }
@@ -430,7 +575,8 @@ const Chat = (function () {
     $("ch-send").textContent = "…";
 
     cur.messages.push({ role: "user", content: text });
-    const live = { role: "assistant", content: "", reasoning: "", _openR: true, _live: true };
+    const live = { role: "assistant", content: "", reasoning: "", tools: [], sources: [],
+                   _openR: true, _live: true };
     cur.messages.push(live);
     renderThread();
     const thread = $("ch-thread");
@@ -438,6 +584,7 @@ const Chat = (function () {
 
     const paint = () => {
       node.innerHTML = messageHTML(live).replace(/^<div class="ch-m ch-asst">|<\/div>$/g, "");
+      wireCites(node);
       scrollDown();
     };
 
@@ -445,7 +592,8 @@ const Chat = (function () {
       const r = await fetch("/book/api/chat/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json", "X-Atlas-Token": tok() },
-        body: JSON.stringify({ session_id: cur.session.id, message: text, max_tokens: 4096 }),
+        body: JSON.stringify({ session_id: cur.session.id, message: text,
+                               max_tokens: 4096, allow_web: webOn }),
       });
       if (!r.ok || !r.body) throw new Error((await r.json().catch(() => ({}))).error || `HTTP ${r.status}`);
       const rd = r.body.getReader();
@@ -466,6 +614,16 @@ const Chat = (function () {
           else if (d.type === "content") live.content += d.text;
           else if (d.type === "error") live.content += `\n\n_(${d.error})_`;
           else if (d.type === "start") live._meta = d;
+          else if (d.type === "tool_call") live.tools.push({ name: d.name, args: d.args });
+          else if (d.type === "tool_result") {
+            // match the pending call rather than appending, so the trace shows
+            // one line per call with its outcome
+            const pend = [...live.tools].reverse().find(t => t.name === d.name && !t.summary);
+            if (pend) { pend.summary = d.summary; pend.took_ms = d.took_ms; }
+            else live.tools.push({ name: d.name, summary: d.summary });
+          }
+          else if (d.type === "sources") live.sources = d.sources;
+          else if (d.type === "note") live.content += `\n\n_(${d.text})_`;
           paint();
         }
       }

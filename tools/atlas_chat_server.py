@@ -61,6 +61,11 @@ import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import atlas_tools  # noqa: E402  (same directory; needs the path above)
+
 REPO = Path(__file__).resolve().parent.parent
 DATA = REPO / "data" / "atlas_chat"
 SESSION_DIR = DATA / "sessions"
@@ -423,16 +428,55 @@ def load_ctx_text(sid: str, cid: str) -> str:
 
 
 # --------------------------------------------------------------------- chat
-SYSTEM_PROMPT = """You are the research assistant inside Concept Atlas, a search system over a corpus of \
-18th-century British moral philosophy: 129 scanned volumes plus 68 clean-text editions (197 indexed \
-sources, 90,975 passages), mapped to 202 concepts and 1,099 relations by 37 named authors.
+SYSTEM_PROMPT = """You are the research assistant inside Concept Atlas, a search system over a \
+corpus of 18th-century British moral philosophy: 129 scanned volumes plus 68 clean-text editions \
+(197 indexed sources, 90,975 passages) by 37 named authors, mapped to 202 concepts and 1,099 \
+relations between them.
 
-You are given CONTEXT the user has explicitly attached — whole books, page ranges, concepts with their \
-relations, individual passages, or search results. Ground every claim in that context and cite it the way \
-the context labels it (author, short title, page). If the context does not settle a question, say so \
-plainly rather than filling the gap from general knowledge; if you do draw on outside knowledge, mark it \
-as such. Quote sparingly and exactly. Spelling in these texts is archaic (vertue, felf, loue) — read \
-through it, and do not correct quotations silently."""
+YOU HAVE TOOLS. Use them. Do not answer from memory about what these texts say — look.
+
+How to work
+-----------
+1. Decide what kind of question it is. About what the texts argue -> search_corpus. About a
+   concept's meaning or its place in the map -> find_concept, then concept_detail and
+   concept_passages. Broad or vague -> query_network first, to see the territory. About who wrote
+   what -> list_authors.
+2. DO NOT GIVE UP AFTER ONE CALL. If hybrid search returns nothing to the point:
+     * reword in the period's own vocabulary (vertue, felf-love, the paffions);
+     * try mode='semantic' for meaning, or 'bm25'/'keyword' for a literal word or rare name;
+     * try find_concept — the map may hold the idea under a name you did not guess;
+     * try concept_detail with hops=2 to reach it through a neighbouring concept.
+   Only after several genuinely different attempts may you say the corpus does not address it.
+3. When a snippet is not enough to settle what an author claims, read_source the page range.
+4. Quote sparingly and exactly. Spelling is archaic — read through it and never silently modernise
+   a quotation.
+
+Citations — this matters most
+-----------------------------
+Every passage a tool returns carries a "cite_as" value like [S3]. USE IT. Put it inline,
+immediately after the claim it supports:
+
+    Norris divides benevolence into self-love and charity [S1], and denies that all
+    love reduces to self-love [S3].
+
+    "If to oneself, then tis that special sort of Benevolence which we call self-love" [S1]
+
+Do NOT write the book and page out in prose instead of the marker. "From The Theory and
+Regulation of Love (1688), p. 33" is WRONG where "[S1]" is right: the reader clicks the marker to
+open that exact page, and prose is not clickable. Naming the author in the sentence is fine and
+good — but the marker must still be there.
+
+Use a marker only for a passage you were actually shown. Never invent one, never renumber, never
+cite a marker you did not receive. If several passages support a claim, cite them together:
+[S2][S5]. If you assert something no tool showed you, say so in words and attach no marker.
+
+Honesty
+-------
+If the corpus does not settle a question, say so plainly and say what you did look at. Distinguish
+what these texts say from what is generally known — and if web tools are available and you use
+them, mark that material as coming from outside the corpus. Do not pad; a short grounded answer is
+better than a long one that drifts."""
+
 
 
 def assemble_context(sid: str, budget_chars: int):
@@ -472,11 +516,13 @@ def assemble_context(sid: str, budget_chars: int):
     return "\n\n".join(parts), items
 
 
-def vllm_stream(messages, max_tokens=4096, temperature=0.7):
-    """Yield (kind, text) with kind in {reasoning, content}.
+def vllm_stream(messages, max_tokens=4096, temperature=0.7, tools=None):
+    """Yield ("reasoning"|"content", text) and finally ("tool_calls", [...]).
 
-    The model emits its reasoning in a separate `reasoning` field, so the two
-    can be shown apart instead of the UI having to guess where thinking ends.
+    The model emits its reasoning in a separate field, so the two can be shown
+    apart instead of the UI guessing where thinking ends. Tool calls arrive as
+    deltas with an index, so they are accumulated per index and handed back
+    once as a list.
     """
     body = {
         "model": CFG["model"],
@@ -485,6 +531,9 @@ def vllm_stream(messages, max_tokens=4096, temperature=0.7):
         "temperature": temperature,
         "stream": True,
     }
+    if tools:
+        body["tools"] = tools
+        body["tool_choice"] = "auto"
     req = urllib.request.Request(
         CFG["vllm"].rstrip("/") + "/chat/completions",
         data=json.dumps(body).encode(),
@@ -502,6 +551,7 @@ def vllm_stream(messages, max_tokens=4096, temperature=0.7):
         except Exception:
             msg = ""
         raise RuntimeError(f"vLLM {e.code}: {msg or e.reason}") from None
+    pending: dict[int, dict] = {}
     with r:
         for raw in r:
             line = raw.decode("utf-8", "replace").strip()
@@ -522,6 +572,18 @@ def vllm_stream(messages, max_tokens=4096, temperature=0.7):
                 c = delta.get("content")
                 if c:
                     yield ("content", c)
+                for tc in delta.get("tool_calls") or []:
+                    k = tc.get("index", 0)
+                    slot = pending.setdefault(k, {"id": "", "name": "", "args": ""})
+                    if tc.get("id"):
+                        slot["id"] = tc["id"]
+                    fn = tc.get("function") or {}
+                    if fn.get("name"):
+                        slot["name"] = fn["name"]
+                    if fn.get("arguments"):
+                        slot["args"] += fn["arguments"]
+    if pending:
+        yield ("tool_calls", [pending[k] for k in sorted(pending)])
 
 
 # ------------------------------------------------------------------- server
@@ -923,6 +985,7 @@ class Handler(BaseHTTPRequestHandler):
         user_msg = (b.get("message") or "").strip()
         if not user_msg:
             return self._json(400, {"error": "empty message"})
+        allow_web = bool(b.get("allow_web"))
 
         history = read_messages(sid)
         budget = int(CFG["max_ctx"] * CHARS_PER_TOKEN * 0.55)
@@ -931,6 +994,15 @@ class Handler(BaseHTTPRequestHandler):
         # This model's chat template accepts exactly one system message, at the
         # start, so the prompt and the attached context travel together.
         system = SYSTEM_PROMPT
+        # Say which way the web switch is set. Left unsaid, the model tries a
+        # web_search that is not in its schema, wasting a round on a call the
+        # gate then refuses.
+        system += ("\n\nWeb access is ON for this conversation: web_search and web_fetch are "
+                   "available. Use them only for what the corpus cannot supply, and mark anything "
+                   "they yield as coming from outside the corpus."
+                   if allow_web else
+                   "\n\nWeb access is OFF for this conversation. There are no web tools; do not "
+                   "attempt one. If the corpus cannot answer, say so and say what you searched.")
         if ctx_text:
             system += "\n\n================ ATTACHED CONTEXT ================\n\n" + ctx_text
         msgs = [{"role": "system", "content": system}]
@@ -960,16 +1032,72 @@ class Handler(BaseHTTPRequestHandler):
         approx_tokens = int(sum(len(m["content"]) for m in msgs) / CHARS_PER_TOKEN)
         emit({"type": "start", "context_items": len(ctx_items),
               "context_chars": len(ctx_text), "approx_prompt_tokens": approx_tokens,
-              "model": CFG["model"]})
+              "model": CFG["model"], "web": allow_web, "tools": True})
 
-        reasoning, content = [], []
+        # ---------------- agentic loop ----------------
+        # The model may call tools, read what they return, and call more before
+        # answering. Every passage a tool yields is registered in one citation
+        # table for the turn, so a marker in the answer resolves to a book, a
+        # page and (for a scan) the block the match came from.
+        cites = atlas_tools.Cites()
+        schemas = atlas_tools.schemas(allow_web=allow_web)
+        reasoning, content, trace = [], [], []
+        MAX_STEPS = int(b.get("max_steps", 8))
+
         try:
-            for kind, chunk in vllm_stream(msgs, max_tokens=int(b.get("max_tokens", 4096))):
-                if kind == "reasoning":
-                    reasoning.append(chunk)
-                else:
-                    content.append(chunk)
-                emit({"type": kind, "text": chunk})
+            for step in range(MAX_STEPS):
+                calls = None
+                step_reasoning, step_content = [], []
+                for kind, chunk in vllm_stream(
+                    msgs, max_tokens=int(b.get("max_tokens", 4096)), tools=schemas
+                ):
+                    if kind == "reasoning":
+                        step_reasoning.append(chunk)
+                        emit({"type": "reasoning", "text": chunk})
+                    elif kind == "content":
+                        step_content.append(chunk)
+                        emit({"type": "content", "text": chunk})
+                    elif kind == "tool_calls":
+                        calls = chunk
+                reasoning.extend(step_reasoning)
+                content.extend(step_content)
+
+                if not calls:
+                    break
+
+                # the assistant turn that requested the tools has to go back in
+                msgs.append({
+                    "role": "assistant",
+                    "content": "".join(step_content),
+                    "tool_calls": [
+                        {"id": c["id"] or f"call_{step}_{k}", "type": "function",
+                         "function": {"name": c["name"], "arguments": c["args"] or "{}"}}
+                        for k, c in enumerate(calls)
+                    ],
+                })
+                for k, c in enumerate(calls):
+                    try:
+                        args = json.loads(c["args"] or "{}")
+                    except json.JSONDecodeError:
+                        args = {}
+                    emit({"type": "tool_call", "step": step, "name": c["name"], "args": args})
+                    result = atlas_tools.run_tool(c["name"], args, cites, allow_web=allow_web)
+                    summary = atlas_tools.summarise(c["name"], result)
+                    trace.append({"step": step, "name": c["name"], "args": args,
+                                  "summary": summary, "took_ms": result.get("took_ms")})
+                    emit({"type": "tool_result", "step": step, "name": c["name"],
+                          "summary": summary, "took_ms": result.get("took_ms")})
+                    msgs.append({
+                        "role": "tool",
+                        "tool_call_id": c["id"] or f"call_{step}_{k}",
+                        "name": c["name"],
+                        "content": json.dumps(result, ensure_ascii=False)[:60000],
+                    })
+                if cites.rows:
+                    emit({"type": "sources", "sources": cites.as_list()})
+            else:
+                emit({"type": "note",
+                      "text": f"stopped after {MAX_STEPS} tool rounds"})
         except (BrokenPipeError, ConnectionResetError):
             return  # client went away mid-stream; the turn is still saved below
         except Exception as e:
@@ -980,6 +1108,9 @@ class Handler(BaseHTTPRequestHandler):
             "content": "".join(content),
             "reasoning": "".join(reasoning),
             "ts": time.time(),
+            "tools": trace,
+            "sources": cites.as_list(),
+            "web": allow_web,
             "context_items": [{"id": i["id"], "kind": i["kind"], "label": i["label"]} for i in ctx_items],
         }
         append_message(sid, rec)
@@ -991,7 +1122,8 @@ class Handler(BaseHTTPRequestHandler):
             db().commit()
         try:
             emit({"type": "done", "reasoning_chars": len(rec["reasoning"]),
-                  "content_chars": len(rec["content"])})
+                  "content_chars": len(rec["content"]), "tool_calls": len(trace),
+                  "sources": len(cites.rows)})
         except Exception:
             pass
 
