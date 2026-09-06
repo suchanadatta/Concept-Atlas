@@ -421,3 +421,61 @@ POST /book/api/annotations?book=&page=     save annotations
 
 Verified: Playwright 12/12 results behaviour, 13/13 panel stacking, 10/10
 ranking modes; `tools/eval_retrieval.py` nDCG@10 0.977 · MRR 1.000.
+
+## v22 — two query graphs, the author registry, and a reader that lands on the right page
+
+**The reader bug** (reported: "clicking a result takes me to a highlighted page
+with completely different text and wrong annotations"). The data was sound —
+all 129 OCR book_ids resolve to the right PDF, JSONL record counts match PDF
+page counts for all 133 books, and `page_rect_pts` matches the real PDF page
+size on all 665 sampled pages, so OCR page N really is PDF page N. The
+corruption was a front-end race: five async paths (PDF load, page render, OCR
+fetch, word-highlight fetch, annotation fetch) all wrote into one shared
+`Reader` object with no guard, so clicking a second result before the first
+finished let a stale response land on the new page. Fixed with a `Reader.seq`
+generation token that every continuation checks, plus a book/page re-check on
+each fetch. `Reader.highlights` was also pushed to and never cleared, so boxes
+from every previously opened passage reappeared on unrelated pages; the caller
+now hands `openReader` the boxes for *this* passage.
+
+**Oval nodes.** `resize()` ran only on `window.resize`, so opening the detail
+panel narrowed the stage without updating the canvas backing store and the
+bitmap was stretched non-uniformly. A `ResizeObserver` on `#stage` fixes it.
+
+**Two kinds of query graph.** `POST /semantic_graph` builds a network from the
+passage embeddings rather than the concept map, so a query about anything the
+map never recorded still produces a real graph. Nodes are passages; edges are
+cosine similarity in four bands (near-identical wording → loosely related —
+an embedding cannot claim "supports"); communities come from weighted label
+propagation, each named by its IDF-weighted distinctive terms. The panel now
+offers **Concept | Semantic | Overlay**; overlay draws the curated concepts
+inside the passage network, linked to the passages they land on. Any node
+click opens the reader at that page with the passage highlighted.
+
+**Concept cards** carry the map: `/concepts` returns each concept's relations,
+marking the ones whose other end is also a hit for this query. Chips are
+grouped by target concept (the map records several relations between the same
+pair) and navigate to that concept's card.
+
+**Author registry.** `data/authors.csv` records each creator's sex and life
+dates; `tools/build_author_stats.py` joins it to all 197 indexed sources and
+the concept inverted index (all 197 match). Adds a **Written by** search facet
+and an **Authors** panel. Women wrote 16% of the indexed text (10 authors, 38
+sources); normalised by each group's own concept attestations, the women's
+works cluster on devotional practice and the social position of women
+(Sacrament, Mortification, Prophecy, Education of Women, Ridicule, Wit) while
+the men's cluster on systematic metaethics and political authority (Eternal
+Morality, Approbation, Contract, Paternal Authority, Subordination). Several
+counts are thin and are shown as counts.
+
+**Dark mode is global.** There were two theme stores — `atlas-theme` (header
+button) and `atlas.settings` (settings panel) — which disagreed. `theme.js` is
+now the single store, migrates the old key, applies the class before first
+paint, follows the OS when nothing is stored, and is loaded on `docs.html`
+too (which had dark CSS but nothing to set the class).
+
+**3D readability.** Label sprites baked a hard-coded parchment halo, so every
+label in dark mode sat on a bright cream slab. The halo follows the theme, far
+fewer nodes are labelled (18 in the concept graph; query + concepts + the
+strongest passage per cluster in the query graph), and both views fit the
+camera a second time once the layout has actually stopped.

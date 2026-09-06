@@ -41,7 +41,7 @@ body.dark #btn-theme{border-color:#4A443A}
   <button id="btn-theme" title="Toggle dark mode">&#127769;</button>
 </div>
 <h1>Concept Atlas — Documentation</h1>
-<p style="color:var(--ink-soft)">A scholar's search system for 129 books of 18th-century British moral philosophy · 202 concepts · 1,099 relations · 27,000 pages.</p>
+<p style="color:var(--ink-soft)">A scholar's search system for 18th-century British moral philosophy: 129 scanned volumes plus 68 clean-text editions (197 indexed sources, 90,975 passages) · 202 concepts · 1,099 relations · 37 authors.</p>
 
 <h2>1 · Searching</h2>
 <p>Start from the landing page (or the <kbd>/</kbd> search box in the header). Any query works — natural language included:</p>
@@ -106,13 +106,30 @@ body.dark #btn-theme{border-color:#4A443A}
 </table>
 
 <h2>5 · The floating graph window</h2>
-<p>From search results, the <b>Graph tab</b> or a concept click opens a movable (drag the title bar), resizable (drag the corner) mini-graph over the results. The <b>⇄ static/dynamic</b> button flips between the full concept map and a graph built live from your search results (query center → documents → concepts).</p>
+<p>From search results, a concept click opens a movable (drag the title bar), resizable (drag the corner) mini-graph over the results. The <b>⇄ static/dynamic</b> button flips between the full concept map and a graph built live from your search results.</p>
 
-<h2>6 · Under the hood</h2>
+<h2>6 · The two query graphs</h2>
+<p>The <b>Graph tab</b> opens a network for your query. It has three modes:</p>
+<table>
+<tr><th>Concept</th><td>The <b>curated</b> map: the concepts an editor recorded, the documents attesting them, and the relations between them (<i>supports</i>, <i>opposes</i>, …). Only shows ideas that are in the concept map.</td></tr>
+<tr><th>Semantic</th><td>Built from the <b>passage embeddings alone</b>. Nodes are the retrieved passages; edges are cosine similarity in four bands (near-identical wording → loosely related). Communities are found by weighted label propagation and named by their distinctive terms. This works for anything the corpus discusses, whether or not the concept map records it.</td></tr>
+<tr><th>Overlay</th><td>Both at once: the curated concepts drawn inside the passage network, each linked to the passages it actually lands on.</td></tr>
+</table>
+<p>An embedding can only say how close two passages sit; it cannot say one <i>supports</i> another. That is why the semantic graph's edge names describe closeness rather than argument, and why the curated relations only appear in Concept and Overlay mode.</p>
+<p>Clicking any node — either graph, 2D or 3D — opens the reader at that page with the passage highlighted on the scan.</p>
+
+<h2>7 · Authors</h2>
+<p>The <b>Authors</b> button opens the registry: 37 creators with their sex and life dates, joined to every indexed source and to the concept map. It powers the <b>Written by</b> filter in the search rail, and shows what each group of writers spends its pages on — normalised by each group's own attestations, so it is not merely a restatement of who published more. Counts are shown because several are thin; treat them as suggestive.</p>
+
+<h2>8 · Under the hood</h2>
 <ul>
 <li>OCR: GLM-OCR (VLM) + docTR word geometry, 300 dpi, validated 0 problems.</li>
 <li>Concept map: 15 extractors → 20 verifiers → 20 double-auditors → 25 independent auditors (1,096 verdicts); every evidence quote is a verbatim OCR substring.</li>
-<li>Semantic search: Jasper-Token-Compression-600M, 132,444 paragraphs (OCR + text books), 2048-dim, hybrid rerank.</li>
+<li>Semantic search: Jasper-Token-Compression-600M, 90,975 passages (OCR + text editions), 2048-dim.
+  Four ranking modes — hybrid (0.6·cosine + 0.4·IDF-weighted lexical), pure semantic (cosine only),
+  BM25 (postings lists, archaic-spelling expanded), and keyword.</li>
+<li>Query vectors are cached, so switching ranking mode or opening the graph for a query you already ran costs nothing.</li>
+<li>The engine runs on CPU or GPU; switch it in <b>Settings</b> at the bottom of the page, which also reports index size, device and cache hit rate.</li>
 </ul>
 <p style="margin-top:40px;color:var(--ink-faint)">Concept Atlas · British Moral Philosophy corpus · <a href="/">← back to the atlas</a></p>
 </div>

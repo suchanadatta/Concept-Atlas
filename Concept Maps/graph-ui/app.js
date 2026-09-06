@@ -655,7 +655,7 @@ async function initGraph3D() {
           const spr = makeLabel(
             n.label,
             dimmed ? (dark ? "#7E776A" : "#B7AF9C") : (dark ? "#EFE9DC" : "#2E2A24"),
-            8,
+            11,
             dark ? "rgba(20,19,16,0.88)" : "rgba(246,241,229,0.92)",
           );
           spr.position.set(0, r + 6, 0);
@@ -685,7 +685,10 @@ async function setMode(mode) {
     $("graph3d").classList.remove("hidden");
     rebuild3DData();
     updateStatus();
+    // the force layout is still spreading at 3s, so a single fit leaves the
+    // cloud small in the middle of an empty stage
     setTimeout(() => { if (S.g3d && S.mode === "3d") S.g3d.zoomToFit(700, 50); }, 3200);
+    setTimeout(() => { if (S.g3d && S.mode === "3d") S.g3d.zoomToFit(900, 50); }, 7000);
   } else {
     S.mode = "2d";
     $("btn-2d").classList.add("active");
