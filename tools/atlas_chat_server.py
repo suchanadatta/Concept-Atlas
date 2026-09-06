@@ -1096,8 +1096,36 @@ class Handler(BaseHTTPRequestHandler):
                 if cites.rows:
                     emit({"type": "sources", "sources": cites.as_list()})
             else:
+                # The step budget ran out while the model was still calling
+                # tools, so it never got to write an answer: the reader saw
+                # reasoning and a pile of sources with nothing said about them.
+                # Spend one more round with the tools taken away, which leaves
+                # the model no option but to answer from what it has gathered.
                 emit({"type": "note",
-                      "text": f"stopped after {MAX_STEPS} tool rounds"})
+                      "text": f"tool budget spent after {MAX_STEPS} rounds — answering from "
+                              f"the {len(cites.rows)} passages gathered"})
+                msgs.append({
+                    "role": "user",
+                    "content": (
+                        "You have used your tool budget. Do not ask for more tools; there are "
+                        "none left this turn. Answer the question now from the evidence you "
+                        "already have above, citing each claim by its cite_as marker. If the "
+                        "evidence is thin on some part of the question, say so plainly rather "
+                        "than guessing."
+                    ),
+                })
+                final_reasoning, final_content = [], []
+                for kind, chunk in vllm_stream(
+                    msgs, max_tokens=int(b.get("max_tokens", 4096)), tools=None
+                ):
+                    if kind == "reasoning":
+                        final_reasoning.append(chunk)
+                        emit({"type": "reasoning", "text": chunk})
+                    elif kind == "content":
+                        final_content.append(chunk)
+                        emit({"type": "content", "text": chunk})
+                reasoning.extend(final_reasoning)
+                content.extend(final_content)
         except (BrokenPipeError, ConnectionResetError):
             return  # client went away mid-stream; the turn is still saved below
         except Exception as e:
