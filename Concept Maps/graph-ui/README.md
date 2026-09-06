@@ -489,3 +489,84 @@ label in dark mode sat on a bright cream slab. The halo follows the theme, far
 fewer nodes are labelled (18 in the concept graph; query + concepts + the
 strongest passage per cluster in the query graph), and both views fit the
 camera a second time once the layout has actually stopped.
+
+## v23 — a working reader toolbar, a real Compare, and Ask the corpus
+
+**The reader's buttons "not working".** The handlers did fire; what failed was
+that they did not read as controls. The toolbar wrapped to three rows (133px)
+on a split pane, and fit / `+` / `−` were bare glyphs with no border or
+background either side of a plain `100%` label. Rebuilt as one 47px row:
+segmented groups for page nav and zoom, chrome and a focus ring on every
+control, and the six download/export actions behind a `⋯` overflow menu. The
+page number is the jump input itself, so there is one number rather than a
+label and a box that can disagree.
+
+**A loading screen.** Clicking a second result left the previous book on
+screen until the new one finished streaming, so the reader showed one text
+while its title claimed another. A veil now goes up synchronously on the
+click, names what is opening, and comes down only once the new page has
+painted — for scans and text editions alike.
+
+**The notes pane** was a fixed 320px, taking 54% of a split reader and
+leaving the scan 226px. It is proportional (max 34%), closeable — which takes
+the scan to 546px — and starts closed on a phone.
+
+**Compare** was a placeholder: it auto-picked two concepts by importance,
+printed their definitions and stopped, and the header told you to ctrl-click
+nodes when nothing listened. New `POST /compare` answers the comparison from
+the corpus:
+
+- pairwise cosine similarity between the items, which is the corpus's own
+  answer rather than an editor's (vectors are re-normalised first; bf16
+  rounding had a concept scoring 1.0064 against itself);
+- the relations the map records **between** the picked concepts, plus each
+  one's own;
+- the strongest passages each idea owns;
+- **shared ground** — passages ranked by the *minimum* score across items
+  rather than the mean, so a passage that is excellent for one and irrelevant
+  to another cannot get in. That is where the ideas are argued together.
+
+Items may be concepts **or free text**, so `hypochondriack distemper`
+compares against `Virtue` even though the map never recorded it. Chips you
+add and remove, autocomplete over the map with a free-text fallback, up to
+four items, and any passage opens in the reader at that page.
+
+**Ask the corpus** (`tools/atlas_chat_server.py`, port 8793, proxied through
+`:8788`). Chat against the local vLLM server with context you assemble
+yourself — nothing is retrieved behind your back:
+
+- **Context** you attach explicitly: a whole book, a page range of one, a
+  concept (which brings its definition, aliases, every relation the map
+  records and the verbatim attesting quotes), an individual passage, a whole
+  search (the full text of every hit, not a summary), or a free note. The
+  panel shows each item's size in tokens against the 550k window, and the
+  answer names what it was grounded in. Trimming to the window drops from the
+  **largest** item first, so one whole book cannot silently evict five
+  carefully chosen passages.
+- Reachable where you already are: `+ context` on a result, `+ctx` for a
+  whole result set, a reader button offering this page / a window around it /
+  the whole book, and `add to chat context` on a concept card.
+- **Reasoning and answer are separate.** The model streams its thinking in
+  its own field, so it lands in a collapsed disclosure above the answer
+  rather than mixed into the prose.
+- **Accounts**: pbkdf2-sha256 (200k iterations, per-user salt), 30-day bearer
+  tokens, login by username *or* email, editable display name / email /
+  password (the last two re-check the current password, and a password change
+  invalidates every other sign-in). Forgotten-password takes an email and
+  issues a single-use code that expires in an hour; there is no mail server on
+  this host, so the code is shown for you to copy and the panel says why. An
+  unknown address gets the same response as a known one.
+- **Sessions** are one gzipped JSONL file each under `data/atlas_chat/`, with
+  SQLite as the index (owner, title, timestamps, counts, attached context).
+  Export downloads the transcript, the reasoning and the full text of every
+  context item, so **another user can import it** and get the whole
+  conversation including what it was reading.
+
+**Mobile.** The reader's notes pane was a flex-row child with `width:auto`,
+so it took its content width and squeezed the scan to a ~48px sliver. Narrow
+screens stack the pane under the scan, cap it at 34%, start it closed and make
+the reader opaque. The chat panel stacks its three columns, and the picker
+fits the viewport.
+
+Run the chat service with `log/start_chat.sh` (or
+`python tools/atlas_chat_server.py --port 8793`).

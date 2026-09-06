@@ -121,7 +121,33 @@ body.dark #btn-theme{border-color:#4A443A}
 <h2>7 · Authors</h2>
 <p>The <b>Authors</b> button opens the registry: 37 creators with their sex and life dates, joined to every indexed source and to the concept map. It powers the <b>Written by</b> filter in the search rail, and shows what each group of writers spends its pages on — normalised by each group's own attestations, so it is not merely a restatement of who published more. Counts are shown because several are thin; treat them as suggestive.</p>
 
-<h2>8 · Under the hood</h2>
+<h2>8 · Ask the corpus</h2>
+<p>The <b>&#128172; Ask</b> button opens a chat panel that runs against a local model with a 550k-token
+window. Nothing is retrieved behind your back: it reads only what you attach.</p>
+<p><b>Add to context</b> takes six kinds of thing &#8212; a whole book, a page range of one, a concept
+(which brings its definition, aliases, every relation the map records and the verbatim quotes attesting
+it), an individual passage, a whole search (the full text of every hit, not a summary), or a free note.
+The panel shows each item's size in tokens against the window, and each answer names which items it was
+grounded in. The same action is available where you already are: <i>+ context</i> on a search result,
+<i>+ctx</i> for a whole result set, the &#128172; button in the reader (this page, a window around it, or
+the whole book), and <i>add to chat context</i> on a concept card.</p>
+<p>The model's <b>reasoning</b> arrives on its own stream and sits in a collapsed panel above the answer,
+so you can read how it got there without it cluttering the prose.</p>
+<p><b>Accounts and sessions.</b> Conversations belong to an account, so they survive a reload. Each is
+stored as a gzipped JSONL file with SQLite as the index. <i>Export</i> downloads the transcript, the
+reasoning and the full text of every attached context item &#8212; so another person can <i>Import</i> it
+and get the whole conversation, including what it was reading. Forgotten passwords are reset by entering
+your email; there is no mail server on this host, so the reset code is shown for you to copy.</p>
+
+<h2>9 · Comparing</h2>
+<p><b>&#8646; Compare</b> holds two to four things side by side. They can be concepts from the map or any
+free text, so an idea the map never recorded can still be compared. You get a similarity matrix from the
+embeddings (the corpus's own answer, not an editor's), the relations the map records between the picked
+concepts, the strongest passages each idea owns, and <b>shared ground</b> &#8212; passages ranked by the
+<i>weakest</i> of their scores across the items, so a passage that is excellent for one and irrelevant to
+another cannot get in. That last section is where the ideas are actually argued together.</p>
+
+<h2>10 · Under the hood</h2>
 <ul>
 <li>OCR: GLM-OCR (VLM) + docTR word geometry, 300 dpi, validated 0 problems.</li>
 <li>Concept map: 15 extractors → 20 verifiers → 20 double-auditors → 25 independent auditors (1,096 verdicts); every evidence quote is a verbatim OCR substring.</li>
