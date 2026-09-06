@@ -15,6 +15,7 @@ Endpoints (same contract as v1):
   POST /bm25       {"query", "top_k"}       -> BM25 ranking
   POST /concepts   {"query", "top_k", "mode"} -> semantic concept-map search
   POST /semantic_graph {"query", n_docs, min_sim} -> embedding-induced passage network
+  POST /compare    {"items": [...]} -> side-by-side of 2-4 concepts or ideas
   POST /query_graph {"query", n_concepts, n_docs} -> concept+book network
   GET  /healthz
 
@@ -972,6 +973,184 @@ def semantic_graph(
     }
 
 
+# ------------------------------------------------------------------- compare
+def _item_vector(item: str):
+    """A comparison item is either a concept id from the map or free text.
+
+    Free text is what makes the comparison work for ideas the map never
+    recorded — the whole point of comparing "semantic concepts" rather than
+    only curated ones.
+    """
+    cids = _state.get("cids") or []
+    cemb = _state.get("cemb")
+    cnodes = _state.get("cnodes") or {}
+    if cemb is not None and item in cids:
+        i = cids.index(item)
+        node = cnodes.get(item) or {}
+        return cemb[i], {
+            "id": item,
+            "kind": "concept",
+            "label": node.get("label", item),
+            "definition": node.get("definition") or "",
+            "category": node.get("category") or [],
+            "aliases": node.get("aliases") or [],
+            "importance": node.get("importance"),
+            "books": len((_state.get("c2b") or {}).get(item, ())),
+        }
+    return embed_query(item), {
+        "id": item,
+        "kind": "text",
+        "label": item,
+        "definition": "",
+        "category": [],
+        "aliases": [],
+        "importance": None,
+        "books": 0,
+    }
+
+
+def compare_items(items, top_k: int = 6, n_shared: int = 5):
+    """Compare 2-4 concepts (or free-text ideas) across the whole corpus.
+
+    Three things a reader actually wants when holding two ideas side by side:
+      * what the curated map says about each, and about the pair;
+      * how close they sit in the embedding space, which is the corpus's own
+        answer rather than an editor's;
+      * the passages each one owns, and the passages they share — the latter
+        being where the two ideas are actually argued together.
+    """
+    items = [i for i in (items or []) if str(i).strip()][:4]
+    if len(items) < 2:
+        return {"error": "give at least two items", "items": []}
+    t0 = time.time()
+    vecs, metas = [], []
+    for it in items:
+        v, m = _item_vector(it)
+        vecs.append(np.asarray(v, dtype=np.float32))
+        metas.append(m)
+    V = np.vstack(vecs)
+    # stored vectors are bf16-rounded, so their norms sit a little off 1 and
+    # a raw dot product gave a "similarity" of 1.0064 with itself
+    V = V / np.clip(np.linalg.norm(V, axis=1, keepdims=True), 1e-6, None)
+    sim = np.clip(V @ V.T, -1.0, 1.0).astype(float)
+
+    emb, meta = _state["emb"], _state["meta"]
+    all_scores = emb @ V.T                      # (n_passages, n_items)
+
+    per_item, seen_global = [], set()
+    for k in range(len(items)):
+        col = all_scores[:, k]
+        pool = np.argpartition(-col, 240)[:240]
+        pool = pool[np.argsort(-col[pool])]
+        per_work, rows = {}, []
+        for ci in pool:
+            m = meta[int(ci)]
+            wk = work_key(m["book_id"])
+            if per_work.get(wk, 0) >= 2:
+                continue
+            dup = re.sub(r"\s+", " ", m["text"][:110]).strip().lower()
+            if dup in seen_global:
+                continue
+            per_work[wk] = per_work.get(wk, 0) + 1
+            seen_global.add(dup)
+            c = cite_for(m["book_id"])
+            rows.append(
+                {
+                    "book_id": m["book_id"],
+                    "cite": c["cite"],
+                    "author": c["author"],
+                    "year": c["year"],
+                    "page": m["page"],
+                    "source": m.get("source"),
+                    "bbox_pts": m.get("bbox_pts"),
+                    "snippet": make_snippet(m["text"], query_terms(metas[k]["label"])),
+                    "score": round(float(col[int(ci)]), 4),
+                }
+            )
+            if len(rows) >= top_k:
+                break
+        per_item.append(rows)
+
+    # Shared ground: passages that score well for EVERY item. Ranking by the
+    # minimum across items (not the mean) is what makes this "both", since a
+    # passage that is superb for one and irrelevant to the other still loses.
+    mins = all_scores.min(axis=1)
+    pool = np.argpartition(-mins, 200)[:200]
+    pool = pool[np.argsort(-mins[pool])]
+    shared, per_work, seen = [], {}, set()
+    for ci in pool:
+        m = meta[int(ci)]
+        wk = work_key(m["book_id"])
+        if per_work.get(wk, 0) >= 1:
+            continue
+        dup = re.sub(r"\s+", " ", m["text"][:110]).strip().lower()
+        if dup in seen:
+            continue
+        per_work[wk] = 1
+        seen.add(dup)
+        c = cite_for(m["book_id"])
+        shared.append(
+            {
+                "book_id": m["book_id"],
+                "cite": c["cite"],
+                "author": c["author"],
+                "year": c["year"],
+                "page": m["page"],
+                "source": m.get("source"),
+                "bbox_pts": m.get("bbox_pts"),
+                "snippet": make_snippet(m["text"], query_terms(" ".join(x["label"] for x in metas))),
+                "min_score": round(float(mins[int(ci)]), 4),
+                "scores": [round(float(all_scores[int(ci), k]), 4) for k in range(len(items))],
+            }
+        )
+        if len(shared) >= n_shared:
+            break
+
+    # relations the map records, both for each item and between the pair
+    cedges = _state.get("cedges") or []
+    cnodes = _state.get("cnodes") or {}
+    ids = {m["id"] for m in metas if m["kind"] == "concept"}
+    between, own = [], {m["id"]: [] for m in metas}
+    for e in cedges:
+        if e["s"] in ids and e["t"] in ids:
+            between.append(
+                {"s": e["s"], "t": e["t"], "relation": e["r"], "strength": round(float(e.get("w") or 0.5), 3)}
+            )
+        for a, b in ((e["s"], e["t"]), (e["t"], e["s"])):
+            if a in ids and b not in ids and cnodes.get(b):
+                own[a].append(
+                    {"id": b, "label": cnodes[b].get("label", b), "relation": e["r"],
+                     "strength": round(float(e.get("w") or 0.5), 3)}
+                )
+    for k in own:
+        best = {}
+        for r in own[k]:
+            kk = (r["id"], r["relation"])
+            if kk not in best or r["strength"] > best[kk]["strength"]:
+                best[kk] = r
+        own[k] = sorted(best.values(), key=lambda r: -r["strength"])[:8]
+    seen_b = set()
+    dedup_between = []
+    for r in sorted(between, key=lambda r: -r["strength"]):
+        kk = tuple(sorted((r["s"], r["t"]))) + (r["relation"],)
+        if kk in seen_b:
+            continue
+        seen_b.add(kk)
+        dedup_between.append(r)
+
+    for k, m in enumerate(metas):
+        m["relations"] = own.get(m["id"], [])
+        m["passages"] = per_item[k]
+
+    return {
+        "items": metas,
+        "similarity": [[round(float(sim[a][b]), 4) for b in range(len(items))] for a in range(len(items))],
+        "between": dedup_between[:12],
+        "shared": shared,
+        "took_ms": round((time.time() - t0) * 1000),
+    }
+
+
 # ---------------------------------------------------------------- server
 class Handler(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
@@ -1042,6 +1221,15 @@ class Handler(BaseHTTPRequestHandler):
                         req.get("query", ""),
                         int(req.get("top_k", 20)),
                         mode=req.get("mode", "hybrid"),
+                    ),
+                )
+            elif self.path == "/compare":
+                self._json(
+                    200,
+                    compare_items(
+                        req.get("items", []),
+                        int(req.get("top_k", 6)),
+                        int(req.get("n_shared", 5)),
                     ),
                 )
             elif self.path == "/semantic_graph":

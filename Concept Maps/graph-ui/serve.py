@@ -716,6 +716,11 @@ class BookAPI:
         return BookAPI._jasper("/semantic_graph", body, timeout=120)
 
     @staticmethod
+    def compare_proxy(query: dict, body: bytes):
+        """Side-by-side of 2-4 concepts or free-text ideas across the corpus."""
+        return BookAPI._jasper("/compare", body, timeout=120)
+
+    @staticmethod
     def authors(query: dict):
         """GET /book/api/authors — the author registry joined to the corpus
         (built by tools/build_author_stats.py)."""
@@ -879,6 +884,10 @@ class Handler(SimpleHTTPRequestHandler):
                 length = int(self.headers.get("Content-Length", 0))
                 body = self.rfile.read(length) if length else b"{}"
                 res = BookAPI.semantic_graph_proxy(query, body)
+            elif path == "/book/api/compare_proxy":
+                length = int(self.headers.get("Content-Length", 0))
+                body = self.rfile.read(length) if length else b"{}"
+                res = BookAPI.compare_proxy(query, body)
             else:
                 res = None
         if res is None:
