@@ -74,6 +74,75 @@ function showReaderShell() {
   $("reader-annot-toggle").onclick = toggleAnnotMode;
   $("reader-search-go").onclick = doBookSearch;
   $("reader-search").onkeydown = (e) => { if (e.key === "Enter") doBookSearch(); };
+  wireMoreMenu();
+  wireSideToggle();
+}
+
+/* The notes/page-text pane is useful when transcribing and in the way when
+   reading, so it is a toggle, and the choice is remembered. */
+function wireSideToggle() {
+  const btn = $("reader-side-toggle");
+  if (!btn || btn._wired) return;
+  btn._wired = true;
+  const paint = () => {
+    const off = document.body.classList.contains("reader-side-off");
+    btn.classList.toggle("active", !off);
+    btn.setAttribute("aria-pressed", String(!off));
+  };
+  try {
+    if (localStorage.getItem("atlas.readerSide") === "off") document.body.classList.add("reader-side-off");
+  } catch { /* private mode */ }
+  paint();
+  btn.onclick = () => {
+    const off = document.body.classList.toggle("reader-side-off");
+    try { localStorage.setItem("atlas.readerSide", off ? "off" : "on"); } catch { /* ignore */ }
+    paint();
+    // the pane is a flex sibling: the canvas has to be re-fitted to the new width
+    if (!Reader.txtMode) renderReaderPage();
+  };
+}
+
+/* ————— loading veil —————
+   Clicking a second result left the previous book on screen until the new one
+   finished streaming, so the reader showed one text while claiming another.
+   The veil goes up synchronously on the click and only comes down when the
+   new source has actually painted. */
+function setReaderPage(n) {
+  const el = $("reader-jump");
+  if (!el) return;
+  el.value = n === "" ? "" : String(n);
+  el.dataset.page = String(n);
+}
+
+function readerVeil(title, sub) {
+  const v = $("reader-veil");
+  if (!v) return;
+  v.querySelector(".rv-title").textContent = title || "Opening…";
+  v.querySelector(".rv-sub").textContent = sub || "";
+  v.classList.remove("hidden");
+}
+function readerVeilDown() {
+  const v = $("reader-veil");
+  if (v) v.classList.add("hidden");
+}
+window.readerVeil = readerVeil;
+
+function wireMoreMenu() {
+  const btn = $("reader-more"), pop = $("reader-more-menu");
+  if (!btn || !pop || btn._wired) return;
+  btn._wired = true;
+  const close = () => { pop.classList.add("hidden"); btn.setAttribute("aria-expanded", "false"); };
+  btn.onclick = (e) => {
+    e.stopPropagation();
+    const show = pop.classList.contains("hidden");
+    pop.classList.toggle("hidden", !show);
+    btn.setAttribute("aria-expanded", String(show));
+  };
+  document.addEventListener("click", (e) => {
+    if (!pop.classList.contains("hidden") && !pop.contains(e.target) && e.target !== btn) close();
+  });
+  pop.querySelectorAll("button").forEach(b => b.addEventListener("click", close));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); }, true);
 }
 /* The side pane serves a scan (annotations + the page's OCR text) and a text
    edition (annotations only) differently. */
@@ -101,20 +170,18 @@ async function openReader(bookId, opts = {}) {
   Reader.pendingHighlight = opts.highlight || null;
   Reader.pageNum = opts.page || 1;
   showReaderShell();
-  // loading screen while the PDF streams (large scans take seconds)
-  $("reader-body").innerHTML = `
-    <div class="pdf-loading-state">
-      <div class="searching-spinner"></div>
-      <div class="pdf-loading-text">Opening <b>${esc(bookId.slice(0, 48))}</b>…</div>
-      <div class="pdf-loading-sub">streaming PDF scan · rendering page ${opts.page || 1}</div>
-    </div>`;
-  setStatus(`Opening ${bookId}…`);
+  const cite = window.Cite ? Cite.parse(bookId) : null;
+  readerVeil(
+    (cite && cite.cite) || bookId,
+    `streaming the scan · page ${opts.page || 1}`,
+  );
+  setStatus(`Opening ${(cite && cite.cite) || bookId}…`);
   try {
     if (!Reader.pdfDoc || Reader._loadedFor !== bookId) {
       const url = `/book/pdf/${encodeURIComponent(bookId)}`;
       const task = pdfjsLib.getDocument({ url, disableAutoFetch: false });
       const doc = await task.promise;
-      if (readerStale(token)) { try { doc.destroy(); } catch {} return; }
+      if (readerStale(token)) { try { doc.destroy(); } catch {} return; }   // newer open owns the veil
       Reader.pdfDoc = doc;
       Reader._loadedFor = bookId;
     }
@@ -122,6 +189,8 @@ async function openReader(bookId, opts = {}) {
     Reader.numPages = Reader.pdfDoc.numPages;
     $("reader-page-total").textContent = Reader.numPages;
     $("reader-jump").max = Reader.numPages;
+    $("reader-jump").disabled = false;
+    $("reader-jump").placeholder = "";
     // restore the page-wrap markup (loading screen replaced it)
     $("reader-body").innerHTML = `
       <div id="reader-page-wrap">
@@ -132,11 +201,11 @@ async function openReader(bookId, opts = {}) {
     overlayDragHandlers();
     await renderReaderPage(token);
     if (readerStale(token)) return;
+    readerVeilDown();          // the new page is on screen; reveal it
     await loadAnnotations(token);
     await loadPageOcr(token);
     if (readerStale(token)) return;
-    const c = window.Cite ? Cite.parse(bookId) : null;
-    setStatus(`${(c && c.cite) || bookId} — ${Reader.numPages} pages`);
+    setStatus(`${(cite && cite.cite) || bookId} — ${Reader.numPages} pages`);
   } catch (e) {
     console.error("reader open failed", e);
     await openTxtMode(bookId);
@@ -238,8 +307,9 @@ async function renderReaderPage(token) {
   Reader.renderTask = page.render({ canvasContext: ctx2, viewport: page.getViewport({ scale: scale * dpr }) });
   await Reader.renderTask.promise.catch(() => {});
   if (readerStale(token) || Reader.pageNum !== pageAtStart) return;
-  $("reader-page-cur").textContent = Reader.pageNum;
-  $("reader-jump").value = Reader.pageNum;
+  // the jump input IS the current-page display now, so there is one number on
+  // screen instead of a label and a box that could disagree
+  setReaderPage(Reader.pageNum);
   $("reader-zoom-label").textContent = Math.round(scale / fitScale * 100) + "%";
   drawOverlay(page, vp, token);
 }
@@ -513,6 +583,8 @@ Reader.txtParas = null;
 async function openTxtMode(bookId) {
   Reader.txtMode = true;
   Reader.txtParas = null;
+  const _c = window.Cite ? Cite.parse(bookId) : null;
+  readerVeil((_c && _c.cite) || bookId, "loading the text edition…");
   try {
     const res = await fetch(`/book/api/txt_paragraphs?book=${encodeURIComponent(bookId)}`);
     if (!res.ok) throw new Error("no txt");
@@ -529,7 +601,9 @@ async function openTxtMode(bookId) {
     // a text edition has no scanned page, so the OCR pane has nothing to show;
     // leaving the empty "Page text (OCR)" heading there just looked broken
     setSidePanelMode(true);
-    $("reader-page-cur").textContent = "txt";
+    setReaderPage("");
+    $("reader-jump").disabled = true;         // a text edition has no pages
+    $("reader-jump").placeholder = "txt";
     $("reader-page-total").textContent = d.n_paragraphs + " ¶";
     // scroll to evidence passage if we came from a search hit
     if (Reader.pendingHighlight && Reader.pendingHighlight.text) {
@@ -537,8 +611,10 @@ async function openTxtMode(bookId) {
       Reader.pendingHighlight = null;
     }
     applyTxtTermHighlights();
+    readerVeilDown();
     await loadTxtAnnotations();
   } catch (e2) {
+    readerVeilDown();
     setStatus(`No PDF or TXT for ${bookId}`);
     showReaderFallback(bookId);
   }

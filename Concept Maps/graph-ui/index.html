@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 <title>Concept Atlas — British Moral Philosophy</title>
 <link rel="stylesheet" href="vendor/fonts.css">
-<link rel="stylesheet" href="style.css?v=1788665938">
+<link rel="stylesheet" href="style.css?v=1788694914">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C15B5B'/%3E%3Ccircle cx='6' cy='8' r='3.4' fill='%234E79A7'/%3E%3Ccircle cx='26' cy='7' r='3' fill='%235FA052'/%3E%3Ccircle cx='25' cy='25' r='3.2' fill='%23D9A441'/%3E%3Cpath d='M16 16L6 8M16 16L26 7M16 16L25 25' stroke='%23948B7B' stroke-width='1'/%3E%3C/svg%3E">
 </head>
 <body>
-<script src="theme.js?v=1788665938"></script>
+<script src="theme.js?v=1788694914"></script>
 <header id="topbar">
   <div class="brand">
     <h1>Concept Atlas</h1>
@@ -124,31 +124,50 @@
   <!-- Book Reader overlay -->
   <div id="reader" class="hidden docked">
     <div id="reader-toolbar">
-      <button id="reader-close" title="Close (Esc)">×</button>
+      <button id="reader-close" class="rb rb-icon" title="Close (Esc)" aria-label="Close reader">&#215;</button>
       <span id="reader-title" class="reader-title"></span>
-      <span class="reader-nav">
-        <button id="reader-prev" title="Previous page"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3L5 8l5 5"/></svg></button>
-        <span>page <span id="reader-page-cur">1</span> / <span id="reader-page-total">–</span></span>
-        <button id="reader-next" title="Next page"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg></button>
-        <input id="reader-jump" type="number" min="1" value="1" style="width:64px">
+
+      <span class="rgroup" role="group" aria-label="Page navigation">
+        <button id="reader-prev" class="rb rb-icon" title="Previous page (&#8592;)" aria-label="Previous page"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 3L5 8l5 5"/></svg></button>
+        <span class="rpage"><input id="reader-jump" type="number" min="1" value="1" aria-label="Go to page"><span class="rslash">/</span><span id="reader-page-total">&#8211;</span></span>
+        <button id="reader-next" class="rb rb-icon" title="Next page (&#8594;)" aria-label="Next page"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></button>
       </span>
-      <span class="reader-tools">
-        <input id="reader-search" type="text" placeholder="Search in book…" style="width:150px;background:#3A362E;color:#E8E2D5;border:1px solid #5A5344;border-radius:4px;padding:3px 8px;font-size:12.5px">
-        <button id="reader-search-go" title="Search in book">🔍</button>
-        <button id="reader-zoom-fit" title="Fit page to pane (0)"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 6V2h4M14 6V2h-4M2 10v4h4M14 10v4h-4"/></svg></button>
-        <span id="reader-zoom-label" style="font-size:11px;min-width:36px;text-align:center">100%</span>
-        <button id="reader-zoom-in" title="Zoom in (+)"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v10M3 8h10"/></svg></button>
-        <button id="reader-zoom-out" title="Zoom out (−)"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10"/></svg></button>
-        <button id="reader-annot-toggle" title="Draw annotations">✎</button>
+
+      <span class="rgroup" role="group" aria-label="Zoom">
+        <button id="reader-zoom-out" class="rb rb-icon" title="Zoom out (&#8722;)" aria-label="Zoom out"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10"/></svg></button>
+        <button id="reader-zoom-fit" class="rb rb-zoom" title="Fit page to the pane (0)"><span id="reader-zoom-label">100%</span></button>
+        <button id="reader-zoom-in" class="rb rb-icon" title="Zoom in (+)" aria-label="Zoom in"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></button>
       </span>
-      <span class="reader-dl">
-        <button id="reader-download-pdf" title="Download PDF">⬇ PDF</button>
-        <button id="reader-download-txt" title="Download TXT">⬇ TXT</button>
-        <button id="reader-download-md" title="Download MD">⬇ MD</button>
-        <button id="reader-download-jsonl" title="Download OCR JSONL">⬇ JSONL</button>
-        <button id="reader-export-json" title="Export annotations (JSON)">⬇ notes</button>
-        <button id="reader-export-md" title="Export annotations (Markdown)">⬇ notes.md</button>
+
+      <span class="rsearch">
+        <svg class="rsearch-i" width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="7" r="4.5"/><path d="M13 13l-2.6-2.6" stroke-linecap="round"/></svg>
+        <input id="reader-search" type="text" placeholder="Search in this book&#8230;" aria-label="Search in this book">
+        <button id="reader-search-go" class="rb rb-go" title="Search in this book">Find</button>
       </span>
+
+      <button id="reader-annot-toggle" class="rb rb-icon" title="Draw annotations" aria-label="Draw annotations">&#9998;</button>
+      <button id="reader-side-toggle" class="rb rb-icon" title="Show / hide the notes &amp; page-text pane" aria-label="Toggle side pane">&#9707;</button>
+
+      <span class="rmenu">
+        <button id="reader-more" class="rb rb-icon" title="Downloads &amp; exports" aria-haspopup="true" aria-expanded="false">&#8943;</button>
+        <div id="reader-more-menu" class="rmenu-pop hidden" role="menu">
+          <div class="rmenu-h">Download the source</div>
+          <button id="reader-download-pdf" role="menuitem">PDF scan</button>
+          <button id="reader-download-txt" role="menuitem">Plain text</button>
+          <button id="reader-download-md" role="menuitem">Markdown</button>
+          <button id="reader-download-jsonl" role="menuitem">OCR JSONL (word geometry)</button>
+          <div class="rmenu-h">Export your notes</div>
+          <button id="reader-export-json" role="menuitem">Annotations (JSON)</button>
+          <button id="reader-export-md" role="menuitem">Annotations (Markdown)</button>
+        </div>
+      </span>
+    </div>
+    <div id="reader-veil" class="hidden">
+      <div class="rv-inner">
+        <div class="searching-spinner"></div>
+        <div class="rv-title">Opening&#8230;</div>
+        <div class="rv-sub"></div>
+      </div>
     </div>
     <div id="reader-split">
       <div id="reader-body">
@@ -385,16 +404,16 @@
 <script src="vendor/3d-force-graph.min.js"></script>
 <script src="vendor/pdfjs/pdf.min.js"></script>
 <script>pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdfjs/pdf.worker.min.js";</script>
-<script src="cite.js?v=1788665938"></script>
-<script src="authors.js?v=1788665938"></script>
-<script src="app.js?v=1788665938"></script>
-<script src="reader.js?v=1788665938"></script>
-<script src="compare.js?v=1788665938"></script>
-<script src="landing.js?v=1788665938"></script>
-<script src="search.js?v=1788665938"></script>
-<script src="floatgraph.js?v=1788665938"></script>
-<script src="dyngraph.js?v=1788665938"></script>
-<script src="settings.js?v=1788665938"></script>
+<script src="cite.js?v=1788694914"></script>
+<script src="authors.js?v=1788694914"></script>
+<script src="app.js?v=1788694914"></script>
+<script src="reader.js?v=1788694914"></script>
+<script src="compare.js?v=1788694914"></script>
+<script src="landing.js?v=1788694914"></script>
+<script src="search.js?v=1788694914"></script>
+<script src="floatgraph.js?v=1788694914"></script>
+<script src="dyngraph.js?v=1788694914"></script>
+<script src="settings.js?v=1788694914"></script>
 <script type="module" src="labels3d.mjs"></script>
 </body>
 </html>

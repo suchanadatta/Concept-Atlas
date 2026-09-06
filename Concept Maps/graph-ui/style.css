@@ -299,14 +299,73 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 4px 0 0;
 /* ————————————— Book Reader ————————————— */
 #reader{position:fixed;inset:0 0 var(--settings-h) 0;background:rgba(24,22,18,.92);z-index:200;display:flex;flex-direction:column}
 #reader.hidden{display:none}
-#reader-toolbar{display:flex;align-items:center;gap:14px;padding:8px 16px;background:#2A2721;color:#E8E2D5;border-bottom:1px solid #4A443A}
+/* One row, not three. The old toolbar wrapped to 133px on a split pane and
+   several controls (fit / + / −) were bare glyphs with no button chrome, so
+   they did not read as clickable at all; the downloads took a whole row of
+   their own. Controls are grouped, every one looks like a control, and the
+   six download/export actions live behind a single overflow button. */
+#reader-toolbar{display:flex;align-items:center;gap:6px;padding:6px 8px;background:#2A2721;
+  color:#E8E2D5;border-bottom:1px solid #4A443A;flex:none;min-height:42px}
 #reader-title{font-family:"EB Garamond",serif;font-size:15px;font-weight:600;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#reader-toolbar button{background:#3A362E;color:#E8E2D5;border:1px solid #5A5344;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:13px}
-#reader-toolbar button:hover{background:#4A443A}
-#reader-toolbar button.active{background:#C15B5B;border-color:#C15B5B}
-.reader-nav{display:flex;align-items:center;gap:8px;font-size:13px}
-.reader-nav input{background:#3A362E;color:#E8E2D5;border:1px solid #5A5344;border-radius:4px;padding:3px 6px}
-.reader-tools,.reader-dl{display:flex;gap:6px}
+#reader-toolbar button{background:#3A362E;color:#E8E2D5;border:1px solid #5A5344;border-radius:6px;
+  padding:0 9px;cursor:pointer;font-size:13px;height:28px;display:inline-flex;align-items:center;
+  justify-content:center;gap:5px;transition:background .12s,border-color .12s}
+#reader-toolbar button:hover{background:#4A443A;border-color:#6B6353}
+#reader-toolbar button:active{background:#2E2A24}
+#reader-toolbar button.active{background:#C15B5B;border-color:#C15B5B;color:#F6F1E5}
+#reader-toolbar button:focus-visible{outline:2px solid #C15B5B;outline-offset:1px}
+.rb-icon{width:30px;padding:0 !important}
+#reader-close{font-size:19px;line-height:1}
+.reader-title{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font-family:"EB Garamond",serif;font-size:14.5px;color:#D8D2C4}
+
+/* segmented groups so page-nav and zoom read as single controls */
+.rgroup{display:inline-flex;align-items:center;gap:2px;background:#211F1B;border:1px solid #4A443A;
+  border-radius:8px;padding:2px;flex:none}
+.rgroup button{border-color:transparent;background:transparent;height:24px}
+.rgroup button:hover{background:#3A362E;border-color:transparent}
+.rpage{display:inline-flex;align-items:center;gap:3px;font-size:12px;color:#B8B2A4;padding:0 2px;
+  font-variant-numeric:tabular-nums}
+.rpage input{width:46px;height:22px;background:#2E2A24;color:#E8E2D5;border:1px solid #4A443A;
+  border-radius:4px;padding:0 4px;font-size:12px;text-align:right;font-variant-numeric:tabular-nums}
+.rpage input::-webkit-outer-spin-button,.rpage input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.rpage input{-moz-appearance:textfield}
+.rslash{opacity:.55}
+.rb-zoom{min-width:52px;font-size:11.5px !important;font-variant-numeric:tabular-nums}
+
+/* the search box yields width first so the trailing controls never wrap */
+.rsearch{display:inline-flex;align-items:center;gap:0;background:#211F1B;border:1px solid #4A443A;
+  border-radius:8px;padding:2px 2px 2px 8px;flex:1 1 90px;min-width:74px;max-width:280px}
+.rsearch-i{color:#8B8375;flex:none}
+.rsearch input{flex:1;min-width:0;background:transparent;border:none;outline:none;color:#E8E2D5;
+  font-size:12.5px;padding:0 8px;height:24px;font-family:var(--sans)}
+.rsearch input::placeholder{color:#7A7365}
+.rb-go{height:24px !important;font-size:11.5px !important;flex:none}
+@media (max-width:1400px){ body.split-reading .rb-go{display:none} }
+
+/* overflow menu — six download buttons used to occupy an entire row */
+.rmenu{position:relative;flex:none}
+.rmenu-pop{position:absolute;right:0;top:34px;z-index:20;min-width:230px;background:#2E2A24;
+  border:1px solid #4A443A;border-radius:9px;padding:6px;box-shadow:0 12px 34px rgba(0,0,0,.5)}
+.rmenu-pop.hidden{display:none}
+.rmenu-h{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8B8375;
+  padding:6px 8px 4px;font-weight:650}
+.rmenu-pop button{display:flex !important;width:100%;justify-content:flex-start !important;
+  background:transparent !important;border-color:transparent !important;font-size:12.5px;
+  padding:0 8px !important;height:27px !important}
+.rmenu-pop button:hover{background:#3A362E !important}
+
+/* the veil covers the OLD source the instant a new one is requested, so the
+   reader never shows one book while loading another */
+#reader-veil{position:absolute;inset:42px 0 0 0;z-index:12;background:#211F1B;
+  display:flex;align-items:center;justify-content:center;text-align:center}
+#reader-veil.hidden{display:none}
+.rv-inner{max-width:70%}
+.rv-title{margin-top:14px;font-family:"EB Garamond",serif;font-size:17px;color:#E8E2D5}
+.rv-sub{margin-top:5px;font-size:12px;color:#8B8375;line-height:1.5}
+/* #reader is position:fixed, which already anchors the absolutely positioned
+   veil — declaring position:relative here overrode the fixed positioning and
+   slid the whole reader out of the viewport. */
 #reader-split{flex:1;display:flex;overflow:hidden}
 #reader-body{flex:1;overflow:auto;padding:24px;display:flex;justify-content:center;background:#211F1B}
 #reader-page-wrap{position:relative;box-shadow:0 4px 30px rgba(0,0,0,.5)}
@@ -320,7 +379,12 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 4px 0 0;
 .ann-box{position:absolute;border:2px dashed rgba(90,140,220,.75);background:rgba(90,140,220,.12);border-radius:2px}
 .ann-box.ann-note{border-color:rgba(220,150,90,.8);background:rgba(220,150,90,.12)}
 .ann-drawing{position:absolute;border:1px dashed rgba(255,255,255,.7);background:rgba(255,255,255,.08);pointer-events:none}
-#reader-side{width:320px;background:#26231E;color:#D8D2C4;border-left:1px solid #4A443A;overflow-y:auto;padding:16px}
+/* A fixed 320px pane took 54% of a split reader, leaving the scan itself
+   226px wide — the page you came to read was the smallest thing on screen.
+   It is proportional now, and can be closed outright. */
+#reader-side{width:min(320px,34%);flex:none;background:#26231E;color:#D8D2C4;
+  border-left:1px solid #4A443A;overflow-y:auto;padding:16px}
+body.reader-side-off #reader-side{display:none}
 #reader-side h4{font-family:"EB Garamond",serif;color:#C9C2B2;margin:14px 0 8px;font-size:15px;border-bottom:1px solid #3A362E;padding-bottom:4px}
 .ann-item{padding:6px 8px;border-radius:4px;background:#2E2A24;margin-bottom:6px;font-size:12.5px;cursor:pointer}
 .ann-item:hover{background:#3A362E}
@@ -520,6 +584,8 @@ body.split-reading #gres{right:54%}
 /* toolbar wraps instead of overflowing */
 #reader-toolbar{flex-wrap:wrap;row-gap:6px}
 #reader-toolbar button{white-space:nowrap}
+/* below this the title is the first thing worth dropping */
+@media (max-width:1180px){ body.split-reading .reader-title{display:none} }
 #reader-title{flex:1 1 100%;order:5;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .reader-nav,.reader-tools,.reader-dl{flex:none}
 .gres-searchwrap{display:flex;gap:6px;align-items:center;flex:1;max-width:420px}
@@ -707,7 +773,9 @@ body.dark #graph-float .gf-bar .gf-title{color:#E8E2D5}
   #dyngraph{position:fixed;inset:0 0 var(--settings-h) 0;width:100% !important;left:0 !important;border-left:none}
   .dyngraph-hint{display:none}
   #reader-toolbar{flex-wrap:wrap;gap:6px;padding:6px 8px}
-  .reader-nav,.reader-tools,.reader-dl{font-size:11px}
+  .reader-title{display:none}
+  .rsearch{flex:1 1 120px;max-width:none}
+  #reader-veil{inset:0}
   #reader-side{width:auto;max-height:32%}
   #compare-grid{grid-auto-flow:row;grid-auto-columns:auto}
   .gres-bar{flex-wrap:wrap;gap:6px}
