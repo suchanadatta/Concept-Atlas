@@ -654,8 +654,7 @@ const Chat = (function () {
   window.askAboutResults = askAboutResults;
 
   function init() {
-    const btn = $("btn-chat");
-    if (btn) btn.onclick = () => ($("chat-panel").classList.contains("hidden") ? open() : close());
+    // the app bar's Ask button routes through Nav.go("ask")
     const ask = $("gres-ask");
     if (ask) ask.onclick = askAboutResults;
     const cl = $("chat-close");
