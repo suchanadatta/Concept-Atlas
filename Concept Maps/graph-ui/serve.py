@@ -1015,8 +1015,10 @@ class Handler(SimpleHTTPRequestHandler):
         if path.startswith("/book/api/chat/"):
             sub = "/" + path[len("/book/api/chat/"):]
             token = self.headers.get("X-Atlas-Token", "")
-            if sub == "/chat" and method == "POST":
-                return self._stream_chat(token)
+            # Both of these stream SSE for minutes; the buffered proxy below
+            # would hold the whole thing and time out long before the end.
+            if sub in ("/chat", "/debate") and method == "POST":
+                return self._stream_chat(token, sub)
             length = int(self.headers.get("Content-Length", 0) or 0)
             body = self.rfile.read(length) if (method == "POST" and length) else b"{}"
             status, ctype, data, extra = BookAPI.chat_proxy(sub, method, body, token)  # per-path timeout
@@ -1084,12 +1086,13 @@ class Handler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
         return True
 
-    def _stream_chat(self, token: str):
-        """Pass the SSE stream through unbuffered.
+    def _stream_chat(self, token: str, sub: str = "/chat"):
+        """Pass an SSE stream through unbuffered.
 
         The other proxies read the whole response before replying, which for a
         token stream would mean the user watches nothing happen for a minute
-        and then sees the finished answer appear at once.
+        and then sees the finished answer appear at once. A debate is worse:
+        several agent turns, so nothing at all until every one has finished.
         """
         import urllib.request as _urllib
 
@@ -1100,7 +1103,7 @@ class Handler(SimpleHTTPRequestHandler):
             headers["X-Atlas-Token"] = token
         try:
             req = _urllib.Request(
-                f"{BookAPI.CHAT}/chat", data=body, headers=headers, method="POST"
+                f"{BookAPI.CHAT}{sub}", data=body, headers=headers, method="POST"
             )
             up = _urllib.urlopen(req, timeout=1800)
         except _urllib.HTTPError as e:

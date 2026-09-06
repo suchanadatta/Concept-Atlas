@@ -441,6 +441,8 @@ How to work
    concept's meaning or its place in the map -> find_concept, then concept_detail and
    concept_passages. Broad or vague -> query_network first, to see the territory. About who wrote
    what -> list_authors.
+   Two ideas held against each other -> compare_ideas, which finds the passages where they are
+   argued TOGETHER. What is on the shelf -> list_books. About to print a quotation -> verify_quote.
 2. DO NOT GIVE UP AFTER ONE CALL. If hybrid search returns nothing to the point:
      * reword in the period's own vocabulary (vertue, felf-love, the paffions);
      * try mode='semantic' for meaning, or 'bm25'/'keyword' for a literal word or rare name;
@@ -449,7 +451,21 @@ How to work
    Only after several genuinely different attempts may you say the corpus does not address it.
 3. When a snippet is not enough to settle what an author claims, read_source the page range.
 4. Quote sparingly and exactly. Spelling is archaic — read through it and never silently modernise
-   a quotation.
+   a quotation. If you are quoting from memory rather than from a tool result in front of you, run
+   verify_quote first. A quotation the tool cannot find must not appear in your answer.
+5. Your answer is checked before the reader sees it — by you, with the tools still in hand. Write
+   the draft you would defend, not one you hope nobody looks into.
+
+How to lay an answer out
+------------------------
+Markdown is rendered: headings, **bold**, lists, > quotations, `code`, and real tables. Use a
+table when you are setting several authors or positions against each other on the same axes —
+it is far easier to read than the same content as prose.
+
+You can also draw. A fenced ```mermaid block is rendered as a diagram, and is worth it when the
+shape of something is the point: how concepts hang together, who influenced whom, the branches of
+an argument. Keep node labels short, put quotes around any label containing punctuation, and do
+not draw for the sake of it — a diagram that restates one sentence is noise.
 
 Citations — this matters most
 -----------------------------
@@ -477,6 +493,231 @@ what these texts say from what is generally known — and if web tools are avail
 them, mark that material as coming from outside the corpus. Do not pad; a short grounded answer is
 better than a long one that drifts."""
 
+
+
+def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=8, max_tokens=4096,
+               tag=None, channel="content", tools=True):
+    """One agent's turn: call tools until it has an answer, then answer.
+
+    The same loop serves the assistant, the self-check pass and every speaker in
+    a debate, so they all get the same tool access and the same citation table —
+    a marker means the same passage wherever it appears in the transcript.
+
+    `tag` is merged into every event, which is how the client tells one debater
+    from another. Returns (reasoning, content, trace).
+    """
+    schemas = atlas_tools.schemas(allow_web=allow_web) if tools else None
+    reasoning, content, trace = [], [], []
+    # One self-check pass was seen firing 120 verify_quote calls in a single
+    # step — every phrase in the draft, several of them twice. Two limits:
+    # a cap per step, and a memo so an identical call is answered from the
+    # first result instead of being run again.
+    memo: dict[str, dict] = {}
+    MAX_CALLS_PER_STEP = 10
+
+    def send(obj):
+        if tag:
+            obj = {**obj, **tag}
+        emit(obj)
+
+    for step in range(max_steps):
+        calls = None
+        step_reasoning, step_content = [], []
+        for kind, chunk in vllm_stream(msgs, max_tokens=max_tokens, tools=schemas):
+            if kind == "reasoning":
+                step_reasoning.append(chunk)
+                send({"type": "reasoning", "text": chunk})
+            elif kind == "content":
+                step_content.append(chunk)
+                send({"type": channel, "text": chunk})
+            elif kind == "tool_calls":
+                calls = chunk
+        reasoning.extend(step_reasoning)
+        content.extend(step_content)
+        if not calls:
+            break
+        msgs.append({
+            "role": "assistant",
+            "content": "".join(step_content),
+            "tool_calls": [
+                {"id": c["id"] or f"call_{step}_{k}", "type": "function",
+                 "function": {"name": c["name"], "arguments": c["args"] or "{}"}}
+                for k, c in enumerate(calls)
+            ],
+        })
+        for k, c in enumerate(calls):
+            try:
+                args = json.loads(c["args"] or "{}")
+            except json.JSONDecodeError:
+                args = {}
+            # emit the request whatever happens to it, so the trace shows what
+            # the model asked for as well as what it got
+            send({"type": "tool_call", "step": step, "name": c["name"], "args": args})
+            if k >= MAX_CALLS_PER_STEP:
+                result = {"error": (
+                    f"not run: {len(calls)} tools were requested at once and only the first "
+                    f"{MAX_CALLS_PER_STEP} are executed per step. Ask for the few that matter "
+                    "most, read what they return, then ask for more if you still need them.")}
+                summary = "skipped — too many calls in one step"
+            else:
+                key = c["name"] + "\u0000" + json.dumps(args, sort_keys=True, ensure_ascii=False)
+                if key in memo:
+                    result = dict(memo[key])
+                    result["note"] = "identical call already made this turn; this is that result"
+                    summary = atlas_tools.summarise(c["name"], result) + " (repeat)"
+                else:
+                    result = atlas_tools.run_tool(c["name"], args, cites, allow_web=allow_web)
+                    memo[key] = result
+                    summary = atlas_tools.summarise(c["name"], result)
+            trace.append({"step": step, "name": c["name"], "args": args,
+                          "summary": summary, "took_ms": result.get("took_ms")})
+            send({"type": "tool_result", "step": step, "name": c["name"],
+                  "summary": summary, "took_ms": result.get("took_ms")})
+            msgs.append({
+                "role": "tool",
+                "tool_call_id": c["id"] or f"call_{step}_{k}",
+                "name": c["name"],
+                "content": json.dumps(result, ensure_ascii=False)[:60000],
+            })
+        if cites.rows:
+            send({"type": "sources", "sources": cites.as_list()})
+    else:
+        # Still reaching for tools when the budget ran out. Take them away and
+        # make it answer from what it has, rather than ending with nothing said.
+        send({"type": "note",
+              "text": f"tool budget spent after {max_steps} rounds — answering from "
+                      f"the {len(cites.rows)} passages gathered"})
+        msgs.append({"role": "user", "content": (
+            "You have used your tool budget. Do not ask for more tools; there are none left "
+            "this turn. Answer now from the evidence you already have above, citing each claim "
+            "by its cite_as marker. If the evidence is thin on some part of the question, say "
+            "so plainly rather than guessing.")})
+        for kind, chunk in vllm_stream(msgs, max_tokens=max_tokens, tools=None):
+            if kind == "reasoning":
+                reasoning.append(chunk)
+                send({"type": "reasoning", "text": chunk})
+            elif kind == "content":
+                content.append(chunk)
+                send({"type": channel, "text": chunk})
+    return "".join(reasoning), "".join(content), trace
+
+
+SELF_CHECK_PROMPT = """Your draft answer is above. Before the reader sees it, check it.
+
+You still have every tool. Do this, in order:
+
+1. Every phrase you put in quotation marks: run verify_quote on it. If the verdict is NOT FOUND,
+   the quotation is wrong — remove it or replace it with wording the tool confirms. If it is CLOSE
+   BUT NOT VERBATIM, copy the wording from text_as_printed.
+2. Every citation marker: does the passage behind it actually support the claim you attached it
+   to, or only sit near the topic? If it does not, find one that does or drop the claim.
+3. Every substantive claim about what these texts say that carries NO marker: either find support
+   for it with a tool, or mark it in the text as your inference rather than the corpus's word.
+4. Anything you asserted about an author, a date or a work that you did not look up: look it up.
+
+Then reply in exactly one of two ways.
+
+If nothing needed fixing, reply with the single line:
+VERDICT: stands
+
+If anything needed fixing, reply with:
+VERDICT: revised
+followed by the complete corrected answer, in full, ready to show the reader. Do not describe the
+changes; write the answer itself. Keep everything that was right.
+
+Do not be precious about the draft. A quiet correction now is worth more than a confident error."""
+
+# --------------------------------------------------------------------- debate
+DEBATE_COMMON = """This is a formal debate held inside Concept Atlas, over a corpus of \
+18th-century British moral philosophy: 197 indexed sources, 90,975 passages, 37 named authors, \
+202 mapped concepts.
+
+The motion is:
+
+    {motion}
+
+You are arguing {stance}.
+
+Rules of this debate
+--------------------
+* ARGUE FROM THE CORPUS, NOT FROM MEMORY. Before you assert what any author held, find the
+  passage. You have the full toolset: search_corpus in four modes, read_source for a page range,
+  find_concept and concept_detail for the map and its relations, concept_passages for attested
+  quotes, compare_ideas for two ideas held side by side, list_books for what is on the shelf,
+  list_authors for who wrote it, and verify_quote to check any wording before you print it.
+* CITE EVERY CLAIM with the cite_as marker the tool gave you, inline: "Mandeville makes luxury the
+  engine of trade [S4]." A marker is clickable; prose like "in the Fable of the Bees, p. 12" is
+  not. Never invent a marker and never cite one you were not given.
+* QUOTE EXACTLY. Spelling is archaic; do not modernise it. If you are quoting from memory, run
+  verify_quote first — a quotation the tool cannot find must not appear.
+* Argue the strongest version of your side. Do not straw-man the opposition; take their best
+  reading and answer it.
+* If the corpus does not support a point you would like to make, say so and make a weaker point
+  that it does support. A conceded point argued honestly is worth more here than a confident one
+  with nothing behind it.
+* Be concrete and compact. Three grounded arguments beat eight assertions."""
+
+DEBATE_OPENING = """Write your opening statement: your strongest case for your side, grounded in
+the corpus and cited. If the other side has already opened, you may engage what they actually
+said — but do not answer arguments nobody has made."""
+
+DEBATE_REBUTTAL = """Your opponent has spoken. Their argument is above.
+
+Answer it. Quote or name the specific claim you are contesting, then say what the corpus actually
+shows — with a marker. Where they are right, concede it plainly and explain why your side survives
+anyway. Add new ground of your own only where it advances the motion. Do not repeat your opening."""
+
+DEBATE_CLOSING = """Write your closing. What did this exchange actually establish for your side,
+and what did your opponent fail to answer? Cite the passages that carried the weight. Do not
+introduce new evidence you have not already argued."""
+
+JUDGE_PROMPT = """You are the adjudicator, not a debater. The full transcript is above.
+
+You have the same tools, and you should use them to CHECK rather than to argue: run verify_quote
+on any quotation that carried real weight, and read_source anything decisive that was only seen as
+a snippet.
+
+Write your adjudication as markdown, in this shape:
+
+## Where they actually disagree
+The real point of difference, stripped of rhetoric — often narrower than either side made it look.
+
+## What the corpus supports
+Claim by claim, which side's reading the passages bear out, with markers. Say plainly where a
+claim was asserted without support, and where a quotation did not survive checking.
+
+## What the corpus cannot settle
+The parts of the motion these 197 sources simply do not decide. Be specific about why — the texts
+are silent, or they conflict, or the question is not one a text can answer.
+
+## Verdict
+Which side argued the motion better ON THE EVIDENCE, and how confidently. It is legitimate to say
+the motion is not decidable from this corpus; it is not legitimate to split the difference to
+avoid choosing.
+
+Then, in a fenced ```mermaid block, draw the shape of the disagreement as a graph: the motion, the
+main claims each side made, and which claims answered which. Use `graph TD`, keep node labels
+short, and quote any label containing punctuation."""
+
+
+def debate_sides(b):
+    """Two sides, defaulted sensibly, so a motion alone is enough to start."""
+    raw = b.get("sides") or []
+    out = []
+    for i, sd in enumerate(raw[:2]):
+        out.append({
+            "name": (sd.get("name") or f"Side {i + 1}")[:60],
+            "stance": (sd.get("stance") or ("for the motion" if i == 0 else "against the motion"))[:200],
+            "persona": (sd.get("persona") or "")[:400],
+        })
+    while len(out) < 2:
+        i = len(out)
+        out.append({
+            "name": "For" if i == 0 else "Against",
+            "stance": "for the motion" if i == 0 else "against the motion",
+            "persona": "",
+        })
+    return out
 
 
 def assemble_context(sid: str, budget_chars: int):
@@ -737,6 +978,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.import_session()
             if p == "/chat":
                 return self.chat()
+            if p == "/debate":
+                return self.debate()
             m = re.fullmatch(r"/sessions/([\w-]+)/(rename|delete|context/add|context/remove)", p)
             if m:
                 return self.session_action(m.group(1), m.group(2))
@@ -973,6 +1216,149 @@ class Handler(BaseHTTPRequestHandler):
         return self._json(200, {"session": dict(row), "n_messages": len(msgs)})
 
     # ---------- chat ----------
+    def debate(self):
+        """Two agents argue a motion from the corpus, then a third adjudicates.
+
+        Everything shares one citation table, so [S7] means the same passage in
+        the opening, the rebuttal and the verdict — and stays clickable.
+        """
+        u = self._need_user()
+        if not u:
+            return
+        b = self._body()
+        sid = b.get("session_id")
+        row = self._own_session(sid, u)
+        if not row:
+            return
+        motion = (b.get("motion") or "").strip()
+        if not motion:
+            return self._json(400, {"error": "give a motion to debate"})
+        rounds = max(1, min(int(b.get("rounds", 2)), 4))
+        allow_web = bool(b.get("allow_web"))
+        sides = debate_sides(b)
+        judge = b.get("judge", True)
+        max_steps = int(b.get("max_steps", 5))
+        max_tokens = int(b.get("max_tokens", 3000))
+
+        self.send_response(200)
+        self.send_header("Content-Type", "text/event-stream")
+        self.send_header("Cache-Control", "no-cache")
+        self.send_header("X-Accel-Buffering", "no")
+        self.send_header("Connection", "close")
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.end_headers()
+
+        def emit(obj):
+            self.wfile.write(("data: " + json.dumps(obj, ensure_ascii=False) + "\n\n").encode())
+            self.wfile.flush()
+
+        emit({"type": "debate_start", "motion": motion, "rounds": rounds,
+              "sides": sides, "web": allow_web, "judge": bool(judge),
+              "model": CFG["model"]})
+
+        cites = atlas_tools.Cites()
+        transcript = []          # [{side, round, phase, text}]
+        turns = []
+
+        def sys_for(side):
+            head = DEBATE_COMMON.format(motion=motion, stance=side["stance"])
+            if side["persona"]:
+                head += ("\n\nYou are speaking as: " + side["persona"] +
+                         "\nStay in that voice, but never let it licence a claim the corpus does "
+                         "not support.")
+            if allow_web:
+                head += ("\n\nWeb access is ON. Use it only for what the corpus cannot supply, "
+                         "and say when a point rests on it rather than on these 197 sources.")
+            else:
+                head += "\n\nWeb access is OFF. Argue from the corpus alone."
+            return head
+
+        def transcript_text():
+            """Everything said so far. The second speaker's opening therefore
+            sees the first's, which is why an opening can already engage the
+            other side rather than talking past it."""
+            return "\n\n".join(
+                f"--- {t['side']} — {t['phase']} (round {t['round']}) ---\n{t['text']}"
+                for t in transcript
+            )
+
+        def speak(side, phase, rnd, instruction):
+            emit({"type": "turn_start", "side": side["name"], "round": rnd, "phase": phase})
+            msgs = [{"role": "system", "content": sys_for(side)}]
+            prior = transcript_text()
+            if prior:
+                msgs.append({"role": "user", "content":
+                             "The debate so far:\n\n" + prior[:60000]})
+            msgs.append({"role": "user", "content": instruction})
+            tag = {"side": side["name"], "round": rnd, "phase": phase}
+            reasoning, text, trace = agent_turn(
+                msgs, emit=emit, cites=cites, allow_web=allow_web,
+                max_steps=max_steps, max_tokens=max_tokens, tag=tag,
+            )
+            transcript.append({"side": side["name"], "round": rnd, "phase": phase, "text": text})
+            turns.append({"side": side["name"], "round": rnd, "phase": phase,
+                          "text": text, "reasoning": reasoning, "tools": trace})
+            emit({"type": "turn_end", "side": side["name"], "round": rnd, "phase": phase})
+            if cites.rows:
+                emit({"type": "sources", "sources": cites.as_list()})
+
+        try:
+            for rnd in range(1, rounds + 1):
+                for side in sides:
+                    if rnd == 1:
+                        speak(side, "opening", rnd, DEBATE_OPENING)
+                    elif rnd == rounds:
+                        speak(side, "closing", rnd, DEBATE_CLOSING)
+                    else:
+                        speak(side, "rebuttal", rnd, DEBATE_REBUTTAL)
+            if judge:
+                emit({"type": "turn_start", "side": "Adjudicator", "round": rounds + 1,
+                      "phase": "verdict"})
+                msgs = [
+                    {"role": "system", "content":
+                     ("You adjudicate a debate held over a corpus of 18th-century British moral "
+                      "philosophy. The motion is:\n\n    " + motion +
+                      "\n\nYou have the corpus tools. Use them to check, not to argue." +
+                      ("\nWeb access is ON." if allow_web else "\nWeb access is OFF."))},
+                    {"role": "user", "content": "The debate:\n\n" + transcript_text()[:80000]},
+                    {"role": "user", "content": JUDGE_PROMPT},
+                ]
+                tag = {"side": "Adjudicator", "round": rounds + 1, "phase": "verdict"}
+                jr, jt, jtrace = agent_turn(
+                    msgs, emit=emit, cites=cites, allow_web=allow_web,
+                    max_steps=max_steps, max_tokens=int(b.get("judge_tokens", 4000)), tag=tag,
+                )
+                turns.append({"side": "Adjudicator", "round": rounds + 1, "phase": "verdict",
+                              "text": jt, "reasoning": jr, "tools": jtrace})
+                emit({"type": "turn_end", "side": "Adjudicator", "round": rounds + 1,
+                      "phase": "verdict"})
+        except (BrokenPipeError, ConnectionResetError):
+            return
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            try:
+                emit({"type": "error", "error": str(e)})
+            except Exception:
+                return
+
+        append_message(sid, {"role": "user", "content": f"Debate: {motion}", "ts": time.time(),
+                             "kind": "debate_motion"})
+        append_message(sid, {
+            "role": "assistant", "kind": "debate", "motion": motion, "rounds": rounds,
+            "sides": sides, "turns": turns, "sources": cites.as_list(),
+            "web": allow_web, "ts": time.time(),
+            "content": "\n\n".join(f"### {t['side']} — {t['phase']}\n\n{t['text']}" for t in turns),
+        })
+        touch_session(sid, 2)
+        if row["n_messages"] <= 1:
+            db().execute("UPDATE sessions SET title=? WHERE id=?", (motion[:70], sid))
+            db().commit()
+        try:
+            emit({"type": "done", "turns": len(turns), "sources": len(cites.rows)})
+        except Exception:
+            pass
+
     def chat(self):
         u = self._need_user()
         if not u:
@@ -1040,92 +1426,51 @@ class Handler(BaseHTTPRequestHandler):
         # table for the turn, so a marker in the answer resolves to a book, a
         # page and (for a scan) the block the match came from.
         cites = atlas_tools.Cites()
-        schemas = atlas_tools.schemas(allow_web=allow_web)
-        reasoning, content, trace = [], [], []
+        reasoning, content, trace = "", "", []
         MAX_STEPS = int(b.get("max_steps", 8))
+        want_check = bool(b.get("verify", True))
+        check_text = ""
 
         try:
-            for step in range(MAX_STEPS):
-                calls = None
-                step_reasoning, step_content = [], []
-                for kind, chunk in vllm_stream(
-                    msgs, max_tokens=int(b.get("max_tokens", 4096)), tools=schemas
-                ):
-                    if kind == "reasoning":
-                        step_reasoning.append(chunk)
-                        emit({"type": "reasoning", "text": chunk})
-                    elif kind == "content":
-                        step_content.append(chunk)
-                        emit({"type": "content", "text": chunk})
-                    elif kind == "tool_calls":
-                        calls = chunk
-                reasoning.extend(step_reasoning)
-                content.extend(step_content)
+            emit({"type": "phase", "phase": "answer"})
+            reasoning, content, trace = agent_turn(
+                msgs, emit=emit, cites=cites, allow_web=allow_web,
+                max_steps=MAX_STEPS, max_tokens=int(b.get("max_tokens", 4096)),
+            )
 
-                if not calls:
-                    break
-
-                # the assistant turn that requested the tools has to go back in
-                msgs.append({
-                    "role": "assistant",
-                    "content": "".join(step_content),
-                    "tool_calls": [
-                        {"id": c["id"] or f"call_{step}_{k}", "type": "function",
-                         "function": {"name": c["name"], "arguments": c["args"] or "{}"}}
-                        for k, c in enumerate(calls)
-                    ],
-                })
-                for k, c in enumerate(calls):
-                    try:
-                        args = json.loads(c["args"] or "{}")
-                    except json.JSONDecodeError:
-                        args = {}
-                    emit({"type": "tool_call", "step": step, "name": c["name"], "args": args})
-                    result = atlas_tools.run_tool(c["name"], args, cites, allow_web=allow_web)
-                    summary = atlas_tools.summarise(c["name"], result)
-                    trace.append({"step": step, "name": c["name"], "args": args,
-                                  "summary": summary, "took_ms": result.get("took_ms")})
-                    emit({"type": "tool_result", "step": step, "name": c["name"],
-                          "summary": summary, "took_ms": result.get("took_ms")})
-                    msgs.append({
-                        "role": "tool",
-                        "tool_call_id": c["id"] or f"call_{step}_{k}",
-                        "name": c["name"],
-                        "content": json.dumps(result, ensure_ascii=False)[:60000],
-                    })
-                if cites.rows:
-                    emit({"type": "sources", "sources": cites.as_list()})
-            else:
-                # The step budget ran out while the model was still calling
-                # tools, so it never got to write an answer: the reader saw
-                # reasoning and a pile of sources with nothing said about them.
-                # Spend one more round with the tools taken away, which leaves
-                # the model no option but to answer from what it has gathered.
-                emit({"type": "note",
-                      "text": f"tool budget spent after {MAX_STEPS} rounds — answering from "
-                              f"the {len(cites.rows)} passages gathered"})
-                msgs.append({
-                    "role": "user",
-                    "content": (
-                        "You have used your tool budget. Do not ask for more tools; there are "
-                        "none left this turn. Answer the question now from the evidence you "
-                        "already have above, citing each claim by its cite_as marker. If the "
-                        "evidence is thin on some part of the question, say so plainly rather "
-                        "than guessing."
-                    ),
-                })
-                final_reasoning, final_content = [], []
-                for kind, chunk in vllm_stream(
-                    msgs, max_tokens=int(b.get("max_tokens", 4096)), tools=None
-                ):
-                    if kind == "reasoning":
-                        final_reasoning.append(chunk)
-                        emit({"type": "reasoning", "text": chunk})
-                    elif kind == "content":
-                        final_content.append(chunk)
-                        emit({"type": "content", "text": chunk})
-                reasoning.extend(final_reasoning)
-                content.extend(final_content)
+            # ---------------- self-check ----------------
+            # A first draft is where quotations drift and markers get attached to
+            # passages that are merely nearby. The model re-reads its own answer
+            # with the tools still in hand and either stands by it or replaces it.
+            if want_check and content.strip():
+                emit({"type": "phase", "phase": "verify"})
+                msgs.append({"role": "assistant", "content": content})
+                msgs.append({"role": "user", "content": SELF_CHECK_PROMPT})
+                c_reasoning, check_text, c_trace = agent_turn(
+                    msgs, emit=emit, cites=cites, allow_web=allow_web,
+                    max_steps=int(b.get("check_steps", 4)),
+                    max_tokens=int(b.get("max_tokens", 4096)),
+                    channel="check",
+                )
+                # mark them so the reader can see what the check actually did;
+                # the check's own prose is only "VERDICT: ..." plus the
+                # corrected answer, which is shown below anyway
+                for t in c_trace:
+                    t["phase"] = "verify"
+                trace += c_trace
+                reasoning += c_reasoning
+                body = re.sub(r"^\s*VERDICT:\s*(stands|revised)\s*", "", check_text,
+                              flags=re.I).strip()
+                revised = re.match(r"\s*VERDICT:\s*revised", check_text, re.I) and len(body) > 40
+                if revised:
+                    emit({"type": "answer_replace"})
+                    emit({"type": "content", "text": body})
+                    content = body
+                    emit({"type": "checked", "outcome": "revised"})
+                else:
+                    emit({"type": "checked", "outcome": "stands"})
+            if cites.rows:
+                emit({"type": "sources", "sources": cites.as_list()})
         except (BrokenPipeError, ConnectionResetError):
             return  # client went away mid-stream; the turn is still saved below
         except Exception as e:
@@ -1133,8 +1478,9 @@ class Handler(BaseHTTPRequestHandler):
 
         rec = {
             "role": "assistant",
-            "content": "".join(content),
-            "reasoning": "".join(reasoning),
+            "content": content,
+            "reasoning": reasoning,
+            "check": check_text,
             "ts": time.time(),
             "tools": trace,
             "sources": cites.as_list(),

@@ -251,6 +251,8 @@
         <tr><td>Concept map</td><td>202 curated concepts and 1,099 relations between them</td></tr>
         <tr><td>&#128172; Ask</td><td>put a book, a page range, a concept or a search in front of the
           model and ask about it. Nothing is read that you did not attach.</td></tr>
+        <tr><td>&#9878; Debate</td><td>two agents argue a motion out of the corpus, each finding
+          its own evidence; a third checks the quotations and adjudicates</td></tr>
         <tr><td>Authors</td><td>the 37 creators, their dates, and what each group writes about</td></tr>
 
         <tr><td colspan="2" class="help-sec">Keys</td></tr>
@@ -265,10 +267,17 @@
 
         <tr><td colspan="2" class="help-sec">In the results</td></tr>
         <tr><td>Ask about these</td><td>attaches this result set to the chat and primes the question</td></tr>
+        <tr><td>&#9878; Debate this</td><td>argues your query as a motion, both sides, with citations</td></tr>
         <tr><td>+ context</td><td>attaches one passage instead</td></tr>
         <tr><td>Refine</td><td>filter by author, who wrote it, period or source</td></tr>
         <tr><td>Graph tab</td><td>Concept &#183; Semantic &#183; Overlay &#8212; the curated map, a network
           built from the embeddings, or both together</td></tr>
+
+        <tr><td colspan="2" class="help-sec">In an answer</td></tr>
+        <tr><td>[S3]</td><td>a citation &#8212; click it to open that book at that page</td></tr>
+        <tr><td>&#10003; Checked</td><td>the model re-read its own answer with the tools; open it to
+          see what it checked, and whether the answer was corrected</td></tr>
+        <tr><td>diagrams</td><td>click one to see it full size</td></tr>
 
         <tr><td colspan="2" class="help-sec">In the reader</td></tr>
         <tr><td>&#9998;</td><td>drag on the page to annotate it</td></tr>
@@ -336,6 +345,7 @@
       <button id="chat-close" title="Close (Esc)">&#215;</button>
       <span class="reader-title">Ask the corpus</span>
       <span class="ch-bar-hint">answers are grounded only in the context you attach</span>
+      <button id="chat-debate" class="ch-bar-btn" title="Set two agents to argue a motion from the corpus, then have a third adjudicate">&#9878; Debate</button>
     </div>
     <div id="chat-main">
       <aside id="chat-side"></aside>
@@ -475,6 +485,7 @@
       </span>
       <span class="gres-tabs">
         <button id="gres-ask" title="Attach these results and ask about them">&#128172; Ask about these</button>
+        <button id="gres-debate" title="Set two agents to argue this out of the corpus, then have a third adjudicate">&#9878; Debate this</button>
         <button id="gres-facet-toggle" class="active" title="Show / hide the refine panel">&#9887; Refine</button>
         <button id="gres-tab-passages" class="active">Passages</button>
         <button id="gres-tab-concepts">Concepts</button>

@@ -424,6 +424,218 @@ def list_authors(cites: Cites, sex: str = "", name: str = "", **_):
     }
 
 
+# ------------------------------------------------------- checking your work
+def _page_text(book_id: str, page) -> str:
+    """The printed text of one page, for confirming a quotation verbatim."""
+    if not book_id or page is None:
+        return ""
+    try:
+        raw = _get(f"{ATLAS}/book/api/page_text?book={urllib.parse.quote(book_id)}&page={int(page)}",
+                   timeout=20)          # _get hands back raw bytes
+        d = json.loads(raw.decode("utf-8", "replace")) if raw else {}
+    except Exception:
+        return ""
+    return " ".join((b.get("text") or "") for b in (d.get("blocks") or []))
+
+
+def _norm_quote(x: str) -> str:
+    """Fold the differences that are the scan's, not the author's: long s,
+    ligatures, curly quotes, hyphenation across a line break, and case."""
+    x = (x or "").lower()
+    x = x.replace("\u017f", "s").replace("\u2014", " ").replace("\u2013", " ")
+    x = x.replace("\u2019", "'").replace("\u2018", "'")
+    x = x.replace("\u201c", '"').replace("\u201d", '"')
+    x = re.sub(r"-\s+", "", x)
+    return re.sub(r"[^a-z0-9' ]+", " ", x)
+
+
+def _loose_contains(needle: str, haystack: str) -> bool:
+    a = re.sub(r"\s+", " ", _norm_quote(needle)).strip()
+    b = re.sub(r"\s+", " ", _norm_quote(haystack)).strip()
+    return bool(a) and a in b
+
+
+def _excerpt(text: str, want: list[str], width: int = 420) -> str:
+    """Show the part of the page the words actually landed in."""
+    low = text.lower()
+    pos = next((low.find(w) for w in want if low.find(w) >= 0), -1)
+    if pos < 0:
+        return text[:width]
+    start = max(0, pos - width // 3)
+    return ("\u2026" if start else "") + text[start:start + width]
+
+
+
+def verify_quote(cites: Cites, quote: str, book_id: str = "", **_):
+    """Does this wording actually occur in the corpus, and where?
+
+    The point of this tool is to be able to say no. A paraphrase the model has
+    drifted into, or a quotation it half-remembers, will not match, and that is
+    the useful answer — better than an assertion nobody checked.
+    """
+    q = re.sub(r"\s+", " ", (quote or "")).strip().strip('"\u201c\u201d')
+    if len(q) < 12:
+        return {"error": "give at least a dozen characters of the quotation to look for"}
+    # Long-s and modernised spelling mean an exact match often fails on a true
+    # quotation, so search on the distinctive words and then check overlap.
+    want = [w for w in re.findall(r"[a-z']{4,}", q.lower())][:12]
+    hits = []
+    try:
+        r = _post(f"{JASPER}/bm25", {"query": q, "top_k": 30}) or {}
+        cand = r.get("results") or []
+    except Exception as e:
+        return {"error": f"could not reach the index: {e}"}
+    for row in cand:
+        if book_id and row.get("book_id") != book_id:
+            continue
+        # the index returns a snippet, not the passage, so score on the snippet
+        # and confirm verbatim against the real page below
+        text = re.sub(r"\s+", " ", row.get("snippet") or row.get("text") or "")
+        low = text.lower()
+        found = sum(1 for w in want if w in low)
+        overlap = found / max(1, len(want))
+        if overlap >= 0.5:
+            hits.append((overlap, row, text))
+    hits.sort(key=lambda h: -h[0])
+    out = []
+    for overlap, row, text in hits[:4]:
+        # A snippet is elided, so "not in the snippet" is not evidence of
+        # anything. Pull the page it came from and test the wording there.
+        page_text = _page_text(row.get("book_id", ""), row.get("page"))
+        haystack = re.sub(r"\s+", " ", page_text or text)
+        exact = _loose_contains(q, haystack)
+        if page_text:
+            low2 = haystack.lower()
+            overlap = max(overlap, sum(1 for w in want if w in low2) / max(1, len(want)))
+        marker = cites.add(
+            book_id=row.get("book_id"), page=row.get("page"),
+            cite=_cite_of(row.get("book_id", "")), snippet=text[:400],
+            bbox_pts=row.get("bbox_pts"), source=row.get("source"),
+        )
+        out.append({
+            "cite_as": f"[{marker}]",
+            "book_id": row.get("book_id"),
+            "where": _loc(row.get("page"), row.get("source")),
+            "exact": exact,
+            "word_overlap": round(overlap, 2),
+            "text_as_printed": (_excerpt(haystack, want) if page_text else text)[:600],
+        })
+    # A handful of common words in common ("soul", "sense") is not a match. An
+    # invented sentence will always share *something* with a 90,975-passage
+    # corpus, so anything short of near-total overlap counts as not found.
+    exact = [h for h in out if h["exact"]]
+    close = [h for h in out if not h["exact"] and h["word_overlap"] >= 0.8]
+    keep = exact + close
+    return {
+        "quote": q[:200],
+        "found": bool(keep),
+        "verdict": (
+            "VERBATIM. These words are in the corpus as printed; quote them and cite the marker."
+            if exact else
+            "CLOSE BUT NOT VERBATIM. The passage exists but the wording differs — copy it from "
+            "text_as_printed rather than from memory, and do not modernise it."
+            if close else
+            "NOT FOUND. Do not present this as a quotation. Either drop it, or make the point in "
+            "your own words and cite a passage that does support it."
+        ),
+        "matches": keep,
+        "best_rejected_overlap": (round(out[0]["word_overlap"], 2) if out and not keep else None),
+        "how_to_cite": HOW_TO_CITE,
+    }
+
+
+def compare_ideas(cites: Cites, items: list | None = None, top_k: int = 6, **_):
+    """Two to four ideas held side by side across the whole corpus."""
+    items = [str(i).strip() for i in (items or []) if str(i).strip()][:4]
+    if len(items) < 2:
+        return {"error": "give two to four concepts or phrases to compare"}
+    try:
+        d = _post(f"{JASPER}/compare",
+                  {"items": items, "top_k": int(top_k or 6), "n_shared": 5}) or {}
+    except Exception as e:
+        return {"error": f"compare failed: {e}"}
+    if d.get("error"):
+        return d
+
+    def pack(rows, limit):
+        out = []
+        for row in (rows or [])[:limit]:
+            marker = cites.add(
+                book_id=row.get("book_id"), page=row.get("page"),
+                cite=_cite_of(row.get("book_id", "")), snippet=row.get("text") or row.get("snippet") or "",
+                bbox_pts=row.get("bbox_pts"), source=row.get("source"),
+            )
+            out.append({
+                "cite_as": f"[{marker}]",
+                "where": f"{_cite_of(row.get('book_id',''))}, {_loc(row.get('page'), row.get('source'))}",
+                "text": (row.get("text") or row.get("snippet") or "")[:400],
+            })
+        return out
+
+    per = []
+    for it in (d.get("items") or []):
+        per.append({
+            "item": it.get("label") or it.get("item"),
+            "definition": it.get("definition"),
+            "own_passages": pack(it.get("passages"), 4),
+        })
+    return {
+        "items": items,
+        "similarity": d.get("similarity"),
+        "similarity_note": (
+            "Cosine similarity between the items in the corpus's own embedding space. "
+            "High means these texts talk about them in similar language, NOT that the "
+            "authors agreed."
+        ),
+        "map_relations": d.get("relations"),
+        "each": per,
+        "shared_ground": pack(d.get("shared"), 6),
+        "shared_note": (
+            "Passages ranked by their WEAKEST score across the items, so these are places "
+            "where the ideas are argued together rather than separately."
+        ),
+        "how_to_cite": HOW_TO_CITE,
+    }
+
+
+def list_books(cites: Cites, author: str = "", sex: str = "",
+               year_from: int = 0, year_to: int = 0, **_):
+    """What the corpus actually contains — the shelf, not the passages."""
+    f = REPO / "Concept Maps" / "graph-ui" / "data" / "authors.json"
+    if not f.exists():
+        return {"error": "the author registry has not been built"}
+    d = json.loads(f.read_text(encoding="utf-8"))
+    rows = []
+    for a in d.get("authors", []):
+        if author and author.lower() not in a["name"].lower():
+            continue
+        if sex:
+            s = sex.strip().lower()[0]
+            if not (a.get("sex") or "u").lower().startswith(s):
+                continue
+        for bid in a.get("book_ids", []):
+            c = _cite_of(bid)
+            # "\b" does not match between "_" and "1", both being word
+            # characters, so ASTELL_1697_... yielded no year at all
+            yr = None
+            m = re.search(r"(?<!\d)(1[5-9]\d\d)(?!\d)", bid) or re.search(r"\((1[5-9]\d\d)\)", c)
+            if m:
+                yr = int(m.group(1))
+            if year_from and (yr or 0) < int(year_from):
+                continue
+            if year_to and (yr or 9999) > int(year_to):
+                continue
+            rows.append({"book_id": bid, "cite": c, "author": a["name"],
+                         "sex": a.get("sex"), "year": yr})
+    rows.sort(key=lambda r: (r["author"], r["year"] or 0))
+    return {
+        "n": len(rows),
+        "books": rows[:80],
+        "note": ("Pass a book_id to read_source to read any of these. Not every book is a "
+                 "scan: some are clean-text editions with no page numbers."),
+    }
+
+
 # ----------------------------------------------------------------- web tools
 _TAG = re.compile(r"<[^>]+>")
 _WS = re.compile(r"[ \t\r\f\v]+")
@@ -534,6 +746,9 @@ CORPUS_TOOLS = {
     "concept_passages": concept_passages,
     "query_network": query_network,
     "list_authors": list_authors,
+    "list_books": list_books,
+    "compare_ideas": compare_ideas,
+    "verify_quote": verify_quote,
 }
 WEB_TOOLS = {"web_search": web_search, "web_fetch": web_fetch}
 ALL_TOOLS = {**CORPUS_TOOLS, **WEB_TOOLS}
@@ -690,6 +905,77 @@ def schemas(allow_web: bool = False):
             },
         },
     ]
+    t += [
+        {
+            "type": "function",
+            "function": {
+                "name": "verify_quote",
+                "description": (
+                    "CHECK A QUOTATION BEFORE YOU PRINT IT. Give it the wording you are about "
+                    "to put in quotation marks; it says whether those words actually occur in "
+                    "the corpus and, if so, exactly as printed. Use it whenever you are quoting "
+                    "from memory, whenever you have modernised or tidied a phrase, and whenever "
+                    "a claim rests on the precise words. A 'NOT FOUND' verdict means do not "
+                    "print it as a quotation."
+                ),
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "quote": {"type": "string", "description": "the wording to check"},
+                        "book_id": {"type": "string",
+                                    "description": "optional: restrict the check to one book"},
+                    },
+                    "required": ["quote"],
+                },
+            },
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "compare_ideas",
+                "description": (
+                    "Hold two to four ideas side by side across the whole corpus. Returns how "
+                    "close they sit in the embedding space, what the concept map records "
+                    "between them, the passages each one owns, and — most usefully — the "
+                    "SHARED GROUND: passages where the ideas are argued together rather than "
+                    "separately. Reach for this on 'how does X differ from Y', 'did they agree', "
+                    "and any question that names two ideas. Items may be concepts from the map "
+                    "or free phrases."
+                ),
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "items": {"type": "array", "items": {"type": "string"},
+                                  "description": "two to four concepts or phrases"},
+                        "top_k": {"type": "integer"},
+                    },
+                    "required": ["items"],
+                },
+            },
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "list_books",
+                "description": (
+                    "What is actually on the shelf: the books themselves, filterable by author, "
+                    "by the author's sex, and by year. Use it for 'what does this corpus "
+                    "contain', 'which women are represented', 'what is here from before 1700', "
+                    "and to find the exact book_id to hand to read_source. This lists BOOKS, "
+                    "not passages — use search_corpus for what they say."
+                ),
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "author": {"type": "string"},
+                        "sex": {"type": "string", "description": "M, F, or leave empty"},
+                        "year_from": {"type": "integer"},
+                        "year_to": {"type": "integer"},
+                    },
+                },
+            },
+        },
+    ]
     if allow_web:
         t += [
             {
@@ -765,6 +1051,12 @@ def summarise(name: str, result: dict) -> str:
                 f"{len(result.get('documents') or [])} documents")
     if name == "list_authors":
         return f"{result.get('n', 0)} authors"
+    if name == "list_books":
+        return f"{result.get('n', 0)} books"
+    if name == "compare_ideas":
+        return f"{len(result.get('shared_ground') or [])} passages of shared ground"
+    if name == "verify_quote":
+        return result.get("verdict", "checked")[:70]
     if name == "web_search":
         return f"{result.get('n', 0)} web results"
     if name == "web_fetch":

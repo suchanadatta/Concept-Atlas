@@ -147,19 +147,51 @@ grounded in. The same action is available where you already are: <i>+ context</i
 the whole book), and <i>add to chat context</i> on a concept card.</p>
 <p>The model's <b>reasoning</b> arrives on its own stream and sits in a collapsed panel above the answer,
 so you can read how it got there without it cluttering the prose.</p>
-<p><b>It also has tools.</b> Attaching context tells it what to read; the tools let it go looking. It can
-run the hybrid, semantic, lexical and keyword searches, read any book at any page range, look a concept up
-in the map, walk that concept's relations one or two hops out, pull the passages attesting a concept,
-build the query network, and list the authors. Each tool's description says <i>when</i> to reach for it,
-so an answer the first search cannot ground sends it to the map, the relations, or a differently-worded
-search rather than to a guess. The panel shows every call it makes and what came back, so a wrong answer
-can be traced to the step that produced it.</p>
+<p><b>It also has tools.</b> Attaching context tells it what to read; the tools let it go looking.
+Each one's description says <i>when</i> to reach for it, so an answer the first search cannot ground
+sends it to the map, the relations, or a differently-worded search rather than to a guess. The panel
+shows every call it makes and what came back, so a wrong answer can be traced to the step that
+produced it.</p>
+<table>
+<tr><th>search_corpus</th><td>the 90,975 passages, in four rankings: hybrid, pure semantic, BM25 and
+keyword. The first stop for almost anything.</td></tr>
+<tr><th>read_source</th><td>any book at any page range, when a snippet will not settle what an author
+actually claims.</td></tr>
+<tr><th>find_concept</th><td>the map, when the idea may be recorded under a name you did not
+guess.</td></tr>
+<tr><th>concept_detail</th><td>a concept's definition, aliases and relations &#8212; one hop, or two,
+to reach it through a neighbour.</td></tr>
+<tr><th>concept_passages</th><td>the quotations attesting a concept.</td></tr>
+<tr><th>compare_ideas</th><td>two to four ideas side by side: how close they sit in the embedding
+space, what the map records between them, and the passages where they are argued <i>together</i>
+rather than separately.</td></tr>
+<tr><th>query_network</th><td>the concept-and-document network for a query, to see the territory
+before picking a direction.</td></tr>
+<tr><th>list_books</th><td>what is on the shelf, filterable by author, by the author's sex and by
+year.</td></tr>
+<tr><th>list_authors</th><td>the registry: dates, output, and what each writer spends their pages
+on.</td></tr>
+<tr><th>verify_quote</th><td>whether a wording actually occurs in the corpus, and where. Its useful
+answer is <i>no</i>.</td></tr>
+<tr><th>web_search / web_fetch</th><td>the open web &#8212; only when the switch is on.</td></tr>
+</table>
 <p><b>Citations are generated as it reads.</b> Every passage a tool yields is registered for that turn and
 handed to the model as a marker to quote verbatim — <i>[S3]</i>, not a prose reference. Markers that
 resolve become buttons; clicking one opens that exact book at that exact page with the cited region
 highlighted, or the text edition scrolled to the passage. A marker the model invents rather than earns
 stays plain text, so it cannot look like a source that does not exist. If it spends its tool budget still
 searching, it is made to answer from what it has gathered instead of stopping with nothing said.</p>
+<p><b>It checks its own answer.</b> When the draft is written, the model reads it again with the
+tools still in hand: it runs <i>verify_quote</i> on every phrase it put in quotation marks, asks
+whether each marker's passage really supports the claim it is attached to, and looks for assertions
+carrying no citation at all. Then it either stands by the draft or replaces it. The panel above the
+answer says which happened, and opens to show the checking — so a corrected answer is visibly a
+second draft rather than a first one you have to take on trust.</p>
+<p><b>Answers are laid out properly.</b> Headings, lists, blockquotes, code and real tables all
+render — a table is the right shape for setting four authors against each other on the same axes.
+A fenced <code>mermaid</code> block is drawn as a diagram, which is worth having when the shape of
+an argument, or of a set of relations, is the thing being explained. A diagram that will not parse
+shows its source rather than vanishing.</p>
 <p><b>Web search</b> is a switch, off by default. Turned on, it adds two more tools — a web search and a
 page fetch — and anything they return is cited as coming from the open web rather than from these 197
 sources. Turned off, they are not in the model's tool list at all, so it is a RAG interface over the
@@ -170,7 +202,26 @@ reasoning and the full text of every attached context item &#8212; so another pe
 and get the whole conversation, including what it was reading. Forgotten passwords are reset by entering
 your email; there is no mail server on this host, so the reset code is shown for you to copy.</p>
 
-<h2>9 · Comparing</h2>
+<h2>9 · Debate</h2>
+<p><b>&#9878; Debate</b>, in the chat's toolbar, sets two agents to argue a motion out of the
+corpus. You give the motion — a claim that can honestly be argued both ways — and, if you like, a
+voice for each side ("a reader of Mandeville and Hobbes"). Each speaker has the full toolset and
+searches for its own evidence; neither is fed a position to recite.</p>
+<p>Round one is openings. The last round is closings. Anything in between is rebuttal, where each
+side has the other's argument in front of it and is required to name the specific claim it is
+contesting, and to concede what it cannot answer. Then an adjudicator — which has the same tools,
+and uses them to <i>check</i> rather than to argue — reports where the two actually disagreed,
+which claims the corpus bears out, what these 197 sources cannot settle, and a verdict on the
+evidence. It draws the shape of the disagreement as a diagram.</p>
+<p>All three share one citation table, so <i>[S7]</i> means the same passage in the opening, the
+rebuttal and the verdict, and stays clickable throughout. The whole debate is stored as one message
+in the session, so it exports and imports like any other conversation.</p>
+<p>It is slow — several agent turns, each with its own searches — and it is honest about failure:
+a side that cannot find support for a point is instructed to say so and argue something weaker
+instead. An adjudication that concludes the corpus does not settle the motion is a legitimate
+result, not a hedge.</p>
+
+<h2>10 · Comparing</h2>
 <p><b>&#8646; Compare</b> holds two to four things side by side. They can be concepts from the map or any
 free text, so an idea the map never recorded can still be compared. You get a similarity matrix from the
 embeddings (the corpus's own answer, not an editor's), the relations the map records between the picked
@@ -178,7 +229,7 @@ concepts, the strongest passages each idea owns, and <b>shared ground</b> &#8212
 <i>weakest</i> of their scores across the items, so a passage that is excellent for one and irrelevant to
 another cannot get in. That last section is where the ideas are actually argued together.</p>
 
-<h2>10 · Under the hood</h2>
+<h2>11 · Under the hood</h2>
 <ul>
 <li>OCR: GLM-OCR (VLM) + docTR word geometry, 300 dpi, validated 0 problems.</li>
 <li>Concept map: 15 extractors → 20 verifiers → 20 double-auditors → 25 independent auditors (1,096 verdicts); every evidence quote is a verbatim OCR substring.</li>

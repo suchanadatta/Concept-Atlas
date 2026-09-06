@@ -67,11 +67,19 @@ step 2–3).
   all three query-graph modes by author sex, joined on book id from
   `data/authors.csv`. Of 202 concepts the women in this corpus attest 99,
   13 of them attested by no male-authored book here.
-- **Ask** → chat over the corpus with tools: hybrid/semantic/lexical search,
-  read any page range, look up a concept and walk its relations 1–2 hops,
-  the query network, the author registry, and an optional web search behind
-  a toggle. Citations are registered per turn and clickable — a marker opens
-  that book at that page with the cited region highlighted.
+- **Ask** → chat over the corpus with twelve tools: hybrid/semantic/lexical
+  search, read any page range, look up a concept and walk its relations 1–2
+  hops, compare two ideas and find where they are argued *together*, list the
+  shelf, the query network, the author registry, `verify_quote` to check a
+  quotation before printing it, and an optional web search behind a toggle.
+  Citations are registered per turn and clickable — a marker opens that book
+  at that page with the cited region highlighted. The answer is then re-read
+  by the model with the tools still in hand, and either stands or is replaced;
+  the panel says which. Markdown, tables and ```mermaid diagrams render.
+- **⚖ Debate** → two agents argue a motion out of the corpus, each finding its
+  own evidence, then an adjudicator checks the quotations and reports where
+  they actually disagreed, what the corpus bears out and what it cannot
+  settle. One shared citation table across all three speakers.
 - **Docs** → in-app documentation
 
 ## Data model
