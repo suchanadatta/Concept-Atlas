@@ -102,6 +102,7 @@ const Chat = (function () {
       </div>`;
     $("chat-side").innerHTML = "";
     $("chat-ctx").innerHTML = "";
+    paintAccount();
     $("ch-auth-form").onsubmit = onAuthSubmit;
     $("chat-body").querySelectorAll(".ch-auth-alt button").forEach(b => {
       b.onclick = () => { authMode = b.dataset.mode; renderAuth(); };
@@ -138,7 +139,7 @@ const Chat = (function () {
     setTok(""); user = null; sessions = []; cur = null;
     authMode = "login";
     renderAuth("Signed out.");
-    paintHeader();
+    paintAccount();
   }
 
   /* -------------------------------------------------------------- sessions */
@@ -159,14 +160,48 @@ const Chat = (function () {
     render();
   }
 
-  function paintHeader() {
-    const h = $("chat-user");
-    if (!h) return;
-    h.innerHTML = user
-      ? `<button id="ch-acct" title="Account">${esc(user.display_name || user.username)}</button>`
-      : "";
-    if ($("ch-acct")) $("ch-acct").onclick = renderAccount;
+  /* The account chip lives in the global app bar so it is reachable from every
+     view; before, signing in meant opening the chat panel first. */
+  function paintAccount() {
+    const host = $("app-account");
+    if (!host) return;
+    if (!user) {
+      host.innerHTML = `<button class="app-btn acct-in" id="acct-signin">Sign in</button>`;
+      $("acct-signin").onclick = () => { authMode = "login"; open(); };
+      return;
+    }
+    const name = user.display_name || user.username;
+    host.innerHTML = `
+      <button class="acct-chip" id="acct-chip" aria-haspopup="true" aria-expanded="false">
+        <span class="acct-av">${esc(name.slice(0, 1).toUpperCase())}</span>
+        <span class="acct-name">${esc(name)}</span>
+      </button>
+      <div class="acct-menu hidden" id="acct-menu" role="menu">
+        <div class="acct-who"><b>${esc(name)}</b><span>${esc(user.email)}</span></div>
+        <button id="acct-sessions" role="menuitem">Your conversations</button>
+        <button id="acct-settings" role="menuitem">Account settings</button>
+        <button id="acct-out" role="menuitem">Sign out</button>
+      </div>`;
+    const chip = $("acct-chip"), menu = $("acct-menu");
+    const closeMenu = () => { menu.classList.add("hidden"); chip.setAttribute("aria-expanded", "false"); };
+    chip.onclick = (e) => {
+      e.stopPropagation();
+      const showIt = menu.classList.contains("hidden");
+      menu.classList.toggle("hidden", !showIt);
+      chip.setAttribute("aria-expanded", String(showIt));
+    };
+    document.addEventListener("click", (e) => {
+      if (!menu.classList.contains("hidden") && !menu.contains(e.target) && e.target !== chip) closeMenu();
+    });
+    $("acct-sessions").onclick = () => { closeMenu(); open(); };
+    $("acct-settings").onclick = async () => {
+      closeMenu();
+      await open();
+      renderAccount();
+    };
+    $("acct-out").onclick = () => { closeMenu(); signOut(); };
   }
+  function paintHeader() { paintAccount(); }
 
   /* ---------------------------------------------------------------- render */
   function render() {
@@ -594,9 +629,35 @@ const Chat = (function () {
   }
 
   /* ------------------------------------------------------------------ init */
+  /* Ask about the results you are looking at: attach them, then open. */
+  async function askAboutResults() {
+    if (!window._lastQuery) { await open(); return; }
+    if (!user) {
+      try { user = (await api("/auth/me")).user; } catch { user = null; }
+    }
+    if (!user) { await open(); return; }     // sign in first, nothing to lose
+    await open();
+    try {
+      if (!cur) await loadSessions();
+      const already = (cur.context || []).some(c => c.kind === "search" && c.ref === window._lastQuery);
+      if (!already) {
+        await api(`/sessions/${cur.session.id}/context/add`, {
+          items: [{ kind: "search", query: window._lastQuery, top_k: 30 }],
+        });
+        await loadSession(cur.session.id);
+        flash("these results are now in the context");
+      }
+      const ta = $("ch-input");
+      if (ta) { ta.placeholder = `Ask about “${window._lastQuery}”…`; ta.focus(); }
+    } catch (e) { flash(e.message); }
+  }
+  window.askAboutResults = askAboutResults;
+
   function init() {
     const btn = $("btn-chat");
     if (btn) btn.onclick = () => ($("chat-panel").classList.contains("hidden") ? open() : close());
+    const ask = $("gres-ask");
+    if (ask) ask.onclick = askAboutResults;
     const cl = $("chat-close");
     if (cl) cl.onclick = close;
     document.addEventListener("keydown", (e) => {
@@ -604,8 +665,9 @@ const Chat = (function () {
       if (!$("chat-picker").classList.contains("hidden")) { closePicker(); e.stopPropagation(); return; }
       if (!$("chat-panel").classList.contains("hidden")) { close(); e.stopPropagation(); }
     }, true);
-    // restore the signed-in user quietly so the button can say who you are
-    if (tok()) api("/auth/me").then(d => { user = d.user; paintHeader(); }).catch(() => {});
+    // restore the signed-in user quietly so the chip can say who you are
+    paintAccount();
+    if (tok()) api("/auth/me").then(d => { user = d.user; paintAccount(); }).catch(() => {});
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();

@@ -235,6 +235,14 @@
   /* ---------- init ---------- */
   function init() {
     load();
+    // the engine chip reports a slow device; make it the way to fix that
+    // rather than something you can only read
+    const chip = $("chip-engine");
+    if (chip) {
+      chip.style.cursor = "pointer";
+      chip.title = "Engine status — click for settings";
+      chip.onclick = () => togglePanel(true);
+    }
     prefs.theme = window.Theme ? Theme.get() : prefs.theme;   // theme.js is authoritative
     applyPrefs();
     wirePrefs();

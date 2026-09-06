@@ -1275,29 +1275,10 @@ function focusNode(n) {
       doGlobalSearchExternal(q);
     }
   });
-  // back-to-search button: visible whenever the landing/search UI is hidden
-  const home = document.getElementById("btn-home");
-  if (home) {
-    const syncHomeBtn = () => {
-      const onSearchView = location.search.includes("q=") || !location.search;
-      const landingHidden = document.getElementById("landing")?.classList.contains("hidden");
-      home.style.display = (onSearchView && landingHidden) ? "none" : (onSearchView ? "none" : "");
-      // on graph/queries views (?view=...) always show
-      if (location.search.includes("view=")) home.style.display = "";
-    };
-    home.onclick = () => {
-      document.getElementById("landing").classList.remove("hidden");
-      document.getElementById("landing-input").focus();
-      history.replaceState({}, "", "/");
-      home.style.display = "none";
-    };
-    syncHomeBtn();
-    // also sync when the landing-graph / landing-queries buttons are used
-    ["landing-graph", "landing-queries"].forEach(id => {
-      const b = document.getElementById(id);
-      if (b) b.addEventListener("click", () => { home.style.display = ""; });
-    });
-  }
+  // Getting back to search is the app bar's Search button now (Nav.go), which
+  // is present on every view. The old #btn-home here was hidden by an inline
+  // style and its sync function was never called, so the concept map had no
+  // way back at all.
 })();
 
 /* ————————— detail panel ————————— */

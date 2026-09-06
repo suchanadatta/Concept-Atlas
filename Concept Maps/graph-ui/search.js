@@ -37,12 +37,12 @@
     document.querySelectorAll(".landing-examples .ex").forEach(b => {
       b.onclick = () => { $("landing-input").value = b.dataset.q; submitLanding(); };
     });
-    $("landing-graph").onclick = () => { hideLanding(); history.replaceState({}, "", "?view=graph"); };
-    $("landing-queries").onclick = () => { hideLanding(); $("tab-queries").click(); history.replaceState({}, "", "?view=queries"); };
+    $("landing-graph").onclick = () => Nav.go("map");
+    $("landing-queries").onclick = () => Nav.go("queries");
     const openAuthors = () => { if (window.Authors) Authors.open(); };
     if ($("landing-authors")) $("landing-authors").onclick = openAuthors;
     if ($("btn-authors")) $("btn-authors").onclick = openAuthors;
-    $("gres-back").onclick = () => { $("gres").classList.add("hidden"); showLanding(); history.replaceState({}, "", "/"); };
+    $("gres-back").onclick = () => Nav.go("search", { force: true });
     const rerunFromBar = () => {
       const q = $("gres-input").value.trim();
       if (q.length >= 2) doGlobalSearch(q);
@@ -73,12 +73,6 @@
         window.openDynGraph(currentResults.q);
       }
     };
-    const ctxAll = $("gres-ctx");
-    if (ctxAll) ctxAll.onclick = () => {
-      if (!currentResults || !window.Chat) return;
-      Chat.addContext([{ kind: "search", query: currentResults.q,
-                         top_k: Math.min(60, currentResults.passages.length || 20) }]);
-    };
     const sortSel = $("gres-sort");
     if (sortSel) sortSel.onchange = () => { sortMode = sortSel.value; renderResults(); };
     const facetToggle = $("gres-facet-toggle");
@@ -94,6 +88,7 @@
   function showLanding() {
     $("landing").classList.remove("hidden");
     $("landing-input").focus();
+    document.dispatchEvent(new CustomEvent("atlas:view", { detail: "search" }));
   }
   function hideLanding() { $("landing").classList.add("hidden"); }
 
@@ -115,6 +110,7 @@
     const seq = ++searchSeq;
     hideLanding();
     $("gres").classList.remove("hidden");
+    document.dispatchEvent(new CustomEvent("atlas:view", { detail: "search" }));
     setTabsEnabled(false); // results not ready yet — prevents empty-graph clicks
     activeFacets = { author: new Set(), writer: new Set(), period: new Set(), source: new Set() };
     cursor = -1;
