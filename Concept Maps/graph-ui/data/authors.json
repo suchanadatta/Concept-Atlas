@@ -310,18 +310,18 @@
      "n": 7
     },
     {
+     "id": "divine_law",
+     "label": "Divine Law",
+     "n": 4
+    },
+    {
      "id": "habit",
      "label": "Habit",
-     "n": 5
+     "n": 4
     },
     {
      "id": "providence",
      "label": "Providence",
-     "n": 5
-    },
-    {
-     "id": "divine_law",
-     "label": "Divine Law",
      "n": 4
     },
     {
@@ -365,7 +365,7 @@
      "n": 1
     }
    ],
-   "n_concepts": 24
+   "n_concepts": 22
   },
   {
    "key": "burnet-and-locke",
@@ -374,9 +374,10 @@
    "born": null,
    "died": null,
    "note": "joint correspondence",
-   "books": 1,
+   "books": 2,
    "book_ids": [
-    "BURNET-and-LOCKE_1696-1702_2019_Selected Correspondence"
+    "BURNET-and-LOCKE_1696-1702_2019_Selected Correspondence",
+    "BURNET_2019_Selected_Correspondence"
    ],
    "passages": 175,
    "pages": 34,
@@ -386,15 +387,30 @@
     {
      "id": "friendship",
      "label": "Friendship",
-     "n": 2
+     "n": 3
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 1
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 1
     },
     {
      "id": "liberty",
      "label": "Liberty",
      "n": 1
+    },
+    {
+     "id": "providence",
+     "label": "Providence",
+     "n": 1
     }
    ],
-   "n_concepts": 2
+   "n_concepts": 5
   },
   {
    "key": "butler",
@@ -634,7 +650,7 @@
    "born": 1675,
    "died": 1729,
    "note": "",
-   "books": 11,
+   "books": 12,
    "book_ids": [
     "CLARKE_1699_0_Three-Practical-Essays-on-Baptism-Confirmation-and-Repentence_0",
     "CLARKE_1705_1706_A-Demonstration-of-the-Being-and-Attributes-of-God",
@@ -644,6 +660,7 @@
     "CLARKE_1707_0_A-Second-Defense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel",
     "CLARKE_1708_0_A-Fourth-Denfense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel",
     "CLARKE_1708_0_A-Third-Defense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel",
+    "CLARKE_1708_Third_Defense",
     "CLARKE_1712_0_The-Scripture-Doctrine-of-the-Trinity",
     "CLARKE_1714_0_A-Reply-to-the-Objections-of-Robert-Nelson-Esq-and_of_an-anonymous-Author-against-Dr-Clarkes-Scripture-Doctrine-of-the-Trinity",
     "CLARKE_1717_0_Remarks-upon-a-Book-entituled-A-Philosophical-Enquiry-concerning-Human-Liberty"
@@ -723,7 +740,7 @@
    "born": 1679,
    "died": 1749,
    "note": "",
-   "books": 7,
+   "books": 8,
    "book_ids": [
     "COCKBURN_1701_0_Love-at-a-Loss_0",
     "COCKBURN_1701_0_The-Unhappy-Penitent_0",
@@ -731,6 +748,7 @@
     "COCKBURN_1751_0_The-Works-of-Mrs-Catharine-Cockburn",
     "COCKBURN_1751_0_The-Works-of-Mrs-Cockburn",
     "Cockburn Works vol. 2 (part 3)",
+    "TROTTER_1701_Love_at_a_Loss",
     "Trotter Love at a Loss"
    ],
    "passages": 3334,
@@ -1121,11 +1139,12 @@
    "born": 1694,
    "died": 1746,
    "note": "",
-   "books": 11,
+   "books": 12,
    "book_ids": [
     "HUTCHESON_1725_1726_An-Inquiry-into-the-Original-of-our-Ideas-of-Beauty-and-Virtue",
     "HUTCHESON_1728_0_An-Essay-on-the-Nature-and-Conduct-of-the-Passions-and-Affections-with-Illustrations-on-the-Moral-Sense",
     "HUTCHESON_1742_2006_Logic-Metaphysics-and-the-Natural-Sociability-of-Mankind_0",
+    "HUTCHESON_1742_2007_Philosophiae-Moralis-Institutio-Compendiaria-with-A-Short-Introduction-to-Moral-Philosophy",
     "HUTCHESON_1742_2007_Philosophiae-Moralis-Institutio-Compendiaria-with-A-Short-Introduction-to-Moral-Philosophy_0",
     "Hutcheson An Essay on the Nature and Conduct of the Passions and Affections with Illustrations on the Moral Sense",
     "Hutcheson An Inquiry into the Original of our Ideas of Beauty and Virtue",
@@ -1593,9 +1612,10 @@
    "born": 1658,
    "died": 1708,
    "note": "",
-   "books": 6,
+   "books": 7,
    "book_ids": [
     "MASHAM_1696_0-A-Discourse-concerning-the-Love-of-God",
+    "MASHAM_1696_Discourse_Love_of_God",
     "MASHAM_1705_0_Occasional-Thoughts_0 searchable",
     "Masham A Discourse concerning the love of God",
     "Masham Discourse_concerning_the_love_of_God",
@@ -2483,14 +2503,14 @@
   {
    "group": "men",
    "authors": 24,
-   "books": 153,
+   "books": 156,
    "passages": 73648,
    "pages": 19554
   },
   {
    "group": "women",
    "authors": 10,
-   "books": 38,
+   "books": 40,
    "passages": 14524,
    "pages": 5448
   },
@@ -2512,9 +2532,36 @@
  "concept_emphasis": {
   "women_lean": [
    {
-    "id": "stoic_indifference",
-    "label": "Stoic Indifference",
-    "women_share": 0.00539,
+    "id": "positive_duty",
+    "label": "Positive Duty",
+    "women_share": 0.00542,
+    "men_share": 0.0,
+    "n_women": 3,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "sociability",
+    "label": "Sociability",
+    "women_share": 0.00723,
+    "men_share": 0.0,
+    "n_women": 4,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "prophecy",
+    "label": "Prophecy",
+    "women_share": 0.00723,
+    "men_share": 0.0,
+    "n_women": 4,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "education_of_women",
+    "label": "Education of Women",
+    "women_share": 0.00542,
     "men_share": 0.0,
     "n_women": 3,
     "n_men": 0,
@@ -2523,52 +2570,16 @@
    {
     "id": "miracle",
     "label": "Miracle",
-    "women_share": 0.00898,
+    "women_share": 0.00904,
     "men_share": 0.0,
     "n_women": 5,
     "n_men": 0,
     "skew": 1.0
    },
    {
-    "id": "sociability",
-    "label": "Sociability",
-    "women_share": 0.00718,
-    "men_share": 0.0,
-    "n_women": 4,
-    "n_men": 0,
-    "skew": 1.0
-   },
-   {
-    "id": "positive_duty",
-    "label": "Positive Duty",
-    "women_share": 0.00539,
-    "men_share": 0.0,
-    "n_women": 3,
-    "n_men": 0,
-    "skew": 1.0
-   },
-   {
-    "id": "prophecy",
-    "label": "Prophecy",
-    "women_share": 0.00718,
-    "men_share": 0.0,
-    "n_women": 4,
-    "n_men": 0,
-    "skew": 1.0
-   },
-   {
     "id": "wit",
     "label": "Wit",
-    "women_share": 0.00539,
-    "men_share": 0.0,
-    "n_women": 3,
-    "n_men": 0,
-    "skew": 1.0
-   },
-   {
-    "id": "education_of_women",
-    "label": "Education of Women",
-    "women_share": 0.00539,
+    "women_share": 0.00542,
     "men_share": 0.0,
     "n_women": 3,
     "n_men": 0,
@@ -2577,7 +2588,16 @@
    {
     "id": "ridicule",
     "label": "Ridicule",
-    "women_share": 0.00539,
+    "women_share": 0.00542,
+    "men_share": 0.0,
+    "n_women": 3,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "stoic_indifference",
+    "label": "Stoic Indifference",
+    "women_share": 0.00542,
     "men_share": 0.0,
     "n_women": 3,
     "n_men": 0,
@@ -2586,62 +2606,152 @@
    {
     "id": "sacrament",
     "label": "Sacrament",
-    "women_share": 0.02334,
+    "women_share": 0.02351,
     "men_share": 0.00068,
     "n_women": 13,
     "n_men": 1,
-    "skew": 0.943
+    "skew": 0.944
    },
    {
     "id": "mortification",
     "label": "Mortification",
-    "women_share": 0.02334,
+    "women_share": 0.02351,
     "men_share": 0.00068,
     "n_women": 13,
     "n_men": 1,
-    "skew": 0.943
+    "skew": 0.944
    },
    {
     "id": "hypochondriack_distemper",
     "label": "Hypochondriack Distemper",
-    "women_share": 0.02154,
+    "women_share": 0.0217,
     "men_share": 0.00136,
     "n_women": 12,
     "n_men": 2,
-    "skew": 0.881
-   },
-   {
-    "id": "sacramental_remembrance",
-    "label": "Sacramental Remembrance",
-    "women_share": 0.00539,
-    "men_share": 0.00068,
-    "n_women": 3,
-    "n_men": 1,
-    "skew": 0.776
+    "skew": 0.882
    },
    {
     "id": "desire",
     "label": "Desire",
-    "women_share": 0.01077,
+    "women_share": 0.01085,
     "men_share": 0.00136,
     "n_women": 6,
     "n_men": 2,
-    "skew": 0.776
+    "skew": 0.778
+   },
+   {
+    "id": "sacramental_remembrance",
+    "label": "Sacramental Remembrance",
+    "women_share": 0.00542,
+    "men_share": 0.00068,
+    "n_women": 3,
+    "n_men": 1,
+    "skew": 0.778
    },
    {
     "id": "devotion",
     "label": "Devotion",
-    "women_share": 0.02154,
-    "men_share": 0.00272,
+    "women_share": 0.0217,
+    "men_share": 0.00271,
     "n_women": 12,
     "n_men": 4,
-    "skew": 0.776
+    "skew": 0.778
    }
   ],
   "men_lean": [
    {
-    "id": "gradation",
-    "label": "Gradation",
+    "id": "civil_liberty",
+    "label": "Civil Liberty",
+    "women_share": 0.0,
+    "men_share": 0.00339,
+    "n_women": 0,
+    "n_men": 5,
+    "skew": -1.0
+   },
+   {
+    "id": "pleasure",
+    "label": "Pleasure",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "parental_authority",
+    "label": "Parental Authority",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "origin_of_evil",
+    "label": "Origin of Evil",
+    "women_share": 0.0,
+    "men_share": 0.01018,
+    "n_women": 0,
+    "n_men": 15,
+    "skew": -1.0
+   },
+   {
+    "id": "sacrifice",
+    "label": "Sacrifice and Atonement",
+    "women_share": 0.0,
+    "men_share": 0.00271,
+    "n_women": 0,
+    "n_men": 4,
+    "skew": -1.0
+   },
+   {
+    "id": "stoic_discipline",
+    "label": "Stoic Discipline",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "state_of_nature",
+    "label": "State of Nature",
+    "women_share": 0.0,
+    "men_share": 0.00407,
+    "n_women": 0,
+    "n_men": 6,
+    "skew": -1.0
+   },
+   {
+    "id": "sensus_communis",
+    "label": "Sensus Communis",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "perfect_right",
+    "label": "Perfect Right",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "divine_legislation",
+    "label": "Divine Legation",
+    "women_share": 0.0,
+    "men_share": 0.00475,
+    "n_women": 0,
+    "n_men": 7,
+    "skew": -1.0
+   },
+   {
+    "id": "substance",
+    "label": "Substance",
     "women_share": 0.0,
     "men_share": 0.00204,
     "n_women": 0,
@@ -2652,23 +2762,14 @@
     "id": "eternal_morality",
     "label": "Eternal Morality",
     "women_share": 0.0,
-    "men_share": 0.00272,
+    "men_share": 0.00271,
     "n_women": 0,
     "n_men": 4,
     "skew": -1.0
    },
    {
-    "id": "contract",
-    "label": "Contract",
-    "women_share": 0.0,
-    "men_share": 0.00476,
-    "n_women": 0,
-    "n_men": 7,
-    "skew": -1.0
-   },
-   {
-    "id": "moral_evil",
-    "label": "Moral Evil",
+    "id": "regulation_of_love",
+    "label": "Regulation of Love",
     "women_share": 0.0,
     "men_share": 0.00204,
     "n_women": 0,
@@ -2678,87 +2779,6 @@
    {
     "id": "self_preservation",
     "label": "Self-Preservation",
-    "women_share": 0.0,
-    "men_share": 0.00204,
-    "n_women": 0,
-    "n_men": 3,
-    "skew": -1.0
-   },
-   {
-    "id": "virtue_and_atheism",
-    "label": "Virtue and Atheism",
-    "women_share": 0.0,
-    "men_share": 0.00612,
-    "n_women": 0,
-    "n_men": 9,
-    "skew": -1.0
-   },
-   {
-    "id": "approbation",
-    "label": "Approbation",
-    "women_share": 0.0,
-    "men_share": 0.00204,
-    "n_women": 0,
-    "n_men": 3,
-    "skew": -1.0
-   },
-   {
-    "id": "sacrifice",
-    "label": "Sacrifice and Atonement",
-    "women_share": 0.0,
-    "men_share": 0.00272,
-    "n_women": 0,
-    "n_men": 4,
-    "skew": -1.0
-   },
-   {
-    "id": "university_education",
-    "label": "University Education",
-    "women_share": 0.0,
-    "men_share": 0.00204,
-    "n_women": 0,
-    "n_men": 3,
-    "skew": -1.0
-   },
-   {
-    "id": "paternal_authority",
-    "label": "Paternal Authority",
-    "women_share": 0.0,
-    "men_share": 0.00272,
-    "n_women": 0,
-    "n_men": 4,
-    "skew": -1.0
-   },
-   {
-    "id": "subordination",
-    "label": "Subordination",
-    "women_share": 0.0,
-    "men_share": 0.00272,
-    "n_women": 0,
-    "n_men": 4,
-    "skew": -1.0
-   },
-   {
-    "id": "natural_affection",
-    "label": "Natural Affection",
-    "women_share": 0.0,
-    "men_share": 0.00272,
-    "n_women": 0,
-    "n_men": 4,
-    "skew": -1.0
-   },
-   {
-    "id": "intellect_moral_sense",
-    "label": "Intellect and Moral Sense",
-    "women_share": 0.0,
-    "men_share": 0.00204,
-    "n_women": 0,
-    "n_men": 3,
-    "skew": -1.0
-   },
-   {
-    "id": "seneca",
-    "label": "Seneca",
     "women_share": 0.0,
     "men_share": 0.00204,
     "n_women": 0,

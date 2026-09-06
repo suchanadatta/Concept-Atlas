@@ -63,6 +63,15 @@
         <div id="cat-list" class="cat-list"></div>
         <div class="row-mini"><button id="cats-all" class="mini">all</button><button id="cats-none" class="mini">none</button></div>
       </div>
+      <!-- The registry carries the sex of every author, and the concept map
+           records which book each concept's evidence came from, so the two
+           together answer which parts of the map each group of writers
+           actually reaches. -->
+      <div class="sec">
+        <h3>Written by <span id="writer-val" class="val">all</span></h3>
+        <div id="writer-list" class="writer-list"></div>
+        <p class="hint" id="writer-note"></p>
+      </div>
       <div class="sec">
         <h3>Importance <span id="imp-val" class="val">≥ 0.00</span></h3>
         <input id="imp-slider" type="range" min="0" max="100" value="0">
@@ -425,6 +434,10 @@
         <button id="dyngraph-mode-semantic" title="Built from the passage embeddings alone — works even for ideas the concept map never recorded">Semantic</button>
         <button id="dyngraph-mode-overlay" title="Concepts drawn over the passage network, linked to the passages they land on">Overlay</button>
       </span>
+      <!-- same author-sex filter as the full concept map, applied to whichever
+           of the two graphs is on screen: passages and documents by their
+           book's author, concepts by the authors behind their evidence -->
+      <span class="reader-tools dg-writers" id="dyngraph-writers"></span>
       <span class="reader-tools">
         <button id="dyngraph-2d" class="active">2D</button>
         <button id="dyngraph-3d">3D</button>

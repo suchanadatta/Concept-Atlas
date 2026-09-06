@@ -14,6 +14,7 @@
   let data = null;        // /query_graph response  (concept-driven)
   let semData = null;     // /semantic_graph response (embedding-driven)
   let graphMode = "concept";   // concept | semantic | overlay
+  let writersOn = new Set();   // empty = every group
   let lastQuery = "";
 
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -122,6 +123,7 @@
     $("dyngraph-stage").innerHTML = "";
     canvas = null; ctx = null;
     build();
+    paintHint();
     sizeCanvas();
     if (view === "3d") init3D();
     else { if (!running) { running = true; requestAnimationFrame(tick); } }
@@ -132,14 +134,28 @@
       const b = $("dyngraph-mode-" + m);
       if (b) b.classList.toggle("active", graphMode === m);
     });
+    paintWriterChips();
+    paintHint();
+  }
+
+  /* What the graph describes, and how much of it is on screen. The size
+     matters once the writer filter can remove nodes: without it a filter that
+     hides two thirds of the network looks the same as one that hides nothing. */
+  function paintHint() {
     const hint = $("dyngraph-hint");
-    if (hint) {
-      hint.textContent = graphMode === "concept"
-        ? "curated concepts & the documents that attest them"
-        : graphMode === "semantic"
-        ? "passages linked by embedding similarity — no concept map involved"
-        : "curated concepts over the passage network";
-    }
+    if (!hint) return;
+    const what = graphMode === "concept"
+      ? "curated concepts & the documents that attest them"
+      : graphMode === "semantic"
+      ? "passages linked by embedding similarity — no concept map involved"
+      : "curated concepts over the passage network";
+    const n = nodes.length, e = links.length;
+    hint.textContent = n
+      ? `${what} — ${n} nodes, ${e} links${writersOn.size ? " (filtered)" : ""}`
+      : what;
+    hint.dataset.nodes = String(n);
+    hint.dataset.links = String(e);
+    hint.dataset.filtered = writersOn.size ? [...writersOn].sort().join(",") : "";
   }
 
   async function setGraphMode(m) {
@@ -184,12 +200,94 @@
     ctx = canvas.getContext("2d");
   }
 
+  /* Author sex, the same filter the full concept map carries.
+
+     A passage or document node names its book, so the registry answers it
+     directly. A concept node has no single book — it is attested by evidence
+     drawn from several — so it survives if any of its evidence was written by
+     a selected group, which is what the map's own filter does. The query node
+     is not a source and is always kept. */
+  function nodeGroups(n) {
+    if (n.kind === "query") return null;                  // never filtered
+    if (n.book) return [window.Authors ? Authors.groupOfBook(n.book) : "unattributed"];
+    if (n.kind === "concept" && n.cid) {
+      const g = window.S && S.conceptWriters && S.conceptWriters.get(n.cid);
+      return g ? [...g] : null;    // map not loaded: do not hide it on a guess
+    }
+    return null;
+  }
+
+  function keepNode(n) {
+    if (!writersOn.size) return true;
+    const gs = nodeGroups(n);
+    if (!gs) return true;
+    return gs.some(g => writersOn.has(g));
+  }
+
+  function applyWriterFilter() {
+    if (!writersOn.size) return;
+    nodes = nodes.filter(keepNode);
+    const live = new Set(nodes.map(n => n.id));
+    links = links.filter(l => live.has(l.s) && live.has(l.t));
+  }
+
   function build() {
     nodes = []; links = [];
     if (needsSemantic() && semData && semData.nodes) buildSemantic();
     if (needsConcept() && data) buildConcept();
     if (graphMode === "overlay") linkOverlay();
+    applyWriterFilter();
     sim = { alpha: 1 };
+  }
+
+  const DG_WRITER_ORDER = ["women", "men", "joint", "unattributed"];
+
+  function paintWriterChips() {
+    const host = $("dyngraph-writers");
+    if (!host) return;
+    // count over the unfiltered graph, so the numbers do not shift as you pick
+    const all = [];
+    const keep = writersOn; writersOn = new Set();
+    const savedN = nodes, savedL = links;
+    nodes = []; links = [];
+    if (needsSemantic() && semData && semData.nodes) buildSemantic();
+    if (needsConcept() && data) buildConcept();
+    for (const n of nodes) {
+      const gs = nodeGroups(n);
+      if (gs) all.push(gs);
+    }
+    nodes = savedN; links = savedL; writersOn = keep;
+
+    const counts = new Map();
+    for (const gs of all) for (const g of new Set(gs)) counts.set(g, (counts.get(g) || 0) + 1);
+    const groups = DG_WRITER_ORDER.filter(g => counts.has(g));
+    if (!groups.length) { host.innerHTML = ""; return; }
+    const label = (g) => (window.Authors && Authors.GROUP[g] ? Authors.GROUP[g].label : g);
+    const colour = (g) => (window.Authors && Authors.GROUP[g] ? Authors.GROUP[g].color : "#948B7B");
+    host.innerHTML =
+      `<span class="dg-wlab">by</span>` +
+      groups.map(g => `<button class="dg-wchip${writersOn.has(g) ? " active" : ""}" data-w="${g}"
+         title="only nodes written by ${label(g)} (${counts.get(g)} here)">
+         <span class="wdot" style="background:${colour(g)}"></span>${label(g)}</button>`).join("") +
+      (writersOn.size ? `<button class="dg-wchip dg-wclear" data-w="">all</button>` : "");
+    host.querySelectorAll(".dg-wchip").forEach(b => {
+      b.onclick = () => {
+        const g = b.dataset.w;
+        if (!g) writersOn.clear();
+        else writersOn.has(g) ? writersOn.delete(g) : writersOn.add(g);
+        rebuildKeepingView();
+      };
+    });
+  }
+
+  /* Re-derive the graph from data already fetched, keeping whichever view is
+     up. No refetch: the filter is a view over the same retrieval. */
+  function rebuildKeepingView() {
+    if (view === "3d") { init3D(); paintWriterChips(); paintHint(); return; }  // init3D builds
+    build();
+    paintWriterChips();
+    paintHint();
+    if (!running) { running = true; requestAnimationFrame(tick); }
   }
 
   /* ————— semantic graph: passages linked by embedding similarity —————

@@ -10,6 +10,8 @@ const S = {
   adj: new Map(),       // id -> Map(id -> edge)
   // filters
   catsOn: new Set(),
+  writersOn: new Set(),   // empty = every group; else "women"|"men"|"joint"|"unattributed"
+  conceptWriters: new Map(),  // concept id -> Set of groups that wrote its evidence
   minImp: 0,
   minStr: 0,
   cluster: true,
@@ -75,7 +77,89 @@ function nodeRadius(n) {
 function polarity(rel) { return POS_REL.has(rel) ? "pos" : NEG_REL.has(rel) ? "neg" : "neu"; }
 
 function isVisible(n) {
-  return S.catsOn.has(n.top) && n.importance >= S.minImp;
+  if (!S.catsOn.has(n.top) || n.importance < S.minImp) return false;
+  if (S.writersOn.size) {
+    const g = S.conceptWriters.get(n.id);
+    if (!g) return false;                     // no evidence, so no author
+    let any = false;
+    for (const w of S.writersOn) if (g.has(w)) { any = true; break; }
+    if (!any) return false;
+  }
+  return true;
+}
+
+/* Which groups of writers each concept's evidence comes from.
+
+   The concept map records the book behind every piece of evidence, and the
+   author registry says who wrote each book, so the join says which parts of
+   the map each group actually reaches — 99 of 202 concepts for the women in
+   this corpus, 13 of which no male-authored book here touches. Computed once,
+   after the registry has loaded. */
+async function buildConceptWriters() {
+  if (!window.Authors) return;
+  await Authors.load();
+  const ev = (S.data && S.data.evidence) || {};
+  S.conceptWriters = new Map();
+  for (const [cid, rows] of Object.entries(ev)) {
+    const set = new Set();
+    for (const r of rows || []) {
+      if (r.book_id) set.add(Authors.groupOfBook(r.book_id));
+    }
+    if (set.size) S.conceptWriters.set(cid, set);
+  }
+  renderWriterFilter();
+}
+
+const WRITER_ORDER = ["women", "men", "joint", "unattributed"];
+
+function renderWriterFilter() {
+  const host = document.getElementById("writer-list");
+  if (!host) return;
+  const counts = new Map();
+  for (const g of S.conceptWriters.values()) {
+    for (const w of g) counts.set(w, (counts.get(w) || 0) + 1);
+  }
+  const groups = WRITER_ORDER.filter(w => counts.has(w));
+  if (!groups.length) { host.innerHTML = '<p class="hint">registry unavailable</p>'; return; }
+  const label = (w) => (window.Authors && Authors.GROUP[w] ? Authors.GROUP[w].label : w);
+  const colour = (w) => (window.Authors && Authors.GROUP[w] ? Authors.GROUP[w].color : "#948B7B");
+  host.innerHTML = groups.map(w => `
+    <label class="witem${S.writersOn.has(w) ? " on" : ""}" data-w="${w}">
+      <span class="wdot" style="background:${colour(w)}"></span>
+      <span class="wname">${label(w)}</span>
+      <span class="wcount">${counts.get(w)}</span>
+    </label>`).join("") +
+    `<div class="row-mini"><button id="writers-all" class="mini">all</button></div>`;
+  host.querySelectorAll(".witem").forEach(el => {
+    el.onclick = () => {
+      const w = el.dataset.w;
+      S.writersOn.has(w) ? S.writersOn.delete(w) : S.writersOn.add(w);
+      renderWriterFilter();
+      applyFilters(0.35);
+    };
+  });
+  const all = document.getElementById("writers-all");
+  if (all) all.onclick = () => { S.writersOn.clear(); renderWriterFilter(); applyFilters(0.35); };
+
+  const val = document.getElementById("writer-val");
+  if (val) val.textContent = S.writersOn.size
+    ? [...WRITER_ORDER].filter(w => S.writersOn.has(w)).map(label).join(" + ")
+    : "all";
+
+  // when exactly one group is chosen, say what is unique to it
+  const note = document.getElementById("writer-note");
+  if (note) {
+    if (S.writersOn.size !== 1) { note.textContent = ""; note.classList.add("hidden"); }
+    else {
+      const only = [...S.writersOn][0];
+      let unique = 0;
+      for (const g of S.conceptWriters.values()) {
+        if (g.has(only) && g.size === 1) unique++;
+      }
+      note.textContent = `${counts.get(only)} concepts, ${unique} reached by no other group.`;
+      note.classList.remove("hidden");
+    }
+  }
 }
 function edgeVisible(e) {
   const a = S.byId.get(e.s), b = S.byId.get(e.t);
@@ -133,6 +217,9 @@ async function init() {
 
   buildSidebar();
   buildQueries();
+  // needs the author registry, so it paints itself when that resolves rather
+  // than holding up the first frame of the graph
+  buildConceptWriters();
   $("imp-val").textContent = "≥ " + (S.impMin - 0.001).toFixed(2);
   $("str-val").textContent = "≥ " + (S.strMin - 0.001).toFixed(2);
   resize();

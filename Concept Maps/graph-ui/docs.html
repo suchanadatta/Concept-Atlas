@@ -117,9 +117,23 @@ body.dark #btn-theme{border-color:#4A443A}
 </table>
 <p>An embedding can only say how close two passages sit; it cannot say one <i>supports</i> another. That is why the semantic graph's edge names describe closeness rather than argument, and why the curated relations only appear in Concept and Overlay mode.</p>
 <p>Clicking any node — either graph, 2D or 3D — opens the reader at that page with the passage highlighted on the scan.</p>
+<p>The <b>by women / men / joint</b> chips filter whichever graph is on screen. A passage or document node
+names its book, so the registry answers it outright; a concept has no single book, so it survives if
+<i>any</i> of its evidence was written by a chosen group. Picking two groups is a union, not an
+intersection. The toolbar reports how many nodes and links are left, because a filter that removes two
+thirds of a network should not look like one that removes nothing.</p>
 
 <h2>7 · Authors</h2>
 <p>The <b>Authors</b> button opens the registry: 37 creators with their sex and life dates, joined to every indexed source and to the concept map. It powers the <b>Written by</b> filter in the search rail, and shows what each group of writers spends its pages on — normalised by each group's own attestations, so it is not merely a restatement of who published more. Counts are shown because several are thin; treat them as suggestive.</p>
+<p>The same filter sits on the concept map itself, under <b>Written by</b> in the Explore panel. It asks
+which parts of the map each group of writers actually reaches: of 202 concepts, the women in this corpus
+attest 99, and 13 of those are attested by no male-authored book here. Choose one group and the panel
+says how many of its concepts are unique to it.</p>
+<p>Every filter joins on <b>book id</b>, not on the author's name. Names are not enough: the corpus holds
+two Burnets — Elizabeth, and Thomas writing with Locke — and Mary Astell appears both alone and in the
+joint correspondence with Norris, so a surname alone put 15 of the 202 books in the wrong group. The
+ambiguous <i>Selected Correspondence</i> was settled by finding its text in the Burnet-and-Locke
+edition.</p>
 
 <h2>8 · Ask the corpus</h2>
 <p>The <b>&#128172; Ask</b> button opens a chat panel that runs against a local model with a 550k-token
@@ -133,6 +147,23 @@ grounded in. The same action is available where you already are: <i>+ context</i
 the whole book), and <i>add to chat context</i> on a concept card.</p>
 <p>The model's <b>reasoning</b> arrives on its own stream and sits in a collapsed panel above the answer,
 so you can read how it got there without it cluttering the prose.</p>
+<p><b>It also has tools.</b> Attaching context tells it what to read; the tools let it go looking. It can
+run the hybrid, semantic, lexical and keyword searches, read any book at any page range, look a concept up
+in the map, walk that concept's relations one or two hops out, pull the passages attesting a concept,
+build the query network, and list the authors. Each tool's description says <i>when</i> to reach for it,
+so an answer the first search cannot ground sends it to the map, the relations, or a differently-worded
+search rather than to a guess. The panel shows every call it makes and what came back, so a wrong answer
+can be traced to the step that produced it.</p>
+<p><b>Citations are generated as it reads.</b> Every passage a tool yields is registered for that turn and
+handed to the model as a marker to quote verbatim — <i>[S3]</i>, not a prose reference. Markers that
+resolve become buttons; clicking one opens that exact book at that exact page with the cited region
+highlighted, or the text edition scrolled to the passage. A marker the model invents rather than earns
+stays plain text, so it cannot look like a source that does not exist. If it spends its tool budget still
+searching, it is made to answer from what it has gathered instead of stopping with nothing said.</p>
+<p><b>Web search</b> is a switch, off by default. Turned on, it adds two more tools — a web search and a
+page fetch — and anything they return is cited as coming from the open web rather than from these 197
+sources. Turned off, they are not in the model's tool list at all, so it is a RAG interface over the
+corpus and nothing else.</p>
 <p><b>Accounts and sessions.</b> Conversations belong to an account, so they survive a reload. Each is
 stored as a gzipped JSONL file with SQLite as the index. <i>Export</i> downloads the transcript, the
 reasoning and the full text of every attached context item &#8212; so another person can <i>Import</i> it

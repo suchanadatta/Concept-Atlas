@@ -408,9 +408,13 @@
     const c = Cite.of(p);
     return {
       author: c.author || "unattributed",
-      // the author registry carries the sex of each creator, which turns
-      // "who wrote this?" into a filter — the reason the registry exists
-      writer: window.Authors ? WRITER_LABEL[Authors.sexOf(c.author)] : null,
+      // The author registry carries the sex of each creator, which turns
+      // "who wrote this?" into a filter — the reason the registry exists.
+      // Keyed on book_id, not on the display author: the surname map collides
+      // "astell" with "astell-and-norris" and "burnet" with "burnet-and-locke",
+      // which filed Mary Astell's own books as joint and Elizabeth Burnet's as
+      // a man's — 15 of the 202 books were in the wrong group.
+      writer: window.Authors ? WRITER_LABEL[Authors.groupOfBook(p.book_id)] : null,
       period: c.year ? `${Math.floor(+c.year / 10) * 10}s` : null,
       source: p.source === "txt" || p.page == null ? "text edition" : "scanned page",
     };

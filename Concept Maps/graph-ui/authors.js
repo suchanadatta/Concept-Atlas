@@ -14,6 +14,7 @@ const Authors = (function () {
   let data = null;
   let byKey = new Map();
   let bySurname = new Map();
+  let byBook = new Map();   // book_id -> group, the exact join
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
   const GROUP = {
@@ -38,10 +39,25 @@ const Authors = (function () {
     } catch { data = { authors: [], groups: [] }; }
     byKey = new Map(data.authors.map(a => [a.key, a]));
     bySurname = new Map();
+    byBook = new Map();
     for (const a of data.authors) {
-      // the corpus identifies an author by the surname heading the book_id
-      bySurname.set(a.key.replace(/-and-.*/, ""), a);
-      bySurname.set(a.key, a);
+      // The registry lists every book each author wrote, and all 202 book_ids
+      // in the corpus are covered, so this is an exact join. The graphs and the
+      // search facets key on book_id; recovering the author from a filename is
+      // only a fallback now.
+      for (const b of a.book_ids || []) byBook.set(b, groupOf(a.sex));
+    }
+    // Surnames in two passes. A joint record like "astell-and-norris" used to
+    // claim the bare surname "astell" and, depending on iteration order, won
+    // it from Mary Astell herself — so her books were filed as joint, and
+    // Elizabeth Burnet's as Thomas Burnet's. A solo author owns their surname;
+    // a joint record only fills a gap.
+    const solo = data.authors.filter(a => !a.key.includes("-and-"));
+    const joint = data.authors.filter(a => a.key.includes("-and-"));
+    for (const a of [...solo, ...joint]) {
+      bySurname.set(a.key, a);   // the exact key always resolves to its own record
+      const bare = a.key.replace(/-and-.*/, "");
+      if (!bySurname.has(bare)) bySurname.set(bare, a);
       const surname = (a.name.split(",")[0] || "").trim().toLowerCase();
       if (surname && !bySurname.has(surname)) bySurname.set(surname, a);
     }
@@ -58,6 +74,25 @@ const Authors = (function () {
   function sexOf(displayAuthor) {
     const a = lookup(displayAuthor);
     return a ? groupOf(a.sex) : "unattributed";
+  }
+
+  /* book_id -> "women" | "men" | "joint" | "unattributed". Exact, unlike
+     sexOf, which has to recover the author from a display string. */
+  function groupOfBook(bookId) {
+    if (!bookId) return "unattributed";
+    const hit = byBook.get(bookId);
+    if (hit) return hit;
+    // OCR and text editions of the same work sometimes differ by a suffix
+    const base = String(bookId).replace(/__txt$/, "");
+    if (byBook.has(base)) return byBook.get(base);
+    // fall back to the surname heading the id
+    const g = sexOf(String(bookId).split(/[_ ]/)[0]);
+    return g || "unattributed";
+  }
+
+  /* Which groups are present at all, so a filter never offers an empty box. */
+  function groupsPresent() {
+    return [...new Set(byBook.values())];
   }
 
   /* ---------------------------------------------------------------- panel */
@@ -183,7 +218,8 @@ const Authors = (function () {
   }, true);
 
   load();
-  return { load, lookup, sexOf, groupOf, open, close, GROUP, get data() { return data; } };
+  return { load, lookup, sexOf, groupOf, groupOfBook, groupsPresent, open, close, GROUP,
+    get data() { return data; } };
 })();
 
 window.Authors = Authors;

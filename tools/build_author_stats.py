@@ -63,6 +63,16 @@ ALIASES = {
 }
 
 
+# Book ids whose surname is ambiguous, resolved by reading the passage itself.
+# BURNET_2019_Selected_Correspondence carries "This loving kindness consists in
+# a habitual tendency to judge others charitably", which appears in
+# BURNET-and-LOCKE_1696-1702_2019_Selected Correspondence.md — Thomas Burnet
+# and Locke, not Elizabeth Burnet, whom the surname alone would select.
+BOOK_ALIASES = {
+    "BURNET_2019_Selected_Correspondence": "burnet-and-locke",
+}
+
+
 def author_key(book_id: str) -> str:
     """Registry key for a book_id.
 
@@ -73,6 +83,8 @@ def author_key(book_id: str) -> str:
     """
     from jasper_search_server_v2 import parse_book_id
 
+    if book_id in BOOK_ALIASES:
+        return BOOK_ALIASES[book_id]
     author = (parse_book_id(book_id) or {}).get("author") or ""
     if not author:
         author = (book_id or "").split(" ")[0]
@@ -123,12 +135,25 @@ def main() -> int:
                 labels[d["id"]] = d.get("label", d["id"])
 
     concepts_by_author: dict[str, Counter] = defaultdict(Counter)
+    concept_only = Counter()
     if INV_INDEX.exists():
         for line in open(INV_INDEX, encoding="utf-8"):
             d = json.loads(line)
-            k = author_key(d.get("book_id", ""))
+            bid = d.get("book_id", "")
+            k = author_key(bid)
             if k in reg:
                 concepts_by_author[k][d["concept_id"]] += 1
+                # Five books are cited by the concept map under an id the search
+                # index does not use. book_ids is what the UI joins on to filter
+                # a graph by who wrote it, so those ids have to be in it or those
+                # concepts answer to no author at all.
+                if bid and bid not in books_by_author[k]:
+                    books_by_author[k].add(bid)
+                    concept_only[bid] += 1
+    if concept_only:
+        print(f"  concept-map-only book ids folded in: {len(concept_only)}")
+        for bid in sorted(concept_only):
+            print(f"    {author_key(bid):20} {bid}")
 
     # ---- assemble ----------------------------------------------------------
     authors = []

@@ -63,6 +63,15 @@ step 2–3).
   documents + their interconnections (2D pan/zoom/hover + 3D orbit)
 - **Explore** → the full 202-node concept map: per-relation colored/dashed
   edges, neighborhood isolation, spread control, edge clicks, dark mode
+- **Written by** → filter the search results, the concept map (2D + 3D) and
+  all three query-graph modes by author sex, joined on book id from
+  `data/authors.csv`. Of 202 concepts the women in this corpus attest 99,
+  13 of them attested by no male-authored book here.
+- **Ask** → chat over the corpus with tools: hybrid/semantic/lexical search,
+  read any page range, look up a concept and walk its relations 1–2 hops,
+  the query network, the author registry, and an optional web search behind
+  a toggle. Citations are registered per turn and clickable — a marker opens
+  that book at that page with the cited region highlighted.
 - **Docs** → in-app documentation
 
 ## Data model
