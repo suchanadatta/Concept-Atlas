@@ -333,7 +333,11 @@ const Chat = (function () {
           </div>`}
       </div>
       <form id="ch-form" class="ch-compose">
-        <textarea id="ch-input" rows="1" placeholder="Ask about the attached sources…  (Enter to send, Shift+Enter for a new line)"></textarea>
+        <textarea id="ch-input" rows="1" placeholder="${
+          window.matchMedia("(max-width: 820px)").matches
+            ? "Ask about the attached sources…"
+            : "Ask about the attached sources…  (Enter to send, Shift+Enter for a new line)"
+        }"></textarea>
         <button type="submit" id="ch-send" class="ch-primary">Send</button>
       </form>`;
     const ta = $("ch-input");

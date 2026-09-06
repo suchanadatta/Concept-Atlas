@@ -341,7 +341,18 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 4px 0 0;
   font-size:12.5px;padding:0 8px;height:24px;font-family:var(--sans)}
 .rsearch input::placeholder{color:#7A7365}
 .rb-go{height:24px !important;font-size:11.5px !important;flex:none}
+/* a split reader is ~54% of the window, so the toolbar has to give up width
+   in order rather than wrap: the Find label first, then the search box down
+   to an icon's worth, then the button padding */
 @media (max-width:1400px){ body.split-reading .rb-go{display:none} }
+@media (max-width:1500px){
+  body.split-reading #reader-toolbar{gap:4px;padding:6px 6px}
+  body.split-reading .rb-icon{width:27px}
+  body.split-reading .rsearch{min-width:52px;padding-left:6px}
+  body.split-reading .rsearch input{padding:0 5px}
+  body.split-reading .rb-zoom{min-width:46px}
+  body.split-reading .rpage input{width:40px}
+}
 
 /* overflow menu — six download buttons used to occupy an entire row */
 .rmenu{position:relative;flex:none}
@@ -582,9 +593,13 @@ body.split-reading #gres{right:54%}
 #reader.split{left:46%;width:54%;animation:readerslide .25s ease-out}
 @keyframes readerslide{from{transform:translateX(60px);opacity:.5}to{transform:none;opacity:1}}
 /* toolbar wraps instead of overflowing */
-#reader-toolbar{flex-wrap:wrap;row-gap:6px}
+/* The toolbar must NOT wrap on a desktop: with wrap on, the flexible title
+   was pushed onto a line of its own and the bar grew to 72px again. The
+   title is the element that gives up width instead. */
+#reader-toolbar{flex-wrap:nowrap;row-gap:6px}
 #reader-toolbar button{white-space:nowrap}
-/* below this the title is the first thing worth dropping */
+.reader-title{flex:1 1 0;min-width:0}
+/* below this the title is not worth the room at all */
 @media (max-width:1180px){ body.split-reading .reader-title{display:none} }
 #reader-title{flex:1 1 100%;order:5;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .reader-nav,.reader-tools,.reader-dl{flex:none}
@@ -772,7 +787,7 @@ body.dark #graph-float .gf-bar .gf-title{color:#E8E2D5}
   #split-divider{display:none !important}
   #dyngraph{position:fixed;inset:0 0 var(--settings-h) 0;width:100% !important;left:0 !important;border-left:none}
   .dyngraph-hint{display:none}
-  #reader-toolbar{flex-wrap:wrap;gap:6px;padding:6px 8px}
+  #reader-toolbar{flex-wrap:wrap;gap:6px;padding:6px 8px}   /* a phone may wrap */
   .reader-title{display:none}
   .rsearch{flex:1 1 120px;max-width:none}
   #reader-veil{inset:0}
@@ -1293,4 +1308,40 @@ body.dark #ch-flash{background:#E8E2D5;color:#1E1C18}
   .ch-compose{padding:10px 14px 14px}
   .ch-pick-card{max-height:90vh}
   .ch-pick-row{flex-wrap:wrap}
+}
+
+/* ————— mobile: the reader is a reading surface, not a sidebar ————— */
+@media (max-width:820px){
+  /* the pane was a flex-row child with width:auto, so it took its content
+     width and squeezed the scan itself down to a ~48px sliver */
+  #reader-split{flex-direction:column}
+  #reader-side{width:auto !important;max-height:34%;flex:none;
+    border-left:none;border-top:1px solid #4A443A}
+  #reader-body{flex:1;min-height:0;padding:12px}
+  /* opaque: a translucent reader let the results and the graph show through */
+  #reader{background:#211F1B}
+  #reader.split,#reader.docked,#reader.full{background:#211F1B}
+  /* small screens want the page, so the notes pane starts closed */
+  body.reader-side-auto-off #reader-side{display:none}
+  .rpage input{width:40px}
+  .rgroup{padding:1px}
+  #reader-veil{inset:0}
+}
+
+/* ————— mobile: chat ————— */
+@media (max-width:820px){
+  /* the bar loses the long title with .reader-title, so keep a short one */
+  #chat-bar .reader-title{display:block;flex:none;font-size:13px}
+  .ch-bar-hint{display:none}
+  #chat-side{max-height:104px;padding:8px 10px}
+  .ch-sess{padding:6px 8px}
+  .ch-sess-a{display:flex}
+  #chat-ctx{padding:11px 12px}
+  .ch-thread{padding:12px 12px 4px}
+  .ch-user .ch-bubble{max-width:88%}
+  .ch-compose{padding:8px 12px 12px;gap:7px}
+  #ch-input{padding:8px 11px;font-size:13px}
+  .ch-primary{padding:8px 13px;font-size:12.5px}
+  .ch-auth{padding:24px 16px}
+  .ch-reason-body{max-height:220px}
 }

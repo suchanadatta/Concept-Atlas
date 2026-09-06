@@ -121,7 +121,11 @@ function wireSideToggle() {
     btn.setAttribute("aria-pressed", String(!off));
   };
   try {
-    if (localStorage.getItem("atlas.readerSide") === "off") document.body.classList.add("reader-side-off");
+    const pref = localStorage.getItem("atlas.readerSide");
+    // on a phone the scan needs the whole pane, so the notes start closed
+    // unless the reader has explicitly asked for them
+    const narrow = window.matchMedia("(max-width: 820px)").matches;
+    if (pref === "off" || (pref === null && narrow)) document.body.classList.add("reader-side-off");
   } catch { /* private mode */ }
   paint();
   btn.onclick = () => {
