@@ -128,11 +128,15 @@
     let mode = "lexical";
     let facets = null;
     let serverMs = null;
+    let degraded = false;   // the semantic engine did not answer
     if (forceMode === "semantic" || forceMode === "auto") {
-      // Jasper semantic search. A cold model load can take several seconds;
-      // retry once before falling back to lexical.
+      // Jasper semantic search. A cold model load can take a while, so the
+      // timeout is generous — but retrying a server that TIMED OUT just
+      // doubles the wait, so a retry only happens when the first attempt
+      // failed fast (refused connection, a restart mid-flight).
       let r = null, lastErr = null;
       for (let attempt = 0; attempt < 2 && !r; attempt++) {
+        const t0 = Date.now();
         try {
           // same-origin proxy: works from ANY client machine (direct
           // 127.0.0.1:8790 only resolves on the server host itself)
@@ -144,6 +148,8 @@
           });
           if (!r.ok) { r = null; }
         } catch (e) { lastErr = e; r = null; }
+        if (!r && Date.now() - t0 > 8000) break;   // it was slow, not flaky
+        if (seq !== searchSeq) return;             // superseded while waiting
       }
       if (r) {
         const d = await r.json();
@@ -190,6 +196,9 @@
         passages = d.results || [];
         mode = "lexical";
       } catch (e) { console.error(e); }
+      // Falling back silently made a broken engine look like a thin corpus.
+      // Say which engine actually answered.
+      if (forceMode === "semantic" || forceMode === "auto") degraded = true;
     }
     if (seq !== searchSeq) return;  // a newer search already landed
     const concepts = await conceptsP;
@@ -212,7 +221,7 @@
         concepts: concepts.slice(0, 8).map(c => ({ id: c.n.id, label: c.n.label })),
       });
     }
-    currentResults = { q, passages, concepts, facets: facets || deriveFacets(passages) };
+    currentResults = { q, passages, concepts, degraded, facets: facets || deriveFacets(passages) };
     const gi = document.getElementById("gres-input");
     if (gi && document.activeElement !== gi) gi.value = q;
     currentTab = "passages"; // reset tab on every new search
@@ -239,7 +248,23 @@
     clearInterval(window.__searchTimer);
     window.__searchTimer = setInterval(() => {
       if (!document.body.contains(el)) { clearInterval(window.__searchTimer); return; }
-      el.textContent = ((Date.now() - t0) / 1000).toFixed(1) + "s";
+      const secs = (Date.now() - t0) / 1000;
+      el.textContent = secs.toFixed(1) + "s";
+      // A spinner with no way out is the wrong answer to a slow engine: offer
+      // the instant keyword search rather than making the reader wait it out.
+      if (secs > 12 && !$("searching-bail")) {
+        const b = document.createElement("button");
+        b.id = "searching-bail";
+        b.className = "ch-ghost";
+        b.textContent = "search with keywords instead";
+        b.onclick = () => {
+          window._forceSearchMode = "keyword";
+          if ($("gres-algo")) $("gres-algo").value = "keyword";
+          if (window.syncSettings) window.syncSettings({ mode: "keyword" });
+          doGlobalSearch(q);
+        };
+        el.after(b);
+      }
     }, 100);
   }
 
@@ -252,8 +277,11 @@
       ? (forceMode === "semantic" ? "pure semantic" : "hybrid semantic")
       : mode === "bm25" ? "BM25" : "keyword";
     const filtered = shown !== passages.length ? `${shown} of ${passages.length}` : `${passages.length}`;
+    const warn = currentResults.degraded
+      ? ` · <span class="gs-warn" title="The embedding engine did not answer, so this is plain keyword matching. Check the engine in Settings.">keyword only — engine unavailable</span>`
+      : "";
     $("gres-summary").innerHTML =
-      `<b>${filtered}</b> passage${passages.length === 1 ? "" : "s"} · <span class="gs-mode">${modeLabel}</span> · ${concepts.length} concept${concepts.length === 1 ? "" : "s"}`;
+      `<b>${filtered}</b> passage${passages.length === 1 ? "" : "s"} · <span class="gs-mode">${modeLabel}</span> · ${concepts.length} concept${concepts.length === 1 ? "" : "s"}${warn}`;
   }
 
   /* --------------------------------------------------------------- concepts */

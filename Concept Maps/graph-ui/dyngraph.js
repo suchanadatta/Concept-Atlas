@@ -110,7 +110,10 @@
       await Promise.all(jobs);
     } catch (e) {
       if (seq !== openSeq) return;
-      $("dyngraph-stage").innerHTML = `<p class="hint" style="padding:40px;text-align:center">Graph backend unavailable.<br><span style="font-size:12px">${esc(e.message || e)}</span></p>`;
+      $("dyngraph-stage").innerHTML = `<p class="hint" style="padding:40px;text-align:center">
+        The graph needs the search engine, which is not answering.<br>
+        <span style="font-size:12px">${esc(e.message || e)}</span><br>
+        <span style="font-size:12px">Passages and the concept map still work.</span></p>`;
       return;
     }
     if (seq !== openSeq) return;   // a newer open superseded this one

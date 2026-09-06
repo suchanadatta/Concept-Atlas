@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 <title>Concept Atlas — British Moral Philosophy</title>
 <link rel="stylesheet" href="vendor/fonts.css">
-<link rel="stylesheet" href="style.css?v=1788712944">
+<link rel="stylesheet" href="style.css?v=1788714693">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C15B5B'/%3E%3Ccircle cx='6' cy='8' r='3.4' fill='%234E79A7'/%3E%3Ccircle cx='26' cy='7' r='3' fill='%235FA052'/%3E%3Ccircle cx='25' cy='25' r='3.2' fill='%23D9A441'/%3E%3Cpath d='M16 16L6 8M16 16L26 7M16 16L25 25' stroke='%23948B7B' stroke-width='1'/%3E%3C/svg%3E">
 </head>
 <body>
-<script src="theme.js?v=1788712944"></script>
-<script src="nav.js?v=1788712944"></script>
+<script src="theme.js?v=1788714693"></script>
+<script src="nav.js?v=1788714693"></script>
 <!-- One global bar across every view: identity, the three places the app
      actually goes, and the account. Before this there were three disjoint
      navigation surfaces (landing, results, graph) and the account lived
@@ -216,20 +216,43 @@
   <!-- Help overlay -->
   <div id="help" class="hidden">
     <div id="help-card">
-      <button id="help-close">×</button>
-      <h3>Keyboard & mouse</h3>
+      <button id="help-close">&#215;</button>
+      <h3>Getting around</h3>
       <table>
-        <tr><td>/</td><td>focus search</td></tr>
-        <tr><td>Esc</td><td>close reader / panel / overlay</td></tr>
-        <tr><td>← →</td><td>reader: previous / next page</td></tr>
-        <tr><td>+ −</td><td>reader: zoom</td></tr>
-        <tr><td>click node</td><td>concept detail + evidence</td></tr>
-        <tr><td>📖 on evidence</td><td>open PDF at that passage (highlighted)</td></tr>
-        <tr><td>✎ in reader</td><td>drag to annotate the page</td></tr>
-        <tr><td>⇄ Compare</td><td>pick 2-4 concepts, compare evidence side-by-side</td></tr>
-        <tr><td>j / k</td><td>results: next / previous</td></tr>
-        <tr><td>Enter</td><td>results: open the selected passage</td></tr>
-        <tr><td>🌙</td><td>toggle dark mode</td></tr>
+        <tr><td colspan="2" class="help-sec">Where things are</td></tr>
+        <tr><td>Search</td><td>the corpus &#8212; 90,975 passages across 197 sources</td></tr>
+        <tr><td>Concept map</td><td>202 curated concepts and 1,099 relations between them</td></tr>
+        <tr><td>&#128172; Ask</td><td>put a book, a page range, a concept or a search in front of the
+          model and ask about it. Nothing is read that you did not attach.</td></tr>
+        <tr><td>Authors</td><td>the 37 creators, their dates, and what each group writes about</td></tr>
+
+        <tr><td colspan="2" class="help-sec">Keys</td></tr>
+        <tr><td>/</td><td>focus the search box</td></tr>
+        <tr><td>j / k</td><td>results: next / previous passage</td></tr>
+        <tr><td>Enter</td><td>results: open the selected passage &#183;
+          concept map: search the whole corpus for what you typed</td></tr>
+        <tr><td>&#8592; &#8594;</td><td>reader: previous / next page</td></tr>
+        <tr><td>+ &#8722;</td><td>reader: zoom &#183; <b>0</b> fits the page</td></tr>
+        <tr><td>Esc</td><td>close the top panel, then the one beneath it</td></tr>
+
+        <tr><td colspan="2" class="help-sec">In the results</td></tr>
+        <tr><td>Ask about these</td><td>attaches this result set to the chat and primes the question</td></tr>
+        <tr><td>+ context</td><td>attaches one passage instead</td></tr>
+        <tr><td>Refine</td><td>filter by author, who wrote it, period or source</td></tr>
+        <tr><td>Graph tab</td><td>Concept &#183; Semantic &#183; Overlay &#8212; the curated map, a network
+          built from the embeddings, or both together</td></tr>
+
+        <tr><td colspan="2" class="help-sec">In the reader</td></tr>
+        <tr><td>&#9998;</td><td>drag on the page to annotate it</td></tr>
+        <tr><td>&#9707;</td><td>show / hide the notes and page-text pane</td></tr>
+        <tr><td>&#128172;</td><td>attach this page, a window around it, or the whole book</td></tr>
+        <tr><td>&#8943;</td><td>download the scan, text, Markdown, OCR JSONL, or your notes</td></tr>
+
+        <tr><td colspan="2" class="help-sec">Elsewhere</td></tr>
+        <tr><td>&#8646; Compare</td><td>2&#8211;4 concepts <i>or any idea</i> side by side, with the
+          passages where both are argued</td></tr>
+        <tr><td>&#9881; Settings</td><td>run the engine on CPU or GPU, results per search, default
+          ranking, theme &#8212; and the live index and cache figures</td></tr>
       </table>
     </div>
   </div>
@@ -439,17 +462,17 @@
 <script src="vendor/3d-force-graph.min.js"></script>
 <script src="vendor/pdfjs/pdf.min.js"></script>
 <script>pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdfjs/pdf.worker.min.js";</script>
-<script src="cite.js?v=1788712944"></script>
-<script src="chat.js?v=1788712944"></script>
-<script src="authors.js?v=1788712944"></script>
-<script src="app.js?v=1788712944"></script>
-<script src="reader.js?v=1788712944"></script>
-<script src="compare.js?v=1788712944"></script>
-<script src="landing.js?v=1788712944"></script>
-<script src="search.js?v=1788712944"></script>
-<script src="floatgraph.js?v=1788712944"></script>
-<script src="dyngraph.js?v=1788712944"></script>
-<script src="settings.js?v=1788712944"></script>
+<script src="cite.js?v=1788714693"></script>
+<script src="chat.js?v=1788714693"></script>
+<script src="authors.js?v=1788714693"></script>
+<script src="app.js?v=1788714693"></script>
+<script src="reader.js?v=1788714693"></script>
+<script src="compare.js?v=1788714693"></script>
+<script src="landing.js?v=1788714693"></script>
+<script src="search.js?v=1788714693"></script>
+<script src="floatgraph.js?v=1788714693"></script>
+<script src="dyngraph.js?v=1788714693"></script>
+<script src="settings.js?v=1788714693"></script>
 <script type="module" src="labels3d.mjs"></script>
 </body>
 </html>

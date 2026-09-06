@@ -670,6 +670,7 @@ class BookAPI:
     @staticmethod
     def _jasper(endpoint: str, body: bytes, timeout: int = 30):
         import urllib.request as _urllib
+        import socket as _socket
 
         try:
             req = _urllib.Request(
@@ -680,6 +681,17 @@ class BookAPI:
             )
             with _urllib.urlopen(req, timeout=timeout) as resp:
                 return 200, "application/json", resp.read()
+        except _socket.timeout:
+            return (
+                504,
+                "application/json",
+                _json.dumps(
+                    {
+                        "error": f"the search engine did not answer within {timeout}s",
+                        "hint": "it may be loading the index, or running on CPU",
+                    }
+                ).encode(),
+            )
         except Exception as e:
             return (
                 502,
@@ -691,7 +703,14 @@ class BookAPI:
 
     @staticmethod
     def device_proxy(query: dict, body: bytes):
-        return BookAPI._jasper("/device", body, timeout=90)
+        # Asking which device is in use is a field read; only MOVING the model
+        # between devices is slow. Sharing one 90s timeout meant a hung engine
+        # left the status chip stuck on "checking…" indefinitely.
+        try:
+            action = _json.loads(body or b"{}").get("action", "get")
+        except Exception:
+            action = "get"
+        return BookAPI._jasper("/device", body, timeout=90 if action == "switch" else 6)
 
     @staticmethod
     def bm25_proxy(query: dict, body: bytes):
@@ -723,8 +742,37 @@ class BookAPI:
     # ---- chat / accounts / sessions (atlas_chat_server on :8793) ----
     CHAT = "http://127.0.0.1:8793"
 
+    # A hung or paused backend used to block a request thread for the full
+    # timeout with no feedback, so clicking Ask could hang for two minutes.
+    # Only the token stream is genuinely long-running; everything else is a
+    # database read and should fail fast enough to show an error instead.
+    CHAT_TIMEOUTS = {
+        "/healthz": 4,
+        "/auth/me": 6,
+        "/auth/login": 12,
+        "/auth/register": 12,
+        "/auth/logout": 6,
+        "/auth/update": 12,
+        "/auth/forgot": 8,
+        "/auth/reset": 12,
+        "/sessions": 10,
+        "/sessions/import": 45,
+    }
+
     @staticmethod
-    def chat_proxy(path: str, method: str, body: bytes, token: str, timeout: int = 120):
+    def chat_timeout_for(path: str) -> int:
+        if path in BookAPI.CHAT_TIMEOUTS:
+            return BookAPI.CHAT_TIMEOUTS[path]
+        if path.endswith("/export"):
+            return 30
+        if "/context/add" in path:
+            return 90          # resolving a whole book takes real work
+        return 15
+
+    @staticmethod
+    def chat_proxy(path: str, method: str, body: bytes, token: str, timeout: int = None):
+        if timeout is None:
+            timeout = BookAPI.chat_timeout_for(path)
         """Forward a chat/account call, carrying the caller's auth token.
 
         Same reason as the Jasper proxies: 127.0.0.1 resolves to the client's
@@ -773,7 +821,7 @@ class BookAPI:
         import urllib.request as _urllib
 
         try:
-            with _urllib.urlopen(f"{BookAPI.JASPER}/healthz", timeout=5) as resp:
+            with _urllib.urlopen(f"{BookAPI.JASPER}/healthz", timeout=4) as resp:
                 return 200, "application/json", resp.read()
         except Exception as e:
             return (
@@ -898,7 +946,7 @@ class Handler(SimpleHTTPRequestHandler):
                 return self._stream_chat(token)
             length = int(self.headers.get("Content-Length", 0) or 0)
             body = self.rfile.read(length) if (method == "POST" and length) else b"{}"
-            status, ctype, data, extra = BookAPI.chat_proxy(sub, method, body, token)
+            status, ctype, data, extra = BookAPI.chat_proxy(sub, method, body, token)  # per-path timeout
             self.send_response(status)
             self.send_header("Content-Type", ctype)
             self.send_header("Content-Length", str(len(data)))

@@ -24,7 +24,13 @@
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
-    return r.json();
+    const d = await r.json().catch(() => ({}));
+    // The proxy answers a dead engine with 502 and {error}. Returning that
+    // as-is meant `d.device || "cpu"` reported a DOWN engine as "running on
+    // CPU" — the one state the reader must not be told wrongly, since it
+    // looks like a slow engine rather than an absent one.
+    if (!r.ok || d.error) throw new Error(d.error || `engine HTTP ${r.status}`);
+    return d;
   }
 
   function paintDevice(cur, cudaOk) {
@@ -42,9 +48,9 @@
   async function refreshDevice() {
     try {
       const d = await api({ action: "get" });
-      const cur = d.device || "cpu";
-      paintDevice(cur, !!(d.available && d.available.cuda));
-      return cur;
+      if (!d.device) throw new Error("engine gave no device");
+      paintDevice(d.device, !!(d.available && d.available.cuda));
+      return d.device;
     } catch {
       paintDevice(null, null);
       return null;

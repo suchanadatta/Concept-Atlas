@@ -42,11 +42,35 @@ const Chat = (function () {
     $("chat-panel").classList.remove("hidden");
     document.body.classList.add("chat-open");
     if (!user) {
-      try { user = (await api("/auth/me")).user; } catch { user = null; }
+      // distinguish "not signed in" from "the service is not answering" —
+      // showing a sign-in form for a dead backend just wastes the reader's
+      // time typing a password that cannot be checked
+      try {
+        user = (await api("/auth/me")).user;
+      } catch (e) {
+        user = null;
+        if (e.status === undefined || e.status >= 500) return renderOffline(e.message);
+      }
     }
     if (!user) return renderAuth();
     await loadSessions();
     render();
+  }
+
+  function renderOffline(msg) {
+    $("chat-side").innerHTML = "";
+    $("chat-ctx").innerHTML = "";
+    $("chat-body").innerHTML = `
+      <div class="ch-auth">
+        <h2>The chat service is not answering</h2>
+        <p class="ch-auth-sub">Search, the concept map and the reader all still work — only Ask needs
+          this service.</p>
+        <div class="ch-msg err">${esc(msg || "no response")}</div>
+        <p class="ch-auth-sub">Start it on the server with
+          <code>log/start_chat.sh</code>, then retry.</p>
+        <button class="ch-primary" id="ch-retry">Retry</button>
+      </div>`;
+    $("ch-retry").onclick = () => { user = null; open(); };
   }
   function close() {
     $("chat-panel").classList.add("hidden");
