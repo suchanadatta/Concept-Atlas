@@ -353,12 +353,16 @@ def concept_passages(cites: Cites, concept_id: str, top_k: int = 8, **_):
         else:
             return {"error": f"no concept {concept_id!r}"}
     rows = g["inv"].get(concept_id, [])[: max(1, min(int(top_k or 8), 20))]
+    label = g["nodes"][concept_id].get("label") or concept_id
     out = []
     for d in rows:
         m = cites.add(
             book_id=d.get("book_id"), page=d.get("page"),
             cite=_cite_of(d.get("book_id", "")), snippet=d.get("text") or "",
             bbox_pts=d.get("bbox_pts"), kind="evidence",
+            # which concept this quote attests, so a reader following the
+            # citation can open the concept as well as the page
+            extra={"concept_id": concept_id, "concept": label},
         )
         out.append({
             "cite_as": f"[{m}]", "book_id": d.get("book_id"), "page": d.get("page"),

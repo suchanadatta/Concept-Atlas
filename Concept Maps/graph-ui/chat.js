@@ -324,6 +324,33 @@ const Chat = (function () {
     return msgs[i] && msgs[i].role === "user" ? n : 0;
   }
 
+  /* ---------------------------------------------- keeping panels open
+
+     A streaming answer repaints on every token, and each repaint replaced the
+     node's innerHTML — so a <details> the reader had just expanded snapped
+     shut again, once per token. Reasoning was unreadable while it streamed,
+     which is exactly when you want to watch it.
+
+     Every collapsible carries a stable key. What the reader has opened or
+     closed is remembered against that key and re-applied after each paint, so
+     repainting no longer overrules them. */
+  const openState = new Map();
+
+  function dk(key, defaultOpen) {
+    const want = openState.has(key) ? openState.get(key) : !!defaultOpen;
+    return ` data-dk="${key}"${want ? " open" : ""}`;
+  }
+
+  function applyDetails(root) {
+    (root || document).querySelectorAll("details[data-dk]").forEach(d => {
+      const key = d.dataset.dk;
+      if (openState.has(key)) d.open = openState.get(key);
+      if (d._dkWired) return;
+      d._dkWired = true;
+      d.addEventListener("toggle", () => openState.set(d.dataset.dk, d.open));
+    });
+  }
+
   const KIND_ICON = { book: "📕", concept: "◈", passage: "❝", search: "🔍", note: "✎" };
 
   function renderContext() {
@@ -482,7 +509,7 @@ const Chat = (function () {
     if (!t.length) return "";
     const live = m._live;
     return `
-      <details class="ch-trace" ${live ? "open" : ""}>
+      <details class="ch-trace"${dk((m._dk || "m") + ":trace", live)}>
         <summary>${live ? "Working" : "What it looked at"}
           <span class="ch-rlen">${t.length} call${t.length === 1 ? "" : "s"}</span></summary>
         <ol class="ch-trace-list">
@@ -503,7 +530,7 @@ const Chat = (function () {
     const src = m.sources || [];
     if (!src.length) return "";
     return `
-      <details class="ch-srcs">
+      <details class="ch-srcs"${dk((m._dk || "m") + ":srcs", false)}>
         <summary>Sources <span class="ch-rlen">${src.length}</span></summary>
         <ol class="ch-src-list">
           ${src.map(sv => `<li>
@@ -565,7 +592,8 @@ const Chat = (function () {
       return `<div class="ch-check ${checked === "revised" ? "revised" : "stands"} flat">
         <span class="ch-check-head">${head}</span></div>`;
     }
-    return `<details class="ch-check ${checked === "revised" ? "revised" : "stands"}">
+    return `<details class="ch-check ${checked === "revised" ? "revised" : "stands"}"${
+        dk((m._dk || "m") + ":check", false)}>
       <summary>${head} ${count}</summary>
       <ol class="ch-check-list">
         ${checks.map(t => `<li class="${/NOT FOUND/i.test(t.summary || "") ? "bad" : ""}">
@@ -583,6 +611,9 @@ const Chat = (function () {
     const cut = new Set((cur && cur.dropped) || []);
     const off = cut.has(i) ? " dropped" : "";
     const at = i == null ? "" : ` data-mi="${i}"`;
+    // each stored message needs its own key, or expanding one message's
+    // reasoning would expand every message's
+    if (i != null) m._dk = "mi" + i;
     if (m.kind === "debate") return debateHTML(m, at, off);
     if (m.role === "user") {
       const num = userTurnNumber(i);
@@ -600,9 +631,25 @@ const Chat = (function () {
     const checked = m._checked || (hasC ? (/VERDICT:\s*revised/i.test(m.check) ? "revised" : "stands") : null);
     return `<div class="ch-m ch-asst${off}"${at}>
       ${off ? `<span class="ch-dropped-tag">not in the history</span>` : ""}
+      ${asstBodyHTML(m, checked, hasR)}
+    </div>`;
+  }
+
+  /* The inner half of an assistant message. Separated so a streaming repaint
+     can replace exactly this and nothing else: the old paint stripped the
+     wrapper with a regex on the literal opening tag, which stopped matching
+     once the tag carried a data-mi, quietly nesting a second ch-asst inside
+     the first on every token. */
+  function asstBodyHTML(m, checked, hasR) {
+    if (checked === undefined) {
+      const hasC = (m.check || "").trim().length > 0;
+      checked = m._checked || (hasC ? (/VERDICT:\s*revised/i.test(m.check) ? "revised" : "stands") : null);
+    }
+    if (hasR === undefined) hasR = (m.reasoning || "").trim().length > 0;
+    return `
       ${traceHTML(m)}
       ${hasR ? `
-        <details class="ch-reason" ${m._openR ? "open" : ""}>
+        <details class="ch-reason"${dk((m._dk || "m") + ":reason", !!m._live)}>
           <summary>Reasoning <span class="ch-rlen">${m.reasoning.length.toLocaleString()} chars</span></summary>
           <div class="ch-reason-body">${esc(m.reasoning)}</div>
         </details>` : ""}
@@ -611,8 +658,7 @@ const Chat = (function () {
       <div class="ch-answer">${linkMarkers(mdish(m.content || ""), m.sources)}</div>
       ${sourcesHTML(m)}
       ${(m.context_items || []).length ? `<div class="ch-used">also given: ${
-        m.context_items.map(c => esc(c.label)).join(" · ")}</div>` : ""}
-    </div>`;
+        m.context_items.map(c => esc(c.label)).join(" · ")}</div>` : ""}`;
   }
 
   /* A citation opens the reader at that page with the passage highlighted —
@@ -1060,6 +1106,12 @@ const Chat = (function () {
   const PHASE_LABEL = { opening: "opening", rebuttal: "rebuttal", closing: "closing",
                         verdict: "adjudication" };
 
+  /* A key that survives repaints: a debater's turn is identified by who spoke,
+     in which round, at which phase — not by its position in a re-rendered list. */
+  function turnKey(t) {
+    return `dbt:${t.side}:${t.round}:${t.phase}`;
+  }
+
   function turnHTML(t, sources, live) {
     const judge = t.side === "Adjudicator";
     return `<div class="dbt-turn ${judge ? "judge" : (t.seat === 0 ? "side-a" : "side-b")}${live ? " live" : ""}">
@@ -1068,9 +1120,9 @@ const Chat = (function () {
         <span class="dbt-phase">${PHASE_LABEL[t.phase] || esc(t.phase)}</span>
         ${judge ? "" : `<span class="dbt-round">round ${t.round}</span>`}
       </div>
-      ${traceHTML({ tools: t.tools || [] })}
+      ${traceHTML({ tools: t.tools || [], _live: live, _dk: turnKey(t) })}
       ${(t.reasoning || "").trim() ? `
-        <details class="ch-reason">
+        <details class="ch-reason"${dk(turnKey(t) + ":reason", live)}>
           <summary>Reasoning <span class="ch-rlen">${t.reasoning.length.toLocaleString()} chars</span></summary>
           <div class="ch-reason-body">${esc(t.reasoning)}</div>
         </details>` : ""}
@@ -1132,10 +1184,11 @@ const Chat = (function () {
 
     const paint = () => {
       host.innerHTML = turns.map(t => turnHTML(t, sources, t === curTurn)).join("");
+      applyDetails(host);
       wireCites(host);
       drawMermaid(host);
-      const th = $("ch-thread");
-      if (th) th.scrollTop = th.scrollHeight;
+      scrollDown();
+      paintJump();
     };
 
     try {
@@ -1274,18 +1327,59 @@ const Chat = (function () {
       try { localStorage.setItem("atlas.chatVerify", verifyOn ? "on" : "off"); } catch { /* ignore */ }
       renderThread();
     };
-    body.querySelectorAll(".ch-reason").forEach(d => {
-      d.addEventListener("toggle", () => { /* stays open across a re-render via _openR */ });
-    });
+    applyDetails(body);
+    watchScroll();
     wireCites(body);
     drawMermaid(body);
     scrollDown();
     ta.focus();
   }
 
-  function scrollDown() {
+  /* Follow the stream only while the reader is already at the bottom.
+
+     Every paint used to force scrollTop = scrollHeight, so scrolling up to
+     re-read something dragged you back to the caret on the next token. Now
+     scrolling up detaches; a button offers the way back, and returning to the
+     bottom re-attaches. */
+  let stick = true;
+
+  function nearBottom(t, slack = 90) {
+    return t.scrollHeight - t.scrollTop - t.clientHeight <= slack;
+  }
+
+  function watchScroll() {
     const t = $("ch-thread");
-    if (t) t.scrollTop = t.scrollHeight;
+    if (!t || t._stickWired) return;
+    t._stickWired = true;
+    t.addEventListener("scroll", () => {
+      stick = nearBottom(t);
+      paintJump();
+    }, { passive: true });
+  }
+
+  function paintJump() {
+    let b = $("ch-jump");
+    const streaming_ = streaming || debating;
+    if (stick || !streaming_) {
+      if (b) b.classList.remove("on");
+      return;
+    }
+    if (!b) {
+      b = document.createElement("button");
+      b.id = "ch-jump";
+      b.type = "button";
+      b.innerHTML = "&#8595; jump to latest";
+      b.onclick = () => { stick = true; scrollDown(true); paintJump(); };
+      ($("chat-main") || document.body).appendChild(b);
+    }
+    b.classList.add("on");
+  }
+
+  function scrollDown(force) {
+    const t = $("ch-thread");
+    if (!t) return;
+    if (force) stick = true;
+    if (stick) t.scrollTop = t.scrollHeight;
   }
 
   /* ------------------------------------------------------------------ send */
@@ -1302,17 +1396,19 @@ const Chat = (function () {
 
     cur.messages.push({ role: "user", content: text });
     const live = { role: "assistant", content: "", reasoning: "", check: "", tools: [],
-                   sources: [], _openR: true, _live: true };
+                   sources: [], _live: true, _dk: "live" };
     cur.messages.push(live);
     renderThread();
     const thread = $("ch-thread");
     const node = thread.lastElementChild;
 
     const paint = () => {
-      node.innerHTML = messageHTML(live).replace(/^<div class="ch-m ch-asst">|<\/div>$/g, "");
+      node.innerHTML = asstBodyHTML(live);
+      applyDetails(node);
       wireCites(node);
       drawMermaid(node);
       scrollDown();
+      paintJump();
     };
 
     try {
@@ -1364,7 +1460,9 @@ const Chat = (function () {
     }
     streaming = false;
     live._live = false;
-    live._openR = false;          // collapse the thinking once the answer stands
+    // the reasoning panel keeps whatever the reader left it as; a finished
+    // message defaults closed only if they never touched it
+    if (!openState.has("live:reason")) openState.set("live:reason", false);
     const btn = $("ch-send");
     if (btn) { btn.disabled = false; btn.textContent = "Send"; }
     await loadSessions();
