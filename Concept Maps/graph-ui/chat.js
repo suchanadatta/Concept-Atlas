@@ -45,6 +45,11 @@ const Chat = (function () {
   async function open() {
     $("chat-panel").classList.remove("hidden");
     document.body.classList.add("chat-open");
+    // A debate in flight is streaming into the body that is already there.
+    // Re-rendering would replace it with the ordinary thread view and the rest
+    // of the debate would arrive in a detached node nobody can see — so when
+    // one is running, just show what is already on screen.
+    if (debating) { scrollDown(); return; }
     if (!user) {
       // distinguish "not signed in" from "the service is not answering" —
       // showing a sign-in form for a dead backend just wastes the reader's
@@ -76,6 +81,10 @@ const Chat = (function () {
       </div>`;
     $("ch-retry").onclick = () => { user = null; open(); };
   }
+  /* Closing only hides the panel — the DOM stays, so a debate in flight keeps
+     streaming into it and is there when you come back. It must NOT be aborted
+     here: openSource() calls close() to show the reader, so a reader clicking
+     a citation mid-debate would have killed the debate they were reading. */
   function close() {
     $("chat-panel").classList.add("hidden");
     document.body.classList.remove("chat-open");
@@ -184,6 +193,10 @@ const Chat = (function () {
     await loadSession(d.session.id);
   }
   async function loadSession(id) {
+    // a debate belongs to the session that is on screen
+    if (cur && cur.session && cur.session.id !== id) stopDebate("moved to another session");
+    // ...and while one is running, do not repaint over its live view
+    if (debating && cur && cur.session && cur.session.id === id) return;
     cur = await api("/sessions/" + id);
     render();
   }
@@ -824,7 +837,19 @@ const Chat = (function () {
   ];
 
   let debating = false;
+  let debateAbort = null; // lets the reader stop a debate that is running
   let liveSources = [];   // the citation table of a turn still streaming
+
+  /* A debate is bound to the connection streaming it: there is no way to
+     detach and reattach. Closing the panel or changing session therefore
+     stops it — and the server keeps the turns already spoken, so a stopped
+     debate is still in the transcript. */
+  function stopDebate(why) {
+    if (!debateAbort) return false;
+    try { debateAbort.abort(why || "stopped"); } catch (e) { /* already gone */ }
+    debateAbort = null;
+    return true;
+  }
 
   function debateSetupHTML() {
     return `
@@ -933,14 +958,22 @@ const Chat = (function () {
     (m.sides || []).forEach((s, i) => { seats[s.name] = i; });
     return `<div class="ch-m ch-asst dbt-wrap">
       <div class="dbt-motion"><span class="dbt-tag">motion</span>${esc(m.motion || "")}</div>
+      ${m.interrupted ? `<div class="dbt-cut">This debate was stopped before it finished.
+        What was said is below.</div>` : ""}
       ${(m.turns || []).map(t => turnHTML({ ...t, seat: seats[t.side] }, m.sources, false)).join("")}
       ${sourcesHTML(m)}
     </div>`;
   }
 
   async function runDebate(opts) {
-    if (debating) return;
+    if (debating) { flash("A debate is already running in this session"); return; }
     if (!cur) await loadSessions();
+    // loadSessions can leave cur null if the backend is down; without this the
+    // next line reads cur.session.id and throws into nothing
+    if (!cur || !cur.session) {
+      flash("Could not open a session for the debate — is the chat service running?");
+      return;
+    }
     debating = true;
     const body = $("chat-body");
     const sources = [];
@@ -948,15 +981,26 @@ const Chat = (function () {
     opts.sides.forEach((s, i) => { seats[s.name] = i; });
     const turns = [];
     let curTurn = null;
+    let stopped = false, failed = null;
 
     body.innerHTML = `
       <div class="ch-thread dbt-live" id="ch-thread">
         <div class="dbt-motion"><span class="dbt-tag">motion</span>${esc(opts.motion)}</div>
         <div id="dbt-turns"></div>
-        <div id="dbt-status" class="dbt-status">opening the debate&#8230;</div>
+        <div class="dbt-foot">
+          <span id="dbt-status" class="dbt-status">opening the debate&#8230;</span>
+          <button id="dbt-stop" class="mini">stop</button>
+        </div>
       </div>`;
     const host = $("dbt-turns");
     const status = $("dbt-status");
+    debateAbort = new AbortController();
+    const stopBtn = $("dbt-stop");
+    if (stopBtn) stopBtn.onclick = () => {
+      stopBtn.disabled = true;
+      status.textContent = "stopping after this turn\u2026";
+      stopDebate("reader stopped it");
+    };
 
     const paint = () => {
       host.innerHTML = turns.map(t => turnHTML(t, sources, t === curTurn)).join("");
@@ -971,6 +1015,7 @@ const Chat = (function () {
         method: "POST",
         headers: { "Content-Type": "application/json", "X-Atlas-Token": tok() },
         body: JSON.stringify({ session_id: cur.session.id, ...opts, max_steps: 5 }),
+        signal: debateAbort.signal,
       });
       if (!r.ok || !r.body) {
         throw new Error((await r.json().catch(() => ({}))).error || `HTTP ${r.status}`);
@@ -1021,13 +1066,29 @@ const Chat = (function () {
         }
       }
     } catch (err) {
-      status.textContent = "the debate could not run: " + err.message;
+      stopped = err.name === "AbortError";
+      status.textContent = stopped
+        ? `stopped after ${turns.length} turn${turns.length === 1 ? "" : "s"}`
+        : "the debate could not run: " + err.message;
+      if (!stopped) failed = err.message;
     }
     debating = false;
+    debateAbort = null;
     liveSources = [];
+    if (stopBtn) stopBtn.disabled = true;
     // reload so the stored debate renders from the transcript from now on
+    const sid = cur && cur.session && cur.session.id;
     await loadSessions();
-    if (cur) await loadSession(cur.session.id);
+    if (sid) await loadSession(sid);
+    // the re-render wipes the live status, so say what happened somewhere
+    // that survives it: the stored debate carries an "interrupted" notice,
+    // but a debate stopped before anyone finished has nothing to carry it
+    if (failed) flash("The debate could not run: " + failed);
+    else if (stopped && !document.querySelector(".dbt-wrap")) {
+      flash("Stopped before either side finished — nothing was recorded");
+    } else if (stopped) {
+      flash("Debate stopped; what was said is kept");
+    }
   }
 
   function renderThread() {
@@ -1403,7 +1464,7 @@ const Chat = (function () {
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 
-  return { open, close, addContext, openDebate, runDebate, mdish,
+  return { open, close, addContext, openDebate, runDebate, stopDebate, mdish,
     get user() { return user; } };
 })();
 

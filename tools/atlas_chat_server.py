@@ -496,7 +496,7 @@ better than a long one that drifts."""
 
 
 def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=8, max_tokens=4096,
-               tag=None, channel="content", tools=True):
+               tag=None, channel="content", tools=True, sink=None):
     """One agent's turn: call tools until it has an answer, then answer.
 
     The same loop serves the assistant, the self-check pass and every speaker in
@@ -505,9 +505,18 @@ def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=8, max_tokens=40
 
     `tag` is merged into every event, which is how the client tells one debater
     from another. Returns (reasoning, content, trace).
+
+    `sink` is a dict of lists the caller owns. Everything is appended to it as
+    it streams, so a turn interrupted half-way — the reader pressed stop, the
+    connection dropped — leaves the caller holding what was actually said
+    instead of nothing.
     """
     schemas = atlas_tools.schemas(allow_web=allow_web) if tools else None
-    reasoning, content, trace = [], [], []
+    if sink is None:
+        sink = {}
+    reasoning = sink.setdefault("reasoning", [])
+    content = sink.setdefault("content", [])
+    trace = sink.setdefault("trace", [])
     # One self-check pass was seen firing 120 verify_quote calls in a single
     # step — every phrase in the draft, several of them twice. Two limits:
     # a cap per step, and a memo so an identical call is answered from the
@@ -526,14 +535,18 @@ def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=8, max_tokens=40
         for kind, chunk in vllm_stream(msgs, max_tokens=max_tokens, tools=schemas):
             if kind == "reasoning":
                 step_reasoning.append(chunk)
+                reasoning.append(chunk)
                 send({"type": "reasoning", "text": chunk})
             elif kind == "content":
                 step_content.append(chunk)
+                content.append(chunk)
                 send({"type": channel, "text": chunk})
             elif kind == "tool_calls":
                 calls = chunk
-        reasoning.extend(step_reasoning)
-        content.extend(step_content)
+        # step_* are kept separately for the assistant message below; the sink
+        # is appended to as each chunk arrives rather than at the end of a step,
+        # because the step that matters when a turn is stopped is the one still
+        # in progress — extending only at the boundary lost exactly that prose.
         if not calls:
             break
         msgs.append({
@@ -1259,6 +1272,7 @@ class Handler(BaseHTTPRequestHandler):
         cites = atlas_tools.Cites()
         transcript = []          # [{side, round, phase, text}]
         turns = []
+        interrupted = False
 
         def sys_for(side):
             head = DEBATE_COMMON.format(motion=motion, stance=side["stance"])
@@ -1291,13 +1305,23 @@ class Handler(BaseHTTPRequestHandler):
                              "The debate so far:\n\n" + prior[:60000]})
             msgs.append({"role": "user", "content": instruction})
             tag = {"side": side["name"], "round": rnd, "phase": phase}
-            reasoning, text, trace = agent_turn(
-                msgs, emit=emit, cites=cites, allow_web=allow_web,
-                max_steps=max_steps, max_tokens=max_tokens, tag=tag,
-            )
-            transcript.append({"side": side["name"], "round": rnd, "phase": phase, "text": text})
-            turns.append({"side": side["name"], "round": rnd, "phase": phase,
-                          "text": text, "reasoning": reasoning, "tools": trace})
+            sink = {}
+            try:
+                agent_turn(
+                    msgs, emit=emit, cites=cites, allow_web=allow_web,
+                    max_steps=max_steps, max_tokens=max_tokens, tag=tag, sink=sink,
+                )
+            finally:
+                # record the turn whether it finished or was cut off, so a
+                # stopped debate keeps the argument that was already made
+                text = "".join(sink.get("content") or [])
+                if text.strip() or sink.get("trace"):
+                    transcript.append({"side": side["name"], "round": rnd,
+                                       "phase": phase, "text": text})
+                    turns.append({"side": side["name"], "round": rnd, "phase": phase,
+                                  "text": text,
+                                  "reasoning": "".join(sink.get("reasoning") or []),
+                                  "tools": sink.get("trace") or []})
             emit({"type": "turn_end", "side": side["name"], "round": rnd, "phase": phase})
             if cites.rows:
                 emit({"type": "sources", "sources": cites.as_list()})
@@ -1324,30 +1348,43 @@ class Handler(BaseHTTPRequestHandler):
                     {"role": "user", "content": JUDGE_PROMPT},
                 ]
                 tag = {"side": "Adjudicator", "round": rounds + 1, "phase": "verdict"}
-                jr, jt, jtrace = agent_turn(
-                    msgs, emit=emit, cites=cites, allow_web=allow_web,
-                    max_steps=max_steps, max_tokens=int(b.get("judge_tokens", 4000)), tag=tag,
-                )
-                turns.append({"side": "Adjudicator", "round": rounds + 1, "phase": "verdict",
-                              "text": jt, "reasoning": jr, "tools": jtrace})
+                jsink = {}
+                try:
+                    agent_turn(
+                        msgs, emit=emit, cites=cites, allow_web=allow_web,
+                        max_steps=max_steps, max_tokens=int(b.get("judge_tokens", 4000)),
+                        tag=tag, sink=jsink,
+                    )
+                finally:
+                    jt = "".join(jsink.get("content") or [])
+                    if jt.strip() or jsink.get("trace"):
+                        turns.append({"side": "Adjudicator", "round": rounds + 1,
+                                      "phase": "verdict", "text": jt,
+                                      "reasoning": "".join(jsink.get("reasoning") or []),
+                                      "tools": jsink.get("trace") or []})
                 emit({"type": "turn_end", "side": "Adjudicator", "round": rounds + 1,
                       "phase": "verdict"})
         except (BrokenPipeError, ConnectionResetError):
-            return
+            # Stopped from the browser, or the connection dropped. Keep the
+            # turns already spoken rather than discarding ten minutes of work.
+            interrupted = True
         except Exception as e:
             import traceback
             traceback.print_exc()
+            interrupted = True
             try:
                 emit({"type": "error", "error": str(e)})
             except Exception:
-                return
+                pass
 
+        if not turns:
+            return   # stopped before anyone spoke; nothing worth a transcript
         append_message(sid, {"role": "user", "content": f"Debate: {motion}", "ts": time.time(),
                              "kind": "debate_motion"})
         append_message(sid, {
             "role": "assistant", "kind": "debate", "motion": motion, "rounds": rounds,
             "sides": sides, "turns": turns, "sources": cites.as_list(),
-            "web": allow_web, "ts": time.time(),
+            "web": allow_web, "interrupted": interrupted, "ts": time.time(),
             "content": "\n\n".join(f"### {t['side']} — {t['phase']}\n\n{t['text']}" for t in turns),
         })
         touch_session(sid, 2)
@@ -1355,7 +1392,8 @@ class Handler(BaseHTTPRequestHandler):
             db().execute("UPDATE sessions SET title=? WHERE id=?", (motion[:70], sid))
             db().commit()
         try:
-            emit({"type": "done", "turns": len(turns), "sources": len(cites.rows)})
+            emit({"type": "done", "turns": len(turns), "sources": len(cites.rows),
+                  "interrupted": interrupted})
         except Exception:
             pass
 
@@ -1431,11 +1469,17 @@ class Handler(BaseHTTPRequestHandler):
         want_check = bool(b.get("verify", True))
         check_text = ""
 
+        # Sinks, so a turn cut off part-way can still be saved: agent_turn
+        # raises out of the streaming loop and never returns, so its return
+        # values are no help on a disconnect.
+        answer_sink, check_sink = {}, {}
+
         try:
             emit({"type": "phase", "phase": "answer"})
             reasoning, content, trace = agent_turn(
                 msgs, emit=emit, cites=cites, allow_web=allow_web,
                 max_steps=MAX_STEPS, max_tokens=int(b.get("max_tokens", 4096)),
+                sink=answer_sink,
             )
 
             # ---------------- self-check ----------------
@@ -1450,7 +1494,7 @@ class Handler(BaseHTTPRequestHandler):
                     msgs, emit=emit, cites=cites, allow_web=allow_web,
                     max_steps=int(b.get("check_steps", 4)),
                     max_tokens=int(b.get("max_tokens", 4096)),
-                    channel="check",
+                    channel="check", sink=check_sink,
                 )
                 # mark them so the reader can see what the check actually did;
                 # the check's own prose is only "VERDICT: ..." plus the
@@ -1472,9 +1516,27 @@ class Handler(BaseHTTPRequestHandler):
             if cites.rows:
                 emit({"type": "sources", "sources": cites.as_list()})
         except (BrokenPipeError, ConnectionResetError):
-            return  # client went away mid-stream; the turn is still saved below
+            # The client went away — a closed tab, a lost connection. Fall
+            # through and save what was produced: the comment here used to
+            # claim the turn was still saved while the return skipped the
+            # save, so an answer the model had finished writing was thrown
+            # away because nobody was watching it arrive.
+            pass
         except Exception as e:
-            emit({"type": "error", "error": str(e)})
+            try:
+                emit({"type": "error", "error": str(e)})
+            except (BrokenPipeError, ConnectionResetError):
+                pass
+
+        # Recover anything the interrupted turn had already written.
+        if not content:
+            content = "".join(answer_sink.get("content") or [])
+            reasoning = reasoning or "".join(answer_sink.get("reasoning") or [])
+            trace = trace or (answer_sink.get("trace") or [])
+        if want_check and not check_text:
+            check_text = "".join(check_sink.get("content") or [])
+        if not (content.strip() or trace):
+            return   # nothing was said and nothing was looked at
 
         rec = {
             "role": "assistant",
