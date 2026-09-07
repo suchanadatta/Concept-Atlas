@@ -1576,9 +1576,29 @@ class Handler(BaseHTTPRequestHandler):
         # whole thing, and so the speakers argue against the real transcript.
         prior = [m for m in read_messages(sid)
                  if m.get("debate_id") == did and m.get("kind") in ("debate_turn", "debate_note")]
+        # Each turn stores the citation table AS IT STOOD when that turn ended,
+        # which is cumulative. Concatenating every turn's copy therefore
+        # restored the early rows once per later turn: a resumed debate came
+        # back with S1..S6 twice over, an inflated row count, and new markers
+        # numbered from the wrong place. Take the last turn's table, and dedupe
+        # by marker in case an older transcript is not cumulative.
         cites = atlas_tools.Cites()
-        cites.rows = [r for m in prior if m.get("kind") == "debate_turn"
-                      for r in (m.get("sources") or [])]
+        rows, seen_ids = [], set()
+        turn_recs = [m for m in prior if m.get("kind") == "debate_turn"]
+        for m in reversed(turn_recs):
+            for r in (m.get("sources") or []):
+                if r.get("id") not in seen_ids:
+                    seen_ids.add(r.get("id"))
+                    rows.append(r)
+            if rows:
+                break          # that table was already cumulative
+        for m in turn_recs:    # anything an older format left out
+            for r in (m.get("sources") or []):
+                if r.get("id") not in seen_ids:
+                    seen_ids.add(r.get("id"))
+                    rows.append(r)
+        rows.sort(key=lambda r: int(re.sub(r"\D", "", str(r.get("id") or "0")) or 0))
+        cites.rows = rows
         cites._seen = {(r.get("book_id"), r.get("page"), (r.get("snippet") or "")[:60]): r["id"]
                        for r in cites.rows}
 
