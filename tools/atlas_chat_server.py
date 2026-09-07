@@ -143,6 +143,39 @@ CREATE INDEX IF NOT EXISTS ix_ctx_session ON context_items(session_id, added_at)
 -- append-only (it is the export format), so a dropped turn is recorded here
 -- rather than rewritten out of the file: it stays readable, stops being sent
 -- to the model, and can be put back.
+-- A debate is long-running, interruptible and open to a moderator, so its
+-- state lives here rather than only in the transcript: which motion, which
+-- sides, how far it got, and whether it is running, paused or finished. The
+-- turns themselves are appended to the session's JSONL as they complete, so a
+-- paused debate can be picked up exactly where it stopped.
+CREATE TABLE IF NOT EXISTS debates (
+  id         TEXT PRIMARY KEY,
+  session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
+  motion     TEXT NOT NULL,
+  sides      TEXT NOT NULL DEFAULT '[]',
+  rounds     INTEGER NOT NULL DEFAULT 2,
+  judge      INTEGER NOT NULL DEFAULT 1,
+  allow_web  INTEGER NOT NULL DEFAULT 0,
+  status     TEXT NOT NULL DEFAULT 'running',   -- running | paused | done
+  done_turns INTEGER NOT NULL DEFAULT 0,        -- how many turns of the schedule are spoken
+  created_at REAL NOT NULL,
+  updated_at REAL NOT NULL
+);
+CREATE INDEX IF NOT EXISTS ix_debate_session ON debates(session_id, created_at);
+
+-- What the moderator says. Picked up before the next turn speaks, so it can be
+-- added while the debate is running as well as while it is paused.
+CREATE TABLE IF NOT EXISTS debate_notes (
+  id         INTEGER PRIMARY KEY,
+  debate_id  TEXT NOT NULL REFERENCES debates(id) ON DELETE CASCADE,
+  addressed  TEXT NOT NULL DEFAULT 'both',      -- a side's name, or 'both'
+  text       TEXT NOT NULL,
+  after_turn INTEGER NOT NULL DEFAULT 0,        -- how many turns were spoken when it arrived
+  used       INTEGER NOT NULL DEFAULT 0,
+  created_at REAL NOT NULL
+);
+CREATE INDEX IF NOT EXISTS ix_note_debate ON debate_notes(debate_id, created_at);
+
 CREATE TABLE IF NOT EXISTS dropped_turns (
   session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
   idx        INTEGER NOT NULL,
@@ -793,6 +826,75 @@ main claims each side made, and which claims answered which. Use `graph TD`, kee
 short, and quote any label containing punctuation."""
 
 
+def debate_schedule(sides, rounds, judge):
+    """Every turn the debate will consist of, in order.
+
+    Written out as a list rather than computed inside the loop so that a
+    paused debate can be resumed by index: turn N is always the same turn,
+    whoever is asking and whenever they ask.
+    """
+    plan = []
+    for rnd in range(1, rounds + 1):
+        phase = "opening" if rnd == 1 else ("closing" if rnd == rounds else "rebuttal")
+        for side in sides:
+            plan.append({"side": side["name"], "round": rnd, "phase": phase})
+    if judge:
+        plan.append({"side": "Adjudicator", "round": rounds + 1, "phase": "verdict"})
+    return plan
+
+
+def debate_row(did):
+    return db().execute("SELECT * FROM debates WHERE id=?", (did,)).fetchone()
+
+
+def debate_state(did):
+    """A debate as the UI wants it: its settings, its turns and the moderator's
+    notes, gathered from the row and the session transcript."""
+    row = debate_row(did)
+    if not row:
+        return None
+    turns, notes = [], []
+    for m in read_messages(row["session_id"]):
+        if m.get("debate_id") != did:
+            continue
+        if m.get("kind") == "debate_turn":
+            turns.append(m)
+        elif m.get("kind") == "debate_note":
+            notes.append(m)
+    sides = json.loads(row["sides"] or "[]")
+    plan = debate_schedule(sides, row["rounds"], bool(row["judge"]))
+    return {
+        "id": did, "motion": row["motion"], "sides": sides,
+        "rounds": row["rounds"], "judge": bool(row["judge"]),
+        "allow_web": bool(row["allow_web"]), "status": row["status"],
+        "done_turns": row["done_turns"], "total_turns": len(plan),
+        "next": plan[row["done_turns"]] if row["done_turns"] < len(plan) else None,
+        "turns": turns, "notes": notes,
+        "created_at": row["created_at"], "updated_at": row["updated_at"],
+    }
+
+
+def debates_for_session(sid):
+    rows = db().execute(
+        "SELECT * FROM debates WHERE session_id=? ORDER BY created_at", (sid,)).fetchall()
+    return [debate_state(r["id"]) for r in rows]
+
+
+def pending_notes(did, side_name):
+    """What the moderator has said that this speaker has not been shown yet."""
+    rows = db().execute(
+        "SELECT * FROM debate_notes WHERE debate_id=? AND used=0 ORDER BY created_at",
+        (did,)).fetchall()
+    mine = [r for r in rows if r["addressed"] in ("both", side_name)]
+    return mine
+
+
+def mark_notes_used(ids):
+    for i in ids:
+        db().execute("UPDATE debate_notes SET used=1 WHERE id=?", (i,))
+    db().commit()
+
+
 def debate_sides(b):
     """Two sides, defaulted sensibly, so a motion alone is enough to start."""
     raw = b.get("sides") or []
@@ -1019,6 +1121,23 @@ class Handler(BaseHTTPRequestHandler):
                 "dropped": sorted(dropped_turns(m.group(1))),
                 "context": [{**dict(c), "payload": json.loads(c["payload"] or "{}")} for c in ctx],
             })
+        m = re.fullmatch(r"/debates/([\w-]+)", p)
+        if m:
+            u = self._need_user()
+            if not u:
+                return
+            st = debate_state(m.group(1))
+            if not st or not self._own_session(debate_row(m.group(1))["session_id"], u):
+                return self._json(404, {"error": "no such debate"})
+            return self._json(200, {"debate": st})
+        m = re.fullmatch(r"/sessions/([\w-]+)/debates", p)
+        if m:
+            u = self._need_user()
+            if not u:
+                return
+            if not self._own_session(m.group(1), u):
+                return
+            return self._json(200, {"debates": debates_for_session(m.group(1))})
         m = re.fullmatch(r"/sessions/([\w-]+)/export", p)
         if m:
             u = self._need_user()
@@ -1074,6 +1193,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self.chat()
             if p == "/debate":
                 return self.debate()
+            m = re.fullmatch(r"/debates/([\w-]+)/(pause|note)", p)
+            if m:
+                return self.debate_action(m.group(1), m.group(2))
             m = re.fullmatch(r"/sessions/([\w-]+)/history", p)
             if m:
                 return self.history_edit(m.group(1))
@@ -1215,6 +1337,42 @@ class Handler(BaseHTTPRequestHandler):
         row = db().execute("SELECT * FROM sessions WHERE id=?", (sid,)).fetchone()
         return self._json(200, {"session": dict(row)})
 
+    def debate_action(self, did, action):
+        """pause a running debate, or hand the next speaker a moderator's point."""
+        u = self._need_user()
+        if not u:
+            return
+        row = debate_row(did)
+        if not row or not self._own_session(row["session_id"], u):
+            return self._json(404, {"error": "no such debate"})
+        b = self._body()
+        if action == "pause":
+            # the running request notices this between turns and stops cleanly
+            db().execute("UPDATE debates SET status='paused', updated_at=? WHERE id=?",
+                         (time.time(), did))
+            db().commit()
+            return self._json(200, {"debate": debate_state(did)})
+        # a note
+        text = (b.get("text") or "").strip()
+        if not text:
+            return self._json(400, {"error": "say something"})
+        to = (b.get("addressed") or "both").strip() or "both"
+        names = {x["name"] for x in json.loads(row["sides"] or "[]")} | {"both", "Adjudicator"}
+        if to not in names:
+            to = "both"
+        now = time.time()
+        db().execute(
+            "INSERT INTO debate_notes(debate_id,addressed,text,after_turn,used,created_at) "
+            "VALUES(?,?,?,?,0,?)", (did, to, text, row["done_turns"], now))
+        db().commit()
+        # in the transcript too, so the exchange reads as one conversation
+        append_message(row["session_id"], {
+            "role": "user", "kind": "debate_note", "debate_id": did,
+            "addressed": to, "text": text, "content": text, "ts": now,
+            "after_turn": row["done_turns"],
+        })
+        return self._json(200, {"ok": True, "debate": debate_state(did)})
+
     def history_edit(self, sid):
         """Take exchanges out of the history, or put them back.
 
@@ -1342,29 +1500,65 @@ class Handler(BaseHTTPRequestHandler):
 
     # ---------- chat ----------
     def debate(self):
-        """Two agents argue a motion from the corpus, then a third adjudicates.
+        """Run a debate, or carry on one that was paused.
 
-        Everything shares one citation table, so [S7] means the same passage in
-        the opening, the rebuttal and the verdict — and stays clickable.
+        Two agents argue a motion and a third adjudicates. Everything shares
+        one citation table, so [S7] is the same passage in the opening, the
+        rebuttal and the verdict.
+
+        The debate is a row in the database and its turns are records in the
+        session transcript, so it belongs to the account, survives a reload,
+        and can be paused and picked up at the turn it stopped on. A moderator
+        — the reader — can put arguments to either side between turns.
         """
         u = self._need_user()
         if not u:
             return
         b = self._body()
-        sid = b.get("session_id")
-        row = self._own_session(sid, u)
-        if not row:
-            return
-        motion = (b.get("motion") or "").strip()
-        if not motion:
-            return self._json(400, {"error": "give a motion to debate"})
-        rounds = max(1, min(int(b.get("rounds", 2)), 4))
-        allow_web = bool(b.get("allow_web"))
-        sides = debate_sides(b)
-        judge = b.get("judge", True)
+
+        did = b.get("debate_id")
+        if did:
+            row = debate_row(did)
+            if not row or not self._own_session(row["session_id"], u):
+                return self._json(404, {"error": "no such debate"})
+            sid = row["session_id"]
+            motion = row["motion"]
+            sides = json.loads(row["sides"] or "[]")
+            rounds, judge = row["rounds"], bool(row["judge"])
+            allow_web = bool(row["allow_web"])
+            start_at = row["done_turns"]
+        else:
+            sid = b.get("session_id")
+            row = self._own_session(sid, u)
+            if not row:
+                return
+            motion = (b.get("motion") or "").strip()
+            if not motion:
+                return self._json(400, {"error": "give a motion to debate"})
+            rounds = max(1, min(int(b.get("rounds", 2)), 4))
+            judge = bool(b.get("judge", True))
+            allow_web = bool(b.get("allow_web"))
+            sides = debate_sides(b)
+            did = secrets.token_urlsafe(9).replace("-", "_")
+            now = time.time()
+            db().execute(
+                "INSERT INTO debates(id,session_id,motion,sides,rounds,judge,allow_web,"
+                "status,done_turns,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
+                (did, sid, motion, json.dumps(sides), rounds, int(judge), int(allow_web),
+                 "running", 0, now, now))
+            db().commit()
+            append_message(sid, {"role": "user", "kind": "debate_motion", "debate_id": did,
+                                 "content": f"Debate: {motion}", "ts": now})
+            start_at = 0
+
+        plan = debate_schedule(sides, rounds, judge)
         max_steps = int(b.get("max_steps", 14))
         turn_secs = float(b.get("turn_secs", 420))
         max_tokens = int(b.get("max_tokens", 3000))
+
+        db().execute("UPDATE debates SET status='running', updated_at=? WHERE id=?",
+                     (time.time(), did))
+        db().commit()
 
         self.send_response(200)
         self.send_header("Content-Type", "text/event-stream")
@@ -1378,109 +1572,134 @@ class Handler(BaseHTTPRequestHandler):
             self.wfile.write(("data: " + json.dumps(obj, ensure_ascii=False) + "\n\n").encode())
             self.wfile.flush()
 
-        emit({"type": "debate_start", "motion": motion, "rounds": rounds,
-              "sides": sides, "web": allow_web, "judge": bool(judge),
-              "model": CFG["model"]})
-
+        # A resumed debate replays what was already said so the reader sees the
+        # whole thing, and so the speakers argue against the real transcript.
+        prior = [m for m in read_messages(sid)
+                 if m.get("debate_id") == did and m.get("kind") in ("debate_turn", "debate_note")]
         cites = atlas_tools.Cites()
-        transcript = []          # [{side, round, phase, text}]
-        turns = []
+        cites.rows = [r for m in prior if m.get("kind") == "debate_turn"
+                      for r in (m.get("sources") or [])]
+        cites._seen = {(r.get("book_id"), r.get("page"), (r.get("snippet") or "")[:60]): r["id"]
+                       for r in cites.rows}
+
+        emit({"type": "debate_start", "debate_id": did, "motion": motion, "rounds": rounds,
+              "sides": sides, "web": allow_web, "judge": judge, "model": CFG["model"],
+              "resumed": start_at > 0, "done_turns": start_at, "total_turns": len(plan),
+              "history": prior, "sources": cites.as_list()})
+
+        transcript = [{"side": m["side"], "round": m["round"], "phase": m["phase"],
+                       "text": m.get("text") or ""}
+                      for m in prior if m.get("kind") == "debate_turn"]
+        mod_seen = [m for m in prior if m.get("kind") == "debate_note"]
         interrupted = False
+        spoke = 0
 
         def sys_for(side):
             head = DEBATE_COMMON.format(motion=motion, stance=side["stance"])
-            if side["persona"]:
+            if side.get("persona"):
                 head += ("\n\nYou are speaking as: " + side["persona"] +
                          "\nStay in that voice, but never let it licence a claim the corpus does "
                          "not support.")
-            if allow_web:
-                head += ("\n\nWeb access is ON. Use it only for what the corpus cannot supply, "
-                         "and say when a point rests on it rather than on these 197 sources.")
-            else:
-                head += "\n\nWeb access is OFF. Argue from the corpus alone."
+            head += ("\n\nWeb access is ON. Use it only for what the corpus cannot supply, and "
+                     "say when a point rests on it rather than on these 197 sources."
+                     if allow_web else
+                     "\n\nWeb access is OFF. Argue from the corpus alone.")
+            head += ("\n\nA human moderator is watching and may put points to you between turns. "
+                     "When they do, engage with what they actually said: take a good argument on "
+                     "board and say so, and if you think they are wrong about the texts, say that "
+                     "too — with a citation. Do not flatter them and do not simply obey.")
             return head
 
         def transcript_text():
-            """Everything said so far. The second speaker's opening therefore
-            sees the first's, which is why an opening can already engage the
-            other side rather than talking past it."""
-            return "\n\n".join(
-                f"--- {t['side']} — {t['phase']} (round {t['round']}) ---\n{t['text']}"
-                for t in transcript
-            )
+            out = []
+            for t in transcript:
+                out.append(f"--- {t['side']} — {t['phase']} (round {t['round']}) ---\n{t['text']}")
+            for m in mod_seen:
+                who = m.get("addressed") or "both"
+                out.append(f"--- the moderator, to {who} ---\n{m.get('text','')}")
+            return "\n\n".join(out)
 
-        def speak(side, phase, rnd, instruction):
-            emit({"type": "turn_start", "side": side["name"], "round": rnd, "phase": phase})
-            msgs = [{"role": "system", "content": sys_for(side)}]
-            prior = transcript_text()
-            if prior:
-                msgs.append({"role": "user", "content":
-                             "The debate so far:\n\n" + prior[:60000]})
-            msgs.append({"role": "user", "content": instruction})
-            tag = {"side": side["name"], "round": rnd, "phase": phase}
-            sink = {}
-            try:
-                agent_turn(
-                    msgs, emit=emit, cites=cites, allow_web=allow_web,
-                    max_steps=max_steps, max_tokens=max_tokens, tag=tag, sink=sink,
-                    budget_secs=turn_secs,
-                )
-            finally:
-                # record the turn whether it finished or was cut off, so a
-                # stopped debate keeps the argument that was already made
-                text = "".join(sink.get("content") or [])
-                if text.strip() or sink.get("trace"):
-                    transcript.append({"side": side["name"], "round": rnd,
-                                       "phase": phase, "text": text})
-                    turns.append({"side": side["name"], "round": rnd, "phase": phase,
-                                  "text": text,
-                                  "reasoning": "".join(sink.get("reasoning") or []),
-                                  "tools": sink.get("trace") or []})
-            emit({"type": "turn_end", "side": side["name"], "round": rnd, "phase": phase})
-            if cites.rows:
-                emit({"type": "sources", "sources": cites.as_list()})
+        def speak(slot):
+            nonlocal spoke
+            side = next((x for x in sides if x["name"] == slot["side"]), None)
+            is_judge = slot["side"] == "Adjudicator"
+            emit({"type": "turn_start", "side": slot["side"], "round": slot["round"],
+                  "phase": slot["phase"]})
 
-        try:
-            for rnd in range(1, rounds + 1):
-                for side in sides:
-                    if rnd == 1:
-                        speak(side, "opening", rnd, DEBATE_OPENING)
-                    elif rnd == rounds:
-                        speak(side, "closing", rnd, DEBATE_CLOSING)
-                    else:
-                        speak(side, "rebuttal", rnd, DEBATE_REBUTTAL)
-            if judge:
-                emit({"type": "turn_start", "side": "Adjudicator", "round": rounds + 1,
-                      "phase": "verdict"})
+            notes = pending_notes(did, slot["side"])
+            note_block = ""
+            if notes:
+                note_block = "\n\nThe moderator has just said:\n" + "\n".join(
+                    f"  (to {n['addressed']}) {n['text']}" for n in notes)
+                for n in notes:
+                    mod_seen.append({"kind": "debate_note", "addressed": n["addressed"],
+                                     "text": n["text"]})
+                emit({"type": "moderator_used", "side": slot["side"],
+                      "notes": [{"addressed": n["addressed"], "text": n["text"]} for n in notes]})
+
+            if is_judge:
                 msgs = [
                     {"role": "system", "content":
                      ("You adjudicate a debate held over a corpus of 18th-century British moral "
                       "philosophy. The motion is:\n\n    " + motion +
                       "\n\nYou have the corpus tools. Use them to check, not to argue." +
-                      ("\nWeb access is ON." if allow_web else "\nWeb access is OFF."))},
+                      ("\nWeb access is ON." if allow_web else "\nWeb access is OFF.") +
+                      "\nA human moderator took part; weigh their points on the evidence like "
+                      "anyone else's.")},
                     {"role": "user", "content": "The debate:\n\n" + transcript_text()[:80000]},
-                    {"role": "user", "content": JUDGE_PROMPT},
+                    {"role": "user", "content": JUDGE_PROMPT + note_block},
                 ]
-                tag = {"side": "Adjudicator", "round": rounds + 1, "phase": "verdict"}
-                jsink = {}
-                try:
-                    agent_turn(
-                        msgs, emit=emit, cites=cites, allow_web=allow_web,
-                        max_steps=max_steps, max_tokens=int(b.get("judge_tokens", 4000)),
-                        tag=tag, sink=jsink, budget_secs=turn_secs,
-                    )
-                finally:
-                    jt = "".join(jsink.get("content") or [])
-                    if jt.strip() or jsink.get("trace"):
-                        turns.append({"side": "Adjudicator", "round": rounds + 1,
-                                      "phase": "verdict", "text": jt,
-                                      "reasoning": "".join(jsink.get("reasoning") or []),
-                                      "tools": jsink.get("trace") or []})
-                emit({"type": "turn_end", "side": "Adjudicator", "round": rounds + 1,
-                      "phase": "verdict"})
+                tokens = int(b.get("judge_tokens", 4000))
+            else:
+                instruction = (DEBATE_OPENING if slot["phase"] == "opening"
+                               else DEBATE_CLOSING if slot["phase"] == "closing"
+                               else DEBATE_REBUTTAL)
+                msgs = [{"role": "system", "content": sys_for(side)}]
+                prior_text = transcript_text()
+                if prior_text:
+                    msgs.append({"role": "user",
+                                 "content": "The debate so far:\n\n" + prior_text[:60000]})
+                msgs.append({"role": "user", "content": instruction + note_block})
+                tokens = max_tokens
+
+            tag = {"side": slot["side"], "round": slot["round"], "phase": slot["phase"]}
+            sink = {}
+            try:
+                agent_turn(msgs, emit=emit, cites=cites, allow_web=allow_web,
+                           max_steps=max_steps, max_tokens=tokens, tag=tag, sink=sink,
+                           budget_secs=turn_secs)
+            finally:
+                text = "".join(sink.get("content") or [])
+                if text.strip() or sink.get("trace"):
+                    rec = {"role": "assistant", "kind": "debate_turn", "debate_id": did,
+                           "side": slot["side"], "round": slot["round"], "phase": slot["phase"],
+                           "text": text, "reasoning": "".join(sink.get("reasoning") or []),
+                           "tools": sink.get("trace") or [],
+                           "sources": cites.as_list(), "ts": time.time()}
+                    append_message(sid, rec)
+                    transcript.append({"side": slot["side"], "round": slot["round"],
+                                       "phase": slot["phase"], "text": text})
+                    if notes:
+                        mark_notes_used([n["id"] for n in notes])
+                    spoke += 1
+                    db().execute(
+                        "UPDATE debates SET done_turns=?, updated_at=? WHERE id=?",
+                        (start_at + spoke, time.time(), did))
+                    db().commit()
+            emit({"type": "turn_end", "side": slot["side"], "round": slot["round"],
+                  "phase": slot["phase"]})
+            if cites.rows:
+                emit({"type": "sources", "sources": cites.as_list()})
+
+        try:
+            for slot in plan[start_at:]:
+                # a pause asked for from another tab stops the debate cleanly
+                cur = debate_row(did)
+                if cur and cur["status"] == "paused":
+                    interrupted = True
+                    break
+                speak(slot)
         except (BrokenPipeError, ConnectionResetError):
-            # Stopped from the browser, or the connection dropped. Keep the
-            # turns already spoken rather than discarding ten minutes of work.
             interrupted = True
         except Exception as e:
             import traceback
@@ -1491,23 +1710,19 @@ class Handler(BaseHTTPRequestHandler):
             except Exception:
                 pass
 
-        if not turns:
-            return   # stopped before anyone spoke; nothing worth a transcript
-        append_message(sid, {"role": "user", "content": f"Debate: {motion}", "ts": time.time(),
-                             "kind": "debate_motion"})
-        append_message(sid, {
-            "role": "assistant", "kind": "debate", "motion": motion, "rounds": rounds,
-            "sides": sides, "turns": turns, "sources": cites.as_list(),
-            "web": allow_web, "interrupted": interrupted, "ts": time.time(),
-            "content": "\n\n".join(f"### {t['side']} — {t['phase']}\n\n{t['text']}" for t in turns),
-        })
-        touch_session(sid, 2)
-        if row["n_messages"] <= 1:
+        done = start_at + spoke
+        status = "done" if done >= len(plan) and not interrupted else "paused"
+        db().execute("UPDATE debates SET status=?, done_turns=?, updated_at=? WHERE id=?",
+                     (status, done, time.time(), did))
+        db().commit()
+        touch_session(sid, spoke)
+        if row["n_messages"] <= 1 and not b.get("debate_id"):
             db().execute("UPDATE sessions SET title=? WHERE id=?", (motion[:70], sid))
             db().commit()
         try:
-            emit({"type": "done", "turns": len(turns), "sources": len(cites.rows),
-                  "interrupted": interrupted})
+            emit({"type": "done", "debate_id": did, "status": status,
+                  "done_turns": done, "total_turns": len(plan),
+                  "turns": spoke, "sources": len(cites.rows)})
         except Exception:
             pass
 

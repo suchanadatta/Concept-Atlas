@@ -41,6 +41,7 @@ const Nav = (function () {
     if (window.Chat && typeof Chat.close === "function") Chat.close();
     if (typeof window.closeReader === "function") window.closeReader();
     if (window.Authors && typeof Authors.close === "function") Authors.close();
+    if (window.DocsPanel && typeof DocsPanel.close === "function") DocsPanel.close();
     // Compare's closer is private to its module; hiding the panel is the same thing
     const cmp = $("compare");
     if (cmp) cmp.classList.add("hidden");

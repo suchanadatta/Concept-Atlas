@@ -27,7 +27,7 @@
   </nav>
   <span class="app-spacer"></span>
   <button id="btn-authors" class="app-btn" title="Who wrote the corpus">Authors</button>
-  <a href="docs.html" class="app-btn" title="Documentation">Docs</a>
+  <a href="docs.html" id="btn-docs" class="app-btn" title="Documentation">Docs</a>
   <button id="btn-help" class="app-btn app-icon" title="Keyboard shortcuts">?</button>
   <button id="btn-theme" class="app-btn app-icon" title="Toggle dark mode">&#127769;</button>
   <span id="app-account"></span>
@@ -358,6 +358,11 @@
   <!-- Authors panel -->
   <div id="authors-panel" class="hidden"></div>
 
+  <!-- The documentation, read in place. It used to be a plain link to
+       docs.html, which works but leaves the app and drops whatever you were
+       looking at; the link is still there for a new tab or no-JS. -->
+  <div id="docs-panel" class="hidden"></div>
+
   <!-- Settings bar (bottom of page) -->
   <div id="settings-bar">
     <button id="settings-open" title="Search engine &amp; display settings">
@@ -515,6 +520,7 @@
 <script src="search.js?v=1788717937"></script>
 <script src="floatgraph.js?v=1788717937"></script>
 <script src="dyngraph.js?v=1788717937"></script>
+<script src="docs-panel.js?v=1"></script>
 <script src="settings.js?v=1788717937"></script>
 <script type="module" src="labels3d.mjs"></script>
 </body>
