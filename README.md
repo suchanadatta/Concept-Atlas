@@ -76,6 +76,15 @@ step 2–3).
   at that page with the cited region highlighted. The answer is then re-read
   by the model with the tools still in hand, and either stands or is replaced;
   the panel says which. Markdown, tables and ```mermaid diagrams render.
+  Around 30 tool rounds per question, so it keeps searching when unsure; the
+  guards are a repeat-call memo, stall detection and a wall clock rather than
+  a low ceiling. Web search runs on `ddgs` (real engines, pinned backends) with
+  pagination, `site:` pinning, recency and news/catalogue verticals; `web_fetch`
+  pages through a document too long for one call.
+- **Conversation panel** → every exchange enumerated, and any of them droppable
+  from the history: it stays in the transcript, struck through, but stops being
+  sent — so a discussion that wandered can be pruned back to the thread that
+  matters.
 - **⚖ Debate** → two agents argue a motion out of the corpus, each finding its
   own evidence, then an adjudicator checks the quotations and reports where
   they actually disagreed, what the corpus bears out and what it cannot

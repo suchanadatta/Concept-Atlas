@@ -651,52 +651,132 @@ def _strip_html(raw: bytes) -> str:
     return re.sub(r"\n{3,}", "\n\n", s).strip()
 
 
-def web_search(cites: Cites, query: str, n: int = 6, **_):
-    """DuckDuckGo's HTML endpoint — no key, and it answers plain GETs."""
-    n = max(1, min(int(n or 6), 10))
-    try:
-        raw = _form_post("https://html.duckduckgo.com/html/",
-                         {"q": query, "b": "", "kl": "us-en"})
-    except Exception as e:
-        raw = ""
-        ddg_err = str(e)
+# Web search runs through the ddgs package, which drives real search engines
+# rather than scraping a results page.
+#
+# DuckDuckGo itself is not usable from this host: html.duckduckgo.com answers
+# 202 with a challenge page and no results (which is why the old regex parser
+# silently returned nothing), and ddgs ships its DuckDuckGo engine with
+# disabled = True, "until ratelimit is fixed". It is listed first anyway, so
+# the day it works again it is simply used.
+#
+# The backends are pinned rather than left on "auto" because auto includes
+# engines that answer with results for a different query altogether — a
+# Mandeville search came back with Baidu pages and a Phoenix pizza guide.
+# Measured on this host: yahoo and yandex answer 5/5 relevant and both honour
+# a site: restriction; brave returns a single result with an empty href; bing
+# answers a Mandeville query with grocery listings; google, mojeek and the
+# mullvad proxies fail outright.
+try:
+    from ddgs import DDGS as _DDGS
+except Exception:  # pragma: no cover - environment without the package
+    _DDGS = None
+
+TEXT_BACKENDS = "duckduckgo,yahoo,yandex"
+NEWS_BACKENDS = "duckduckgo,yahoo"
+SEARCH_KINDS = ("text", "news", "books")
+RECENCY = {"day": "d", "week": "w", "month": "m", "year": "y"}
+
+
+def web_search(cites: Cites, query: str, n: int = 8, page: int = 1, site: str = "",
+               kind: str = "text", recency: str = "", region: str = "us-en", **_):
+    """A real search engine, not a scrape.
+
+    `page` walks further down the results, `site` restricts to one domain,
+    `recency` limits how old a result may be, and `kind` switches between the
+    web, news and book verticals. All of it is there so the agent can keep
+    refining instead of accepting the first ten links it saw.
+    """
+    query = (query or "").strip()
+    if not query:
+        return {"error": "give something to search for"}
+    n = max(1, min(int(n or 8), 25))
+    page = max(1, min(int(page or 1), 10))
+    kind = (kind or "text").lower()
+    if kind not in SEARCH_KINDS:
+        return {"error": f"kind must be one of {', '.join(SEARCH_KINDS)}"}
+    if site:
+        host = re.sub(r"^https?://", "", str(site)).strip("/ ")
+        if host and f"site:{host}" not in query:
+            query = f"site:{host} {query}"
+
+    # editions and dates are a catalogue question, and ddgs answers its books
+    # category from a shadow library, so that one goes to Open Library
+    if kind == "books":
+        got = _openlibrary_search(cites, query, n)
+        if got.get("results"):
+            got["next_step"] = ("Catalogue records only. web_fetch the Open Library page, or "
+                                "search the web for the text itself.")
+            return got
+        kind = "text"   # nothing catalogued; fall through to a web search
+
+    rows, engine, err = [], "", ""
+    if _DDGS is not None:
+        kw = {"max_results": n, "page": page, "region": region or "us-en",
+              "safesearch": "moderate",
+              "backend": NEWS_BACKENDS if kind == "news" else TEXT_BACKENDS}
+        tl = RECENCY.get((recency or "").lower())
+        if tl:
+            kw["timelimit"] = tl
+        try:
+            with _DDGS() as d:
+                rows = getattr(d, kind)(query, **kw) or []
+            engine = f"web/{kind}"
+        except Exception as e:
+            err = f"{type(e).__name__}: {e}"
     else:
-        ddg_err = ""
+        err = "the ddgs package is not installed"
+
+    want_host = ""
+    if site:
+        want_host = re.sub(r"^https?://", "", str(site)).strip("/ ").lower()
+
     out = []
-    # result blocks: an anchor with class result__a, then the snippet
-    for m in re.finditer(
-        r'<a[^>]+class="[^"]*result__a[^"]*"[^>]+href="([^"]+)"[^>]*>(.*?)</a>'
-        r'(.*?)(?:class="result__snippet"[^>]*>(.*?)</a>)?',
-        raw, re.S,
-    ):
-        href, title, _mid, snip = m.group(1), m.group(2), m.group(3), m.group(4)
-        # DDG wraps targets in a redirect; unwrap so the model sees the real host
-        q = urllib.parse.urlparse(href).query
-        real = urllib.parse.parse_qs(q).get("uddg", [None])[0]
-        link = real or href
-        if not link.startswith("http"):
+    seen = set()
+    for r in rows:
+        link = r.get("href") or r.get("url") or ""
+        title = (r.get("title") or "").strip()
+        body = (r.get("body") or r.get("excerpt") or r.get("description") or "").strip()
+        if not link.startswith("http") or not (title or body):
             continue
-        title_t = _strip_html(title.encode())
-        snip_t = _strip_html((snip or "").encode())
-        if not title_t:
+        # an engine that ignores site: would otherwise smuggle in whatever it felt like
+        if want_host and want_host not in urllib.parse.urlparse(link).netloc.lower():
             continue
-        marker = cites.add(book_id=link, page=None, cite=title_t or link,
-                           snippet=snip_t, kind="web",
-                           extra={"url": link, "title": title_t})
-        out.append({"cite_as": f"[{marker}]", "title": title_t, "url": link,
-                    "snippet": snip_t[:300], "outside_corpus": True})
+        if link in seen:
+            continue
+        seen.add(link)
         if len(out) >= n:
             break
+        extra = {"url": link, "title": title or link}
+        for k in ("date", "source", "publisher", "author"):
+            if r.get(k):
+                extra[k] = r[k]
+        marker = cites.add(book_id=link, page=None, cite=title or link,
+                           snippet=body, kind="web", extra=extra)
+        row = {"cite_as": f"[{marker}]", "title": title or link, "url": link,
+               "snippet": body[:400], "outside_corpus": True}
+        for k in ("date", "source", "publisher"):
+            if r.get(k):
+                row[k] = r[k]
+        out.append(row)
+
     if out:
-        return {"n": len(out), "results": out, "engine": "duckduckgo",
+        if want_host:
+            out = [x for x in out if want_host in urllib.parse.urlparse(x["url"]).netloc.lower()]
+        return {"n": len(out), "page": page, "query": query, "engine": engine,
+                "results": out,
+                "more": ("Ask again with page=%d for the next set." % (page + 1)),
+                "next_step": ("These are titles and snippets, not the pages. web_fetch any "
+                              "result whose wording you intend to rely on."),
                 "how_to_cite": HOW_TO_CITE_WEB}
-    # One search engine is a single point of failure for a tool the agent may
-    # genuinely need, so fall back to Wikipedia's open API.
-    wiki = _wiki_search(cites, query, n)
-    if wiki.get("results"):
-        return wiki
-    return {"error": f"web search returned nothing ({ddg_err or 'no parseable results'})",
-            "results": []}
+
+    # Nothing from the engine: try the open APIs rather than reporting silence.
+    for fb in (_wiki_search, _openlibrary_search):
+        alt = fb(cites, query, n)
+        if alt.get("results"):
+            alt["note"] = f"the search engine returned nothing ({err or 'no results'}); this is {alt['engine']}"
+            return alt
+    return {"error": f"web search found nothing ({err or 'no results'})", "results": []}
 
 
 def _wiki_search(cites: Cites, query: str, n: int = 6):
@@ -719,22 +799,108 @@ def _wiki_search(cites: Cites, query: str, n: int = 6):
             "how_to_cite": HOW_TO_CITE_WEB}
 
 
-def web_fetch(cites: Cites, url: str, max_chars: int = 8000, **_):
-    """One page as text, so a search result can actually be read."""
-    if not str(url).startswith(("http://", "https://")):
-        return {"error": "url must be http(s)"}
+def _openlibrary_search(cites: Cites, query: str, n: int = 6):
+    """Editions and dates, which is often what a question about an old book wants."""
+    url = ("https://openlibrary.org/search.json?limit=%d&fields=title,author_name,"
+           "first_publish_year,key&q=%s" % (n, urllib.parse.quote(query)))
     try:
-        raw = _get(url, timeout=25, headers=BROWSER_HEADERS)
+        d = json.loads(_get(url, timeout=20, headers=BROWSER_HEADERS))
     except Exception as e:
-        return {"error": f"could not fetch that page ({e})"}
-    text = _strip_html(raw)
-    if not text:
-        return {"error": "that page had no readable text"}
-    marker = cites.add(book_id=url, page=None, cite=url, snippet=text[:300],
-                       kind="web", extra={"url": url, "title": url})
-    return {"cite_as": f"[{marker}]", "url": url, "chars": len(text),
-            "outside_corpus": True, "how_to_cite": HOW_TO_CITE_WEB,
-            "text": text[:max_chars]}
+        return {"error": f"openlibrary search failed ({e})", "results": []}
+    out = []
+    for r in (d.get("docs") or [])[:n]:
+        title = r.get("title") or ""
+        who = ", ".join(r.get("author_name") or [])
+        yr = r.get("first_publish_year")
+        link = "https://openlibrary.org" + (r.get("key") or "")
+        snip = " · ".join(x for x in [who, str(yr) if yr else ""] if x)
+        marker = cites.add(book_id=link, page=None, cite=f"{title} ({yr})" if yr else title,
+                           snippet=snip, kind="web",
+                           extra={"url": link, "title": title})
+        out.append({"cite_as": f"[{marker}]", "title": title, "url": link,
+                    "snippet": snip, "first_published": yr, "outside_corpus": True})
+    return {"n": len(out), "results": out, "engine": "openlibrary",
+            "how_to_cite": HOW_TO_CITE_WEB}
+
+
+_FETCH_CACHE: dict[str, tuple[str, str, str]] = {}   # url -> (title, ctype, text)
+
+
+def _page_title(raw: bytes) -> str:
+    m = re.search(rb"(?is)<title[^>]*>(.*?)</title>", raw)
+    return _strip_html(m.group(1)) if m else ""
+
+
+def web_fetch(cites: Cites, url: str, max_chars: int = 9000, start: int = 0,
+              find: str = "", **_):
+    """Read one page.
+
+    A search snippet is not evidence; this is how the agent actually reads the
+    source. `find` jumps to the part of the page containing a phrase, and
+    `start` pages through a document too long for one call — a 200,000-word
+    book chapter can be read in pieces rather than truncated once and given up
+    on. Pages fetched earlier in the turn are served from memory.
+    """
+    url = str(url or "").strip()
+    if not url.startswith(("http://", "https://")):
+        return {"error": "url must be http(s)"}
+    max_chars = max(500, min(int(max_chars or 9000), 40000))
+    start = max(0, int(start or 0))
+
+    if url in _FETCH_CACHE:
+        title, ctype, text = _FETCH_CACHE[url]
+        cached = True
+    else:
+        cached = False
+        try:
+            req = urllib.request.Request(url, headers=BROWSER_HEADERS)
+            with urllib.request.urlopen(req, timeout=30) as r:
+                ctype = (r.headers.get("Content-Type") or "").split(";")[0].strip().lower()
+                raw = r.read(4_000_000)     # enough for a long article, not a disk image
+                final = r.geturl()
+        except urllib.error.HTTPError as e:
+            return {"error": f"the page answered {e.code} {e.reason}", "url": url}
+        except Exception as e:
+            return {"error": f"could not fetch that page ({type(e).__name__}: {e})", "url": url}
+        if ctype and not (ctype.startswith("text/") or "xml" in ctype or "json" in ctype):
+            return {"error": f"that is {ctype}, not a readable page", "url": url,
+                    "hint": "web_fetch reads html and text; a PDF or image cannot be read here"}
+        title = _page_title(raw)
+        text = _strip_html(raw) if "json" not in ctype else raw.decode("utf-8", "replace")
+        if final and final != url:
+            url = final
+        _FETCH_CACHE[url] = (title, ctype, text)
+
+    if not text.strip():
+        return {"error": "that page had no readable text", "url": url}
+
+    # `find` wins over `start`: the agent asked for a place, not an offset
+    where = start
+    if find:
+        i = text.lower().find(str(find).lower())
+        if i < 0:
+            return {"cite_as": None, "url": url, "title": title, "chars": len(text),
+                    "found": False,
+                    "error": f"{find!r} does not appear on that page",
+                    "hint": "call again without `find` to read from the top"}
+        where = max(0, i - max_chars // 4)
+
+    chunk = text[where:where + max_chars]
+    marker = cites.add(book_id=url, page=None, cite=title or url,
+                       snippet=chunk[:300], kind="web",
+                       extra={"url": url, "title": title or url})
+    more = where + len(chunk) < len(text)
+    return {
+        "cite_as": f"[{marker}]",
+        "url": url, "title": title, "content_type": ctype,
+        "chars_total": len(text), "showing": [where, where + len(chunk)],
+        "from_cache": cached,
+        "text": chunk,
+        "more": (f"{len(text) - (where + len(chunk))} characters left; call again with "
+                 f"start={where + len(chunk)}" if more else False),
+        "outside_corpus": True,
+        "how_to_cite": HOW_TO_CITE_WEB,
+    }
 
 
 # ------------------------------------------------------------------ registry
@@ -983,14 +1149,33 @@ def schemas(allow_web: bool = False):
                 "function": {
                     "name": "web_search",
                     "description": (
-                        "Search the open web. Only for what the corpus cannot supply: a "
-                        "date, a modern scholarly view, a person or work outside the 197 "
-                        "sources. Never use it in place of the corpus for what these "
-                        "texts say, and mark anything it yields as coming from outside."
+                        "Search the open web through DuckDuckGo. Only for what the corpus "
+                        "cannot supply: a date, a modern scholarly view, an edition history, a "
+                        "person or work outside the 197 sources. Never use it in place of the "
+                        "corpus for what these texts say, and mark anything it yields as coming "
+                        "from outside.\n"
+                        "USE IT REPEATEDLY AND NARROW AS YOU GO. The first ten links are rarely "
+                        "the answer. page=2, 3 walks further down the same query; site= pins one "
+                        "domain (plato.stanford.edu, gutenberg.org, archive.org) once you know "
+                        "where the answer lives; kind='books' finds editions and kind='news' "
+                        "recent coverage; recency limits how old a result may be. Reword and "
+                        "search again rather than settling for a near-miss.\n"
+                        "Results are titles and snippets ONLY. A snippet is not evidence: "
+                        "web_fetch anything you intend to rely on."
                     ),
                     "parameters": {
                         "type": "object",
-                        "properties": {"query": {"type": "string"}, "n": {"type": "integer"}},
+                        "properties": {
+                            "query": {"type": "string"},
+                            "n": {"type": "integer", "description": "results to return, up to 25"},
+                            "page": {"type": "integer",
+                                     "description": "1 = the first page; 2, 3 … go deeper"},
+                            "site": {"type": "string",
+                                     "description": "restrict to one domain, e.g. plato.stanford.edu"},
+                            "kind": {"type": "string", "enum": ["text", "news", "books"]},
+                            "recency": {"type": "string", "enum": ["day", "week", "month", "year"]},
+                            "region": {"type": "string", "description": "e.g. us-en, uk-en"},
+                        },
                         "required": ["query"],
                     },
                 },
@@ -999,15 +1184,30 @@ def schemas(allow_web: bool = False):
                 "type": "function",
                 "function": {
                     "name": "web_fetch",
-                    "description": "Fetch one web page as text, to read a web_search result.",
+                    "description": (
+                        "Read a web page — the actual text, not a snippet. Call this on any "
+                        "search result you are going to quote or rely on.\n"
+                        "For a long page: `find` jumps to the passage containing a phrase, and "
+                        "`start` continues from a character offset, so a document too long for "
+                        "one call can be read in pieces instead of being truncated and "
+                        "abandoned. The result tells you how much is left and what offset to "
+                        "ask for next. A page already fetched this turn is free to re-read."
+                    ),
                     "parameters": {
                         "type": "object",
-                        "properties": {"url": {"type": "string"}},
+                        "properties": {
+                            "url": {"type": "string"},
+                            "find": {"type": "string",
+                                     "description": "jump to the part of the page containing this phrase"},
+                            "start": {"type": "integer",
+                                      "description": "character offset to read from, for a long page"},
+                            "max_chars": {"type": "integer", "description": "up to 40000"},
+                        },
                         "required": ["url"],
                     },
                 },
             },
-        ]
+    ]
     return t
 
 

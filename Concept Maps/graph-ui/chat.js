@@ -312,6 +312,18 @@ const Chat = (function () {
     });
   }
 
+  /* Which exchange a transcript index belongs to, so the number beside a
+     prompt is the same number the Conversation panel shows. */
+  function userTurnNumber(i) {
+    if (i == null || !cur) return 0;
+    let n = 0;
+    const msgs = cur.messages || [];
+    for (let k = 0; k <= i && k < msgs.length; k++) {
+      if (msgs[k].role === "user") n++;
+    }
+    return msgs[i] && msgs[i].role === "user" ? n : 0;
+  }
+
   const KIND_ICON = { book: "📕", concept: "◈", passage: "❝", search: "🔍", note: "✎" };
 
   function renderContext() {
@@ -342,11 +354,115 @@ const Chat = (function () {
           </div>`).join("")
         : `<p class="ch-none">Nothing attached yet. The model can only read what you add here.</p>`}
       </div>`;
+    host.insertAdjacentHTML("beforeend", historyPanelHTML());
     $("ch-add-ctx").onclick = openPicker;
     host.querySelectorAll(".ch-ctx-x").forEach(b => {
       b.onclick = async () => {
         await api(`/sessions/${cur.session.id}/context/remove`, { ids: [b.dataset.rm] });
         await loadSession(cur.session.id);
+      };
+    });
+    wireHistoryPanel(host);
+  }
+
+  /* ------------------------------------------------- the conversation itself
+
+     Attached items are one half of what the model reads; the conversation so
+     far is the other, and it was invisible and unmanageable. A long exchange
+     that wandered dragged every false start into every later answer.
+
+     Each exchange is numbered here, and each can be taken out of the history:
+     it stays in the transcript, greyed and struck through, but stops being
+     sent. That is how you prune a discussion back to the line that matters. */
+  function exchanges() {
+    const msgs = (cur && cur.messages) || [];
+    const cut = new Set((cur && cur.dropped) || []);
+    const rows = [];
+    let n = 0;
+    for (let i = 0; i < msgs.length; i++) {
+      const m = msgs[i];
+      if (m.role !== "user") continue;
+      // the assistant reply that belongs to this prompt, if it has arrived
+      let j = i + 1;
+      while (j < msgs.length && msgs[j].role !== "assistant") j++;
+      const reply = j < msgs.length ? msgs[j] : null;
+      const idxs = reply ? [i, j] : [i];
+      rows.push({
+        n: ++n, idxs,
+        ask: m.content || "",
+        kind: m.kind === "debate_motion" ? "debate" : (reply && reply.kind) || "answer",
+        replyChars: reply ? (reply.content || "").length : 0,
+        sources: reply ? (reply.sources || []).length : 0,
+        dropped: idxs.every(k => cut.has(k)),
+      });
+      i = reply ? j : i;
+    }
+    return rows;
+  }
+
+  function historyPanelHTML() {
+    const rows = exchanges();
+    if (!rows.length) return "";
+    const live = rows.filter(r => !r.dropped).length;
+    const anyCut = rows.some(r => r.dropped);
+    return `
+      <div class="ch-hist">
+        <div class="ch-ctx-head">
+          <h4>Conversation</h4>
+          ${anyCut ? `<button id="ch-hist-all" class="mini">restore all</button>` : ""}
+        </div>
+        <div class="ch-ctx-sub">${rows.length} exchange${rows.length === 1 ? "" : "s"} ·
+          ${live} in the history${anyCut ? ` · ${rows.length - live} dropped` : ""}</div>
+        <div class="ch-hist-list">
+          ${rows.map(r => `
+            <div class="ch-hist-row${r.dropped ? " off" : ""}" data-idxs="${r.idxs.join(",")}">
+              <span class="ch-hist-n">${r.n}</span>
+              <span class="ch-hist-q" title="${esc(r.ask)}">${esc(r.ask.slice(0, 90))}</span>
+              <span class="ch-hist-m">${r.kind === "debate" ? "debate"
+                : r.sources ? r.sources + " src" : (r.replyChars ? "answered" : "no reply")}</span>
+              <button class="ch-hist-x" data-idxs="${r.idxs.join(",")}"
+                title="${r.dropped ? "Put this exchange back in the history"
+                                   : "Drop this exchange from the history"}">${r.dropped ? "↺" : "×"}</button>
+            </div>`).join("")}
+        </div>
+        <p class="ch-hist-note">A dropped exchange stays in the transcript but is not sent to the
+          model, so the context stays on the thread you care about.</p>
+      </div>`;
+  }
+
+  function wireHistoryPanel(host) {
+    const cut = new Set((cur && cur.dropped) || []);
+    host.querySelectorAll(".ch-hist-x").forEach(b => {
+      b.onclick = async () => {
+        const idxs = b.dataset.idxs.split(",").map(Number);
+        const putBack = idxs.every(i => cut.has(i));
+        b.disabled = true;
+        try {
+          await api(`/sessions/${cur.session.id}/history`,
+                    putBack ? { restore: idxs } : { drop: idxs });
+          await loadSession(cur.session.id);
+        } catch (e) {
+          b.disabled = false;
+          flash("Could not change the history: " + e.message);
+        }
+      };
+    });
+    const all = $("ch-hist-all");
+    if (all) all.onclick = async () => {
+      await api(`/sessions/${cur.session.id}/history`, { restore: "all" });
+      await loadSession(cur.session.id);
+    };
+    // clicking a row scrolls the transcript to that exchange
+    host.querySelectorAll(".ch-hist-row").forEach(r => {
+      r.onclick = (e) => {
+        if (e.target.classList.contains("ch-hist-x")) return;
+        const first = r.dataset.idxs.split(",")[0];
+        const node = document.querySelector(`#ch-thread [data-mi="${first}"]`);
+        if (node) {
+          node.scrollIntoView({ block: "center", behavior: "smooth" });
+          node.classList.add("flash");
+          setTimeout(() => node.classList.remove("flash"), 1200);
+        }
       };
     });
   }
@@ -462,9 +578,19 @@ const Chat = (function () {
   }
 
   function messageHTML(m, i) {
-    if (m.kind === "debate") return debateHTML(m);
+    // i is the index in the transcript: it is what the Conversation panel
+    // drops, restores and scrolls to, so it has to be on the node
+    const cut = new Set((cur && cur.dropped) || []);
+    const off = cut.has(i) ? " dropped" : "";
+    const at = i == null ? "" : ` data-mi="${i}"`;
+    if (m.kind === "debate") return debateHTML(m, at, off);
     if (m.role === "user") {
-      return `<div class="ch-m ch-user"><div class="ch-bubble">${esc(m.content)}</div></div>`;
+      const num = userTurnNumber(i);
+      return `<div class="ch-m ch-user${off}"${at}>
+        ${num ? `<span class="ch-turn-n" title="exchange ${num}">${num}</span>` : ""}
+        <div class="ch-bubble">${esc(m.content)}</div>
+        ${off ? `<span class="ch-dropped-tag">not in the history</span>` : ""}
+      </div>`;
     }
     const hasR = (m.reasoning || "").trim().length > 0;
     const hasC = (m.check || "").trim().length > 0;
@@ -472,7 +598,8 @@ const Chat = (function () {
     // still in hand. Its outcome belongs next to the answer — "revised" means
     // what you are reading is the second version.
     const checked = m._checked || (hasC ? (/VERDICT:\s*revised/i.test(m.check) ? "revised" : "stands") : null);
-    return `<div class="ch-m ch-asst">
+    return `<div class="ch-m ch-asst${off}"${at}>
+      ${off ? `<span class="ch-dropped-tag">not in the history</span>` : ""}
       ${traceHTML(m)}
       ${hasR ? `
         <details class="ch-reason" ${m._openR ? "open" : ""}>
@@ -953,10 +1080,11 @@ const Chat = (function () {
   }
 
   /* A stored debate, rendered from the session transcript. */
-  function debateHTML(m) {
+  function debateHTML(m, at = "", off = "") {
     const seats = {};
     (m.sides || []).forEach((s, i) => { seats[s.name] = i; });
-    return `<div class="ch-m ch-asst dbt-wrap">
+    return `<div class="ch-m ch-asst dbt-wrap${off}"${at}>
+      ${off ? `<span class="ch-dropped-tag">not in the history</span>` : ""}
       <div class="dbt-motion"><span class="dbt-tag">motion</span>${esc(m.motion || "")}</div>
       ${m.interrupted ? `<div class="dbt-cut">This debate was stopped before it finished.
         What was said is below.</div>` : ""}
@@ -1014,7 +1142,9 @@ const Chat = (function () {
       const r = await fetch("/book/api/chat/debate", {
         method: "POST",
         headers: { "Content-Type": "application/json", "X-Atlas-Token": tok() },
-        body: JSON.stringify({ session_id: cur.session.id, ...opts, max_steps: 5 }),
+        // the server decides how many tool rounds each speaker gets; pinning it
+        // to 5 here capped debaters far below what the budget now allows
+        body: JSON.stringify({ session_id: cur.session.id, ...opts }),
         signal: debateAbort.signal,
       });
       if (!r.ok || !r.body) {

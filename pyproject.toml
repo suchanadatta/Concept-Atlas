@@ -10,6 +10,10 @@ dependencies = [
     "numpy>=1.26.0",
     "pymupdf>=1.25.0",
     "huggingface-hub>=0.27.0",
+    # web search for the chat agent; drives real search engines rather than
+    # scraping a results page. Optional at runtime — the tools fall back to the
+    # Wikipedia and Open Library APIs if it is absent.
+    "ddgs>=9.5",
 ]
 
 [tool.uv]

@@ -138,6 +138,17 @@ CREATE TABLE IF NOT EXISTS context_items (
   added_at   REAL NOT NULL
 );
 CREATE INDEX IF NOT EXISTS ix_ctx_session ON context_items(session_id, added_at);
+
+-- Exchanges the reader has taken out of the history. The transcript itself is
+-- append-only (it is the export format), so a dropped turn is recorded here
+-- rather than rewritten out of the file: it stays readable, stops being sent
+-- to the model, and can be put back.
+CREATE TABLE IF NOT EXISTS dropped_turns (
+  session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
+  idx        INTEGER NOT NULL,
+  dropped_at REAL NOT NULL,
+  PRIMARY KEY (session_id, idx)
+);
 """
 
 
@@ -204,6 +215,21 @@ def append_message(sid: str, obj: dict) -> None:
     p.parent.mkdir(parents=True, exist_ok=True)
     with gzip.open(p, "at", encoding="utf-8") as f:
         f.write(json.dumps(obj, ensure_ascii=False) + "\n")
+
+
+def dropped_turns(sid: str) -> set[int]:
+    return {r["idx"] for r in db().execute(
+        "SELECT idx FROM dropped_turns WHERE session_id=?", (sid,)).fetchall()}
+
+
+def set_dropped(sid: str, idx: int, drop: bool) -> None:
+    if drop:
+        db().execute(
+            "INSERT OR IGNORE INTO dropped_turns(session_id, idx, dropped_at) VALUES(?,?,?)",
+            (sid, int(idx), time.time()))
+    else:
+        db().execute("DELETE FROM dropped_turns WHERE session_id=? AND idx=?", (sid, int(idx)))
+    db().commit()
 
 
 def read_messages(sid: str) -> list[dict]:
@@ -443,12 +469,21 @@ How to work
    what -> list_authors.
    Two ideas held against each other -> compare_ideas, which finds the passages where they are
    argued TOGETHER. What is on the shelf -> list_books. About to print a quotation -> verify_quote.
-2. DO NOT GIVE UP AFTER ONE CALL. If hybrid search returns nothing to the point:
+2. DO NOT GIVE UP AFTER ONE CALL, OR AFTER FIVE. You have around thirty rounds of tool calls
+   per question and you are expected to use as many as the question needs. Searching again with
+   better words is cheaper than an answer that is wrong. If hybrid search returns nothing to the
+   point:
      * reword in the period's own vocabulary (vertue, felf-love, the paffions);
      * try mode='semantic' for meaning, or 'bm25'/'keyword' for a literal word or rare name;
      * try find_concept — the map may hold the idea under a name you did not guess;
      * try concept_detail with hops=2 to reach it through a neighbouring concept.
    Only after several genuinely different attempts may you say the corpus does not address it.
+   The same applies to the web when it is switched on: the first page of results is rarely the
+   answer. Go to page 2, pin the domain once you know where the answer lives, reword, and read
+   the pages themselves with web_fetch rather than trusting a snippet. Keep going until you can
+   answer or can say precisely what you could not establish. You will be told when your rounds
+   are running low, and if three rounds in a row turn up nothing new you will be told that too —
+   that is the signal to change approach, not to try the same search once more.
 3. When a snippet is not enough to settle what an author claims, read_source the page range.
 4. Quote sparingly and exactly. Spelling is archaic — read through it and never silently modernise
    a quotation. If you are quoting from memory rather than from a tool result in front of you, run
@@ -495,8 +530,8 @@ better than a long one that drifts."""
 
 
 
-def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=8, max_tokens=4096,
-               tag=None, channel="content", tools=True, sink=None):
+def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=30, max_tokens=4096,
+               tag=None, channel="content", tools=True, sink=None, budget_secs=None):
     """One agent's turn: call tools until it has an answer, then answer.
 
     The same loop serves the assistant, the self-check pass and every speaker in
@@ -522,7 +557,19 @@ def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=8, max_tokens=40
     # a cap per step, and a memo so an identical call is answered from the
     # first result instead of being run again.
     memo: dict[str, dict] = {}
-    MAX_CALLS_PER_STEP = 10
+    MAX_CALLS_PER_STEP = 12
+
+    # The budget is deliberately generous: an agent that is genuinely unsure
+    # should keep searching, rewording and reading rather than answering from
+    # a first guess. What has to be prevented is not persistence but going
+    # round in circles, so instead of a low ceiling there are three guards —
+    # a memo (an identical call is free but adds nothing), stall detection
+    # (a round that turned up no new evidence), and a wall clock.
+    started = time.time()
+    deadline = started + float(budget_secs) if budget_secs else None
+    stalls = 0
+    warned_low = False
+    nudge = None            # queued for the next round
 
     def send(obj):
         if tag:
@@ -530,6 +577,20 @@ def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=8, max_tokens=40
         emit(obj)
 
     for step in range(max_steps):
+        # Tell it where it stands rather than cutting it off without warning.
+        left = max_steps - step
+        if nudge:
+            msgs.append({"role": "user", "content": nudge})
+            nudge = None
+        if deadline and time.time() > deadline:
+            send({"type": "note", "text": "time budget spent — answering from what was gathered"})
+            break
+        if left <= 3 and not warned_low:
+            warned_low = True
+            msgs.append({"role": "user", "content": (
+                f"You have {left} tool rounds left this turn. Spend them on what is still "
+                "missing, then answer. If something remains unresolved, say so in the answer "
+                "rather than leaving it out.")})
         calls = None
         step_reasoning, step_content = [], []
         for kind, chunk in vllm_stream(msgs, max_tokens=max_tokens, tools=schemas):
@@ -558,6 +619,8 @@ def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=8, max_tokens=40
                 for k, c in enumerate(calls)
             ],
         })
+        cites_before = len(cites.rows)
+        useful = 0
         for k, c in enumerate(calls):
             try:
                 args = json.loads(c["args"] or "{}")
@@ -582,6 +645,8 @@ def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=8, max_tokens=40
                     result = atlas_tools.run_tool(c["name"], args, cites, allow_web=allow_web)
                     memo[key] = result
                     summary = atlas_tools.summarise(c["name"], result)
+                    if not result.get("error"):
+                        useful += 1
             trace.append({"step": step, "name": c["name"], "args": args,
                           "summary": summary, "took_ms": result.get("took_ms")})
             send({"type": "tool_result", "step": step, "name": c["name"],
@@ -594,6 +659,21 @@ def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=8, max_tokens=40
             })
         if cites.rows:
             send({"type": "sources", "sources": cites.as_list()})
+
+        # A round that ran nothing new and turned up no new evidence is a
+        # circle. Say so plainly instead of letting it spin the budget away.
+        if useful == 0 and len(cites.rows) == cites_before:
+            stalls += 1
+        else:
+            stalls = 0
+        if stalls >= 3:
+            nudge = (
+                "Your last three rounds of tool calls produced nothing new — repeats, errors, or "
+                "results you already had. Stop repeating them. Either try a materially different "
+                "approach (a different tool, a different wording, the concept map instead of a "
+                "search, two hops instead of one), or accept that this corpus does not settle the "
+                "point and answer now, saying plainly what you could not establish.")
+            stalls = 0
     else:
         # Still reaching for tools when the budget ran out. Take them away and
         # make it answer from what it has, rather than ending with nothing said.
@@ -936,6 +1016,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(200, {
                 "session": dict(row),
                 "messages": read_messages(m.group(1)),
+                "dropped": sorted(dropped_turns(m.group(1))),
                 "context": [{**dict(c), "payload": json.loads(c["payload"] or "{}")} for c in ctx],
             })
         m = re.fullmatch(r"/sessions/([\w-]+)/export", p)
@@ -993,6 +1074,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self.chat()
             if p == "/debate":
                 return self.debate()
+            m = re.fullmatch(r"/sessions/([\w-]+)/history", p)
+            if m:
+                return self.history_edit(m.group(1))
             m = re.fullmatch(r"/sessions/([\w-]+)/(rename|delete|context/add|context/remove)", p)
             if m:
                 return self.session_action(m.group(1), m.group(2))
@@ -1131,6 +1215,34 @@ class Handler(BaseHTTPRequestHandler):
         row = db().execute("SELECT * FROM sessions WHERE id=?", (sid,)).fetchone()
         return self._json(200, {"session": dict(row)})
 
+    def history_edit(self, sid):
+        """Take exchanges out of the history, or put them back.
+
+        Body: {"drop": [i, ...]} and/or {"restore": [i, ...]}, indices into the
+        message list as the session endpoint returns it. Or {"restore": "all"}.
+        """
+        u = self._need_user()
+        if not u:
+            return
+        row = self._own_session(sid, u)
+        if not row:
+            return
+        b = self._body()
+        n = len(read_messages(sid))
+        restore = b.get("restore")
+        if restore == "all":
+            db().execute("DELETE FROM dropped_turns WHERE session_id=?", (sid,))
+            db().commit()
+        else:
+            for i in restore or []:
+                set_dropped(sid, i, False)
+        for i in b.get("drop") or []:
+            if 0 <= int(i) < n:
+                set_dropped(sid, i, True)
+        cut = sorted(dropped_turns(sid))
+        return self._json(200, {"dropped": cut, "n_messages": n,
+                                "in_history": n - len(cut)})
+
     def session_action(self, sid, action):
         u = self._need_user()
         if not u:
@@ -1250,7 +1362,8 @@ class Handler(BaseHTTPRequestHandler):
         allow_web = bool(b.get("allow_web"))
         sides = debate_sides(b)
         judge = b.get("judge", True)
-        max_steps = int(b.get("max_steps", 5))
+        max_steps = int(b.get("max_steps", 14))
+        turn_secs = float(b.get("turn_secs", 420))
         max_tokens = int(b.get("max_tokens", 3000))
 
         self.send_response(200)
@@ -1310,6 +1423,7 @@ class Handler(BaseHTTPRequestHandler):
                 agent_turn(
                     msgs, emit=emit, cites=cites, allow_web=allow_web,
                     max_steps=max_steps, max_tokens=max_tokens, tag=tag, sink=sink,
+                    budget_secs=turn_secs,
                 )
             finally:
                 # record the turn whether it finished or was cut off, so a
@@ -1353,7 +1467,7 @@ class Handler(BaseHTTPRequestHandler):
                     agent_turn(
                         msgs, emit=emit, cites=cites, allow_web=allow_web,
                         max_steps=max_steps, max_tokens=int(b.get("judge_tokens", 4000)),
-                        tag=tag, sink=jsink,
+                        tag=tag, sink=jsink, budget_secs=turn_secs,
                     )
                 finally:
                     jt = "".join(jsink.get("content") or [])
@@ -1412,6 +1526,12 @@ class Handler(BaseHTTPRequestHandler):
         allow_web = bool(b.get("allow_web"))
 
         history = read_messages(sid)
+        # An exchange the reader has taken out of the history is not sent. This
+        # is the point of the feature: a long conversation that wandered can be
+        # pruned back to the thread that matters instead of dragging every
+        # false start into every later answer.
+        cut = dropped_turns(sid)
+        history = [h for i, h in enumerate(history) if i not in cut]
         budget = int(CFG["max_ctx"] * CHARS_PER_TOKEN * 0.55)
         ctx_text, ctx_items = assemble_context(sid, budget)
 
@@ -1465,7 +1585,8 @@ class Handler(BaseHTTPRequestHandler):
         # page and (for a scan) the block the match came from.
         cites = atlas_tools.Cites()
         reasoning, content, trace = "", "", []
-        MAX_STEPS = int(b.get("max_steps", 8))
+        MAX_STEPS = int(b.get("max_steps", 30))
+        BUDGET_SECS = float(b.get("budget_secs", 900))
         want_check = bool(b.get("verify", True))
         check_text = ""
 
@@ -1479,7 +1600,7 @@ class Handler(BaseHTTPRequestHandler):
             reasoning, content, trace = agent_turn(
                 msgs, emit=emit, cites=cites, allow_web=allow_web,
                 max_steps=MAX_STEPS, max_tokens=int(b.get("max_tokens", 4096)),
-                sink=answer_sink,
+                sink=answer_sink, budget_secs=BUDGET_SECS,
             )
 
             # ---------------- self-check ----------------
@@ -1492,9 +1613,10 @@ class Handler(BaseHTTPRequestHandler):
                 msgs.append({"role": "user", "content": SELF_CHECK_PROMPT})
                 c_reasoning, check_text, c_trace = agent_turn(
                     msgs, emit=emit, cites=cites, allow_web=allow_web,
-                    max_steps=int(b.get("check_steps", 4)),
+                    max_steps=int(b.get("check_steps", 8)),
                     max_tokens=int(b.get("max_tokens", 4096)),
                     channel="check", sink=check_sink,
+                    budget_secs=float(b.get("check_budget_secs", 420)),
                 )
                 # mark them so the reader can see what the check actually did;
                 # the check's own prose is only "VERDICT: ..." plus the

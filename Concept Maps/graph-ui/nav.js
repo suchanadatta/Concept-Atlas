@@ -33,7 +33,23 @@ const Nav = (function () {
     document.body.classList.toggle("view-search", view === "search" || view === "results");
   }
 
+  /* The reader, the chat, Compare and the Authors registry are overlays on top
+     of a view. The app bar sits above them, so its buttons were clickable —
+     but going to a view left the overlay covering it, and Search and Concept
+     map looked broken because the chat was still on screen over the result. */
+  function dismissOverlays() {
+    if (window.Chat && typeof Chat.close === "function") Chat.close();
+    if (typeof window.closeReader === "function") window.closeReader();
+    if (window.Authors && typeof Authors.close === "function") Authors.close();
+    // Compare's closer is private to its module; hiding the panel is the same thing
+    const cmp = $("compare");
+    if (cmp) cmp.classList.add("hidden");
+    const pick = $("chat-picker");
+    if (pick) pick.classList.add("hidden");
+  }
+
   function go(view, opts = {}) {
+    if (view !== "ask") dismissOverlays();
     switch (view) {
       case "search": {
         // Restore a live search rather than throwing it away. Checking only
@@ -67,6 +83,9 @@ const Nav = (function () {
         break;
       case "map":
       case "queries":
+        // the query graph is a split of the results view; it would otherwise
+        // stay open on top of the concept map it has nothing to do with
+        if (typeof window.closeDynGraph === "function") window.closeDynGraph();
         hide(el.landing());
         hide(el.gres());
         if (view === "queries") { const t = $("tab-queries"); if (t) t.click(); }

@@ -196,6 +196,14 @@ shows its source rather than vanishing.</p>
 page fetch — and anything they return is cited as coming from the open web rather than from these 197
 sources. Turned off, they are not in the model's tool list at all, so it is a RAG interface over the
 corpus and nothing else.</p>
+<p>A note on which engine: the search runs through the <code>ddgs</code> package, which drives real
+search engines rather than scraping a results page. DuckDuckGo itself is <i>not</i> reachable from
+this host &#8212; its HTML endpoint answers with a challenge page and no results, and the package
+ships its DuckDuckGo engine disabled &#8220;until ratelimit is fixed&#8221; &#8212; so it is tried
+first and the working engines answer instead. The backends are pinned rather than left on automatic,
+because automatic includes engines that reply to a Mandeville query with Baidu pages and a Phoenix
+pizza guide. Catalogue questions go to Open Library. If the engine returns nothing, the Wikipedia
+and Open Library APIs are tried before reporting silence.</p>
 <p><b>Accounts and sessions.</b> Conversations belong to an account, so they survive a reload. Each is
 stored as a gzipped JSONL file with SQLite as the index. <i>Export</i> downloads the transcript, the
 reasoning and the full text of every attached context item &#8212; so another person can <i>Import</i> it
