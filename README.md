@@ -88,7 +88,11 @@ step 2–3).
 - **⚖ Debate** → two agents argue a motion out of the corpus, each finding its
   own evidence, then an adjudicator checks the quotations and reports where
   they actually disagreed, what the corpus bears out and what it cannot
-  settle. One shared citation table across all three speakers.
+  settle. One shared citation table across all three speakers, shown live and
+  clickable (web → the page, corpus → the reader, concept → the map).
+  Debates belong to the account: pause between turns and resume at the turn it
+  stopped on. You moderate — put a point to either side or the adjudicator and
+  the next speaker answers it.
 - **Docs** → in-app documentation
 
 ## Data model

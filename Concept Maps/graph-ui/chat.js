@@ -198,6 +198,13 @@ const Chat = (function () {
     // ...and while one is running, do not repaint over its live view
     if (debating && cur && cur.session && cur.session.id === id) return;
     cur = await api("/sessions/" + id);
+    // the debate rows carry status and progress, which the transcript records
+    // cannot: a paused debate has to know it can be resumed
+    try {
+      cur.debates = (await api("/sessions/" + id + "/debates")).debates || [];
+    } catch (e) {
+      cur.debates = [];
+    }
     render();
   }
 
@@ -529,19 +536,44 @@ const Chat = (function () {
   function sourcesHTML(m) {
     const src = m.sources || [];
     if (!src.length) return "";
+    return srcListHTML(src, (m._dk || "m") + ":srcs", "Sources");
+  }
+
+  /* One source list, used by an answer and by a debate — live or stored.
+
+     A row is only useful if it goes somewhere: a web result opens its page in
+     a tab, a corpus passage opens that book at that page in the reader, and a
+     quote that attests a concept also offers the concept itself. */
+  function srcRowHTML(sv) {
+    const web = sv.kind === "web";
+    const where = web ? (host(sv.url) || "the web")
+      : (sv.page == null || sv.source === "txt" ? "text edition" : "p. " + sv.page);
+    return `<li class="${web ? "web" : "corpus"}">
+      <button class="ch-src" data-sid="${esc(sv.id)}"
+        title="${web ? "open this page in a new tab" : "open this book at this page"}">[${esc(sv.id)}]</button>
+      ${web
+        ? `<a href="${esc(sv.url || "#")}" target="_blank" rel="noopener noreferrer"
+             class="ch-src-cite">${esc(sv.cite || sv.url || "")}</a>`
+        : `<span class="ch-src-cite">${esc(sv.cite || sv.book_id || "")}</span>`}
+      <span class="ch-src-loc">${esc(where)}</span>
+      ${sv.concept ? `<button class="ch-src-concept" data-cid="${esc(sv.concept_id || "")}"
+        title="open this concept in the map">&#9672; ${esc(sv.concept)}</button>` : ""}
+      ${sv.snippet ? `<div class="ch-src-snip">${esc(String(sv.snippet).slice(0, 180))}</div>` : ""}
+    </li>`;
+  }
+
+  function host(u) {
+    try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return ""; }
+  }
+
+  function srcListHTML(src, key, label) {
+    if (!src || !src.length) return "";
+    const web = src.filter(s => s.kind === "web").length;
     return `
-      <details class="ch-srcs"${dk((m._dk || "m") + ":srcs", false)}>
-        <summary>Sources <span class="ch-rlen">${src.length}</span></summary>
-        <ol class="ch-src-list">
-          ${src.map(sv => `<li>
-            <button class="ch-src" data-sid="${esc(sv.id)}">[${esc(sv.id)}]</button>
-            ${sv.kind === "web"
-              ? `<a href="${esc(sv.url || "#")}" target="_blank" rel="noopener">${esc(sv.cite)}</a>`
-              : `<span class="ch-src-cite">${esc(sv.cite)}</span>
-                 <span class="ch-src-loc">${sv.page == null || sv.source === "txt" ? "text edition" : "p. " + sv.page}</span>`}
-            ${sv.snippet ? `<div class="ch-src-snip">${esc(sv.snippet.slice(0, 180))}</div>` : ""}
-          </li>`).join("")}
-        </ol>
+      <details class="ch-srcs"${dk(key, false)}>
+        <summary>${label} <span class="ch-rlen">${src.length}${
+          web ? ` · ${web} from the web` : ""}</span></summary>
+        <ol class="ch-src-list">${src.map(srcRowHTML).join("")}</ol>
       </details>`;
   }
 
@@ -614,7 +646,9 @@ const Chat = (function () {
     // each stored message needs its own key, or expanding one message's
     // reasoning would expand every message's
     if (i != null) m._dk = "mi" + i;
-    if (m.kind === "debate") return debateHTML(m, at, off);
+    // Debates held before they became resumable were stored as one message
+    // carrying a turns array. They still have to render.
+    if (m.kind === "debate") return legacyDebateHTML(m, at, off);
     if (m.role === "user") {
       const num = userTurnNumber(i);
       return `<div class="ch-m ch-user${off}"${at}>
@@ -700,6 +734,18 @@ const Chat = (function () {
   }
 
   function wireCites(root) {
+    root.querySelectorAll(".ch-src-concept").forEach(b => {
+      b.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const cid = b.dataset.cid;
+        if (!cid) return;
+        close();
+        // the concept map owns concepts; ask it to select this one
+        if (typeof window.focusConcept === "function") window.focusConcept(cid);
+        else if (window.Nav) Nav.go("map");
+      };
+    });
     root.querySelectorAll(".ch-cite, .ch-src").forEach(b => {
       b.onclick = (e) => {
         e.preventDefault();
@@ -1131,17 +1177,64 @@ const Chat = (function () {
     </div>`;
   }
 
-  /* A stored debate, rendered from the session transcript. */
-  function debateHTML(m, at = "", off = "") {
+  function modHTML(mo) {
+    return `<div class="dbt-mod-said${mo.pending ? " pending" : ""}">
+      <span class="dbt-mod-who">moderator${mo.addressed && mo.addressed !== "both"
+        ? " &rarr; " + esc(mo.addressed) : ""}</span>
+      <div class="dbt-mod-text">${esc(mo.text)}</div>
+      ${mo.pending ? `<span class="dbt-mod-wait">the next speaker will see this</span>` : ""}
+    </div>`;
+  }
+
+  /* The older single-message form: motion, sides and turns in one record. */
+  function legacyDebateHTML(m, at, off) {
     const seats = {};
-    (m.sides || []).forEach((s, i) => { seats[s.name] = i; });
+    (m.sides || []).forEach((sd, i) => { seats[sd.name] = i; });
     return `<div class="ch-m ch-asst dbt-wrap${off}"${at}>
       ${off ? `<span class="ch-dropped-tag">not in the history</span>` : ""}
       <div class="dbt-motion"><span class="dbt-tag">motion</span>${esc(m.motion || "")}</div>
       ${m.interrupted ? `<div class="dbt-cut">This debate was stopped before it finished.
         What was said is below.</div>` : ""}
       ${(m.turns || []).map(t => turnHTML({ ...t, seat: seats[t.side] }, m.sources, false)).join("")}
-      ${sourcesHTML(m)}
+      ${srcListHTML(m.sources, (m._dk || "m") + ":srcs", "Sources cited")}
+    </div>`;
+  }
+
+  /* A stored debate, rendered from the session transcript. */
+  function debateHTML(group, at) {
+    const did = group[0].debate_id;
+    const motion = (group.find(g => g.kind === "debate_motion") || {}).content || "";
+    const turns = group.filter(g => g.kind === "debate_turn");
+    const st = ((cur && cur.debates) || []).find(d => d.id === did) || {};
+    const seats = {};
+    (st.sides || []).forEach((sd, k) => { seats[sd.name] = k; });
+    const sources = turns.length ? (turns[turns.length - 1].sources || []) : [];
+    const cut = new Set((cur && cur.dropped) || []);
+    const off = group.every((g, k) => cut.has(at + k)) ? " dropped" : "";
+
+    // interleave notes where they were made
+    const rows = [];
+    turns.forEach((t, k) => {
+      rows.push(turnHTML({ ...t, seat: seats[t.side] }, sources, false));
+      group.filter(g => g.kind === "debate_note" && g.after_turn === k + 1)
+           .forEach(g => rows.push(modHTML({ addressed: g.addressed, text: g.text || g.content })));
+    });
+    group.filter(g => g.kind === "debate_note" && !(g.after_turn > 0))
+         .forEach(g => rows.unshift(modHTML({ addressed: g.addressed, text: g.text || g.content })));
+
+    const paused = st.status === "paused";
+    const doneAll = st.status === "done";
+    return `<div class="ch-m ch-asst dbt-wrap${off}" data-mi="${at}" data-did="${esc(did || "")}">
+      ${off ? `<span class="ch-dropped-tag">not in the history</span>` : ""}
+      <div class="dbt-motion"><span class="dbt-tag">motion</span>${esc(motion.replace(/^Debate:\s*/, ""))}</div>
+      <div class="dbt-state">
+        <span class="dbt-badge ${esc(st.status || "")}">${
+          doneAll ? "concluded" : paused ? "paused" : esc(st.status || "")}</span>
+        ${st.total_turns ? `<span class="dbt-count">${st.done_turns || 0} of ${st.total_turns} turns</span>` : ""}
+        ${paused ? `<button class="dbt-resume" data-did="${esc(did)}">resume</button>` : ""}
+      </div>
+      ${rows.join("")}
+      ${srcListHTML(sources, `dbt:${did}:srcs`, "Sources cited")}
     </div>`;
   }
 
@@ -1158,34 +1251,84 @@ const Chat = (function () {
     const body = $("chat-body");
     const sources = [];
     const seats = {};
-    opts.sides.forEach((s, i) => { seats[s.name] = i; });
+    (opts.sides || []).forEach((s, i) => { seats[s.name] = i; });
     const turns = [];
+    const mods = [];
     let curTurn = null;
     let stopped = false, failed = null;
 
     body.innerHTML = `
       <div class="ch-thread dbt-live" id="ch-thread">
-        <div class="dbt-motion"><span class="dbt-tag">motion</span>${esc(opts.motion)}</div>
+        <div class="dbt-motion"><span class="dbt-tag">motion</span>${esc(opts.motion || "")}</div>
         <div id="dbt-turns"></div>
+        <div id="dbt-srcs"></div>
         <div class="dbt-foot">
           <span id="dbt-status" class="dbt-status">opening the debate&#8230;</span>
-          <button id="dbt-stop" class="mini">stop</button>
+          <button id="dbt-stop" class="mini">pause</button>
         </div>
-      </div>`;
+      </div>
+      <form id="dbt-modform" class="ch-compose dbt-mod">
+        <select id="dbt-modto" title="Who should hear this"></select>
+        <textarea id="dbt-modtext" rows="1"
+          placeholder="Put a point to them as moderator — they will answer it in the next turn&#8230;"></textarea>
+        <button type="submit" class="ch-primary">Interject</button>
+      </form>`;
     const host = $("dbt-turns");
+    const srcHost = $("dbt-srcs");
     const status = $("dbt-status");
     debateAbort = new AbortController();
+    let liveId = opts.debate_id || null;
     const stopBtn = $("dbt-stop");
-    if (stopBtn) stopBtn.onclick = () => {
+    if (stopBtn) stopBtn.onclick = async () => {
       stopBtn.disabled = true;
-      status.textContent = "stopping after this turn\u2026";
-      stopDebate("reader stopped it");
+      status.textContent = "pausing after this turn\u2026";
+      // tell the server first, so it stops between turns and marks itself
+      // paused; then close the stream
+      if (liveId) { try { await api(`/debates/${liveId}/pause`, {}); } catch (e) { /* closing anyway */ } }
+      stopDebate("the reader paused it");
+    };
+
+    // the moderator can speak at any time; the next speaker is shown it
+    const who = $("dbt-modto");
+    if (who) {
+      who.innerHTML = `<option value="both">to both sides</option>` +
+        (opts.sides || []).map(sd => `<option value="${esc(sd.name)}">to ${esc(sd.name)}</option>`).join("") +
+        `<option value="Adjudicator">to the adjudicator</option>`;
+    }
+    const modForm = $("dbt-modform");
+    if (modForm) modForm.onsubmit = async (e) => {
+      e.preventDefault();
+      const ta = $("dbt-modtext");
+      const text = ta.value.trim();
+      if (!text || !liveId) return;
+      ta.value = "";
+      try {
+        await api(`/debates/${liveId}/note`, { text, addressed: who ? who.value : "both" });
+        mods.push({ addressed: who ? who.value : "both", text, pending: true });
+        paint();
+        flash("The next speaker will be shown that");
+      } catch (err) {
+        ta.value = text;
+        flash("Could not put that to them: " + err.message);
+      }
     };
 
     const paint = () => {
-      host.innerHTML = turns.map(t => turnHTML(t, sources, t === curTurn)).join("");
+      // interleave the moderator's interjections where they were made
+      const parts = [];
+      turns.forEach((t, i) => {
+        parts.push(turnHTML(t, sources, t === curTurn));
+        mods.filter(mo => mo.afterTurn === i).forEach(mo => parts.push(modHTML(mo)));
+      });
+      mods.filter(mo => mo.afterTurn === undefined).forEach(mo => parts.push(modHTML(mo)));
+      host.innerHTML = parts.join("");
+      // the shared citation table, as it grows — every row clickable
+      srcHost.innerHTML = srcListHTML(sources, "dbt:live:srcs",
+        "Sources cited so far");
       applyDetails(host);
+      applyDetails(srcHost);
       wireCites(host);
+      wireCites(srcHost);
       drawMermaid(host);
       scrollDown();
       paintJump();
@@ -1234,6 +1377,39 @@ const Chat = (function () {
             const pend = [...curTurn.tools].reverse().find(t => t.name === d.name && !t.summary);
             if (pend) { pend.summary = d.summary; pend.took_ms = d.took_ms; }
             else curTurn.tools.push({ name: d.name, summary: d.summary });
+          } else if (d.type === "debate_start") {
+            liveId = d.debate_id;
+            // a resume starts with none of this known client-side
+            (d.sides || []).forEach((sd, k) => { seats[sd.name] = k; });
+            if (d.motion) {
+              const mo = document.querySelector(".dbt-live .dbt-motion");
+              if (mo) mo.innerHTML = `<span class="dbt-tag">motion</span>${esc(d.motion)}`;
+            }
+            if (who && !who.options.length) {
+              who.innerHTML = `<option value="both">to both sides</option>` +
+                (d.sides || []).map(sd => `<option value="${esc(sd.name)}">to ${esc(sd.name)}</option>`).join("") +
+                `<option value="Adjudicator">to the adjudicator</option>`;
+            }
+            if (d.sources) { sources.length = 0; sources.push(...d.sources); liveSources = sources; }
+            // a resumed debate replays what was already said
+            (d.history || []).forEach(h => {
+              if (h.kind === "debate_turn") {
+                turns.push({ side: h.side, phase: h.phase, round: h.round, seat: seats[h.side],
+                             text: h.text || "", reasoning: h.reasoning || "",
+                             tools: h.tools || [] });
+              } else if (h.kind === "debate_note") {
+                mods.push({ addressed: h.addressed, text: h.text || h.content || "",
+                            afterTurn: turns.length - 1 });
+              }
+            });
+            if (d.resumed) status.textContent =
+              `resuming at turn ${d.done_turns + 1} of ${d.total_turns}`;
+          } else if (d.type === "moderator_used") {
+            (d.notes || []).forEach(nn => {
+              const hit = mods.find(mo => mo.pending && mo.text === nn.text);
+              if (hit) { hit.pending = false; hit.afterTurn = turns.length - 1; }
+              else mods.push({ ...nn, afterTurn: turns.length - 1 });
+            });
           } else if (d.type === "sources") {
             sources.length = 0;
             sources.push(...d.sources);
@@ -1274,13 +1450,35 @@ const Chat = (function () {
     }
   }
 
+  /* A debate is many records — a motion, a turn per speaker, the moderator's
+     interjections — that read as one thing. They are grouped back together
+     here so the transcript shows a debate, not thirty loose messages. */
+  function threadHTML(msgs) {
+    const parts = [];
+    let i = 0;
+    while (i < msgs.length) {
+      const m = msgs[i];
+      const did = m.debate_id;
+      if (did && String(m.kind || "").startsWith("debate")) {
+        const group = [];
+        const at = i;
+        while (i < msgs.length && msgs[i].debate_id === did) { group.push(msgs[i]); i++; }
+        parts.push(debateHTML(group, at));
+        continue;
+      }
+      parts.push(messageHTML(m, i));
+      i++;
+    }
+    return parts.join("");
+  }
+
   function renderThread() {
     const body = $("chat-body");
     if (!cur) { body.innerHTML = ""; return; }
     const msgs = cur.messages || [];
     body.innerHTML = `
       <div class="ch-thread" id="ch-thread">
-        ${msgs.length ? msgs.map(messageHTML).join("") : `
+        ${msgs.length ? threadHTML(msgs) : `
           <div class="ch-empty">
             <h3>${esc(cur.session.title)}</h3>
             <p>Attach what the model should read — a book, a range of pages, a concept with its
@@ -1330,6 +1528,9 @@ const Chat = (function () {
     applyDetails(body);
     watchScroll();
     wireCites(body);
+    body.querySelectorAll(".dbt-resume").forEach(b => {
+      b.onclick = () => { b.disabled = true; runDebate({ debate_id: b.dataset.did }); };
+    });
     drawMermaid(body);
     scrollDown();
     ta.focus();

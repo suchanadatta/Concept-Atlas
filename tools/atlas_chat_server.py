@@ -1632,8 +1632,11 @@ class Handler(BaseHTTPRequestHandler):
                 note_block = "\n\nThe moderator has just said:\n" + "\n".join(
                     f"  (to {n['addressed']}) {n['text']}" for n in notes)
                 for n in notes:
-                    mod_seen.append({"kind": "debate_note", "addressed": n["addressed"],
-                                     "text": n["text"]})
+                    # a note posted before a pause is already in the replayed
+                    # records; appending it again would put it in the prompt twice
+                    if not any(x.get("text") == n["text"] for x in mod_seen):
+                        mod_seen.append({"kind": "debate_note", "addressed": n["addressed"],
+                                         "text": n["text"]})
                 emit({"type": "moderator_used", "side": slot["side"],
                       "notes": [{"addressed": n["addressed"], "text": n["text"]} for n in notes]})
 

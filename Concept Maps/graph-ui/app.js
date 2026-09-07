@@ -1290,6 +1290,33 @@ function selectById(id, zoom = false) {
   else { setTimeout(() => trySelect(), 60); }
 }
 
+/* Open one concept in the map, from anywhere in the app.
+
+   A citation that attests a concept can now offer the concept itself, and a
+   chat panel has no business reaching into the graph's internals — so the map
+   exposes the one thing the rest of the app needs. */
+window.focusConcept = function (idOrLabel) {
+  const want = String(idOrLabel || "").toLowerCase();
+  if (!want || !S.nodes || !S.nodes.length) return false;
+  const n = S.byId.get(want)
+    || S.nodes.find(x => String(x.id).toLowerCase() === want)
+    || S.nodes.find(x => String(x.label).toLowerCase() === want);
+  if (!n) return false;
+  if (window.Nav) Nav.go("map");
+  // a concept hidden by the category or writer filters cannot be selected
+  if (!isVisible(n)) {
+    S.catsOn.add(n.top);
+    S.minImp = Math.min(S.minImp, n.importance);
+    S.writersOn.clear();
+    if (typeof renderWriterFilter === "function") renderWriterFilter();
+    applyFilters(0.3);
+  }
+  selectNode(n);
+  const one = S.simNodes.filter(x => x.id === n.id);
+  if (one.length && typeof fitViewCapped === "function") fitViewCapped(one, true, 1.15);
+  return true;
+};
+
 function selectNode(n) {
   S.selected = n;
   S.dirty = true;
