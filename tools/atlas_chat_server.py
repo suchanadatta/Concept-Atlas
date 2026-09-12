@@ -2126,8 +2126,16 @@ class Handler(BaseHTTPRequestHandler):
             # away because nobody was watching it arrive.
             pass
         except Exception as e:
+            # When the reader is on their own endpoint, say so: otherwise a
+            # broken base URL or an expired key looks like the corpus failing,
+            # and there is nothing pointing at where to fix it.
+            msg = str(e)
+            if pv.get("own"):
+                msg = (f"{msg}\n\n(This went to your own endpoint — {pv['base']} , model "
+                       f"{pv['model']}. Check it under Account settings, or turn it off to use "
+                       f"this deployment's model.)")
             try:
-                emit({"type": "error", "error": str(e)})
+                emit({"type": "error", "error": msg})
             except (BrokenPipeError, ConnectionResetError):
                 pass
 
