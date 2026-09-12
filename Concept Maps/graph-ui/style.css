@@ -1805,3 +1805,15 @@ body.dark .docs-head{background:#2A2721;border-color:#3A362E}
   color:#7B68B5;border-radius:20px;padding:0 8px;font-size:10.5px;cursor:pointer;margin-left:6px}
 .ch-src-concept:hover{background:rgba(123,104,181,.26)}
 #dbt-srcs{margin:4px 0 8px}
+
+/* ————— your own model endpoint, in the account panel ————— */
+.ch-prov{margin-top:26px;border-top:1px solid var(--line);padding-top:18px}
+.ch-prov h3{font-family:var(--serif);font-size:16px;margin:0 0 6px}
+.ch-prov-now{font-size:13px;margin:0 0 6px}
+.ch-prov-src{font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint);
+  border:1px solid var(--line);border-radius:20px;padding:1px 8px;margin-left:6px}
+.ch-prov .hint code{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;
+  padding:0 4px;font-size:11px}
+.ch-prov-actions{display:flex;gap:10px;align-items:center;justify-content:flex-end;margin-top:10px}
+#ch-prov-result{margin-top:10px}
+#ch-prov-result .ch-msg{line-height:1.5}

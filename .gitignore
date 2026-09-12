@@ -72,3 +72,10 @@ session-ses_*.md
 
 # chat store: user accounts, transcripts and their context are per-deployment
 data/atlas_chat/
+
+# the deployment's own settings: endpoints, model, and possibly an API key.
+# .env.example is the template that IS committed.
+.env
+
+# derived from the corpus on disk; rebuilt automatically
+Concept Maps/graph-ui/data/library-cache.json

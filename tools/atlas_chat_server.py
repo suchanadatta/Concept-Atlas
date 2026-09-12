@@ -71,10 +71,19 @@ DATA = REPO / "data" / "atlas_chat"
 SESSION_DIR = DATA / "sessions"
 DB_PATH = DATA / "atlas.db"
 
+# Settings come from .env at the repo root (see .env.example), so the endpoint
+# and the model are stated once for every service rather than in three files.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from atlas_env import env as _env   # noqa: E402
+
 CFG = {
-    "vllm": "http://localhost:8000/v1",
-    "model": "Qwen3.8-27B-TURBO",
-    "max_ctx": 550_000,
+    "vllm": _env("ATLAS_VLLM", "http://localhost:8000/v1"),
+    "model": _env("ATLAS_MODEL", "Qwen3.8-27B-TURBO"),
+    "api_key": _env("ATLAS_API_KEY", ""),
+    # None means no cap: the model stops when it is done, not at an arbitrary
+    # number of tokens. A long adjudication was being cut off mid-sentence.
+    "max_output": _env("ATLAS_MAX_OUTPUT_TOKENS", None, int),
+    "max_ctx": _env("ATLAS_MAX_CTX", 550_000, int),
     "jasper": "http://127.0.0.1:8790",
 }
 
@@ -111,6 +120,21 @@ CREATE TABLE IF NOT EXISTS users (
   reset_token   TEXT,
   reset_expires REAL
 );
+-- A reader can point Ask and Debate at their own OpenAI-compatible endpoint
+-- instead of this deployment's model. Stored per account, never returned to
+-- the browser except masked.
+CREATE TABLE IF NOT EXISTS user_providers (
+  user_id    INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  base_url   TEXT NOT NULL DEFAULT '',
+  api_key    TEXT NOT NULL DEFAULT '',
+  model      TEXT NOT NULL DEFAULT '',
+  enabled    INTEGER NOT NULL DEFAULT 0,
+  checked_at REAL,
+  check_ok   INTEGER NOT NULL DEFAULT 0,
+  check_note TEXT NOT NULL DEFAULT '',
+  updated_at REAL NOT NULL DEFAULT 0
+);
+
 CREATE TABLE IF NOT EXISTS auth_tokens (
   token      TEXT PRIMARY KEY,
   user_id    INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -248,6 +272,121 @@ def append_message(sid: str, obj: dict) -> None:
     p.parent.mkdir(parents=True, exist_ok=True)
     with gzip.open(p, "at", encoding="utf-8") as f:
         f.write(json.dumps(obj, ensure_ascii=False) + "\n")
+
+
+def provider_for(user_id):
+    """The endpoint this reader's requests should go to.
+
+    Their own if they have set one up and switched it on, otherwise the
+    deployment's. Returning a dict rather than reading CFG at each call site
+    means a per-user endpoint is honoured everywhere without threading it
+    through by hand.
+    """
+    row = db().execute("SELECT * FROM user_providers WHERE user_id=?", (user_id,)).fetchone()
+    if row and row["enabled"] and row["base_url"] and row["model"]:
+        return {"base": row["base_url"], "key": row["api_key"], "model": row["model"],
+                "own": True}
+    return {"base": CFG["vllm"], "key": CFG["api_key"], "model": CFG["model"], "own": False}
+
+
+def mask_key(k: str) -> str:
+    if not k:
+        return ""
+    return (k[:3] + "…" + k[-4:]) if len(k) > 10 else "…"
+
+
+def check_provider(base, key, model, timeout=30):
+    """Actually call the endpoint. A key that is merely stored is not a key
+    that works, and the failure people hit is always at the first real
+    request — so make that request here, with the parameters a real turn uses,
+    and report exactly what came back."""
+    base = (base or "").rstrip("/")
+    if not base.endswith("/v1") and "/v1" not in base:
+        base += "/v1"
+    body = {
+        "model": model,
+        "messages": [{"role": "user", "content": "Reply with the single word: ready"}],
+        # a reasoning model spends its first tokens thinking, so too small a
+        # probe comes back with an empty content field and looks like a failure
+        "max_tokens": 96,
+        "temperature": 0,
+        "stream": False,
+    }
+    req = urllib.request.Request(
+        base + "/chat/completions", data=json.dumps(body).encode(),
+        headers={"Content-Type": "application/json",
+                 **({"Authorization": f"Bearer {key}"} if key else {})},
+        method="POST")
+    t0 = time.time()
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            d = json.loads(r.read().decode("utf-8", "replace"))
+    except urllib.error.HTTPError as e:
+        detail = ""
+        try:
+            payload = json.loads(e.read() or b"{}")
+            err = payload.get("error")
+            detail = (err.get("message") if isinstance(err, dict) else str(err)) or ""
+        except Exception:
+            pass
+        hint = {401: "the key was rejected", 403: "the key is not allowed to use this model",
+                404: "no such model, or the wrong base URL",
+                429: "rate limited — the key works but is over its quota"}.get(e.code, "")
+        return {"ok": False, "status": e.code,
+                "error": f"HTTP {e.code}: {detail or e.reason}", "hint": hint}
+    except Exception as e:
+        return {"ok": False, "error": f"{type(e).__name__}: {e}",
+                "hint": "the endpoint could not be reached — check the base URL"}
+    choice = (d.get("choices") or [{}])[0]
+    msg = choice.get("message") or {}
+    # some models answer in a separate reasoning field; an empty content field
+    # is not evidence that nothing came back
+    text = (msg.get("content") or msg.get("reasoning")
+            or msg.get("reasoning_content") or "").strip()
+    usage = d.get("usage") or {}
+    return {
+        "ok": True, "took_ms": round((time.time() - t0) * 1000),
+        "model": d.get("model") or model,
+        "reply": text[:120],
+        "prompt_tokens": usage.get("prompt_tokens"),
+        "completion_tokens": usage.get("completion_tokens"),
+        "finish_reason": choice.get("finish_reason"),
+        "supports_tools": None,   # filled in by the tool probe below
+    }
+
+
+def check_provider_tools(base, key, model, timeout=40):
+    """The agent is useless without tool calling, so probe that too rather
+    than let a reader discover it when an answer silently has no citations."""
+    base = (base or "").rstrip("/")
+    if not base.endswith("/v1") and "/v1" not in base:
+        base += "/v1"
+    body = {
+        "model": model,
+        "messages": [{"role": "user", "content": "Look up the weather in Paris."}],
+        "tools": [{"type": "function", "function": {
+            "name": "get_weather", "description": "Weather for a city.",
+            "parameters": {"type": "object",
+                           "properties": {"city": {"type": "string"}},
+                           "required": ["city"]}}}],
+        "tool_choice": "auto", "max_tokens": 64, "temperature": 0, "stream": False,
+    }
+    req = urllib.request.Request(
+        base + "/chat/completions", data=json.dumps(body).encode(),
+        headers={"Content-Type": "application/json",
+                 **({"Authorization": f"Bearer {key}"} if key else {})},
+        method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            d = json.loads(r.read().decode("utf-8", "replace"))
+    except Exception as e:
+        return {"supports_tools": False, "note": f"tool call probe failed ({type(e).__name__})"}
+    ch = (d.get("choices") or [{}])[0]
+    msg = ch.get("message") or {}
+    called = bool(msg.get("tool_calls"))
+    return {"supports_tools": called,
+            "note": ("the model asked for the tool, as it should" if called
+                     else "the model answered without calling the tool — citations may be thin")}
 
 
 def dropped_turns(sid: str) -> set[int]:
@@ -563,8 +702,9 @@ better than a long one that drifts."""
 
 
 
-def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=30, max_tokens=4096,
-               tag=None, channel="content", tools=True, sink=None, budget_secs=None):
+def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=30, max_tokens=None,
+               tag=None, channel="content", tools=True, sink=None, budget_secs=None,
+               provider=None):
     """One agent's turn: call tools until it has an answer, then answer.
 
     The same loop serves the assistant, the self-check pass and every speaker in
@@ -626,7 +766,8 @@ def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=30, max_tokens=4
                 "rather than leaving it out.")})
         calls = None
         step_reasoning, step_content = [], []
-        for kind, chunk in vllm_stream(msgs, max_tokens=max_tokens, tools=schemas):
+        for kind, chunk in vllm_stream(msgs, max_tokens=max_tokens, tools=schemas,
+                                       provider=provider):
             if kind == "reasoning":
                 step_reasoning.append(chunk)
                 reasoning.append(chunk)
@@ -718,7 +859,8 @@ def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=30, max_tokens=4
             "this turn. Answer now from the evidence you already have above, citing each claim "
             "by its cite_as marker. If the evidence is thin on some part of the question, say "
             "so plainly rather than guessing.")})
-        for kind, chunk in vllm_stream(msgs, max_tokens=max_tokens, tools=None):
+        for kind, chunk in vllm_stream(msgs, max_tokens=max_tokens, tools=None,
+                                       provider=provider):
             if kind == "reasoning":
                 reasoning.append(chunk)
                 send({"type": "reasoning", "text": chunk})
@@ -952,28 +1094,40 @@ def assemble_context(sid: str, budget_chars: int):
     return "\n\n".join(parts), items
 
 
-def vllm_stream(messages, max_tokens=4096, temperature=0.7, tools=None):
+def vllm_stream(messages, max_tokens=None, temperature=0.7, tools=None, provider=None):
     """Yield ("reasoning"|"content", text) and finally ("tool_calls", [...]).
 
     The model emits its reasoning in a separate field, so the two can be shown
     apart instead of the UI guessing where thinking ends. Tool calls arrive as
     deltas with an index, so they are accumulated per index and handed back
     once as a list.
+
+    `max_tokens` is left out of the request unless something asks for a limit.
+    It used to default to 4096, which quietly truncated a long adjudication
+    mid-sentence; a reply should end when the model has finished, or when the
+    context runs out, and not before.
+
+    `provider` points the request at the reader's own endpoint when they have
+    configured one, otherwise at this deployment's.
     """
+    pv = provider or {"base": CFG["vllm"], "key": CFG["api_key"], "model": CFG["model"]}
     body = {
-        "model": CFG["model"],
+        "model": pv["model"],
         "messages": messages,
-        "max_tokens": max_tokens,
         "temperature": temperature,
         "stream": True,
     }
+    cap = max_tokens if max_tokens is not None else CFG.get("max_output")
+    if cap:
+        body["max_tokens"] = int(cap)
     if tools:
         body["tools"] = tools
         body["tool_choice"] = "auto"
     req = urllib.request.Request(
-        CFG["vllm"].rstrip("/") + "/chat/completions",
+        pv["base"].rstrip("/") + "/chat/completions",
         data=json.dumps(body).encode(),
-        headers={"Content-Type": "application/json"},
+        headers={"Content-Type": "application/json",
+                 **({"Authorization": f"Bearer {pv['key']}"} if pv.get("key") else {})},
         method="POST",
     )
     try:
@@ -1121,6 +1275,24 @@ class Handler(BaseHTTPRequestHandler):
                 "dropped": sorted(dropped_turns(m.group(1))),
                 "context": [{**dict(c), "payload": json.loads(c["payload"] or "{}")} for c in ctx],
             })
+        if p == "/auth/provider":
+            u = self._need_user()
+            if not u:
+                return
+            row = db().execute("SELECT * FROM user_providers WHERE user_id=?",
+                               (u["id"],)).fetchone()
+            default = {"base_url": "", "api_key": "", "model": "", "enabled": 0,
+                       "check_ok": 0, "check_note": "", "checked_at": None}
+            r = dict(row) if row else default
+            # the key never comes back out, only enough to recognise it
+            r["api_key"] = mask_key(r.get("api_key") or "")
+            r["has_key"] = bool(row and row["api_key"])
+            return self._json(200, {
+                "provider": r,
+                "deployment": {"base_url": CFG["vllm"], "model": CFG["model"],
+                               "max_ctx": CFG["max_ctx"],
+                               "max_output": CFG.get("max_output")},
+            })
         m = re.fullmatch(r"/debates/([\w-]+)", p)
         if m:
             u = self._need_user()
@@ -1181,6 +1353,10 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, {"ok": True})
             if p == "/auth/update":
                 return self.update_account()
+            if p == "/auth/provider":
+                return self.set_provider()
+            if p == "/auth/provider/test":
+                return self.test_provider()
             if p == "/auth/forgot":
                 return self.forgot()
             if p == "/auth/reset":
@@ -1336,6 +1512,70 @@ class Handler(BaseHTTPRequestHandler):
         db().commit()
         row = db().execute("SELECT * FROM sessions WHERE id=?", (sid,)).fetchone()
         return self._json(200, {"session": dict(row)})
+
+    def set_provider(self):
+        """Save the reader's own endpoint. Nothing is switched on until it has
+        been tested, so a typo cannot silently break every later answer."""
+        u = self._need_user()
+        if not u:
+            return
+        b = self._body()
+        row = db().execute("SELECT * FROM user_providers WHERE user_id=?", (u["id"],)).fetchone()
+        base = (b.get("base_url") or "").strip()
+        model = (b.get("model") or "").strip()
+        # an empty key field means "keep the one you have", not "clear it"
+        key = b.get("api_key")
+        key = (row["api_key"] if row else "") if key is None or key == "" else key.strip()
+        enabled = bool(b.get("enabled"))
+        if enabled and not (base and model):
+            return self._json(400, {"error": "an endpoint and a model are both needed"})
+        now = time.time()
+        if row:
+            db().execute(
+                "UPDATE user_providers SET base_url=?, api_key=?, model=?, enabled=?, "
+                "updated_at=? WHERE user_id=?",
+                (base, key, model, int(enabled), now, u["id"]))
+        else:
+            db().execute(
+                "INSERT INTO user_providers(user_id,base_url,api_key,model,enabled,updated_at) "
+                "VALUES(?,?,?,?,?,?)", (u["id"], base, key, model, int(enabled), now))
+        db().commit()
+        r = dict(db().execute("SELECT * FROM user_providers WHERE user_id=?",
+                              (u["id"],)).fetchone())
+        r["has_key"] = bool(r["api_key"])
+        r["api_key"] = mask_key(r["api_key"])
+        return self._json(200, {"provider": r})
+
+    def test_provider(self):
+        """Make a real request with the real parameters and say what happened.
+
+        A stored key is not a working key. This sends an actual completion and
+        then a tool call, because an agent that cannot call tools produces
+        answers with no citations, which is the failure people would otherwise
+        find out about much later."""
+        u = self._need_user()
+        if not u:
+            return
+        b = self._body()
+        row = db().execute("SELECT * FROM user_providers WHERE user_id=?", (u["id"],)).fetchone()
+        base = (b.get("base_url") or (row["base_url"] if row else "") or "").strip()
+        model = (b.get("model") or (row["model"] if row else "") or "").strip()
+        key = b.get("api_key")
+        if key is None or key == "":
+            key = row["api_key"] if row else ""
+        if not base or not model:
+            return self._json(400, {"error": "give an endpoint and a model to test"})
+        res = check_provider(base, key, model)
+        if res.get("ok"):
+            res.update(check_provider_tools(base, key, model))
+        note = (f"{res.get('model')} answered in {res.get('took_ms')}ms"
+                if res.get("ok") else res.get("error", "failed"))
+        if row:
+            db().execute(
+                "UPDATE user_providers SET checked_at=?, check_ok=?, check_note=? WHERE user_id=?",
+                (time.time(), int(bool(res.get("ok"))), note[:300], u["id"]))
+            db().commit()
+        return self._json(200, {"result": res})
 
     def debate_action(self, did, action):
         """pause a running debate, or hand the next speaker a moderator's point."""
@@ -1552,9 +1792,10 @@ class Handler(BaseHTTPRequestHandler):
             start_at = 0
 
         plan = debate_schedule(sides, rounds, judge)
+        pv = provider_for(u["id"])
         max_steps = int(b.get("max_steps", 14))
         turn_secs = float(b.get("turn_secs", 420))
-        max_tokens = int(b.get("max_tokens", 3000))
+        max_tokens = b.get("max_tokens") or None
 
         db().execute("UPDATE debates SET status='running', updated_at=? WHERE id=?",
                      (time.time(), did))
@@ -1603,7 +1844,7 @@ class Handler(BaseHTTPRequestHandler):
                        for r in cites.rows}
 
         emit({"type": "debate_start", "debate_id": did, "motion": motion, "rounds": rounds,
-              "sides": sides, "web": allow_web, "judge": judge, "model": CFG["model"],
+              "sides": sides, "web": allow_web, "judge": judge, "model": pv["model"],
               "resumed": start_at > 0, "done_turns": start_at, "total_turns": len(plan),
               "history": prior, "sources": cites.as_list()})
 
@@ -1672,7 +1913,7 @@ class Handler(BaseHTTPRequestHandler):
                     {"role": "user", "content": "The debate:\n\n" + transcript_text()[:80000]},
                     {"role": "user", "content": JUDGE_PROMPT + note_block},
                 ]
-                tokens = int(b.get("judge_tokens", 4000))
+                tokens = b.get("judge_tokens") or None
             else:
                 instruction = (DEBATE_OPENING if slot["phase"] == "opening"
                                else DEBATE_CLOSING if slot["phase"] == "closing"
@@ -1690,7 +1931,7 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 agent_turn(msgs, emit=emit, cites=cites, allow_web=allow_web,
                            max_steps=max_steps, max_tokens=tokens, tag=tag, sink=sink,
-                           budget_secs=turn_secs)
+                           budget_secs=turn_secs, provider=pv)
             finally:
                 text = "".join(sink.get("content") or [])
                 if text.strip() or sink.get("trace"):
@@ -1762,6 +2003,7 @@ class Handler(BaseHTTPRequestHandler):
         if not user_msg:
             return self._json(400, {"error": "empty message"})
         allow_web = bool(b.get("allow_web"))
+        pv = provider_for(u["id"])
 
         history = read_messages(sid)
         # An exchange the reader has taken out of the history is not sent. This
@@ -1814,7 +2056,8 @@ class Handler(BaseHTTPRequestHandler):
         approx_tokens = int(sum(len(m["content"]) for m in msgs) / CHARS_PER_TOKEN)
         emit({"type": "start", "context_items": len(ctx_items),
               "context_chars": len(ctx_text), "approx_prompt_tokens": approx_tokens,
-              "model": CFG["model"], "web": allow_web, "tools": True})
+              "model": pv["model"], "own_provider": pv["own"],
+              "web": allow_web, "tools": True})
 
         # ---------------- agentic loop ----------------
         # The model may call tools, read what they return, and call more before
@@ -1837,8 +2080,8 @@ class Handler(BaseHTTPRequestHandler):
             emit({"type": "phase", "phase": "answer"})
             reasoning, content, trace = agent_turn(
                 msgs, emit=emit, cites=cites, allow_web=allow_web,
-                max_steps=MAX_STEPS, max_tokens=int(b.get("max_tokens", 4096)),
-                sink=answer_sink, budget_secs=BUDGET_SECS,
+                max_steps=MAX_STEPS, max_tokens=b.get("max_tokens") or None,
+                sink=answer_sink, budget_secs=BUDGET_SECS, provider=pv,
             )
 
             # ---------------- self-check ----------------
@@ -1852,8 +2095,8 @@ class Handler(BaseHTTPRequestHandler):
                 c_reasoning, check_text, c_trace = agent_turn(
                     msgs, emit=emit, cites=cites, allow_web=allow_web,
                     max_steps=int(b.get("check_steps", 8)),
-                    max_tokens=int(b.get("max_tokens", 4096)),
-                    channel="check", sink=check_sink,
+                    max_tokens=b.get("max_tokens") or None,
+                    channel="check", sink=check_sink, provider=pv,
                     budget_secs=float(b.get("check_budget_secs", 420)),
                 )
                 # mark them so the reader can see what the check actually did;

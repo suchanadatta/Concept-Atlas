@@ -18,6 +18,28 @@ archaic-aware lexical), and an interactive 2D/3D concept-graph UI.
 | `log/` | Pipeline orchestration scripts + server launchers |
 | `plans/` | Engineering decision/audit logs from the build process |
 
+## Configuration
+
+One file, `.env` at the repo root — copy `.env.example` and edit. It sets the
+model endpoint, the model, the context window, the ports, and whether the chat
+agent may search the web. Real environment variables override it, so a
+container or systemd unit needs no edits.
+
+```
+ATLAS_VLLM=http://localhost:8000/v1     # any OpenAI-compatible endpoint
+ATLAS_MODEL=Qwen3.8-27B-TURBO
+ATLAS_API_KEY=                          # local vLLM usually needs none
+ATLAS_MAX_OUTPUT_TOKENS=                # empty = no cap on a reply's length
+```
+
+Readers can also point Ask and Debate at **their own** OpenAI-compatible
+endpoint from *Account settings* — their key, their model, their quota. The
+key is stored against the account and never returned to the browser except
+masked. Nothing is switched on until **Test it** has made a real request: it
+reports the reply, token usage, the finish reason, and whether the model can
+call tools, because an agent that cannot call tools produces answers with no
+citations.
+
 ## Quickstart
 
 ```bash

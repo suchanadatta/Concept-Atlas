@@ -1264,5 +1264,10 @@ def summarise(name: str, result: dict) -> str:
     if name == "web_search":
         return f"{result.get('n', 0)} web results"
     if name == "web_fetch":
-        return f"{result.get('chars', 0)} chars from {result.get('url', '')[:48]}"
+        # the field was renamed when paging was added; the trace kept saying 0
+        shown = result.get("showing") or [0, 0]
+        got = shown[1] - shown[0] if len(shown) == 2 else 0
+        total = result.get("chars_total", 0)
+        return (f"{got} of {total} chars from {result.get('url', '')[:44]}"
+                if total else f"read {result.get('url', '')[:48]}")
     return "done"

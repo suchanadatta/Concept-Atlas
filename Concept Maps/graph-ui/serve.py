@@ -154,8 +154,62 @@ class BookAPI:
             )
         return None
 
+    _library_cache = None          # in-process, so repeat calls are free
+
+    @staticmethod
+    def _library_signature():
+        """Cheap fingerprint of the corpus: how many PDFs and the newest one.
+
+        Enough to notice a book being added or replaced without stat-ing the
+        9.7 GB of OCR output that computing the answer actually costs."""
+        n, newest = 0, 0.0
+        for d in BOOK_DIRS:
+            if not d.exists():
+                continue
+            for pdf in d.rglob("*.pdf"):
+                n += 1
+                try:
+                    newest = max(newest, pdf.stat().st_mtime)
+                except OSError:
+                    pass
+        return f"{n}:{newest:.0f}"
+
     @staticmethod
     def library():
+        """The shelf, for the Add-to-context picker.
+
+        Building this reads every OCR JSONL to count its pages — 9.7 GB across
+        the corpus, 26 seconds — and the picker blocked on it, which is why it
+        took so long to open. The answer only changes when a book is added, so
+        it is computed once and kept: in memory for the process, and on disk so
+        a restart does not pay for it again."""
+        sig = BookAPI._library_signature()
+        if BookAPI._library_cache and BookAPI._library_cache.get("signature") == sig:
+            return 200, "application/json", BookAPI._library_cache["body"]
+        cache_file = Path(__file__).resolve().parent / "data" / "library-cache.json"
+        try:
+            disk = _json.loads(cache_file.read_text(encoding="utf-8"))
+            if disk.get("signature") == sig:
+                body = _json.dumps({"books": disk["books"], "count": len(disk["books"]),
+                                    "cached": True}).encode()
+                BookAPI._library_cache = {"signature": sig, "body": body}
+                return 200, "application/json", body
+        except Exception:
+            pass   # no cache, or a stale/corrupt one; build it
+
+        books = BookAPI._build_library()
+        body = _json.dumps({"books": books, "count": len(books)}).encode()
+        BookAPI._library_cache = {"signature": sig, "body": body}
+        try:
+            cache_file.parent.mkdir(parents=True, exist_ok=True)
+            cache_file.write_text(_json.dumps({"signature": sig, "books": books}),
+                                  encoding="utf-8")
+        except OSError:
+            pass   # a read-only deployment still works, just slowly
+        return 200, "application/json", body
+
+    @staticmethod
+    def _build_library():
         books = []
         seen = set()
         for d in BOOK_DIRS:
@@ -185,8 +239,7 @@ class BookAPI:
                         "has_md": bool(_find_book_md(bid)),
                     }
                 )
-        body = _json.dumps({"books": books, "count": len(books)}).encode()
-        return 200, "application/json", body
+        return books
 
     @staticmethod
     def formats(book_id: str):

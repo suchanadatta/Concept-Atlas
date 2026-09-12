@@ -1671,12 +1671,36 @@ const Chat = (function () {
   }
 
   /* ---------------------------------------------------------------- picker */
-  async function openPicker() {
-    $("chat-picker").classList.remove("hidden");
-    if (!library) {
-      try { library = (await (await fetch("/book/api/library")).json()).books || []; } catch { library = []; }
+  /* Open first, load second.
+
+     This awaited the library before showing anything, and building that list
+     reads every OCR file in the corpus — so the picker appeared to hang for
+     half a minute the first time it was opened. The panel now opens at once
+     and the book list fills in when it arrives; the other tabs (concepts, a
+     search, a note) never needed it at all. */
+  let libraryLoading = null;
+
+  function loadLibrary() {
+    if (library) return Promise.resolve(library);
+    if (!libraryLoading) {
+      libraryLoading = fetch("/book/api/library")
+        .then(r => r.json())
+        .then(d => { library = d.books || []; return library; })
+        .catch(() => { library = []; return library; })
+        .finally(() => { libraryLoading = null; });
     }
-    renderPicker();
+    return libraryLoading;
+  }
+
+  function openPicker() {
+    $("chat-picker").classList.remove("hidden");
+    renderPicker();                       // paints immediately
+    if (!library) loadLibrary().then(() => {
+      // only repaint if the picker is still open on the tab that needs it
+      if (!$("chat-picker").classList.contains("hidden") && pickerTab === "books") {
+        renderPicker($("ch-pick-f") ? $("ch-pick-f").value : "");
+      }
+    });
   }
   function closePicker() { $("chat-picker").classList.add("hidden"); }
 
@@ -1685,7 +1709,9 @@ const Chat = (function () {
     const tabs = [["books", "Books & page ranges"], ["concepts", "Concepts"],
                   ["search", "A search"], ["note", "A note"]];
     let inner = "";
-    if (pickerTab === "books") {
+    if (pickerTab === "books" && !library) {
+      inner = `<p class="ch-none">Reading the shelf&#8230;</p>`;
+    } else if (pickerTab === "books") {
       const rows = (library || [])
         .map(b => ({ b, c: window.Cite ? Cite.parse(b.book_id) : { cite: b.book_id } }))
         .filter(x => !f || x.c.cite.toLowerCase().includes(f) || x.b.book_id.toLowerCase().includes(f))
@@ -1820,11 +1846,13 @@ const Chat = (function () {
             <input name="current_password" type="password" autocomplete="current-password"></label>
           <button type="submit" class="ch-primary">Save changes</button>
         </form>
+        <div id="ch-provider" class="ch-prov"><p class="hint">loading model settings&#8230;</p></div>
         <div class="ch-auth-alt">
           <button id="ch-back">Back to the conversation</button>
           <button id="ch-signout">Sign out</button>
         </div>
       </div>`;
+    renderProvider();
     $("ch-acct-form").onsubmit = async (e) => {
       e.preventDefault();
       const fd = Object.fromEntries(new FormData(e.target).entries());
@@ -1838,6 +1866,95 @@ const Chat = (function () {
     };
     $("ch-back").onclick = () => render();
     $("ch-signout").onclick = signOut;
+  }
+
+  /* ------------------------------------------------------- your own model
+
+     Ask and Debate run against whatever this deployment points at. A reader
+     can point them at their own OpenAI-compatible endpoint instead — their
+     key, their model, their quota — and nothing is switched on until it has
+     actually answered a request, because a stored key is not a working key. */
+  async function renderProvider() {
+    const host = $("ch-provider");
+    if (!host) return;
+    let d;
+    try {
+      d = await api("/auth/provider");
+    } catch (e) {
+      host.innerHTML = `<p class="hint">Model settings unavailable (${esc(e.message)}).</p>`;
+      return;
+    }
+    const pr = d.provider || {};
+    const dep = d.deployment || {};
+    const on = !!pr.enabled;
+    host.innerHTML = `
+      <h3>The model behind Ask and Debate</h3>
+      <p class="ch-prov-now">Currently using
+        <b>${on ? esc(pr.model) : esc(dep.model || "the deployment's model")}</b>
+        <span class="ch-prov-src">${on ? "your endpoint" : "this deployment"}</span></p>
+      <p class="hint">This deployment is set up in its <code>.env</code>:
+        <code>${esc(dep.model || "?")}</code> at <code>${esc(dep.base_url || "?")}</code>,
+        ${dep.max_output ? `replies capped at ${dep.max_output} tokens`
+          : "replies not capped — the model stops when it is finished"}.</p>
+      <form id="ch-prov-form">
+        <label>Endpoint <span class="opt">any OpenAI-compatible base URL</span>
+          <input name="base_url" placeholder="https://api.openai.com/v1"
+            value="${esc(pr.base_url || "")}"></label>
+        <label>Model
+          <input name="model" placeholder="gpt-4o-mini" value="${esc(pr.model || "")}"></label>
+        <label>API key ${pr.has_key ? `<span class="opt">stored as ${esc(pr.api_key)} — leave blank to keep it</span>`
+          : `<span class="opt">kept on this server, never shown again</span>`}
+          <input name="api_key" type="password" autocomplete="off" placeholder="sk-&#8230;"></label>
+        <label class="ch-toggle"><input type="checkbox" name="enabled" ${on ? "checked" : ""}>
+          <span>use this instead of the deployment's model</span></label>
+        <div class="ch-prov-actions">
+          <button type="button" id="ch-prov-test" class="mini">Test it</button>
+          <button type="submit" class="ch-primary">Save</button>
+        </div>
+      </form>
+      <div id="ch-prov-result">${pr.check_note
+        ? `<div class="ch-msg ${pr.check_ok ? "ok" : "err"}">${esc(pr.check_note)}</div>` : ""}</div>`;
+
+    const form = $("ch-prov-form");
+    const body = () => {
+      const fd = Object.fromEntries(new FormData(form).entries());
+      return { base_url: fd.base_url || "", model: fd.model || "",
+               api_key: fd.api_key || "", enabled: !!fd.enabled };
+    };
+    $("ch-prov-test").onclick = async () => {
+      const btn = $("ch-prov-test");
+      btn.disabled = true; btn.textContent = "testing\u2026";
+      $("ch-prov-result").innerHTML = `<p class="hint">calling the endpoint&#8230;</p>`;
+      try {
+        const r = (await api("/auth/provider/test", body())).result || {};
+        $("ch-prov-result").innerHTML = r.ok
+          ? `<div class="ch-msg ok">
+               <b>It works.</b> ${esc(r.model || "")} replied ${esc(JSON.stringify(r.reply || ""))}
+               in ${r.took_ms}ms.<br>
+               ${r.prompt_tokens != null ? `${r.prompt_tokens} prompt / ${r.completion_tokens} completion tokens · ` : ""}
+               finish: ${esc(r.finish_reason || "?")}<br>
+               ${r.supports_tools
+                 ? "Tool calling works, so answers will carry citations."
+                 : `<b>But tool calling did not work.</b> ${esc(r.note || "")}
+                    Answers from this model may have no citations.`}
+             </div>`
+          : `<div class="ch-msg err"><b>It did not work.</b> ${esc(r.error || "unknown error")}
+               ${r.hint ? `<br>${esc(r.hint)}` : ""}</div>`;
+      } catch (e) {
+        $("ch-prov-result").innerHTML = `<div class="ch-msg err">${esc(e.message)}</div>`;
+      }
+      btn.disabled = false; btn.textContent = "Test it";
+    };
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      try {
+        await api("/auth/provider", body());
+        await renderProvider();
+        flash("Model settings saved");
+      } catch (err) {
+        $("ch-prov-result").innerHTML = `<div class="ch-msg err">${esc(err.message)}</div>`;
+      }
+    };
   }
 
   /* ------------------------------------------------------------------ init */
