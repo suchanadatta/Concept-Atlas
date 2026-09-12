@@ -15,7 +15,20 @@ import sys
 from pathlib import Path
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
-PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8788
+# Settings come from the repo's single .env (see .env.example); a port given
+# on the command line still wins, and so do real environment variables.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "tools"))
+try:
+    from atlas_env import env as _env
+except Exception:      # running the UI without the tools tree
+    def _env(name, default=None, cast=None):
+        import os
+        raw = os.environ.get(name)
+        if raw in (None, ""):
+            return default
+        return cast(raw) if cast else raw
+
+PORT = int(sys.argv[1]) if len(sys.argv) > 1 else _env("ATLAS_UI_PORT", 8788, int)
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 GZIP_TYPES = (
@@ -791,7 +804,7 @@ class BookAPI:
     # Browsers on other intranet machines resolve 127.0.0.1 to THEMSELVES, so
     # a direct :8790 fetch only works on the host. Everything goes through
     # :8788 instead, which makes search work from any client.
-    JASPER = "http://127.0.0.1:8790"
+    JASPER = _env("ATLAS_JASPER", "http://127.0.0.1:8790")
 
     @staticmethod
     def _jasper(endpoint: str, body: bytes, timeout: int = 30):
@@ -866,7 +879,7 @@ class BookAPI:
         return BookAPI._jasper("/compare", body, timeout=120)
 
     # ---- chat / accounts / sessions (atlas_chat_server on :8793) ----
-    CHAT = "http://127.0.0.1:8793"
+    CHAT = _env("ATLAS_CHAT", "http://127.0.0.1:8793")
 
     # A hung or paused backend used to block a request thread for the full
     # timeout with no feedback, so clicking Ask could hang for two minutes.

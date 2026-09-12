@@ -204,6 +204,21 @@ first and the working engines answer instead. The backends are pinned rather tha
 because automatic includes engines that reply to a Mandeville query with Baidu pages and a Phoenix
 pizza guide. Catalogue questions go to Open Library. If the engine returns nothing, the Wikipedia
 and Open Library APIs are tried before reporting silence.</p>
+<p><b>Which model answers.</b> This deployment's endpoint, model and context window are set in a
+single <code>.env</code> at the repo root, so nothing has to be edited in Python to move it. You can
+also point Ask and Debate at <b>your own</b> OpenAI-compatible endpoint from <i>Account settings</i>
+&#8212; your key, your model, your quota. The key is kept on this server against your account and is
+never shown again, only masked; leaving the field blank keeps the one already stored.</p>
+<p>Nothing is switched on until <b>Test it</b> has made a real request, because a stored key is not
+a working key. The test sends an actual completion with the parameters a real turn uses and reports
+what came back: the reply, the prompt and completion tokens, the finish reason, and &#8212;
+separately &#8212; whether the model will call a tool at all. That last one matters: an agent that
+cannot call tools produces answers with no citations, which you would otherwise discover much
+later. Failures are reported in the endpoint's own words, so a rejected key, a wrong model name and
+an unreachable host each say which they are.</p>
+<p><b>Replies are not cut off.</b> There is no cap on how long an answer may be unless the
+deployment sets one: the model stops when it is finished, or when the context runs out. A fixed
+ceiling used to truncate long adjudications mid-sentence.</p>
 <p><b>Accounts and sessions.</b> Conversations belong to an account, so they survive a reload. Each is
 stored as a gzipped JSONL file with SQLite as the index. <i>Export</i> downloads the transcript, the
 reasoning and the full text of every attached context item &#8212; so another person can <i>Import</i> it
