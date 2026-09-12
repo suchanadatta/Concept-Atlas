@@ -688,7 +688,8 @@ body.dark #gres-input{background:#2E2A24;border-color:#4A443A;color:#E8E2D5}
 body.dark #gres-algo{background:#2E2A24;color:#E8E2D5;border-color:#4A443A}
 #gres.hidden{display:none}
 .gres-bar{display:flex;align-items:center;gap:14px;padding:10px 18px;background:var(--panel);border-bottom:1px solid var(--line)}
-#gres-back{background:none;border:none;color:var(--accent);font-size:14px;cursor:pointer}
+#gres-back{background:none;border:none;color:var(--accent);font-size:14px;cursor:pointer;
+  padding:4px 6px;margin-left:-6px;line-height:1.2;min-height:24px}
 #gres-summary{color:var(--ink-soft);font-size:13.5px;flex:1}
 .gres-tabs{display:flex;gap:4px}
 .gres-tabs button{background:none;border:1px solid var(--line);border-radius:14px;padding:5px 13px;font-size:12.5px;cursor:pointer;color:var(--ink-soft)}
@@ -1304,7 +1305,8 @@ body.dark .cmp-between li{border-color:#3A362E}
 .ch-auth input:focus{border-color:var(--accent-soft)}
 .ch-auth input:disabled{opacity:.6}
 .ch-auth-alt{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px}
-.ch-auth-alt button{background:none;border:none;padding:0;color:var(--accent);font-size:12.5px;
+.ch-auth-alt button{background:none;border:none;padding:4px 2px;color:var(--accent);font-size:12.5px;
+  min-height:22px;line-height:1.2;
   cursor:pointer;font-family:var(--sans)}
 .ch-auth-alt button:hover{text-decoration:underline}
 .ch-msg{padding:9px 12px;border-radius:8px;font-size:12.5px;margin-bottom:16px;line-height:1.5}
@@ -1353,8 +1355,8 @@ body.dark .cmp-between li{border-color:#3A362E}
 #ch-flash.on{opacity:1;transform:translateX(-50%) translateY(0)}
 
 /* add-to-context affordances elsewhere in the app */
-.ctx-btn{background:none;border:1px solid var(--line);border-radius:10px;padding:1px 8px;font-size:10.5px;
-  color:var(--ink-soft);cursor:pointer;font-family:var(--sans)}
+.ctx-btn{background:none;border:1px solid var(--line);border-radius:10px;padding:4px 9px;font-size:10.5px;
+  color:var(--ink-soft);cursor:pointer;font-family:var(--sans);line-height:1.2;min-height:22px}
 .ctx-btn:hover{border-color:var(--accent);color:var(--accent)}
 
 body.dark #chat-panel{background:#1E1C18}
@@ -1532,16 +1534,23 @@ body.dark #help-card td.help-sec{border-color:#3A362E}
 .ch-trun{color:var(--ink-faint);font-style:italic}
 
 /* a marker in the prose is the click target that opens the page */
-.ch-cite{background:var(--accent);color:#fff;border:none;border-radius:5px;padding:0 5px;
-  font-size:10.5px;font-family:var(--sans);cursor:pointer;vertical-align:2px;
-  margin:0 1px;font-weight:650;line-height:1.6}
+/* An inline marker sits inside a sentence, so it cannot grow without pushing
+   the line apart — but at 17px it was too small to hit. Prose here has a
+   23px line box, so the marker can fill it without changing the spacing.
+   (An ::after overlay was tried first; a pseudo-element does not enlarge the
+   hit area, so it was only dead CSS.) */
+.ch-cite{background:var(--accent);color:#fff;border:none;border-radius:5px;padding:5px 7px;
+  font-size:10.5px;font-family:var(--sans);cursor:pointer;vertical-align:1px;
+  margin:0 1px;font-weight:650;line-height:1.1}
 .ch-cite:hover{background:var(--accent-soft)}
 .ch-src-list{margin:0;padding:0 13px 11px 18px;font-size:12px}
-.ch-src-list li{padding:4px 0;line-height:1.5;border-bottom:1px solid var(--line)}
+.ch-src-list li{padding:6px 0;line-height:1.55;border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;align-items:center;gap:2px 0}
+.ch-src-list li .ch-src-snip{flex-basis:100%}
 .ch-src-list li:last-child{border-bottom:none}
-.ch-src{background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:0 5px;
+.ch-src{background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:3px 7px;
   font-size:10.5px;cursor:pointer;color:var(--accent);font-weight:650;margin-right:6px;
-  font-family:var(--sans)}
+  font-family:var(--sans);line-height:1.2;min-height:22px}
 .ch-src:hover{border-color:var(--accent)}
 .ch-src-cite{color:var(--ink-soft);font-weight:600}
 .ch-src-loc{color:var(--ink-faint);font-size:11px;margin-left:5px}
@@ -1728,7 +1737,7 @@ body.dark .ch-hist-row:hover{background:rgba(255,255,255,.06)}
 .ch-hist-m{flex:none;font-size:9.5px;color:var(--ink-faint);text-transform:uppercase;
   letter-spacing:.05em}
 .ch-hist-x{flex:none;background:none;border:0;color:var(--ink-faint);cursor:pointer;
-  font-size:13px;line-height:1;padding:1px 3px;border-radius:4px}
+  font-size:13px;line-height:1;padding:4px 6px;border-radius:4px;min-width:22px;min-height:22px}
 .ch-hist-x:hover{color:#8C4A3F;background:rgba(140,74,63,.12)}
 .ch-hist-x:disabled{opacity:.4;cursor:wait}
 .ch-hist-row.off .ch-hist-q{text-decoration:line-through;color:var(--ink-faint)}
@@ -1802,7 +1811,8 @@ body.dark .docs-head{background:#2A2721;border-color:#3A362E}
 .ch-src-list li.web .ch-src-cite{color:var(--accent);text-decoration:underline;
   text-underline-offset:2px}
 .ch-src-concept{background:rgba(123,104,181,.14);border:1px solid rgba(123,104,181,.4);
-  color:#7B68B5;border-radius:20px;padding:0 8px;font-size:10.5px;cursor:pointer;margin-left:6px}
+  color:#7B68B5;border-radius:20px;padding:3px 10px;font-size:10.5px;cursor:pointer;
+  margin-left:6px;line-height:1.2;min-height:22px}
 .ch-src-concept:hover{background:rgba(123,104,181,.26)}
 #dbt-srcs{margin:4px 0 8px}
 
@@ -1817,3 +1827,17 @@ body.dark .docs-head{background:#2A2721;border-color:#3A362E}
 .ch-prov-actions{display:flex;gap:10px;align-items:center;justify-content:flex-end;margin-top:10px}
 #ch-prov-result{margin-top:10px}
 #ch-prov-result .ch-msg{line-height:1.5}
+
+/* ————— the results toolbar on a narrow screen —————
+
+   Six buttons in one flex:none group came to 580px, so on a 390px phone the
+   tab strip ran off the right edge and Concepts and Graph could not be
+   reached at all. This has to sit at the end of the file: `.gres-tabs{flex:none}`
+   is declared later than the mobile block and a media query adds no
+   specificity, so an earlier override loses. */
+@media (max-width: 820px){
+  .gres-tabs{flex:1 1 100% !important;flex-wrap:wrap;row-gap:6px}
+  .gres-mode{flex:1 1 100% !important}
+  .gres-mode select{width:100%}
+  .gres-searchwrap{flex:1 1 100% !important;max-width:none}
+}

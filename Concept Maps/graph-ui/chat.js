@@ -1837,9 +1837,11 @@ const Chat = (function () {
         ${msg ? `<div class="ch-msg ${isErr ? "err" : "ok"}">${esc(msg)}</div>` : ""}
         <form id="ch-acct-form">
           <label>Username <span class="opt">cannot be changed</span>
-            <input value="${esc(user.username)}" disabled></label>
-          <label>Display name<input name="display_name" value="${esc(user.display_name || "")}"></label>
-          <label>Email<input name="email" type="email" value="${esc(user.email)}"></label>
+            <input value="${esc(user.username)}" autocomplete="username" disabled></label>
+          <label>Display name<input name="display_name" autocomplete="nickname"
+            value="${esc(user.display_name || "")}"></label>
+          <label>Email<input name="email" type="email" autocomplete="email"
+            value="${esc(user.email)}"></label>
           <label>New password <span class="opt">leave blank to keep it</span>
             <input name="password" type="password" minlength="8" autocomplete="new-password"></label>
           <label>Current password <span class="opt">needed to change email or password</span>
