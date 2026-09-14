@@ -1,0 +1,16 @@
+[Unit]
+Description=Concept Atlas chat and accounts service
+After=network.target concept-atlas-jasper.service
+Wants=concept-atlas-jasper.service
+
+[Service]
+Type=simple
+WorkingDirectory=/store/shuvam/BMoral
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 tools/atlas_chat_server.py
+Restart=always
+RestartSec=5
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=default.target

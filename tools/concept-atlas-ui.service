@@ -1,0 +1,16 @@
+[Unit]
+Description=Concept Atlas UI
+After=network.target concept-atlas-jasper.service concept-atlas-chat.service
+Wants=concept-atlas-jasper.service concept-atlas-chat.service
+
+[Service]
+Type=simple
+WorkingDirectory=/store/shuvam/BMoral/Concept Maps/graph-ui
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 serve.py
+Restart=always
+RestartSec=5
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=default.target

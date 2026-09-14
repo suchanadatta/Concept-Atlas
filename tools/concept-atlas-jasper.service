@@ -1,0 +1,19 @@
+[Unit]
+Description=Concept Atlas semantic index (Jasper)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/store/shuvam/BMoral
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 tools/jasper_search_server_v2.py --port 8790 --device cuda
+# Loading the model onto the GPU takes roughly twenty seconds; hold the start
+# job open until it actually answers, so whatever depends on it starts second.
+ExecStartPost=/bin/sh -c 'for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:8790/healthz && exit 0; sleep 2; done; exit 1'
+TimeoutStartSec=180
+Restart=always
+RestartSec=10
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=default.target

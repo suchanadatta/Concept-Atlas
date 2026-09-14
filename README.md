@@ -87,12 +87,25 @@ tools/zrok-share.sh                  # reserves ATLAS_ZROK_NAME, then shares :87
 # https://concept-atlas.shares.zrok.io
 ```
 
-To keep it up across crashes and reboots:
+A public URL is only as durable as what sits behind it, so the whole stack
+runs under systemd:
 
 ```bash
-cp tools/concept-atlas-zrok.service ~/.config/systemd/user/
-systemctl --user daemon-reload && systemctl --user enable --now concept-atlas-zrok
-sudo loginctl enable-linger "$USER"   # needed only if you want it up while logged out
+tools/install-services.sh              # index, chat, UI, tunnel
+sudo loginctl enable-linger "$USER"    # only if it should survive logout/reboot
+```
+
+Four user units, ordered for real rather than hopefully: the index holds its
+start job open until `/healthz` answers (about twenty seconds while the model
+loads), the chat service and UI start after that, and the tunnel starts last.
+Each restarts on failure, verified by `kill -9` on all three. A restart of the
+UI does not bounce the tunnel — only ordering is shared, not restarts, which
+matters because a new share takes a few seconds to route and returns 502 until
+it does.
+
+```bash
+systemctl --user status  concept-atlas-{jasper,chat,ui,zrok}
+journalctl --user -u concept-atlas-ui -f
 ```
 
 A share only releases its name on a clean `SIGTERM`; after a `kill -9` or a
