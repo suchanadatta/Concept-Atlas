@@ -31,6 +31,10 @@ except Exception:      # running the UI without the tools tree
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else _env("ATLAS_UI_PORT", 8788, int)
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
+# How long a token stream may go quiet before we send a keepalive comment.
+# Well under the sixty seconds at which tunnels and load balancers give up.
+SSE_HEARTBEAT_SECS = _env("ATLAS_SSE_HEARTBEAT", 15, int)
+
 GZIP_TYPES = (
     "text/html",
     "text/css",
@@ -1195,13 +1199,46 @@ class Handler(SimpleHTTPRequestHandler):
         self.send_header("Connection", "close")
         self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
-        try:
-            with up:
+        # A long silence in the middle of a stream is normal: the model can
+        # think for the better part of a minute before the first token, and a
+        # debate turn can be slower still. Proxies in between read that as a
+        # dead connection and hang up — zrok's public frontend does it at
+        # around sixty seconds, which kills the answer exactly when the model
+        # was about to speak. So the upstream is drained on a thread and this
+        # loop emits an SSE comment whenever the wire goes quiet. Comments are
+        # part of the protocol and every client skips them; only this loop
+        # ever writes to the socket, so there is no interleaving to get wrong.
+        import queue as _queue
+        import threading as _threading
+
+        relay: _queue.Queue = _queue.Queue()
+
+        def pump():
+            try:
                 for chunk in up:
-                    self.wfile.write(chunk)
+                    relay.put(chunk)
+            except Exception:
+                pass
+            finally:
+                relay.put(None)
+
+        _threading.Thread(target=pump, daemon=True).start()
+        try:
+            while True:
+                try:
+                    chunk = relay.get(timeout=SSE_HEARTBEAT_SECS)
+                except _queue.Empty:
+                    self.wfile.write(b": keepalive\n\n")
                     self.wfile.flush()
+                    continue
+                if chunk is None:
+                    break
+                self.wfile.write(chunk)
+                self.wfile.flush()
         except (BrokenPipeError, ConnectionResetError):
             pass  # the reader navigated away mid-answer
+        finally:
+            up.close()  # unblocks the pump if nobody is listening any more
         return True
 
     def do_GET(self):

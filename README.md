@@ -73,6 +73,38 @@ the committed OCR text (`outputs/`, 129 books) and concept map
 Semantic mode additionally needs the Jasper model + embeddings (bootstrap
 step 2–3).
 
+## Reaching it from outside
+
+`tools/zrok-share.sh` puts the UI on a public URL that does not change between
+restarts. zrok v2 keeps the *name* and the *tunnel* as separate things: the
+name is reserved to the account once and outlives everything, while the tunnel
+is torn down whenever the process stops. Bind every run to the same reserved
+name and the URL is stable.
+
+```bash
+zrok enable <account-token>          # once per machine
+tools/zrok-share.sh                  # reserves ATLAS_ZROK_NAME, then shares :8788
+# https://concept-atlas.shares.zrok.io
+```
+
+To keep it up across crashes and reboots:
+
+```bash
+cp tools/concept-atlas-zrok.service ~/.config/systemd/user/
+systemctl --user daemon-reload && systemctl --user enable --now concept-atlas-zrok
+sudo loginctl enable-linger "$USER"   # needed only if you want it up while logged out
+```
+
+A share only releases its name on a clean `SIGTERM`; after a `kill -9` or a
+power cut the name is still held and the next start would fail with a 409, so
+the script sweeps the stale share before sharing again.
+
+One thing worth knowing about tunnels and token streams: the model can think
+for a minute or more before its first token, and a silent connection looks
+dead to anything in the middle — zrok's frontend hangs up at around sixty
+seconds. `serve.py` therefore sends an SSE keepalive comment every
+`ATLAS_SSE_HEARTBEAT` seconds (default 15) while a stream is quiet.
+
 ## The UI (`http://<host>:8788`)
 
 - **Search** — natural-language queries; 🧠 semantic (Jasper hybrid, scored

@@ -1,0 +1,26 @@
+[Unit]
+Description=Concept Atlas public endpoint (zrok)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/store/shuvam/BMoral
+ExecStart=/store/shuvam/BMoral/tools/zrok-share.sh
+# A clean SIGTERM is what lets zrok unbind the share; without it the name is
+# left occupied and the next start has to sweep it.
+KillSignal=SIGTERM
+TimeoutStopSec=20
+Restart=always
+RestartSec=5
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=default.target
+
+# Install:
+#   cp tools/concept-atlas-zrok.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now concept-atlas-zrok
+# To keep it running when nobody is logged in (needs root, once):
+#   sudo loginctl enable-linger "$USER"
