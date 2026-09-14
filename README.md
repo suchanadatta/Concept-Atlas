@@ -99,6 +99,19 @@ A share only releases its name on a clean `SIGTERM`; after a `kill -9` or a
 power cut the name is still held and the next start would fail with a 409, so
 the script sweeps the stale share before sharing again.
 
+The free zrok service shows a one-time interstitial ("You are about to visit
+a zrok share…") to browser visitors before the app loads. It is triggered by
+the browser's `Accept`/User-Agent, so `curl` and every API client go straight
+through; anything that needs to bypass it can send a `skip_zrok_interstitial`
+header with any value. Adding a verified credit card to the zrok account
+removes it for good — the controller decides at *share creation* time, so
+restart the service afterwards to recreate the share.
+
+`zrok list namespaces` shows which namespaces the account may use. On the free
+hosted service that is only `public` (`*.shares.zrok.io`), so the shape of the
+URL is fixed and the name is the only part you choose; a custom domain needs a
+self-hosted zrok instance.
+
 One thing worth knowing about tunnels and token streams: the model can think
 for a minute or more before its first token, and a silent connection looks
 dead to anything in the middle — zrok's frontend hangs up at around sixty
