@@ -1841,3 +1841,10 @@ body.dark .docs-head{background:#2A2721;border-color:#3A362E}
   .gres-mode select{width:100%}
   .gres-searchwrap{flex:1 1 100% !important;max-width:none}
 }
+
+/* the context meter, when the attached items are close to filling the window */
+.ch-ctx-meter.full i{background:#8C4A3F}
+
+/* an answer written without the corpus tools says so on reload, not only live */
+.ch-notools{margin-bottom:10px}
+.ch-notools code{background:rgba(0,0,0,.12);border-radius:3px;padding:0 4px;font-size:11.5px}

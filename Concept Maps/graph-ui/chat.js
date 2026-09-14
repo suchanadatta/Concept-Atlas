@@ -26,6 +26,18 @@ const Chat = (function () {
   // the self-check costs a second pass, so it is a choice — but it defaults on,
   // because an unchecked quotation is the failure this whole panel exists to avoid
   let verifyOn = (() => { try { return localStorage.getItem("atlas.chatVerify") !== "off"; } catch { return true; } })();
+  // what the endpoint actually accepts, learned once and reused by the meter
+  let ctxWindow = 0;
+
+  async function learnContextWindow() {
+    if (ctxWindow) return ctxWindow;
+    try {
+      const d = await api("/auth/provider");
+      const dep = d.deployment || {};
+      ctxWindow = dep.max_ctx_effective || dep.max_ctx || 0;
+    } catch (e) { /* the meter falls back to the configured figure */ }
+    return ctxWindow;
+  }
 
   const tok = () => { try { return localStorage.getItem(TOKEN_KEY) || ""; } catch { return ""; } };
   const setTok = (t) => { try { t ? localStorage.setItem(TOKEN_KEY, t) : localStorage.removeItem(TOKEN_KEY); } catch { /* private mode */ } };
@@ -62,6 +74,7 @@ const Chat = (function () {
       }
     }
     if (!user) return renderAuth();
+    learnContextWindow().then(w => { if (w) renderContext(); });
     await loadSessions();
     render();
   }
@@ -365,19 +378,25 @@ const Chat = (function () {
     if (!cur) { host.innerHTML = ""; return; }
     const items = cur.context || [];
     const chars = items.reduce((a, i) => a + (i.n_chars || 0), 0);
-    // the model's window in characters, at the same ratio the server budgets by
-    const cap = 550000 * 3.6 * 0.55;
+    // The model's window in characters, at the same ratio the server budgets
+    // by. This was hardcoded at 550k, which is what .env claims rather than
+    // what the engine serves: after vLLM restarted with 49,152 the meter told
+    // the reader a whole book would fit when the request would have been
+    // refused. ctxWindow is what the endpoint itself reports.
+    const win = ctxWindow || 550000;
+    const cap = win * 3.6 * 0.55;
     const pct = Math.min(100, (chars / cap) * 100);
+    const winLabel = win >= 1000 ? Math.round(win / 1000) + "k" : String(win);
     host.innerHTML = `
       <div class="ch-ctx-head">
         <h4>Context</h4>
         <button id="ch-add-ctx" class="ch-primary sm">+ Add to context</button>
       </div>
-      <div class="ch-ctx-meter" title="${chars.toLocaleString()} characters ≈ ${Math.round(chars / 3.6).toLocaleString()} tokens of a 550k window">
+      <div class="ch-ctx-meter${pct > 92 ? " full" : ""}" title="${chars.toLocaleString()} characters ≈ ${Math.round(chars / 3.6).toLocaleString()} tokens of a ${winLabel} window">
         <i style="width:${pct.toFixed(1)}%"></i>
       </div>
       <div class="ch-ctx-sub">${items.length} item${items.length === 1 ? "" : "s"} ·
-        ≈${Math.round(chars / 3.6).toLocaleString()} tokens of 550k</div>
+        ≈${Math.round(chars / 3.6).toLocaleString()} tokens of ${winLabel}</div>
       <div class="ch-ctx-list">
         ${items.length ? items.map(i => `
           <div class="ch-ctx-item">
@@ -681,6 +700,10 @@ const Chat = (function () {
     }
     if (hasR === undefined) hasR = (m.reasoning || "").trim().length > 0;
     return `
+      ${m.no_tools ? `<div class="ch-msg err ch-notools">This answer was written
+        <b>without the corpus tools</b> — the endpoint had tool calling switched off, so nothing
+        was searched and there are no citations. For vLLM, restart it with
+        <code>--enable-auto-tool-choice</code> and <code>--tool-call-parser</code>.</div>` : ""}
       ${traceHTML(m)}
       ${hasR ? `
         <details class="ch-reason"${dk((m._dk || "m") + ":reason", !!m._live)}>
@@ -1898,6 +1921,13 @@ const Chat = (function () {
         <code>${esc(dep.model || "?")}</code> at <code>${esc(dep.base_url || "?")}</code>,
         ${dep.max_output ? `replies capped at ${dep.max_output} tokens`
           : "replies not capped — the model stops when it is finished"}.</p>
+      ${dep.max_ctx_effective && dep.max_ctx && dep.max_ctx_effective < dep.max_ctx
+        ? `<div class="ch-msg err">The endpoint reports a
+             <b>${dep.max_ctx_effective.toLocaleString()}</b>-token window, but
+             <code>ATLAS_MAX_CTX</code> says ${dep.max_ctx.toLocaleString()}. Attached context is
+             budgeted from the smaller of the two, so nothing is offered that the model would
+             refuse &#8212; but the setting is stale and worth correcting in <code>.env</code>.</div>`
+        : ""}
       <form id="ch-prov-form">
         <label>Endpoint <span class="opt">any OpenAI-compatible base URL</span>
           <input name="base_url" placeholder="https://api.openai.com/v1"

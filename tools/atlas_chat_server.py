@@ -274,6 +274,55 @@ def append_message(sid: str, obj: dict) -> None:
         f.write(json.dumps(obj, ensure_ascii=False) + "\n")
 
 
+def _is_tooling_unsupported(err) -> bool:
+    t = str(err).lower()
+    return ("tool choice" in t and "requires" in t) or "enable-auto-tool-choice" in t \
+        or "tool_call_parser" in t or "tool-call-parser" in t
+
+
+def probe_context(base, key=None, model=None, timeout=8):
+    """What window the endpoint will actually accept.
+
+    ATLAS_MAX_CTX is a claim in a config file; the engine knows the truth, and
+    the two drift apart the moment vLLM is restarted with a different
+    --max-model-len. Budgeting attached context from the claim then offers the
+    reader far more than the model will take, and the turn fails at request
+    time with nothing useful said about why.
+    """
+    base = (base or "").rstrip("/")
+    if not base.endswith("/v1") and "/v1" not in base:
+        base += "/v1"
+    req = urllib.request.Request(
+        base + "/models",
+        headers={"Authorization": f"Bearer {key}"} if key else {})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            d = json.loads(r.read().decode("utf-8", "replace"))
+    except Exception:
+        return None
+    rows = d.get("data") or []
+    if model:
+        rows = [x for x in rows if x.get("id") == model] or rows
+    for x in rows:
+        n = x.get("max_model_len") or x.get("context_length") or x.get("context_window")
+        if isinstance(n, int) and n > 0:
+            return n
+    return None
+
+
+def effective_ctx(pv):
+    """The smaller of what is configured and what the endpoint reports."""
+    claimed = int(CFG["max_ctx"])
+    seen = CTX_SEEN.get(pv["base"] + "|" + pv["model"])
+    if seen is None:
+        seen = probe_context(pv["base"], pv.get("key"), pv["model"])
+        CTX_SEEN[pv["base"] + "|" + pv["model"]] = seen if seen else 0
+    return min(claimed, seen) if seen else claimed
+
+
+CTX_SEEN: dict[str, int] = {}
+
+
 def provider_for(user_id):
     """The endpoint this reader's requests should go to.
 
@@ -749,6 +798,14 @@ def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=30, max_tokens=N
             obj = {**obj, **tag}
         emit(obj)
 
+    # Some deployments serve a model without tool calling switched on — vLLM
+    # needs --enable-auto-tool-choice and a --tool-call-parser, and without
+    # them it rejects the whole request rather than ignoring the tools. That
+    # used to break Ask and Debate outright. Notice it once, say so, and carry
+    # on without tools: an answer from the attached context and the
+    # conversation is worth more than a 400.
+    tools_off = False
+
     for step in range(max_steps):
         # Tell it where it stands rather than cutting it off without warning.
         left = max_steps - step
@@ -766,8 +823,31 @@ def agent_turn(msgs, *, emit, cites, allow_web=False, max_steps=30, max_tokens=N
                 "rather than leaving it out.")})
         calls = None
         step_reasoning, step_content = [], []
-        for kind, chunk in vllm_stream(msgs, max_tokens=max_tokens, tools=schemas,
-                                       provider=provider):
+        try:
+            stream = vllm_stream(msgs, max_tokens=max_tokens,
+                                 tools=None if tools_off else schemas, provider=provider)
+            first = next(stream, None)
+        except RuntimeError as e:
+            if not tools_off and _is_tooling_unsupported(e):
+                tools_off = True
+                sink["tools_off"] = True     # so the saved turn can say why
+                send({"type": "note", "text": (
+                    "This endpoint has tool calling switched off, so the corpus tools are not "
+                    "available and this answer cannot be grounded in searched passages. For "
+                    "vLLM, restart it with --enable-auto-tool-choice and --tool-call-parser.")})
+                # The system prompt has been telling it to use tools, so left
+                # unsaid it writes a <tool_call> block out as prose. Say plainly
+                # that there are none.
+                msgs.append({"role": "user", "content": (
+                    "IMPORTANT: the tools described above are NOT available on this endpoint. "
+                    "Do not emit a tool call in any form — not as JSON, not in tags. Answer from "
+                    "the attached context and this conversation alone, and say openly that you "
+                    "could not search the corpus for this answer, so it carries no citations.")})
+                stream = vllm_stream(msgs, max_tokens=max_tokens, tools=None, provider=provider)
+                first = next(stream, None)
+            else:
+                raise
+        for kind, chunk in ([first] if first else []) + list(stream):
             if kind == "reasoning":
                 step_reasoning.append(chunk)
                 reasoning.append(chunk)
@@ -1289,9 +1369,12 @@ class Handler(BaseHTTPRequestHandler):
             r["has_key"] = bool(row and row["api_key"])
             return self._json(200, {
                 "provider": r,
-                "deployment": {"base_url": CFG["vllm"], "model": CFG["model"],
-                               "max_ctx": CFG["max_ctx"],
-                               "max_output": CFG.get("max_output")},
+                "deployment": {
+                    "base_url": CFG["vllm"], "model": CFG["model"],
+                    "max_ctx": CFG["max_ctx"],
+                    "max_ctx_effective": effective_ctx(
+                        {"base": CFG["vllm"], "key": CFG["api_key"], "model": CFG["model"]}),
+                    "max_output": CFG.get("max_output")},
             })
         m = re.fullmatch(r"/debates/([\w-]+)", p)
         if m:
@@ -2012,7 +2095,8 @@ class Handler(BaseHTTPRequestHandler):
         # false start into every later answer.
         cut = dropped_turns(sid)
         history = [h for i, h in enumerate(history) if i not in cut]
-        budget = int(CFG["max_ctx"] * CHARS_PER_TOKEN * 0.55)
+        ctx = effective_ctx(pv)
+        budget = int(ctx * CHARS_PER_TOKEN * 0.55)
         ctx_text, ctx_items = assemble_context(sid, budget)
 
         # This model's chat template accepts exactly one system message, at the
@@ -2154,6 +2238,9 @@ class Handler(BaseHTTPRequestHandler):
             "content": content,
             "reasoning": reasoning,
             "check": check_text,
+            # a turn answered without the corpus tools has to say so on reload,
+            # not only while it streams
+            "no_tools": bool(answer_sink.get("tools_off")),
             "ts": time.time(),
             "tools": trace,
             "sources": cites.as_list(),
