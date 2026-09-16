@@ -9,11 +9,11 @@
 *.bin
 
 # Models (weights are GB-scale; rebuild/download via scripts)
-models/GLM-OCR/
+models/GLM-OCR
 models/doctr/
 models/easyocr/
-models/hf-cache/
-models/Jasper-Token-Compression-600M/
+models/hf-cache
+models/Jasper-Token-Compression-600M
 models/jasper_index/embeddings.npy
 models/jasper_index/concepts.npy
 
