@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.6cm]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\captionsetup{font=small,labelfont=bf}
+\graphicspath{{figures/}}
+\input{generated/numbers}
+
+\newcommand{\concept}[1]{\textsc{#1}}
+\newcommand{\rel}[1]{\textsf{#1}}
+
+\title{Two Descriptions of the Same Shelf:\\
+       a curated concept map and a dense index over \NBooks{} works of\\
+       British moral philosophy, and where they disagree}
+
+\author{Concept Atlas project}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Concept Atlas holds \NPassages{} passages from \NBooks{} works of British moral
+philosophy printed between \YearMin{} and \YearMax{}, and describes them twice
+over. A curator built a map of \NConcepts{} concepts joined by \NAssertions{}
+typed relations. Separately, every passage was embedded into a
+2048-dimensional vector space that knows nothing of relations and records only
+which words keep company with which. The two were built independently, and
+comparing them is the subject of this paper.
+
+They agree in outline and part company in instructive ways. Once the
+direction every passage shares --- the subject matter itself --- is subtracted,
+concepts the map joins are markedly closer in vector space than concepts it
+does not (\CosLinked{} against \CosUnlinked{} mean cosine), so the curation is
+not arbitrary. But the vector space cannot hear a negation: pairs the curator
+marked \rel{opposes} sit at \CosOpposes{}, and pairs marked \rel{supports} at
+\CosSupports{} --- indistinguishable, and both far above the unlinked
+baseline. The geometry registers that two concepts belong to the same
+argument and has no access to which side of it they are on, which matters in a
+literature whose central disputes are oppositions. Running the comparison the
+other way turns the vectors into an auditor of the ontology: the closest pairs
+carrying no assertion at all are near-duplicate concepts, several at cosine
+above 0.98, which are candidates for merging.
+
+We report four further results from the same machinery. How connected a
+concept is in the map tracks how many books use it ($\rho=\RhoBookCount{}$)
+far more than the curator's own importance rating ($\rho=\RhoImportance{}$).
+Lexical and semantic retrieval over the same corpus return largely disjoint
+pages (mean Jaccard \MeanJaccard{} at $k=\RetrievalK{}$), and the vector index
+draws on roughly half as many books as BM25, narrowing what a reader sees
+without telling them. The vocabulary of moral sense appears from nothing and
+peaks in the quarter-century beginning \PeakMoralSense{}, while the words the
+period actually spent its time on --- reason, virtue, duty --- are not the ones
+it is remembered for introducing. And a method for recovering publication dates
+by reading imprints off the scans raised usable coverage from
+\CoverageBefore\% to \CoverageAfter\% of passages, after a first attempt
+produced its own cautionary result about believing digitised front matter.
+\end{abstract}
+
+\section{Introduction}
+
+A corpus can be described by a person or by a model, and the two descriptions
+are rarely compared, because they are rarely built over exactly the same text.
+Here they are. Concept Atlas is a working research system over British moral
+philosophy: \NBooks{} works, \NPassages{} passages, served with full-text
+search, a semantic index, a concept map and a retrieval agent. Two of its
+components are independent descriptions of the same shelf.
+
+The first is the concept map. A curator, working from the books, named
+\NConcepts{} concepts --- \concept{benevolence}, \concept{moral sense},
+\concept{self-love}, \concept{divine law} --- gave each a definition and a set
+of aliases, placed it in a three-level category tree, and asserted
+\NAssertions{} relations between them, each with a type
+(\rel{supports}, \rel{requires}, \rel{opposes}, \rel{contrasts\_with},
+\rel{underlies}, \rel{entails}) and a strength.
+
+The second is the vector index. Every passage was embedded with a
+sentence-transformer into 2048 dimensions and stored for nearest-neighbour
+search. Nothing about the concept map entered its construction. It is a
+distributional object in the sense of \citet{harris1954} and
+\citet{firth1957}: it knows that two passages use language the same way, and
+nothing else.
+
+Asking one to check the other is a small instance of a general question in
+digital humanities, where the interesting result is usually not that a method
+worked but that it disagreed with a human reading in some specific,
+diagnosable way \citep{underwood2019}. We ask three things of the pair.
+
+\begin{enumerate}
+\item Does the map's adjacency correspond to proximity in the vector space
+      at all, and how much?
+\item Does the correspondence hold across relation types --- in particular for
+      relations of opposition, where distributional methods are known to
+      struggle \citep{mohammad2013,nguyen2016}?
+\item Where the two disagree most sharply, what is the disagreement about?
+\end{enumerate}
+
+We also report three findings about the corpus itself that came out of the
+same machinery: what the two retrieval methods do differently
+(\S\ref{sec:retrieval}), how the moral vocabulary moves across the period
+(\S\ref{sec:diachrony}), and what separates the books by women from the books
+by men in this particular collection (\S\ref{sec:authorship}).
+
+\section{Corpus and system}
+\label{sec:corpus}
+
+\input{sections/corpus}
+
+\section{Reading the date off the page}
+\label{sec:dates}
+
+\input{sections/dates}
+
+\section{The anatomy of a hand-built map}
+\label{sec:graph}
+
+\input{sections/graph}
+
+\section{The map against the vectors}
+\label{sec:vectors}
+
+\input{sections/vectors}
+
+\section{Two retrievals over one corpus}
+\label{sec:retrieval}
+
+\input{sections/retrieval}
+
+\section{A vocabulary in motion}
+\label{sec:diachrony}
+
+\input{sections/diachrony}
+
+\section{Two collections}
+\label{sec:authorship}
+
+\input{sections/authorship}
+
+\section{Limitations}
+\label{sec:limits}
+
+\input{sections/limits}
+
+\section{Reproducing this}
+\label{sec:repro}
+
+\input{sections/repro}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}

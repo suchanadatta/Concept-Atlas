@@ -1,0 +1,450 @@
+{
+  "books_total": 197,
+  "dated_by_id": 139,
+  "recovered_from_title_page": 20,
+  "still_undated": 38,
+  "forms": {
+    "arabic": 17,
+    "roman": 3
+  },
+  "rejections": 38,
+  "rejection_reasons": {
+    "no imprint on the page": 28,
+    "matches the author's birth or death year": 10
+  },
+  "passage_coverage_before": 58669,
+  "passage_coverage_after": 73205,
+  "passages_total": 90975,
+  "recovered": {
+    "Burnet A Method of Devotion (part 1)": {
+      "year": 1708,
+      "page": 2,
+      "form": "arabic",
+      "string": "1708",
+      "imprint": true,
+      "modern_matter": false
+    },
+    "Burnet Selected Correspondence in Broad 2019": {
+      "year": 1690,
+      "page": 6,
+      "form": "arabic",
+      "string": "1690",
+      "imprint": true,
+      "modern_matter": false
+    },
+    "Hutcheson An Essay on the Nature and Conduct of the Passions and Affections with Illustrations on the Moral Sense": {
+      "year": 1740,
+      "page": 6,
+      "form": "arabic",
+      "string": "1740",
+      "imprint": true,
+      "modern_matter": true
+    },
+    "Hutcheson An Inquiry into the Original of our Ideas of Beauty and Virtue": {
+      "year": 1740,
+      "page": 6,
+      "form": "arabic",
+      "string": "1740",
+      "imprint": true,
+      "modern_matter": true
+    },
+    "Hutcheson Philosophiae Moralis Institutio Compendiaria with A Short Introduction to Moral Philosophy": {
+      "year": 1740,
+      "page": 6,
+      "form": "arabic",
+      "string": "1740",
+      "imprint": true,
+      "modern_matter": true
+    },
+    "Hutcheson System of Moral Philosophy vol. 1 (part 1)": {
+      "year": 1755,
+      "page": 2,
+      "form": "arabic",
+      "string": "1755",
+      "imprint": true,
+      "modern_matter": false
+    },
+    "Hutcheson The Meditations of Marcus Aurelius": {
+      "year": 1740,
+      "page": 6,
+      "form": "arabic",
+      "string": "1740",
+      "imprint": true,
+      "modern_matter": true
+    },
+    "Law A Discourse upon the Life and Character of Christ": {
+      "year": 1747,
+      "page": 3,
+      "form": "arabic",
+      "string": "1747",
+      "imprint": true,
+      "modern_matter": false
+    },
+    "Mandeville A Treatise on the Hypochondriack and the Hysterick Passions (part 1)": {
+      "year": 1711,
+      "page": 1,
+      "form": "arabic",
+      "string": "1711",
+      "imprint": true,
+      "modern_matter": false
+    },
+    "Masham A Discourse concerning the love of God": {
+      "year": 1696,
+      "page": 1,
+      "form": "arabic",
+      "string": "1696",
+      "imprint": true,
+      "modern_matter": false
+    },
+    "Masham Selected Correspondence in Broad 2019": {
+      "year": 1696,
+      "page": 1,
+      "form": "arabic",
+      "string": "1696",
+      "imprint": true,
+      "modern_matter": false
+    },
+    "Norris Two Treatises concerning the divine light": {
+      "year": 1692,
+      "page": 1,
+      "form": "arabic",
+      "string": "1692",
+      "imprint": true,
+      "modern_matter": false
+    },
+    "Pope Essay on Man Epistle III": {
+      "year": 1733,
+      "page": 2,
+      "form": "roman",
+      "string": "MDCC XXXIII",
+      "imprint": false,
+      "modern_matter": false
+    },
+    "Rutherforth An essay on the nature and obligations of virtue Part 1": {
+      "year": 1740,
+      "page": 7,
+      "form": "roman",
+      "string": "M.DCC.XL.",
+      "imprint": true,
+      "modern_matter": false
+    },
+    "Shaftesbury Characteristicks vol. 1 LF edition": {
+      "year": 1737,
+      "page": 4,
+      "form": "arabic",
+      "string": "1737",
+      "imprint": true,
+      "modern_matter": true
+    },
+    "Shaftesbury Characteristicks vol. 3 LF edition": {
+      "year": 1737,
+      "page": 4,
+      "form": "arabic",
+      "string": "1737",
+      "imprint": true,
+      "modern_matter": true
+    },
+    "Thomas Selected Correspondence in Broad 2020": {
+      "year": 1722,
+      "page": 1,
+      "form": "arabic",
+      "string": "1722",
+      "imprint": true,
+      "modern_matter": true
+    },
+    "Turnbull Education for Life": {
+      "year": 1747,
+      "page": 6,
+      "form": "arabic",
+      "string": "1747",
+      "imprint": true,
+      "modern_matter": true
+    },
+    "Turnbull Observations upon Liberal Education": {
+      "year": 1747,
+      "page": 6,
+      "form": "arabic",
+      "string": "1747",
+      "imprint": true,
+      "modern_matter": true
+    },
+    "Warburton A Critical and Philosophical Commentary on Mr Pope_s Essay on Man (part 2)": {
+      "year": 1742,
+      "page": 8,
+      "form": "roman",
+      "string": "MDCCXLII",
+      "imprint": true,
+      "modern_matter": false
+    }
+  },
+  "rejected": [
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1708,
+      "page": 1,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1694,
+      "page": 1,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1700,
+      "page": 1,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1690,
+      "page": 1,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1697,
+      "page": 1,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1690,
+      "page": 1,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1697,
+      "page": 2,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1697,
+      "page": 2,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1697,
+      "page": 2,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1697,
+      "page": 2,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1698,
+      "page": 2,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1699,
+      "page": 2,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Burnet Selected Correspondence in Broad 2019",
+      "year": 1697,
+      "page": 2,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Chudleigh The_Poems_and_Prose_of_Mary_Lady_Chudleigh_----_(The_Ladies_Defence_Or_The_Bride-Woman_s_Counsellor_Answer_d)",
+      "year": 1699,
+      "page": 3,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Chudleigh The_Poems_and_Prose_of_Mary_Lady_Chudleigh_----_(The_Ladies_Defence_Or_The_Bride-Woman_s_Counsellor_Answer_d)",
+      "year": 1699,
+      "page": 3,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Chudleigh The_Poems_and_Prose_of_Mary_Lady_Chudleigh_----_(The_Ladies_Defence_Or_The_Bride-Woman_s_Counsellor_Answer_d)",
+      "year": 1700,
+      "page": 3,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Chudleigh The_Poems_and_Prose_of_Mary_Lady_Chudleigh_----_(The_Ladies_Defence_Or_The_Bride-Woman_s_Counsellor_Answer_d)",
+      "year": 1683,
+      "page": 8,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Chudleigh The_Poems_and_Prose_of_Mary_Lady_Chudleigh_----_(The_Ladies_Defence_Or_The_Bride-Woman_s_Counsellor_Answer_d)",
+      "year": 1655,
+      "page": 8,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Chudleigh The_Poems_and_Prose_of_Mary_Lady_Chudleigh_----_(The_Ladies_Defence_Or_The_Bride-Woman_s_Counsellor_Answer_d)",
+      "year": 1620,
+      "page": 8,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Masham A Discourse concerning the love of God",
+      "year": 1658,
+      "page": 1,
+      "why": "matches the author's birth or death year"
+    },
+    {
+      "book": "Masham A Discourse concerning the love of God",
+      "year": 1708,
+      "page": 1,
+      "why": "matches the author's birth or death year"
+    },
+    {
+      "book": "Norris A collection of miscellanies",
+      "year": 1678,
+      "page": 4,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Norris Two Treatises concerning the divine light",
+      "year": 1657,
+      "page": 1,
+      "why": "matches the author's birth or death year"
+    },
+    {
+      "book": "Norris Two Treatises concerning the divine light",
+      "year": 1711,
+      "page": 1,
+      "why": "matches the author's birth or death year"
+    },
+    {
+      "book": "Shaftesbury Characteristicks vol. 1 LF edition",
+      "year": 1671,
+      "page": 4,
+      "why": "matches the author's birth or death year"
+    },
+    {
+      "book": "Shaftesbury Characteristicks vol. 1 LF edition",
+      "year": 1713,
+      "page": 4,
+      "why": "matches the author's birth or death year"
+    },
+    {
+      "book": "Shaftesbury Characteristicks vol. 3 LF edition",
+      "year": 1671,
+      "page": 4,
+      "why": "matches the author's birth or death year"
+    },
+    {
+      "book": "Shaftesbury Characteristicks vol. 3 LF edition",
+      "year": 1713,
+      "page": 4,
+      "why": "matches the author's birth or death year"
+    },
+    {
+      "book": "Turnbull The Principles of Moral and Christian Philosophy vol. 1",
+      "year": 1747,
+      "page": 6,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Turnbull The Principles of Moral and Christian Philosophy vol. 1",
+      "year": 1755,
+      "page": 6,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Turnbull The Principles of Moral and Christian Philosophy vol. 1",
+      "year": 1698,
+      "page": 6,
+      "why": "matches the author's birth or death year"
+    },
+    {
+      "book": "Turnbull The Principles of Moral and Christian Philosophy vol. 1",
+      "year": 1748,
+      "page": 6,
+      "why": "matches the author's birth or death year"
+    },
+    {
+      "book": "Turnbull The Principles of Moral and Christian Philosophy vol. 1",
+      "year": 1800,
+      "page": 6,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Turnbull The Principles of Moral and Christian Philosophy vol. 1",
+      "year": 1800,
+      "page": 6,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Turnbull The Principles of Moral and Christian Philosophy vol. 1",
+      "year": 1800,
+      "page": 6,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Turnbull The Principles of Moral and Christian Philosophy vol. 1",
+      "year": 1800,
+      "page": 6,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Turnbull The Principles of Moral and Christian Philosophy vol. 1",
+      "year": 1684,
+      "page": 6,
+      "why": "no imprint on the page"
+    },
+    {
+      "book": "Warburton A Critical and Philosophical Commentary on Mr Pope_s Essay on Man (part 2)",
+      "year": 1737,
+      "page": 3,
+      "why": "no imprint on the page"
+    }
+  ],
+  "failed": [
+    "WARBURTON_A-Vindication-of-the-Author-of-the-Divine-Legation-of-Moses",
+    "WARBURTON_Divine-legation-of-moses",
+    "Whartonia vol. 2",
+    "Astell Bartlemy Fair",
+    "Astell Christian Religion (part 1)",
+    "Burnet A Method of Devotion (part 2)",
+    "Campbell An Enquiry into the Original of Moral Virtue part 3",
+    "Chudleigh The_Poems_and_Prose_of_Mary_Lady_Chudleigh_----_(The_Ladies_Defence_Or_The_Bride-Woman_s_Counsellor_Answer_d)",
+    "Cockburn Works vol. 2 (part 3)",
+    "Trotter Love at a Loss",
+    "Cudworth A Treatise concerning Eternal and Immutable Morality (part 1)",
+    "Cudworth A Treatise concerning Eternal and Immutable Morality (part 2)",
+    "Hutcheson System of Moral Philosophy vol. 1 (part 2)",
+    "Hutcheson System of Moral Philosophy vol. 1 (part 3)",
+    "Law Considertions on the State of the World with regard to the Theory of Religion (part 1)",
+    "Masham Discourse_concerning_the_love_of_God",
+    "Masham Occasional Thoughts",
+    "Newcome the Plain Account of the Sacrament",
+    "Norris A Practical Treatise concerning Humility part 1",
+    "Norris A collection of miscellanies",
+    "Norris Spiritual Counsel or The Fathers Advice to his Children",
+    "Pope Essay on Man Epistle II",
+    "Pope Essay on Man Epistle IV",
+    "Rutherforth An essay on the nature and obligations of virtue Part 3",
+    "Rutherforth Institutes of Natural Law vol. 1 part 2",
+    "Rutherforth Institutes of Natural Law vol. 1 part 3",
+    "Rutherforth Institutes of Natural Law vol. 2 part 1",
+    "Rutherforth Institutes of Natural Law vol. 2 part 3",
+    "Shaftesbury Philosophical Regimen ed Rand",
+    "Gwinnett and Thomas Pylades and Corinna vol. 1 (part 2)",
+    "Thomas Miscellany Poems on Several Occasions",
+    "Turnbull The Principles of Moral and Christian Philosophy vol. 1",
+    "Warburton A Vindication of the Author of the Divine Legation of Moses",
+    "Warburton Divine Legation of Moses (part 2)",
+    "Watts Logick or the Right Use of Reason part 2",
+    "Watts The Improvement of the Mind (part 1)",
+    "Watts The Improvement of the Mind (part 2)",
+    "BERKELEY_0_1957_The-Works-of-George-Berkeley_9"
+  ]
+}

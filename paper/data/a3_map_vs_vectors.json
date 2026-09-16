@@ -1,0 +1,609 @@
+{
+  "concepts_with_both_vectors": 197,
+  "min_support": 20,
+  "pairs_compared": 19306,
+  "linked_pairs": 712,
+  "usage": {
+    "linked": {
+      "n": 712,
+      "mean": 0.4323,
+      "median": 0.4464,
+      "sd": 0.2458
+    },
+    "unlinked": {
+      "n": 18594,
+      "mean": 0.1207,
+      "median": 0.0917,
+      "sd": 0.2549
+    },
+    "mannwhitney_p": 0.0
+  },
+  "usage_uncentred": {
+    "linked": {
+      "n": 712,
+      "mean": 0.964,
+      "median": 0.9729,
+      "sd": 0.028
+    },
+    "unlinked": {
+      "n": 18594,
+      "mean": 0.9311,
+      "median": 0.9423,
+      "sd": 0.0451
+    }
+  },
+  "definition": {
+    "linked": {
+      "n": 712,
+      "mean": 0.5961,
+      "median": 0.5943,
+      "sd": 0.0831
+    },
+    "unlinked": {
+      "n": 18594,
+      "mean": 0.5134,
+      "median": 0.5097,
+      "sd": 0.0615
+    },
+    "mannwhitney_p": 0.0
+  },
+  "usage_vs_definition_spearman": {
+    "rho": 0.4476,
+    "p": 0.0
+  },
+  "by_relation": {
+    "develops_from": {
+      "n": 16,
+      "usage_mean": 0.6353,
+      "usage_sd": 0.2296,
+      "definition_mean": 0.6572,
+      "usage_vs_baseline": 0.5146,
+      "z_vs_unlinked": 2.019
+    },
+    "entails": {
+      "n": 40,
+      "usage_mean": 0.5977,
+      "usage_sd": 0.1872,
+      "definition_mean": 0.634,
+      "usage_vs_baseline": 0.4771,
+      "z_vs_unlinked": 1.872
+    },
+    "subsumes": {
+      "n": 33,
+      "usage_mean": 0.5595,
+      "usage_sd": 0.2429,
+      "definition_mean": 0.6504,
+      "usage_vs_baseline": 0.4388,
+      "z_vs_unlinked": 1.722
+    },
+    "underlies": {
+      "n": 80,
+      "usage_mean": 0.4926,
+      "usage_sd": 0.2031,
+      "definition_mean": 0.5992,
+      "usage_vs_baseline": 0.372,
+      "z_vs_unlinked": 1.459
+    },
+    "requires": {
+      "n": 237,
+      "usage_mean": 0.4604,
+      "usage_sd": 0.2244,
+      "definition_mean": 0.6002,
+      "usage_vs_baseline": 0.3398,
+      "z_vs_unlinked": 1.333
+    },
+    "exemplifies": {
+      "n": 40,
+      "usage_mean": 0.4551,
+      "usage_sd": 0.2417,
+      "definition_mean": 0.6322,
+      "usage_vs_baseline": 0.3345,
+      "z_vs_unlinked": 1.312
+    },
+    "contrasts_with": {
+      "n": 91,
+      "usage_mean": 0.4509,
+      "usage_sd": 0.2521,
+      "definition_mean": 0.6075,
+      "usage_vs_baseline": 0.3302,
+      "z_vs_unlinked": 1.295
+    },
+    "opposes": {
+      "n": 97,
+      "usage_mean": 0.4159,
+      "usage_sd": 0.2447,
+      "definition_mean": 0.6007,
+      "usage_vs_baseline": 0.2953,
+      "z_vs_unlinked": 1.158
+    },
+    "supports": {
+      "n": 311,
+      "usage_mean": 0.4138,
+      "usage_sd": 0.2451,
+      "definition_mean": 0.5802,
+      "usage_vs_baseline": 0.2932,
+      "z_vs_unlinked": 1.15
+    }
+  },
+  "nearest_but_unlinked": [
+    {
+      "a": "Lipsius Citation",
+      "b": "Seneca",
+      "usage_cos": 0.9998,
+      "definition_cos": 0.6613,
+      "support_a": 165,
+      "support_b": 164
+    },
+    {
+      "a": "Dominion",
+      "b": "Power",
+      "usage_cos": 0.9992,
+      "definition_cos": 0.668,
+      "support_a": 8274,
+      "support_b": 7964
+    },
+    {
+      "a": "Seneca",
+      "b": "Seneca Reference",
+      "usage_cos": 0.9956,
+      "definition_cos": 0.7235,
+      "support_a": 164,
+      "support_b": 170
+    },
+    {
+      "a": "Lipsius Citation",
+      "b": "Seneca Reference",
+      "usage_cos": 0.9953,
+      "definition_cos": 0.7631,
+      "support_a": 165,
+      "support_b": 170
+    },
+    {
+      "a": "Desire",
+      "b": "Love of Concupiscence",
+      "usage_cos": 0.9938,
+      "definition_cos": 0.6799,
+      "support_a": 4576,
+      "support_b": 3621
+    },
+    {
+      "a": "Evil",
+      "b": "Origin of Evil",
+      "usage_cos": 0.9929,
+      "definition_cos": 0.7621,
+      "support_a": 5422,
+      "support_b": 4010
+    },
+    {
+      "a": "Soul",
+      "b": "Spirit",
+      "usage_cos": 0.9915,
+      "definition_cos": 0.6625,
+      "support_a": 7997,
+      "support_b": 7949
+    },
+    {
+      "a": "Atheism",
+      "b": "Virtue and Atheism",
+      "usage_cos": 0.9883,
+      "definition_cos": 0.6639,
+      "support_a": 1232,
+      "support_b": 662
+    },
+    {
+      "a": "Sacrament",
+      "b": "Sacramental Remembrance",
+      "usage_cos": 0.9882,
+      "definition_cos": 0.7272,
+      "support_a": 574,
+      "support_b": 393
+    },
+    {
+      "a": "Fitness",
+      "b": "Moral Fitness",
+      "usage_cos": 0.9854,
+      "definition_cos": 0.8493,
+      "support_a": 540,
+      "support_b": 797
+    },
+    {
+      "a": "Classical Stoicism",
+      "b": "Stoicism",
+      "usage_cos": 0.9828,
+      "definition_cos": 0.7406,
+      "support_a": 689,
+      "support_b": 930
+    },
+    {
+      "a": "Character",
+      "b": "Character Development",
+      "usage_cos": 0.9751,
+      "definition_cos": 0.7584,
+      "support_a": 4186,
+      "support_b": 4927
+    },
+    {
+      "a": "Stoic and Senecan Reception",
+      "b": "Stoicism",
+      "usage_cos": 0.9686,
+      "definition_cos": 0.7346,
+      "support_a": 426,
+      "support_b": 930
+    },
+    {
+      "a": "Stoic Fate",
+      "b": "Stoic Virtue",
+      "usage_cos": 0.964,
+      "definition_cos": 0.697,
+      "support_a": 323,
+      "support_b": 344
+    },
+    {
+      "a": "Slavery",
+      "b": "Slavery and Subjection",
+      "usage_cos": 0.9599,
+      "definition_cos": 0.6767,
+      "support_a": 1198,
+      "support_b": 428
+    },
+    {
+      "a": "Classical Stoicism",
+      "b": "Stoic and Senecan Reception",
+      "usage_cos": 0.9594,
+      "definition_cos": 0.6893,
+      "support_a": 689,
+      "support_b": 426
+    },
+    {
+      "a": "Parental Authority",
+      "b": "Paternal Authority",
+      "usage_cos": 0.956,
+      "definition_cos": 0.8714,
+      "support_a": 48,
+      "support_b": 40
+    },
+    {
+      "a": "Punishment",
+      "b": "Reward and Punishment",
+      "usage_cos": 0.9488,
+      "definition_cos": 0.6929,
+      "support_a": 1906,
+      "support_b": 3435
+    },
+    {
+      "a": "Moral Obligation",
+      "b": "Obligation",
+      "usage_cos": 0.9419,
+      "definition_cos": 0.846,
+      "support_a": 2253,
+      "support_b": 4628
+    },
+    {
+      "a": "General Law",
+      "b": "Natural Law",
+      "usage_cos": 0.9415,
+      "definition_cos": 0.745,
+      "support_a": 1459,
+      "support_b": 1426
+    },
+    {
+      "a": "Disinterested Affection",
+      "b": "Disinterested Love",
+      "usage_cos": 0.9365,
+      "definition_cos": 0.7797,
+      "support_a": 374,
+      "support_b": 50
+    },
+    {
+      "a": "Stoic Virtue",
+      "b": "Stoicism",
+      "usage_cos": 0.9313,
+      "definition_cos": 0.6494,
+      "support_a": 344,
+      "support_b": 930
+    },
+    {
+      "a": "Private War",
+      "b": "War",
+      "usage_cos": 0.9282,
+      "definition_cos": 0.9238,
+      "support_a": 34,
+      "support_b": 160
+    },
+    {
+      "a": "General Law",
+      "b": "Law",
+      "usage_cos": 0.9267,
+      "definition_cos": 0.5817,
+      "support_a": 1459,
+      "support_b": 4070
+    },
+    {
+      "a": "Affection",
+      "b": "Natural Affection",
+      "usage_cos": 0.9265,
+      "definition_cos": 0.6875,
+      "support_a": 4427,
+      "support_b": 321
+    }
+  ],
+  "linked_but_distant": [
+    {
+      "a": "Moral Fitness",
+      "b": "Trinity",
+      "relations": [
+        "supports"
+      ],
+      "usage_cos": -0.2624,
+      "definition_cos": 0.5348
+    },
+    {
+      "a": "Sacrament",
+      "b": "Virtue",
+      "relations": [
+        "requires"
+      ],
+      "usage_cos": -0.2342,
+      "definition_cos": 0.5737
+    },
+    {
+      "a": "Character Development",
+      "b": "Esoteric Doctrine",
+      "relations": [
+        "supports"
+      ],
+      "usage_cos": -0.2266,
+      "definition_cos": 0.3759
+    },
+    {
+      "a": "Reason",
+      "b": "Sacrament",
+      "relations": [
+        "requires"
+      ],
+      "usage_cos": -0.2007,
+      "definition_cos": 0.5504
+    },
+    {
+      "a": "Habit",
+      "b": "Syllogism",
+      "relations": [
+        "supports"
+      ],
+      "usage_cos": -0.1448,
+      "definition_cos": 0.4274
+    },
+    {
+      "a": "Character",
+      "b": "Virtue and Atheism",
+      "relations": [
+        "exemplifies"
+      ],
+      "usage_cos": -0.1424,
+      "definition_cos": 0.6834
+    },
+    {
+      "a": "Hypochondriack Distemper",
+      "b": "Self-Government",
+      "relations": [
+        "opposes"
+      ],
+      "usage_cos": -0.14,
+      "definition_cos": 0.4253
+    },
+    {
+      "a": "Humility",
+      "b": "Stoicism",
+      "relations": [
+        "contrasts_with"
+      ],
+      "usage_cos": -0.1386,
+      "definition_cos": 0.5081
+    },
+    {
+      "a": "Marriage",
+      "b": "Self-Knowledge",
+      "relations": [
+        "requires"
+      ],
+      "usage_cos": -0.1345,
+      "definition_cos": 0.4858
+    },
+    {
+      "a": "Marriage",
+      "b": "Self-Government",
+      "relations": [
+        "supports"
+      ],
+      "usage_cos": -0.1198,
+      "definition_cos": 0.4259
+    },
+    {
+      "a": "Classical Stoicism",
+      "b": "Providence",
+      "relations": [
+        "supports"
+      ],
+      "usage_cos": -0.1101,
+      "definition_cos": 0.6617
+    },
+    {
+      "a": "Liberty",
+      "b": "Stoicism",
+      "relations": [
+        "supports"
+      ],
+      "usage_cos": -0.1038,
+      "definition_cos": 0.5383
+    },
+    {
+      "a": "Hypochondriack Distemper",
+      "b": "Reason",
+      "relations": [
+        "contrasts_with"
+      ],
+      "usage_cos": -0.092,
+      "definition_cos": 0.512
+    },
+    {
+      "a": "Atheism",
+      "b": "Virtue",
+      "relations": [
+        "opposes"
+      ],
+      "usage_cos": -0.0833,
+      "definition_cos": 0.6093
+    },
+    {
+      "a": "Marriage",
+      "b": "Virtue",
+      "relations": [
+        "requires"
+      ],
+      "usage_cos": -0.0818,
+      "definition_cos": 0.5287
+    },
+    {
+      "a": "Habit",
+      "b": "University Education",
+      "relations": [
+        "requires"
+      ],
+      "usage_cos": -0.0815,
+      "definition_cos": 0.3676
+    },
+    {
+      "a": "Fatalism",
+      "b": "Necessity",
+      "relations": [
+        "subsumes"
+      ],
+      "usage_cos": -0.0809,
+      "definition_cos": 0.6703
+    },
+    {
+      "a": "Immateriality",
+      "b": "Liberty",
+      "relations": [
+        "supports"
+      ],
+      "usage_cos": -0.0801,
+      "definition_cos": 0.5442
+    },
+    {
+      "a": "Providence",
+      "b": "Stoicism",
+      "relations": [
+        "supports"
+      ],
+      "usage_cos": -0.0793,
+      "definition_cos": 0.6226
+    },
+    {
+      "a": "Enthusiasm",
+      "b": "Virtue",
+      "relations": [
+        "contrasts_with"
+      ],
+      "usage_cos": -0.0787,
+      "definition_cos": 0.5549
+    },
+    {
+      "a": "Reason",
+      "b": "Trinity",
+      "relations": [
+        "requires"
+      ],
+      "usage_cos": -0.0736,
+      "definition_cos": 0.5377
+    },
+    {
+      "a": "Divine Law",
+      "b": "Miracle",
+      "relations": [
+        "opposes"
+      ],
+      "usage_cos": -0.0723,
+      "definition_cos": 0.6142
+    },
+    {
+      "a": "Habit",
+      "b": "Sacrament",
+      "relations": [
+        "supports"
+      ],
+      "usage_cos": -0.0688,
+      "definition_cos": 0.4593
+    },
+    {
+      "a": "Liberty",
+      "b": "Spirit",
+      "relations": [
+        "supports"
+      ],
+      "usage_cos": -0.0624,
+      "definition_cos": 0.5415
+    },
+    {
+      "a": "Liberty",
+      "b": "Soul",
+      "relations": [
+        "supports"
+      ],
+      "usage_cos": -0.0622,
+      "definition_cos": 0.5854
+    }
+  ],
+  "support_profile": {
+    "median_passages_per_concept": 833,
+    "largest": [
+      [
+        "Will",
+        23539
+      ],
+      [
+        "Happiness",
+        21693
+      ],
+      [
+        "Reason",
+        19332
+      ],
+      [
+        "Passion",
+        16424
+      ],
+      [
+        "Necessity",
+        9323
+      ],
+      [
+        "Virtue",
+        9163
+      ],
+      [
+        "Time",
+        8791
+      ],
+      [
+        "Dominion",
+        8274
+      ],
+      [
+        "Friendship",
+        8236
+      ],
+      [
+        "Soul",
+        7997
+      ]
+    ],
+    "below_threshold": [
+      "Coverture",
+      "Education of Women",
+      "Government of Passion",
+      "Intellect and Moral Sense",
+      "Limitation of Reason"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+Any claim about change over time needs dates, and \DatedById{} of the
+\NBooks{} book identifiers carry one, because they were filed as
+\texttt{AUTHOR\_YEAR\_Title}. The rest --- typed editions and rescans filed
+under a plain title --- carry none, and dropping them would have discarded a
+third of the corpus.
+
+Rather than supply dates from outside the collection, we read them out of it.
+Title pages print the year, in arabic or roman numerals, and they sit on the
+first few leaves. A first attempt simply took the earliest plausible year in
+the front matter, and it failed in a way worth recording, because it is the
+failure mode a digitised library invites. It dated Shaftesbury's
+\emph{Characteristicks} to 1671 --- his birth year, printed in a modern
+editor's note --- and gave four different works by Hutcheson the same year,
+1740, because all four are reproductions of a modern edition whose preface
+carries that date. Modern apparatus sits in front of the original title page
+and prints dates of its own, and the naive reader cannot tell the difference
+\citep{cordell2017}.
+
+The version used here accepts a year only when the page it sits on looks like
+a period title page, which in practice means an imprint line naming a place or
+a printer, or when the year is set in roman numerals, which modern front
+matter does not use. Any candidate equal to the author's own birth or death
+year, as recorded in the project's author registry, is refused outright. That
+refused \DatesRefused{} candidates and accepted \DatesRecovered{}, raising
+coverage from \CoverageBefore\% to \CoverageAfter\% of passages;
+\StillUndated{} works remain undated and are excluded from every analysis over
+time rather than guessed at.
+
+The method can be checked, because the books whose identifiers already carry a
+year also have title pages. Running the same reader over them gives
+\DateCheckN{} readable cases, of which \DateCheckExact{} match the catalogue
+year exactly (\DateCheckExactPct\%) and \DateCheckWithinOne{} fall within a
+year. That is a small validation set and we do not claim more from it than it
+can carry: the reader is precise when it fires and fires rarely, which is the
+behaviour we wanted.
+
+One caveat governs everything downstream. What a title page prints is the year
+of \emph{that impression}, not of first publication. A 1755 reprint of a 1725
+argument is dated here to 1755. For the vocabulary curves in
+\S\ref{sec:diachrony} this is arguably the right quantity --- it dates the
+copy a reader could have held --- but it compresses the early period and must
+not be read as a chronology of composition.

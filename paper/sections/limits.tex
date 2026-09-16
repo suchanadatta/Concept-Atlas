@@ -1,0 +1,47 @@
+\paragraph{The text is read by a machine and is imperfect.}
+\NOcr{} of the passages come from OCR of period printing, with long
+\textit{s}, broken type and catchwords. Dirty OCR does not corrupt these
+results evenly: it suppresses rare strings more than common ones
+\citep{cordell2017}, which means every rate reported in
+\S\ref{sec:diachrony} is a lower bound, and the rarer the term the more it is
+depressed.
+
+\paragraph{The collection is not a sample of anything.}
+It was assembled, not drawn. Conclusions of the form ``the period did X'' are
+not available from it; conclusions of the form ``this library does X'' are.
+The corpus thins after 1750, so the later bins rest on less evidence than the
+earlier ones, and the mid-century weight of Rutherforth, Turnbull and Balfour
+reflects what was scanned rather than what was read at the time.
+
+\paragraph{Dates are impressions, not compositions.}
+As \S\ref{sec:dates} sets out, a recovered date is the year of the copy, not
+of first publication. The effect is to push arguments later than their first
+appearance, compressing the early period.
+
+\paragraph{Concept occurrence is alias matching.}
+A concept counts as present in a passage when one of its curator-supplied
+aliases occurs there as a whole word. This misses paraphrase entirely and
+catches homonyms indiscriminately --- the map's own note on
+\concept{affection} warns that Rutherforth's ``affections'' are attributes of
+God and a different sense of the word, and nothing here distinguishes them.
+The usage vectors of \S\ref{sec:vectors} inherit this.
+
+\paragraph{The vector space is one model's opinion.}
+Every geometric claim is relative to one embedding model. A different encoder
+would move the numbers; we would expect the \emph{direction} of the opposition
+result to survive, since it follows from the distributional hypothesis rather
+than from any particular implementation of it, but that is a prediction, not a
+finding.
+
+\paragraph{One gap the system found itself.}
+Asked to compare Hutcheson's moral sense with Hume's sympathy and Smith's
+impartial spectator, the retrieval agent ran 29 searches and then reported,
+without being asked to check, that the index held ``limited direct text from
+Smith's \emph{Theory of Moral Sentiments}, primarily editorial apparatus and
+textual variants''. That is correct, and it is a real hole in the
+collection rather than a failure of retrieval. It is recorded here partly as a
+limitation and partly as evidence about the architecture: a retrieval agent
+with a verification tool will sometimes tell you that the thing you asked
+about is not in the library, which is the single most useful thing it can say
+and the one a similarity ranking can never say, because a ranking always
+returns its best twenty.

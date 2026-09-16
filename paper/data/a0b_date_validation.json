@@ -1,0 +1,117 @@
+{
+  "books_with_catalogue_year": 139,
+  "title_page_readable": 18,
+  "exact_match": 11,
+  "within_one_year": 13,
+  "page_later_than_catalogue": 2,
+  "page_earlier_than_catalogue": 3,
+  "exact_rate": 0.6111,
+  "within_one_rate": 0.7222,
+  "median_abs_delta": 0,
+  "by_form": {
+    "arabic": 12,
+    "roman": 6
+  },
+  "exact_by_form": {
+    "arabic": 7,
+    "roman": 4
+  },
+  "worst": [
+    {
+      "book": "BURNET-and-LOCKE_1696-1702_2019_Selected Correspondence",
+      "catalogue": 1696,
+      "page_year": 1708,
+      "delta": 12,
+      "form": "arabic",
+      "page": 1
+    },
+    {
+      "book": "WATTS_1733_Philosophical-essays",
+      "catalogue": 1733,
+      "page_year": 1742,
+      "delta": 9,
+      "form": "roman",
+      "page": 2
+    },
+    {
+      "book": "COCKBURN_1751_0_The-Works-of-Mrs-Catharine-Cockburn",
+      "catalogue": 1751,
+      "page_year": 1747,
+      "delta": -4,
+      "form": "arabic",
+      "page": 2
+    },
+    {
+      "book": "RUTHERFORTH_1744_0_An-Essay-on-the-Nature-and-Obligations-of-Virtue",
+      "catalogue": 1744,
+      "page_year": 1740,
+      "delta": -4,
+      "form": "roman",
+      "page": 7
+    },
+    {
+      "book": "LAW_1749_0_A-Discourse-upon-the-Life-and-Character-of-Christ",
+      "catalogue": 1749,
+      "page_year": 1747,
+      "delta": -2,
+      "form": "arabic",
+      "page": 3
+    },
+    {
+      "book": "CLARKE_1705_1706_A-Demonstration-of-the-Being-and-Attributes-of-God",
+      "catalogue": 1705,
+      "page_year": 1704,
+      "delta": -1,
+      "form": "arabic",
+      "page": 1
+    },
+    {
+      "book": "CLARKE_1706_1708_A-Discourse-concerning-the-unchangeable-Obligations-of-Natural-Religion",
+      "catalogue": 1706,
+      "page_year": 1705,
+      "delta": -1,
+      "form": "arabic",
+      "page": 1
+    },
+    {
+      "book": "BURNET_1708_A_Method_of_Devotion",
+      "catalogue": 1708,
+      "page_year": 1708,
+      "delta": 0,
+      "form": "arabic",
+      "page": 2
+    },
+    {
+      "book": "CLARKE_1708_0_A-Third-Defense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel",
+      "catalogue": 1708,
+      "page_year": 1708,
+      "delta": 0,
+      "form": "arabic",
+      "page": 1
+    },
+    {
+      "book": "CLARKE_1714_0_A-Reply-to-the-Objections-of-Robert-Nelson-Esq-and_of_an-anonymous-Author-against-Dr-Clarkes-Scripture-Doctrine-of-the-Trinity",
+      "catalogue": 1714,
+      "page_year": 1714,
+      "delta": 0,
+      "form": "arabic",
+      "page": 2
+    },
+    {
+      "book": "GWINNETT-and-THOMAS_1731_0_Pylades-and-Corinna",
+      "catalogue": 1731,
+      "page_year": 1731,
+      "delta": 0,
+      "form": "roman",
+      "page": 2
+    },
+    {
+      "book": "GWINNETT_and_THOMAS_1732_The_Honourable_Lovers",
+      "catalogue": 1732,
+      "page_year": 1732,
+      "delta": 0,
+      "form": "roman",
+      "page": 2
+    }
+  ]
+}

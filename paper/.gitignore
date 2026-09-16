@@ -1,0 +1,19 @@
+# The repository root ignores *.pdf, which is right for a corpus of scanned
+# books and wrong here: the figures are PDFs the build needs, and paper.pdf is
+# the deliverable. Both are re-included below.
+!figures/*.pdf
+!paper.pdf
+
+# LaTeX build products.
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+__pycache__/
+
+# 27 MB of concept-to-passage indices, rebuilt by a_support.py in a few minutes.
+data/concept_support.json

@@ -1,0 +1,271 @@
+{
+  "nodes": 202,
+  "edges": 728,
+  "density": 0.035860302448155267,
+  "components": 1,
+  "largest_component": 202,
+  "isolates": 0,
+  "mean_degree": 7.207920792079208,
+  "median_degree": 4,
+  "max_degree": 71,
+  "relations": {
+    "supports": 367,
+    "requires": 276,
+    "opposes": 121,
+    "contrasts_with": 107,
+    "underlies": 87,
+    "entails": 42,
+    "exemplifies": 42,
+    "subsumes": 38,
+    "develops_from": 16,
+    "influences": 3
+  },
+  "relation_share": {
+    "supports": 0.3339,
+    "requires": 0.2511,
+    "opposes": 0.1101,
+    "contrasts_with": 0.0974,
+    "underlies": 0.0792,
+    "entails": 0.0382,
+    "exemplifies": 0.0382,
+    "subsumes": 0.0346,
+    "develops_from": 0.0146,
+    "influences": 0.0027
+  },
+  "degree_assortativity": -0.23699675669092396,
+  "category_assortativity": null,
+  "top_categories": {
+    "Ethics": 48,
+    "Moral Psychology": 36,
+    "Theology": 30,
+    "Metaphysics": 30,
+    "Political Philosophy": 28,
+    "Epistemology": 19,
+    "Aesthetics": 8,
+    "Moral Philosophy": 2,
+    "Intellectual History": 1
+  },
+  "cross_category_edges": 450,
+  "cross_category_share": 0.6181,
+  "top_category_pairs": {
+    "Ethics <-> Moral Psychology": 84,
+    "Ethics <-> Theology": 54,
+    "Ethics <-> Political Philosophy": 46,
+    "Epistemology <-> Moral Psychology": 38,
+    "Metaphysics <-> Theology": 33,
+    "Moral Psychology <-> Theology": 20,
+    "Epistemology <-> Theology": 17,
+    "Ethics <-> Metaphysics": 17,
+    "Epistemology <-> Ethics": 14,
+    "Moral Psychology <-> Political Philosophy": 14
+  },
+  "hubs_by_degree": [
+    {
+      "id": "virtue",
+      "label": "Virtue",
+      "degree": 71,
+      "importance": 0.916,
+      "category": "Ethics"
+    },
+    {
+      "id": "liberty",
+      "label": "Liberty",
+      "degree": 60,
+      "importance": 0.877,
+      "category": "Political Philosophy"
+    },
+    {
+      "id": "reason",
+      "label": "Reason",
+      "degree": 51,
+      "importance": 0.903,
+      "category": "Epistemology"
+    },
+    {
+      "id": "habit",
+      "label": "Habit",
+      "degree": 49,
+      "importance": 0.85,
+      "category": "Moral Psychology"
+    },
+    {
+      "id": "providence",
+      "label": "Providence",
+      "degree": 49,
+      "importance": 0.845,
+      "category": "Theology"
+    },
+    {
+      "id": "divine_law",
+      "label": "Divine Law",
+      "degree": 27,
+      "importance": 0.865,
+      "category": "Theology"
+    },
+    {
+      "id": "passion",
+      "label": "Passion",
+      "degree": 27,
+      "importance": 0.875,
+      "category": "Moral Psychology"
+    },
+    {
+      "id": "self_love",
+      "label": "Self-Love",
+      "degree": 25,
+      "importance": 0.892,
+      "category": "Moral Psychology"
+    },
+    {
+      "id": "benevolence",
+      "label": "Benevolence",
+      "degree": 24,
+      "importance": 0.868,
+      "category": "Ethics"
+    },
+    {
+      "id": "obligation",
+      "label": "Obligation",
+      "degree": 24,
+      "importance": 0.863,
+      "category": "Ethics"
+    },
+    {
+      "id": "moral_sense",
+      "label": "Moral Sense",
+      "degree": 23,
+      "importance": 0.896,
+      "category": "Moral Philosophy"
+    },
+    {
+      "id": "education",
+      "label": "Education",
+      "degree": 21,
+      "importance": 0.852,
+      "category": "Moral Psychology"
+    }
+  ],
+  "bridges_by_betweenness": [
+    {
+      "id": "virtue",
+      "label": "Virtue",
+      "betweenness": 0.2538,
+      "degree": 71,
+      "category": "Ethics"
+    },
+    {
+      "id": "liberty",
+      "label": "Liberty",
+      "betweenness": 0.2406,
+      "degree": 60,
+      "category": "Political Philosophy"
+    },
+    {
+      "id": "reason",
+      "label": "Reason",
+      "betweenness": 0.1523,
+      "degree": 51,
+      "category": "Epistemology"
+    },
+    {
+      "id": "providence",
+      "label": "Providence",
+      "betweenness": 0.1255,
+      "degree": 49,
+      "category": "Theology"
+    },
+    {
+      "id": "habit",
+      "label": "Habit",
+      "betweenness": 0.1123,
+      "degree": 49,
+      "category": "Moral Psychology"
+    },
+    {
+      "id": "divine_law",
+      "label": "Divine Law",
+      "betweenness": 0.0606,
+      "degree": 27,
+      "category": "Theology"
+    },
+    {
+      "id": "passion",
+      "label": "Passion",
+      "betweenness": 0.0476,
+      "degree": 27,
+      "category": "Moral Psychology"
+    },
+    {
+      "id": "obligation",
+      "label": "Obligation",
+      "betweenness": 0.0452,
+      "degree": 24,
+      "category": "Ethics"
+    },
+    {
+      "id": "education",
+      "label": "Education",
+      "betweenness": 0.0341,
+      "degree": 21,
+      "category": "Moral Psychology"
+    },
+    {
+      "id": "moral_sense",
+      "label": "Moral Sense",
+      "betweenness": 0.0274,
+      "degree": 23,
+      "category": "Moral Philosophy"
+    },
+    {
+      "id": "benevolence",
+      "label": "Benevolence",
+      "betweenness": 0.0262,
+      "degree": 24,
+      "category": "Ethics"
+    },
+    {
+      "id": "stoicism",
+      "label": "Stoicism",
+      "betweenness": 0.0261,
+      "degree": 15,
+      "category": "Ethics"
+    }
+  ],
+  "communities": 5,
+  "modularity": 0.41471440647264823,
+  "community_sizes": [
+    44,
+    42,
+    40,
+    39,
+    37
+  ],
+  "assertions": 1099,
+  "distinct_pairs": 728,
+  "assertions_per_pair": 1.51,
+  "pairs_with_multiple_assertions": 237,
+  "pairs_with_conflicting_kinds": 182,
+  "top_relation_combinations": {
+    "requires + supports": 49,
+    "requires + supports + underlies": 15,
+    "requires + underlies": 14,
+    "contrasts_with + opposes": 11,
+    "contrasts_with + supports": 9,
+    "supports + underlies": 8,
+    "entails + requires": 7,
+    "exemplifies + supports": 5,
+    "exemplifies + subsumes": 5,
+    "opposes + requires": 5
+  },
+  "reciprocal_pairs": 200,
+  "importance_vs_degree_spearman": {
+    "rho": 0.1772,
+    "p": 0.011662249810362452,
+    "n": 202
+  },
+  "bookcount_vs_degree_spearman": {
+    "rho": 0.6352,
+    "p": 3.2283316787827574e-24,
+    "n": 202
+  }
+}

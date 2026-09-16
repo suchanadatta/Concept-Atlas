@@ -1,0 +1,23 @@
+Everything in this paper is generated. The analyses live in
+\texttt{paper/analysis/}; they write results as JSON into
+\texttt{paper/data/} and figures into \texttt{paper/figures/}, and
+\texttt{make\_numbers.py} turns that JSON into the LaTeX macros the prose
+uses. No number in the text was typed by hand; re-running the
+analysis rewrites the paper's numbers along with its figures.
+
+\begin{verbatim}
+make -C paper analysis   # recompute everything from the corpus
+make -C paper            # build paper.pdf
+make -C paper check      # fail on any LaTeX warning or bad box
+\end{verbatim}
+
+Two analyses call the live services (\texttt{/bm25}, \texttt{/semantic}) and
+need them running; the rest read the index files directly. The concept-to-
+passage index is expensive to build and is cached in
+\texttt{paper/data/concept\_support.json}, rebuilt with
+\texttt{a\_support.py --force}.
+
+The \texttt{check} target is the reason the build is worth automating. It
+fails on any LaTeX warning, any overfull or underfull box, any missing
+character and any unresolved reference --- the class of defect that otherwise
+ships silently in a PDF.

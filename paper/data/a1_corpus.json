@@ -1,0 +1,106 @@
+{
+  "passages": 90975,
+  "books": 197,
+  "books_dated": 139,
+  "year_min": 1650,
+  "year_max": 1823,
+  "by_source": {
+    "ocr": 72960,
+    "txt": 18015
+  },
+  "by_zone": {
+    "body": 81779,
+    "footnote": 8125,
+    "reference": 1014,
+    "table": 53,
+    "formula": 4
+  },
+  "decade_books": {
+    "1650": 1,
+    "1660": 1,
+    "1670": 2,
+    "1680": 8,
+    "1690": 20,
+    "1700": 26,
+    "1710": 12,
+    "1720": 10,
+    "1730": 26,
+    "1740": 15,
+    "1750": 11,
+    "1760": 1,
+    "1820": 6
+  },
+  "decade_passages": {
+    "1650": 660,
+    "1660": 32,
+    "1670": 2410,
+    "1680": 2933,
+    "1690": 4557,
+    "1700": 9239,
+    "1710": 5525,
+    "1720": 4511,
+    "1730": 11687,
+    "1740": 10187,
+    "1750": 6365,
+    "1760": 242,
+    "1820": 321
+  },
+  "passages_per_book": {
+    "min": 6,
+    "median": 341,
+    "max": 2674,
+    "largest": [
+      [
+        "Hutcheson Philosophiae Moralis Institutio Compendiaria with A Short Introduction to Moral Philosophy",
+        2674
+      ],
+      [
+        "Shaftesbury Philosophical Regimen ed Rand",
+        1914
+      ],
+      [
+        "Turnbull Education for Life",
+        1872
+      ],
+      [
+        "CLARKE_1712_0_The-Scripture-Doctrine-of-the-Trinity",
+        1773
+      ],
+      [
+        "WARBURTON_Divine-legation-of-moses",
+        1721
+      ]
+    ]
+  },
+  "author_groups": {
+    "men": {
+      "group": "men",
+      "authors": 24,
+      "books": 156,
+      "passages": 73648,
+      "pages": 19554
+    },
+    "women": {
+      "group": "women",
+      "authors": 10,
+      "books": 40,
+      "passages": 14524,
+      "pages": 5448
+    },
+    "joint": {
+      "group": "joint",
+      "authors": 2,
+      "books": 5,
+      "passages": 2401,
+      "pages": 1111
+    },
+    "unattributed": {
+      "group": "unattributed",
+      "authors": 1,
+      "books": 1,
+      "passages": 402,
+      "pages": 179
+    }
+  },
+  "authors": 37
+}

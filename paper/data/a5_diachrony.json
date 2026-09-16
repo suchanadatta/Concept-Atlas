@@ -1,0 +1,210 @@
+{
+  "bin_years": 25,
+  "bins": [
+    1650,
+    1675,
+    1700,
+    1725,
+    1750
+  ],
+  "passages_per_bin": {
+    "1650": 692,
+    "1675": 10847,
+    "1700": 17866,
+    "1725": 36406,
+    "1750": 7073
+  },
+  "books_per_bin": {
+    "1650": 2,
+    "1675": 34,
+    "1700": 44,
+    "1725": 60,
+    "1750": 13
+  },
+  "dated_passages": 73205,
+  "dated_books": 159,
+  "rates_per_1000_passages": {
+    "moral sense": {
+      "1650": 0.0,
+      "1675": 0.37,
+      "1700": 0.11,
+      "1725": 19.28,
+      "1750": 16.26
+    },
+    "sympathy": {
+      "1650": 7.23,
+      "1675": 3.96,
+      "1700": 0.9,
+      "1725": 4.5,
+      "1750": 10.6
+    },
+    "benevolence": {
+      "1650": 2.89,
+      "1675": 11.52,
+      "1700": 2.52,
+      "1725": 30.46,
+      "1750": 27.43
+    },
+    "self-love": {
+      "1650": 0.0,
+      "1675": 5.62,
+      "1700": 2.52,
+      "1725": 16.81,
+      "1750": 15.13
+    },
+    "conscience": {
+      "1650": 18.79,
+      "1675": 13.83,
+      "1700": 15.17,
+      "1725": 10.3,
+      "1750": 14.85
+    },
+    "utility": {
+      "1650": 2.89,
+      "1675": 3.13,
+      "1700": 1.68,
+      "1725": 8.35,
+      "1750": 12.44
+    },
+    "interest": {
+      "1650": 92.49,
+      "1675": 31.9,
+      "1700": 31.01,
+      "1725": 47.49,
+      "1750": 55.7
+    },
+    "obligation": {
+      "1650": 52.02,
+      "1675": 27.01,
+      "1700": 14.11,
+      "1725": 22.39,
+      "1750": 110.42
+    },
+    "the passions": {
+      "1650": 24.57,
+      "1675": 41.03,
+      "1700": 41.81,
+      "1725": 52.3,
+      "1750": 47.79
+    },
+    "reason": {
+      "1650": 179.19,
+      "1675": 176.18,
+      "1700": 142.11,
+      "1725": 141.95,
+      "1750": 167.96
+    },
+    "virtue": {
+      "1650": 36.13,
+      "1675": 14.29,
+      "1700": 37.39,
+      "1725": 114.98,
+      "1750": 123.57
+    },
+    "duty": {
+      "1650": 44.8,
+      "1675": 41.21,
+      "1700": 40.69,
+      "1725": 34.64,
+      "1750": 70.55
+    }
+  },
+  "profile": {
+    "moral sense": {
+      "peak_bin": 1725,
+      "peak_rate": 19.28,
+      "first_bin_rate": 0.0,
+      "last_bin_rate": 16.26,
+      "change": 16.26,
+      "ratio": null
+    },
+    "sympathy": {
+      "peak_bin": 1750,
+      "peak_rate": 10.6,
+      "first_bin_rate": 7.23,
+      "last_bin_rate": 10.6,
+      "change": 3.37,
+      "ratio": 1.47
+    },
+    "benevolence": {
+      "peak_bin": 1725,
+      "peak_rate": 30.46,
+      "first_bin_rate": 2.89,
+      "last_bin_rate": 27.43,
+      "change": 24.54,
+      "ratio": 9.49
+    },
+    "self-love": {
+      "peak_bin": 1725,
+      "peak_rate": 16.81,
+      "first_bin_rate": 0.0,
+      "last_bin_rate": 15.13,
+      "change": 15.13,
+      "ratio": null
+    },
+    "conscience": {
+      "peak_bin": 1650,
+      "peak_rate": 18.79,
+      "first_bin_rate": 18.79,
+      "last_bin_rate": 14.85,
+      "change": -3.94,
+      "ratio": 0.79
+    },
+    "utility": {
+      "peak_bin": 1750,
+      "peak_rate": 12.44,
+      "first_bin_rate": 2.89,
+      "last_bin_rate": 12.44,
+      "change": 9.55,
+      "ratio": 4.3
+    },
+    "interest": {
+      "peak_bin": 1650,
+      "peak_rate": 92.49,
+      "first_bin_rate": 92.49,
+      "last_bin_rate": 55.7,
+      "change": -36.79,
+      "ratio": 0.6
+    },
+    "obligation": {
+      "peak_bin": 1750,
+      "peak_rate": 110.42,
+      "first_bin_rate": 52.02,
+      "last_bin_rate": 110.42,
+      "change": 58.4,
+      "ratio": 2.12
+    },
+    "the passions": {
+      "peak_bin": 1725,
+      "peak_rate": 52.3,
+      "first_bin_rate": 24.57,
+      "last_bin_rate": 47.79,
+      "change": 23.22,
+      "ratio": 1.95
+    },
+    "reason": {
+      "peak_bin": 1650,
+      "peak_rate": 179.19,
+      "first_bin_rate": 179.19,
+      "last_bin_rate": 167.96,
+      "change": -11.23,
+      "ratio": 0.94
+    },
+    "virtue": {
+      "peak_bin": 1750,
+      "peak_rate": 123.57,
+      "first_bin_rate": 36.13,
+      "last_bin_rate": 123.57,
+      "change": 87.44,
+      "ratio": 3.42
+    },
+    "duty": {
+      "peak_bin": 1750,
+      "peak_rate": 70.55,
+      "first_bin_rate": 44.8,
+      "last_bin_rate": 70.55,
+      "change": 25.75,
+      "ratio": 1.57
+    }
+  }
+}

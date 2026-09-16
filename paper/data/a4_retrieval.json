@@ -1,0 +1,516 @@
+{
+  "k": 20,
+  "queries": 30,
+  "mean_jaccard": 0.1652,
+  "median_jaccard": 0.1517,
+  "mean_book_jaccard": 0.33,
+  "zero_overlap": [
+    "the passions"
+  ],
+  "most_divergent": [
+    {
+      "query": "the passions",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 0,
+      "jaccard": 0.0,
+      "books_lexical": 21,
+      "books_semantic": 11,
+      "book_jaccard": 0.2308
+    },
+    {
+      "query": "the will",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 1,
+      "jaccard": 0.0256,
+      "books_lexical": 29,
+      "books_semantic": 16,
+      "book_jaccard": 0.25
+    },
+    {
+      "query": "self-love",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 2,
+      "jaccard": 0.0625,
+      "books_lexical": 27,
+      "books_semantic": 14,
+      "book_jaccard": 0.1714
+    },
+    {
+      "query": "virtue",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 2,
+      "jaccard": 0.0625,
+      "books_lexical": 25,
+      "books_semantic": 13,
+      "book_jaccard": 0.3571
+    },
+    {
+      "query": "the impartial spectator",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0857,
+      "books_lexical": 24,
+      "books_semantic": 17,
+      "book_jaccard": 0.2812
+    },
+    {
+      "query": "happiness",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0882,
+      "books_lexical": 25,
+      "books_semantic": 15,
+      "book_jaccard": 0.25
+    },
+    {
+      "query": "human nature",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0882,
+      "books_lexical": 27,
+      "books_semantic": 12,
+      "book_jaccard": 0.1818
+    },
+    {
+      "query": "public good",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0882,
+      "books_lexical": 23,
+      "books_semantic": 13,
+      "book_jaccard": 0.2857
+    },
+    {
+      "query": "obligation",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0909,
+      "books_lexical": 23,
+      "books_semantic": 13,
+      "book_jaccard": 0.44
+    },
+    {
+      "query": "friendship",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0968,
+      "books_lexical": 26,
+      "books_semantic": 12,
+      "book_jaccard": 0.1875
+    }
+  ],
+  "most_agreed": [
+    {
+      "query": "utility",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 12,
+      "jaccard": 0.4286,
+      "books_lexical": 19,
+      "books_semantic": 12,
+      "book_jaccard": 0.55
+    },
+    {
+      "query": "approbation",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 11,
+      "jaccard": 0.3793,
+      "books_lexical": 19,
+      "books_semantic": 12,
+      "book_jaccard": 0.4762
+    },
+    {
+      "query": "sympathy",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 8,
+      "jaccard": 0.32,
+      "books_lexical": 23,
+      "books_semantic": 11,
+      "book_jaccard": 0.2593
+    },
+    {
+      "query": "conscience",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 9,
+      "jaccard": 0.3103,
+      "books_lexical": 26,
+      "books_semantic": 15,
+      "book_jaccard": 0.4138
+    },
+    {
+      "query": "pleasure",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 8,
+      "jaccard": 0.2759,
+      "books_lexical": 28,
+      "books_semantic": 14,
+      "book_jaccard": 0.4483
+    },
+    {
+      "query": "custom",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 7,
+      "jaccard": 0.25,
+      "books_lexical": 29,
+      "books_semantic": 16,
+      "book_jaccard": 0.3636
+    },
+    {
+      "query": "natural affection",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 7,
+      "jaccard": 0.2333,
+      "books_lexical": 23,
+      "books_semantic": 11,
+      "book_jaccard": 0.36
+    },
+    {
+      "query": "habit",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 6,
+      "jaccard": 0.2,
+      "books_lexical": 26,
+      "books_semantic": 11,
+      "book_jaccard": 0.3704
+    },
+    {
+      "query": "interest",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 6,
+      "jaccard": 0.1935,
+      "books_lexical": 28,
+      "books_semantic": 13,
+      "book_jaccard": 0.4138
+    },
+    {
+      "query": "moral sense",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 6,
+      "jaccard": 0.1935,
+      "books_lexical": 20,
+      "books_semantic": 11,
+      "book_jaccard": 0.4091
+    }
+  ],
+  "all": [
+    {
+      "query": "the passions",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 0,
+      "jaccard": 0.0,
+      "books_lexical": 21,
+      "books_semantic": 11,
+      "book_jaccard": 0.2308
+    },
+    {
+      "query": "the will",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 1,
+      "jaccard": 0.0256,
+      "books_lexical": 29,
+      "books_semantic": 16,
+      "book_jaccard": 0.25
+    },
+    {
+      "query": "self-love",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 2,
+      "jaccard": 0.0625,
+      "books_lexical": 27,
+      "books_semantic": 14,
+      "book_jaccard": 0.1714
+    },
+    {
+      "query": "virtue",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 2,
+      "jaccard": 0.0625,
+      "books_lexical": 25,
+      "books_semantic": 13,
+      "book_jaccard": 0.3571
+    },
+    {
+      "query": "the impartial spectator",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0857,
+      "books_lexical": 24,
+      "books_semantic": 17,
+      "book_jaccard": 0.2812
+    },
+    {
+      "query": "happiness",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0882,
+      "books_lexical": 25,
+      "books_semantic": 15,
+      "book_jaccard": 0.25
+    },
+    {
+      "query": "human nature",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0882,
+      "books_lexical": 27,
+      "books_semantic": 12,
+      "book_jaccard": 0.1818
+    },
+    {
+      "query": "public good",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0882,
+      "books_lexical": 23,
+      "books_semantic": 13,
+      "book_jaccard": 0.2857
+    },
+    {
+      "query": "obligation",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0909,
+      "books_lexical": 23,
+      "books_semantic": 13,
+      "book_jaccard": 0.44
+    },
+    {
+      "query": "friendship",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0968,
+      "books_lexical": 26,
+      "books_semantic": 12,
+      "book_jaccard": 0.1875
+    },
+    {
+      "query": "the deity",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 3,
+      "jaccard": 0.0968,
+      "books_lexical": 26,
+      "books_semantic": 13,
+      "book_jaccard": 0.2581
+    },
+    {
+      "query": "divine law",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 4,
+      "jaccard": 0.1176,
+      "books_lexical": 27,
+      "books_semantic": 14,
+      "book_jaccard": 0.3226
+    },
+    {
+      "query": "liberty",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 4,
+      "jaccard": 0.1176,
+      "books_lexical": 24,
+      "books_semantic": 13,
+      "book_jaccard": 0.3704
+    },
+    {
+      "query": "reason",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 4,
+      "jaccard": 0.1333,
+      "books_lexical": 29,
+      "books_semantic": 12,
+      "book_jaccard": 0.2812
+    },
+    {
+      "query": "duty",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 5,
+      "jaccard": 0.1471,
+      "books_lexical": 23,
+      "books_semantic": 13,
+      "book_jaccard": 0.44
+    },
+    {
+      "query": "benevolence",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 5,
+      "jaccard": 0.1562,
+      "books_lexical": 19,
+      "books_semantic": 14,
+      "book_jaccard": 0.4348
+    },
+    {
+      "query": "education",
+      "lexical_hits": 20,
+      "semantic_hits": 19,
+      "overlap": 5,
+      "jaccard": 0.1562,
+      "books_lexical": 25,
+      "books_semantic": 13,
+      "book_jaccard": 0.2258
+    },
+    {
+      "query": "private vice",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 6,
+      "jaccard": 0.1818,
+      "books_lexical": 24,
+      "books_semantic": 14,
+      "book_jaccard": 0.2258
+    },
+    {
+      "query": "beauty",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 6,
+      "jaccard": 0.1875,
+      "books_lexical": 21,
+      "books_semantic": 13,
+      "book_jaccard": 0.4167
+    },
+    {
+      "query": "justice",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 6,
+      "jaccard": 0.1875,
+      "books_lexical": 25,
+      "books_semantic": 13,
+      "book_jaccard": 0.2258
+    },
+    {
+      "query": "moral sense",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 6,
+      "jaccard": 0.1935,
+      "books_lexical": 20,
+      "books_semantic": 11,
+      "book_jaccard": 0.4091
+    },
+    {
+      "query": "interest",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 6,
+      "jaccard": 0.1935,
+      "books_lexical": 28,
+      "books_semantic": 13,
+      "book_jaccard": 0.4138
+    },
+    {
+      "query": "habit",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 6,
+      "jaccard": 0.2,
+      "books_lexical": 26,
+      "books_semantic": 11,
+      "book_jaccard": 0.3704
+    },
+    {
+      "query": "natural affection",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 7,
+      "jaccard": 0.2333,
+      "books_lexical": 23,
+      "books_semantic": 11,
+      "book_jaccard": 0.36
+    },
+    {
+      "query": "custom",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 7,
+      "jaccard": 0.25,
+      "books_lexical": 29,
+      "books_semantic": 16,
+      "book_jaccard": 0.3636
+    },
+    {
+      "query": "pleasure",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 8,
+      "jaccard": 0.2759,
+      "books_lexical": 28,
+      "books_semantic": 14,
+      "book_jaccard": 0.4483
+    },
+    {
+      "query": "conscience",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 9,
+      "jaccard": 0.3103,
+      "books_lexical": 26,
+      "books_semantic": 15,
+      "book_jaccard": 0.4138
+    },
+    {
+      "query": "sympathy",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 8,
+      "jaccard": 0.32,
+      "books_lexical": 23,
+      "books_semantic": 11,
+      "book_jaccard": 0.2593
+    },
+    {
+      "query": "approbation",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 11,
+      "jaccard": 0.3793,
+      "books_lexical": 19,
+      "books_semantic": 12,
+      "book_jaccard": 0.4762
+    },
+    {
+      "query": "utility",
+      "lexical_hits": 20,
+      "semantic_hits": 20,
+      "overlap": 12,
+      "jaccard": 0.4286,
+      "books_lexical": 19,
+      "books_semantic": 12,
+      "book_jaccard": 0.55
+    }
+  ]
+}
