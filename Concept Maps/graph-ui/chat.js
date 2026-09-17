@@ -750,9 +750,13 @@ const Chat = (function () {
     const cut = new Set((cur && cur.dropped) || []);
     const off = cut.has(i) ? " dropped" : "";
     const at = i == null ? "" : ` data-mi="${i}"`;
-    // each stored message needs its own key, or expanding one message's
-    // reasoning would expand every message's
-    if (i != null) m._dk = "mi" + i;
+    // Each stored message needs its own key, or expanding one message's
+    // reasoning would expand every message's. The key has to name the
+    // conversation too: keyed on index alone, opening the reasoning on the
+    // third message of one chat left it open on the third message of every
+    // other chat, so answers arrived buried under a wall of thinking the
+    // reader had never asked to see.
+    if (i != null) m._dk = "s" + ((cur && cur.session && cur.session.id) || "") + ":mi" + i;
     // Debates held before they became resumable were stored as one message
     // carrying a turns array. They still have to render.
     if (m.kind === "debate") return legacyDebateHTML(m, at, off);
@@ -1841,7 +1845,11 @@ const Chat = (function () {
     paintNow(true);          // one last full render, diagrams included
     // the reasoning panel keeps whatever the reader left it as; a finished
     // message defaults closed only if they never touched it
-    if (!openState.has("live:reason")) openState.set("live:reason", false);
+    // The thinking is worth watching while it happens and worth getting out of
+    // the way once it has: an eight-thousand-character reasoning panel left
+    // open pushes the answer off the screen entirely.
+    openState.set("live:reason", false);
+    openState.set("live:trace", false);
     setSendButton("send");
     await loadSessions();
     if (cur) await loadSession(cur.session.id);
