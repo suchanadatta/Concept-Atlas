@@ -1896,9 +1896,19 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
 
+        # As with a chat turn: losing the reader must not abandon the debate.
+        # Each speaker is persisted as it finishes, so a detached run is still
+        # there to resume or read when they return.
+        detached = {"yes": False}
+
         def emit(obj):
-            self.wfile.write(("data: " + json.dumps(obj, ensure_ascii=False) + "\n\n").encode())
-            self.wfile.flush()
+            if detached["yes"]:
+                return
+            try:
+                self.wfile.write(("data: " + json.dumps(obj, ensure_ascii=False) + "\n\n").encode())
+                self.wfile.flush()
+            except (BrokenPipeError, ConnectionResetError, OSError):
+                detached["yes"] = True
 
         # A resumed debate replays what was already said so the reader sees the
         # whole thing, and so the speakers argue against the real transcript.
@@ -2150,12 +2160,22 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
 
+        # A turn can run for eight minutes. If the reader navigates away, closes
+        # the tab or loses the tunnel in that time, the work should finish and
+        # be saved rather than being thrown away at whatever word it had
+        # reached -- they asked the question, and the answer is worth having
+        # when they come back. So the first failed write detaches the stream
+        # and the turn carries on writing to the transcript alone.
+        detached = {"yes": False}
+
         def emit(obj):
+            if detached["yes"]:
+                return
             try:
                 self.wfile.write(("data: " + json.dumps(obj, ensure_ascii=False) + "\n\n").encode())
                 self.wfile.flush()
-            except (BrokenPipeError, ConnectionResetError):
-                raise
+            except (BrokenPipeError, ConnectionResetError, OSError):
+                detached["yes"] = True
 
         approx_tokens = int(sum(len(m["content"]) for m in msgs) / CHARS_PER_TOKEN)
         emit({"type": "start", "context_items": len(ctx_items),

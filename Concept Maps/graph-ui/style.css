@@ -1881,3 +1881,8 @@ body.dark .docs-head{background:#2A2721;border-color:#3A362E}
      rather than out of anything anyone has to read. */
   #appbar{gap: 2px; padding: 0 6px}
 }
+
+/* The send button becomes the stop control while the agent is working, so a
+   turn that will run for minutes can always be called off. */
+#ch-send.stopping{background:#8C4A3F;border-color:#8C4A3F;color:#F6F1E5}
+#ch-send.stopping:hover{background:#7a4036;border-color:#7a4036}

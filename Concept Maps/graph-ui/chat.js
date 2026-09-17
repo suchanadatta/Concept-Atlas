@@ -382,30 +382,109 @@ const Chat = (function () {
 
   const KIND_ICON = { book: "📕", concept: "◈", passage: "❝", search: "🔍", note: "✎" };
 
+
+  // What the next request will actually carry. The server builds it as the
+  // system prompt, then the attached context (capped at 55% of the window),
+  // then the last 24 user/assistant messages that have not been dropped, then
+  // the new question. Reasoning and tool traces are never resent, so they are
+  // not counted here either.
+  let sysOverheadChars = 4200;      // corrected from the server on every turn
+
+  function historyChars() {
+    if (!cur) return 0;
+    const cut = new Set(cur.dropped || []);
+    const kept = (cur.messages || []).filter((m, i) => !cut.has(i));
+    return kept
+      .filter(m => (m.role === "user" || m.role === "assistant") && m.content)
+      .slice(-24)
+      .reduce((a, m) => a + m.content.length, 0);
+  }
+
+  function promptChars() {
+    const win = ctxWindow || 550000;
+    const items = (cur && cur.context) || [];
+    const raw = items.reduce((a, i) => a + (i.n_chars || 0), 0);
+    const budget = win * 3.6 * 0.55;          // the server's own attachment cap
+    const attached = Math.min(raw, budget);
+    const history = historyChars();
+    return { system: sysOverheadChars, attached, history, trimmed: raw > budget,
+             total: sysOverheadChars + attached + history };
+  }
+
+  // The start event reports what the prompt really came to. Use it to correct
+  // the one part we cannot see -- the system prompt and the tool schemas --
+  // so the bar converges on the truth instead of drifting from a guess.
+  function notePromptCost(d) {
+    const reported = (d && d.approx_prompt_tokens) ? d.approx_prompt_tokens * 3.6 : 0;
+    if (!reported) return;
+    const p = promptChars();
+    const rest = p.attached + p.history;
+    const overhead = reported - rest;
+    if (overhead > 200 && overhead < 200000) sysOverheadChars = Math.round(overhead);
+  }
+
+
+  // Repainting the whole side panel mid-stream would rebind every handler and
+  // fight the reader's scroll, so the bar alone is updated while an answer is
+  // arriving. The full panel is rendered at the turn boundaries as before.
+  function refreshCtxMeter() {
+    const el = document.querySelector(".ch-ctx-meter");
+    const sub = document.querySelector(".ch-ctx-sub");
+    if (!el || !cur) return;
+    const win = ctxWindow || 550000;
+    const p = promptChars();
+    const pct = Math.min(100, (p.total / (win * 3.6)) * 100);
+    const tk = n => Math.round(n / 3.6).toLocaleString();
+    const winLabel = win >= 1000 ? Math.round(win / 1000) + "k" : String(win);
+    const bar = el.querySelector("i");
+    if (bar) bar.style.width = pct.toFixed(1) + "%";
+    el.classList.toggle("full", pct > 92);
+    el.title = `≈${tk(p.total)} tokens of a ${winLabel} window\n` +
+               `· prompt and tools ≈${tk(p.system)}\n` +
+               `· attached ≈${tk(p.attached)}${p.trimmed ? " (trimmed to fit)" : ""}\n` +
+               `· conversation ≈${tk(p.history)}`;
+    if (sub) {
+      const items = (cur.context || []).length;
+      sub.innerHTML = `≈${tk(p.total)} tokens of ${winLabel} · ` +
+                      `${items} item${items === 1 ? "" : "s"} ≈${tk(p.attached)}t · ` +
+                      `conversation ≈${tk(p.history)}t`;
+    }
+  }
+
   function renderContext() {
     const host = $("chat-ctx");
     if (!cur) { host.innerHTML = ""; return; }
     const items = cur.context || [];
-    const chars = items.reduce((a, i) => a + (i.n_chars || 0), 0);
+    const attached = items.reduce((a, i) => a + (i.n_chars || 0), 0);
     // The model's window in characters, at the same ratio the server budgets
     // by. This was hardcoded at 550k, which is what .env claims rather than
     // what the engine serves: after vLLM restarted with 49,152 the meter told
     // the reader a whole book would fit when the request would have been
     // refused. ctxWindow is what the endpoint itself reports.
     const win = ctxWindow || 550000;
-    const cap = win * 3.6 * 0.55;
+    // The bar used to show attached items alone, against 55% of the window --
+    // the slice the server reserves for attachments. So a long conversation
+    // with nothing attached sat at zero however much of the window it was
+    // really using, which is the opposite of what the bar is for. It now
+    // measures the whole prompt: the system prompt, the attachments the server
+    // will actually fit, and the conversation being replayed with every turn.
+    const p = promptChars();
+    const chars = p.total;
+    const cap = win * 3.6;
     const pct = Math.min(100, (chars / cap) * 100);
     const winLabel = win >= 1000 ? Math.round(win / 1000) + "k" : String(win);
+    const tk = n => Math.round(n / 3.6).toLocaleString();
     host.innerHTML = `
       <div class="ch-ctx-head">
         <h4>Context</h4>
         <button id="ch-add-ctx" class="ch-primary sm">+ Add to context</button>
       </div>
-      <div class="ch-ctx-meter${pct > 92 ? " full" : ""}" title="${chars.toLocaleString()} characters ≈ ${Math.round(chars / 3.6).toLocaleString()} tokens of a ${winLabel} window">
+      <div class="ch-ctx-meter${pct > 92 ? " full" : ""}" title="≈${tk(chars)} tokens of a ${winLabel} window&#10;· prompt and tools ≈${tk(p.system)}&#10;· attached ≈${tk(p.attached)}${p.trimmed ? " (trimmed to fit)" : ""}&#10;· conversation ≈${tk(p.history)}">
         <i style="width:${pct.toFixed(1)}%"></i>
       </div>
-      <div class="ch-ctx-sub">${items.length} item${items.length === 1 ? "" : "s"} ·
-        ≈${Math.round(chars / 3.6).toLocaleString()} tokens of ${winLabel}</div>
+      <div class="ch-ctx-sub">≈${tk(chars)} tokens of ${winLabel} ·
+        ${items.length} item${items.length === 1 ? "" : "s"} ≈${tk(p.attached)}t ·
+        conversation ≈${tk(p.history)}t</div>
       <div class="ch-ctx-list">
         ${items.length ? items.map(i => `
           <div class="ch-ctx-item">
@@ -1615,6 +1694,31 @@ const Chat = (function () {
     if (stick) t.scrollTop = t.scrollHeight;
   }
 
+
+  // The send button doubles as the stop control while a turn is running.
+  let abortRun = null;
+
+  function setSendButton(mode) {
+    const btn = $("ch-send");
+    if (!btn) return;
+    if (mode === "stop") {
+      btn.disabled = false;
+      btn.textContent = "■ Stop";
+      btn.classList.add("stopping");
+      btn.title = "Stop the agent. What it has written so far is kept.";
+      btn.onclick = (e) => {
+        e.preventDefault();
+        if (abortRun) abortRun.abort();
+      };
+    } else {
+      btn.disabled = false;
+      btn.textContent = "Send";
+      btn.classList.remove("stopping");
+      btn.title = "";
+      btn.onclick = null;        // the form's submit handler takes over again
+    }
+  }
+
   /* ------------------------------------------------------------------ send */
   async function onSend(e) {
     e.preventDefault();
@@ -1624,29 +1728,53 @@ const Chat = (function () {
     if (!text || !cur) return;
     ta.value = ""; ta.style.height = "auto";
     streaming = true;
-    $("ch-send").disabled = true;
-    $("ch-send").textContent = "…";
+    // While the agent works the button stops the run rather than sitting
+    // greyed out: a turn can take eight minutes, and "…" gives the reader no
+    // way out of one they did not mean to start.
+    abortRun = new AbortController();
 
     cur.messages.push({ role: "user", content: text });
     const live = { role: "assistant", content: "", reasoning: "", check: "", tools: [],
                    sources: [], _live: true, _dk: "live" };
     cur.messages.push(live);
     renderThread();
+    // renderThread rebuilds the composer, so the button is switched after it
+    setSendButton("stop");
+    refreshCtxMeter();
     const thread = $("ch-thread");
     const node = thread.lastElementChild;
 
-    const paint = () => {
+    // Painting used to happen once per event. A long answer is five thousand
+    // events, and every one re-ran the markdown parser over the whole message
+    // and rebound every citation -- quadratic work that left the browser so
+    // far behind that text arrived in lurches with long dead patches between.
+    // Now at most one repaint per frame-ish interval, and the diagram pass is
+    // left until the end, where it belongs.
+    let paintPending = false, lastPaint = 0;
+    const PAINT_MS = 120;
+    const paintNow = (final) => {
+      lastPaint = Date.now();
+      paintPending = false;
       node.innerHTML = asstBodyHTML(live);
       applyDetails(node);
       wireCites(node);
-      drawMermaid(node);
+      if (final) drawMermaid(node);
       scrollDown();
       paintJump();
+      refreshCtxMeter();
+    };
+    const paint = () => {
+      if (paintPending) return;
+      const due = PAINT_MS - (Date.now() - lastPaint);
+      if (due <= 0) { paintNow(false); return; }
+      paintPending = true;
+      setTimeout(() => { if (paintPending) paintNow(false); }, due);
     };
 
     try {
       const r = await fetch("/book/api/chat/chat", {
         method: "POST",
+        signal: abortRun.signal,
         headers: { "Content-Type": "application/json", "X-Atlas-Token": tok() },
         // No output cap. The server leaves max_tokens out of the upstream
         // request unless something asks for a limit, and the 4096 that used to
@@ -1677,7 +1805,7 @@ const Chat = (function () {
           else if (d.type === "answer_replace") live.content = "";   // a corrected answer follows
           else if (d.type === "checked") live._checked = d.outcome;
           else if (d.type === "error") live.content += `\n\n_(${d.error})_`;
-          else if (d.type === "start") live._meta = d;
+          else if (d.type === "start") { live._meta = d; notePromptCost(d); }
           else if (d.type === "tool_call") live.tools.push({ name: d.name, args: d.args });
           else if (d.type === "tool_result") {
             // match the pending call rather than appending, so the trace shows
@@ -1692,16 +1820,29 @@ const Chat = (function () {
         }
       }
     } catch (err) {
-      live.content += `\n\n_(${err.message})_`;
+      // "Failed to fetch" on its own tells the reader nothing, and the thing
+      // they most want to know is whether the work was lost. It usually is
+      // not: the server saves whatever the turn produced before the
+      // connection went, so reopening the conversation brings it back.
+      const stopped = err && err.name === "AbortError";
+      const dropped = !stopped && /fetch|network|load failed/i.test(err.message || "");
+      live.content += stopped
+        ? `\n\n_(Stopped. What the agent had written up to here is saved.)_`
+        : dropped
+        ? `\n\n_(The connection dropped before the answer finished — usually the ` +
+          `server restarting or the tunnel reconnecting. Whatever had been written ` +
+          `is saved: reopen this conversation to see it.)_`
+        : `\n\n_(${err.message})_`;
       paint();
     }
     streaming = false;
+    abortRun = null;
     live._live = false;
+    paintNow(true);          // one last full render, diagrams included
     // the reasoning panel keeps whatever the reader left it as; a finished
     // message defaults closed only if they never touched it
     if (!openState.has("live:reason")) openState.set("live:reason", false);
-    const btn = $("ch-send");
-    if (btn) { btn.disabled = false; btn.textContent = "Send"; }
+    setSendButton("send");
     await loadSessions();
     if (cur) await loadSession(cur.session.id);
   }
