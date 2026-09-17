@@ -26,16 +26,25 @@ const Chat = (function () {
   // the self-check costs a second pass, so it is a choice — but it defaults on,
   // because an unchecked quotation is the failure this whole panel exists to avoid
   let verifyOn = (() => { try { return localStorage.getItem("atlas.chatVerify") !== "off"; } catch { return true; } })();
-  // what the endpoint actually accepts, learned once and reused by the meter
+  // What the endpoint actually accepts. This used to be learned once per page
+  // load and kept forever, which is wrong whenever the engine is restarted with
+  // a different window: a tab left open across a restart from 49,152 to 550,000
+  // went on telling the reader 49k, and the meter sized itself to a window that
+  // had not existed for hours. It is re-checked on a short interval instead, so
+  // a restart is picked up without a reload.
   let ctxWindow = 0;
+  let ctxLearnedAt = 0;
+  const CTX_TTL_MS = 60000;
 
-  async function learnContextWindow() {
-    if (ctxWindow) return ctxWindow;
+  async function learnContextWindow(force) {
+    const fresh = Date.now() - ctxLearnedAt < CTX_TTL_MS;
+    if (ctxWindow && fresh && !force) return ctxWindow;
     try {
       const d = await api("/auth/provider");
       const dep = d.deployment || {};
-      ctxWindow = dep.max_ctx_effective || dep.max_ctx || 0;
-    } catch (e) { /* the meter falls back to the configured figure */ }
+      const seen = dep.max_ctx_effective || dep.max_ctx || 0;
+      if (seen) { ctxWindow = seen; ctxLearnedAt = Date.now(); }
+    } catch (e) { /* keep the last figure we had; the meter still draws */ }
     return ctxWindow;
   }
 
