@@ -1007,6 +1007,39 @@ class BookAPI:
         return 200, "application/json", b'{"ok":true}'
 
 
+# The pages ship asset links like `chat.js?v=1788717937`. That number was typed
+# in once and then stopped tracking anything: by the time it was noticed, six of
+# the seven scripts had been edited since, chat.js by eight days. A browser
+# holding the old file has no way to know, and would keep running last week's
+# agent against this week's server.
+#
+# So the number is stamped here instead, from each file's own mtime, whenever
+# the page is served. Every asset gets its own version, and none of them can
+# drift again because nobody has to remember to bump anything.
+_ASSET_REF = re.compile(rb'(?P<file>[A-Za-z0-9_.\-]+\.(?:js|css|mjs))\?v=[0-9]+')
+
+
+def _stamp_assets(page_path: str, data: bytes, mtime: float):
+    """Rewrite ?v= on every local asset the page links, using its real mtime."""
+    root = os.path.dirname(page_path)
+    newest = mtime
+
+    def sub(m):
+        nonlocal newest
+        name = m.group("file").decode("ascii", "replace")
+        try:
+            st = os.stat(os.path.join(root, name))
+        except OSError:
+            return m.group(0)          # linked file is gone; leave the link be
+        newest = max(newest, st.st_mtime)
+        return b"%s?v=%d" % (m.group("file"), int(st.st_mtime))
+
+    stamped = _ASSET_REF.sub(sub, data)
+    # The page's own Last-Modified has to move too, or a browser holding the
+    # old HTML never asks for it again and never sees the new version numbers.
+    return stamped, newest
+
+
 class Handler(SimpleHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
     server_version = "ConceptAtlas/1.0"
@@ -1044,6 +1077,8 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_error(404, "Not Found")
             return
         ctype = self.guess_type(path)
+        if ctype == "text/html":
+            data, mtime = _stamp_assets(path, data, mtime)
         accept = self.headers.get("Accept-Encoding", "") or ""
         encoding = None
         if ctype in GZIP_TYPES and len(data) >= GZIP_MIN and "gzip" in accept:
