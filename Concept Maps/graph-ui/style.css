@@ -1848,3 +1848,36 @@ body.dark .docs-head{background:#2A2721;border-color:#3A362E}
 /* an answer written without the corpus tools says so on reload, not only live */
 .ch-notools{margin-bottom:10px}
 .ch-notools code{background:rgba(0,0,0,.12);border-radius:3px;padding:0 4px;font-size:11.5px}
+
+/* ---------------------------------------------------------------------------
+   Touch targets on a phone.
+
+   WCAG 2.2 asks for at least 24x24 CSS pixels on anything you tap. Measured at
+   390px wide, 82 controls came in under that -- almost all of them 22 or 23px
+   high, which is one shared style being a pixel or two short rather than 82
+   separate mistakes. The worst of it was the per-result "attach to chat"
+   button, 60 of them down a page of search results at 23px.
+
+   These sizes only change below 820px: on a mouse a 22px button is fine, and
+   growing every control on the desktop would cost a lot of vertical room in
+   the sidebars for no benefit.
+   ------------------------------------------------------------------------ */
+@media (max-width: 820px){
+  .ctx-btn, .gp-ctx, .mini, .ev-open, .ev-dl,
+  #sel-labels, #sel-ego{
+    min-height: 30px;
+  }
+  /* ev-dl is a single glyph, so it is narrow as well as short */
+  .ev-dl{min-width: 30px}
+  /* a range input's hit area is its height, not the track's */
+  #imp-slider, #str-slider{height: 30px}
+  /* a 13px checkbox is the smallest thing on the page */
+  #chk-cluster{width: 24px; height: 24px}
+
+  /* The account button sat 3px past the right edge -- not enough to make the
+     page scroll sideways, just enough to clip its own border. The bar wanted
+     399px of a 390px screen, and #app-nav will not shrink below its three
+     labels, so the nine pixels come out of the bar's own gaps and padding
+     rather than out of anything anyone has to read. */
+  #appbar{gap: 2px; padding: 0 6px}
+}
