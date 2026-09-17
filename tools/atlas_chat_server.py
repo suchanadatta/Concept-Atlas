@@ -1080,7 +1080,11 @@ def debate_state(did):
         if m.get("debate_id") != did:
             continue
         if m.get("kind") == "debate_turn":
-            turns.append(m)
+            # A turn cut off before it said anything is kept on disk for its
+            # trace, but it is not part of the debate and must not come back as
+            # an empty bubble when the session is reopened.
+            if (m.get("text") or "").strip():
+                turns.append(m)
         elif m.get("kind") == "debate_note":
             notes.append(m)
     sides = json.loads(row["sides"] or "[]")
@@ -1929,11 +1933,16 @@ class Handler(BaseHTTPRequestHandler):
         emit({"type": "debate_start", "debate_id": did, "motion": motion, "rounds": rounds,
               "sides": sides, "web": allow_web, "judge": judge, "model": pv["model"],
               "resumed": start_at > 0, "done_turns": start_at, "total_turns": len(plan),
-              "history": prior, "sources": cites.as_list()})
+              "history": [m for m in prior
+                          if m.get("kind") != "debate_turn" or (m.get("text") or "").strip()],
+              "sources": cites.as_list()})
 
+        # A turn cut off mid-search is kept for its trace but has no words, and
+        # must not be replayed as though the side had spoken.
         transcript = [{"side": m["side"], "round": m["round"], "phase": m["phase"],
                        "text": m.get("text") or ""}
-                      for m in prior if m.get("kind") == "debate_turn"]
+                      for m in prior
+                      if m.get("kind") == "debate_turn" and (m.get("text") or "").strip()]
         mod_seen = [m for m in prior if m.get("kind") == "debate_note"]
         interrupted = False
         spoke = 0
@@ -2017,13 +2026,24 @@ class Handler(BaseHTTPRequestHandler):
                            budget_secs=turn_secs, provider=pv)
             finally:
                 text = "".join(sink.get("content") or [])
-                if text.strip() or sink.get("trace"):
+                # A speaker that was cut off while still searching has a trace
+                # but nothing to say. Recording that as a finished turn was
+                # losing the argument outright: the schedule advanced, and on
+                # resume the side's opening was skipped and never written. So
+                # the turn only counts as spoken once there are words in it.
+                # The trace is still kept, so the work that was done is visible
+                # and the resumed turn starts from a warm cache rather than
+                # repeating every search.
+                spoken = bool(text.strip())
+                if spoken or sink.get("trace"):
                     rec = {"role": "assistant", "kind": "debate_turn", "debate_id": did,
                            "side": slot["side"], "round": slot["round"], "phase": slot["phase"],
                            "text": text, "reasoning": "".join(sink.get("reasoning") or []),
                            "tools": sink.get("trace") or [],
-                           "sources": cites.as_list(), "ts": time.time()}
+                           "sources": cites.as_list(), "ts": time.time(),
+                           "incomplete": not spoken}
                     append_message(sid, rec)
+                if spoken:
                     transcript.append({"side": slot["side"], "round": slot["round"],
                                        "phase": slot["phase"], "text": text})
                     if notes:

@@ -1639,8 +1639,12 @@ const Chat = (function () {
       const r = await fetch("/book/api/chat/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json", "X-Atlas-Token": tok() },
+        // No output cap. The server leaves max_tokens out of the upstream
+        // request unless something asks for a limit, and the 4096 that used to
+        // sit here was silently truncating long answers -- the one place in
+        // the stack that still imposed a ceiling.
         body: JSON.stringify({ session_id: cur.session.id, message: text,
-                               max_tokens: 4096, allow_web: webOn, verify: verifyOn }),
+                               allow_web: webOn, verify: verifyOn }),
       });
       if (!r.ok || !r.body) throw new Error((await r.json().catch(() => ({}))).error || `HTTP ${r.status}`);
       const rd = r.body.getReader();
