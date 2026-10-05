@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Concept Atlas — British Moral Philosophy</title>
+<link rel="stylesheet" href="vendor/fonts.css">
+<link rel="stylesheet" href="style.css?v=1788717937">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23C15B5B'/%3E%3Ccircle cx='6' cy='8' r='3.4' fill='%234E79A7'/%3E%3Ccircle cx='26' cy='7' r='3' fill='%235FA052'/%3E%3Ccircle cx='25' cy='25' r='3.2' fill='%23D9A441'/%3E%3Cpath d='M16 16L6 8M16 16L26 7M16 16L25 25' stroke='%23948B7B' stroke-width='1'/%3E%3C/svg%3E">
+</head>
+<body>
+<script src="theme.js?v=1788717937"></script>
+<script src="nav.js?v=1788717937"></script>
+<!-- One global bar across every view: identity, the three places the app
+     actually goes, and the account. Before this there were three disjoint
+     navigation surfaces (landing, results, graph) and the account lived
+     inside the chat panel, so signing in meant opening Ask first. -->
+<div id="appbar">
+  <button id="app-brand" title="Back to search">
+    <svg width="17" height="17" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="7" fill="#C15B5B"/><circle cx="6" cy="8" r="3.4" fill="#4E79A7"/><circle cx="26" cy="7" r="3" fill="#5FA052"/><circle cx="25" cy="25" r="3.2" fill="#D9A441"/><path d="M16 16L6 8M16 16L26 7M16 16L25 25" stroke="#948B7B" stroke-width="1.4"/></svg>
+    <span>Concept Atlas</span>
+  </button>
+  <nav id="app-nav" aria-label="Main">
+    <button id="nav-search" data-view="search">Search</button>
+    <button id="nav-map" data-view="map">Concept map</button>
+    <button id="nav-ask" data-view="ask">&#128172; Ask</button>
+  </nav>
+  <span class="app-spacer"></span>
+  <button id="btn-authors" class="app-btn" title="Who wrote the corpus">Authors</button>
+  <a href="docs.html" id="btn-docs" class="app-btn" title="Documentation">Docs</a>
+  <button id="btn-help" class="app-btn app-icon" title="Keyboard shortcuts">?</button>
+  <button id="btn-theme" class="app-btn app-icon" title="Toggle dark mode">&#127769;</button>
+  <span id="app-account"></span>
+</div>
+
+<header id="topbar">
+  <div class="brand">
+    <h1>Concept map</h1>
+    <p class="tagline"><span id="stat-books">–</span> sources · <span id="stat-nodes">–</span> concepts · <span id="stat-edges">–</span> relations</p>
+  </div>
+  <div class="searchbox" id="searchbox">
+    <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input id="search" type="text" placeholder="Find a concept in the map…  ( / )&#10;Enter searches the whole corpus" autocomplete="off" spellcheck="false" title="Type to jump to a concept. Press Enter with nothing selected to search all 90,975 passages instead.">
+    <div id="suggestions" class="suggestions hidden"></div>
+  </div>
+  <nav class="modes">
+    <button id="tab-filters" class="mode-btn active">Explore</button>
+    <button id="tab-queries" class="mode-btn">Queries <span class="count" id="stat-queries">–</span></button>
+    <span class="mode-sep"></span>
+    <button id="btn-compare" class="mode-btn" title="Compare concepts side-by-side">⇄ Compare</button>
+    <span class="mode-sep"></span>
+    <button id="btn-2d" class="mode-btn view-btn active" title="2D canvas view">2D</button>
+    <button id="btn-3d" class="mode-btn view-btn" title="3D WebGL view">3D</button>
+  </nav>
+</header>
+
+<main>
+  <aside id="sidebar">
+    <!-- Explore tab -->
+    <section id="panel-filters" class="panel">
+      <div class="sec">
+        <h3>Categories</h3>
+        <div id="cat-list" class="cat-list"></div>
+        <div class="row-mini"><button id="cats-all" class="mini">all</button><button id="cats-none" class="mini">none</button></div>
+      </div>
+      <!-- The registry carries the sex of every author, and the concept map
+           records which book each concept's evidence came from, so the two
+           together answer which parts of the map each group of writers
+           actually reaches. -->
+      <div class="sec">
+        <h3>Written by <span id="writer-val" class="val">all</span></h3>
+        <div id="writer-list" class="writer-list"></div>
+        <p class="hint" id="writer-note"></p>
+      </div>
+      <div class="sec">
+        <h3>Importance <span id="imp-val" class="val">≥ 0.00</span></h3>
+        <input id="imp-slider" type="range" min="0" max="100" value="0">
+      </div>
+      <div class="sec">
+        <h3>Relation strength <span id="str-val" class="val">≥ 0.00</span></h3>
+        <input id="str-slider" type="range" min="0" max="100" value="0">
+      </div>
+      <div class="sec">
+        <h3>Layout</h3>
+        <label class="check"><input id="chk-cluster" type="checkbox" checked> Cluster by category</label>
+        <label class="check">Labels
+          <select id="sel-labels">
+            <option value="few">few</option>
+            <option value="standard" selected>standard</option>
+            <option value="all">many</option>
+          </select>
+        </label>
+        <label class="check">Neighborhood
+          <select id="sel-ego" title="On concept click: show only its neighborhood">
+            <option value="0" selected>full graph</option>
+            <option value="1">1-hop only</option>
+            <option value="2">2-hop</option>
+          </select>
+        </label>
+        <div class="row-mini">
+          <button id="btn-fit" class="mini">fit view</button>
+          <button id="btn-spread" class="mini" title="Spread nodes further apart">⤢ spread</button>
+          <button id="btn-reheat" class="mini">re-run layout</button>
+        </div>
+      </div>
+      <div class="sec">
+        <h3>Relations</h3>
+        <div id="rel-legend" class="rel-legend"></div>
+      </div>
+    </section>
+
+    <!-- Queries tab -->
+    <section id="panel-queries" class="panel hidden">
+      <div class="sec">
+        <h3>Corpus queries <button id="btn-clear-query" class="mini hidden">clear</button></h3>
+        <p class="hint"><span id="stat-queries-2">–</span> research queries the concept map was built against. Selecting one highlights its top-ranked concepts.</p>
+        <input id="query-filter" type="text" placeholder="Filter queries…" autocomplete="off">
+      </div>
+      <div id="query-list" class="query-list"></div>
+    </section>
+  </aside>
+
+  <div id="stage">
+    <canvas id="graph"></canvas>
+    <div id="graph3d" class="hidden"></div>
+    <div id="tooltip" class="tooltip hidden"></div>
+    <div id="statusbar">
+      <span id="status-text">loading…</span>
+      <span id="query-banner" class="hidden"></span>
+    </div>
+    <div class="zoomctl">
+      <button id="zoom-in" title="Zoom in">+</button>
+      <button id="zoom-out" title="Zoom out">−</button>
+    </div>
+  </div>
+
+  <aside id="detail" class="hidden"></aside>
+
+
+  <!-- Floating concept-graph window -->
+  <div id="graph-float" class="hidden" style="width:520px;height:400px;top:80px;right:60px;">
+    <div class="gf-bar" id="gf-bar">
+      <span class="gf-title">Concept graph</span>
+      <button id="gf-mode" title="Flip: static concept map ↔ dynamic query graph">⇄ static</button>
+      <button id="gf-expand" title="Full view">⛶</button>
+      <button id="gf-close" title="Close">×</button>
+    </div>
+    <div class="gf-body" id="gf-body"><canvas id="gf-canvas"></canvas></div>
+  </div>
+
+  <!-- Book Reader overlay -->
+  <div id="reader" class="hidden docked">
+    <div id="reader-toolbar">
+      <button id="reader-close" class="rb rb-icon" title="Close (Esc)" aria-label="Close reader">&#215;</button>
+      <span id="reader-title" class="reader-title"></span>
+
+      <span class="rgroup" role="group" aria-label="Page navigation">
+        <button id="reader-prev" class="rb rb-icon" title="Previous page (&#8592;)" aria-label="Previous page"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 3L5 8l5 5"/></svg></button>
+        <span class="rpage"><input id="reader-jump" type="number" min="1" value="1" aria-label="Go to page"><span class="rslash">/</span><span id="reader-page-total">&#8211;</span></span>
+        <button id="reader-next" class="rb rb-icon" title="Next page (&#8594;)" aria-label="Next page"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></button>
+      </span>
+
+      <span class="rgroup" role="group" aria-label="Zoom">
+        <button id="reader-zoom-out" class="rb rb-icon" title="Zoom out (&#8722;)" aria-label="Zoom out"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10"/></svg></button>
+        <button id="reader-zoom-fit" class="rb rb-zoom" title="Fit page to the pane (0)"><span id="reader-zoom-label">100%</span></button>
+        <button id="reader-zoom-in" class="rb rb-icon" title="Zoom in (+)" aria-label="Zoom in"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></button>
+      </span>
+
+      <span class="rsearch">
+        <svg class="rsearch-i" width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="7" r="4.5"/><path d="M13 13l-2.6-2.6" stroke-linecap="round"/></svg>
+        <input id="reader-search" type="text" placeholder="Search in this book&#8230;" aria-label="Search in this book">
+        <button id="reader-search-go" class="rb rb-go" title="Search in this book">Find</button>
+      </span>
+
+      <button id="reader-annot-toggle" class="rb rb-icon" title="Draw annotations" aria-label="Draw annotations">&#9998;</button>
+      <button id="reader-side-toggle" class="rb rb-icon" title="Show / hide the notes &amp; page-text pane" aria-label="Toggle side pane">&#9707;</button>
+      <span class="rmenu">
+        <button id="reader-ctx" class="rb rb-icon" title="Attach this book or page to the chat context" aria-haspopup="true" aria-expanded="false" aria-label="Add to chat context">&#128172;</button>
+        <div id="reader-ctx-menu" class="rmenu-pop ctx-pop hidden" role="dialog" aria-label="Add to chat context">
+          <div class="rmenu-h">Add to the chat context</div>
+          <div id="ctx-what" class="ctx-what">&#8211;</div>
+          <label class="ctx-opt"><input type="radio" name="ctxrange" value="page" checked><span>This page <b id="ctx-p1">&#8211;</b></span></label>
+          <label class="ctx-opt"><input type="radio" name="ctxrange" value="near"><span>Around it <b id="ctx-p2">&#8211;</b></span></label>
+          <label class="ctx-opt"><input type="radio" name="ctxrange" value="all"><span>Whole book <b id="ctx-p3">&#8211;</b></span></label>
+          <label class="ctx-opt"><input type="radio" name="ctxrange" value="custom"><span>Pages</span>
+            <input id="ctx-from" class="ctx-num" type="number" min="1" aria-label="From page">
+            <span class="ctx-dash">&#8211;</span>
+            <input id="ctx-to" class="ctx-num" type="number" min="1" aria-label="To page"></label>
+          <label class="ctx-opt" id="ctx-notes-row"><input type="checkbox" id="ctx-notes"><span>Also attach my notes on this book</span></label>
+          <div class="ctx-foot">
+            <span id="ctx-est" class="ctx-est"></span>
+            <button id="ctx-add" class="rb rb-go">Add</button>
+          </div>
+        </div>
+      </span>
+
+      <span class="rmenu">
+        <button id="reader-more" class="rb rb-icon" title="Downloads &amp; exports" aria-haspopup="true" aria-expanded="false">&#8943;</button>
+        <div id="reader-more-menu" class="rmenu-pop hidden" role="menu">
+          <div class="rmenu-h">Download the source</div>
+          <button id="reader-download-pdf" role="menuitem">PDF scan</button>
+          <button id="reader-download-txt" role="menuitem">Plain text</button>
+          <button id="reader-download-md" role="menuitem">Markdown</button>
+          <button id="reader-download-jsonl" role="menuitem">OCR JSONL (word geometry)</button>
+          <div class="rmenu-h">Export your notes</div>
+          <button id="reader-export-json" role="menuitem">Annotations (JSON)</button>
+          <button id="reader-export-md" role="menuitem">Annotations (Markdown)</button>
+        </div>
+      </span>
+    </div>
+    <div id="reader-veil" class="hidden">
+      <div class="rv-inner">
+        <div class="searching-spinner"></div>
+        <div class="rv-title">Opening&#8230;</div>
+        <div class="rv-sub"></div>
+      </div>
+    </div>
+    <div id="reader-split">
+      <div id="reader-body">
+        <div id="reader-page-wrap">
+          <canvas id="reader-canvas"></canvas>
+          <div id="reader-overlay"></div>
+        </div>
+      </div>
+      <div id="reader-side">
+        <h4 id="reader-side-ann-title">Page annotations</h4>
+        <div id="reader-ann-list"></div>
+        <h4 id="reader-ocr-title">Page text (OCR)</h4>
+        <div id="reader-ocr"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compare overlay -->
+  <div id="compare" class="hidden">
+    <div id="compare-bar">
+      <button id="compare-close">×</button>
+      <span class="reader-title">Compare concepts</span>
+      <span class="hint">2&#8211;4 concepts or any idea &#8212; the map, the embeddings and the passages, side by side</span>
+    </div>
+    <div id="compare-grid"></div>
+  </div>
+  <!-- Help overlay -->
+  <div id="help" class="hidden">
+    <div id="help-card">
+      <button id="help-close">&#215;</button>
+      <h3>Getting around</h3>
+      <table>
+        <tr><td colspan="2" class="help-sec">Where things are</td></tr>
+        <tr><td>Search</td><td>the corpus &#8212; 90,975 passages across 197 sources</td></tr>
+        <tr><td>Concept map</td><td>202 curated concepts and 1,099 relations between them</td></tr>
+        <tr><td>&#128172; Ask</td><td>put a book, a page range, a concept or a search in front of the
+          model and ask about it. Nothing is read that you did not attach.</td></tr>
+        <tr><td>&#9878; Debate</td><td>two agents argue a motion out of the corpus, each finding
+          its own evidence; a third checks the quotations and adjudicates</td></tr>
+        <tr><td>Authors</td><td>the 37 creators, their dates, and what each group writes about</td></tr>
+
+        <tr><td colspan="2" class="help-sec">Keys</td></tr>
+        <tr><td>/</td><td>focus the search box</td></tr>
+        <tr><td>j / k</td><td>results: next / previous passage</td></tr>
+        <tr><td>Enter</td><td>results: open the selected passage &#183;
+          concept map: search the whole corpus for what you typed</td></tr>
+        <tr><td>&#8592; &#8594;</td><td>reader: previous / next page</td></tr>
+        <tr><td>+ &#8722; 0</td><td>reader: zoom in, out, fit the page</td></tr>
+        <tr><td>Home / End</td><td>reader: first / last page</td></tr>
+        <tr><td>Esc</td><td>close the top panel, then the one beneath it</td></tr>
+
+        <tr><td colspan="2" class="help-sec">In the results</td></tr>
+        <tr><td>Ask about these</td><td>attaches this result set to the chat and primes the question</td></tr>
+        <tr><td>&#9878; Debate this</td><td>argues your query as a motion, both sides, with citations</td></tr>
+        <tr><td>+ context</td><td>attaches one passage instead</td></tr>
+        <tr><td>Refine</td><td>filter by author, who wrote it, period or source</td></tr>
+        <tr><td>Graph tab</td><td>Concept &#183; Semantic &#183; Overlay &#8212; the curated map, a network
+          built from the embeddings, or both together</td></tr>
+
+        <tr><td colspan="2" class="help-sec">In an answer</td></tr>
+        <tr><td>[S3]</td><td>a citation &#8212; click it to open that book at that page</td></tr>
+        <tr><td>&#10003; Checked</td><td>the model re-read its own answer with the tools; open it to
+          see what it checked, and whether the answer was corrected</td></tr>
+        <tr><td>diagrams</td><td>click one to see it full size</td></tr>
+
+        <tr><td colspan="2" class="help-sec">In the reader</td></tr>
+        <tr><td>&#9998;</td><td>drag on the page to annotate it</td></tr>
+        <tr><td>&#9707;</td><td>show / hide the notes and page-text pane</td></tr>
+        <tr><td>&#128172;</td><td>attach this page, a window around it, or the whole book</td></tr>
+        <tr><td>&#8943;</td><td>download the scan, text, Markdown, OCR JSONL, or your notes</td></tr>
+
+        <tr><td colspan="2" class="help-sec">Elsewhere</td></tr>
+        <tr><td>&#8646; Compare</td><td>2&#8211;4 concepts <i>or any idea</i> side by side, with the
+          passages where both are argued</td></tr>
+        <tr><td>&#9881; Settings</td><td>run the engine on CPU or GPU, results per search, default
+          ranking, theme &#8212; and the live index and cache figures</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Search landing (first thing users see) -->
+  <div id="landing">
+    <div class="landing-inner">
+      <h1 class="landing-title">Concept Atlas</h1>
+      <p class="landing-sub">British Moral Philosophy · 129 scanned volumes + 68 text editions · 202 concepts</p>
+      <div class="landing-search">
+        <svg class="icon big" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="landing-input" type="text" placeholder="Search the corpus — concepts, passages, books…  e.g. self-love, friendship, virtue" autocomplete="off" spellcheck="false">
+        <button id="landing-go">Search</button>
+      </div>
+      <div class="landing-examples">
+        <span>Try:</span>
+        <button class="ex" data-q="self-love">self-love</button>
+        <button class="ex" data-q="marriage and slavery">marriage and slavery</button>
+        <button class="ex" data-q="moral sense">moral sense</button>
+        <button class="ex" data-q="liberty">liberty</button>
+        <button class="ex" data-q="Cockburn">Cockburn</button>
+      </div>
+      <div class="landing-links">
+        <button id="landing-graph">🌐 Explore concept graph</button>
+        <button id="landing-queries">📋 Browse the research queries</button>
+        <button id="landing-authors">👤 Who wrote the corpus</button>
+      </div>
+
+      <div class="landing-boards">
+        <section class="lboard">
+          <h3>Central concepts</h3>
+          <p class="lb-hint">the most connected ideas in the map</p>
+          <div class="lb-chips" id="lb-concepts"></div>
+        </section>
+        <section class="lboard">
+          <h3>Research questions</h3>
+          <p class="lb-hint">curated queries the map was built against</p>
+          <div class="lb-list" id="lb-queries"></div>
+        </section>
+        <section class="lboard">
+          <h3>The corpus</h3>
+          <p class="lb-hint">what the engine is searching</p>
+          <div class="lb-stats" id="lb-stats"></div>
+          <div class="lb-chips" id="lb-authors"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ask the corpus: chat with explicitly attached context -->
+  <div id="chat-panel" class="hidden">
+    <div id="chat-bar">
+      <button id="chat-close" title="Close (Esc)">&#215;</button>
+      <span class="reader-title">Ask the corpus</span>
+      <span class="ch-bar-hint">answers are grounded only in the context you attach</span>
+      <button id="chat-debate" class="ch-bar-btn" title="Set two agents to argue a motion from the corpus, then have a third adjudicate">&#9878; Debate</button>
+    </div>
+    <div id="chat-main">
+      <aside id="chat-side"></aside>
+      <div id="chat-body"></div>
+      <aside id="chat-ctx"></aside>
+    </div>
+  </div>
+  <div id="chat-picker" class="hidden"></div>
+
+  <!-- Authors panel -->
+  <div id="authors-panel" class="hidden"></div>
+
+  <!-- The documentation, read in place. It used to be a plain link to
+       docs.html, which works but leaves the app and drops whatever you were
+       looking at; the link is still there for a new tab or no-JS. -->
+  <div id="docs-panel" class="hidden"></div>
+
+  <!-- Settings bar (bottom of page) -->
+  <div id="settings-bar">
+    <button id="settings-open" title="Search engine &amp; display settings">
+      <span class="settings-brand">&#9881;</span> Settings
+    </button>
+    <span class="settings-chip" id="chip-engine" title="Embedding engine status">
+      <span class="chip-dot" id="engine-dot"></span><span id="engine-chip-text">checking&#8230;</span>
+    </span>
+    <span class="settings-chip" id="chip-index" title="Loaded search index"></span>
+    <span class="settings-spacer"></span>
+    <span class="settings-chip" id="chip-timing" title="Last search timing" style="display:none"></span>
+  </div>
+
+  <!-- Settings popover -->
+  <div id="settings-panel" class="hidden">
+    <div class="sp-sec">
+      <h4>Embedding engine</h4>
+      <div class="sp-row">
+        <label>Device</label>
+        <span>
+          <button id="device-cpu" class="dev-btn" title="Run the embedding model on CPU (slower, leaves the GPU free)">CPU</button>
+          <button id="device-cuda" class="dev-btn" title="Run the embedding model on GPU (fast)">GPU</button>
+        </span>
+      </div>
+      <div class="sp-row"><label>Status</label><span id="device-status" class="settings-status">checking&#8230;</span></div>
+      <p class="sp-note" id="device-note">Switching moves the Jasper model between devices in place &#8212; no restart, and the index stays loaded.</p>
+    </div>
+    <div class="sp-sec">
+      <h4>Search</h4>
+      <div class="sp-row">
+        <label for="set-topk">Results per search</label>
+        <select id="set-topk">
+          <option value="20">20</option>
+          <option value="40">40</option>
+          <option value="60" selected>60</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <div class="sp-row">
+        <label for="set-mode">Default ranking</label>
+        <select id="set-mode">
+          <option value="auto" selected>hybrid</option>
+          <option value="semantic">pure semantic</option>
+          <option value="bm25">BM25</option>
+          <option value="keyword">keyword</option>
+        </select>
+      </div>
+      <div class="sp-row">
+        <label for="set-facets">Refine panel</label>
+        <select id="set-facets">
+          <option value="on" selected>shown</option>
+          <option value="off">hidden</option>
+        </select>
+      </div>
+    </div>
+    <div class="sp-sec">
+      <h4>Appearance</h4>
+      <div class="sp-row">
+        <label for="set-theme">Theme</label>
+        <select id="set-theme">
+          <option value="light">light</option>
+          <option value="dark">dark</option>
+        </select>
+      </div>
+    </div>
+    <div class="sp-sec">
+      <h4>Index</h4>
+      <div class="sp-stats" id="sp-stats"></div>
+      <div class="sp-row" style="margin-top:8px">
+        <span class="sp-note" style="margin:0">Cached query vectors make repeat searches instant.</span>
+        <button id="sp-refresh" class="mini">refresh</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+  <div id="dyngraph" class="hidden">
+    <div id="dyngraph-bar">
+      <button id="dyngraph-close" title="Close (Esc)">×</button>
+      <span class="reader-title" id="dyngraph-title">Query graph</span>
+      <span class="dyngraph-hint" id="dyngraph-hint">curated concepts &amp; the documents that attest them</span>
+      <span class="reader-tools dg-modes">
+        <button id="dyngraph-mode-concept" class="active" title="Curated concept map: the concepts an editor recorded, and the documents attesting them">Concept</button>
+        <button id="dyngraph-mode-semantic" title="Built from the passage embeddings alone — works even for ideas the concept map never recorded">Semantic</button>
+        <button id="dyngraph-mode-overlay" title="Concepts drawn over the passage network, linked to the passages they land on">Overlay</button>
+      </span>
+      <!-- same author-sex filter as the full concept map, applied to whichever
+           of the two graphs is on screen: passages and documents by their
+           book's author, concepts by the authors behind their evidence -->
+      <span class="reader-tools dg-writers" id="dyngraph-writers"></span>
+      <span class="reader-tools">
+        <button id="dyngraph-2d" class="active">2D</button>
+        <button id="dyngraph-3d">3D</button>
+      </span>
+    </div>
+    <div id="dyngraph-stage"></div>
+  </div>
+
+  <!-- Draggable divider between results (left) and reader (right) -->
+  <div id="split-divider" class="hidden"><span>⋮</span></div>
+
+  <!-- Global search results -->
+  <div id="gres" class="hidden">
+    <div class="gres-bar">
+      <button id="gres-back">← back</button>
+      <span class="gres-searchwrap">
+        <input id="gres-input" type="text" placeholder="Search again…" autocomplete="off" spellcheck="false">
+        <button id="gres-go">Search</button>
+      </span>
+      <span id="gres-summary">–</span>
+      <span class="gres-mode">
+        <select id="gres-algo" title="Ranking algorithm">
+          <option value="hybrid" selected>🧠 hybrid (semantic+lexical)</option>
+          <option value="semantic">🔮 pure semantic (cosine)</option>
+          <option value="bm25">📊 BM25</option>
+          <option value="keyword">⌨ keyword</option>
+        </select>
+      </span>
+      <span class="gres-mode">
+        <select id="gres-sort" title="Order the result list">
+          <option value="relevance" selected>&#8595; relevance</option>
+          <option value="year">&#8593; year</option>
+          <option value="author">A&#8211;Z author</option>
+        </select>
+      </span>
+      <span class="gres-tabs">
+        <button id="gres-ask" title="Attach these results and ask about them">&#128172; Ask about these</button>
+        <button id="gres-debate" title="Set two agents to argue this out of the corpus, then have a third adjudicate">&#9878; Debate this</button>
+        <button id="gres-facet-toggle" class="active" title="Show / hide the refine panel">&#9887; Refine</button>
+        <button id="gres-tab-passages" class="active">Passages</button>
+        <button id="gres-tab-concepts">Concepts</button>
+        <button id="gres-tab-graph">Graph</button>
+      </span>
+    </div>
+    <div class="gres-main">
+      <aside id="gres-facets" class="empty"></aside>
+      <div id="gres-body"></div>
+    </div>
+  </div>
+
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.min.js" } }
+</script>
+<script src="vendor/d3.min.js"></script>
+<script src="vendor/3d-force-graph.min.js"></script>
+<script src="vendor/pdfjs/pdf.min.js"></script>
+<script>pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdfjs/pdf.worker.min.js";</script>
+<script src="cite.js?v=1788717937"></script>
+<script src="chat.js?v=1788717937"></script>
+<script src="authors.js?v=1788717937"></script>
+<script src="app.js?v=1788717937"></script>
+<script src="reader.js?v=1788717937"></script>
+<script src="compare.js?v=1788717937"></script>
+<script src="landing.js?v=1788717937"></script>
+<script src="search.js?v=1788717937"></script>
+<script src="floatgraph.js?v=1788717937"></script>
+<script src="dyngraph.js?v=1788717937"></script>
+<script src="docs-panel.js?v=1"></script>
+<script src="settings.js?v=1788717937"></script>
+<script type="module" src="labels3d.mjs"></script>
+</body>
+</html>

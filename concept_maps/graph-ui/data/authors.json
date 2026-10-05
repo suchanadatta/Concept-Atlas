@@ -1,0 +1,2791 @@
+{
+ "generated_from": "data/authors.csv + jasper_index_v2 + concept inverted index",
+ "authors": [
+  {
+   "key": "anon",
+   "name": "Anon. [Wellwisher of her Sex]",
+   "sex": "F?",
+   "born": null,
+   "died": null,
+   "note": "attributed to a woman by the title page; not confirmed",
+   "books": 1,
+   "book_ids": [
+    "ANON_1725_Thoughts_on_Friendship"
+   ],
+   "passages": 91,
+   "pages": 63,
+   "first_year": 1725,
+   "last_year": 1725,
+   "concepts": [
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 4
+    },
+    {
+     "id": "education_of_women",
+     "label": "Education of Women",
+     "n": 1
+    },
+    {
+     "id": "marriage",
+     "label": "Marriage",
+     "n": 1
+    }
+   ],
+   "n_concepts": 3
+  },
+  {
+   "key": "astell",
+   "name": "Astell, Mary",
+   "sex": "F",
+   "born": 1666,
+   "died": 1733,
+   "note": "",
+   "books": 7,
+   "book_ids": [
+    "ASTELL_1697_0_A-Serious-Proposal-to-the-Ladies_0",
+    "ASTELL_1700_1730_Some-Reflections-Upon-Marriage_0",
+    "ASTELL_1704_Moderation_truly_Stated",
+    "ASTELL_1705_The_Christian_Religion",
+    "ASTELL_1709_BARTLEMY_FAIR",
+    "Astell Bartlemy Fair",
+    "Astell Christian Religion (part 1)"
+   ],
+   "passages": 3324,
+   "pages": 1256,
+   "first_year": 1697,
+   "last_year": 1709,
+   "concepts": [
+    {
+     "id": "atheism",
+     "label": "Atheism",
+     "n": 8
+    },
+    {
+     "id": "mortification",
+     "label": "Mortification",
+     "n": 8
+    },
+    {
+     "id": "calm_desire",
+     "label": "Calm Desire",
+     "n": 7
+    },
+    {
+     "id": "hypochondriack_distemper",
+     "label": "Hypochondriack Distemper",
+     "n": 7
+    },
+    {
+     "id": "reparation",
+     "label": "Reparation",
+     "n": 7
+    },
+    {
+     "id": "public_good",
+     "label": "Public Good",
+     "n": 6
+    },
+    {
+     "id": "war",
+     "label": "War",
+     "n": 6
+    },
+    {
+     "id": "enthusiasm",
+     "label": "Enthusiasm",
+     "n": 4
+    },
+    {
+     "id": "love_of_god",
+     "label": "Love of God",
+     "n": 3
+    },
+    {
+     "id": "reason",
+     "label": "Reason",
+     "n": 3
+    },
+    {
+     "id": "ridicule",
+     "label": "Ridicule",
+     "n": 3
+    },
+    {
+     "id": "wit",
+     "label": "Wit",
+     "n": 3
+    }
+   ],
+   "n_concepts": 38
+  },
+  {
+   "key": "astell-and-norris",
+   "name": "Astell, Mary and Norris, John",
+   "sex": "M & F",
+   "born": null,
+   "died": null,
+   "note": "joint correspondence",
+   "books": 2,
+   "book_ids": [
+    "ASTELL-and-NORRIS_1695_1695_Letters-concerning-the_Love-of-God-2nd-ed-with-additions",
+    "ASTELL-and-NORRIS_1695_1695_Letters-concerning-the_Love-of-God-2nd-ed-with-additions_0"
+   ],
+   "passages": 597,
+   "pages": 238,
+   "first_year": 1695,
+   "last_year": 1695,
+   "concepts": [
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 3
+    },
+    {
+     "id": "disinterested_love",
+     "label": "Disinterested Love",
+     "n": 2
+    },
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 2
+    },
+    {
+     "id": "origin_of_evil",
+     "label": "Origin of Evil",
+     "n": 2
+    },
+    {
+     "id": "stoicism",
+     "label": "Stoicism",
+     "n": 2
+    },
+    {
+     "id": "immaterial_soul",
+     "label": "Immaterial Soul",
+     "n": 1
+    },
+    {
+     "id": "love_of_god",
+     "label": "Love of God",
+     "n": 1
+    },
+    {
+     "id": "self_knowledge",
+     "label": "Self-Knowledge",
+     "n": 1
+    }
+   ],
+   "n_concepts": 8
+  },
+  {
+   "key": "balfour",
+   "name": "Balfour, James",
+   "sex": "M",
+   "born": null,
+   "died": null,
+   "note": "",
+   "books": 1,
+   "book_ids": [
+    "BALFOUR_1753_A_Delineation_of_the_Nature_and_Obligation_of_Morality"
+   ],
+   "passages": 468,
+   "pages": 175,
+   "first_year": 1753,
+   "last_year": 1753,
+   "concepts": [
+    {
+     "id": "conscience",
+     "label": "Conscience",
+     "n": 3
+    },
+    {
+     "id": "education",
+     "label": "Education",
+     "n": 2
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 2
+    },
+    {
+     "id": "moral_sense",
+     "label": "Moral Sense",
+     "n": 2
+    },
+    {
+     "id": "necessity",
+     "label": "Necessity",
+     "n": 2
+    },
+    {
+     "id": "reason",
+     "label": "Reason",
+     "n": 2
+    },
+    {
+     "id": "self_government",
+     "label": "Self-Government",
+     "n": 2
+    },
+    {
+     "id": "stoic_seneca_reception",
+     "label": "Stoic and Senecan Reception",
+     "n": 2
+    },
+    {
+     "id": "vice",
+     "label": "Vice",
+     "n": 2
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 2
+    },
+    {
+     "id": "custom",
+     "label": "Custom",
+     "n": 1
+    },
+    {
+     "id": "soul",
+     "label": "Soul",
+     "n": 1
+    }
+   ],
+   "n_concepts": 14
+  },
+  {
+   "key": "berkeley",
+   "name": "Berkeley, George",
+   "sex": "M",
+   "born": 1685,
+   "died": 1753,
+   "note": "",
+   "books": 9,
+   "book_ids": [
+    "BERKELEY_0_1957_The-Works-of-George-Berkeley_9",
+    "BERKELEY_1706-1752_1956_The-Works-of-George-Berkeley_8",
+    "BERKELEY_1707-1735_1951_The-Works-of-George-Berkeley_4",
+    "BERKELEY_1709-1733_1948_The-Works-of-George-Berkeley_1",
+    "BERKELEY_1710-1730_1949_The-Works-of-George-Berkeley_2",
+    "BERKELEY_1712-1750_1953_The-Works-of-George-Berkeley_6",
+    "BERKELEY_1713-1741_1955_The-Works-of-George-Berkeley_7",
+    "BERKELEY_1732_1950_The-Works-of-George-Berkeley_3",
+    "BERKELEY_1744-1752_1953_The-Works-of-George-Berkeley_5"
+   ],
+   "passages": 2051,
+   "pages": 0,
+   "first_year": 1706,
+   "last_year": 1744,
+   "concepts": [],
+   "n_concepts": 0
+  },
+  {
+   "key": "burnet",
+   "name": "Burnet, Elizabeth Berkeley",
+   "sex": "F",
+   "born": 1661,
+   "died": 1709,
+   "note": "",
+   "books": 4,
+   "book_ids": [
+    "BURNET_1708_A_Method_of_Devotion",
+    "Burnet A Method of Devotion (part 1)",
+    "Burnet A Method of Devotion (part 2)",
+    "Burnet Selected Correspondence in Broad 2019"
+   ],
+   "passages": 1997,
+   "pages": 743,
+   "first_year": 1708,
+   "last_year": 2019,
+   "concepts": [
+    {
+     "id": "devotion",
+     "label": "Devotion",
+     "n": 7
+    },
+    {
+     "id": "divine_law",
+     "label": "Divine Law",
+     "n": 4
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 4
+    },
+    {
+     "id": "providence",
+     "label": "Providence",
+     "n": 4
+    },
+    {
+     "id": "education",
+     "label": "Education",
+     "n": 3
+    },
+    {
+     "id": "love_of_god",
+     "label": "Love of God",
+     "n": 3
+    },
+    {
+     "id": "necessity",
+     "label": "Necessity",
+     "n": 3
+    },
+    {
+     "id": "self_examination",
+     "label": "Self-Examination",
+     "n": 3
+    },
+    {
+     "id": "self_government",
+     "label": "Self-Government",
+     "n": 3
+    },
+    {
+     "id": "self_love",
+     "label": "Self-Love",
+     "n": 2
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 2
+    },
+    {
+     "id": "beauty",
+     "label": "Beauty",
+     "n": 1
+    }
+   ],
+   "n_concepts": 22
+  },
+  {
+   "key": "burnet-and-locke",
+   "name": "Burnet, Thomas and Locke, John",
+   "sex": "M",
+   "born": null,
+   "died": null,
+   "note": "joint correspondence",
+   "books": 2,
+   "book_ids": [
+    "BURNET-and-LOCKE_1696-1702_2019_Selected Correspondence",
+    "BURNET_2019_Selected_Correspondence"
+   ],
+   "passages": 175,
+   "pages": 34,
+   "first_year": 1696,
+   "last_year": 1696,
+   "concepts": [
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 3
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 1
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 1
+    },
+    {
+     "id": "liberty",
+     "label": "Liberty",
+     "n": 1
+    },
+    {
+     "id": "providence",
+     "label": "Providence",
+     "n": 1
+    }
+   ],
+   "n_concepts": 5
+  },
+  {
+   "key": "butler",
+   "name": "Butler, Joseph",
+   "sex": "M",
+   "born": 1692,
+   "died": 1752,
+   "note": "",
+   "books": 2,
+   "book_ids": [
+    "BUTLER_1726_1887_Human-Nature-and-other-Sermons_0",
+    "BUTLER_1736_1873_The-Analogy-of-Religion_0"
+   ],
+   "passages": 1345,
+   "pages": 0,
+   "first_year": 1726,
+   "last_year": 1736,
+   "concepts": [],
+   "n_concepts": 0
+  },
+  {
+   "key": "campbell",
+   "name": "Campbell, Archibald",
+   "sex": "M",
+   "born": 1691,
+   "died": 1756,
+   "note": "",
+   "books": 3,
+   "book_ids": [
+    "CAMPBELL_1730_A_Discourse_Proving_that_the_Apostles_were_no_Enthusiasts",
+    "CAMPBELL_1733_0_An-Enquiry-into-the-Original-of-Moral-Virtue_0",
+    "Campbell An Enquiry into the Original of Moral Virtue part 3"
+   ],
+   "passages": 1531,
+   "pages": 294,
+   "first_year": 1730,
+   "last_year": 1733,
+   "concepts": [
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 2
+    },
+    {
+     "id": "esteem",
+     "label": "Esteem",
+     "n": 2
+    },
+    {
+     "id": "enthusiasm",
+     "label": "Enthusiasm",
+     "n": 1
+    },
+    {
+     "id": "future_state",
+     "label": "Future State",
+     "n": 1
+    },
+    {
+     "id": "moral_sense",
+     "label": "Moral Sense",
+     "n": 1
+    },
+    {
+     "id": "natural_religion",
+     "label": "Natural Religion",
+     "n": 1
+    },
+    {
+     "id": "revelation",
+     "label": "Revelation",
+     "n": 1
+    },
+    {
+     "id": "self_love",
+     "label": "Self-Love",
+     "n": 1
+    },
+    {
+     "id": "slavery",
+     "label": "Slavery",
+     "n": 1
+    },
+    {
+     "id": "sympathy",
+     "label": "Sympathy",
+     "n": 1
+    }
+   ],
+   "n_concepts": 10
+  },
+  {
+   "key": "chapone",
+   "name": "Chapone, Sarah",
+   "sex": "F",
+   "born": null,
+   "died": null,
+   "note": "",
+   "books": 1,
+   "book_ids": [
+    "CHAPONE_1735_The_Hardships_of_the_English_Laws_in_relation_to_Wives"
+   ],
+   "passages": 221,
+   "pages": 74,
+   "first_year": 1735,
+   "last_year": 1735,
+   "concepts": [
+    {
+     "id": "slavery",
+     "label": "Slavery",
+     "n": 3
+    },
+    {
+     "id": "education_of_women",
+     "label": "Education of Women",
+     "n": 2
+    },
+    {
+     "id": "law",
+     "label": "Law",
+     "n": 2
+    },
+    {
+     "id": "conscience",
+     "label": "Conscience",
+     "n": 1
+    },
+    {
+     "id": "coverture",
+     "label": "Coverture",
+     "n": 1
+    },
+    {
+     "id": "education",
+     "label": "Education",
+     "n": 1
+    },
+    {
+     "id": "liberty",
+     "label": "Liberty",
+     "n": 1
+    },
+    {
+     "id": "marriage",
+     "label": "Marriage",
+     "n": 1
+    }
+   ],
+   "n_concepts": 8
+  },
+  {
+   "key": "chudleigh",
+   "name": "Chudleigh, Mary Lee",
+   "sex": "F",
+   "born": 1656,
+   "died": 1710,
+   "note": "",
+   "books": 4,
+   "book_ids": [
+    "CHUDLEIGH_1701_1993_The_Ladies_Defence",
+    "CHUDLEIGH_1703_1709_Poems-on-Several-Occasions",
+    "CHUDLEIGH_1710_1993_Essays-upon-Several-Subjects_0",
+    "Chudleigh The_Poems_and_Prose_of_Mary_Lady_Chudleigh_----_(The_Ladies_Defence_Or_The_Bride-Woman_s_Counsellor_Answer_d)"
+   ],
+   "passages": 1015,
+   "pages": 314,
+   "first_year": 1701,
+   "last_year": 1710,
+   "concepts": [
+    {
+     "id": "liberty",
+     "label": "Liberty",
+     "n": 7
+    },
+    {
+     "id": "passion",
+     "label": "Passion",
+     "n": 7
+    },
+    {
+     "id": "conscience",
+     "label": "Conscience",
+     "n": 6
+    },
+    {
+     "id": "self_love",
+     "label": "Self-Love",
+     "n": 5
+    },
+    {
+     "id": "devotion",
+     "label": "Devotion",
+     "n": 4
+    },
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 4
+    },
+    {
+     "id": "providence",
+     "label": "Providence",
+     "n": 4
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 4
+    },
+    {
+     "id": "education",
+     "label": "Education",
+     "n": 3
+    },
+    {
+     "id": "marriage",
+     "label": "Marriage",
+     "n": 3
+    },
+    {
+     "id": "pride",
+     "label": "Pride",
+     "n": 3
+    },
+    {
+     "id": "chain_of_being",
+     "label": "Chain of Being",
+     "n": 2
+    }
+   ],
+   "n_concepts": 23
+  },
+  {
+   "key": "clarke",
+   "name": "Clarke, Samuel",
+   "sex": "M",
+   "born": 1675,
+   "died": 1729,
+   "note": "",
+   "books": 12,
+   "book_ids": [
+    "CLARKE_1699_0_Three-Practical-Essays-on-Baptism-Confirmation-and-Repentence_0",
+    "CLARKE_1705_1706_A-Demonstration-of-the-Being-and-Attributes-of-God",
+    "CLARKE_1706_0_A-Letter-to-Mr-Dodwel",
+    "CLARKE_1706_1708_A-Discourse-concerning-the-unchangeable-Obligations-of-Natural-Religion",
+    "CLARKE_1707_0_A-Defense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel",
+    "CLARKE_1707_0_A-Second-Defense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel",
+    "CLARKE_1708_0_A-Fourth-Denfense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel",
+    "CLARKE_1708_0_A-Third-Defense-of-an-Argument-made-use-of-in-a-Letter-to-Mr-Dodwel",
+    "CLARKE_1708_Third_Defense",
+    "CLARKE_1712_0_The-Scripture-Doctrine-of-the-Trinity",
+    "CLARKE_1714_0_A-Reply-to-the-Objections-of-Robert-Nelson-Esq-and_of_an-anonymous-Author-against-Dr-Clarkes-Scripture-Doctrine-of-the-Trinity",
+    "CLARKE_1717_0_Remarks-upon-a-Book-entituled-A-Philosophical-Enquiry-concerning-Human-Liberty"
+   ],
+   "passages": 5269,
+   "pages": 1953,
+   "first_year": 1699,
+   "last_year": 1717,
+   "concepts": [
+    {
+     "id": "trinity",
+     "label": "Trinity",
+     "n": 24
+    },
+    {
+     "id": "liberty",
+     "label": "Liberty",
+     "n": 14
+    },
+    {
+     "id": "necessity",
+     "label": "Necessity",
+     "n": 10
+    },
+    {
+     "id": "consciousness",
+     "label": "Consciousness",
+     "n": 7
+    },
+    {
+     "id": "moral_fitness",
+     "label": "Moral Fitness",
+     "n": 7
+    },
+    {
+     "id": "soul",
+     "label": "Soul",
+     "n": 7
+    },
+    {
+     "id": "immateriality",
+     "label": "Immateriality",
+     "n": 6
+    },
+    {
+     "id": "reason",
+     "label": "Reason",
+     "n": 6
+    },
+    {
+     "id": "subordination",
+     "label": "Subordination",
+     "n": 3
+    },
+    {
+     "id": "atheism",
+     "label": "Atheism",
+     "n": 2
+    },
+    {
+     "id": "beauty_and_order",
+     "label": "Beauty and Order",
+     "n": 2
+    },
+    {
+     "id": "infinity",
+     "label": "Infinity",
+     "n": 2
+    }
+   ],
+   "n_concepts": 38
+  },
+  {
+   "key": "cockburn",
+   "name": "Cockburn, Catharine Trotter",
+   "sex": "F",
+   "born": 1679,
+   "died": 1749,
+   "note": "",
+   "books": 8,
+   "book_ids": [
+    "COCKBURN_1701_0_Love-at-a-Loss_0",
+    "COCKBURN_1701_0_The-Unhappy-Penitent_0",
+    "COCKBURN_1706_Revolution_of_Sweden",
+    "COCKBURN_1751_0_The-Works-of-Mrs-Catharine-Cockburn",
+    "COCKBURN_1751_0_The-Works-of-Mrs-Cockburn",
+    "Cockburn Works vol. 2 (part 3)",
+    "TROTTER_1701_Love_at_a_Loss",
+    "Trotter Love at a Loss"
+   ],
+   "passages": 3334,
+   "pages": 1231,
+   "first_year": 1701,
+   "last_year": 1751,
+   "concepts": [
+    {
+     "id": "moral_sense",
+     "label": "Moral Sense",
+     "n": 9
+    },
+    {
+     "id": "divine_law",
+     "label": "Divine Law",
+     "n": 8
+    },
+    {
+     "id": "moral_fitness",
+     "label": "Moral Fitness",
+     "n": 8
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 6
+    },
+    {
+     "id": "reward_and_punishment",
+     "label": "Reward and Punishment",
+     "n": 6
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 6
+    },
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 5
+    },
+    {
+     "id": "conscience",
+     "label": "Conscience",
+     "n": 4
+    },
+    {
+     "id": "education",
+     "label": "Education",
+     "n": 4
+    },
+    {
+     "id": "marriage",
+     "label": "Marriage",
+     "n": 4
+    },
+    {
+     "id": "moral_beauty",
+     "label": "Moral Beauty",
+     "n": 4
+    },
+    {
+     "id": "moral_obligation",
+     "label": "Moral Obligation",
+     "n": 4
+    }
+   ],
+   "n_concepts": 26
+  },
+  {
+   "key": "cudworth",
+   "name": "Cudworth, Ralph",
+   "sex": "M",
+   "born": 1617,
+   "died": 1688,
+   "note": "",
+   "books": 4,
+   "book_ids": [
+    "CUDWORTH_1678_0_The-True-Intellectual-System-of-the-Universe_0",
+    "CUDWORTH_1731_0_A-Treatise-concerning-Eternal-and-Immutable-Morality_0",
+    "Cudworth A Treatise concerning Eternal and Immutable Morality (part 1)",
+    "Cudworth A Treatise concerning Eternal and Immutable Morality (part 2)"
+   ],
+   "passages": 2783,
+   "pages": 323,
+   "first_year": 1678,
+   "last_year": 1731,
+   "concepts": [
+    {
+     "id": "eternal_morality",
+     "label": "Eternal Morality",
+     "n": 4
+    },
+    {
+     "id": "atheism",
+     "label": "Atheism",
+     "n": 3
+    },
+    {
+     "id": "beauty",
+     "label": "Beauty",
+     "n": 3
+    },
+    {
+     "id": "intellect",
+     "label": "Intellect",
+     "n": 3
+    },
+    {
+     "id": "necessity",
+     "label": "Necessity",
+     "n": 3
+    },
+    {
+     "id": "divine_will",
+     "label": "Divine Will",
+     "n": 2
+    },
+    {
+     "id": "law",
+     "label": "Law",
+     "n": 2
+    },
+    {
+     "id": "natural_sympathy",
+     "label": "Natural Sympathy",
+     "n": 2
+    },
+    {
+     "id": "reason",
+     "label": "Reason",
+     "n": 2
+    },
+    {
+     "id": "will",
+     "label": "Will",
+     "n": 2
+    },
+    {
+     "id": "consciousness",
+     "label": "Consciousness",
+     "n": 1
+    },
+    {
+     "id": "immaterial_soul",
+     "label": "Immaterial Soul",
+     "n": 1
+    }
+   ],
+   "n_concepts": 16
+  },
+  {
+   "key": "drake",
+   "name": "Drake, Judith",
+   "sex": "F",
+   "born": null,
+   "died": null,
+   "note": "",
+   "books": 1,
+   "book_ids": [
+    "DRAKE_1721_An_Essay_in_Defence_of_the_Female_Sex"
+   ],
+   "passages": 239,
+   "pages": 175,
+   "first_year": 1721,
+   "last_year": 1721,
+   "concepts": [
+    {
+     "id": "education",
+     "label": "Education",
+     "n": 4
+    },
+    {
+     "id": "custom",
+     "label": "Custom",
+     "n": 1
+    },
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 1
+    },
+    {
+     "id": "seneca_reference",
+     "label": "Seneca Reference",
+     "n": 1
+    },
+    {
+     "id": "tyranny",
+     "label": "Tyranny",
+     "n": 1
+    }
+   ],
+   "n_concepts": 5
+  },
+  {
+   "key": "fordyce",
+   "name": "Fordyce, David",
+   "sex": "M",
+   "born": null,
+   "died": null,
+   "note": "",
+   "books": 1,
+   "book_ids": [
+    "FORDYCE_1754_0_The-Elements-of-Moral-Philosophy"
+   ],
+   "passages": 534,
+   "pages": 310,
+   "first_year": 1754,
+   "last_year": 1754,
+   "concepts": [
+    {
+     "id": "self_government",
+     "label": "Self-Government",
+     "n": 3
+    },
+    {
+     "id": "future_state",
+     "label": "Future State",
+     "n": 2
+    },
+    {
+     "id": "beauty",
+     "label": "Beauty",
+     "n": 1
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 1
+    },
+    {
+     "id": "character_development",
+     "label": "Character Development",
+     "n": 1
+    },
+    {
+     "id": "conscience",
+     "label": "Conscience",
+     "n": 1
+    },
+    {
+     "id": "education",
+     "label": "Education",
+     "n": 1
+    },
+    {
+     "id": "enthusiasm",
+     "label": "Enthusiasm",
+     "n": 1
+    },
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 1
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 1
+    },
+    {
+     "id": "imagination",
+     "label": "Imagination",
+     "n": 1
+    },
+    {
+     "id": "marriage",
+     "label": "Marriage",
+     "n": 1
+    }
+   ],
+   "n_concepts": 19
+  },
+  {
+   "key": "gwinnett-and-thomas",
+   "name": "Gwinnett, Richard and Thomas, Elizabeth",
+   "sex": "M & F",
+   "born": null,
+   "died": null,
+   "note": "joint correspondence",
+   "books": 3,
+   "book_ids": [
+    "GWINNETT-and-THOMAS_1731_0_Pylades-and-Corinna",
+    "GWINNETT_and_THOMAS_1732_The_Honourable_Lovers",
+    "Gwinnett and Thomas Pylades and Corinna vol. 1 (part 2)"
+   ],
+   "passages": 1804,
+   "pages": 873,
+   "first_year": 1731,
+   "last_year": 1731,
+   "concepts": [
+    {
+     "id": "fortune",
+     "label": "Fortune",
+     "n": 5
+    },
+    {
+     "id": "conversation",
+     "label": "Conversation",
+     "n": 3
+    },
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 2
+    },
+    {
+     "id": "marriage",
+     "label": "Marriage",
+     "n": 2
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 1
+    },
+    {
+     "id": "captivity",
+     "label": "Captivity",
+     "n": 1
+    },
+    {
+     "id": "conscience",
+     "label": "Conscience",
+     "n": 1
+    },
+    {
+     "id": "consent",
+     "label": "Consent",
+     "n": 1
+    },
+    {
+     "id": "example",
+     "label": "Example",
+     "n": 1
+    },
+    {
+     "id": "human_nature",
+     "label": "Human Nature",
+     "n": 1
+    },
+    {
+     "id": "humility",
+     "label": "Humility",
+     "n": 1
+    },
+    {
+     "id": "justice",
+     "label": "Justice",
+     "n": 1
+    }
+   ],
+   "n_concepts": 22
+  },
+  {
+   "key": "hume",
+   "name": "Hume, David",
+   "sex": "M",
+   "born": 1711,
+   "died": 1776,
+   "note": "",
+   "books": 10,
+   "book_ids": [
+    "HUME_1727-1765_1932_Letters-of-David-Hume_1",
+    "HUME_1737-1776_1954_New-Letters-of-David-Hume_0",
+    "HUME_1739-1740_0_A-Treatise-of-Human-Nature_0",
+    "HUME_1741_1777_Essays-Moral-Political-and-Literary-Part1_0",
+    "HUME_1748_1777_An-Enquiry-Concerning-Human-Understanding_0",
+    "HUME_1751_1777_An-Enquiry-Concerning-the-Principles-of-Morals_0",
+    "HUME_1752_1777_Essays-Moral-Political-and-Literary-Part2_0",
+    "HUME_1757_1777_A-Dissertation-on-the-Passions_0",
+    "HUME_1757_1777_The_Natural_History_of_Religion",
+    "HUME_1766-1776_1932_Letters-of-David-Hume_2"
+   ],
+   "passages": 861,
+   "pages": 0,
+   "first_year": 1727,
+   "last_year": 1766,
+   "concepts": [],
+   "n_concepts": 0
+  },
+  {
+   "key": "hutcheson",
+   "name": "Hutcheson, Francis",
+   "sex": "M",
+   "born": 1694,
+   "died": 1746,
+   "note": "",
+   "books": 12,
+   "book_ids": [
+    "HUTCHESON_1725_1726_An-Inquiry-into-the-Original-of-our-Ideas-of-Beauty-and-Virtue",
+    "HUTCHESON_1728_0_An-Essay-on-the-Nature-and-Conduct-of-the-Passions-and-Affections-with-Illustrations-on-the-Moral-Sense",
+    "HUTCHESON_1742_2006_Logic-Metaphysics-and-the-Natural-Sociability-of-Mankind_0",
+    "HUTCHESON_1742_2007_Philosophiae-Moralis-Institutio-Compendiaria-with-A-Short-Introduction-to-Moral-Philosophy",
+    "HUTCHESON_1742_2007_Philosophiae-Moralis-Institutio-Compendiaria-with-A-Short-Introduction-to-Moral-Philosophy_0",
+    "Hutcheson An Essay on the Nature and Conduct of the Passions and Affections with Illustrations on the Moral Sense",
+    "Hutcheson An Inquiry into the Original of our Ideas of Beauty and Virtue",
+    "Hutcheson Philosophiae Moralis Institutio Compendiaria with A Short Introduction to Moral Philosophy",
+    "Hutcheson System of Moral Philosophy vol. 1 (part 1)",
+    "Hutcheson System of Moral Philosophy vol. 1 (part 2)",
+    "Hutcheson System of Moral Philosophy vol. 1 (part 3)",
+    "Hutcheson The Meditations of Marcus Aurelius"
+   ],
+   "passages": 10439,
+   "pages": 2483,
+   "first_year": 1725,
+   "last_year": 1742,
+   "concepts": [
+    {
+     "id": "self_love",
+     "label": "Self-Love",
+     "n": 23
+    },
+    {
+     "id": "moral_sense",
+     "label": "Moral Sense",
+     "n": 11
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 9
+    },
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 9
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 8
+    },
+    {
+     "id": "passion",
+     "label": "Passion",
+     "n": 8
+    },
+    {
+     "id": "calm_desire",
+     "label": "Calm Desire",
+     "n": 7
+    },
+    {
+     "id": "beauty",
+     "label": "Beauty",
+     "n": 6
+    },
+    {
+     "id": "happiness",
+     "label": "Happiness",
+     "n": 6
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 6
+    },
+    {
+     "id": "human_nature",
+     "label": "Human Nature",
+     "n": 5
+    },
+    {
+     "id": "providence",
+     "label": "Providence",
+     "n": 5
+    }
+   ],
+   "n_concepts": 66
+  },
+  {
+   "key": "johnson",
+   "name": "Johnson, Thomas",
+   "sex": "M",
+   "born": null,
+   "died": null,
+   "note": "",
+   "books": 1,
+   "book_ids": [
+    "JOHNSON_1731_An_Essay_On_Moral_Obligation"
+   ],
+   "passages": 218,
+   "pages": 84,
+   "first_year": 1731,
+   "last_year": 1731,
+   "concepts": [
+    {
+     "id": "moral_fitness",
+     "label": "Moral Fitness",
+     "n": 4
+    },
+    {
+     "id": "moral_obligation",
+     "label": "Moral Obligation",
+     "n": 4
+    },
+    {
+     "id": "divine_law",
+     "label": "Divine Law",
+     "n": 2
+    },
+    {
+     "id": "moral_sense",
+     "label": "Moral Sense",
+     "n": 2
+    },
+    {
+     "id": "necessity",
+     "label": "Necessity",
+     "n": 2
+    },
+    {
+     "id": "origin_of_evil",
+     "label": "Origin of Evil",
+     "n": 2
+    },
+    {
+     "id": "reward_and_punishment",
+     "label": "Reward and Punishment",
+     "n": 2
+    },
+    {
+     "id": "self_love",
+     "label": "Self-Love",
+     "n": 2
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 1
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 1
+    },
+    {
+     "id": "pleasure",
+     "label": "Pleasure",
+     "n": 1
+    },
+    {
+     "id": "prejudice",
+     "label": "Prejudice",
+     "n": 1
+    }
+   ],
+   "n_concepts": 13
+  },
+  {
+   "key": "johnston",
+   "name": "Johnston, George",
+   "sex": "M",
+   "born": null,
+   "died": null,
+   "note": "",
+   "books": 1,
+   "book_ids": [
+    "JOHNSTON_1732_0_The-Eternal-Obligation-of-Natural-Religion_0"
+   ],
+   "passages": 48,
+   "pages": 0,
+   "first_year": 1732,
+   "last_year": 1732,
+   "concepts": [],
+   "n_concepts": 0
+  },
+  {
+   "key": "king",
+   "name": "King, William",
+   "sex": "M",
+   "born": 1650,
+   "died": 1729,
+   "note": "",
+   "books": 5,
+   "book_ids": [
+    "KING_1731_1732_An-Essay-on-the-Origin-of-Evil",
+    "KING_1731_1732_An-Essay-on-the-Origin-of-Evil_1",
+    "King An Essay on the Origin of Evil 1st ed 1731 (part 1)",
+    "King An Essay on the Origin of Evil 2nd ed 1732 vol. 1 (part 2)",
+    "King An Essay on the Origin of Evil 2nd ed 1732 vol. 2 (part 1)"
+   ],
+   "passages": 4186,
+   "pages": 1265,
+   "first_year": 1731,
+   "last_year": 1732,
+   "concepts": [
+    {
+     "id": "origin_of_evil",
+     "label": "Origin of Evil",
+     "n": 12
+    },
+    {
+     "id": "election",
+     "label": "Election",
+     "n": 7
+    },
+    {
+     "id": "chain_of_being",
+     "label": "Chain of Being",
+     "n": 6
+    },
+    {
+     "id": "necessity",
+     "label": "Necessity",
+     "n": 6
+    },
+    {
+     "id": "providence",
+     "label": "Providence",
+     "n": 6
+    },
+    {
+     "id": "moral_sense",
+     "label": "Moral Sense",
+     "n": 5
+    },
+    {
+     "id": "liberty",
+     "label": "Liberty",
+     "n": 4
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 4
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 3
+    },
+    {
+     "id": "moral_evil",
+     "label": "Moral Evil",
+     "n": 3
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 2
+    },
+    {
+     "id": "divine_law",
+     "label": "Divine Law",
+     "n": 2
+    }
+   ],
+   "n_concepts": 32
+  },
+  {
+   "key": "law",
+   "name": "Law, Edmund",
+   "sex": "M",
+   "born": 1703,
+   "died": 1787,
+   "note": "",
+   "books": 4,
+   "book_ids": [
+    "LAW_1745_0_Considerations-on-the-State-of-the-World-with-regard-to-the-Theory-of-Religion",
+    "LAW_1749_0_A-Discourse-upon-the-Life-and-Character-of-Christ",
+    "Law A Discourse upon the Life and Character of Christ",
+    "Law Considertions on the State of the World with regard to the Theory of Religion (part 1)"
+   ],
+   "passages": 2541,
+   "pages": 603,
+   "first_year": 1745,
+   "last_year": 1749,
+   "concepts": [
+    {
+     "id": "fortune",
+     "label": "Fortune",
+     "n": 32
+    },
+    {
+     "id": "example",
+     "label": "Example",
+     "n": 4
+    },
+    {
+     "id": "providence",
+     "label": "Providence",
+     "n": 4
+    },
+    {
+     "id": "sacrifice",
+     "label": "Sacrifice and Atonement",
+     "n": 4
+    },
+    {
+     "id": "meekness",
+     "label": "Meekness",
+     "n": 3
+    },
+    {
+     "id": "moral_world",
+     "label": "Moral World",
+     "n": 3
+    },
+    {
+     "id": "character",
+     "label": "Character",
+     "n": 2
+    },
+    {
+     "id": "classical_stoicism",
+     "label": "Classical Stoicism",
+     "n": 2
+    },
+    {
+     "id": "divine_law",
+     "label": "Divine Law",
+     "n": 2
+    },
+    {
+     "id": "resignation",
+     "label": "Resignation",
+     "n": 2
+    },
+    {
+     "id": "captivity",
+     "label": "Captivity",
+     "n": 1
+    },
+    {
+     "id": "conscience",
+     "label": "Conscience",
+     "n": 1
+    }
+   ],
+   "n_concepts": 20
+  },
+  {
+   "key": "locke",
+   "name": "Locke, John",
+   "sex": "M",
+   "born": 1632,
+   "died": 1704,
+   "note": "",
+   "books": 18,
+   "book_ids": [
+    "LOCKE_1650-1679_1976_The-Correspondence-of-John-Locke_1",
+    "LOCKE_1660s_1954_Essays-on-the-Law-of-Nature_0",
+    "LOCKE_1679-1686_1976_The-Correspondence-of-John-Locke_2",
+    "LOCKE_1686-1690_1978_The-Correspondence-of-John-Locke_3",
+    "LOCKE_1690-1694_1979_The-Correspondence-of-John-Locke_4",
+    "LOCKE_1690_1824_An-Essay-Concerning-Human-Understanding_0",
+    "LOCKE_1690_1824_Two-Treatises-of-Government_0",
+    "LOCKE_1693_1695_Some-Thoughts-concerning-Education_0",
+    "LOCKE_1694-1697_1979_The-Correspondence-of-John-Locke_5",
+    "LOCKE_1697-1700_1981_The-Correspondence-of-John-Locke_6",
+    "LOCKE_1700-1703_1982_The-Correspondence-of-John-Locke_7",
+    "LOCKE_1703-1704_1989_The-Correspondence-of-John-Locke_8",
+    "LOCKE_1823_The-Works-of-John-Locke_10",
+    "LOCKE_1823_The-Works-of-John-Locke_3",
+    "LOCKE_1823_The-Works-of-John-Locke_4",
+    "LOCKE_1823_The-Works-of-John-Locke_6",
+    "LOCKE_1823_The-Works-of-John-Locke_7",
+    "LOCKE_1823_The-Works-of-John-Locke_8"
+   ],
+   "passages": 2737,
+   "pages": 0,
+   "first_year": 1650,
+   "last_year": 1823,
+   "concepts": [],
+   "n_concepts": 0
+  },
+  {
+   "key": "mandeville",
+   "name": "Mandeville, Bernard",
+   "sex": "M",
+   "born": 1670,
+   "died": 1733,
+   "note": "",
+   "books": 8,
+   "book_ids": [
+    "MANDEVILLE_1705_0_The-Grumbling-Hive",
+    "MANDEVILLE_1709_0_The-Virgin-Unmaskd",
+    "MANDEVILLE_1711_0_A-Treatise-on-the-Hypochondriack-and-the-Hysterick-Passions",
+    "MANDEVILLE_1714_0_The-Fable-of-the-Bees",
+    "MANDEVILLE_1714_0_The-Mysteries-of-Virginity",
+    "MANDEVILLE_1732_0_An-Enquiry-into-the-Origin-of-Honour_0",
+    "Mandeville A Treatise on the Hypochondriack and the Hysterick Passions (part 1)",
+    "Mandeville Fable of the Bees 1714 (part 1)"
+   ],
+   "passages": 2894,
+   "pages": 1403,
+   "first_year": 1705,
+   "last_year": 1732,
+   "concepts": [
+    {
+     "id": "pride",
+     "label": "Pride",
+     "n": 6
+    },
+    {
+     "id": "virginity",
+     "label": "Virginity",
+     "n": 6
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 6
+    },
+    {
+     "id": "honour",
+     "label": "Honour",
+     "n": 5
+    },
+    {
+     "id": "luxury",
+     "label": "Luxury",
+     "n": 5
+    },
+    {
+     "id": "private_vice",
+     "label": "Private Vice",
+     "n": 5
+    },
+    {
+     "id": "education",
+     "label": "Education",
+     "n": 4
+    },
+    {
+     "id": "liberty",
+     "label": "Liberty",
+     "n": 3
+    },
+    {
+     "id": "modesty",
+     "label": "Modesty",
+     "n": 3
+    },
+    {
+     "id": "captivity",
+     "label": "Captivity",
+     "n": 2
+    },
+    {
+     "id": "fortune",
+     "label": "Fortune",
+     "n": 2
+    },
+    {
+     "id": "hypochondriack_distemper",
+     "label": "Hypochondriack Distemper",
+     "n": 2
+    }
+   ],
+   "n_concepts": 28
+  },
+  {
+   "key": "masham",
+   "name": "Masham, Damaris Cudworth",
+   "sex": "F",
+   "born": 1658,
+   "died": 1708,
+   "note": "",
+   "books": 7,
+   "book_ids": [
+    "MASHAM_1696_0-A-Discourse-concerning-the-Love-of-God",
+    "MASHAM_1696_Discourse_Love_of_God",
+    "MASHAM_1705_0_Occasional-Thoughts_0 searchable",
+    "Masham A Discourse concerning the love of God",
+    "Masham Discourse_concerning_the_love_of_God",
+    "Masham Occasional Thoughts",
+    "Masham Selected Correspondence in Broad 2019"
+   ],
+   "passages": 1855,
+   "pages": 747,
+   "first_year": 1696,
+   "last_year": 2019,
+   "concepts": [
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 9
+    },
+    {
+     "id": "love_of_god",
+     "label": "Love of God",
+     "n": 8
+    },
+    {
+     "id": "education",
+     "label": "Education",
+     "n": 7
+    },
+    {
+     "id": "custom",
+     "label": "Custom",
+     "n": 6
+    },
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 6
+    },
+    {
+     "id": "reason",
+     "label": "Reason",
+     "n": 6
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 5
+    },
+    {
+     "id": "passion",
+     "label": "Passion",
+     "n": 5
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 5
+    },
+    {
+     "id": "desire",
+     "label": "Desire",
+     "n": 4
+    },
+    {
+     "id": "divine_law",
+     "label": "Divine Law",
+     "n": 4
+    },
+    {
+     "id": "marriage",
+     "label": "Marriage",
+     "n": 4
+    }
+   ],
+   "n_concepts": 42
+  },
+  {
+   "key": "newcome",
+   "name": "Newcome, Susanna",
+   "sex": "F",
+   "born": 1685,
+   "died": 1753,
+   "note": "",
+   "books": 4,
+   "book_ids": [
+    "NEWCOME_1728_0_An-Enquiry-into-the-Evidence-of-the-Christian-Religion",
+    "NEWCOME_1737_0_The-Plain-Account-of-the-Sacrament-PartI",
+    "NEWCOME_1738_0_The-Plain-Account-of-the-Nature-and-End-of-the-Sacrament-PartII",
+    "Newcome the Plain Account of the Sacrament"
+   ],
+   "passages": 1462,
+   "pages": 455,
+   "first_year": 1728,
+   "last_year": 1738,
+   "concepts": [
+    {
+     "id": "sacrament",
+     "label": "Sacrament",
+     "n": 13
+    },
+    {
+     "id": "miracle",
+     "label": "Miracle",
+     "n": 5
+    },
+    {
+     "id": "prophecy",
+     "label": "Prophecy",
+     "n": 4
+    },
+    {
+     "id": "positive_duty",
+     "label": "Positive Duty",
+     "n": 3
+    },
+    {
+     "id": "sacramental_remembrance",
+     "label": "Sacramental Remembrance",
+     "n": 3
+    },
+    {
+     "id": "divine_law",
+     "label": "Divine Law",
+     "n": 1
+    },
+    {
+     "id": "marriage",
+     "label": "Marriage",
+     "n": 1
+    },
+    {
+     "id": "necessity",
+     "label": "Necessity",
+     "n": 1
+    },
+    {
+     "id": "providence",
+     "label": "Providence",
+     "n": 1
+    },
+    {
+     "id": "reason",
+     "label": "Reason",
+     "n": 1
+    },
+    {
+     "id": "reward_and_punishment",
+     "label": "Reward and Punishment",
+     "n": 1
+    }
+   ],
+   "n_concepts": 11
+  },
+  {
+   "key": "norris",
+   "name": "Norris, John",
+   "sex": "M",
+   "born": 1657,
+   "died": 1711,
+   "note": "",
+   "books": 21,
+   "book_ids": [
+    "NORRIS_1683_0_An-Idea-of-Happiness_0",
+    "NORRIS_1684_0_Poems-and-Discourses-occasionally-written_0",
+    "NORRIS_1685_0_A-Discourse-concerning-the-Pretended-Religious-Assembling-in-Private-Concenticles_0",
+    "NORRIS_1685_0_A-Sermon-Preachd-before-the-University-of-Oxford_0",
+    "NORRIS_1687_0_A-Collection-of-Miscellanies_0",
+    "NORRIS_1688_0_The-Theory-and-Regulation-of-Love",
+    "NORRIS_1689_0_Reason-and-Religion",
+    "NORRIS_1690_0_Christian-Blessedness-or-Discourses-upon-the-Beatitudes-of-our-Lord-and_Saviour-Jesus-Christ_0",
+    "NORRIS_1690_0_Reflections-upon-the-Conduct-of-Human-Life_0",
+    "NORRIS_1691_0_Practical-Discourses-upon-several-Divine-Subjects_0",
+    "NORRIS_1691_0_The-Charge-of-Schism-continued_0",
+    "NORRIS_1692_0_Two-Treatises-concerning-the-Divine-Light_0",
+    "NORRIS_1694_0_Spiritual-Counsel-or-The-Fathers-Advice-to-his-Children_0",
+    "NORRIS_1697_0_An-Account-of-Reason-and-Faith-in-relation-to-the-Mysteries-of-Christianity_0",
+    "NORRIS_1699_0_Practical-Discourses-upon-the-Beatitudes-of-our-Lord-and-Savious-Jesus-Christ_0",
+    "NORRIS_1707_0_A-Practical-Treatise-concerning-Humility",
+    "Norris A Practical Treatise concerning Humility part 1",
+    "Norris A collection of miscellanies",
+    "Norris Spiritual Counsel or The Fathers Advice to his Children",
+    "Norris Two Treatises concerning the divine light",
+    "Norris_1727_Letters-from-Norris-to-Corinna"
+   ],
+   "passages": 7661,
+   "pages": 1206,
+   "first_year": 1683,
+   "last_year": 1727,
+   "concepts": [
+    {
+     "id": "self_love",
+     "label": "Self-Love",
+     "n": 7
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 6
+    },
+    {
+     "id": "necessity",
+     "label": "Necessity",
+     "n": 6
+    },
+    {
+     "id": "reason",
+     "label": "Reason",
+     "n": 6
+    },
+    {
+     "id": "self_knowledge",
+     "label": "Self-Knowledge",
+     "n": 6
+    },
+    {
+     "id": "conscience",
+     "label": "Conscience",
+     "n": 5
+    },
+    {
+     "id": "will",
+     "label": "Will",
+     "n": 5
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 4
+    },
+    {
+     "id": "humility",
+     "label": "Humility",
+     "n": 4
+    },
+    {
+     "id": "intellect",
+     "label": "Intellect",
+     "n": 4
+    },
+    {
+     "id": "passion",
+     "label": "Passion",
+     "n": 4
+    },
+    {
+     "id": "being_itself",
+     "label": "Being Itself",
+     "n": 3
+    }
+   ],
+   "n_concepts": 48
+  },
+  {
+   "key": "pope",
+   "name": "Pope, Alexander",
+   "sex": "M",
+   "born": 1688,
+   "died": 1744,
+   "note": "",
+   "books": 7,
+   "book_ids": [
+    "POPE_1733_0_An-Essay-on-Man-Epistle-I",
+    "POPE_1733_0_An-Essay-on-Man-Epistle-II",
+    "POPE_1733_0_An-Essay-on-Man-Epistle-III",
+    "POPE_1734_0_An-Essay-on-Man-Epistle-IV",
+    "Pope Essay on Man Epistle II",
+    "Pope Essay on Man Epistle III",
+    "Pope Essay on Man Epistle IV"
+   ],
+   "passages": 175,
+   "pages": 99,
+   "first_year": 1733,
+   "last_year": 1734,
+   "concepts": [
+    {
+     "id": "self_love",
+     "label": "Self-Love",
+     "n": 9
+    },
+    {
+     "id": "providence",
+     "label": "Providence",
+     "n": 7
+    },
+    {
+     "id": "happiness",
+     "label": "Happiness",
+     "n": 4
+    },
+    {
+     "id": "ruling_passion",
+     "label": "Ruling Passion",
+     "n": 4
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 4
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 3
+    },
+    {
+     "id": "chain_of_being",
+     "label": "Chain of Being",
+     "n": 3
+    },
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 3
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 3
+    },
+    {
+     "id": "reason",
+     "label": "Reason",
+     "n": 3
+    },
+    {
+     "id": "government",
+     "label": "Government",
+     "n": 2
+    },
+    {
+     "id": "instinct",
+     "label": "Instinct",
+     "n": 2
+    }
+   ],
+   "n_concepts": 28
+  },
+  {
+   "key": "rutherforth",
+   "name": "Rutherforth, Thomas",
+   "sex": "M",
+   "born": 1712,
+   "died": 1771,
+   "note": "",
+   "books": 9,
+   "book_ids": [
+    "RUTHERFORTH_1744_0_An-Essay-on-the-Nature-and-Obligations-of-Virtue",
+    "RUTHERFORTH_1754_0_Institutes-of-Natural-Law",
+    "RUTHERFORTH_1754_0_Institutes-of-Natural-Law_2",
+    "Rutherforth An essay on the nature and obligations of virtue Part 1",
+    "Rutherforth An essay on the nature and obligations of virtue Part 3",
+    "Rutherforth Institutes of Natural Law vol. 1 part 2",
+    "Rutherforth Institutes of Natural Law vol. 1 part 3",
+    "Rutherforth Institutes of Natural Law vol. 2 part 1",
+    "Rutherforth Institutes of Natural Law vol. 2 part 3"
+   ],
+   "passages": 5715,
+   "pages": 2541,
+   "first_year": 1744,
+   "last_year": 1754,
+   "concepts": [
+    {
+     "id": "liberty",
+     "label": "Liberty",
+     "n": 18
+    },
+    {
+     "id": "obligation",
+     "label": "Obligation",
+     "n": 13
+    },
+    {
+     "id": "divine_law",
+     "label": "Divine Law",
+     "n": 12
+    },
+    {
+     "id": "reparation",
+     "label": "Reparation",
+     "n": 8
+    },
+    {
+     "id": "reward_and_punishment",
+     "label": "Reward and Punishment",
+     "n": 8
+    },
+    {
+     "id": "oath",
+     "label": "Oath",
+     "n": 7
+    },
+    {
+     "id": "war",
+     "label": "War",
+     "n": 7
+    },
+    {
+     "id": "civil_society",
+     "label": "Civil Society",
+     "n": 6
+    },
+    {
+     "id": "contract",
+     "label": "Contract",
+     "n": 6
+    },
+    {
+     "id": "marriage",
+     "label": "Marriage",
+     "n": 6
+    },
+    {
+     "id": "civil_liberty",
+     "label": "Civil Liberty",
+     "n": 5
+    },
+    {
+     "id": "conscience",
+     "label": "Conscience",
+     "n": 5
+    }
+   ],
+   "n_concepts": 50
+  },
+  {
+   "key": "shaftesbury",
+   "name": "Shaftesbury, Anthony Ashley Cooper, Third Earl of",
+   "sex": "M",
+   "born": 1671,
+   "died": 1713,
+   "note": "",
+   "books": 4,
+   "book_ids": [
+    "SHAFTESBURY_1716_Several-Letters",
+    "Shaftesbury Characteristicks vol. 1 LF edition",
+    "Shaftesbury Characteristicks vol. 3 LF edition",
+    "Shaftesbury Philosophical Regimen ed Rand"
+   ],
+   "passages": 4348,
+   "pages": 1157,
+   "first_year": 1716,
+   "last_year": 1716,
+   "concepts": [
+    {
+     "id": "beauty",
+     "label": "Beauty",
+     "n": 4
+    },
+    {
+     "id": "character",
+     "label": "Character",
+     "n": 3
+    },
+    {
+     "id": "soliloquy",
+     "label": "Soliloquy",
+     "n": 3
+    },
+    {
+     "id": "wit_and_humour",
+     "label": "Wit and Humour",
+     "n": 3
+    },
+    {
+     "id": "devotion",
+     "label": "Devotion",
+     "n": 2
+    },
+    {
+     "id": "liberty",
+     "label": "Liberty",
+     "n": 2
+    },
+    {
+     "id": "self_examination",
+     "label": "Self-Examination",
+     "n": 2
+    },
+    {
+     "id": "stoicism",
+     "label": "Stoicism",
+     "n": 2
+    },
+    {
+     "id": "university_education",
+     "label": "University Education",
+     "n": 2
+    },
+    {
+     "id": "common_sense",
+     "label": "Common Sense",
+     "n": 1
+    },
+    {
+     "id": "divine_law",
+     "label": "Divine Law",
+     "n": 1
+    },
+    {
+     "id": "enthusiasm",
+     "label": "Enthusiasm",
+     "n": 1
+    }
+   ],
+   "n_concepts": 22
+  },
+  {
+   "key": "smith",
+   "name": "Smith, Adam",
+   "sex": "M",
+   "born": 1723,
+   "died": 1790,
+   "note": "",
+   "books": 1,
+   "book_ids": [
+    "SMITH_1759_1976_The-Theory-of-Moral-Sentiments_0"
+   ],
+   "passages": 86,
+   "pages": 0,
+   "first_year": 1759,
+   "last_year": 1759,
+   "concepts": [],
+   "n_concepts": 0
+  },
+  {
+   "key": "thomas",
+   "name": "Thomas, Elizabeth",
+   "sex": "F",
+   "born": 1675,
+   "died": 1731,
+   "note": "",
+   "books": 3,
+   "book_ids": [
+    "THOMAS_1722_0_Miscellany-Poems-on-Several-Subjects",
+    "Thomas Miscellany Poems on Several Occasions",
+    "Thomas Selected Correspondence in Broad 2020"
+   ],
+   "passages": 986,
+   "pages": 390,
+   "first_year": 1722,
+   "last_year": 2020,
+   "concepts": [
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 8
+    },
+    {
+     "id": "atheism",
+     "label": "Atheism",
+     "n": 5
+    },
+    {
+     "id": "calm_desire",
+     "label": "Calm Desire",
+     "n": 5
+    },
+    {
+     "id": "hypochondriack_distemper",
+     "label": "Hypochondriack Distemper",
+     "n": 5
+    },
+    {
+     "id": "mortification",
+     "label": "Mortification",
+     "n": 5
+    },
+    {
+     "id": "public_good",
+     "label": "Public Good",
+     "n": 5
+    },
+    {
+     "id": "reparation",
+     "label": "Reparation",
+     "n": 5
+    },
+    {
+     "id": "war",
+     "label": "War",
+     "n": 5
+    },
+    {
+     "id": "sympathy",
+     "label": "Sympathy",
+     "n": 3
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 3
+    },
+    {
+     "id": "liberty",
+     "label": "Liberty",
+     "n": 2
+    },
+    {
+     "id": "marriage",
+     "label": "Marriage",
+     "n": 2
+    }
+   ],
+   "n_concepts": 24
+  },
+  {
+   "key": "turnbull",
+   "name": "Turnbull, George",
+   "sex": "M",
+   "born": 1698,
+   "died": 1748,
+   "note": "",
+   "books": 6,
+   "book_ids": [
+    "Copy of TURNBULL_1740_0_The-Principles-of-Moral-Philoosophy_1_(1)",
+    "TURNBULL_1740_0_The-Principles-of-Moral-Philoosophy",
+    "TURNBULL_1740_0_The-Principles-of-Moral-and-Christian-Philosophy",
+    "Turnbull Education for Life",
+    "Turnbull Observations upon Liberal Education",
+    "Turnbull The Principles of Moral and Christian Philosophy vol. 1"
+   ],
+   "passages": 7749,
+   "pages": 2421,
+   "first_year": 1740,
+   "last_year": 1740,
+   "concepts": [
+    {
+     "id": "self_love",
+     "label": "Self-Love",
+     "n": 8
+    },
+    {
+     "id": "benevolence",
+     "label": "Benevolence",
+     "n": 7
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 7
+    },
+    {
+     "id": "providence",
+     "label": "Providence",
+     "n": 7
+    },
+    {
+     "id": "moral_sense",
+     "label": "Moral Sense",
+     "n": 5
+    },
+    {
+     "id": "self_command",
+     "label": "Self-Command",
+     "n": 5
+    },
+    {
+     "id": "emulation",
+     "label": "Emulation",
+     "n": 4
+    },
+    {
+     "id": "moral_world",
+     "label": "Moral World",
+     "n": 4
+    },
+    {
+     "id": "passion",
+     "label": "Passion",
+     "n": 4
+    },
+    {
+     "id": "probationary_state",
+     "label": "Probationary State",
+     "n": 4
+    },
+    {
+     "id": "stoic_apathy",
+     "label": "Stoic Apathy",
+     "n": 4
+    },
+    {
+     "id": "sympathy",
+     "label": "Sympathy",
+     "n": 4
+    }
+   ],
+   "n_concepts": 42
+  },
+  {
+   "key": "warburton",
+   "name": "Warburton, William",
+   "sex": "M",
+   "born": 1698,
+   "died": 1779,
+   "note": "",
+   "books": 7,
+   "book_ids": [
+    "WARBURTON_1740_0_A-Vindication-of-Mr-Pope_s-Essay-on-Man",
+    "WARBURTON_1742_0_A-Critical-and-Philosophical-Commentary-on-Mr-Pope_s-Essay-on-Man",
+    "WARBURTON_A-Vindication-of-the-Author-of-the-Divine-Legation-of-Moses",
+    "WARBURTON_Divine-legation-of-moses",
+    "Warburton A Critical and Philosophical Commentary on Mr Pope_s Essay on Man (part 2)",
+    "Warburton A Vindication of the Author of the Divine Legation of Moses",
+    "Warburton Divine Legation of Moses (part 2)"
+   ],
+   "passages": 3438,
+   "pages": 1117,
+   "first_year": 1740,
+   "last_year": 1742,
+   "concepts": [
+    {
+     "id": "liberty",
+     "label": "Liberty",
+     "n": 11
+    },
+    {
+     "id": "providence",
+     "label": "Providence",
+     "n": 9
+    },
+    {
+     "id": "necessity",
+     "label": "Necessity",
+     "n": 8
+    },
+    {
+     "id": "reward_and_punishment",
+     "label": "Reward and Punishment",
+     "n": 7
+    },
+    {
+     "id": "future_state",
+     "label": "Future State",
+     "n": 6
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 6
+    },
+    {
+     "id": "self_love",
+     "label": "Self-Love",
+     "n": 6
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 6
+    },
+    {
+     "id": "divine_legislation",
+     "label": "Divine Legation",
+     "n": 5
+    },
+    {
+     "id": "passion",
+     "label": "Passion",
+     "n": 5
+    },
+    {
+     "id": "pride",
+     "label": "Pride",
+     "n": 5
+    },
+    {
+     "id": "reason",
+     "label": "Reason",
+     "n": 5
+    }
+   ],
+   "n_concepts": 47
+  },
+  {
+   "key": "watts",
+   "name": "Watts, Isaac",
+   "sex": "M",
+   "born": 1674,
+   "died": 1748,
+   "note": "",
+   "books": 8,
+   "book_ids": [
+    "WATTS_1724_1726_Logick-or-the-Right-Use-of-Reason",
+    "WATTS_1733_Philosophical-essays",
+    "WATTS_1741_0_The-Improvement-of-the-Mind",
+    "Watts Logick or the Right Use of Reason part 2",
+    "Watts Philosophical Essays 1733 (part 2)",
+    "Watts Philosophical Essays 1742 3rd ed (part 2)",
+    "Watts The Improvement of the Mind (part 1)",
+    "Watts The Improvement of the Mind (part 2)"
+   ],
+   "passages": 6396,
+   "pages": 2086,
+   "first_year": 1724,
+   "last_year": 1742,
+   "concepts": [
+    {
+     "id": "education",
+     "label": "Education",
+     "n": 13
+    },
+    {
+     "id": "consciousness",
+     "label": "Consciousness",
+     "n": 9
+    },
+    {
+     "id": "habit",
+     "label": "Habit",
+     "n": 9
+    },
+    {
+     "id": "liberty",
+     "label": "Liberty",
+     "n": 9
+    },
+    {
+     "id": "reason",
+     "label": "Reason",
+     "n": 8
+    },
+    {
+     "id": "prejudice",
+     "label": "Prejudice",
+     "n": 6
+    },
+    {
+     "id": "immateriality",
+     "label": "Immateriality",
+     "n": 5
+    },
+    {
+     "id": "virtue",
+     "label": "Virtue",
+     "n": 5
+    },
+    {
+     "id": "instinct",
+     "label": "Instinct",
+     "n": 4
+    },
+    {
+     "id": "intellect",
+     "label": "Intellect",
+     "n": 4
+    },
+    {
+     "id": "logic",
+     "label": "Logic",
+     "n": 4
+    },
+    {
+     "id": "degrees_of_evidence",
+     "label": "Degrees of Evidence",
+     "n": 3
+    }
+   ],
+   "n_concepts": 48
+  },
+  {
+   "key": "whartonia",
+   "name": "Whartonia (miscellany)",
+   "sex": "U",
+   "born": null,
+   "died": null,
+   "note": "anthology, mixed authorship",
+   "books": 1,
+   "book_ids": [
+    "Whartonia vol. 2"
+   ],
+   "passages": 402,
+   "pages": 179,
+   "first_year": null,
+   "last_year": null,
+   "concepts": [
+    {
+     "id": "friendship",
+     "label": "Friendship",
+     "n": 1
+    }
+   ],
+   "n_concepts": 1
+  }
+ ],
+ "groups": [
+  {
+   "group": "men",
+   "authors": 24,
+   "books": 156,
+   "passages": 73648,
+   "pages": 19554
+  },
+  {
+   "group": "women",
+   "authors": 10,
+   "books": 40,
+   "passages": 14524,
+   "pages": 5448
+  },
+  {
+   "group": "joint",
+   "authors": 2,
+   "books": 5,
+   "passages": 2401,
+   "pages": 1111
+  },
+  {
+   "group": "unattributed",
+   "authors": 1,
+   "books": 1,
+   "passages": 402,
+   "pages": 179
+  }
+ ],
+ "concept_emphasis": {
+  "women_lean": [
+   {
+    "id": "positive_duty",
+    "label": "Positive Duty",
+    "women_share": 0.00542,
+    "men_share": 0.0,
+    "n_women": 3,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "sociability",
+    "label": "Sociability",
+    "women_share": 0.00723,
+    "men_share": 0.0,
+    "n_women": 4,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "prophecy",
+    "label": "Prophecy",
+    "women_share": 0.00723,
+    "men_share": 0.0,
+    "n_women": 4,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "education_of_women",
+    "label": "Education of Women",
+    "women_share": 0.00542,
+    "men_share": 0.0,
+    "n_women": 3,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "miracle",
+    "label": "Miracle",
+    "women_share": 0.00904,
+    "men_share": 0.0,
+    "n_women": 5,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "wit",
+    "label": "Wit",
+    "women_share": 0.00542,
+    "men_share": 0.0,
+    "n_women": 3,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "ridicule",
+    "label": "Ridicule",
+    "women_share": 0.00542,
+    "men_share": 0.0,
+    "n_women": 3,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "stoic_indifference",
+    "label": "Stoic Indifference",
+    "women_share": 0.00542,
+    "men_share": 0.0,
+    "n_women": 3,
+    "n_men": 0,
+    "skew": 1.0
+   },
+   {
+    "id": "sacrament",
+    "label": "Sacrament",
+    "women_share": 0.02351,
+    "men_share": 0.00068,
+    "n_women": 13,
+    "n_men": 1,
+    "skew": 0.944
+   },
+   {
+    "id": "mortification",
+    "label": "Mortification",
+    "women_share": 0.02351,
+    "men_share": 0.00068,
+    "n_women": 13,
+    "n_men": 1,
+    "skew": 0.944
+   },
+   {
+    "id": "hypochondriack_distemper",
+    "label": "Hypochondriack Distemper",
+    "women_share": 0.0217,
+    "men_share": 0.00136,
+    "n_women": 12,
+    "n_men": 2,
+    "skew": 0.882
+   },
+   {
+    "id": "desire",
+    "label": "Desire",
+    "women_share": 0.01085,
+    "men_share": 0.00136,
+    "n_women": 6,
+    "n_men": 2,
+    "skew": 0.778
+   },
+   {
+    "id": "sacramental_remembrance",
+    "label": "Sacramental Remembrance",
+    "women_share": 0.00542,
+    "men_share": 0.00068,
+    "n_women": 3,
+    "n_men": 1,
+    "skew": 0.778
+   },
+   {
+    "id": "devotion",
+    "label": "Devotion",
+    "women_share": 0.0217,
+    "men_share": 0.00271,
+    "n_women": 12,
+    "n_men": 4,
+    "skew": 0.778
+   }
+  ],
+  "men_lean": [
+   {
+    "id": "civil_liberty",
+    "label": "Civil Liberty",
+    "women_share": 0.0,
+    "men_share": 0.00339,
+    "n_women": 0,
+    "n_men": 5,
+    "skew": -1.0
+   },
+   {
+    "id": "pleasure",
+    "label": "Pleasure",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "parental_authority",
+    "label": "Parental Authority",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "origin_of_evil",
+    "label": "Origin of Evil",
+    "women_share": 0.0,
+    "men_share": 0.01018,
+    "n_women": 0,
+    "n_men": 15,
+    "skew": -1.0
+   },
+   {
+    "id": "sacrifice",
+    "label": "Sacrifice and Atonement",
+    "women_share": 0.0,
+    "men_share": 0.00271,
+    "n_women": 0,
+    "n_men": 4,
+    "skew": -1.0
+   },
+   {
+    "id": "stoic_discipline",
+    "label": "Stoic Discipline",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "state_of_nature",
+    "label": "State of Nature",
+    "women_share": 0.0,
+    "men_share": 0.00407,
+    "n_women": 0,
+    "n_men": 6,
+    "skew": -1.0
+   },
+   {
+    "id": "sensus_communis",
+    "label": "Sensus Communis",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "perfect_right",
+    "label": "Perfect Right",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "divine_legislation",
+    "label": "Divine Legation",
+    "women_share": 0.0,
+    "men_share": 0.00475,
+    "n_women": 0,
+    "n_men": 7,
+    "skew": -1.0
+   },
+   {
+    "id": "substance",
+    "label": "Substance",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "eternal_morality",
+    "label": "Eternal Morality",
+    "women_share": 0.0,
+    "men_share": 0.00271,
+    "n_women": 0,
+    "n_men": 4,
+    "skew": -1.0
+   },
+   {
+    "id": "regulation_of_love",
+    "label": "Regulation of Love",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   },
+   {
+    "id": "self_preservation",
+    "label": "Self-Preservation",
+    "women_share": 0.0,
+    "men_share": 0.00204,
+    "n_women": 0,
+    "n_men": 3,
+    "skew": -1.0
+   }
+  ]
+ },
+ "unmatched_book_prefixes": []
+}
