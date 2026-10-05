@@ -1,9 +1,6 @@
-# BMoral — British Moral Philosophy Corpus System
+# Concept Atlas - Evidence-Grounded Conceptual Retrieval 
 
-A scholar's search system over **129 books of 18th-century British moral
-philosophy** (~27,000 pages): OCR with word-level geometry, a verified
-202-concept knowledge graph, hybrid semantic search (Jasper embeddings +
-archaic-aware lexical), and an interactive 2D/3D concept-graph UI.
+A scholar's search system over **134 books of 18th-century British moral philosophy** (~27,000 pages): OCR with word-level representation, a verified 202-concept knowledge graph, hybrid semantic search (Jasper embeddings + archaic-aware lexical), and an interactive 2D/3D concept-graph UI.
 
 ## What's in this repo
 
@@ -20,10 +17,7 @@ archaic-aware lexical), and an interactive 2D/3D concept-graph UI.
 
 ## Configuration
 
-One file, `.env` at the repo root — copy `.env.example` and edit. It sets the
-model endpoint, the model, the context window, the ports, and whether the chat
-agent may search the web. Real environment variables override it, so a
-container or systemd unit needs no edits.
+One file, `.env` at the repo root — copy `.env.example` and edit. It sets the model endpoint, the model, the context window, the ports, and whether the chat agent may search the web. Real environment variables override it, so a container or systemd unit needs no edits.
 
 ```
 ATLAS_VLLM=http://localhost:8000/v1     # any OpenAI-compatible endpoint
