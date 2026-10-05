@@ -11,7 +11,7 @@ A scholar's search system over **134 books of 18th-century British moral philoso
 | `Concept Maps/final/` | **Committed knowledge graph** — 202 concepts, 1,099 relations, 2,072 verbatim evidence paragraphs, 42 research queries |
 | `Concept Maps/graph-ui/` | The full web UI (search engine, PDF/TXT reader with annotations, concept graphs, query graphs) |
 | `models/` | Model weights & embedding indexes (NOT committed — rebuilt by scripts) |
-| `data/` | Source PDFs/TXTs (NOT committed — see `data/.gitkeep`) |
+| `data/` | Source PDFs/TXTs (see `data/txt_books`); Queries (see `data/query.tsv`); Authors' brief biography (see `author_bio.tsv`) |
 | `log/` | Pipeline orchestration scripts + server launchers |
 | `plans/` | Engineering decision/audit logs from the build process |
 
