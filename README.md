@@ -63,7 +63,7 @@ cd "Concept Maps/graph-ui" && ./start.sh                          # UI on :8788
 
 **What works without any downloads** (keyword + BM25 search + full UI):
 the committed OCR text (`outputs/`, 129 books) and concept map
-(`Concept Maps/final/`) are in the repo — `serve.py` starts immediately.
+(`concept_maps/final/`) are in the repo — `serve.py` starts immediately.
 Semantic mode additionally needs the Jasper model + embeddings (bootstrap
 step 2–3).
 
