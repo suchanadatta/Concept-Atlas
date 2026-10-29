@@ -7,6 +7,7 @@ A scholar's search system over **134 books of 18th-century British moral philoso
 | Path | Contents |
 |---|---|
 | `tools/` | OCR pipeline, Jasper index builder + semantic search server, validators, audit suite |
+| `tool demo videos` | https://drive.google.com/drive/folders/1iXKJ32_sVqrPAHyTS9lcyd3PpYjfVkT_?usp=sharing |
 | `outputs/` | **Committed OCR extractions** — per-book `.pages.jsonl` (blocks + word `bbox_pts` + paragraphs + page numbers), `.json`, `.md` |
 | `concept_maps/final/` | **Committed knowledge graph** — 202 concepts, 1,099 relations, 2,072 verbatim evidence paragraphs, 42 research queries |
 | `concept_maps/graph-ui/` | The full web UI (search engine, PDF/TXT reader with annotations, concept graphs, query graphs) |
